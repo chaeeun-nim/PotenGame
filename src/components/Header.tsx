@@ -30,7 +30,7 @@ export function Header() {
           </Link>
         </li>
         <li>
-          <Link href='/login/signUp/' className="flex gap-x-2">
+          <Link href='/login/signUp/' className="flex gap-x-2c">
             <Image src={signinLogo} alt="회원가입"/>
             <span>회원가입</span>
           </Link>
