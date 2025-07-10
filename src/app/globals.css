@@ -1,1 +1,15 @@
 @import "tailwindcss";
+
+:root {
+  --color-poten-red: #e6001f;
+  --color-poten-black: #191c21;
+  --color-poten-gray-1: #e4e4e4;
+  --color-poten-gray-2: #9ca3af;
+  --color-poten-gray3: #404750;
+  --color-poten-nintendo: #e60012;
+  --color-poten-psblue: #0070cc;
+  --color-poten-kakao: #fddc3f;
+  --color-poten-error-color: #f32434;
+  --color-poten-snowgray1: #fbfbfb;
+  --color-poten-snowgray2: #f6f6f6;
+}

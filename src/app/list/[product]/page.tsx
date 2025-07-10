@@ -1,18 +1,17 @@
-import ItemList from "@/app/list/[product]/[id]/page";
+import ItemCard from "@/app/list/[product]/[id]/page";
 import PageBottomNav from "@/components/PageBottomNav";
 import SelectBar from "@/components/SelectBar";
 
 export default function ProductList() {
   return (
-  <>
-    <h1>상품리스트</h1>
+  <div className="max-w-[1200px] mx-auto">
     <SelectBar/>
-    <ItemList/>
-    <ItemList/>
-    <ItemList/>
-    <ItemList/>
-    <ItemList/>
+    <ItemCard/>
+    <ItemCard/>
+    <ItemCard/>
+    <ItemCard/>
+    <ItemCard/>
     <PageBottomNav/>
-  </>
+  </div>
 );
 }
