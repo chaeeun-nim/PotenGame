@@ -2117,6 +2117,1926 @@ export const initData = async (clientId, nextSeq) => {
           language: '음성-한국어 / 자막-한국어',
         },
       },
+      {
+        _id: await nextSeq('product'),
+        // 상품가격
+        price: 39000,
+        // 배송비
+        shippingFees: 4000,
+        // 사이트에 노출될지말지
+        show: true,
+        // 판매여부
+        active: true,
+        // 제품명
+        name: 'NBA 2K18',
+        // 재고수량
+        quantity: 10,
+        // 판매된 수량
+        buyQuantity: 3,
+        // 메인이미지
+        mainImages: [
+          {
+            path: `files/${clientId}/pro-32-thumbnail.webp`,
+            name: 'pro-32-thumbnail.jpg',
+            originalname: 'NBA 2K18.webp',
+          },
+        ],
+        // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
+        content: [
+          {
+            path: `files/${clientId}/pro-32-detail.webp`,
+            name: 'pro-32-detail.webp',
+            originalname: 'NBA 2K18.webp',
+          },
+        ],
+        // 등록날짜
+        createdAt: getTime(-41, -60 * 60 * 2),
+        // 수정날짜
+        updatedAt: getTime(-40, -60 * 15),
+        // 그외 기타
+        extra: {
+          // 발매일
+          releaseDate: '17.12.13',
+          // 신상품인가
+          isNew: false,
+          // 베스트 상품인가
+          isBest: false,
+          // 카테고리
+          category: ['GAME', 'NINTENDO01', 'NEW'],
+          // 리스트 노출 순서(숫자가 작을수록 먼저)
+          sort: 1,
+          // 제품상태
+          condition: '새상품',
+          // 중고인지, 아닌지
+          used: false,
+          // 이용등급
+          ageGrade: '전체 이용가',
+          // 플랫폼 정보
+          platform: 'Nintendo Switch',
+          // 버전
+          platformVersion: 1,
+          // 원가
+          originalPrice: 64800,
+          // 언어,원산지
+          language: '음성-영어 / 자막-한국어',
+        },
+      },
+      {
+        _id: await nextSeq('product'),
+        // 상품가격
+        price: 67000,
+        // 배송비
+        shippingFees: 4000,
+        // 사이트에 노출될지말지
+        show: true,
+        // 판매여부
+        active: true,
+        // 제품명
+        name: '엘더스크롤5 스카이림',
+        // 재고수량
+        quantity: 10,
+        // 판매된 수량
+        buyQuantity: 3,
+        // 메인이미지
+        mainImages: [
+          {
+            path: `files/${clientId}/pro-33-thumbnail.webp`,
+            name: 'pro-33-thumbnail.jpg',
+            originalname: '엘더스크롤5 스카이림.webp',
+          },
+        ],
+        // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
+        content: [
+          {
+            path: `files/${clientId}/pro-33-detail.webp`,
+            name: 'pro-33-detail.webp',
+            originalname: '엘더스크롤5 스카이림.webp',
+          },
+        ],
+        // 등록날짜
+        createdAt: getTime(-41, -60 * 60 * 2),
+        // 수정날짜
+        updatedAt: getTime(-40, -60 * 15),
+        // 그외 기타
+        extra: {
+          // 발매일
+          releaseDate: '17.12.01',
+          // 신상품인가
+          isNew: false,
+          // 베스트 상품인가
+          isBest: false,
+          // 카테고리
+          category: ['GAME', 'NINTENDO01', 'NEW'],
+          // 리스트 노출 순서(숫자가 작을수록 먼저)
+          sort: 1,
+          // 제품상태
+          condition: '새상품',
+          // 중고인지, 아닌지
+          used: false,
+          // 이용등급
+          ageGrade: '청소년 이용불가',
+          // 플랫폼 정보
+          platform: 'Nintendo Switch',
+          // 버전
+          platformVersion: 1,
+          // 원가
+          originalPrice: 69800,
+          // 언어,원산지
+          language: '음성-영어 / 자막-영어,중국어,프랑스어',
+        },
+      },
+      {
+        _id: await nextSeq('product'),
+        // 상품가격
+        price: 62000,
+        // 배송비
+        shippingFees: 4000,
+        // 사이트에 노출될지말지
+        show: true,
+        // 판매여부
+        active: true,
+        // 제품명
+        name: '리디&수르의 아틀리에',
+        // 재고수량
+        quantity: 10,
+        // 판매된 수량
+        buyQuantity: 3,
+        // 메인이미지
+        mainImages: [
+          {
+            path: `files/${clientId}/pro-34-thumbnail.webp`,
+            name: 'pro-34-thumbnail.jpg',
+            originalname: '리디&수르의 아틀리에.webp',
+          },
+        ],
+        // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
+        content: [
+          {
+            path: `files/${clientId}/pro-34-detail.webp`,
+            name: 'pro-34-detail.webp',
+            originalname: '리디&수르의 아틀리에.webp',
+          },
+        ],
+        // 등록날짜
+        createdAt: getTime(-41, -60 * 60 * 2),
+        // 수정날짜
+        updatedAt: getTime(-40, -60 * 15),
+        // 그외 기타
+        extra: {
+          // 발매일
+          releaseDate: '18.03.29',
+          // 신상품인가
+          isNew: false,
+          // 베스트 상품인가
+          isBest: false,
+          // 카테고리
+          category: ['GAME', 'NINTENDO01', 'NEW'],
+          // 리스트 노출 순서(숫자가 작을수록 먼저)
+          sort: 1,
+          // 제품상태
+          condition: '새상품',
+          // 중고인지, 아닌지
+          used: false,
+          // 이용등급
+          ageGrade: '12세 이용가',
+          // 플랫폼 정보
+          platform: 'Nintendo Switch',
+          // 버전
+          platformVersion: 1,
+          // 원가
+          originalPrice: 64800,
+          // 언어,원산지
+          language: '음성-일본어 / 자막-한국어',
+        },
+      },
+      {
+        _id: await nextSeq('product'),
+        // 상품가격
+        price: 53000,
+        // 배송비
+        shippingFees: 4000,
+        // 사이트에 노출될지말지
+        show: true,
+        // 판매여부
+        active: true,
+        // 제품명
+        name: '블레이블루 크로스 태그 배틀',
+        // 재고수량
+        quantity: 10,
+        // 판매된 수량
+        buyQuantity: 3,
+        // 메인이미지
+        mainImages: [
+          {
+            path: `files/${clientId}/pro-35-thumbnail.webp`,
+            name: 'pro-35-thumbnail.jpg',
+            originalname: '블레이블루 크로스 태그 배틀.webp',
+          },
+        ],
+        // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
+        content: [
+          {
+            path: `files/${clientId}/pro-35-detail.webp`,
+            name: 'pro-35-detail.webp',
+            originalname: '블레이블루 크로스 태그 배틀.webp',
+          },
+        ],
+        // 등록날짜
+        createdAt: getTime(-41, -60 * 60 * 2),
+        // 수정날짜
+        updatedAt: getTime(-40, -60 * 15),
+        // 그외 기타
+        extra: {
+          // 발매일
+          releaseDate: '18.05.31',
+          // 신상품인가
+          isNew: false,
+          // 베스트 상품인가
+          isBest: false,
+          // 카테고리
+          category: ['GAME', 'NINTENDO01', 'NEW'],
+          // 리스트 노출 순서(숫자가 작을수록 먼저)
+          sort: 1,
+          // 제품상태
+          condition: '새상품',
+          // 중고인지, 아닌지
+          used: false,
+          // 이용등급
+          ageGrade: '12세 이용가',
+          // 플랫폼 정보
+          platform: 'Nintendo Switch',
+          // 버전
+          platformVersion: 1,
+          // 원가
+          originalPrice: 54000,
+          // 언어,원산지
+          language: '음성-일본어 / 자막-한국어',
+        },
+      },
+      {
+        _id: await nextSeq('product'),
+        // 상품가격
+        price: 137000,
+        // 배송비
+        shippingFees: 4000,
+        // 사이트에 노출될지말지
+        show: true,
+        // 판매여부
+        active: true,
+        // 제품명
+        name: '월드 오브 파이널 판타지 맥시마',
+        // 재고수량
+        quantity: 10,
+        // 판매된 수량
+        buyQuantity: 3,
+        // 메인이미지
+        mainImages: [
+          {
+            path: `files/${clientId}/pro-36-thumbnail.webp`,
+            name: 'pro-36-thumbnail.jpg',
+            originalname: '월드 오브 파이널 판타지 맥시마.webp',
+          },
+        ],
+        // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
+        content: [
+          {
+            path: `files/${clientId}/pro-36-detail.webp`,
+            name: 'pro-36-detail.webp',
+            originalname: '월드 오브 파이널 판타지 맥시마.webp',
+          },
+        ],
+        // 등록날짜
+        createdAt: getTime(-41, -60 * 60 * 2),
+        // 수정날짜
+        updatedAt: getTime(-40, -60 * 15),
+        // 그외 기타
+        extra: {
+          // 발매일
+          releaseDate: '19.02.28',
+          // 신상품인가
+          isNew: false,
+          // 베스트 상품인가
+          isBest: false,
+          // 카테고리
+          category: ['GAME', 'NINTENDO01', 'NEW'],
+          // 리스트 노출 순서(숫자가 작을수록 먼저)
+          sort: 1,
+          // 제품상태
+          condition: '새상품',
+          // 중고인지, 아닌지
+          used: false,
+          // 이용등급
+          ageGrade: '18세 이용가',
+          // 플랫폼 정보
+          platform: 'Nintendo Switch',
+          // 버전
+          platformVersion: 1,
+          // 원가
+          originalPrice: 59800,
+          // 언어,원산지
+          language: '음성-일본어 / 자막-한국어',
+        },
+      },
+      {
+        _id: await nextSeq('product'),
+        // 상품가격
+        price: 48000,
+        // 배송비
+        shippingFees: 4000,
+        // 사이트에 노출될지말지
+        show: true,
+        // 판매여부
+        active: true,
+        // 제품명
+        name: '테니스 월드 투어',
+        // 재고수량
+        quantity: 10,
+        // 판매된 수량
+        buyQuantity: 3,
+        // 메인이미지
+        mainImages: [
+          {
+            path: `files/${clientId}/pro-37-thumbnail.webp`,
+            name: 'pro-37-thumbnail.jpg',
+            originalname: '테니스 월드 투어.webp',
+          },
+        ],
+        // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
+        content: [
+          {
+            path: `files/${clientId}/pro-37-detail.webp`,
+            name: 'pro-37-detail.webp',
+            originalname: '테니스 월드 투어.webp',
+          },
+        ],
+        // 등록날짜
+        createdAt: getTime(-41, -60 * 60 * 2),
+        // 수정날짜
+        updatedAt: getTime(-40, -60 * 15),
+        // 그외 기타
+        extra: {
+          // 발매일
+          releaseDate: '18.06.12',
+          // 신상품인가
+          isNew: false,
+          // 베스트 상품인가
+          isBest: false,
+          // 카테고리
+          category: ['GAME', 'NINTENDO01', 'NEW'],
+          // 리스트 노출 순서(숫자가 작을수록 먼저)
+          sort: 1,
+          // 제품상태
+          condition: '새상품',
+          // 중고인지, 아닌지
+          used: false,
+          // 이용등급
+          ageGrade: '전체 이용가',
+          // 플랫폼 정보
+          platform: 'Nintendo Switch',
+          // 버전
+          platformVersion: 1,
+          // 원가
+          originalPrice: 49900,
+          // 언어,원산지
+          language: '음성-영어 / 자막-한국어',
+        },
+      },
+      {
+        _id: await nextSeq('product'),
+        // 상품가격
+        price: 53500,
+        // 배송비
+        shippingFees: 4000,
+        // 사이트에 노출될지말지
+        show: true,
+        // 판매여부
+        active: true,
+        // 제품명
+        name: '멋진 이 세계 Final Remix',
+        // 재고수량
+        quantity: 10,
+        // 판매된 수량
+        buyQuantity: 3,
+        // 메인이미지
+        mainImages: [
+          {
+            path: `files/${clientId}/pro-38-thumbnail.webp`,
+            name: 'pro-38-thumbnail.jpg',
+            originalname: '멋진 이 세계 Final Remix.webp',
+          },
+        ],
+        // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
+        content: [
+          {
+            path: `files/${clientId}/pro-38-detail.webp`,
+            name: 'pro-38-detail.webp',
+            originalname: '멋진 이 세계 Final Remix.webp',
+          },
+        ],
+        // 등록날짜
+        createdAt: getTime(-41, -60 * 60 * 2),
+        // 수정날짜
+        updatedAt: getTime(-40, -60 * 15),
+        // 그외 기타
+        extra: {
+          // 발매일
+          releaseDate: '18.10.12',
+          // 신상품인가
+          isNew: false,
+          // 베스트 상품인가
+          isBest: false,
+          // 카테고리
+          category: ['GAME', 'NINTENDO01', 'NEW'],
+          // 리스트 노출 순서(숫자가 작을수록 먼저)
+          sort: 1,
+          // 제품상태
+          condition: '새상품',
+          // 중고인지, 아닌지
+          used: false,
+          // 이용등급
+          ageGrade: '전체 이용가',
+          // 플랫폼 정보
+          platform: 'Nintendo Switch',
+          // 버전
+          platformVersion: 1,
+          // 원가
+          originalPrice: 54900,
+          // 언어,원산지
+          language: '음성-영어 / 자막-영어,중국어',
+        },
+      },
+      {
+        _id: await nextSeq('product'),
+        // 상품가격
+        price: 114000,
+        // 배송비
+        shippingFees: 4000,
+        // 사이트에 노출될지말지
+        show: true,
+        // 판매여부
+        active: true,
+        // 제품명
+        name: '테트리스 99',
+        // 재고수량
+        quantity: 10,
+        // 판매된 수량
+        buyQuantity: 3,
+        // 메인이미지
+        mainImages: [
+          {
+            path: `files/${clientId}/pro-39-thumbnail.webp`,
+            name: 'pro-39-thumbnail.jpg',
+            originalname: '테트리스 99.webp',
+          },
+        ],
+        // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
+        content: [
+          {
+            path: `files/${clientId}/pro-39-detail.webp`,
+            name: 'pro-39-detail.webp',
+            originalname: '테트리스 99.webp',
+          },
+        ],
+        // 등록날짜
+        createdAt: getTime(-41, -60 * 60 * 2),
+        // 수정날짜
+        updatedAt: getTime(-40, -60 * 15),
+        // 그외 기타
+        extra: {
+          // 발매일
+          releaseDate: '19.08.08',
+          // 신상품인가
+          isNew: false,
+          // 베스트 상품인가
+          isBest: false,
+          // 카테고리
+          category: ['GAME', 'NINTENDO01', 'NEW'],
+          // 리스트 노출 순서(숫자가 작을수록 먼저)
+          sort: 1,
+          // 제품상태
+          condition: '새상품',
+          // 중고인지, 아닌지
+          used: false,
+          // 이용등급
+          ageGrade: '전체 이용가',
+          // 플랫폼 정보
+          platform: 'Nintendo Switch',
+          // 버전
+          platformVersion: 1,
+          // 원가
+          originalPrice: 29900,
+          // 언어,원산지
+          language: '음성-없음 / 자막-한국어',
+        },
+      },
+      {
+        _id: await nextSeq('product'),
+        // 상품가격
+        price: 59000,
+        // 배송비
+        shippingFees: 4000,
+        // 사이트에 노출될지말지
+        show: true,
+        // 판매여부
+        active: true,
+        // 제품명
+        name: '포켓몬스터 소드',
+        // 재고수량
+        quantity: 10,
+        // 판매된 수량
+        buyQuantity: 3,
+        // 메인이미지
+        mainImages: [
+          {
+            path: `files/${clientId}/pro-40-thumbnail.webp`,
+            name: 'pro-40-thumbnail.jpg',
+            originalname: '포켓몬스터 소드.webp',
+          },
+        ],
+        // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
+        content: [
+          {
+            path: `files/${clientId}/pro-40-detail.webp`,
+            name: 'pro-40-detail.webp',
+            originalname: '포켓몬스터 소드.webp',
+          },
+        ],
+        // 등록날짜
+        createdAt: getTime(-41, -60 * 60 * 2),
+        // 수정날짜
+        updatedAt: getTime(-40, -60 * 15),
+        // 그외 기타
+        extra: {
+          // 발매일
+          releaseDate: '19.11.15',
+          // 신상품인가
+          isNew: false,
+          // 베스트 상품인가
+          isBest: false,
+          // 카테고리
+          category: ['GAME', 'NINTENDO01', 'NEW'],
+          // 리스트 노출 순서(숫자가 작을수록 먼저)
+          sort: 1,
+          // 제품상태
+          condition: '새상품',
+          // 중고인지, 아닌지
+          used: false,
+          // 이용등급
+          ageGrade: '전체 이용가',
+          // 플랫폼 정보
+          platform: 'Nintendo Switch',
+          // 버전
+          platformVersion: 1,
+          // 원가
+          originalPrice: 64000,
+          // 언어,원산지
+          language: '음성-없음 / 자막-한국어',
+        },
+      },
+      {
+        _id: await nextSeq('product'),
+        // 상품가격
+        price: 59000,
+        // 배송비
+        shippingFees: 4000,
+        // 사이트에 노출될지말지
+        show: true,
+        // 판매여부
+        active: true,
+        // 제품명
+        name: '포켓몬스터 실드',
+        // 재고수량
+        quantity: 10,
+        // 판매된 수량
+        buyQuantity: 3,
+        // 메인이미지
+        mainImages: [
+          {
+            path: `files/${clientId}/pro-41-thumbnail.webp`,
+            name: 'pro-41-thumbnail.jpg',
+            originalname: '포켓몬스터 실드.webp',
+          },
+        ],
+        // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
+        content: [
+          {
+            path: `files/${clientId}/pro-41-detail.webp`,
+            name: 'pro-41-detail.webp',
+            originalname: '포켓몬스터 실드.webp',
+          },
+        ],
+        // 등록날짜
+        createdAt: getTime(-41, -60 * 60 * 2),
+        // 수정날짜
+        updatedAt: getTime(-40, -60 * 15),
+        // 그외 기타
+        extra: {
+          // 발매일
+          releaseDate: '19.11.15',
+          // 신상품인가
+          isNew: false,
+          // 베스트 상품인가
+          isBest: false,
+          // 카테고리
+          category: ['GAME', 'NINTENDO01', 'NEW'],
+          // 리스트 노출 순서(숫자가 작을수록 먼저)
+          sort: 1,
+          // 제품상태
+          condition: '새상품',
+          // 중고인지, 아닌지
+          used: false,
+          // 이용등급
+          ageGrade: '전체 이용가',
+          // 플랫폼 정보
+          platform: 'Nintendo Switch',
+          // 버전
+          platformVersion: 1,
+          // 원가
+          originalPrice: 64000,
+          // 언어,원산지
+          language: '음성-없음 / 자막-한국어',
+        },
+      },
+      {
+        _id: await nextSeq('product'),
+        // 상품가격
+        price: 57000,
+        // 배송비
+        shippingFees: 4000,
+        // 사이트에 노출될지말지
+        show: true,
+        // 판매여부
+        active: true,
+        // 제품명
+        name: '마리오와 소닉 2020도쿄올림픽',
+        // 재고수량
+        quantity: 10,
+        // 판매된 수량
+        buyQuantity: 3,
+        // 메인이미지
+        mainImages: [
+          {
+            path: `files/${clientId}/pro-42-thumbnail.webp`,
+            name: 'pro-42-thumbnail.jpg',
+            originalname: '마리오와 소닉 2020도쿄올림픽.webp',
+          },
+        ],
+        // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
+        content: [
+          {
+            path: `files/${clientId}/pro-42-detail.webp`,
+            name: 'pro-42-detail.webp',
+            originalname: '마리오와 소닉 2020도쿄올림픽.webp',
+          },
+        ],
+        // 등록날짜
+        createdAt: getTime(-41, -60 * 60 * 2),
+        // 수정날짜
+        updatedAt: getTime(-40, -60 * 15),
+        // 그외 기타
+        extra: {
+          // 발매일
+          releaseDate: '19.07.24',
+          // 신상품인가
+          isNew: false,
+          // 베스트 상품인가
+          isBest: false,
+          // 카테고리
+          category: ['GAME', 'NINTENDO01', 'NEW'],
+          // 리스트 노출 순서(숫자가 작을수록 먼저)
+          sort: 1,
+          // 제품상태
+          condition: '새상품',
+          // 중고인지, 아닌지
+          used: false,
+          // 이용등급
+          ageGrade: '전체 이용가',
+          // 플랫폼 정보
+          platform: 'Nintendo Switch',
+          // 버전
+          platformVersion: 1,
+          // 원가
+          originalPrice: 59900,
+          // 언어,원산지
+          language: '음성-없음 / 자막-한국어',
+        },
+      },
+      {
+        _id: await nextSeq('product'),
+        // 상품가격
+        price: 43000,
+        // 배송비
+        shippingFees: 4000,
+        // 사이트에 노출될지말지
+        show: true,
+        // 판매여부
+        active: true,
+        // 제품명
+        name: '제물과 눈의 세츠나',
+        // 재고수량
+        quantity: 10,
+        // 판매된 수량
+        buyQuantity: 3,
+        // 메인이미지
+        mainImages: [
+          {
+            path: `files/${clientId}/pro-42-thumbnail.webp`,
+            name: 'pro-42-thumbnail.jpg',
+            originalname: '제물과 눈의 세츠나.webp',
+          },
+        ],
+        // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
+        content: [
+          {
+            path: `files/${clientId}/pro-42-detail.webp`,
+            name: 'pro-42-detail.webp',
+            originalname: '제물과 눈의 세츠나.webp',
+          },
+        ],
+        // 등록날짜
+        createdAt: getTime(-41, -60 * 60 * 2),
+        // 수정날짜
+        updatedAt: getTime(-40, -60 * 15),
+        // 그외 기타
+        extra: {
+          // 발매일
+          releaseDate: '20.10.22',
+          // 신상품인가
+          isNew: false,
+          // 베스트 상품인가
+          isBest: false,
+          // 카테고리
+          category: ['GAME', 'NINTENDO01', 'NEW'],
+          // 리스트 노출 순서(숫자가 작을수록 먼저)
+          sort: 1,
+          // 제품상태
+          condition: '새상품',
+          // 중고인지, 아닌지
+          used: false,
+          // 이용등급
+          ageGrade: '12세 이용가',
+          // 플랫폼 정보
+          platform: 'Nintendo Switch',
+          // 버전
+          platformVersion: 1,
+          // 원가
+          originalPrice: 44900,
+          // 언어,원산지
+          language: '음성-없음 / 자막-한국어',
+        },
+      },
+      {
+        _id: await nextSeq('product'),
+        // 상품가격
+        price: 385000,
+        // 배송비
+        shippingFees: 4000,
+        // 사이트에 노출될지말지
+        show: true,
+        // 판매여부
+        active: true,
+        // 제품명
+        name: '닌텐도 스위치 마리오 레드블루 한정판 세트',
+        // 재고수량
+        quantity: 10,
+        // 판매된 수량
+        buyQuantity: 3,
+        // 메인이미지
+        mainImages: [
+          {
+            path: `files/${clientId}/pro-44-thumbnail.webp`,
+            name: 'pro-44-thumbnail.jpg',
+            originalname: '닌텐도 스위치 마리오 레드블루 한정판 세트.webp',
+          },
+        ],
+        // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
+        content: [
+          {
+            path: `files/${clientId}/pro-44-detail.webp`,
+            name: 'pro-44-detail.webp',
+            originalname: '닌텐도 스위치 마리오 레드블루 한정판 세트.webp',
+          },
+        ],
+        // 등록날짜
+        createdAt: getTime(-41, -60 * 60 * 2),
+        // 수정날짜
+        updatedAt: getTime(-40, -60 * 15),
+        // 그외 기타
+        extra: {
+          // 발매일
+          releaseDate: '21.02.12',
+          // 신상품인가
+          isNew: false,
+          // 베스트 상품인가
+          isBest: false,
+          // 카테고리
+          category: ['HARDWARE', 'NINTENDO01', 'NEW'],
+          // 리스트 노출 순서(숫자가 작을수록 먼저)
+          sort: 1,
+          // 제품상태
+          condition: '새상품',
+          // 중고인지, 아닌지
+          used: false,
+          // 이용등급
+          ageGrade: '전체 이용가',
+          // 플랫폼 정보
+          platform: 'Nintendo Switch',
+          // 버전
+          platformVersion: 1,
+          // 원가
+          originalPrice: 360000,
+          // 언어,원산지
+          language: '음성-한국어 / 자막-한국어',
+        },
+      },
+      {
+        _id: await nextSeq('product'),
+        // 상품가격
+        price: 385000,
+        // 배송비
+        shippingFees: 4000,
+        // 사이트에 노출될지말지
+        show: true,
+        // 판매여부
+        active: true,
+        // 제품명
+        name: '닌텐도 스위치 OLED',
+        // 재고수량
+        quantity: 20,
+        // 판매된 수량
+        buyQuantity: 3,
+        // 메인이미지
+        mainImages: [
+          {
+            path: `files/${clientId}/pro-45-thumbnail.webp`,
+            name: 'pro-45-thumbnail.jpg',
+            originalname: '닌텐도 스위치 OLED.webp',
+          },
+        ],
+        // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
+        content: [
+          {
+            path: `files/${clientId}/pro-45-detail.webp`,
+            name: 'pro-45-detail.webp',
+            originalname: '닌텐도 스위치 OLED.webp',
+          },
+        ],
+        // 등록날짜
+        createdAt: getTime(-41, -60 * 60 * 2),
+        // 수정날짜
+        updatedAt: getTime(-40, -60 * 15),
+        // 그외 기타
+        extra: {
+          // 발매일
+          releaseDate: '21.10.08',
+          // 신상품인가
+          isNew: false,
+          // 베스트 상품인가
+          isBest: false,
+          // 카테고리
+          category: ['HARDWARE', 'NINTENDO01', 'NEW'],
+          // 리스트 노출 순서(숫자가 작을수록 먼저)
+          sort: 1,
+          // 제품상태
+          condition: '새상품',
+          // 중고인지, 아닌지
+          used: false,
+          // 이용등급
+          ageGrade: '전체 이용가',
+          // 플랫폼 정보
+          platform: 'Nintendo Switch',
+          // 버전
+          platformVersion: 1,
+          // 원가
+          originalPrice: 360000,
+          // 언어,원산지
+          language: '음성-한국어 / 자막-한국어',
+        },
+      },
+      {
+        _id: await nextSeq('product'),
+        // 상품가격
+        price: 249000,
+        // 배송비
+        shippingFees: 4000,
+        // 사이트에 노출될지말지
+        show: true,
+        // 판매여부
+        active: true,
+        // 제품명
+        name: '닌텐도 스위치 라이트',
+        // 재고수량
+        quantity: 20,
+        // 판매된 수량
+        buyQuantity: 3,
+        // 메인이미지
+        mainImages: [
+          {
+            path: `files/${clientId}/pro-45-thumbnail.webp`,
+            name: 'pro-45-thumbnail.jpg',
+            originalname: '닌텐도 스위치 라이트.webp',
+          },
+        ],
+        // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
+        content: [
+          {
+            path: `files/${clientId}/pro-45-detail.webp`,
+            name: 'pro-45-detail.webp',
+            originalname: '닌텐도 스위치 라이트.webp',
+          },
+        ],
+        // 등록날짜
+        createdAt: getTime(-41, -60 * 60 * 2),
+        // 수정날짜
+        updatedAt: getTime(-40, -60 * 15),
+        // 그외 기타
+        extra: {
+          // 발매일
+          releaseDate: '19.09.20',
+          // 신상품인가
+          isNew: false,
+          // 베스트 상품인가
+          isBest: false,
+          // 카테고리
+          category: ['HARDWARE', 'NINTENDO01', 'NEW'],
+          // 리스트 노출 순서(숫자가 작을수록 먼저)
+          sort: 1,
+          // 제품상태
+          condition: '새상품',
+          // 중고인지, 아닌지
+          used: false,
+          // 이용등급
+          ageGrade: '전체 이용가',
+          // 플랫폼 정보
+          platform: 'Nintendo Switch',
+          // 버전
+          platformVersion: 1,
+          // 원가
+          originalPrice: 249000,
+          // 언어,원산지
+          language: '음성-한국어 / 자막-한국어',
+        },
+      },
+      {
+        _id: await nextSeq('product'),
+        // 상품가격
+        price: 59800,
+        // 배송비
+        shippingFees: 4000,
+        // 사이트에 노출될지말지
+        show: true,
+        // 판매여부
+        active: true,
+        // 제품명
+        name: '와일드 하츠 S',
+        // 재고수량
+        quantity: 20,
+        // 판매된 수량
+        buyQuantity: 3,
+        // 메인이미지
+        mainImages: [
+          {
+            path: `files/${clientId}/pro-46-thumbnail.webp`,
+            name: 'pro-46-thumbnail.jpg',
+            originalname: '와일드 하츠 S.webp',
+          },
+        ],
+        // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
+        content: [
+          {
+            path: `files/${clientId}/pro-46-detail.webp`,
+            name: 'pro-46-detail.webp',
+            originalname: '와일드 하츠 S.webp',
+          },
+        ],
+        // 등록날짜
+        createdAt: getTime(-41, -60 * 60 * 2),
+        // 수정날짜
+        updatedAt: getTime(-40, -60 * 15),
+        // 그외 기타
+        extra: {
+          // 발매일
+          releaseDate: '25.07.25',
+          // 신상품인가
+          isNew: true,
+          // 베스트 상품인가
+          isBest: true,
+          // 카테고리
+          category: ['GAME', 'NINTENDO02', 'NEW'],
+          // 리스트 노출 순서(숫자가 작을수록 먼저)
+          sort: 1,
+          // 제품상태
+          condition: '새상품',
+          // 중고인지, 아닌지
+          used: false,
+          // 이용등급
+          ageGrade: '12세 이용가',
+          // 플랫폼 정보
+          platform: 'Nintendo Switch',
+          // 버전
+          platformVersion: 2,
+          // 원가
+          originalPrice: 59800,
+          // 언어,원산지
+          language: '음성-영어,일본어 / 자막-한국어',
+        },
+      },
+      {
+        _id: await nextSeq('product'),
+        // 상품가격
+        price: 84800,
+        // 배송비
+        shippingFees: 4000,
+        // 사이트에 노출될지말지
+        show: true,
+        // 판매여부
+        active: true,
+        // 제품명
+        name: '마리오파티 잼버리 TV',
+        // 재고수량
+        quantity: 20,
+        // 판매된 수량
+        buyQuantity: 3,
+        // 메인이미지
+        mainImages: [
+          {
+            path: `files/${clientId}/pro-47-thumbnail.webp`,
+            name: 'pro-47-thumbnail.jpg',
+            originalname: '마리오파티 잼버리 TV.webp',
+          },
+        ],
+        // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
+        content: [
+          {
+            path: `files/${clientId}/pro-47-detail.webp`,
+            name: 'pro-47-detail.webp',
+            originalname: '마리오파티 잼버리 TV.webp',
+          },
+        ],
+        // 등록날짜
+        createdAt: getTime(-41, -60 * 60 * 2),
+        // 수정날짜
+        updatedAt: getTime(-40, -60 * 15),
+        // 그외 기타
+        extra: {
+          // 발매일
+          releaseDate: '25.07.24',
+          // 신상품인가
+          isNew: true,
+          // 베스트 상품인가
+          isBest: true,
+          // 카테고리
+          category: ['GAME', 'NINTENDO02', 'NEW'],
+          // 리스트 노출 순서(숫자가 작을수록 먼저)
+          sort: 1,
+          // 제품상태
+          condition: '새상품',
+          // 중고인지, 아닌지
+          used: false,
+          // 이용등급
+          ageGrade: '전체 이용가',
+          // 플랫폼 정보
+          platform: 'Nintendo Switch',
+          // 버전
+          platformVersion: 2,
+          // 원가
+          originalPrice: 84800,
+          // 언어,원산지
+          language: '음성-없음 / 자막-한국어',
+        },
+      },
+      {
+        _id: await nextSeq('product'),
+        // 상품가격
+        price: 88000,
+        // 배송비
+        shippingFees: 4000,
+        // 사이트에 노출될지말지
+        show: true,
+        // 판매여부
+        active: true,
+        // 제품명
+        name: '동키콩 바난자',
+        // 재고수량
+        quantity: 20,
+        // 판매된 수량
+        buyQuantity: 3,
+        // 메인이미지
+        mainImages: [
+          {
+            path: `files/${clientId}/pro-48-thumbnail.webp`,
+            name: 'pro-48-thumbnail.jpg',
+            originalname: '동키콩 바난자.webp',
+          },
+        ],
+        // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
+        content: [
+          {
+            path: `files/${clientId}/pro-48-detail.webp`,
+            name: 'pro-48-detail.webp',
+            originalname: '동키콩 바난자.webp',
+          },
+        ],
+        // 등록날짜
+        createdAt: getTime(-41, -60 * 60 * 2),
+        // 수정날짜
+        updatedAt: getTime(-40, -60 * 15),
+        // 그외 기타
+        extra: {
+          // 발매일
+          releaseDate: '25.07.17',
+          // 신상품인가
+          isNew: true,
+          // 베스트 상품인가
+          isBest: true,
+          // 카테고리
+          category: ['GAME', 'NINTENDO02', 'NEW'],
+          // 리스트 노출 순서(숫자가 작을수록 먼저)
+          sort: 1,
+          // 제품상태
+          condition: '새상품',
+          // 중고인지, 아닌지
+          used: false,
+          // 이용등급
+          ageGrade: '전체 이용가',
+          // 플랫폼 정보
+          platform: 'Nintendo Switch',
+          // 버전
+          platformVersion: 2,
+          // 원가
+          originalPrice: 88000,
+          // 언어,원산지
+          language: '음성-없음 / 자막-한국어',
+        },
+      },
+      {
+        _id: await nextSeq('product'),
+        // 상품가격
+        price: 59800,
+        // 배송비
+        shippingFees: 4000,
+        // 사이트에 노출될지말지
+        show: true,
+        // 판매여부
+        active: true,
+        // 제품명
+        name: '다마고치 원더 샵',
+        // 재고수량
+        quantity: 20,
+        // 판매된 수량
+        buyQuantity: 3,
+        // 메인이미지
+        mainImages: [
+          {
+            path: `files/${clientId}/pro-49-thumbnail.webp`,
+            name: 'pro-49-thumbnail.jpg',
+            originalname: '다마고치 원더 샵.webp',
+          },
+        ],
+        // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
+        content: [
+          {
+            path: `files/${clientId}/pro-49-detail.webp`,
+            name: 'pro-49-detail.webp',
+            originalname: '다마고치 원더 샵.webp',
+          },
+        ],
+        // 등록날짜
+        createdAt: getTime(-41, -60 * 60 * 2),
+        // 수정날짜
+        updatedAt: getTime(-40, -60 * 15),
+        // 그외 기타
+        extra: {
+          // 발매일
+          releaseDate: '25.06.26',
+          // 신상품인가
+          isNew: true,
+          // 베스트 상품인가
+          isBest: true,
+          // 카테고리
+          category: ['GAME', 'NINTENDO02', 'NEW'],
+          // 리스트 노출 순서(숫자가 작을수록 먼저)
+          sort: 1,
+          // 제품상태
+          condition: '새상품',
+          // 중고인지, 아닌지
+          used: false,
+          // 이용등급
+          ageGrade: '전체 이용가',
+          // 플랫폼 정보
+          platform: 'Nintendo Switch',
+          // 버전
+          platformVersion: 2,
+          // 원가
+          originalPrice: 59800,
+          // 언어,원산지
+          language: '음성-없음 / 자막-한국어',
+        },
+      },
+      {
+        _id: await nextSeq('product'),
+        // 상품가격
+        price: 64800,
+        // 배송비
+        shippingFees: 4000,
+        // 사이트에 노출될지말지
+        show: true,
+        // 판매여부
+        active: true,
+        // 제품명
+        name: '스트리트 파이터 6 Years 1-2 파이터즈 에디션',
+        // 재고수량
+        quantity: 20,
+        // 판매된 수량
+        buyQuantity: 3,
+        // 메인이미지
+        mainImages: [
+          {
+            path: `files/${clientId}/pro-50-thumbnail.webp`,
+            name: 'pro-50-thumbnail.jpg',
+            originalname: '스트리트 파이터 6 Years 1-2 파이터즈 에디션.webp',
+          },
+        ],
+        // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
+        content: [
+          {
+            path: `files/${clientId}/pro-50-detail.webp`,
+            name: 'pro-50-detail.webp',
+            originalname: '스트리트 파이터 6 Years 1-2 파이터즈 에디션.webp',
+          },
+        ],
+        // 등록날짜
+        createdAt: getTime(-41, -60 * 60 * 2),
+        // 수정날짜
+        updatedAt: getTime(-40, -60 * 15),
+        // 그외 기타
+        extra: {
+          // 발매일
+          releaseDate: '25.06.05',
+          // 신상품인가
+          isNew: true,
+          // 베스트 상품인가
+          isBest: true,
+          // 카테고리
+          category: ['GAME', 'NINTENDO02', 'NEW'],
+          // 리스트 노출 순서(숫자가 작을수록 먼저)
+          sort: 1,
+          // 제품상태
+          condition: '새상품',
+          // 중고인지, 아닌지
+          used: false,
+          // 이용등급
+          ageGrade: '전체 이용가',
+          // 플랫폼 정보
+          platform: 'Nintendo Switch',
+          // 버전
+          platformVersion: 2,
+          // 원가
+          originalPrice: 64800,
+          // 언어,원산지
+          language: '음성-없음 / 자막-한국어',
+        },
+      },
+      {
+        _id: await nextSeq('product'),
+        // 상품가격
+        price: 68000,
+        // 배송비
+        shippingFees: 4000,
+        // 사이트에 노출될지말지
+        show: true,
+        // 판매여부
+        active: true,
+        // 제품명
+        name: '스플릿 픽션',
+        // 재고수량
+        quantity: 20,
+        // 판매된 수량
+        buyQuantity: 3,
+        // 메인이미지
+        mainImages: [
+          {
+            path: `files/${clientId}/pro-51-thumbnail.webp`,
+            name: 'pro-51-thumbnail.jpg',
+            originalname: '스플릿 픽션.webp',
+          },
+        ],
+        // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
+        content: [
+          {
+            path: `files/${clientId}/pro-51-detail.webp`,
+            name: 'pro-51-detail.webp',
+            originalname: '스플릿 픽션.webp',
+          },
+        ],
+        // 등록날짜
+        createdAt: getTime(-41, -60 * 60 * 2),
+        // 수정날짜
+        updatedAt: getTime(-40, -60 * 15),
+        // 그외 기타
+        extra: {
+          // 발매일
+          releaseDate: '25.06.05',
+          // 신상품인가
+          isNew: true,
+          // 베스트 상품인가
+          isBest: true,
+          // 카테고리
+          category: ['GAME', 'NINTENDO02', 'NEW'],
+          // 리스트 노출 순서(숫자가 작을수록 먼저)
+          sort: 1,
+          // 제품상태
+          condition: '새상품',
+          // 중고인지, 아닌지
+          used: false,
+          // 이용등급
+          ageGrade: '전체 이용가',
+          // 플랫폼 정보
+          platform: 'Nintendo Switch',
+          // 버전
+          platformVersion: 2,
+          // 원가
+          originalPrice: 68000,
+          // 언어,원산지
+          language: '음성-없음 / 자막-한국어',
+        },
+      },
+      {
+        _id: await nextSeq('product'),
+        // 상품가격
+        price: 69800,
+        // 배송비
+        shippingFees: 4000,
+        // 사이트에 노출될지말지
+        show: true,
+        // 판매여부
+        active: true,
+        // 제품명
+        name: '호그와트 레거시',
+        // 재고수량
+        quantity: 20,
+        // 판매된 수량
+        buyQuantity: 3,
+        // 메인이미지
+        mainImages: [
+          {
+            path: `files/${clientId}/pro-52-thumbnail.webp`,
+            name: 'pro-52-thumbnail.jpg',
+            originalname: '호그와트 레거시.webp',
+          },
+        ],
+        // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
+        content: [
+          {
+            path: `files/${clientId}/pro-52-detail.webp`,
+            name: 'pro-52-detail.webp',
+            originalname: '호그와트 레거시.webp',
+          },
+        ],
+        // 등록날짜
+        createdAt: getTime(-41, -60 * 60 * 2),
+        // 수정날짜
+        updatedAt: getTime(-40, -60 * 15),
+        // 그외 기타
+        extra: {
+          // 발매일
+          releaseDate: '25.06.05',
+          // 신상품인가
+          isNew: true,
+          // 베스트 상품인가
+          isBest: true,
+          // 카테고리
+          category: ['GAME', 'NINTENDO02', 'NEW'],
+          // 리스트 노출 순서(숫자가 작을수록 먼저)
+          sort: 1,
+          // 제품상태
+          condition: '새상품',
+          // 중고인지, 아닌지
+          used: false,
+          // 이용등급
+          ageGrade: '12세 이용가',
+          // 플랫폼 정보
+          platform: 'Nintendo Switch',
+          // 버전
+          platformVersion: 2,
+          // 원가
+          originalPrice: 69800,
+          // 언어,원산지
+          language: '음성-영어,일본어 / 자막-한국어',
+        },
+      },
+      {
+        _id: await nextSeq('product'),
+        // 상품가격
+        price: 84800,
+        // 배송비
+        shippingFees: 4000,
+        // 사이트에 노출될지말지
+        show: true,
+        // 판매여부
+        active: true,
+        // 제품명
+        name: '젤다의전설 왕국의 눈물',
+        // 재고수량
+        quantity: 20,
+        // 판매된 수량
+        buyQuantity: 3,
+        // 메인이미지
+        mainImages: [
+          {
+            path: `files/${clientId}/pro-53-thumbnail.webp`,
+            name: 'pro-53-thumbnail.jpg',
+            originalname: '젤다의전설 왕국의 눈물.webp',
+          },
+        ],
+        // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
+        content: [
+          {
+            path: `files/${clientId}/pro-53-detail.webp`,
+            name: 'pro-53-detail.webp',
+            originalname: '젤다의전설 왕국의 눈물.webp',
+          },
+        ],
+        // 등록날짜
+        createdAt: getTime(-41, -60 * 60 * 2),
+        // 수정날짜
+        updatedAt: getTime(-40, -60 * 15),
+        // 그외 기타
+        extra: {
+          // 발매일
+          releaseDate: '25.06.05',
+          // 신상품인가
+          isNew: true,
+          // 베스트 상품인가
+          isBest: true,
+          // 카테고리
+          category: ['GAME', 'NINTENDO02', 'NEW'],
+          // 리스트 노출 순서(숫자가 작을수록 먼저)
+          sort: 1,
+          // 제품상태
+          condition: '새상품',
+          // 중고인지, 아닌지
+          used: false,
+          // 이용등급
+          ageGrade: '12세 이용가',
+          // 플랫폼 정보
+          platform: 'Nintendo Switch',
+          // 버전
+          platformVersion: 2,
+          // 원가
+          originalPrice: 84800,
+          // 언어,원산지
+          language: '음성-없음 / 자막-한국어',
+        },
+      },
+      {
+        _id: await nextSeq('product'),
+        // 상품가격
+        price: 84800,
+        // 배송비
+        shippingFees: 4000,
+        // 사이트에 노출될지말지
+        show: true,
+        // 판매여부
+        active: true,
+        // 제품명
+        name: '젤다의 전설 야생의 숨결',
+        // 재고수량
+        quantity: 20,
+        // 판매된 수량
+        buyQuantity: 3,
+        // 메인이미지
+        mainImages: [
+          {
+            path: `files/${clientId}/pro-54-thumbnail.webp`,
+            name: 'pro-54-thumbnail.jpg',
+            originalname: '젤다의 전설 야생의 숨결.webp',
+          },
+        ],
+        // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
+        content: [
+          {
+            path: `files/${clientId}/pro-54-detail.webp`,
+            name: 'pro-54-detail.webp',
+            originalname: '젤다의 전설 야생의 숨결.webp',
+          },
+        ],
+        // 등록날짜
+        createdAt: getTime(-41, -60 * 60 * 2),
+        // 수정날짜
+        updatedAt: getTime(-40, -60 * 15),
+        // 그외 기타
+        extra: {
+          // 발매일
+          releaseDate: '25.06.05',
+          // 신상품인가
+          isNew: true,
+          // 베스트 상품인가
+          isBest: true,
+          // 카테고리
+          category: ['GAME', 'NINTENDO02', 'NEW'],
+          // 리스트 노출 순서(숫자가 작을수록 먼저)
+          sort: 1,
+          // 제품상태
+          condition: '새상품',
+          // 중고인지, 아닌지
+          used: false,
+          // 이용등급
+          ageGrade: '12세 이용가',
+          // 플랫폼 정보
+          platform: 'Nintendo Switch',
+          // 버전
+          platformVersion: 2,
+          // 원가
+          originalPrice: 84800,
+          // 언어,원산지
+          language: '음성-없음 / 자막-한국어',
+        },
+      },
+      {
+        _id: await nextSeq('product'),
+        // 상품가격
+        price: 98000,
+        // 배송비
+        shippingFees: 4000,
+        // 사이트에 노출될지말지
+        show: true,
+        // 판매여부
+        active: true,
+        // 제품명
+        name: '마리오 카트 월드',
+        // 재고수량
+        quantity: 20,
+        // 판매된 수량
+        buyQuantity: 3,
+        // 메인이미지
+        mainImages: [
+          {
+            path: `files/${clientId}/pro-55-thumbnail.webp`,
+            name: 'pro-55-thumbnail.jpg',
+            originalname: '마리오 카트 월드.webp',
+          },
+        ],
+        // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
+        content: [
+          {
+            path: `files/${clientId}/pro-55-detail.webp`,
+            name: 'pro-55-detail.webp',
+            originalname: '마리오 카트 월드.webp',
+          },
+        ],
+        // 등록날짜
+        createdAt: getTime(-41, -60 * 60 * 2),
+        // 수정날짜
+        updatedAt: getTime(-40, -60 * 15),
+        // 그외 기타
+        extra: {
+          // 발매일
+          releaseDate: '25.06.05',
+          // 신상품인가
+          isNew: true,
+          // 베스트 상품인가
+          isBest: true,
+          // 카테고리
+          category: ['GAME', 'NINTENDO02', 'NEW'],
+          // 리스트 노출 순서(숫자가 작을수록 먼저)
+          sort: 1,
+          // 제품상태
+          condition: '새상품',
+          // 중고인지, 아닌지
+          used: false,
+          // 이용등급
+          ageGrade: '전체 이용가',
+          // 플랫폼 정보
+          platform: 'Nintendo Switch',
+          // 버전
+          platformVersion: 2,
+          // 원가
+          originalPrice: 98000,
+          // 언어,원산지
+          language: '음성-없음 / 자막-한국어',
+        },
+      },
+      {
+        _id: await nextSeq('product'),
+        // 상품가격
+        price: 44800,
+        // 배송비
+        shippingFees: 4000,
+        // 사이트에 노출될지말지
+        show: true,
+        // 판매여부
+        active: true,
+        // 제품명
+        name: '뿌요뿌요 테트리스 2S',
+        // 재고수량
+        quantity: 20,
+        // 판매된 수량
+        buyQuantity: 3,
+        // 메인이미지
+        mainImages: [
+          {
+            path: `files/${clientId}/pro-56-thumbnail.webp`,
+            name: 'pro-56-thumbnail.jpg',
+            originalname: '뿌요뿌요 테트리스 2S.webp',
+          },
+        ],
+        // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
+        content: [
+          {
+            path: `files/${clientId}/pro-56-detail.webp`,
+            name: 'pro-56-detail.webp',
+            originalname: '뿌요뿌요 테트리스 2S.webp',
+          },
+        ],
+        // 등록날짜
+        createdAt: getTime(-41, -60 * 60 * 2),
+        // 수정날짜
+        updatedAt: getTime(-40, -60 * 15),
+        // 그외 기타
+        extra: {
+          // 발매일
+          releaseDate: '25.06.05',
+          // 신상품인가
+          isNew: true,
+          // 베스트 상품인가
+          isBest: true,
+          // 카테고리
+          category: ['GAME', 'NINTENDO02', 'NEW'],
+          // 리스트 노출 순서(숫자가 작을수록 먼저)
+          sort: 1,
+          // 제품상태
+          condition: '새상품',
+          // 중고인지, 아닌지
+          used: false,
+          // 이용등급
+          ageGrade: '전체 이용가',
+          // 플랫폼 정보
+          platform: 'Nintendo Switch',
+          // 버전
+          platformVersion: 2,
+          // 원가
+          originalPrice: 44800,
+          // 언어,원산지
+          language: '음성-일본어 / 자막-한국어',
+        },
+      },
+      {
+        _id: await nextSeq('product'),
+        // 상품가격
+        price: 49800,
+        // 배송비
+        shippingFees: 4000,
+        // 사이트에 노출될지말지
+        show: true,
+        // 판매여부
+        active: true,
+        // 제품명
+        name: '소닉 섀도우 제너레이션즈',
+        // 재고수량
+        quantity: 20,
+        // 판매된 수량
+        buyQuantity: 3,
+        // 메인이미지
+        mainImages: [
+          {
+            path: `files/${clientId}/pro-57-thumbnail.webp`,
+            name: 'pro-57-thumbnail.jpg',
+            originalname: '소닉 섀도우 제너레이션즈.webp',
+          },
+        ],
+        // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
+        content: [
+          {
+            path: `files/${clientId}/pro-57-detail.webp`,
+            name: 'pro-57-detail.webp',
+            originalname: '소닉 섀도우 제너레이션즈.webp',
+          },
+        ],
+        // 등록날짜
+        createdAt: getTime(-41, -60 * 60 * 2),
+        // 수정날짜
+        updatedAt: getTime(-40, -60 * 15),
+        // 그외 기타
+        extra: {
+          // 발매일
+          releaseDate: '25.06.05',
+          // 신상품인가
+          isNew: true,
+          // 베스트 상품인가
+          isBest: true,
+          // 카테고리
+          category: ['GAME', 'NINTENDO02', 'NEW'],
+          // 리스트 노출 순서(숫자가 작을수록 먼저)
+          sort: 1,
+          // 제품상태
+          condition: '새상품',
+          // 중고인지, 아닌지
+          used: false,
+          // 이용등급
+          ageGrade: '전체 이용가',
+          // 플랫폼 정보
+          platform: 'Nintendo Switch',
+          // 버전
+          platformVersion: 2,
+          // 원가
+          originalPrice: 49800,
+          // 언어,원산지
+          language: '음성-일본어,영어 / 자막-한국어',
+        },
+      },
+      {
+        _id: await nextSeq('product'),
+        // 상품가격
+        price: 89800,
+        // 배송비
+        shippingFees: 4000,
+        // 사이트에 노출될지말지
+        show: true,
+        // 판매여부
+        active: true,
+        // 제품명
+        name: '사이버펑크2077 얼티밋 에디션',
+        // 재고수량
+        quantity: 20,
+        // 판매된 수량
+        buyQuantity: 3,
+        // 메인이미지
+        mainImages: [
+          {
+            path: `files/${clientId}/pro-57-thumbnail.webp`,
+            name: 'pro-57-thumbnail.jpg',
+            originalname: '사이버펑크2077 얼티밋 에디션.webp',
+          },
+        ],
+        // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
+        content: [
+          {
+            path: `files/${clientId}/pro-57-detail.webp`,
+            name: 'pro-57-detail.webp',
+            originalname: '사이버펑크2077 얼티밋 에디션.webp',
+          },
+        ],
+        // 등록날짜
+        createdAt: getTime(-41, -60 * 60 * 2),
+        // 수정날짜
+        updatedAt: getTime(-40, -60 * 15),
+        // 그외 기타
+        extra: {
+          // 발매일
+          releaseDate: '25.06.05',
+          // 신상품인가
+          isNew: true,
+          // 베스트 상품인가
+          isBest: true,
+          // 카테고리
+          category: ['GAME', 'NINTENDO02', 'NEW'],
+          // 리스트 노출 순서(숫자가 작을수록 먼저)
+          sort: 1,
+          // 제품상태
+          condition: '새상품',
+          // 중고인지, 아닌지
+          used: false,
+          // 이용등급
+          ageGrade: '18세 이용가',
+          // 플랫폼 정보
+          platform: 'Nintendo Switch',
+          // 버전
+          platformVersion: 2,
+          // 원가
+          originalPrice: 89800,
+          // 언어,원산지
+          language: '음성-한국어 / 자막-한국어',
+        },
+      },
+      {
+        _id: await nextSeq('product'),
+        // 상품가격
+        price: 316000,
+        // 배송비
+        shippingFees: 4000,
+        // 사이트에 노출될지말지
+        show: true,
+        // 판매여부
+        active: true,
+        // 제품명
+        name: 'SWITCH2 닌텐도 스위치 2 본체',
+        // 재고수량
+        quantity: 100,
+        // 판매된 수량
+        buyQuantity: 0,
+        // 메인이미지
+        mainImages: [
+          {
+            path: `files/${clientId}/pro-59-thumbnail.webp`,
+            name: 'pro-59-thumbnail.jpg',
+            originalname: 'SWITCH2 닌텐도 스위치 2 본체.webp',
+          },
+        ],
+        // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
+        content: [
+          {
+            path: `files/${clientId}/pro-59-detail.webp`,
+            name: 'pro-59-detail.webp',
+            originalname: 'SWITCH2 닌텐도 스위치 2 본체.webp',
+          },
+        ],
+        // 등록날짜
+        createdAt: getTime(-41, -60 * 60 * 2),
+        // 수정날짜
+        updatedAt: getTime(-40, -60 * 15),
+        // 그외 기타
+        extra: {
+          // 발매일
+          releaseDate: '25.06.05',
+          // 신상품인가
+          isNew: true,
+          // 베스트 상품인가
+          isBest: true,
+          // 카테고리
+          category: ['HARDWARE', 'NINTENDO02', 'NEW'],
+          // 리스트 노출 순서(숫자가 작을수록 먼저)
+          sort: 1,
+          // 제품상태
+          condition: '새상품',
+          // 중고인지, 아닌지
+          used: false,
+          // 이용등급
+          ageGrade: '18세 이용가',
+          // 플랫폼 정보
+          platform: 'Nintendo Switch',
+          // 버전
+          platformVersion: 2,
+          // 원가
+          originalPrice: 648000,
+          // 언어,원산지
+          language: '음성-한국어 / 자막-한국어',
+        },
+      },
+      {
+        _id: await nextSeq('product'),
+        // 상품가격
+        price: 688000,
+        // 배송비
+        shippingFees: 4000,
+        // 사이트에 노출될지말지
+        show: true,
+        // 판매여부
+        active: true,
+        // 제품명
+        name: 'SWITCH2 닌텐도 스위치 2 본체 마리오 카트 월드 세트',
+        // 재고수량
+        quantity: 100,
+        // 판매된 수량
+        buyQuantity: 0,
+        // 메인이미지
+        mainImages: [
+          {
+            path: `files/${clientId}/pro-60-thumbnail.webp`,
+            name: 'pro-60-thumbnail.jpg',
+            originalname: 'SWITCH2 닌텐도 스위치 2 본체 마리오 카트 월드 세트.webp',
+          },
+        ],
+        // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
+        content: [
+          {
+            path: `files/${clientId}/pro-60-detail.webp`,
+            name: 'pro-60-detail.webp',
+            originalname: 'SWITCH2 닌텐도 스위치 2 본체 마리오 카트 월드 세트.webp',
+          },
+        ],
+        // 등록날짜
+        createdAt: getTime(-41, -60 * 60 * 2),
+        // 수정날짜
+        updatedAt: getTime(-40, -60 * 15),
+        // 그외 기타
+        extra: {
+          // 발매일
+          releaseDate: '25.06.05',
+          // 신상품인가
+          isNew: true,
+          // 베스트 상품인가
+          isBest: true,
+          // 카테고리
+          category: ['HARDWARE', 'NINTENDO02', 'NEW'],
+          // 리스트 노출 순서(숫자가 작을수록 먼저)
+          sort: 1,
+          // 제품상태
+          condition: '새상품',
+          // 중고인지, 아닌지
+          used: false,
+          // 이용등급
+          ageGrade: '전체 이용가',
+          // 플랫폼 정보
+          platform: 'Nintendo Switch',
+          // 버전
+          platformVersion: 2,
+          // 원가
+          originalPrice: 688000,
+          // 언어,원산지
+          language: '음성-한국어 / 자막-한국어',
+        },
+      },
     ],
 
     // 주문
