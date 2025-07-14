@@ -1,0 +1,22 @@
+meta {
+  name: 장바구니 목록조회(비로그인)
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{url}}/carts/local
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "products": [
+      {
+        "_id": 4,
+        "quantity": 1
+      }
+    ]
+  }
+}
