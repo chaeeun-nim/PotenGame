@@ -171,6 +171,8 @@ export const initData = async (clientId, nextSeq) => {
         updatedAt: getTime(-40, -60 * 15),
         // 그외 기타
         extra: {
+          // 발매일
+          releaseDate: '22.11.18',
           // 신상품인가
           isNew: false,
           // 베스트 상품인가
@@ -233,6 +235,8 @@ export const initData = async (clientId, nextSeq) => {
         updatedAt: getTime(-40, -60 * 15),
         // 그외 기타
         extra: {
+          // 발매일
+          releaseDate: '25.06.05',
           // 신상품인가
           isNew: true,
           // 베스트 상품인가
@@ -295,6 +299,8 @@ export const initData = async (clientId, nextSeq) => {
         updatedAt: getTime(-40, -60 * 15),
         // 그외 기타
         extra: {
+          // 발매일
+          releaseDate: '24.09.26',
           // 신상품인가
           isNew: true,
           // 베스트 상품인가
@@ -357,6 +363,8 @@ export const initData = async (clientId, nextSeq) => {
         updatedAt: getTime(-40, -60 * 15),
         // 그외 기타
         extra: {
+          // 발매일
+          releaseDate: '18.11.16',
           // 신상품인가
           isNew: true,
           // 베스트 상품인가
@@ -419,6 +427,8 @@ export const initData = async (clientId, nextSeq) => {
         updatedAt: getTime(-40, -60 * 15),
         // 그외 기타
         extra: {
+          // 발매일
+          releaseDate: '24.10.24',
           // 신상품인가
           isNew: false,
           // 베스트 상품인가
@@ -481,6 +491,8 @@ export const initData = async (clientId, nextSeq) => {
         updatedAt: getTime(-40, -60 * 15),
         // 그외 기타
         extra: {
+          // 발매일
+          releaseDate: '25.02.25',
           // 신상품인가
           isNew: true,
           // 베스트 상품인가
@@ -543,6 +555,8 @@ export const initData = async (clientId, nextSeq) => {
         updatedAt: getTime(-40, -60 * 15),
         // 그외 기타
         extra: {
+          // 발매일
+          releaseDate: '22.03.25',
           // 신상품인가
           isNew: false,
           // 베스트 상품인가
@@ -605,6 +619,8 @@ export const initData = async (clientId, nextSeq) => {
         updatedAt: getTime(-40, -60 * 15),
         // 그외 기타
         extra: {
+          // 발매일
+          releaseDate: '22.11.04',
           // 신상품인가
           isNew: false,
           // 베스트 상품인가
@@ -667,6 +683,8 @@ export const initData = async (clientId, nextSeq) => {
         updatedAt: getTime(-40, -60 * 15),
         // 그외 기타
         extra: {
+          // 발매일
+          releaseDate: '17.10.26',
           // 신상품인가
           isNew: false,
           // 베스트 상품인가
@@ -955,7 +973,7 @@ export const initData = async (clientId, nextSeq) => {
       {
         _id: 'shippingFees',
         title: '배송비',
-        value: 3500,
+        value: 4000,
       },
       {
         _id: 'freeShippingFees',
