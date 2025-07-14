@@ -1,6 +1,6 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
-:root {
+@theme {
   --color-poten-red: #e6001f;
   --color-poten-black: #191c21;
   --color-poten-gray-1: #e4e4e4;

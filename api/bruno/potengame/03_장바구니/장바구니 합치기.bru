@@ -1,0 +1,22 @@
+meta {
+  name: 장바구니 합치기
+  type: http
+  seq: 4
+}
+
+put {
+  url: {{url}}/carts/
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "products": [
+      {
+        "_id": 1,
+        "quantity": 1
+      }
+    ]
+  }
+}
