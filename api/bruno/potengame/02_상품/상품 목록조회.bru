@@ -5,13 +5,13 @@ meta {
 }
 
 get {
-  url: {{url}}/products/?keyword=포켓몬
+  url: {{url}}/products
   body: none
   auth: inherit
 }
 
 params:query {
-  keyword: 포켓몬
+  ~keyword: 포켓몬
   ~custom: {"extra.category":{"$all":["HARDWARE","PLAYSTATION04","NEW"]}}
   ~page: 1
   ~limit: 12

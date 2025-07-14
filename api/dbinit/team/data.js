@@ -5062,6 +5062,838 @@ export const initData = async (clientId, nextSeq) => {
           language: '음성-한국어 / 자막-한국어',
         },
       },
+      {
+        _id: await nextSeq('product'),
+        // 상품가격
+        price: 35000,
+        // 배송비
+        shippingFees: 4000,
+        // 사이트에 노출될지말지
+        show: true,
+        // 판매여부
+        active: true,
+        // 제품명
+        name: '렘넌트 프롬 디 애쉬',
+        // 재고수량
+        quantity: 15,
+        // 판매된 수량
+        buyQuantity: 1,
+        // 메인이미지
+        mainImages: [
+          {
+            path: `files/${clientId}/pro-78-thumbnail.webp`,
+            name: 'pro-78-thumbnail.jpg',
+            originalname: '렘넌트 프롬 디 애쉬.webp',
+          },
+        ],
+        // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
+        content: [
+          {
+            path: `files/${clientId}/pro-78-detail.webp`,
+            name: 'pro-78-detail.webp',
+            originalname: '렘넌트 프롬 디 애쉬.webp',
+          },
+        ],
+        // 등록날짜
+        createdAt: getTime(-41, -60 * 60 * 2),
+        // 수정날짜
+        updatedAt: getTime(-40, -60 * 15),
+        // 그외 기타
+        extra: {
+          // 발매일
+          releaseDate: '19.01.06',
+          // 신상품인가
+          isNew: false,
+          // 베스트 상품인가
+          isBest: false,
+          // 카테고리
+          category: ['GAME', 'PLAYSTATION04', 'NEW'],
+          // 리스트 노출 순서(숫자가 작을수록 먼저)
+          sort: 1,
+          // 제품상태
+          condition: '새상품',
+          // 중고인지, 아닌지
+          used: false,
+          // 이용등급
+          ageGrade: '18세 이용가',
+          // 플랫폼 정보
+          platform: 'PlayStation',
+          // 버전
+          platformVersion: 4,
+          // 원가
+          originalPrice: 59900,
+          // 언어,원산지
+          language: '음성-영어 / 자막-한국어',
+        },
+      },
+      {
+        _id: await nextSeq('product'),
+        // 상품가격
+        price: 36000,
+        // 배송비
+        shippingFees: 4000,
+        // 사이트에 노출될지말지
+        show: true,
+        // 판매여부
+        active: true,
+        // 제품명
+        name: '데드 바이 데이라이트',
+        // 재고수량
+        quantity: 9,
+        // 판매된 수량
+        buyQuantity: 1,
+        // 메인이미지
+        mainImages: [
+          {
+            path: `files/${clientId}/pro-79-thumbnail.webp`,
+            name: 'pro-79-thumbnail.jpg',
+            originalname: '데드 바이 데이라이트.webp',
+          },
+        ],
+        // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
+        content: [
+          {
+            path: `files/${clientId}/pro-79-detail.webp`,
+            name: 'pro-79-detail.webp',
+            originalname: '데드 바이 데이라이트.webp',
+          },
+        ],
+        // 등록날짜
+        createdAt: getTime(-41, -60 * 60 * 2),
+        // 수정날짜
+        updatedAt: getTime(-40, -60 * 15),
+        // 그외 기타
+        extra: {
+          // 발매일
+          releaseDate: '18.02.08',
+          // 신상품인가
+          isNew: false,
+          // 베스트 상품인가
+          isBest: false,
+          // 카테고리
+          category: ['GAME', 'PLAYSTATION04', 'NEW'],
+          // 리스트 노출 순서(숫자가 작을수록 먼저)
+          sort: 1,
+          // 제품상태
+          condition: '새상품',
+          // 중고인지, 아닌지
+          used: false,
+          // 이용등급
+          ageGrade: '18세 이용가',
+          // 플랫폼 정보
+          platform: 'PlayStation',
+          // 버전
+          platformVersion: 4,
+          // 원가
+          originalPrice: 59900,
+          // 언어,원산지
+          language: '음성-영어 / 자막-영어,한국어',
+        },
+      },
+      {
+        _id: await nextSeq('product'),
+        // 상품가격
+        price: 35000,
+        // 배송비
+        shippingFees: 4000,
+        // 사이트에 노출될지말지
+        show: true,
+        // 판매여부
+        active: true,
+        // 제품명
+        name: '다운타운 열혈이야기 SP',
+        // 재고수량
+        quantity: 12,
+        // 판매된 수량
+        buyQuantity: 1,
+        // 메인이미지
+        mainImages: [
+          {
+            path: `files/${clientId}/pro-80-thumbnail.webp`,
+            name: 'pro-80-thumbnail.jpg',
+            originalname: '다운타운 열혈이야기 SP.webp',
+          },
+        ],
+        // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
+        content: [
+          {
+            path: `files/${clientId}/pro-80-detail.webp`,
+            name: 'pro-80-detail.webp',
+            originalname: '다운타운 열혈이야기 SP.webp',
+          },
+        ],
+        // 등록날짜
+        createdAt: getTime(-41, -60 * 60 * 2),
+        // 수정날짜
+        updatedAt: getTime(-40, -60 * 15),
+        // 그외 기타
+        extra: {
+          // 발매일
+          releaseDate: '23.10.10',
+          // 신상품인가
+          isNew: false,
+          // 베스트 상품인가
+          isBest: false,
+          // 카테고리
+          category: ['GAME', 'PLAYSTATION04', 'NEW'],
+          // 리스트 노출 순서(숫자가 작을수록 먼저)
+          sort: 1,
+          // 제품상태
+          condition: '새상품',
+          // 중고인지, 아닌지
+          used: false,
+          // 이용등급
+          ageGrade: '12세 이용가',
+          // 플랫폼 정보
+          platform: 'PlayStation',
+          // 버전
+          platformVersion: 4,
+          // 원가
+          originalPrice: 39900,
+          // 언어,원산지
+          language: '음성-영어,일본어 / 자막-한국어',
+        },
+      },
+      {
+        _id: await nextSeq('product'),
+        // 상품가격
+        price: 26000,
+        // 배송비
+        shippingFees: 4000,
+        // 사이트에 노출될지말지
+        show: true,
+        // 판매여부
+        active: true,
+        // 제품명
+        name: '디비전2 워싱턴 DC 에디션',
+        // 재고수량
+        quantity: 12,
+        // 판매된 수량
+        buyQuantity: 1,
+        // 메인이미지
+        mainImages: [
+          {
+            path: `files/${clientId}/pro-81-thumbnail.webp`,
+            name: 'pro-81-thumbnail.jpg',
+            originalname: '디비전2 워싱턴 DC 에디션.webp',
+          },
+        ],
+        // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
+        content: [
+          {
+            path: `files/${clientId}/pro-81-detail.webp`,
+            name: 'pro-81-detail.webp',
+            originalname: '디비전2 워싱턴 DC 에디션.webp',
+          },
+        ],
+        // 등록날짜
+        createdAt: getTime(-41, -60 * 60 * 2),
+        // 수정날짜
+        updatedAt: getTime(-40, -60 * 15),
+        // 그외 기타
+        extra: {
+          // 발매일
+          releaseDate: '19.03.15',
+          // 신상품인가
+          isNew: false,
+          // 베스트 상품인가
+          isBest: false,
+          // 카테고리
+          category: ['GAME', 'PLAYSTATION04', 'NEW'],
+          // 리스트 노출 순서(숫자가 작을수록 먼저)
+          sort: 1,
+          // 제품상태
+          condition: '새상품',
+          // 중고인지, 아닌지
+          used: false,
+          // 이용등급
+          ageGrade: '18세 이용가',
+          // 플랫폼 정보
+          platform: 'PlayStation',
+          // 버전
+          platformVersion: 4,
+          // 원가
+          originalPrice: 76000,
+          // 언어,원산지
+          language: '음성-영어 / 자막-한국어',
+        },
+      },
+      {
+        _id: await nextSeq('product'),
+        // 상품가격
+        price: 58000,
+        // 배송비
+        shippingFees: 4000,
+        // 사이트에 노출될지말지
+        show: true,
+        // 판매여부
+        active: true,
+        // 제품명
+        name: '용과같이8 외전',
+        // 재고수량
+        quantity: 8,
+        // 판매된 수량
+        buyQuantity: 1,
+        // 메인이미지
+        mainImages: [
+          {
+            path: `files/${clientId}/pro-82-thumbnail.webp`,
+            name: 'pro-82-thumbnail.jpg',
+            originalname: '용과같이8 외전.webp',
+          },
+        ],
+        // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
+        content: [
+          {
+            path: `files/${clientId}/pro-82-detail.webp`,
+            name: 'pro-82-detail.webp',
+            originalname: '용과같이8 외전.webp',
+          },
+        ],
+        // 등록날짜
+        createdAt: getTime(-41, -60 * 60 * 2),
+        // 수정날짜
+        updatedAt: getTime(-40, -60 * 15),
+        // 그외 기타
+        extra: {
+          // 발매일
+          releaseDate: '25.02.21',
+          // 신상품인가
+          isNew: false,
+          // 베스트 상품인가
+          isBest: false,
+          // 카테고리
+          category: ['GAME', 'PLAYSTATION04', 'NEW'],
+          // 리스트 노출 순서(숫자가 작을수록 먼저)
+          sort: 1,
+          // 제품상태
+          condition: '새상품',
+          // 중고인지, 아닌지
+          used: false,
+          // 이용등급
+          ageGrade: '18세 이용가',
+          // 플랫폼 정보
+          platform: 'PlayStation',
+          // 버전
+          platformVersion: 4,
+          // 원가
+          originalPrice: 59900,
+          // 언어,원산지
+          language: '음성-일본어 / 자막-한국어',
+        },
+      },
+      {
+        _id: await nextSeq('product'),
+        // 상품가격
+        price: 83000,
+        // 배송비
+        shippingFees: 4000,
+        // 사이트에 노출될지말지
+        show: true,
+        // 판매여부
+        active: true,
+        // 제품명
+        name: '콜오브 듀티 블랙옵스6',
+        // 재고수량
+        quantity: 12,
+        // 판매된 수량
+        buyQuantity: 1,
+        // 메인이미지
+        mainImages: [
+          {
+            path: `files/${clientId}/pro-83-thumbnail.webp`,
+            name: 'pro-83-thumbnail.jpg',
+            originalname: '콜오브 듀티 블랙옵스6.webp',
+          },
+        ],
+        // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
+        content: [
+          {
+            path: `files/${clientId}/pro-83-detail.webp`,
+            name: 'pro-83-detail.webp',
+            originalname: '콜오브 듀티 블랙옵스6.webp',
+          },
+        ],
+        // 등록날짜
+        createdAt: getTime(-41, -60 * 60 * 2),
+        // 수정날짜
+        updatedAt: getTime(-40, -60 * 15),
+        // 그외 기타
+        extra: {
+          // 발매일
+          releaseDate: '24.10.25',
+          // 신상품인가
+          isNew: false,
+          // 베스트 상품인가
+          isBest: false,
+          // 카테고리
+          category: ['GAME', 'PLAYSTATION04', 'NEW'],
+          // 리스트 노출 순서(숫자가 작을수록 먼저)
+          sort: 1,
+          // 제품상태
+          condition: '새상품',
+          // 중고인지, 아닌지
+          used: false,
+          // 이용등급
+          ageGrade: '18세 이용가',
+          // 플랫폼 정보
+          platform: 'PlayStation',
+          // 버전
+          platformVersion: 4,
+          // 원가
+          originalPrice: 84500,
+          // 언어,원산지
+          language: '음성-영어 / 자막-한국어',
+        },
+      },
+      {
+        _id: await nextSeq('product'),
+        // 상품가격
+        price: 79000,
+        // 배송비
+        shippingFees: 4000,
+        // 사이트에 노출될지말지
+        show: true,
+        // 판매여부
+        active: true,
+        // 제품명
+        name: '이스 셀세타의 수해 Kai',
+        // 재고수량
+        quantity: 12,
+        // 판매된 수량
+        buyQuantity: 1,
+        // 메인이미지
+        mainImages: [
+          {
+            path: `files/${clientId}/pro-84-thumbnail.webp`,
+            name: 'pro-84-thumbnail.jpg',
+            originalname: '이스 셀세타의 수해 Kai.webp',
+          },
+        ],
+        // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
+        content: [
+          {
+            path: `files/${clientId}/pro-84-detail.webp`,
+            name: 'pro-84-detail.webp',
+            originalname: '이스 셀세타의 수해 Kai.webp',
+          },
+        ],
+        // 등록날짜
+        createdAt: getTime(-41, -60 * 60 * 2),
+        // 수정날짜
+        updatedAt: getTime(-40, -60 * 15),
+        // 그외 기타
+        extra: {
+          // 발매일
+          releaseDate: '20.04.23',
+          // 신상품인가
+          isNew: false,
+          // 베스트 상품인가
+          isBest: false,
+          // 카테고리
+          category: ['GAME', 'PLAYSTATION04', 'NEW'],
+          // 리스트 노출 순서(숫자가 작을수록 먼저)
+          sort: 1,
+          // 제품상태
+          condition: '새상품',
+          // 중고인지, 아닌지
+          used: false,
+          // 이용등급
+          ageGrade: '18세 이용가',
+          // 플랫폼 정보
+          platform: 'PlayStation',
+          // 버전
+          platformVersion: 4,
+          // 원가
+          originalPrice: 39800,
+          // 언어,원산지
+          language: '음성-일본어 / 자막-한국어',
+        },
+      },
+      {
+        _id: await nextSeq('product'),
+        // 상품가격
+        price: 27000,
+        // 배송비
+        shippingFees: 4000,
+        // 사이트에 노출될지말지
+        show: true,
+        // 판매여부
+        active: true,
+        // 제품명
+        name: '렉페스트',
+        // 재고수량
+        quantity: 20,
+        // 판매된 수량
+        buyQuantity: 8,
+        // 메인이미지
+        mainImages: [
+          {
+            path: `files/${clientId}/pro-85-thumbnail.webp`,
+            name: 'pro-85-thumbnail.jpg',
+            originalname: '렉페스트.webp',
+          },
+        ],
+        // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
+        content: [
+          {
+            path: `files/${clientId}/pro-85-detail.webp`,
+            name: 'pro-85-detail.webp',
+            originalname: '렉페스트.webp',
+          },
+        ],
+        // 등록날짜
+        createdAt: getTime(-41, -60 * 60 * 2),
+        // 수정날짜
+        updatedAt: getTime(-40, -60 * 15),
+        // 그외 기타
+        extra: {
+          // 발매일
+          releaseDate: '20.01.16',
+          // 신상품인가
+          isNew: false,
+          // 베스트 상품인가
+          isBest: false,
+          // 카테고리
+          category: ['GAME', 'PLAYSTATION04', 'NEW'],
+          // 리스트 노출 순서(숫자가 작을수록 먼저)
+          sort: 1,
+          // 제품상태
+          condition: '새상품',
+          // 중고인지, 아닌지
+          used: false,
+          // 이용등급
+          ageGrade: '12세 이용가',
+          // 플랫폼 정보
+          platform: 'PlayStation',
+          // 버전
+          platformVersion: 4,
+          // 원가
+          originalPrice: 39800,
+          // 언어,원산지
+          language: '음성-영어 / 자막-한국어',
+        },
+      },
+      {
+        _id: await nextSeq('product'),
+        // 상품가격
+        price: 45000,
+        // 배송비
+        shippingFees: 4000,
+        // 사이트에 노출될지말지
+        show: true,
+        // 판매여부
+        active: true,
+        // 제품명
+        name: '원피스 월드 시커 디럭스 에디션',
+        // 재고수량
+        quantity: 20,
+        // 판매된 수량
+        buyQuantity: 3,
+        // 메인이미지
+        mainImages: [
+          {
+            path: `files/${clientId}/pro-86-thumbnail.webp`,
+            name: 'pro-86-thumbnail.jpg',
+            originalname: '원피스 월드 시커 디럭스 에디션.webp',
+          },
+        ],
+        // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
+        content: [
+          {
+            path: `files/${clientId}/pro-86-detail.webp`,
+            name: 'pro-86-detail.webp',
+            originalname: '원피스 월드 시커 디럭스 에디션.webp',
+          },
+        ],
+        // 등록날짜
+        createdAt: getTime(-41, -60 * 60 * 2),
+        // 수정날짜
+        updatedAt: getTime(-40, -60 * 15),
+        // 그외 기타
+        extra: {
+          // 발매일
+          releaseDate: '19.03.14',
+          // 신상품인가
+          isNew: false,
+          // 베스트 상품인가
+          isBest: false,
+          // 카테고리
+          category: ['GAME', 'PLAYSTATION04', 'NEW'],
+          // 리스트 노출 순서(숫자가 작을수록 먼저)
+          sort: 1,
+          // 제품상태
+          condition: '새상품',
+          // 중고인지, 아닌지
+          used: false,
+          // 이용등급
+          ageGrade: '12세 이용가',
+          // 플랫폼 정보
+          platform: 'PlayStation',
+          // 버전
+          platformVersion: 4,
+          // 원가
+          originalPrice: 64000,
+          // 언어,원산지
+          language: '음성-일본어 / 자막-한국어',
+        },
+      },
+      {
+        _id: await nextSeq('product'),
+        // 상품가격
+        price: 65000,
+        // 배송비
+        shippingFees: 4000,
+        // 사이트에 노출될지말지
+        show: true,
+        // 판매여부
+        active: true,
+        // 제품명
+        name: '언더나이트 인버스2 시스타 셀레스',
+        // 재고수량
+        quantity: 20,
+        // 판매된 수량
+        buyQuantity: 3,
+        // 메인이미지
+        mainImages: [
+          {
+            path: `files/${clientId}/pro-87-thumbnail.webp`,
+            name: 'pro-87-thumbnail.jpg',
+            originalname: '언더나이트 인버스2 시스타 셀레스.webp',
+          },
+        ],
+        // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
+        content: [
+          {
+            path: `files/${clientId}/pro-87-detail.webp`,
+            name: 'pro-87-detail.webp',
+            originalname: '언더나이트 인버스2 시스타 셀레스.webp',
+          },
+        ],
+        // 등록날짜
+        createdAt: getTime(-41, -60 * 60 * 2),
+        // 수정날짜
+        updatedAt: getTime(-40, -60 * 15),
+        // 그외 기타
+        extra: {
+          // 발매일
+          releaseDate: '24.01.25',
+          // 신상품인가
+          isNew: false,
+          // 베스트 상품인가
+          isBest: false,
+          // 카테고리
+          category: ['GAME', 'PLAYSTATION04', 'NEW'],
+          // 리스트 노출 순서(숫자가 작을수록 먼저)
+          sort: 1,
+          // 제품상태
+          condition: '새상품',
+          // 중고인지, 아닌지
+          used: false,
+          // 이용등급
+          ageGrade: '12세 이용가',
+          // 플랫폼 정보
+          platform: 'PlayStation',
+          // 버전
+          platformVersion: 4,
+          // 원가
+          originalPrice: 69800,
+          // 언어,원산지
+          language: '음성-한국어 / 자막-한국어',
+        },
+      },
+      {
+        _id: await nextSeq('product'),
+        // 상품가격
+        price: 62800,
+        // 배송비
+        shippingFees: 4000,
+        // 사이트에 노출될지말지
+        show: true,
+        // 판매여부
+        active: true,
+        // 제품명
+        name: '용과같이8',
+        // 재고수량
+        quantity: 20,
+        // 판매된 수량
+        buyQuantity: 3,
+        // 메인이미지
+        mainImages: [
+          {
+            path: `files/${clientId}/pro-88-thumbnail.webp`,
+            name: 'pro-88-thumbnail.jpg',
+            originalname: '용과같이8.webp',
+          },
+        ],
+        // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
+        content: [
+          {
+            path: `files/${clientId}/pro-88-detail.webp`,
+            name: 'pro-88-detail.webp',
+            originalname: '용과같이8.webp',
+          },
+        ],
+        // 등록날짜
+        createdAt: getTime(-41, -60 * 60 * 2),
+        // 수정날짜
+        updatedAt: getTime(-40, -60 * 15),
+        // 그외 기타
+        extra: {
+          // 발매일
+          releaseDate: '24.01.26',
+          // 신상품인가
+          isNew: false,
+          // 베스트 상품인가
+          isBest: false,
+          // 카테고리
+          category: ['GAME', 'PLAYSTATION04', 'NEW'],
+          // 리스트 노출 순서(숫자가 작을수록 먼저)
+          sort: 1,
+          // 제품상태
+          condition: '새상품',
+          // 중고인지, 아닌지
+          used: false,
+          // 이용등급
+          ageGrade: '18세 이용가',
+          // 플랫폼 정보
+          platform: 'PlayStation',
+          // 버전
+          platformVersion: 4,
+          // 원가
+          originalPrice: 79900,
+          // 언어,원산지
+          language: '음성-일본어,영어 / 자막-한국어',
+        },
+      },
+      {
+        _id: await nextSeq('product'),
+        // 상품가격
+        price: 54800,
+        // 배송비
+        shippingFees: 4000,
+        // 사이트에 노출될지말지
+        show: true,
+        // 판매여부
+        active: true,
+        // 제품명
+        name: '어쌔신크리드 미라지',
+        // 재고수량
+        quantity: 20,
+        // 판매된 수량
+        buyQuantity: 3,
+        // 메인이미지
+        mainImages: [
+          {
+            path: `files/${clientId}/pro-89-thumbnail.webp`,
+            name: 'pro-89-thumbnail.jpg',
+            originalname: '어쌔신크리드 미라지.webp',
+          },
+        ],
+        // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
+        content: [
+          {
+            path: `files/${clientId}/pro-89-detail.webp`,
+            name: 'pro-89-detail.webp',
+            originalname: '어쌔신크리드 미라지.webp',
+          },
+        ],
+        // 등록날짜
+        createdAt: getTime(-41, -60 * 60 * 2),
+        // 수정날짜
+        updatedAt: getTime(-40, -60 * 15),
+        // 그외 기타
+        extra: {
+          // 발매일
+          releaseDate: '23.10.05',
+          // 신상품인가
+          isNew: false,
+          // 베스트 상품인가
+          isBest: false,
+          // 카테고리
+          category: ['GAME', 'PLAYSTATION04', 'NEW'],
+          // 리스트 노출 순서(숫자가 작을수록 먼저)
+          sort: 1,
+          // 제품상태
+          condition: '새상품',
+          // 중고인지, 아닌지
+          used: false,
+          // 이용등급
+          ageGrade: '18세 이용가',
+          // 플랫폼 정보
+          platform: 'PlayStation',
+          // 버전
+          platformVersion: 4,
+          // 원가
+          originalPrice: 54800,
+          // 언어,원산지
+          language: '음성-영어 / 자막-한국어',
+        },
+      },
+      {
+        _id: await nextSeq('product'),
+        // 상품가격
+        price: 345000,
+        // 배송비
+        shippingFees: 4000,
+        // 사이트에 노출될지말지
+        show: true,
+        // 판매여부
+        active: true,
+        // 제품명
+        name: '신형 본체 2117A (500GB) / 화이트',
+        // 재고수량
+        quantity: 8,
+        // 판매된 수량
+        buyQuantity: 3,
+        // 메인이미지
+        mainImages: [
+          {
+            path: `files/${clientId}/pro-90-thumbnail.webp`,
+            name: 'pro-90-thumbnail.jpg',
+            originalname: '신형 본체 2117A (500GB) / 화이트.webp',
+          },
+        ],
+        // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
+        content: [
+          {
+            path: `files/${clientId}/pro-90-detail.webp`,
+            name: 'pro-90-detail.webp',
+            originalname: '신형 본체 2117A (500GB) / 화이트.webp',
+          },
+        ],
+        // 등록날짜
+        createdAt: getTime(-41, -60 * 60 * 2),
+        // 수정날짜
+        updatedAt: getTime(-40, -60 * 15),
+        // 그외 기타
+        extra: {
+          // 발매일
+          releaseDate: '17.01.19',
+          // 신상품인가
+          isNew: false,
+          // 베스트 상품인가
+          isBest: false,
+          // 카테고리
+          category: ['HARDWARE', 'PLAYSTATION04', 'NEW'],
+          // 리스트 노출 순서(숫자가 작을수록 먼저)
+          sort: 1,
+          // 제품상태
+          condition: '새상품',
+          // 중고인지, 아닌지
+          used: false,
+          // 이용등급
+          ageGrade: '18세 이용가',
+          // 플랫폼 정보
+          platform: 'PlayStation',
+          // 버전
+          platformVersion: 4,
+          // 원가
+          originalPrice: 378000,
+          // 언어,원산지
+          language: '음성-한국어 / 자막-한국어',
+        },
+      },
     ],
 
     // 주문
