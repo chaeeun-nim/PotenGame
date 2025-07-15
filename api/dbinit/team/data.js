@@ -21,6 +21,7 @@ export const initData = async (clientId, nextSeq) => {
         createdAt: getTime(-100, -60 * 60 * 3),
         updatedAt: getTime(-100, -60 * 60 * 3),
         extra: {
+          purchases: 0,
           nickname: '관리자',
           birthday: '03-23',
           membershipClass: 'MC02',
@@ -51,6 +52,7 @@ export const initData = async (clientId, nextSeq) => {
         createdAt: getTime(-50),
         updatedAt: getTime(-30, -60 * 60 * 3),
         extra: {
+          purchases: 2,
           nickname: '유저네오',
           birthday: '11-23',
           membershipClass: 'MC01',
@@ -81,6 +83,7 @@ export const initData = async (clientId, nextSeq) => {
         createdAt: getTime(-40, -60 * 30),
         updatedAt: getTime(-30, -60 * 20),
         extra: {
+          purchases: 5,
           nickname: '유저어피치',
           confirm: false, // 관리자 승인이 안됨
           birthday: '11-24',
@@ -112,6 +115,7 @@ export const initData = async (clientId, nextSeq) => {
         createdAt: getTime(-20, -60 * 30),
         updatedAt: getTime(-10, -60 * 60 * 12),
         extra: {
+          purchases: 20,
           nickname: '유저제이지',
           birthday: '11-30',
           membershipClass: 'MC02',
