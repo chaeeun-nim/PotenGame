@@ -172,7 +172,7 @@ export const initData = async (clientId, nextSeq) => {
         // 그외 기타
         extra: {
           // 발매일
-          releaseDate: '10.02.02',
+          releaseDate: '2010-02-02',
           // 신상품인가
           isNew: false,
           // 베스트 상품인가
@@ -236,7 +236,7 @@ export const initData = async (clientId, nextSeq) => {
         // 그외 기타
         extra: {
           // 발매일
-          releaseDate: '07.03.08',
+          releaseDate: '2007-03-08',
           // 신상품인가
           isNew: false,
           // 베스트 상품인가
@@ -300,7 +300,7 @@ export const initData = async (clientId, nextSeq) => {
         // 그외 기타
         extra: {
           // 발매일
-          releaseDate: '10.07.12',
+          releaseDate: '2010-07-12',
           // 신상품인가
           isNew: false,
           // 베스트 상품인가
@@ -364,7 +364,7 @@ export const initData = async (clientId, nextSeq) => {
         // 그외 기타
         extra: {
           // 발매일
-          releaseDate: '12.11.08',
+          releaseDate: '2012-11-08',
           // 신상품인가
           isNew: false,
           // 베스트 상품인가
@@ -428,7 +428,7 @@ export const initData = async (clientId, nextSeq) => {
         // 그외 기타
         extra: {
           // 발매일
-          releaseDate: '11.04.21',
+          releaseDate: '2011-04-21',
           // 신상품인가
           isNew: false,
           // 베스트 상품인가
@@ -492,7 +492,7 @@ export const initData = async (clientId, nextSeq) => {
         // 그외 기타
         extra: {
           // 발매일
-          releaseDate: '09.09.17',
+          releaseDate: '2009-09-17',
           // 신상품인가
           isNew: false,
           // 베스트 상품인가
@@ -556,7 +556,7 @@ export const initData = async (clientId, nextSeq) => {
         // 그외 기타
         extra: {
           // 발매일
-          releaseDate: '09.09.24',
+          releaseDate: '2009-09-24',
           // 신상품인가
           isNew: false,
           // 베스트 상품인가
@@ -620,7 +620,7 @@ export const initData = async (clientId, nextSeq) => {
         // 그외 기타
         extra: {
           // 발매일
-          releaseDate: '09.09.24',
+          releaseDate: '2009-09-24',
           // 신상품인가
           isNew: false,
           // 베스트 상품인가
@@ -684,7 +684,7 @@ export const initData = async (clientId, nextSeq) => {
         // 그외 기타
         extra: {
           // 발매일
-          releaseDate: '09.09.24',
+          releaseDate: '2009-09-24',
           // 신상품인가
           isNew: false,
           // 베스트 상품인가
@@ -748,7 +748,7 @@ export const initData = async (clientId, nextSeq) => {
         // 그외 기타
         extra: {
           // 발매일
-          releaseDate: '09.07.02',
+          releaseDate: '2009-07-02',
           // 신상품인가
           isNew: false,
           // 베스트 상품인가
@@ -812,7 +812,7 @@ export const initData = async (clientId, nextSeq) => {
         // 그외 기타
         extra: {
           // 발매일
-          releaseDate: '07.12.06',
+          releaseDate: '2007-12-06',
           // 신상품인가
           isNew: false,
           // 베스트 상품인가
@@ -876,7 +876,7 @@ export const initData = async (clientId, nextSeq) => {
         // 그외 기타
         extra: {
           // 발매일
-          releaseDate: '08.02.14',
+          releaseDate: '2008-02-14',
           // 신상품인가
           isNew: false,
           // 베스트 상품인가
@@ -940,7 +940,7 @@ export const initData = async (clientId, nextSeq) => {
         // 그외 기타
         extra: {
           // 발매일
-          releaseDate: '09.11.21',
+          releaseDate: '2009-11-21',
           // 신상품인가
           isNew: false,
           // 베스트 상품인가
@@ -1004,7 +1004,7 @@ export const initData = async (clientId, nextSeq) => {
         // 그외 기타
         extra: {
           // 발매일
-          releaseDate: '10.04.15',
+          releaseDate: '2010-04-15',
           // 신상품인가
           isNew: false,
           // 베스트 상품인가
@@ -1068,7 +1068,7 @@ export const initData = async (clientId, nextSeq) => {
         // 그외 기타
         extra: {
           // 발매일
-          releaseDate: '19.04.18',
+          releaseDate: '2019-04-18',
           // 신상품인가
           isNew: false,
           // 베스트 상품인가
@@ -1132,7 +1132,7 @@ export const initData = async (clientId, nextSeq) => {
         // 그외 기타
         extra: {
           // 발매일
-          releaseDate: '18.12.20',
+          releaseDate: '2018-12-20',
           // 신상품인가
           isNew: false,
           // 베스트 상품인가
@@ -1196,7 +1196,7 @@ export const initData = async (clientId, nextSeq) => {
         // 그외 기타
         extra: {
           // 발매일
-          releaseDate: '18.10.31',
+          releaseDate: '2018-10-31',
           // 신상품인가
           isNew: false,
           // 베스트 상품인가
@@ -1260,7 +1260,7 @@ export const initData = async (clientId, nextSeq) => {
         // 그외 기타
         extra: {
           // 발매일
-          releaseDate: '19.07.26',
+          releaseDate: '2019-07-26',
           // 신상품인가
           isNew: false,
           // 베스트 상품인가
@@ -1324,7 +1324,7 @@ export const initData = async (clientId, nextSeq) => {
         // 그외 기타
         extra: {
           // 발매일
-          releaseDate: '18.10.04',
+          releaseDate: '2018-10-04',
           // 신상품인가
           isNew: false,
           // 베스트 상품인가
@@ -1388,7 +1388,7 @@ export const initData = async (clientId, nextSeq) => {
         // 그외 기타
         extra: {
           // 발매일
-          releaseDate: '18.09.21',
+          releaseDate: '2018-09-21',
           // 신상품인가
           isNew: false,
           // 베스트 상품인가
@@ -1452,7 +1452,7 @@ export const initData = async (clientId, nextSeq) => {
         // 그외 기타
         extra: {
           // 발매일
-          releaseDate: '19.09.24',
+          releaseDate: '2019-09-24',
           // 신상품인가
           isNew: false,
           // 베스트 상품인가
@@ -1516,7 +1516,7 @@ export const initData = async (clientId, nextSeq) => {
         // 그외 기타
         extra: {
           // 발매일
-          releaseDate: '19.09.27',
+          releaseDate: '2019-09-27',
           // 신상품인가
           isNew: false,
           // 베스트 상품인가
@@ -1580,7 +1580,7 @@ export const initData = async (clientId, nextSeq) => {
         // 그외 기타
         extra: {
           // 발매일
-          releaseDate: '20.07.30',
+          releaseDate: '2020-07-30',
           // 신상품인가
           isNew: false,
           // 베스트 상품인가
@@ -1644,7 +1644,7 @@ export const initData = async (clientId, nextSeq) => {
         // 그외 기타
         extra: {
           // 발매일
-          releaseDate: '21.06.25',
+          releaseDate: '2021-06-25',
           // 신상품인가
           isNew: false,
           // 베스트 상품인가
@@ -1708,7 +1708,7 @@ export const initData = async (clientId, nextSeq) => {
         // 그외 기타
         extra: {
           // 발매일
-          releaseDate: '21.06.25',
+          releaseDate: '2021-06-25',
           // 신상품인가
           isNew: false,
           // 베스트 상품인가
@@ -1772,7 +1772,7 @@ export const initData = async (clientId, nextSeq) => {
         // 그외 기타
         extra: {
           // 발매일
-          releaseDate: '20.07.30',
+          releaseDate: '2020-07-30',
           // 신상품인가
           isNew: false,
           // 베스트 상품인가
@@ -1836,7 +1836,7 @@ export const initData = async (clientId, nextSeq) => {
         // 그외 기타
         extra: {
           // 발매일
-          releaseDate: '17.12.01',
+          releaseDate: '2017-12-01',
           // 신상품인가
           isNew: false,
           // 베스트 상품인가
@@ -1900,7 +1900,7 @@ export const initData = async (clientId, nextSeq) => {
         // 그외 기타
         extra: {
           // 발매일
-          releaseDate: '17.12.01',
+          releaseDate: '2017-12-01',
           // 신상품인가
           isNew: false,
           // 베스트 상품인가
@@ -1964,7 +1964,7 @@ export const initData = async (clientId, nextSeq) => {
         // 그외 기타
         extra: {
           // 발매일
-          releaseDate: '17.03.03',
+          releaseDate: '2017-03-03',
           // 신상품인가
           isNew: false,
           // 베스트 상품인가
@@ -2028,7 +2028,7 @@ export const initData = async (clientId, nextSeq) => {
         // 그외 기타
         extra: {
           // 발매일
-          releaseDate: '17.03.03',
+          releaseDate: '2017-03-03',
           // 신상품인가
           isNew: false,
           // 베스트 상품인가
@@ -2092,7 +2092,7 @@ export const initData = async (clientId, nextSeq) => {
         // 그외 기타
         extra: {
           // 발매일
-          releaseDate: '20.03.20',
+          releaseDate: '2020-03-20',
           // 신상품인가
           isNew: false,
           // 베스트 상품인가
@@ -2156,7 +2156,7 @@ export const initData = async (clientId, nextSeq) => {
         // 그외 기타
         extra: {
           // 발매일
-          releaseDate: '17.12.13',
+          releaseDate: '2017-12-13',
           // 신상품인가
           isNew: false,
           // 베스트 상품인가
@@ -2220,7 +2220,7 @@ export const initData = async (clientId, nextSeq) => {
         // 그외 기타
         extra: {
           // 발매일
-          releaseDate: '17.12.01',
+          releaseDate: '2017-12-01',
           // 신상품인가
           isNew: false,
           // 베스트 상품인가
@@ -2284,7 +2284,7 @@ export const initData = async (clientId, nextSeq) => {
         // 그외 기타
         extra: {
           // 발매일
-          releaseDate: '18.03.29',
+          releaseDate: '2018-03-29',
           // 신상품인가
           isNew: false,
           // 베스트 상품인가
@@ -2348,7 +2348,7 @@ export const initData = async (clientId, nextSeq) => {
         // 그외 기타
         extra: {
           // 발매일
-          releaseDate: '18.05.31',
+          releaseDate: '2018-05-31',
           // 신상품인가
           isNew: false,
           // 베스트 상품인가
@@ -2412,7 +2412,7 @@ export const initData = async (clientId, nextSeq) => {
         // 그외 기타
         extra: {
           // 발매일
-          releaseDate: '19.02.28',
+          releaseDate: '2019-02-28',
           // 신상품인가
           isNew: false,
           // 베스트 상품인가
@@ -2476,7 +2476,7 @@ export const initData = async (clientId, nextSeq) => {
         // 그외 기타
         extra: {
           // 발매일
-          releaseDate: '18.06.12',
+          releaseDate: '2018-06-12',
           // 신상품인가
           isNew: false,
           // 베스트 상품인가
@@ -2540,7 +2540,7 @@ export const initData = async (clientId, nextSeq) => {
         // 그외 기타
         extra: {
           // 발매일
-          releaseDate: '18.10.12',
+          releaseDate: '2018-10-12',
           // 신상품인가
           isNew: false,
           // 베스트 상품인가
@@ -2604,7 +2604,7 @@ export const initData = async (clientId, nextSeq) => {
         // 그외 기타
         extra: {
           // 발매일
-          releaseDate: '19.08.08',
+          releaseDate: '2019-08-08',
           // 신상품인가
           isNew: false,
           // 베스트 상품인가
@@ -2668,7 +2668,7 @@ export const initData = async (clientId, nextSeq) => {
         // 그외 기타
         extra: {
           // 발매일
-          releaseDate: '19.11.15',
+          releaseDate: '2019-11-15',
           // 신상품인가
           isNew: false,
           // 베스트 상품인가
@@ -2732,7 +2732,7 @@ export const initData = async (clientId, nextSeq) => {
         // 그외 기타
         extra: {
           // 발매일
-          releaseDate: '19.11.15',
+          releaseDate: '2019-11-15',
           // 신상품인가
           isNew: false,
           // 베스트 상품인가
@@ -2796,7 +2796,7 @@ export const initData = async (clientId, nextSeq) => {
         // 그외 기타
         extra: {
           // 발매일
-          releaseDate: '19.07.24',
+          releaseDate: '2019-07-24',
           // 신상품인가
           isNew: false,
           // 베스트 상품인가
@@ -2860,7 +2860,7 @@ export const initData = async (clientId, nextSeq) => {
         // 그외 기타
         extra: {
           // 발매일
-          releaseDate: '20.10.22',
+          releaseDate: '2020-10-22',
           // 신상품인가
           isNew: false,
           // 베스트 상품인가
@@ -2924,7 +2924,7 @@ export const initData = async (clientId, nextSeq) => {
         // 그외 기타
         extra: {
           // 발매일
-          releaseDate: '21.02.12',
+          releaseDate: '2021-02-12',
           // 신상품인가
           isNew: false,
           // 베스트 상품인가
@@ -2988,7 +2988,7 @@ export const initData = async (clientId, nextSeq) => {
         // 그외 기타
         extra: {
           // 발매일
-          releaseDate: '21.10.08',
+          releaseDate: '2021-10-08',
           // 신상품인가
           isNew: false,
           // 베스트 상품인가
@@ -3052,7 +3052,7 @@ export const initData = async (clientId, nextSeq) => {
         // 그외 기타
         extra: {
           // 발매일
-          releaseDate: '19.09.20',
+          releaseDate: '2019-09-20',
           // 신상품인가
           isNew: false,
           // 베스트 상품인가
@@ -3117,7 +3117,7 @@ export const initData = async (clientId, nextSeq) => {
         // 그외 기타
         extra: {
           // 발매일
-          releaseDate: '25.07.24',
+          releaseDate: '2025-07-24',
           // 신상품인가
           isNew: true,
           // 베스트 상품인가
@@ -3181,7 +3181,7 @@ export const initData = async (clientId, nextSeq) => {
         // 그외 기타
         extra: {
           // 발매일
-          releaseDate: '25.07.17',
+          releaseDate: '2025-07-17',
           // 신상품인가
           isNew: true,
           // 베스트 상품인가
@@ -3245,7 +3245,7 @@ export const initData = async (clientId, nextSeq) => {
         // 그외 기타
         extra: {
           // 발매일
-          releaseDate: '25.06.26',
+          releaseDate: '2025-06-26',
           // 신상품인가
           isNew: true,
           // 베스트 상품인가
@@ -3309,7 +3309,7 @@ export const initData = async (clientId, nextSeq) => {
         // 그외 기타
         extra: {
           // 발매일
-          releaseDate: '25.06.05',
+          releaseDate: '2025-06-05',
           // 신상품인가
           isNew: true,
           // 베스트 상품인가
@@ -3373,7 +3373,7 @@ export const initData = async (clientId, nextSeq) => {
         // 그외 기타
         extra: {
           // 발매일
-          releaseDate: '25.06.05',
+          releaseDate: '2025-06-05',
           // 신상품인가
           isNew: true,
           // 베스트 상품인가
@@ -3437,7 +3437,7 @@ export const initData = async (clientId, nextSeq) => {
         // 그외 기타
         extra: {
           // 발매일
-          releaseDate: '25.06.05',
+          releaseDate: '2025-06-05',
           // 신상품인가
           isNew: true,
           // 베스트 상품인가
@@ -3501,7 +3501,7 @@ export const initData = async (clientId, nextSeq) => {
         // 그외 기타
         extra: {
           // 발매일
-          releaseDate: '25.06.05',
+          releaseDate: '2025-06-05',
           // 신상품인가
           isNew: true,
           // 베스트 상품인가
@@ -3565,7 +3565,7 @@ export const initData = async (clientId, nextSeq) => {
         // 그외 기타
         extra: {
           // 발매일
-          releaseDate: '25.06.05',
+          releaseDate: '2025-06-05',
           // 신상품인가
           isNew: true,
           // 베스트 상품인가
@@ -3629,7 +3629,7 @@ export const initData = async (clientId, nextSeq) => {
         // 그외 기타
         extra: {
           // 발매일
-          releaseDate: '25.06.05',
+          releaseDate: '2025-06-05',
           // 신상품인가
           isNew: true,
           // 베스트 상품인가
@@ -3693,7 +3693,7 @@ export const initData = async (clientId, nextSeq) => {
         // 그외 기타
         extra: {
           // 발매일
-          releaseDate: '25.06.05',
+          releaseDate: '2025-06-05',
           // 신상품인가
           isNew: true,
           // 베스트 상품인가
@@ -3757,7 +3757,7 @@ export const initData = async (clientId, nextSeq) => {
         // 그외 기타
         extra: {
           // 발매일
-          releaseDate: '25.06.05',
+          releaseDate: '2025-06-05',
           // 신상품인가
           isNew: true,
           // 베스트 상품인가
@@ -3821,7 +3821,7 @@ export const initData = async (clientId, nextSeq) => {
         // 그외 기타
         extra: {
           // 발매일
-          releaseDate: '25.06.05',
+          releaseDate: '2025-06-05',
           // 신상품인가
           isNew: true,
           // 베스트 상품인가
@@ -3885,7 +3885,7 @@ export const initData = async (clientId, nextSeq) => {
         // 그외 기타
         extra: {
           // 발매일
-          releaseDate: '25.06.05',
+          releaseDate: '2025-06-05',
           // 신상품인가
           isNew: true,
           // 베스트 상품인가
@@ -3949,7 +3949,7 @@ export const initData = async (clientId, nextSeq) => {
         // 그외 기타
         extra: {
           // 발매일
-          releaseDate: '25.06.05',
+          releaseDate: '2025-06-05',
           // 신상품인가
           isNew: true,
           // 베스트 상품인가
@@ -4013,7 +4013,7 @@ export const initData = async (clientId, nextSeq) => {
         // 그외 기타
         extra: {
           // 발매일
-          releaseDate: '19.01.25',
+          releaseDate: '2019-01-25',
           // 신상품인가
           isNew: false,
           // 베스트 상품인가
@@ -4077,7 +4077,7 @@ export const initData = async (clientId, nextSeq) => {
         // 그외 기타
         extra: {
           // 발매일
-          releaseDate: '14.01.23',
+          releaseDate: '2014-01-23',
           // 신상품인가
           isNew: false,
           // 베스트 상품인가
@@ -4141,7 +4141,7 @@ export const initData = async (clientId, nextSeq) => {
         // 그외 기타
         extra: {
           // 발매일
-          releaseDate: '13.12.17',
+          releaseDate: '2013-12-17',
           // 신상품인가
           isNew: false,
           // 베스트 상품인가
@@ -4205,7 +4205,7 @@ export const initData = async (clientId, nextSeq) => {
         // 그외 기타
         extra: {
           // 발매일
-          releaseDate: '15.12.17',
+          releaseDate: '2015-12-17',
           // 신상품인가
           isNew: false,
           // 베스트 상품인가
@@ -4269,7 +4269,7 @@ export const initData = async (clientId, nextSeq) => {
         // 그외 기타
         extra: {
           // 발매일
-          releaseDate: '15.10.05',
+          releaseDate: '2015-10-05',
           // 신상품인가
           isNew: false,
           // 베스트 상품인가
@@ -4333,7 +4333,7 @@ export const initData = async (clientId, nextSeq) => {
         // 그외 기타
         extra: {
           // 발매일
-          releaseDate: '15.06.18',
+          releaseDate: '2015-06-18',
           // 신상품인가
           isNew: false,
           // 베스트 상품인가
@@ -4397,7 +4397,7 @@ export const initData = async (clientId, nextSeq) => {
         // 그외 기타
         extra: {
           // 발매일
-          releaseDate: '16.10.11',
+          releaseDate: '2016-10-11',
           // 신상품인가
           isNew: false,
           // 베스트 상품인가
@@ -4461,7 +4461,7 @@ export const initData = async (clientId, nextSeq) => {
         // 그외 기타
         extra: {
           // 발매일
-          releaseDate: '16.10.12',
+          releaseDate: '2016-10-12',
           // 신상품인가
           isNew: false,
           // 베스트 상품인가
@@ -4525,7 +4525,7 @@ export const initData = async (clientId, nextSeq) => {
         // 그외 기타
         extra: {
           // 발매일
-          releaseDate: '16.10.12',
+          releaseDate: '2016-10-12',
           // 신상품인가
           isNew: false,
           // 베스트 상품인가
@@ -4589,7 +4589,7 @@ export const initData = async (clientId, nextSeq) => {
         // 그외 기타
         extra: {
           // 발매일
-          releaseDate: '16.11.17',
+          releaseDate: '2016-11-17',
           // 신상품인가
           isNew: false,
           // 베스트 상품인가
@@ -4653,7 +4653,7 @@ export const initData = async (clientId, nextSeq) => {
         // 그외 기타
         extra: {
           // 발매일
-          releaseDate: '16.10.28',
+          releaseDate: '2016-10-28',
           // 신상품인가
           isNew: false,
           // 베스트 상품인가
@@ -4717,7 +4717,7 @@ export const initData = async (clientId, nextSeq) => {
         // 그외 기타
         extra: {
           // 발매일
-          releaseDate: '16.11.08',
+          releaseDate: '2016-11-08',
           // 신상품인가
           isNew: false,
           // 베스트 상품인가
@@ -4781,7 +4781,7 @@ export const initData = async (clientId, nextSeq) => {
         // 그외 기타
         extra: {
           // 발매일
-          releaseDate: '16.11.08',
+          releaseDate: '2016-11-08',
           // 신상품인가
           isNew: false,
           // 베스트 상품인가
@@ -4845,7 +4845,7 @@ export const initData = async (clientId, nextSeq) => {
         // 그외 기타
         extra: {
           // 발매일
-          releaseDate: '17.04.07',
+          releaseDate: '2017-04-07',
           // 신상품인가
           isNew: false,
           // 베스트 상품인가
@@ -4909,7 +4909,7 @@ export const initData = async (clientId, nextSeq) => {
         // 그외 기타
         extra: {
           // 발매일
-          releaseDate: '18.07.20',
+          releaseDate: '2018-07-20',
           // 신상품인가
           isNew: false,
           // 베스트 상품인가
@@ -4973,7 +4973,7 @@ export const initData = async (clientId, nextSeq) => {
         // 그외 기타
         extra: {
           // 발매일
-          releaseDate: '19.01.25',
+          releaseDate: '2019-01-25',
           // 신상품인가
           isNew: false,
           // 베스트 상품인가
@@ -5037,7 +5037,7 @@ export const initData = async (clientId, nextSeq) => {
         // 그외 기타
         extra: {
           // 발매일
-          releaseDate: '16.11.10',
+          releaseDate: '2016-11-10',
           // 신상품인가
           isNew: false,
           // 베스트 상품인가
@@ -5101,7 +5101,7 @@ export const initData = async (clientId, nextSeq) => {
         // 그외 기타
         extra: {
           // 발매일
-          releaseDate: '19.01.06',
+          releaseDate: '2019-01-06',
           // 신상품인가
           isNew: false,
           // 베스트 상품인가
@@ -5165,7 +5165,7 @@ export const initData = async (clientId, nextSeq) => {
         // 그외 기타
         extra: {
           // 발매일
-          releaseDate: '18.02.08',
+          releaseDate: '2018-02-08',
           // 신상품인가
           isNew: false,
           // 베스트 상품인가
@@ -5229,7 +5229,7 @@ export const initData = async (clientId, nextSeq) => {
         // 그외 기타
         extra: {
           // 발매일
-          releaseDate: '23.10.10',
+          releaseDate: '2023-10-10',
           // 신상품인가
           isNew: false,
           // 베스트 상품인가
@@ -5293,7 +5293,7 @@ export const initData = async (clientId, nextSeq) => {
         // 그외 기타
         extra: {
           // 발매일
-          releaseDate: '19.03.15',
+          releaseDate: '2019-03-15',
           // 신상품인가
           isNew: false,
           // 베스트 상품인가
@@ -5357,7 +5357,7 @@ export const initData = async (clientId, nextSeq) => {
         // 그외 기타
         extra: {
           // 발매일
-          releaseDate: '25.02.21',
+          releaseDate: '2025-02-21',
           // 신상품인가
           isNew: false,
           // 베스트 상품인가
@@ -5421,7 +5421,7 @@ export const initData = async (clientId, nextSeq) => {
         // 그외 기타
         extra: {
           // 발매일
-          releaseDate: '24.10.25',
+          releaseDate: '2024-10-25',
           // 신상품인가
           isNew: false,
           // 베스트 상품인가
@@ -5485,7 +5485,7 @@ export const initData = async (clientId, nextSeq) => {
         // 그외 기타
         extra: {
           // 발매일
-          releaseDate: '20.04.23',
+          releaseDate: '2020-04-23',
           // 신상품인가
           isNew: false,
           // 베스트 상품인가
@@ -5549,7 +5549,7 @@ export const initData = async (clientId, nextSeq) => {
         // 그외 기타
         extra: {
           // 발매일
-          releaseDate: '20.01.16',
+          releaseDate: '2020-01-16',
           // 신상품인가
           isNew: false,
           // 베스트 상품인가
@@ -5613,7 +5613,7 @@ export const initData = async (clientId, nextSeq) => {
         // 그외 기타
         extra: {
           // 발매일
-          releaseDate: '19.03.14',
+          releaseDate: '2019-03-14',
           // 신상품인가
           isNew: false,
           // 베스트 상품인가
@@ -5677,7 +5677,7 @@ export const initData = async (clientId, nextSeq) => {
         // 그외 기타
         extra: {
           // 발매일
-          releaseDate: '24.01.25',
+          releaseDate: '2024-01-25',
           // 신상품인가
           isNew: false,
           // 베스트 상품인가
@@ -5741,7 +5741,7 @@ export const initData = async (clientId, nextSeq) => {
         // 그외 기타
         extra: {
           // 발매일
-          releaseDate: '24.01.26',
+          releaseDate: '2024-01-26',
           // 신상품인가
           isNew: false,
           // 베스트 상품인가
@@ -5805,7 +5805,7 @@ export const initData = async (clientId, nextSeq) => {
         // 그외 기타
         extra: {
           // 발매일
-          releaseDate: '23.10.05',
+          releaseDate: '2023-10-05',
           // 신상품인가
           isNew: false,
           // 베스트 상품인가
@@ -5869,7 +5869,7 @@ export const initData = async (clientId, nextSeq) => {
         // 그외 기타
         extra: {
           // 발매일
-          releaseDate: '17.01.19',
+          releaseDate: '2017-01-19',
           // 신상품인가
           isNew: false,
           // 베스트 상품인가
@@ -5933,7 +5933,7 @@ export const initData = async (clientId, nextSeq) => {
         // 그외 기타
         extra: {
           // 발매일
-          releaseDate: '23.06.22',
+          releaseDate: '2023-06-22',
           // 신상품인가
           isNew: false,
           // 베스트 상품인가
@@ -5997,7 +5997,7 @@ export const initData = async (clientId, nextSeq) => {
         // 그외 기타
         extra: {
           // 발매일
-          releaseDate: '23.03.23',
+          releaseDate: '2023-03-23',
           // 신상품인가
           isNew: false,
           // 베스트 상품인가
@@ -6061,7 +6061,7 @@ export const initData = async (clientId, nextSeq) => {
         // 그외 기타
         extra: {
           // 발매일
-          releaseDate: '24.08.30',
+          releaseDate: '2024-08-30',
           // 신상품인가
           isNew: false,
           // 베스트 상품인가
@@ -6125,7 +6125,7 @@ export const initData = async (clientId, nextSeq) => {
         // 그외 기타
         extra: {
           // 발매일
-          releaseDate: '21.11.05',
+          releaseDate: '2021-11-05',
           // 신상품인가
           isNew: false,
           // 베스트 상품인가
@@ -6189,7 +6189,7 @@ export const initData = async (clientId, nextSeq) => {
         // 그외 기타
         extra: {
           // 발매일
-          releaseDate: '22.04.05',
+          releaseDate: '2022-04-05',
           // 신상품인가
           isNew: false,
           // 베스트 상품인가
@@ -6253,7 +6253,7 @@ export const initData = async (clientId, nextSeq) => {
         // 그외 기타
         extra: {
           // 발매일
-          releaseDate: '22.11.11',
+          releaseDate: '2022-11-11',
           // 신상품인가
           isNew: false,
           // 베스트 상품인가
@@ -6317,7 +6317,7 @@ export const initData = async (clientId, nextSeq) => {
         // 그외 기타
         extra: {
           // 발매일
-          releaseDate: '22.10.27',
+          releaseDate: '2022-10-27',
           // 신상품인가
           isNew: false,
           // 베스트 상품인가
@@ -6381,7 +6381,7 @@ export const initData = async (clientId, nextSeq) => {
         // 그외 기타
         extra: {
           // 발매일
-          releaseDate: '23.02.17',
+          releaseDate: '2023-02-17',
           // 신상품인가
           isNew: false,
           // 베스트 상품인가
@@ -6445,7 +6445,7 @@ export const initData = async (clientId, nextSeq) => {
         // 그외 기타
         extra: {
           // 발매일
-          releaseDate: '23.04.28',
+          releaseDate: '2023-04-28',
           // 신상품인가
           isNew: false,
           // 베스트 상품인가
@@ -6509,7 +6509,7 @@ export const initData = async (clientId, nextSeq) => {
         // 그외 기타
         extra: {
           // 발매일
-          releaseDate: '23.01.19',
+          releaseDate: '2023-01-19',
           // 신상품인가
           isNew: false,
           // 베스트 상품인가
@@ -6573,7 +6573,7 @@ export const initData = async (clientId, nextSeq) => {
         // 그외 기타
         extra: {
           // 발매일
-          releaseDate: '23.09.08',
+          releaseDate: '2023-09-08',
           // 신상품인가
           isNew: false,
           // 베스트 상품인가
@@ -6637,7 +6637,7 @@ export const initData = async (clientId, nextSeq) => {
         // 그외 기타
         extra: {
           // 발매일
-          releaseDate: '24.10.25',
+          releaseDate: '2024-10-25',
           // 신상품인가
           isNew: false,
           // 베스트 상품인가
@@ -6701,7 +6701,7 @@ export const initData = async (clientId, nextSeq) => {
         // 그외 기타
         extra: {
           // 발매일
-          releaseDate: '23.06.22',
+          releaseDate: '2023-06-22',
           // 신상품인가
           isNew: false,
           // 베스트 상품인가
@@ -6765,7 +6765,7 @@ export const initData = async (clientId, nextSeq) => {
         // 그외 기타
         extra: {
           // 발매일
-          releaseDate: '24.11.07',
+          releaseDate: '2024-11-07',
           // 신상품인가
           isNew: false,
           // 베스트 상품인가
@@ -6829,7 +6829,7 @@ export const initData = async (clientId, nextSeq) => {
         // 그외 기타
         extra: {
           // 발매일
-          releaseDate: '20.11.19',
+          releaseDate: '2020-11-19',
           // 신상품인가
           isNew: false,
           // 베스트 상품인가
@@ -6850,6 +6850,1734 @@ export const initData = async (clientId, nextSeq) => {
           platformVersion: 5,
           // 원가
           originalPrice: 688000,
+          // 언어,원산지
+          language: '음성-한국어 / 자막-한국어',
+        },
+      },
+      {
+        _id: await nextSeq('product'),
+        // 상품가격
+        price: 49800,
+        // 배송비
+        shippingFees: 4000,
+        // 사이트에 노출될지말지
+        show: true,
+        // 판매여부
+        active: true,
+        // 제품명
+        name: '사가 프론티어2 리마스터',
+        // 재고수량
+        quantity: 18,
+        // 판매된 수량
+        buyQuantity: 3,
+        // 메인이미지
+        mainImages: [
+          {
+            path: `files/${clientId}/pro-106-thumbnail.webp`,
+            name: 'pro-106-thumbnail.jpg',
+            originalname: '사가 프론티어2 리마스터.webp',
+          },
+        ],
+        // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
+        content: [
+          {
+            path: `files/${clientId}/pro-106-detail.webp`,
+            name: 'pro-106-detail.webp',
+            originalname: '사가 프론티어2 리마스터.webp',
+          },
+        ],
+        // 등록날짜
+        createdAt: getTime(-41, -60 * 60 * 2),
+        // 수정날짜
+        updatedAt: getTime(-40, -60 * 15),
+        // 그외 기타
+        extra: {
+          // 발매일
+          releaseDate: '2025-06-05',
+          // 신상품인가
+          isNew: true,
+          // 베스트 상품인가
+          isBest: true,
+          // 카테고리
+          category: ['GAME', 'PLAYSTATION05', 'NEW'],
+          // 리스트 노출 순서(숫자가 작을수록 먼저)
+          sort: 1,
+          // 제품상태
+          condition: '새상품',
+          // 중고인지, 아닌지
+          used: false,
+          // 이용등급
+          ageGrade: '12세 이용가',
+          // 플랫폼 정보
+          platform: 'PlayStation',
+          // 버전
+          platformVersion: 5,
+          // 원가
+          originalPrice: 49800,
+          // 언어,원산지
+          language: '음성-영어,일본어 / 자막-한국어',
+        },
+      },
+      {
+        _id: await nextSeq('product'),
+        // 상품가격
+        price: 59800,
+        // 배송비
+        shippingFees: 4000,
+        // 사이트에 노출될지말지
+        show: true,
+        // 판매여부
+        active: true,
+        // 제품명
+        name: '그림 가디언즈 서번트 오브 더 다크',
+        // 재고수량
+        quantity: 12,
+        // 판매된 수량
+        buyQuantity: 3,
+        // 메인이미지
+        mainImages: [
+          {
+            path: `files/${clientId}/pro-107-thumbnail.webp`,
+            name: 'pro-107-thumbnail.jpg',
+            originalname: '그림 가디언즈 서번트 오브 더 다크.webp',
+          },
+        ],
+        // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
+        content: [
+          {
+            path: `files/${clientId}/pro-107-detail.webp`,
+            name: 'pro-107-detail.webp',
+            originalname: '그림 가디언즈 서번트 오브 더 다크.webp',
+          },
+        ],
+        // 등록날짜
+        createdAt: getTime(-41, -60 * 60 * 2),
+        // 수정날짜
+        updatedAt: getTime(-40, -60 * 15),
+        // 그외 기타
+        extra: {
+          // 발매일
+          releaseDate: '2025-04-24',
+          // 신상품인가
+          isNew: true,
+          // 베스트 상품인가
+          isBest: true,
+          // 카테고리
+          category: ['GAME', 'PLAYSTATION05', 'NEW'],
+          // 리스트 노출 순서(숫자가 작을수록 먼저)
+          sort: 1,
+          // 제품상태
+          condition: '새상품',
+          // 중고인지, 아닌지
+          used: false,
+          // 이용등급
+          ageGrade: '18세 이용가',
+          // 플랫폼 정보
+          platform: 'PlayStation',
+          // 버전
+          platformVersion: 5,
+          // 원가
+          originalPrice: 59800,
+          // 언어,원산지
+          language: '음성-영어,일본어 / 자막-한국어',
+        },
+      },
+      {
+        _id: await nextSeq('product'),
+        // 상품가격
+        price: 68000,
+        // 배송비
+        shippingFees: 4000,
+        // 사이트에 노출될지말지
+        show: true,
+        // 판매여부
+        active: true,
+        // 제품명
+        name: '아랑전설 시티 오브 더 울브스 스페셜 에디션',
+        // 재고수량
+        quantity: 7,
+        // 판매된 수량
+        buyQuantity: 3,
+        // 메인이미지
+        mainImages: [
+          {
+            path: `files/${clientId}/pro-108-thumbnail.webp`,
+            name: 'pro-108-thumbnail.jpg',
+            originalname: '아랑전설 시티 오브 더 울브스 스페셜 에디션.webp',
+          },
+        ],
+        // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
+        content: [
+          {
+            path: `files/${clientId}/pro-108-detail.webp`,
+            name: 'pro-108-detail.webp',
+            originalname: '아랑전설 시티 오브 더 울브스 스페셜 에디션.webp',
+          },
+        ],
+        // 등록날짜
+        createdAt: getTime(-41, -60 * 60 * 2),
+        // 수정날짜
+        updatedAt: getTime(-40, -60 * 15),
+        // 그외 기타
+        extra: {
+          // 발매일
+          releaseDate: '2025-04-24',
+          // 신상품인가
+          isNew: true,
+          // 베스트 상품인가
+          isBest: true,
+          // 카테고리
+          category: ['GAME', 'PLAYSTATION05', 'NEW'],
+          // 리스트 노출 순서(숫자가 작을수록 먼저)
+          sort: 1,
+          // 제품상태
+          condition: '새상품',
+          // 중고인지, 아닌지
+          used: false,
+          // 이용등급
+          ageGrade: '12세 이용가',
+          // 플랫폼 정보
+          platform: 'PlayStation',
+          // 버전
+          platformVersion: 5,
+          // 원가
+          originalPrice: 69800,
+          // 언어,원산지
+          language: '음성-영어,일본어 / 자막-한국어',
+        },
+      },
+      {
+        _id: await nextSeq('product'),
+        // 상품가격
+        price: 48000,
+        // 배송비
+        shippingFees: 4000,
+        // 사이트에 노출될지말지
+        show: true,
+        // 판매여부
+        active: true,
+        // 제품명
+        name: '데빌위딘 삿갓',
+        // 재고수량
+        quantity: 7,
+        // 판매된 수량
+        buyQuantity: 3,
+        // 메인이미지
+        mainImages: [
+          {
+            path: `files/${clientId}/pro-109-thumbnail.webp`,
+            name: 'pro-109-thumbnail.jpg',
+            originalname: '데빌위딘 삿갓.webp',
+          },
+        ],
+        // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
+        content: [
+          {
+            path: `files/${clientId}/pro-109-detail.webp`,
+            name: 'pro-109-detail.webp',
+            originalname: '데빌위딘 삿갓.webp',
+          },
+        ],
+        // 등록날짜
+        createdAt: getTime(-41, -60 * 60 * 2),
+        // 수정날짜
+        updatedAt: getTime(-40, -60 * 15),
+        // 그외 기타
+        extra: {
+          // 발매일
+          releaseDate: '2025-04-30',
+          // 신상품인가
+          isNew: true,
+          // 베스트 상품인가
+          isBest: true,
+          // 카테고리
+          category: ['GAME', 'PLAYSTATION05', 'NEW'],
+          // 리스트 노출 순서(숫자가 작을수록 먼저)
+          sort: 1,
+          // 제품상태
+          condition: '새상품',
+          // 중고인지, 아닌지
+          used: false,
+          // 이용등급
+          ageGrade: '12세 이용가',
+          // 플랫폼 정보
+          platform: 'PlayStation',
+          // 버전
+          platformVersion: 5,
+          // 원가
+          originalPrice: 49800,
+          // 언어,원산지
+          language: '음성-한국어 / 자막-한국어',
+        },
+      },
+      {
+        _id: await nextSeq('product'),
+        // 상품가격
+        price: 59000,
+        // 배송비
+        shippingFees: 4000,
+        // 사이트에 노출될지말지
+        show: true,
+        // 판매여부
+        active: true,
+        // 제품명
+        name: '동방 스펠 카니발',
+        // 재고수량
+        quantity: 11,
+        // 판매된 수량
+        buyQuantity: 3,
+        // 메인이미지
+        mainImages: [
+          {
+            path: `files/${clientId}/pro-110-thumbnail.webp`,
+            name: 'pro-110-thumbnail.jpg',
+            originalname: '동방 스펠 카니발.webp',
+          },
+        ],
+        // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
+        content: [
+          {
+            path: `files/${clientId}/pro-110-detail.webp`,
+            name: 'pro-110-detail.webp',
+            originalname: '동방 스펠 카니발.webp',
+          },
+        ],
+        // 등록날짜
+        createdAt: getTime(-41, -60 * 60 * 2),
+        // 수정날짜
+        updatedAt: getTime(-40, -60 * 15),
+        // 그외 기타
+        extra: {
+          // 발매일
+          releaseDate: '2025-04-24',
+          // 신상품인가
+          isNew: true,
+          // 베스트 상품인가
+          isBest: true,
+          // 카테고리
+          category: ['GAME', 'PLAYSTATION05', 'NEW'],
+          // 리스트 노출 순서(숫자가 작을수록 먼저)
+          sort: 1,
+          // 제품상태
+          condition: '새상품',
+          // 중고인지, 아닌지
+          used: false,
+          // 이용등급
+          ageGrade: '전체 이용가',
+          // 플랫폼 정보
+          platform: 'PlayStation',
+          // 버전
+          platformVersion: 5,
+          // 원가
+          originalPrice: 69800,
+          // 언어,원산지
+          language: '음성-일본어 / 자막-한국어',
+        },
+      },
+      {
+        _id: await nextSeq('product'),
+        // 상품가격
+        price: 78000,
+        // 배송비
+        shippingFees: 4000,
+        // 사이트에 노출될지말지
+        show: true,
+        // 판매여부
+        active: true,
+        // 제품명
+        name: 'MLB 25 더쇼',
+        // 재고수량
+        quantity: 11,
+        // 판매된 수량
+        buyQuantity: 3,
+        // 메인이미지
+        mainImages: [
+          {
+            path: `files/${clientId}/pro-111-thumbnail.webp`,
+            name: 'pro-111-thumbnail.jpg',
+            originalname: 'MLB 25 더쇼.webp',
+          },
+        ],
+        // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
+        content: [
+          {
+            path: `files/${clientId}/pro-111-detail.webp`,
+            name: 'pro-111-detail.webp',
+            originalname: 'MLB 25 더쇼.webp',
+          },
+        ],
+        // 등록날짜
+        createdAt: getTime(-41, -60 * 60 * 2),
+        // 수정날짜
+        updatedAt: getTime(-40, -60 * 15),
+        // 그외 기타
+        extra: {
+          // 발매일
+          releaseDate: '2025-03-18',
+          // 신상품인가
+          isNew: true,
+          // 베스트 상품인가
+          isBest: true,
+          // 카테고리
+          category: ['GAME', 'PLAYSTATION05', 'NEW'],
+          // 리스트 노출 순서(숫자가 작을수록 먼저)
+          sort: 1,
+          // 제품상태
+          condition: '새상품',
+          // 중고인지, 아닌지
+          used: false,
+          // 이용등급
+          ageGrade: '전체 이용가',
+          // 플랫폼 정보
+          platform: 'PlayStation',
+          // 버전
+          platformVersion: 5,
+          // 원가
+          originalPrice: 79800,
+          // 언어,원산지
+          language: '음성-영어 / 자막-영어',
+        },
+      },
+      {
+        _id: await nextSeq('product'),
+        // 상품가격
+        price: 45800,
+        // 배송비
+        shippingFees: 4000,
+        // 사이트에 노출될지말지
+        show: true,
+        // 판매여부
+        active: true,
+        // 제품명
+        name: '슈퍼 테크노스 월드 열혈 아케이드 클래식 컬렉션',
+        // 재고수량
+        quantity: 11,
+        // 판매된 수량
+        buyQuantity: 3,
+        // 메인이미지
+        mainImages: [
+          {
+            path: `files/${clientId}/pro-112-thumbnail.webp`,
+            name: 'pro-112-thumbnail.jpg',
+            originalname: '슈퍼 테크노스 월드 열혈 아케이드 클래식 컬렉션.webp',
+          },
+        ],
+        // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
+        content: [
+          {
+            path: `files/${clientId}/pro-112-detail.webp`,
+            name: 'pro-112-detail.webp',
+            originalname: '슈퍼 테크노스 월드 열혈 아케이드 클래식 컬렉션.webp',
+          },
+        ],
+        // 등록날짜
+        createdAt: getTime(-41, -60 * 60 * 2),
+        // 수정날짜
+        updatedAt: getTime(-40, -60 * 15),
+        // 그외 기타
+        extra: {
+          // 발매일
+          releaseDate: '2025-04-24',
+          // 신상품인가
+          isNew: true,
+          // 베스트 상품인가
+          isBest: true,
+          // 카테고리
+          category: ['GAME', 'PLAYSTATION05', 'NEW'],
+          // 리스트 노출 순서(숫자가 작을수록 먼저)
+          sort: 1,
+          // 제품상태
+          condition: '새상품',
+          // 중고인지, 아닌지
+          used: false,
+          // 이용등급
+          ageGrade: '전체 이용가',
+          // 플랫폼 정보
+          platform: 'PlayStation',
+          // 버전
+          platformVersion: 5,
+          // 원가
+          originalPrice: 45800,
+          // 언어,원산지
+          language: '음성-영어,일본어 / 자막-한국어',
+        },
+      },
+      {
+        _id: await nextSeq('product'),
+        // 상품가격
+        price: 62000,
+        // 배송비
+        shippingFees: 4000,
+        // 사이트에 노출될지말지
+        show: true,
+        // 판매여부
+        active: true,
+        // 제품명
+        name: '유미아의 아틀리에 추억의 연금술사와 창환의 땅',
+        // 재고수량
+        quantity: 17,
+        // 판매된 수량
+        buyQuantity: 3,
+        // 메인이미지
+        mainImages: [
+          {
+            path: `files/${clientId}/pro-113-thumbnail.webp`,
+            name: 'pro-113-thumbnail.jpg',
+            originalname: '유미아의 아틀리에 추억의 연금술사와 창환의 땅.webp',
+          },
+        ],
+        // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
+        content: [
+          {
+            path: `files/${clientId}/pro-113-detail.webp`,
+            name: 'pro-113-detail.webp',
+            originalname: '유미아의 아틀리에 추억의 연금술사와 창환의 땅.webp',
+          },
+        ],
+        // 등록날짜
+        createdAt: getTime(-41, -60 * 60 * 2),
+        // 수정날짜
+        updatedAt: getTime(-40, -60 * 15),
+        // 그외 기타
+        extra: {
+          // 발매일
+          releaseDate: '2025-03-21',
+          // 신상품인가
+          isNew: true,
+          // 베스트 상품인가
+          isBest: true,
+          // 카테고리
+          category: ['GAME', 'PLAYSTATION05', 'NEW'],
+          // 리스트 노출 순서(숫자가 작을수록 먼저)
+          sort: 1,
+          // 제품상태
+          condition: '새상품',
+          // 중고인지, 아닌지
+          used: false,
+          // 이용등급
+          ageGrade: '15세 이용가',
+          // 플랫폼 정보
+          platform: 'PlayStation',
+          // 버전
+          platformVersion: 5,
+          // 원가
+          originalPrice: 79800,
+          // 언어,원산지
+          language: '음성-영어,일본어 / 자막-한국어',
+        },
+      },
+      {
+        _id: await nextSeq('product'),
+        // 상품가격
+        price: 68000,
+        // 배송비
+        shippingFees: 4000,
+        // 사이트에 노출될지말지
+        show: true,
+        // 판매여부
+        active: true,
+        // 제품명
+        name: '블리치 리버스 오브 소울즈',
+        // 재고수량
+        quantity: 9,
+        // 판매된 수량
+        buyQuantity: 3,
+        // 메인이미지
+        mainImages: [
+          {
+            path: `files/${clientId}/pro-113-thumbnail.webp`,
+            name: 'pro-113-thumbnail.jpg',
+            originalname: '블리치 리버스 오브 소울즈.webp',
+          },
+        ],
+        // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
+        content: [
+          {
+            path: `files/${clientId}/pro-113-detail.webp`,
+            name: 'pro-113-detail.webp',
+            originalname: '블리치 리버스 오브 소울즈.webp',
+          },
+        ],
+        // 등록날짜
+        createdAt: getTime(-41, -60 * 60 * 2),
+        // 수정날짜
+        updatedAt: getTime(-40, -60 * 15),
+        // 그외 기타
+        extra: {
+          // 발매일
+          releaseDate: '2025-03-21',
+          // 신상품인가
+          isNew: true,
+          // 베스트 상품인가
+          isBest: true,
+          // 카테고리
+          category: ['GAME', 'PLAYSTATION05', 'NEW'],
+          // 리스트 노출 순서(숫자가 작을수록 먼저)
+          sort: 1,
+          // 제품상태
+          condition: '새상품',
+          // 중고인지, 아닌지
+          used: false,
+          // 이용등급
+          ageGrade: '15세 이용가',
+          // 플랫폼 정보
+          platform: 'PlayStation',
+          // 버전
+          platformVersion: 5,
+          // 원가
+          originalPrice: 69800,
+          // 언어,원산지
+          language: '음성-일본어 / 자막-한국어',
+        },
+      },
+      {
+        _id: await nextSeq('product'),
+        // 상품가격
+        price: 32000,
+        // 배송비
+        shippingFees: 4000,
+        // 사이트에 노출될지말지
+        show: true,
+        // 판매여부
+        active: true,
+        // 제품명
+        name: '묶이지 않은 자들을 위한 우주',
+        // 재고수량
+        quantity: 9,
+        // 판매된 수량
+        buyQuantity: 3,
+        // 메인이미지
+        mainImages: [
+          {
+            path: `files/${clientId}/pro-115-thumbnail.webp`,
+            name: 'pro-115-thumbnail.jpg',
+            originalname: '묶이지 않은 자들을 위한 우주.webp',
+          },
+        ],
+        // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
+        content: [
+          {
+            path: `files/${clientId}/pro-115-detail.webp`,
+            name: 'pro-115-detail.webp',
+            originalname: '묶이지 않은 자들을 위한 우주.webp',
+          },
+        ],
+        // 등록날짜
+        createdAt: getTime(-41, -60 * 60 * 2),
+        // 수정날짜
+        updatedAt: getTime(-40, -60 * 15),
+        // 그외 기타
+        extra: {
+          // 발매일
+          releaseDate: '2025-03-17',
+          // 신상품인가
+          isNew: true,
+          // 베스트 상품인가
+          isBest: true,
+          // 카테고리
+          category: ['GAME', 'PLAYSTATION05', 'NEW'],
+          // 리스트 노출 순서(숫자가 작을수록 먼저)
+          sort: 1,
+          // 제품상태
+          condition: '새상품',
+          // 중고인지, 아닌지
+          used: false,
+          // 이용등급
+          ageGrade: '15세 이용가',
+          // 플랫폼 정보
+          platform: 'PlayStation',
+          // 버전
+          platformVersion: 5,
+          // 원가
+          originalPrice: 69800,
+          // 언어,원산지
+          language: '음성-일본어 / 자막-한국어',
+        },
+      },
+      {
+        _id: await nextSeq('product'),
+        // 상품가격
+        price: 76800,
+        // 배송비
+        shippingFees: 4000,
+        // 사이트에 노출될지말지
+        show: true,
+        // 판매여부
+        active: true,
+        // 제품명
+        name: 'WWE 2K25',
+        // 재고수량
+        quantity: 9,
+        // 판매된 수량
+        buyQuantity: 3,
+        // 메인이미지
+        mainImages: [
+          {
+            path: `files/${clientId}/pro-116-thumbnail.webp`,
+            name: 'pro-116-thumbnail.jpg',
+            originalname: 'WWE 2K25.webp',
+          },
+        ],
+        // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
+        content: [
+          {
+            path: `files/${clientId}/pro-116-detail.webp`,
+            name: 'pro-116-detail.webp',
+            originalname: 'WWE 2K25.webp',
+          },
+        ],
+        // 등록날짜
+        createdAt: getTime(-41, -60 * 60 * 2),
+        // 수정날짜
+        updatedAt: getTime(-40, -60 * 15),
+        // 그외 기타
+        extra: {
+          // 발매일
+          releaseDate: '2025-03-21',
+          // 신상품인가
+          isNew: true,
+          // 베스트 상품인가
+          isBest: true,
+          // 카테고리
+          category: ['GAME', 'PLAYSTATION05', 'NEW'],
+          // 리스트 노출 순서(숫자가 작을수록 먼저)
+          sort: 1,
+          // 제품상태
+          condition: '새상품',
+          // 중고인지, 아닌지
+          used: false,
+          // 이용등급
+          ageGrade: '15세 이용가',
+          // 플랫폼 정보
+          platform: 'PlayStation',
+          // 버전
+          platformVersion: 5,
+          // 원가
+          originalPrice: 79800,
+          // 언어,원산지
+          language: '음성-일본어 / 자막-한국어',
+        },
+      },
+      {
+        _id: await nextSeq('product'),
+        // 상품가격
+        price: 79800,
+        // 배송비
+        shippingFees: 4000,
+        // 사이트에 노출될지말지
+        show: true,
+        // 판매여부
+        active: true,
+        // 제품명
+        name: '어쌔신크리드 섀도우스 스페셜 에디션',
+        // 재고수량
+        quantity: 7,
+        // 판매된 수량
+        buyQuantity: 3,
+        // 메인이미지
+        mainImages: [
+          {
+            path: `files/${clientId}/pro-117-thumbnail.webp`,
+            name: 'pro-117-thumbnail.jpg',
+            originalname: '어쌔신크리드 섀도우스 스페셜 에디션.webp',
+          },
+        ],
+        // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
+        content: [
+          {
+            path: `files/${clientId}/pro-117-detail.webp`,
+            name: 'pro-117-detail.webp',
+            originalname: '어쌔신크리드 섀도우스 스페셜 에디션.webp',
+          },
+        ],
+        // 등록날짜
+        createdAt: getTime(-41, -60 * 60 * 2),
+        // 수정날짜
+        updatedAt: getTime(-40, -60 * 15),
+        // 그외 기타
+        extra: {
+          // 발매일
+          releaseDate: '2025-03-20',
+          // 신상품인가
+          isNew: true,
+          // 베스트 상품인가
+          isBest: true,
+          // 카테고리
+          category: ['GAME', 'PLAYSTATION05', 'NEW'],
+          // 리스트 노출 순서(숫자가 작을수록 먼저)
+          sort: 1,
+          // 제품상태
+          condition: '새상품',
+          // 중고인지, 아닌지
+          used: false,
+          // 이용등급
+          ageGrade: '18세 이용가',
+          // 플랫폼 정보
+          platform: 'PlayStation',
+          // 버전
+          platformVersion: 5,
+          // 원가
+          originalPrice: 79800,
+          // 언어,원산지
+          language: '음성-일본어 / 자막-한국어',
+        },
+      },
+      {
+        _id: await nextSeq('product'),
+        // 상품가격
+        price: 69800,
+        // 배송비
+        shippingFees: 4000,
+        // 사이트에 노출될지말지
+        show: true,
+        // 판매여부
+        active: true,
+        // 제품명
+        name: '신듀얼리티 에코 오브 에이다 디럭스 에디션',
+        // 재고수량
+        quantity: 7,
+        // 판매된 수량
+        buyQuantity: 3,
+        // 메인이미지
+        mainImages: [
+          {
+            path: `files/${clientId}/pro-118-thumbnail.webp`,
+            name: 'pro-118-thumbnail.jpg',
+            originalname: '신듀얼리티 에코 오브 에이다 디럭스 에디션.webp',
+          },
+        ],
+        // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
+        content: [
+          {
+            path: `files/${clientId}/pro-118-detail.webp`,
+            name: 'pro-118-detail.webp',
+            originalname: '신듀얼리티 에코 오브 에이다 디럭스 에디션.webp',
+          },
+        ],
+        // 등록날짜
+        createdAt: getTime(-41, -60 * 60 * 2),
+        // 수정날짜
+        updatedAt: getTime(-40, -60 * 15),
+        // 그외 기타
+        extra: {
+          // 발매일
+          releaseDate: '2025-01-16',
+          // 신상품인가
+          isNew: true,
+          // 베스트 상품인가
+          isBest: true,
+          // 카테고리
+          category: ['GAME', 'PLAYSTATION05', 'NEW'],
+          // 리스트 노출 순서(숫자가 작을수록 먼저)
+          sort: 1,
+          // 제품상태
+          condition: '새상품',
+          // 중고인지, 아닌지
+          used: false,
+          // 이용등급
+          ageGrade: '15세 이용가',
+          // 플랫폼 정보
+          platform: 'PlayStation',
+          // 버전
+          platformVersion: 5,
+          // 원가
+          originalPrice: 79800,
+          // 언어,원산지
+          language: '음성-일본어 / 자막-한국어',
+        },
+      },
+      {
+        _id: await nextSeq('product'),
+        // 상품가격
+        price: 39000,
+        // 배송비
+        shippingFees: 4000,
+        // 사이트에 노출될지말지
+        show: true,
+        // 판매여부
+        active: true,
+        // 제품명
+        name: '아스트레아 식스 사이디드 오라클',
+        // 재고수량
+        quantity: 7,
+        // 판매된 수량
+        buyQuantity: 3,
+        // 메인이미지
+        mainImages: [
+          {
+            path: `files/${clientId}/pro-119-thumbnail.webp`,
+            name: 'pro-119-thumbnail.jpg',
+            originalname: '아스트레아 식스 사이디드 오라클.webp',
+          },
+        ],
+        // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
+        content: [
+          {
+            path: `files/${clientId}/pro-119-detail.webp`,
+            name: 'pro-119-detail.webp',
+            originalname: '아스트레아 식스 사이디드 오라클.webp',
+          },
+        ],
+        // 등록날짜
+        createdAt: getTime(-41, -60 * 60 * 2),
+        // 수정날짜
+        updatedAt: getTime(-40, -60 * 15),
+        // 그외 기타
+        extra: {
+          // 발매일
+          releaseDate: '2025-01-21',
+          // 신상품인가
+          isNew: true,
+          // 베스트 상품인가
+          isBest: true,
+          // 카테고리
+          category: ['GAME', 'PLAYSTATION05', 'NEW'],
+          // 리스트 노출 순서(숫자가 작을수록 먼저)
+          sort: 1,
+          // 제품상태
+          condition: '새상품',
+          // 중고인지, 아닌지
+          used: false,
+          // 이용등급
+          ageGrade: '전체 이용가',
+          // 플랫폼 정보
+          platform: 'PlayStation',
+          // 버전
+          platformVersion: 5,
+          // 원가
+          originalPrice: 49900,
+          // 언어,원산지
+          language: '음성-일본어,영어 / 자막-한국어',
+        },
+      },
+      {
+        _id: await nextSeq('product'),
+        // 상품가격
+        price: 47000,
+        // 배송비
+        shippingFees: 4000,
+        // 사이트에 노출될지말지
+        show: true,
+        // 판매여부
+        active: true,
+        // 제품명
+        name: '프리덤 워즈 리마스터',
+        // 재고수량
+        quantity: 20,
+        // 판매된 수량
+        buyQuantity: 3,
+        // 메인이미지
+        mainImages: [
+          {
+            path: `files/${clientId}/pro-120-thumbnail.webp`,
+            name: 'pro-120-thumbnail.jpg',
+            originalname: '프리덤 워즈 리마스터.webp',
+          },
+        ],
+        // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
+        content: [
+          {
+            path: `files/${clientId}/pro-120-detail.webp`,
+            name: 'pro-120-detail.webp',
+            originalname: '프리덤 워즈 리마스터.webp',
+          },
+        ],
+        // 등록날짜
+        createdAt: getTime(-41, -60 * 60 * 2),
+        // 수정날짜
+        updatedAt: getTime(-40, -60 * 15),
+        // 그외 기타
+        extra: {
+          // 발매일
+          releaseDate: '2025-01-09',
+          // 신상품인가
+          isNew: true,
+          // 베스트 상품인가
+          isBest: true,
+          // 카테고리
+          category: ['GAME', 'PLAYSTATION05', 'NEW'],
+          // 리스트 노출 순서(숫자가 작을수록 먼저)
+          sort: 1,
+          // 제품상태
+          condition: '새상품',
+          // 중고인지, 아닌지
+          used: false,
+          // 이용등급
+          ageGrade: '전체 이용가',
+          // 플랫폼 정보
+          platform: 'PlayStation',
+          // 버전
+          platformVersion: 5,
+          // 원가
+          originalPrice: 49800,
+          // 언어,원산지
+          language: '음성-일본어,영어 / 자막-한국어',
+        },
+      },
+      {
+        _id: await nextSeq('product'),
+        // 상품가격
+        price: 83000,
+        // 배송비
+        shippingFees: 4000,
+        // 사이트에 노출될지말지
+        show: true,
+        // 판매여부
+        active: true,
+        // 제품명
+        name: '시드마이어의 문명 7 VII 스탠다드에디션',
+        // 재고수량
+        quantity: 8,
+        // 판매된 수량
+        buyQuantity: 3,
+        // 메인이미지
+        mainImages: [
+          {
+            path: `files/${clientId}/pro-121-thumbnail.webp`,
+            name: 'pro-121-thumbnail.jpg',
+            originalname: '시드마이어의 문명 7 VII 스탠다드에디션.webp',
+          },
+        ],
+        // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
+        content: [
+          {
+            path: `files/${clientId}/pro-121-detail.webp`,
+            name: 'pro-121-detail.webp',
+            originalname: '시드마이어의 문명 7 VII 스탠다드에디션.webp',
+          },
+        ],
+        // 등록날짜
+        createdAt: getTime(-41, -60 * 60 * 2),
+        // 수정날짜
+        updatedAt: getTime(-40, -60 * 15),
+        // 그외 기타
+        extra: {
+          // 발매일
+          releaseDate: '2025-02-11',
+          // 신상품인가
+          isNew: true,
+          // 베스트 상품인가
+          isBest: true,
+          // 카테고리
+          category: ['GAME', 'PLAYSTATION05', 'NEW'],
+          // 리스트 노출 순서(숫자가 작을수록 먼저)
+          sort: 1,
+          // 제품상태
+          condition: '새상품',
+          // 중고인지, 아닌지
+          used: false,
+          // 이용등급
+          ageGrade: '12세 이용가',
+          // 플랫폼 정보
+          platform: 'PlayStation',
+          // 버전
+          platformVersion: 5,
+          // 원가
+          originalPrice: 83000,
+          // 언어,원산지
+          language: '음성-한국어 / 자막-한국어',
+        },
+      },
+      {
+        _id: await nextSeq('product'),
+        // 상품가격
+        price: 37000,
+        // 배송비
+        shippingFees: 4000,
+        // 사이트에 노출될지말지
+        show: true,
+        // 판매여부
+        active: true,
+        // 제품명
+        name: '울프팽 스컬팽 새턴 트리뷰트 부스티드',
+        // 재고수량
+        quantity: 8,
+        // 판매된 수량
+        buyQuantity: 3,
+        // 메인이미지
+        mainImages: [
+          {
+            path: `files/${clientId}/pro-122-thumbnail.webp`,
+            name: 'pro-122-thumbnail.jpg',
+            originalname: '울프팽 스컬팽 새턴 트리뷰트 부스티드.webp',
+          },
+        ],
+        // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
+        content: [
+          {
+            path: `files/${clientId}/pro-122-detail.webp`,
+            name: 'pro-122-detail.webp',
+            originalname: '울프팽 스컬팽 새턴 트리뷰트 부스티드.webp',
+          },
+        ],
+        // 등록날짜
+        createdAt: getTime(-41, -60 * 60 * 2),
+        // 수정날짜
+        updatedAt: getTime(-40, -60 * 15),
+        // 그외 기타
+        extra: {
+          // 발매일
+          releaseDate: '2024-12-31',
+          // 신상품인가
+          isNew: false,
+          // 베스트 상품인가
+          isBest: false,
+          // 카테고리
+          category: ['GAME', 'PLAYSTATION05', 'NEW'],
+          // 리스트 노출 순서(숫자가 작을수록 먼저)
+          sort: 1,
+          // 제품상태
+          condition: '새상품',
+          // 중고인지, 아닌지
+          used: false,
+          // 이용등급
+          ageGrade: '12세 이용가',
+          // 플랫폼 정보
+          platform: 'PlayStation',
+          // 버전
+          platformVersion: 5,
+          // 원가
+          originalPrice: 49900,
+          // 언어,원산지
+          language: '음성-영어,일본어 / 자막-한국어',
+        },
+      },
+      {
+        _id: await nextSeq('product'),
+        // 상품가격
+        price: 42000,
+        // 배송비
+        shippingFees: 4000,
+        // 사이트에 노출될지말지
+        show: true,
+        // 판매여부
+        active: true,
+        // 제품명
+        name: '네온 블러드',
+        // 재고수량
+        quantity: 8,
+        // 판매된 수량
+        buyQuantity: 3,
+        // 메인이미지
+        mainImages: [
+          {
+            path: `files/${clientId}/pro-123-thumbnail.webp`,
+            name: 'pro-123-thumbnail.jpg',
+            originalname: '네온 블러드.webp',
+          },
+        ],
+        // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
+        content: [
+          {
+            path: `files/${clientId}/pro-123-detail.webp`,
+            name: 'pro-123-detail.webp',
+            originalname: '네온 블러드.webp',
+          },
+        ],
+        // 등록날짜
+        createdAt: getTime(-41, -60 * 60 * 2),
+        // 수정날짜
+        updatedAt: getTime(-40, -60 * 15),
+        // 그외 기타
+        extra: {
+          // 발매일
+          releaseDate: '2024-12-31',
+          // 신상품인가
+          isNew: false,
+          // 베스트 상품인가
+          isBest: false,
+          // 카테고리
+          category: ['GAME', 'PLAYSTATION05', 'NEW'],
+          // 리스트 노출 순서(숫자가 작을수록 먼저)
+          sort: 1,
+          // 제품상태
+          condition: '새상품',
+          // 중고인지, 아닌지
+          used: false,
+          // 이용등급
+          ageGrade: '18세 이용가',
+          // 플랫폼 정보
+          platform: 'PlayStation',
+          // 버전
+          platformVersion: 5,
+          // 원가
+          originalPrice: 44000,
+          // 언어,원산지
+          language: '음성-영어 / 자막-한국어',
+        },
+      },
+      {
+        _id: await nextSeq('product'),
+        // 상품가격
+        price: 62000,
+        // 배송비
+        shippingFees: 4000,
+        // 사이트에 노출될지말지
+        show: true,
+        // 판매여부
+        active: true,
+        // 제품명
+        name: '투포인트 뮤지엄 익스플로러 에디션',
+        // 재고수량
+        quantity: 8,
+        // 판매된 수량
+        buyQuantity: 3,
+        // 메인이미지
+        mainImages: [
+          {
+            path: `files/${clientId}/pro-124-thumbnail.webp`,
+            name: 'pro-124-thumbnail.jpg',
+            originalname: '투포인트 뮤지엄 익스플로러 에디션.webp',
+          },
+        ],
+        // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
+        content: [
+          {
+            path: `files/${clientId}/pro-124-detail.webp`,
+            name: 'pro-124-detail.webp',
+            originalname: '투포인트 뮤지엄 익스플로러 에디션.webp',
+          },
+        ],
+        // 등록날짜
+        createdAt: getTime(-41, -60 * 60 * 2),
+        // 수정날짜
+        updatedAt: getTime(-40, -60 * 15),
+        // 그외 기타
+        extra: {
+          // 발매일
+          releaseDate: '2025-03-04',
+          // 신상품인가
+          isNew: true,
+          // 베스트 상품인가
+          isBest: false,
+          // 카테고리
+          category: ['GAME', 'PLAYSTATION05', 'NEW'],
+          // 리스트 노출 순서(숫자가 작을수록 먼저)
+          sort: 1,
+          // 제품상태
+          condition: '새상품',
+          // 중고인지, 아닌지
+          used: false,
+          // 이용등급
+          ageGrade: '전체 이용가',
+          // 플랫폼 정보
+          platform: 'PlayStation',
+          // 버전
+          platformVersion: 5,
+          // 원가
+          originalPrice: 62000,
+          // 언어,원산지
+          language: '음성-영어,일본어 / 자막-한국어',
+        },
+      },
+      {
+        _id: await nextSeq('product'),
+        // 상품가격
+        price: 39500,
+        // 배송비
+        shippingFees: 4000,
+        // 사이트에 노출될지말지
+        show: true,
+        // 판매여부
+        active: true,
+        // 제품명
+        name: '언더 디피트',
+        // 재고수량
+        quantity: 16,
+        // 판매된 수량
+        buyQuantity: 3,
+        // 메인이미지
+        mainImages: [
+          {
+            path: `files/${clientId}/pro-125-thumbnail.webp`,
+            name: 'pro-125-thumbnail.jpg',
+            originalname: '언더 디피트.webp',
+          },
+        ],
+        // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
+        content: [
+          {
+            path: `files/${clientId}/pro-125-detail.webp`,
+            name: 'pro-125-detail.webp',
+            originalname: '언더 디피트.webp',
+          },
+        ],
+        // 등록날짜
+        createdAt: getTime(-41, -60 * 60 * 2),
+        // 수정날짜
+        updatedAt: getTime(-40, -60 * 15),
+        // 그외 기타
+        extra: {
+          // 발매일
+          releaseDate: '2024-12-19',
+          // 신상품인가
+          isNew: false,
+          // 베스트 상품인가
+          isBest: false,
+          // 카테고리
+          category: ['GAME', 'PLAYSTATION05', 'NEW'],
+          // 리스트 노출 순서(숫자가 작을수록 먼저)
+          sort: 1,
+          // 제품상태
+          condition: '새상품',
+          // 중고인지, 아닌지
+          used: false,
+          // 이용등급
+          ageGrade: '12세 이용가',
+          // 플랫폼 정보
+          platform: 'PlayStation',
+          // 버전
+          platformVersion: 5,
+          // 원가
+          originalPrice: 62000,
+          // 언어,원산지
+          language: '음성-일본어 / 자막-한국어',
+        },
+      },
+      {
+        _id: await nextSeq('product'),
+        // 상품가격
+        price: 51000,
+        // 배송비
+        shippingFees: 4000,
+        // 사이트에 노출될지말지
+        show: true,
+        // 판매여부
+        active: true,
+        // 제품명
+        name: '몬스터헌터 와일즈',
+        // 재고수량
+        quantity: 16,
+        // 판매된 수량
+        buyQuantity: 3,
+        // 메인이미지
+        mainImages: [
+          {
+            path: `files/${clientId}/pro-126-thumbnail.webp`,
+            name: 'pro-126-thumbnail.jpg',
+            originalname: '몬스터헌터 와일즈.webp',
+          },
+        ],
+        // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
+        content: [
+          {
+            path: `files/${clientId}/pro-126-detail.webp`,
+            name: 'pro-126-detail.webp',
+            originalname: '몬스터헌터 와일즈.webp',
+          },
+        ],
+        // 등록날짜
+        createdAt: getTime(-41, -60 * 60 * 2),
+        // 수정날짜
+        updatedAt: getTime(-40, -60 * 15),
+        // 그외 기타
+        extra: {
+          // 발매일
+          releaseDate: '2025-02-28',
+          // 신상품인가
+          isNew: true,
+          // 베스트 상품인가
+          isBest: false,
+          // 카테고리
+          category: ['GAME', 'PLAYSTATION05', 'NEW'],
+          // 리스트 노출 순서(숫자가 작을수록 먼저)
+          sort: 1,
+          // 제품상태
+          condition: '새상품',
+          // 중고인지, 아닌지
+          used: false,
+          // 이용등급
+          ageGrade: '15세 이용가',
+          // 플랫폼 정보
+          platform: 'PlayStation',
+          // 버전
+          platformVersion: 5,
+          // 원가
+          originalPrice: 74800,
+          // 언어,원산지
+          language: '음성-일본어 / 자막-한국어',
+        },
+      },
+      {
+        _id: await nextSeq('product'),
+        // 상품가격
+        price: 45000,
+        // 배송비
+        shippingFees: 4000,
+        // 사이트에 노출될지말지
+        show: true,
+        // 판매여부
+        active: true,
+        // 제품명
+        name: '돌연변이 닌자 거북이 슈레더의 복수 얼티밋 에디션',
+        // 재고수량
+        quantity: 20,
+        // 판매된 수량
+        buyQuantity: 3,
+        // 메인이미지
+        mainImages: [
+          {
+            path: `files/${clientId}/pro-127-thumbnail.webp`,
+            name: 'pro-127-thumbnail.jpg',
+            originalname: '돌연변이 닌자 거북이 슈레더의 복수 얼티밋 에디션.webp',
+          },
+        ],
+        // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
+        content: [
+          {
+            path: `files/${clientId}/pro-127-detail.webp`,
+            name: 'pro-127-detail.webp',
+            originalname: '돌연변이 닌자 거북이 슈레더의 복수 얼티밋 에디션.webp',
+          },
+        ],
+        // 등록날짜
+        createdAt: getTime(-41, -60 * 60 * 2),
+        // 수정날짜
+        updatedAt: getTime(-40, -60 * 15),
+        // 그외 기타
+        extra: {
+          // 발매일
+          releaseDate: '2025-02-28',
+          // 신상품인가
+          isNew: true,
+          // 베스트 상품인가
+          isBest: false,
+          // 카테고리
+          category: ['GAME', 'PLAYSTATION05', 'NEW'],
+          // 리스트 노출 순서(숫자가 작을수록 먼저)
+          sort: 1,
+          // 제품상태
+          condition: '새상품',
+          // 중고인지, 아닌지
+          used: false,
+          // 이용등급
+          ageGrade: '12세 이용가',
+          // 플랫폼 정보
+          platform: 'PlayStation',
+          // 버전
+          platformVersion: 5,
+          // 원가
+          originalPrice: 69900,
+          // 언어,원산지
+          language: '음성-일본어,영어 / 자막-한국어',
+        },
+      },
+      {
+        _id: await nextSeq('product'),
+        // 상품가격
+        price: 37000,
+        // 배송비
+        shippingFees: 4000,
+        // 사이트에 노출될지말지
+        show: true,
+        // 판매여부
+        active: true,
+        // 제품명
+        name: '바이오하자드 7 레지던트 이블 공드에디션',
+        // 재고수량
+        quantity: 20,
+        // 판매된 수량
+        buyQuantity: 3,
+        // 메인이미지
+        mainImages: [
+          {
+            path: `files/${clientId}/pro-128-thumbnail.webp`,
+            name: 'pro-128-thumbnail.jpg',
+            originalname: '바이오하자드 7 레지던트 이블 공드에디션.webp',
+          },
+        ],
+        // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
+        content: [
+          {
+            path: `files/${clientId}/pro-128-detail.webp`,
+            name: 'pro-128-detail.webp',
+            originalname: '바이오하자드 7 레지던트 이블 공드에디션.webp',
+          },
+        ],
+        // 등록날짜
+        createdAt: getTime(-41, -60 * 60 * 2),
+        // 수정날짜
+        updatedAt: getTime(-40, -60 * 15),
+        // 그외 기타
+        extra: {
+          // 발매일
+          releaseDate: '2024-12-06',
+          // 신상품인가
+          isNew: true,
+          // 베스트 상품인가
+          isBest: false,
+          // 카테고리
+          category: ['GAME', 'PLAYSTATION05', 'NEW'],
+          // 리스트 노출 순서(숫자가 작을수록 먼저)
+          sort: 1,
+          // 제품상태
+          condition: '새상품',
+          // 중고인지, 아닌지
+          used: false,
+          // 이용등급
+          ageGrade: '18세 이용가',
+          // 플랫폼 정보
+          platform: 'PlayStation',
+          // 버전
+          platformVersion: 5,
+          // 원가
+          originalPrice: 72700,
+          // 언어,원산지
+          language: '음성-일본어,영어 / 자막-한국어',
+        },
+      },
+      {
+        _id: await nextSeq('product'),
+        // 상품가격
+        price: 64800,
+        // 배송비
+        shippingFees: 4000,
+        // 사이트에 노출될지말지
+        show: true,
+        // 판매여부
+        active: true,
+        // 제품명
+        name: '퍼스트 버서커 카잔',
+        // 재고수량
+        quantity: 20,
+        // 판매된 수량
+        buyQuantity: 3,
+        // 메인이미지
+        mainImages: [
+          {
+            path: `files/${clientId}/pro-129-thumbnail.webp`,
+            name: 'pro-129-thumbnail.jpg',
+            originalname: '퍼스트 버서커 카잔.webp',
+          },
+        ],
+        // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
+        content: [
+          {
+            path: `files/${clientId}/pro-129-detail.webp`,
+            name: 'pro-129-detail.webp',
+            originalname: '퍼스트 버서커 카잔.webp',
+          },
+        ],
+        // 등록날짜
+        createdAt: getTime(-41, -60 * 60 * 2),
+        // 수정날짜
+        updatedAt: getTime(-40, -60 * 15),
+        // 그외 기타
+        extra: {
+          // 발매일
+          releaseDate: '2025-03-28',
+          // 신상품인가
+          isNew: true,
+          // 베스트 상품인가
+          isBest: false,
+          // 카테고리
+          category: ['GAME', 'PLAYSTATION05', 'NEW'],
+          // 리스트 노출 순서(숫자가 작을수록 먼저)
+          sort: 1,
+          // 제품상태
+          condition: '새상품',
+          // 중고인지, 아닌지
+          used: false,
+          // 이용등급
+          ageGrade: '18세 이용가',
+          // 플랫폼 정보
+          platform: 'PlayStation',
+          // 버전
+          platformVersion: 5,
+          // 원가
+          originalPrice: 72700,
+          // 언어,원산지
+          language: '음성-한국어 / 자막-한국어',
+        },
+      },
+      {
+        _id: await nextSeq('product'),
+        // 상품가격
+        price: 725000,
+        // 배송비
+        shippingFees: 4000,
+        // 사이트에 노출될지말지
+        show: true,
+        // 판매여부
+        active: true,
+        // 제품명
+        name: 'PS5 Slim 슬림 본체 에디션 CFI-2018A / 디스크버전',
+        // 재고수량
+        quantity: 50,
+        // 판매된 수량
+        buyQuantity: 3,
+        // 메인이미지
+        mainImages: [
+          {
+            path: `files/${clientId}/pro-130-thumbnail.webp`,
+            name: 'pro-130-thumbnail.jpg',
+            originalname: 'PS5 Slim 슬림 본체 에디션 CFI-2018A / 디스크버전.webp',
+          },
+        ],
+        // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
+        content: [
+          {
+            path: `files/${clientId}/pro-130-detail.webp`,
+            name: 'pro-130-detail.webp',
+            originalname: 'PS5 Slim 슬림 본체 에디션 CFI-2018A / 디스크버전.webp',
+          },
+        ],
+        // 등록날짜
+        createdAt: getTime(-41, -60 * 60 * 2),
+        // 수정날짜
+        updatedAt: getTime(-40, -60 * 15),
+        // 그외 기타
+        extra: {
+          // 발매일
+          releaseDate: '2023-12-20',
+          // 신상품인가
+          isNew: true,
+          // 베스트 상품인가
+          isBest: true,
+          // 카테고리
+          category: ['HARDWARE', 'PLAYSTATION05', 'NEW'],
+          // 리스트 노출 순서(숫자가 작을수록 먼저)
+          sort: 1,
+          // 제품상태
+          condition: '새상품',
+          // 중고인지, 아닌지
+          used: false,
+          // 이용등급
+          ageGrade: '전체 이용가',
+          // 플랫폼 정보
+          platform: 'PlayStation',
+          // 버전
+          platformVersion: 5,
+          // 원가
+          originalPrice: 748000,
+          // 언어,원산지
+          language: '음성-한국어 / 자막-한국어',
+        },
+      },
+      {
+        _id: await nextSeq('product'),
+        // 상품가격
+        price: 579000,
+        // 배송비
+        shippingFees: 4000,
+        // 사이트에 노출될지말지
+        show: true,
+        // 판매여부
+        active: true,
+        // 제품명
+        name: 'PS5 Slim 슬림 본체 에디션 CFI-2018B / 디지털 버전',
+        // 재고수량
+        quantity: 40,
+        // 판매된 수량
+        buyQuantity: 3,
+        // 메인이미지
+        mainImages: [
+          {
+            path: `files/${clientId}/pro-131-thumbnail.webp`,
+            name: 'pro-131-thumbnail.jpg',
+            originalname: 'PS5 Slim 슬림 본체 에디션 CFI-2018B / 디지털 버전.webp',
+          },
+        ],
+        // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
+        content: [
+          {
+            path: `files/${clientId}/pro-131-detail.webp`,
+            name: 'pro-131-detail.webp',
+            originalname: 'PS5 Slim 슬림 본체 에디션 CFI-2018B / 디지털 버전.webp',
+          },
+        ],
+        // 등록날짜
+        createdAt: getTime(-41, -60 * 60 * 2),
+        // 수정날짜
+        updatedAt: getTime(-40, -60 * 15),
+        // 그외 기타
+        extra: {
+          // 발매일
+          releaseDate: '2023-12-20',
+          // 신상품인가
+          isNew: true,
+          // 베스트 상품인가
+          isBest: true,
+          // 카테고리
+          category: ['HARDWARE', 'PLAYSTATION05', 'NEW'],
+          // 리스트 노출 순서(숫자가 작을수록 먼저)
+          sort: 1,
+          // 제품상태
+          condition: '새상품',
+          // 중고인지, 아닌지
+          used: false,
+          // 이용등급
+          ageGrade: '전체 이용가',
+          // 플랫폼 정보
+          platform: 'PlayStation',
+          // 버전
+          platformVersion: 5,
+          // 원가
+          originalPrice: 598000,
+          // 언어,원산지
+          language: '음성-한국어 / 자막-한국어',
+        },
+      },
+      {
+        _id: await nextSeq('product'),
+        // 상품가격
+        price: 598000,
+        // 배송비
+        shippingFees: 4000,
+        // 사이트에 노출될지말지
+        show: true,
+        // 판매여부
+        active: true,
+        // 제품명
+        name: 'PS5본체 CFI-1018A / 디스크버전',
+        // 재고수량
+        quantity: 40,
+        // 판매된 수량
+        buyQuantity: 3,
+        // 메인이미지
+        mainImages: [
+          {
+            path: `files/${clientId}/pro-131-thumbnail.webp`,
+            name: 'pro-131-thumbnail.jpg',
+            originalname: 'PS5본체 CFI-1018A / 디스크버전.webp',
+          },
+        ],
+        // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
+        content: [
+          {
+            path: `files/${clientId}/pro-131-detail.webp`,
+            name: 'pro-131-detail.webp',
+            originalname: 'PS5본체 CFI-1018A / 디스크버전.webp',
+          },
+        ],
+        // 등록날짜
+        createdAt: getTime(-41, -60 * 60 * 2),
+        // 수정날짜
+        updatedAt: getTime(-40, -60 * 15),
+        // 그외 기타
+        extra: {
+          // 발매일
+          releaseDate: '2020-11-12',
+          // 신상품인가
+          isNew: true,
+          // 베스트 상품인가
+          isBest: true,
+          // 카테고리
+          category: ['HARDWARE', 'PLAYSTATION05', 'NEW'],
+          // 리스트 노출 순서(숫자가 작을수록 먼저)
+          sort: 1,
+          // 제품상태
+          condition: '새상품',
+          // 중고인지, 아닌지
+          used: false,
+          // 이용등급
+          ageGrade: '전체 이용가',
+          // 플랫폼 정보
+          platform: 'PlayStation',
+          // 버전
+          platformVersion: 5,
+          // 원가
+          originalPrice: 628000,
           // 언어,원산지
           language: '음성-한국어 / 자막-한국어',
         },
