@@ -3,6 +3,7 @@
 @theme {
   --color-poten-red: #e6001f;
   --color-poten-black: #191c21;
+  --color-poten-black-2: #24272b;
   --color-poten-gray-1: #e4e4e4;
   --color-poten-gray-2: #9ca3af;
   --color-poten-gray3: #404750;
@@ -12,8 +13,12 @@
   --color-poten-error-color: #f32434;
   --color-poten-snowgray1: #fbfbfb;
   --color-poten-snowgray2: #f6f6f6;
-  --color-poten-inputgray: #F1F4F6;
-  --color-poten-bluegray: #F1F4F6;
-  --color-poten-safegreen: #51B250;
-  --color-poten-warningorange: #FF9900;
+  --color-poten-inputgray: #f1f4f6;
+  --color-poten-bluegray: #f1f4f6;
+  --color-poten-safegreen: #51b250;
+  --color-poten-warningorange: #ff9900;
+}
+
+body {
+  font-family: 'Pretendard';
 }
