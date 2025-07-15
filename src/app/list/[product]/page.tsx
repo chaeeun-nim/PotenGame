@@ -4,7 +4,7 @@ import SelectBar from "@/components/SelectBar";
 
 export default function ProductList() {
   return (
-  <div className="max-w-[1200px] mx-auto">
+  <div className="w-full md:max-w-[768px] xl:max-w-[1280px] mx-auto md:px-6 xl:px-10">
     <SelectBar/>
     <ItemCard/>
     <ItemCard/>
