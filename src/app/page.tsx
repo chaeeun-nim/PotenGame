@@ -1,3 +1,4 @@
+import MainBest from '@/components/MainBest/MainBest';
 import MainGameLink from '@/components/MainGameLink/MainGameLink';
 import MainMdPick from '@/components/MainMdPick/MainMdPick';
 import MainPromotion from '@/components/MainPromotion';
@@ -10,6 +11,7 @@ export default function Home() {
       <MainGameLink />
       <MainMdPick />
       <MainPromotion />
+      <MainBest />
     </>
   );
 }
