@@ -151,9 +151,9 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: '포켓몬스터 소울실버',
         // 재고수량
-        quantity: 8,
+        quantity: 32,
         // 판매된 수량
-        buyQuantity: 1,
+        buyQuantity: 5,
         // 메인이미지
         mainImages: [
           {
@@ -216,9 +216,9 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: '뉴 슈퍼 마리오브라더스',
         // 재고수량
-        quantity: 8,
+        quantity: 32,
         // 판매된 수량
-        buyQuantity: 1,
+        buyQuantity: 17,
         // 메인이미지
         mainImages: [
           {
@@ -281,9 +281,9 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: '마리오&루이지 RPG 시간의파트너',
         // 재고수량
-        quantity: 8,
+        quantity: 39,
         // 판매된 수량
-        buyQuantity: 1,
+        buyQuantity: 35,
         // 메인이미지
         mainImages: [
           {
@@ -346,9 +346,9 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: '포켓몬스터 블랙 2',
         // 재고수량
-        quantity: 5,
+        quantity: 36,
         // 판매된 수량
-        buyQuantity: 1,
+        buyQuantity: 6,
         // 메인이미지
         mainImages: [
           {
@@ -411,9 +411,9 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: '포켓몬스터 화이트',
         // 재고수량
-        quantity: 5,
+        quantity: 41,
         // 판매된 수량
-        buyQuantity: 1,
+        buyQuantity: 17,
         // 메인이미지
         mainImages: [
           {
@@ -476,9 +476,9 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: '소닉 러시 어드밴처',
         // 재고수량
-        quantity: 5,
+        quantity: 10,
         // 판매된 수량
-        buyQuantity: 1,
+        buyQuantity: 2,
         // 메인이미지
         mainImages: [
           {
@@ -541,9 +541,9 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: '리듬세상',
         // 재고수량
-        quantity: 5,
+        quantity: 28,
         // 판매된 수량
-        buyQuantity: 1,
+        buyQuantity: 7,
         // 메인이미지
         mainImages: [
           {
@@ -606,9 +606,9 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: '마리오와 소닉 베이징 올림픽',
         // 재고수량
-        quantity: 5,
+        quantity: 44,
         // 판매된 수량
-        buyQuantity: 1,
+        buyQuantity: 14,
         // 메인이미지
         mainImages: [
           {
@@ -671,7 +671,7 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: '밴쿠버 2010 동계올림픽',
         // 재고수량
-        quantity: 5,
+        quantity: 19,
         // 판매된 수량
         buyQuantity: 1,
         // 메인이미지
@@ -736,9 +736,9 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: '포켓몬스터Pt 기라티나',
         // 재고수량
-        quantity: 5,
+        quantity: 45,
         // 판매된 수량
-        buyQuantity: 1,
+        buyQuantity: 40,
         // 메인이미지
         mainImages: [
           {
@@ -801,9 +801,9 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: '놀러오세요 동물의 숲',
         // 재고수량
-        quantity: 5,
+        quantity: 23,
         // 판매된 수량
-        buyQuantity: 1,
+        buyQuantity: 2,
         // 메인이미지
         mainImages: [
           {
@@ -866,9 +866,9 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: '포켓몬스터DP 디아루가',
         // 재고수량
-        quantity: 5,
+        quantity: 48,
         // 판매된 수량
-        buyQuantity: 1,
+        buyQuantity: 28,
         // 메인이미지
         mainImages: [
           {
@@ -931,9 +931,9 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: '닌텐도 DSi LL',
         // 재고수량
-        quantity: 5,
+        quantity: 19,
         // 판매된 수량
-        buyQuantity: 1,
+        buyQuantity: 12,
         // 메인이미지
         mainImages: [
           {
@@ -996,9 +996,9 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: '닌텐도 DSi',
         // 재고수량
-        quantity: 5,
+        quantity: 32,
         // 판매된 수량
-        buyQuantity: 1,
+        buyQuantity: 23,
         // 메인이미지
         mainImages: [
           {
@@ -1061,9 +1061,9 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: '스낵월드 트레져러스',
         // 재고수량
-        quantity: 5,
+        quantity: 19,
         // 판매된 수량
-        buyQuantity: 1,
+        buyQuantity: 3,
         // 메인이미지
         mainImages: [
           {
@@ -1126,9 +1126,9 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: '피트니스 복싱',
         // 재고수량
-        quantity: 5,
+        quantity: 38,
         // 판매된 수량
-        buyQuantity: 1,
+        buyQuantity: 8,
         // 메인이미지
         mainImages: [
           {
@@ -1191,9 +1191,9 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: '칼리굴라 오버도즈',
         // 재고수량
-        quantity: 5,
+        quantity: 13,
         // 판매된 수량
-        buyQuantity: 1,
+        buyQuantity: 7,
         // 메인이미지
         mainImages: [
           {
@@ -1256,7 +1256,7 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: '열혈경파 쿠니오군 외전 리버시티 걸즈',
         // 재고수량
-        quantity: 5,
+        quantity: 8,
         // 판매된 수량
         buyQuantity: 1,
         // 메인이미지
@@ -1321,9 +1321,9 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: '건볼트 스트라이커팩',
         // 재고수량
-        quantity: 5,
+        quantity: 43,
         // 판매된 수량
-        buyQuantity: 1,
+        buyQuantity: 11,
         // 메인이미지
         mainImages: [
           {
@@ -1386,9 +1386,9 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: '사이쿄 컬렉션 Vol.1',
         // 재고수량
-        quantity: 5,
+        quantity: 41,
         // 판매된 수량
-        buyQuantity: 1,
+        buyQuantity: 11,
         // 메인이미지
         mainImages: [
           {
@@ -1451,9 +1451,9 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: '건볼트 크로니클 루미너스 어벤저 iX',
         // 재고수량
-        quantity: 5,
+        quantity: 15,
         // 판매된 수량
-        buyQuantity: 1,
+        buyQuantity: 12,
         // 메인이미지
         mainImages: [
           {
@@ -1516,9 +1516,9 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: '피파20',
         // 재고수량
-        quantity: 4,
+        quantity: 33,
         // 판매된 수량
-        buyQuantity: 1,
+        buyQuantity: 29,
         // 메인이미지
         mainImages: [
           {
@@ -1581,9 +1581,9 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: '베리드 스타즈',
         // 재고수량
-        quantity: 4,
+        quantity: 36,
         // 판매된 수량
-        buyQuantity: 1,
+        buyQuantity: 34,
         // 메인이미지
         mainImages: [
           {
@@ -1646,9 +1646,9 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: '마리오 골프 슈퍼 러시',
         // 재고수량
-        quantity: 6,
+        quantity: 21,
         // 판매된 수량
-        buyQuantity: 1,
+        buyQuantity: 11,
         // 메인이미지
         mainImages: [
           {
@@ -1711,9 +1711,9 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: '뿌이뿌이 모이카 모두 함께 모루카 파티',
         // 재고수량
-        quantity: 6,
+        quantity: 33,
         // 판매된 수량
-        buyQuantity: 1,
+        buyQuantity: 28,
         // 메인이미지
         mainImages: [
           {
@@ -1776,9 +1776,9 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: '네모바지 스폰지밥',
         // 재고수량
-        quantity: 6,
+        quantity: 33,
         // 판매된 수량
-        buyQuantity: 1,
+        buyQuantity: 25,
         // 메인이미지
         mainImages: [
           {
@@ -1841,9 +1841,9 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: '젤다의 전설 브레스 오브 더 와일드',
         // 재고수량
-        quantity: 6,
+        quantity: 43,
         // 판매된 수량
-        buyQuantity: 1,
+        buyQuantity: 28,
         // 메인이미지
         mainImages: [
           {
@@ -1906,9 +1906,9 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: '마리오카트 8 디럭스',
         // 재고수량
-        quantity: 6,
+        quantity: 40,
         // 판매된 수량
-        buyQuantity: 1,
+        buyQuantity: 10,
         // 메인이미지
         mainImages: [
           {
@@ -1971,9 +1971,9 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: '닌텐도 스위치 본체 그레이',
         // 재고수량
-        quantity: 10,
+        quantity: 39,
         // 판매된 수량
-        buyQuantity: 0,
+        buyQuantity: 25,
         // 메인이미지
         mainImages: [
           {
@@ -2036,9 +2036,9 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: '닌텐도 스위치 본체 네온',
         // 재고수량
-        quantity: 8,
+        quantity: 32,
         // 판매된 수량
-        buyQuantity: 0,
+        buyQuantity: 24,
         // 메인이미지
         mainImages: [
           {
@@ -2101,9 +2101,9 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: '스위치 본체 모여봐요 동물의 숲 에디션',
         // 재고수량
-        quantity: 8,
+        quantity: 16,
         // 판매된 수량
-        buyQuantity: 0,
+        buyQuantity: 7,
         // 메인이미지
         mainImages: [
           {
@@ -2166,9 +2166,9 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: 'NBA 2K18',
         // 재고수량
-        quantity: 10,
+        quantity: 34,
         // 판매된 수량
-        buyQuantity: 3,
+        buyQuantity: 11,
         // 메인이미지
         mainImages: [
           {
@@ -2231,9 +2231,9 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: '엘더스크롤5 스카이림',
         // 재고수량
-        quantity: 10,
+        quantity: 33,
         // 판매된 수량
-        buyQuantity: 3,
+        buyQuantity: 7,
         // 메인이미지
         mainImages: [
           {
@@ -2296,9 +2296,9 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: '리디&수르의 아틀리에',
         // 재고수량
-        quantity: 10,
+        quantity: 21,
         // 판매된 수량
-        buyQuantity: 3,
+        buyQuantity: 5,
         // 메인이미지
         mainImages: [
           {
@@ -2361,9 +2361,9 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: '블레이블루 크로스 태그 배틀',
         // 재고수량
-        quantity: 10,
+        quantity: 36,
         // 판매된 수량
-        buyQuantity: 3,
+        buyQuantity: 24,
         // 메인이미지
         mainImages: [
           {
@@ -2426,9 +2426,9 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: '월드 오브 파이널 판타지 맥시마',
         // 재고수량
-        quantity: 10,
+        quantity: 36,
         // 판매된 수량
-        buyQuantity: 3,
+        buyQuantity: 2,
         // 메인이미지
         mainImages: [
           {
@@ -2491,7 +2491,7 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: '테니스 월드 투어',
         // 재고수량
-        quantity: 10,
+        quantity: 6,
         // 판매된 수량
         buyQuantity: 3,
         // 메인이미지
@@ -2556,9 +2556,9 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: '멋진 이 세계 Final Remix',
         // 재고수량
-        quantity: 10,
+        quantity: 50,
         // 판매된 수량
-        buyQuantity: 3,
+        buyQuantity: 10,
         // 메인이미지
         mainImages: [
           {
@@ -2621,9 +2621,9 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: '테트리스 99',
         // 재고수량
-        quantity: 10,
+        quantity: 16,
         // 판매된 수량
-        buyQuantity: 3,
+        buyQuantity: 12,
         // 메인이미지
         mainImages: [
           {
@@ -2686,7 +2686,7 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: '포켓몬스터 소드',
         // 재고수량
-        quantity: 10,
+        quantity: 31,
         // 판매된 수량
         buyQuantity: 3,
         // 메인이미지
@@ -2751,9 +2751,9 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: '포켓몬스터 실드',
         // 재고수량
-        quantity: 10,
+        quantity: 44,
         // 판매된 수량
-        buyQuantity: 3,
+        buyQuantity: 28,
         // 메인이미지
         mainImages: [
           {
@@ -2816,9 +2816,9 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: '마리오와 소닉 2020도쿄올림픽',
         // 재고수량
-        quantity: 10,
+        quantity: 14,
         // 판매된 수량
-        buyQuantity: 3,
+        buyQuantity: 4,
         // 메인이미지
         mainImages: [
           {
@@ -2881,9 +2881,9 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: '제물과 눈의 세츠나',
         // 재고수량
-        quantity: 10,
+        quantity: 30,
         // 판매된 수량
-        buyQuantity: 3,
+        buyQuantity: 27,
         // 메인이미지
         mainImages: [
           {
@@ -2946,9 +2946,9 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: '닌텐도 스위치 마리오 레드블루 한정판 세트',
         // 재고수량
-        quantity: 10,
+        quantity: 37,
         // 판매된 수량
-        buyQuantity: 3,
+        buyQuantity: 19,
         // 메인이미지
         mainImages: [
           {
@@ -3011,9 +3011,9 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: '닌텐도 스위치 OLED',
         // 재고수량
-        quantity: 20,
+        quantity: 36,
         // 판매된 수량
-        buyQuantity: 3,
+        buyQuantity: 24,
         // 메인이미지
         mainImages: [
           {
@@ -3076,9 +3076,9 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: '닌텐도 스위치 라이트',
         // 재고수량
-        quantity: 20,
+        quantity: 44,
         // 판매된 수량
-        buyQuantity: 3,
+        buyQuantity: 16,
         // 메인이미지
         mainImages: [
           {
@@ -3142,9 +3142,9 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: '마리오파티 잼버리 TV',
         // 재고수량
-        quantity: 20,
+        quantity: 35,
         // 판매된 수량
-        buyQuantity: 3,
+        buyQuantity: 2,
         // 메인이미지
         mainImages: [
           {
@@ -3207,9 +3207,9 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: '동키콩 바난자',
         // 재고수량
-        quantity: 20,
+        quantity: 36,
         // 판매된 수량
-        buyQuantity: 3,
+        buyQuantity: 29,
         // 메인이미지
         mainImages: [
           {
@@ -3272,9 +3272,9 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: '다마고치 원더 샵',
         // 재고수량
-        quantity: 20,
+        quantity: 36,
         // 판매된 수량
-        buyQuantity: 3,
+        buyQuantity: 1,
         // 메인이미지
         mainImages: [
           {
@@ -3337,9 +3337,9 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: '스트리트 파이터 6 Years 1-2 파이터즈 에디션',
         // 재고수량
-        quantity: 20,
+        quantity: 8,
         // 판매된 수량
-        buyQuantity: 3,
+        buyQuantity: 5,
         // 메인이미지
         mainImages: [
           {
@@ -3402,9 +3402,9 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: '스플릿 픽션',
         // 재고수량
-        quantity: 20,
+        quantity: 30,
         // 판매된 수량
-        buyQuantity: 3,
+        buyQuantity: 9,
         // 메인이미지
         mainImages: [
           {
@@ -3467,9 +3467,9 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: '호그와트 레거시',
         // 재고수량
-        quantity: 20,
+        quantity: 7,
         // 판매된 수량
-        buyQuantity: 3,
+        buyQuantity: 4,
         // 메인이미지
         mainImages: [
           {
@@ -3532,9 +3532,9 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: '젤다의전설 왕국의 눈물',
         // 재고수량
-        quantity: 20,
+        quantity: 3,
         // 판매된 수량
-        buyQuantity: 3,
+        buyQuantity: 1,
         // 메인이미지
         mainImages: [
           {
@@ -3597,9 +3597,9 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: '젤다의 전설 야생의 숨결',
         // 재고수량
-        quantity: 20,
+        quantity: 45,
         // 판매된 수량
-        buyQuantity: 3,
+        buyQuantity: 31,
         // 메인이미지
         mainImages: [
           {
@@ -3662,9 +3662,9 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: '마리오 카트 월드',
         // 재고수량
-        quantity: 20,
+        quantity: 27,
         // 판매된 수량
-        buyQuantity: 3,
+        buyQuantity: 18,
         // 메인이미지
         mainImages: [
           {
@@ -3727,7 +3727,7 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: '뿌요뿌요 테트리스 2S',
         // 재고수량
-        quantity: 20,
+        quantity: 6,
         // 판매된 수량
         buyQuantity: 3,
         // 메인이미지
@@ -3792,9 +3792,9 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: '소닉 섀도우 제너레이션즈',
         // 재고수량
-        quantity: 20,
+        quantity: 22,
         // 판매된 수량
-        buyQuantity: 3,
+        buyQuantity: 18,
         // 메인이미지
         mainImages: [
           {
@@ -3857,9 +3857,9 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: '사이버펑크2077 얼티밋 에디션',
         // 재고수량
-        quantity: 20,
+        quantity: 29,
         // 판매된 수량
-        buyQuantity: 3,
+        buyQuantity: 10,
         // 메인이미지
         mainImages: [
           {
@@ -3922,9 +3922,9 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: 'SWITCH2 닌텐도 스위치 2 본체',
         // 재고수량
-        quantity: 100,
+        quantity: 15,
         // 판매된 수량
-        buyQuantity: 0,
+        buyQuantity: 10,
         // 메인이미지
         mainImages: [
           {
@@ -3987,9 +3987,9 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: 'SWITCH2 닌텐도 스위치 2 본체 마리오 카트 월드 세트',
         // 재고수량
-        quantity: 100,
+        quantity: 37,
         // 판매된 수량
-        buyQuantity: 0,
+        buyQuantity: 26,
         // 메인이미지
         mainImages: [
           {
@@ -4052,9 +4052,9 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: '바이오 하자드 RE 2',
         // 재고수량
-        quantity: 70,
+        quantity: 5,
         // 판매된 수량
-        buyQuantity: 60,
+        buyQuantity: 2,
         // 메인이미지
         mainImages: [
           {
@@ -4117,9 +4117,9 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: '어쌔신크리드4 블랙플래그',
         // 재고수량
-        quantity: 85,
+        quantity: 7,
         // 판매된 수량
-        buyQuantity: 82,
+        buyQuantity: 4,
         // 메인이미지
         mainImages: [
           {
@@ -4182,9 +4182,9 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: '낵 (KNACK)',
         // 재고수량
-        quantity: 85,
+        quantity: 14,
         // 판매된 수량
-        buyQuantity: 82,
+        buyQuantity: 9,
         // 메인이미지
         mainImages: [
           {
@@ -4247,9 +4247,9 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: '죠죠의 기묘한 모험 아이즈 오브 헤븐',
         // 재고수량
-        quantity: 85,
+        quantity: 4,
         // 판매된 수량
-        buyQuantity: 82,
+        buyQuantity: 2,
         // 메인이미지
         mainImages: [
           {
@@ -4312,9 +4312,9 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: '에일리언네이션 한글판',
         // 재고수량
-        quantity: 20,
+        quantity: 3,
         // 판매된 수량
-        buyQuantity: 5,
+        buyQuantity: 1,
         // 메인이미지
         mainImages: [
           {
@@ -4377,9 +4377,9 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: '파크라이4 컴플리트에디션',
         // 재고수량
-        quantity: 10,
+        quantity: 4,
         // 판매된 수량
-        buyQuantity: 7,
+        buyQuantity: 1,
         // 메인이미지
         mainImages: [
           {
@@ -4442,9 +4442,9 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: '라이즈 오브 툼레이더 20주년 에디션',
         // 재고수량
-        quantity: 20,
+        quantity: 43,
         // 판매된 수량
-        buyQuantity: 7,
+        buyQuantity: 1,
         // 메인이미지
         mainImages: [
           {
@@ -4507,9 +4507,9 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: '플레이스테이션 VR 월드',
         // 재고수량
-        quantity: 20,
+        quantity: 14,
         // 판매된 수량
-        buyQuantity: 7,
+        buyQuantity: 12,
         // 메인이미지
         mainImages: [
           {
@@ -4572,9 +4572,9 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: '드라이브클럽 VR',
         // 재고수량
-        quantity: 20,
+        quantity: 13,
         // 판매된 수량
-        buyQuantity: 7,
+        buyQuantity: 9,
         // 메인이미지
         mainImages: [
           {
@@ -4637,9 +4637,9 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: '용과같이 제로 맹세의 장소',
         // 재고수량
-        quantity: 20,
+        quantity: 27,
         // 판매된 수량
-        buyQuantity: 7,
+        buyQuantity: 19,
         // 메인이미지
         mainImages: [
           {
@@ -4702,9 +4702,9 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: '타이탄폴2',
         // 재고수량
-        quantity: 10,
+        quantity: 13,
         // 판매된 수량
-        buyQuantity: 3,
+        buyQuantity: 2,
         // 메인이미지
         mainImages: [
           {
@@ -4767,9 +4767,9 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: '배트맨 아캄나이트 고티 GOTY 에디션',
         // 재고수량
-        quantity: 10,
+        quantity: 20,
         // 판매된 수량
-        buyQuantity: 3,
+        buyQuantity: 2,
         // 메인이미지
         mainImages: [
           {
@@ -4832,9 +4832,9 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: '엑스컴2',
         // 재고수량
-        quantity: 10,
+        quantity: 25,
         // 판매된 수량
-        buyQuantity: 3,
+        buyQuantity: 22,
         // 메인이미지
         mainImages: [
           {
@@ -4899,7 +4899,7 @@ export const initData = async (clientId, nextSeq) => {
         // 재고수량
         quantity: 10,
         // 판매된 수량
-        buyQuantity: 3,
+        buyQuantity: 8,
         // 메인이미지
         mainImages: [
           {
@@ -4962,9 +4962,9 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: '신형 본체 2218B (1TB)',
         // 재고수량
-        quantity: 5,
+        quantity: 41,
         // 판매된 수량
-        buyQuantity: 1,
+        buyQuantity: 7,
         // 메인이미지
         mainImages: [
           {
@@ -5027,9 +5027,9 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: 'PS4 PRO 킹덤하츠 3 리미티드 에디션 프로 본체 7218 (1TB)',
         // 재고수량
-        quantity: 5,
+        quantity: 30,
         // 판매된 수량
-        buyQuantity: 1,
+        buyQuantity: 11,
         // 메인이미지
         mainImages: [
           {
@@ -5092,9 +5092,9 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: '프로 본체 (1TB)',
         // 재고수량
-        quantity: 5,
+        quantity: 31,
         // 판매된 수량
-        buyQuantity: 1,
+        buyQuantity: 14,
         // 메인이미지
         mainImages: [
           {
@@ -5157,7 +5157,7 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: '렘넌트 프롬 디 애쉬',
         // 재고수량
-        quantity: 15,
+        quantity: 3,
         // 판매된 수량
         buyQuantity: 1,
         // 메인이미지
@@ -5222,9 +5222,9 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: '데드 바이 데이라이트',
         // 재고수량
-        quantity: 9,
+        quantity: 11,
         // 판매된 수량
-        buyQuantity: 1,
+        buyQuantity: 9,
         // 메인이미지
         mainImages: [
           {
@@ -5287,9 +5287,9 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: '다운타운 열혈이야기 SP',
         // 재고수량
-        quantity: 12,
+        quantity: 45,
         // 판매된 수량
-        buyQuantity: 1,
+        buyQuantity: 12,
         // 메인이미지
         mainImages: [
           {
@@ -5352,9 +5352,9 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: '디비전2 워싱턴 DC 에디션',
         // 재고수량
-        quantity: 12,
+        quantity: 16,
         // 판매된 수량
-        buyQuantity: 1,
+        buyQuantity: 13,
         // 메인이미지
         mainImages: [
           {
@@ -5419,7 +5419,7 @@ export const initData = async (clientId, nextSeq) => {
         // 재고수량
         quantity: 8,
         // 판매된 수량
-        buyQuantity: 1,
+        buyQuantity: 3,
         // 메인이미지
         mainImages: [
           {
@@ -5482,9 +5482,9 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: '콜오브 듀티 블랙옵스6',
         // 재고수량
-        quantity: 12,
+        quantity: 11,
         // 판매된 수량
-        buyQuantity: 1,
+        buyQuantity: 3,
         // 메인이미지
         mainImages: [
           {
@@ -5549,7 +5549,7 @@ export const initData = async (clientId, nextSeq) => {
         // 재고수량
         quantity: 12,
         // 판매된 수량
-        buyQuantity: 1,
+        buyQuantity: 10,
         // 메인이미지
         mainImages: [
           {
@@ -5612,9 +5612,9 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: '렉페스트',
         // 재고수량
-        quantity: 20,
+        quantity: 12,
         // 판매된 수량
-        buyQuantity: 8,
+        buyQuantity: 6,
         // 메인이미지
         mainImages: [
           {
@@ -5677,9 +5677,9 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: '원피스 월드 시커 디럭스 에디션',
         // 재고수량
-        quantity: 20,
+        quantity: 38,
         // 판매된 수량
-        buyQuantity: 3,
+        buyQuantity: 22,
         // 메인이미지
         mainImages: [
           {
@@ -5742,9 +5742,9 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: '언더나이트 인버스2 시스타 셀레스',
         // 재고수량
-        quantity: 20,
+        quantity: 23,
         // 판매된 수량
-        buyQuantity: 3,
+        buyQuantity: 1,
         // 메인이미지
         mainImages: [
           {
@@ -5807,9 +5807,9 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: '용과같이8',
         // 재고수량
-        quantity: 20,
+        quantity: 21,
         // 판매된 수량
-        buyQuantity: 3,
+        buyQuantity: 13,
         // 메인이미지
         mainImages: [
           {
@@ -5872,9 +5872,9 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: '어쌔신크리드 미라지',
         // 재고수량
-        quantity: 20,
+        quantity: 7,
         // 판매된 수량
-        buyQuantity: 3,
+        buyQuantity: 2,
         // 메인이미지
         mainImages: [
           {
@@ -5937,9 +5937,9 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: '신형 본체 2117A (500GB) / 화이트',
         // 재고수량
-        quantity: 8,
+        quantity: 31,
         // 판매된 수량
-        buyQuantity: 3,
+        buyQuantity: 11,
         // 메인이미지
         mainImages: [
           {
@@ -6002,9 +6002,9 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: '파이널판타지 16',
         // 재고수량
-        quantity: 8,
+        quantity: 31,
         // 판매된 수량
-        buyQuantity: 3,
+        buyQuantity: 13,
         // 메인이미지
         mainImages: [
           {
@@ -6067,9 +6067,9 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: '바이오하자드 RE4',
         // 재고수량
-        quantity: 16,
+        quantity: 49,
         // 판매된 수량
-        buyQuantity: 3,
+        buyQuantity: 28,
         // 메인이미지
         mainImages: [
           {
@@ -6132,9 +6132,9 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: '스타워즈 아웃로',
         // 재고수량
-        quantity: 20,
+        quantity: 46,
         // 판매된 수량
-        buyQuantity: 3,
+        buyQuantity: 20,
         // 메인이미지
         mainImages: [
           {
@@ -6197,9 +6197,9 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: '콜오브듀티 뱅가드',
         // 재고수량
-        quantity: 18,
+        quantity: 35,
         // 판매된 수량
-        buyQuantity: 3,
+        buyQuantity: 4,
         // 메인이미지
         mainImages: [
           {
@@ -6262,9 +6262,9 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: 'MLB 더 쇼 22',
         // 재고수량
-        quantity: 20,
+        quantity: 16,
         // 판매된 수량
-        buyQuantity: 3,
+        buyQuantity: 9,
         // 메인이미지
         mainImages: [
           {
@@ -6327,9 +6327,9 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: '택틱스 오우거 리본',
         // 재고수량
-        quantity: 80,
+        quantity: 40,
         // 판매된 수량
-        buyQuantity: 3,
+        buyQuantity: 37,
         // 메인이미지
         mainImages: [
           {
@@ -6392,9 +6392,9 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: '영웅전설 여의궤적2 크림슨',
         // 재고수량
-        quantity: 18,
+        quantity: 27,
         // 판매된 수량
-        buyQuantity: 3,
+        buyQuantity: 8,
         // 메인이미지
         mainImages: [
           {
@@ -6457,9 +6457,9 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: '와일드 하츠',
         // 재고수량
-        quantity: 10,
+        quantity: 40,
         // 판매된 수량
-        buyQuantity: 3,
+        buyQuantity: 16,
         // 메인이미지
         mainImages: [
           {
@@ -6522,9 +6522,9 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: '스타워즈 제다이 서바이버',
         // 재고수량
-        quantity: 7,
+        quantity: 15,
         // 판매된 수량
-        buyQuantity: 3,
+        buyQuantity: 1,
         // 메인이미지
         mainImages: [
           {
@@ -6587,9 +6587,9 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: '성탑신기 트리니티 트리거',
         // 재고수량
-        quantity: 7,
+        quantity: 20,
         // 판매된 수량
-        buyQuantity: 3,
+        buyQuantity: 9,
         // 메인이미지
         mainImages: [
           {
@@ -6652,9 +6652,9 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: 'NBA 2K24',
         // 재고수량
-        quantity: 12,
+        quantity: 9,
         // 판매된 수량
-        buyQuantity: 3,
+        buyQuantity: 6,
         // 메인이미지
         mainImages: [
           {
@@ -6717,9 +6717,9 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: '소닉 섀도우 제너레이션즈',
         // 재고수량
-        quantity: 12,
+        quantity: 3,
         // 판매된 수량
-        buyQuantity: 3,
+        buyQuantity: 1,
         // 메인이미지
         mainImages: [
           {
@@ -6782,9 +6782,9 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: '파이널판타지16',
         // 재고수량
-        quantity: 12,
+        quantity: 48,
         // 판매된 수량
-        buyQuantity: 3,
+        buyQuantity: 46,
         // 메인이미지
         mainImages: [
           {
@@ -6849,7 +6849,7 @@ export const initData = async (clientId, nextSeq) => {
         // 재고수량
         quantity: 6,
         // 판매된 수량
-        buyQuantity: 3,
+        buyQuantity: 2,
         // 메인이미지
         mainImages: [
           {
@@ -6912,9 +6912,9 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: 'PS5본체 1018A / 디스크',
         // 재고수량
-        quantity: 10,
+        quantity: 50,
         // 판매된 수량
-        buyQuantity: 3,
+        buyQuantity: 5,
         // 메인이미지
         mainImages: [
           {
@@ -6977,9 +6977,9 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: '사가 프론티어2 리마스터',
         // 재고수량
-        quantity: 18,
+        quantity: 26,
         // 판매된 수량
-        buyQuantity: 3,
+        buyQuantity: 24,
         // 메인이미지
         mainImages: [
           {
@@ -7042,9 +7042,9 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: '그림 가디언즈 서번트 오브 더 다크',
         // 재고수량
-        quantity: 12,
+        quantity: 28,
         // 판매된 수량
-        buyQuantity: 3,
+        buyQuantity: 22,
         // 메인이미지
         mainImages: [
           {
@@ -7107,9 +7107,9 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: '아랑전설 시티 오브 더 울브스 스페셜 에디션',
         // 재고수량
-        quantity: 7,
+        quantity: 25,
         // 판매된 수량
-        buyQuantity: 3,
+        buyQuantity: 9,
         // 메인이미지
         mainImages: [
           {
@@ -7172,9 +7172,9 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: '데빌위딘 삿갓',
         // 재고수량
-        quantity: 7,
+        quantity: 18,
         // 판매된 수량
-        buyQuantity: 3,
+        buyQuantity: 11,
         // 메인이미지
         mainImages: [
           {
@@ -7237,9 +7237,9 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: '동방 스펠 카니발',
         // 재고수량
-        quantity: 11,
+        quantity: 13,
         // 판매된 수량
-        buyQuantity: 3,
+        buyQuantity: 2,
         // 메인이미지
         mainImages: [
           {
@@ -7302,9 +7302,9 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: 'MLB 25 더쇼',
         // 재고수량
-        quantity: 11,
+        quantity: 46,
         // 판매된 수량
-        buyQuantity: 3,
+        buyQuantity: 38,
         // 메인이미지
         mainImages: [
           {
@@ -7367,9 +7367,9 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: '슈퍼 테크노스 월드 열혈 아케이드 클래식 컬렉션',
         // 재고수량
-        quantity: 11,
+        quantity: 38,
         // 판매된 수량
-        buyQuantity: 3,
+        buyQuantity: 28,
         // 메인이미지
         mainImages: [
           {
@@ -7432,9 +7432,9 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: '유미아의 아틀리에 추억의 연금술사와 창환의 땅',
         // 재고수량
-        quantity: 17,
+        quantity: 46,
         // 판매된 수량
-        buyQuantity: 3,
+        buyQuantity: 18,
         // 메인이미지
         mainImages: [
           {
@@ -7497,9 +7497,9 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: '블리치 리버스 오브 소울즈',
         // 재고수량
-        quantity: 9,
+        quantity: 18,
         // 판매된 수량
-        buyQuantity: 3,
+        buyQuantity: 9,
         // 메인이미지
         mainImages: [
           {
@@ -7562,9 +7562,9 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: '묶이지 않은 자들을 위한 우주',
         // 재고수량
-        quantity: 9,
+        quantity: 23,
         // 판매된 수량
-        buyQuantity: 3,
+        buyQuantity: 14,
         // 메인이미지
         mainImages: [
           {
@@ -7627,9 +7627,9 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: 'WWE 2K25',
         // 재고수량
-        quantity: 9,
+        quantity: 44,
         // 판매된 수량
-        buyQuantity: 3,
+        buyQuantity: 18,
         // 메인이미지
         mainImages: [
           {
@@ -7692,9 +7692,9 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: '어쌔신크리드 섀도우스 스페셜 에디션',
         // 재고수량
-        quantity: 7,
+        quantity: 22,
         // 판매된 수량
-        buyQuantity: 3,
+        buyQuantity: 19,
         // 메인이미지
         mainImages: [
           {
@@ -7757,9 +7757,9 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: '신듀얼리티 에코 오브 에이다 디럭스 에디션',
         // 재고수량
-        quantity: 7,
+        quantity: 5,
         // 판매된 수량
-        buyQuantity: 3,
+        buyQuantity: 1,
         // 메인이미지
         mainImages: [
           {
@@ -7822,9 +7822,9 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: '아스트레아 식스 사이디드 오라클',
         // 재고수량
-        quantity: 7,
+        quantity: 24,
         // 판매된 수량
-        buyQuantity: 3,
+        buyQuantity: 10,
         // 메인이미지
         mainImages: [
           {
@@ -7887,9 +7887,9 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: '프리덤 워즈 리마스터',
         // 재고수량
-        quantity: 20,
+        quantity: 10,
         // 판매된 수량
-        buyQuantity: 3,
+        buyQuantity: 1,
         // 메인이미지
         mainImages: [
           {
@@ -7952,9 +7952,9 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: '시드마이어의 문명 7 VII 스탠다드에디션',
         // 재고수량
-        quantity: 8,
+        quantity: 45,
         // 판매된 수량
-        buyQuantity: 3,
+        buyQuantity: 30,
         // 메인이미지
         mainImages: [
           {
@@ -8017,9 +8017,9 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: '울프팽 스컬팽 새턴 트리뷰트 부스티드',
         // 재고수량
-        quantity: 8,
+        quantity: 40,
         // 판매된 수량
-        buyQuantity: 3,
+        buyQuantity: 36,
         // 메인이미지
         mainImages: [
           {
@@ -8082,9 +8082,9 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: '네온 블러드',
         // 재고수량
-        quantity: 8,
+        quantity: 22,
         // 판매된 수량
-        buyQuantity: 3,
+        buyQuantity: 20,
         // 메인이미지
         mainImages: [
           {
@@ -8147,9 +8147,9 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: '투포인트 뮤지엄 익스플로러 에디션',
         // 재고수량
-        quantity: 8,
+        quantity: 10,
         // 판매된 수량
-        buyQuantity: 3,
+        buyQuantity: 6,
         // 메인이미지
         mainImages: [
           {
@@ -8212,9 +8212,9 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: '언더 디피트',
         // 재고수량
-        quantity: 16,
+        quantity: 35,
         // 판매된 수량
-        buyQuantity: 3,
+        buyQuantity: 29,
         // 메인이미지
         mainImages: [
           {
@@ -8277,9 +8277,9 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: '몬스터헌터 와일즈',
         // 재고수량
-        quantity: 16,
+        quantity: 9,
         // 판매된 수량
-        buyQuantity: 3,
+        buyQuantity: 2,
         // 메인이미지
         mainImages: [
           {
@@ -8342,9 +8342,9 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: '돌연변이 닌자 거북이 슈레더의 복수 얼티밋 에디션',
         // 재고수량
-        quantity: 20,
+        quantity: 9,
         // 판매된 수량
-        buyQuantity: 3,
+        buyQuantity: 2,
         // 메인이미지
         mainImages: [
           {
@@ -8407,9 +8407,9 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: '바이오하자드 7 레지던트 이블 공드에디션',
         // 재고수량
-        quantity: 20,
+        quantity: 4,
         // 판매된 수량
-        buyQuantity: 3,
+        buyQuantity: 1,
         // 메인이미지
         mainImages: [
           {
@@ -8472,9 +8472,9 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: '퍼스트 버서커 카잔',
         // 재고수량
-        quantity: 20,
+        quantity: 47,
         // 판매된 수량
-        buyQuantity: 3,
+        buyQuantity: 1,
         // 메인이미지
         mainImages: [
           {
@@ -8537,7 +8537,7 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: 'PS5 Slim 슬림 본체 에디션 CFI-2018A / 디스크버전',
         // 재고수량
-        quantity: 50,
+        quantity: 16,
         // 판매된 수량
         buyQuantity: 3,
         // 메인이미지
@@ -8602,7 +8602,7 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: 'PS5 Slim 슬림 본체 에디션 CFI-2018B / 디지털 버전',
         // 재고수량
-        quantity: 40,
+        quantity: 9,
         // 판매된 수량
         buyQuantity: 3,
         // 메인이미지
@@ -8667,9 +8667,9 @@ export const initData = async (clientId, nextSeq) => {
         // 제품명
         name: 'PS5본체 CFI-1018A / 디스크버전',
         // 재고수량
-        quantity: 40,
+        quantity: 28,
         // 판매된 수량
-        buyQuantity: 3,
+        buyQuantity: 13,
         // 메인이미지
         mainImages: [
           {
