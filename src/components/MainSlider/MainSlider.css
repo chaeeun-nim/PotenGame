@@ -1,0 +1,11 @@
+.swiper-pagination-bullet {
+  background-color: black;
+  opacity: 50%;
+  width: 16px;
+  height: 16px;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: var(--color-poten-red);
+  opacity: 1;
+}
