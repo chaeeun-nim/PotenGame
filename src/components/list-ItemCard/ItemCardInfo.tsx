@@ -1,14 +1,15 @@
-'use client'
+'use client';
 import Image from 'next/image';
 import cart from '@/assets/icons/cart.svg';
 import cartAdded from '@/assets/icons/addcart.svg';
 import usedTag from '@/assets/icons/used-tag.svg';
 import { useState } from 'react';
-import ItemLikeBtn, { ItemLikeBtnProps } from '@/components/list-ItemCard/ItemLikeBtn';
+import ItemLikeBtn, { ItemLikeBtnProps } from './ItemLikeBtn';
+
 // import newTag from '@/assets/icons/new-tag.svg'
 
 //TODO 서버 데이터 도입, info 교체
-export default function ItemCardInfo({ className }:{ className: ItemLikeBtnProps }) {
+export default function ItemCardInfo({ className }: ItemLikeBtnProps) {
   const [isInCart, setIsInCart] = useState(false);
   const handleCartClick = () => {
     setIsInCart(!isInCart);
@@ -44,7 +45,7 @@ export default function ItemCardInfo({ className }:{ className: ItemLikeBtnProps
           />
         </button>
 
-        <ItemLikeBtn className="w-5 h-5" />
+        <ItemLikeBtn className={`w-5 h-5 ${className}`} />
       </div>
     </div>
   );
