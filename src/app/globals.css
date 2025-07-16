@@ -1,6 +1,7 @@
 @import 'tailwindcss';
 
 @theme {
+  --font-pretendard: var(--font-pretendard);
   --color-poten-red: #e6001f;
   --color-poten-black: #191c21;
   --color-poten-black-2: #24272b;

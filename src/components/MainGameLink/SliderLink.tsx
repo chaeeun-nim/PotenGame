@@ -21,14 +21,14 @@ export default function SliderLink() {
           768: {
             spaceBetween: 20,
           },
-          1200: {
-            spaceBetween: 40,
+          1280: {
+            spaceBetween: 20,
           },
         }}
         freeMode={true}
         navigation={false}
         slidesPerView={'auto'}>
-        <SwiperSlide className="!w-[90px] md:!w-[130px] lg:!w-[150px] !ml-[16px] md:!ml-[24px] lg:!ml-[0px]  ">
+        <SwiperSlide className="!w-[90px] md:!w-[130px] xl:!w-[150px] !ml-[16px] md:!ml-[24px] xl:!ml-[0px]  ">
           <Link
             href="/"
             className="flex flex-col justify-center items-center transition-transform ease-in-out hover:translate-y-[-10px]">
@@ -42,7 +42,7 @@ export default function SliderLink() {
             <h3 className="text-[14px] text-center">Nintendo Switch Lite</h3>
           </Link>
         </SwiperSlide>
-        <SwiperSlide className="!w-[90px] md:!w-[130px] lg:!w-[150px] !ml-[16px] md:!ml-[24px] lg:!ml-[0px]  ">
+        <SwiperSlide className="!w-[90px] md:!w-[130px] xl:!w-[150px] !ml-[16px] md:!ml-[12px] xl:!ml-[0px]  ">
           <Link
             href="/"
             className="flex flex-col justify-center items-center transition-transform ease-in-out hover:translate-y-[-10px]">
@@ -56,7 +56,7 @@ export default function SliderLink() {
             <h3 className="text-[14px] text-center">Nintendo Switch</h3>
           </Link>
         </SwiperSlide>
-        <SwiperSlide className="!w-[90px] md:!w-[130px] lg:!w-[150px] !ml-[16px] md:!ml-[24px] lg:!ml-[0px]  ">
+        <SwiperSlide className="!w-[90px] md:!w-[130px] xl:!w-[150px] !ml-[16px] md:!ml-[12px] xl:!ml-[0px]  ">
           <Link
             href="/"
             className="flex flex-col justify-center items-center transition-transform ease-in-out hover:translate-y-[-10px]">
@@ -70,7 +70,7 @@ export default function SliderLink() {
             <h3 className="text-[14px] text-center">Nintendo Switch 2</h3>
           </Link>
         </SwiperSlide>
-        <SwiperSlide className="!w-[90px] md:!w-[130px] lg:!w-[150px] !ml-[16px] md:!ml-[24px] lg:!ml-[0px]  ">
+        <SwiperSlide className="!w-[90px] md:!w-[130px] xl:!w-[150px] !ml-[16px] md:!ml-[12px] xl:!ml-[0px]  ">
           <Link
             href="/"
             className="flex flex-col justify-center items-center transition-transform ease-in-out hover:translate-y-[-10px]">
@@ -84,7 +84,7 @@ export default function SliderLink() {
             <h3 className="text-[14px] text-center">PS 4</h3>
           </Link>
         </SwiperSlide>
-        <SwiperSlide className="!w-[90px] md:!w-[130px] lg:!w-[150px] !ml-[16px] md:!ml-[24px] lg:!ml-[0px]  md:!mr-[24px]">
+        <SwiperSlide className="!w-[90px] md:!w-[130px] xl:!w-[150px] !ml-[16px] md:!ml-[12px] xl:!ml-[0px]  md:!mr-[24px]">
           <Link
             href="/"
             className="flex flex-col justify-center items-center transition-transform ease-in-out hover:translate-y-[-10px]">
