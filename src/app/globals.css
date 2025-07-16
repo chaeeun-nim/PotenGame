@@ -17,6 +17,8 @@
   --color-poten-bluegray: #f1f4f6;
   --color-poten-safegreen: #51b250;
   --color-poten-warningorange: #ff9900;
+  --color-poten-usedorange: #ff9500;
+  --color-poten-newblue: #009DFF;
 }
 
 body {
