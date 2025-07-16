@@ -46,14 +46,14 @@ export const initData = async (clientId, nextSeq) => {
         name: '네오',
         phone: '01022223333',
         address: '서울시 강남구 삼성동 456',
-        type: 'user',
+        type: 'seller',
         loginType: 'email',
         image: `files/${clientId}/user-neo.png`,
         createdAt: getTime(-50),
         updatedAt: getTime(-30, -60 * 60 * 3),
         extra: {
           purchases: 2,
-          nickname: '유저네오',
+          nickname: '셀러네오',
           birthday: '11-23',
           membershipClass: 'MC01',
           addressBook: [
@@ -139,6 +139,7 @@ export const initData = async (clientId, nextSeq) => {
     product: [
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 310000,
         // 배송비
@@ -203,6 +204,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 12000,
         // 배송비
@@ -267,6 +269,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 15000,
         // 배송비
@@ -331,6 +334,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 75000,
         // 배송비
@@ -395,6 +399,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 115000,
         // 배송비
@@ -459,6 +464,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 22000,
         // 배송비
@@ -523,6 +529,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 120000,
         // 배송비
@@ -587,6 +594,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 18500,
         // 배송비
@@ -651,6 +659,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 16500,
         // 배송비
@@ -715,6 +724,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 239000,
         // 배송비
@@ -779,6 +789,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 109000,
         // 배송비
@@ -843,6 +854,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 225000,
         // 배송비
@@ -907,6 +919,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 215000,
         // 배송비
@@ -971,6 +984,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 95000,
         // 배송비
@@ -1035,6 +1049,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 18000,
         // 배송비
@@ -1099,6 +1114,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 14000,
         // 배송비
@@ -1163,6 +1179,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 78000,
         // 배송비
@@ -1227,6 +1244,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 36000,
         // 배송비
@@ -1291,6 +1309,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 62000,
         // 배송비
@@ -1355,6 +1374,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 34000,
         // 배송비
@@ -1419,6 +1439,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 26000,
         // 배송비
@@ -1483,6 +1504,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 12000,
         // 배송비
@@ -1547,6 +1569,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 37000,
         // 배송비
@@ -1611,6 +1634,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 29000,
         // 배송비
@@ -1675,6 +1699,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 26000,
         // 배송비
@@ -1739,6 +1764,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 39500,
         // 배송비
@@ -1803,6 +1829,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 47000,
         // 배송비
@@ -1867,6 +1894,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 41000,
         // 배송비
@@ -1931,6 +1959,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 169000,
         // 배송비
@@ -1995,6 +2024,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 169000,
         // 배송비
@@ -2059,6 +2089,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 215000,
         // 배송비
@@ -2123,6 +2154,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 39000,
         // 배송비
@@ -2187,6 +2219,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 67000,
         // 배송비
@@ -2251,6 +2284,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 62000,
         // 배송비
@@ -2315,6 +2349,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 53000,
         // 배송비
@@ -2379,6 +2414,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 137000,
         // 배송비
@@ -2443,6 +2479,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 48000,
         // 배송비
@@ -2507,6 +2544,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 53500,
         // 배송비
@@ -2571,6 +2609,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 114000,
         // 배송비
@@ -2635,6 +2674,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 59000,
         // 배송비
@@ -2699,6 +2739,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 59000,
         // 배송비
@@ -2763,6 +2804,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 57000,
         // 배송비
@@ -2827,6 +2869,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 43000,
         // 배송비
@@ -2891,6 +2934,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 385000,
         // 배송비
@@ -2955,6 +2999,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 385000,
         // 배송비
@@ -3019,6 +3064,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 249000,
         // 배송비
@@ -3084,6 +3130,7 @@ export const initData = async (clientId, nextSeq) => {
 
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 84800,
         // 배송비
@@ -3148,6 +3195,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 88000,
         // 배송비
@@ -3212,6 +3260,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 59800,
         // 배송비
@@ -3276,6 +3325,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 64800,
         // 배송비
@@ -3340,6 +3390,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 68000,
         // 배송비
@@ -3404,6 +3455,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 69800,
         // 배송비
@@ -3468,6 +3520,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 84800,
         // 배송비
@@ -3532,6 +3585,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 84800,
         // 배송비
@@ -3596,6 +3650,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 98000,
         // 배송비
@@ -3660,6 +3715,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 44800,
         // 배송비
@@ -3724,6 +3780,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 49800,
         // 배송비
@@ -3788,6 +3845,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 89800,
         // 배송비
@@ -3852,6 +3910,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 316000,
         // 배송비
@@ -3916,6 +3975,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 688000,
         // 배송비
@@ -3980,6 +4040,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 14500,
         // 배송비
@@ -4044,6 +4105,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 17500,
         // 배송비
@@ -4108,6 +4170,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 21500,
         // 배송비
@@ -4172,6 +4235,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 70500,
         // 배송비
@@ -4236,6 +4300,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 19500,
         // 배송비
@@ -4300,6 +4365,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 31000,
         // 배송비
@@ -4364,6 +4430,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 23000,
         // 배송비
@@ -4428,6 +4495,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 7500,
         // 배송비
@@ -4492,6 +4560,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 13500,
         // 배송비
@@ -4556,6 +4625,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 22000,
         // 배송비
@@ -4620,6 +4690,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 26000,
         // 배송비
@@ -4684,6 +4755,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 26000,
         // 배송비
@@ -4748,6 +4820,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 21000,
         // 배송비
@@ -4812,6 +4885,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 21500,
         // 배송비
@@ -4876,6 +4950,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 169000,
         // 배송비
@@ -4940,6 +5015,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 249000,
         // 배송비
@@ -5004,6 +5080,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 189000,
         // 배송비
@@ -5068,6 +5145,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 35000,
         // 배송비
@@ -5132,6 +5210,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 36000,
         // 배송비
@@ -5196,6 +5275,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 35000,
         // 배송비
@@ -5260,6 +5340,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 26000,
         // 배송비
@@ -5324,6 +5405,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 58000,
         // 배송비
@@ -5388,6 +5470,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 83000,
         // 배송비
@@ -5452,6 +5535,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 79000,
         // 배송비
@@ -5516,6 +5600,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 27000,
         // 배송비
@@ -5580,6 +5665,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 45000,
         // 배송비
@@ -5644,6 +5730,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 65000,
         // 배송비
@@ -5708,6 +5795,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 62800,
         // 배송비
@@ -5772,6 +5860,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 54800,
         // 배송비
@@ -5836,6 +5925,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 345000,
         // 배송비
@@ -5900,6 +5990,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 33500,
         // 배송비
@@ -5964,6 +6055,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 30500,
         // 배송비
@@ -6028,6 +6120,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 39000,
         // 배송비
@@ -6092,6 +6185,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 52000,
         // 배송비
@@ -6156,6 +6250,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 17000,
         // 배송비
@@ -6220,6 +6315,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 37000,
         // 배송비
@@ -6284,6 +6380,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 31500,
         // 배송비
@@ -6348,6 +6445,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 22000,
         // 배송비
@@ -6412,6 +6510,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 36500,
         // 배송비
@@ -6476,6 +6575,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 34000,
         // 배송비
@@ -6540,6 +6640,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 22500,
         // 배송비
@@ -6604,6 +6705,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 28000,
         // 배송비
@@ -6668,6 +6770,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 33500,
         // 배송비
@@ -6732,6 +6835,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 550000,
         // 배송비
@@ -6796,6 +6900,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 495000,
         // 배송비
@@ -6860,6 +6965,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 49800,
         // 배송비
@@ -6924,6 +7030,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 59800,
         // 배송비
@@ -6988,6 +7095,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 68000,
         // 배송비
@@ -7052,6 +7160,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 48000,
         // 배송비
@@ -7116,6 +7225,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 59000,
         // 배송비
@@ -7180,6 +7290,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 78000,
         // 배송비
@@ -7244,6 +7355,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 45800,
         // 배송비
@@ -7308,6 +7420,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 62000,
         // 배송비
@@ -7372,6 +7485,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 68000,
         // 배송비
@@ -7436,6 +7550,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 32000,
         // 배송비
@@ -7500,6 +7615,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 76800,
         // 배송비
@@ -7564,6 +7680,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 79800,
         // 배송비
@@ -7628,6 +7745,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 69800,
         // 배송비
@@ -7692,6 +7810,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 39000,
         // 배송비
@@ -7756,6 +7875,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 47000,
         // 배송비
@@ -7820,6 +7940,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 83000,
         // 배송비
@@ -7884,6 +8005,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 37000,
         // 배송비
@@ -7948,6 +8070,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 42000,
         // 배송비
@@ -8012,6 +8135,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 62000,
         // 배송비
@@ -8076,6 +8200,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 39500,
         // 배송비
@@ -8140,6 +8265,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 51000,
         // 배송비
@@ -8204,6 +8330,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 45000,
         // 배송비
@@ -8268,6 +8395,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 37000,
         // 배송비
@@ -8332,6 +8460,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 64800,
         // 배송비
@@ -8396,6 +8525,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 725000,
         // 배송비
@@ -8460,6 +8590,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 579000,
         // 배송비
@@ -8524,6 +8655,7 @@ export const initData = async (clientId, nextSeq) => {
       },
       {
         _id: await nextSeq('product'),
+        seller_id: 2,
         // 상품가격
         price: 598000,
         // 배송비
