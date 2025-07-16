@@ -3132,7 +3132,7 @@ export const initData = async (clientId, nextSeq) => {
         _id: await nextSeq('product'),
         seller_id: 2,
         // 상품가격
-        price: 84800,
+        price: 74800,
         // 배송비
         shippingFees: 4000,
         // 사이트에 노출될지말지
@@ -3262,7 +3262,7 @@ export const initData = async (clientId, nextSeq) => {
         _id: await nextSeq('product'),
         seller_id: 2,
         // 상품가격
-        price: 59800,
+        price: 49800,
         // 배송비
         shippingFees: 4000,
         // 사이트에 노출될지말지
