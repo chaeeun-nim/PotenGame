@@ -21,7 +21,7 @@ import logOut from "@/assets/icons/logout.svg";
 
 import '@/app/globals.css';
 import { Nav } from "@/components/Nav";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 
 export function Header() {
 
@@ -39,10 +39,22 @@ export function Header() {
 
   const [ searched, setSearched ] = useState<string[]>([]);
 
+  const searchList = localStorage.getItem('최근 검색어') as string;
+  
+
   const addStorage = () => {
-    setSearched([...searched, title])
-    window.localStorage.setItem('최근 검색어', JSON.stringify(searched));
+    const newSearch = [...new Set([...searched, title])];
+    setSearched(newSearch);
+    window.localStorage.setItem('최근 검색어', JSON.stringify(newSearch));
   }
+
+  const deleteStorage = (i: number) => {
+    const arr = JSON.parse(searchList);
+    arr.splice(i, 1);
+    setSearched(arr);
+    window.localStorage.setItem('최근 검색어',JSON.stringify(arr));
+
+  };
   
   const handleKeyDown = (e:React.KeyboardEvent) => {
     if(e.key === 'Enter'){
@@ -53,7 +65,7 @@ export function Header() {
   useEffect(() => {
     setIsLogin(true);
     // setIsLogin(false);
-  },[])
+  },[]);
 
   return(
     <>
@@ -65,7 +77,7 @@ export function Header() {
     </div>
  
     <div className="flex items-center justify-between py-6 max-w-[1200px] mx-5 xl:m-auto">
-      
+    
       {/* 로고 */}
       <Link href='/'>
           {/* 모바일, 테블릿 로고 */}
@@ -140,7 +152,7 @@ export function Header() {
 
     {/* 모바일 검색창 */}
     { isSearchClick? <div className="hidden">검색기록</div> : 
-      <div className=" md:hidden bg-white h-90 absolute top-35 p-3 z-1 w-full">
+      <div className=" md:hidden bg-white h-90 absolute top-35 p-3 z-2 w-full">
         <div className="flex relative items-center">
           <input 
           className="bg-poten-gray-1 rounded-xl h-10 w-full my-3" 
@@ -150,21 +162,23 @@ export function Header() {
           value={ title }
           onKeyDown={ e => handleKeyDown(e) }
           />
-        <button className="absolute right-3" value={ title } onClick={ () => addStorage() }>
-          <Image src={search} alt='검색'></Image>
-        </button>
+          <button className="absolute right-3" value={ title } onClick={ () => addStorage() }>
+            <Image src={search} alt='검색'></Image>
+          </button>
         </div>
-        
+
         <div>
           <p className="border-b-2 border-poten-gray-1 font-bold p-3">최근 검색어</p>
-          <ul> 
-            <li>
-              <button className="inline-block m-2 p-2  border-2 border-poten-gray-1 rounded-4xl">
-                <span>스폰지밥 게임</span>
-                <button> x </button>
-              </button>
-            </li>
-          </ul>
+            { searchList? 
+            JSON.parse(searchList).map((item: string, i:number) => {
+              return(
+                <span key={i} className="justify-between m-2 p-2  border-2 border-poten-gray-1 rounded-4xl">
+                  <span>{item}</span>
+                  <button className="mx-2" onClick={ () => deleteStorage(i) }> x </button>
+                </span>
+            )})
+            : null
+          }
         </div>
       </div>
     }
