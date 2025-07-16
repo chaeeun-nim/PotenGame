@@ -1,4 +1,5 @@
 import MainGameLink from '@/components/MainGameLink/MainGameLink';
+import MainPromotion from '@/components/MainPromotion';
 import MainSlider from '@/components/MainSlider/MainSlide';
 
 export default function Home() {
@@ -6,6 +7,7 @@ export default function Home() {
     <>
       <MainSlider />
       <MainGameLink />
+      <MainPromotion />
     </>
   );
 }
