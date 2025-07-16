@@ -3,9 +3,18 @@
   opacity: 50%;
   width: 16px;
   height: 16px;
+  margin: 10px !important;
 }
 
 .swiper-pagination-bullet-active {
   background-color: var(--color-poten-red);
   opacity: 1;
+}
+
+@media screen and (max-width: 768px) {
+  .swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    margin: 3px !important;
+  }
 }
