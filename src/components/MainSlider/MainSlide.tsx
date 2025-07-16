@@ -22,7 +22,7 @@ export default function MainSlider() {
   return (
     <>
       <Swiper
-        className="!pb-[40px] md:!pb-[60px] !px-[0px] md:!px-[16px]"
+        className="!pb-[40px] !mt-[16px] lg:!mt-[22px] md:!mt-[20px] md:!pb-[60px] !px-[0px] md:!px-[16px]"
         modules={[Pagination, Navigation, Autoplay]}
         autoplay={{ delay: 1000, disableOnInteraction: false }}
         slidesPerView={'auto'}
