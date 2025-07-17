@@ -2,7 +2,7 @@
 'use client';
 
 import { useState } from "react";
-import PageBottomNav from '@/components/PageBottomNav';
+import PageBottomNav from '@/components/Pagination';
 
 export default function Page() {
   const [openedId, setOpenedId] = useState<number | null>(null);
