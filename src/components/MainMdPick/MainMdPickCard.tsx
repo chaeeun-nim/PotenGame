@@ -14,7 +14,7 @@ export default function MainMdPickCard({ cardItem }: { cardItem: MdItem }) {
           height={1080}
         />
         <div
-          className="bg-poten-snowgray1 p-[20px] rounded-b-[8px] md:h-[270px] flex flex-col
+          className="bg-poten-snowgray1 p-[20px] rounded-b-[8px] md:h-[300px] flex flex-col
         justify-around gap-6  xl:p-[36px] leading-tight border-poten-gray-1 border-[1px]">
           <div>
             <p className="text-poten-gray-2 font-bold">{cardItem.platform}</p>
