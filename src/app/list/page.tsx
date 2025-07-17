@@ -1,4 +1,4 @@
-import ItemCard from '@/app/list/[product]/[id]/page';
+import ItemCard from '@/components/list-ItemCard/ItemCard';
 import MainPromotion from '@/components/MainPromotion';
 import Pagination from '@/components/Pagination';
 import SelectBar from '@/components/SelectBar';

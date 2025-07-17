@@ -1,3 +1,4 @@
+// src/components/ItemCard.tsx
 import ItemCardImage from '@/components/list-ItemCard/ItemCardImage';
 import ItemCardInfo from '@/components/list-ItemCard/ItemCardInfo';
 import { ItemLikeBtnProps } from '@/components/list-ItemCard/ItemLikeBtn';
