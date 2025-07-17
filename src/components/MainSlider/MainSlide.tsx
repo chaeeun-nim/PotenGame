@@ -22,7 +22,7 @@ export default function MainSlider() {
   return (
     <>
       <Swiper
-        className="!pb-[40px] md:!pb-[60px] !px-[0px] md:!px-[16px]"
+        className="!pb-[40px] !mt-[16px] lg:!mt-[22px] md:!mt-[20px] md:!pb-[60px] !px-[0px] md:!px-[16px]"
         modules={[Pagination, Navigation, Autoplay]}
         autoplay={{ delay: 1000, disableOnInteraction: false }}
         slidesPerView={'auto'}
@@ -44,7 +44,7 @@ export default function MainSlider() {
           clickable: true,
         }}
         navigation={false}>
-        <SwiperSlide className="lg:!w-[1000px] md:!w-[80%] !w-full">
+        <SwiperSlide className="xl:!w-[1000px] md:!w-[80%] !w-full">
           <Link href="/">
             <Image
               className="md:rounded"
@@ -55,7 +55,7 @@ export default function MainSlider() {
             />
           </Link>
         </SwiperSlide>
-        <SwiperSlide className="lg:!w-[1000px] md:!w-[80%] !w-full ">
+        <SwiperSlide className="xl:!w-[1000px] md:!w-[80%] !w-full ">
           <Link href="/">
             <Image
               className="md:rounded"
@@ -66,7 +66,7 @@ export default function MainSlider() {
             />
           </Link>
         </SwiperSlide>
-        <SwiperSlide className="lg:!w-[1000px] md:!w-[80%] !w-full">
+        <SwiperSlide className="xl:!w-[1000px] md:!w-[80%] !w-full">
           <Link href="/">
             <Image
               className="md:rounded"
@@ -77,7 +77,7 @@ export default function MainSlider() {
             />
           </Link>
         </SwiperSlide>
-        <SwiperSlide className="lg:!w-[1000px] md:!w-[80%] !w-full">
+        <SwiperSlide className="xl:!w-[1000px] md:!w-[80%] !w-full">
           <Link href="/">
             <Image
               className=" md:rounded"
@@ -88,7 +88,7 @@ export default function MainSlider() {
             />
           </Link>
         </SwiperSlide>
-        <SwiperSlide className="lg:!w-[1000px] md:!w-[80%] !w-full">
+        <SwiperSlide className="xl:!w-[1000px] md:!w-[80%] !w-full">
           <Link href="/">
             <Image
               className=" md:rounded"
