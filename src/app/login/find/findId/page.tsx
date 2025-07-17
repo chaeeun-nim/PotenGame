@@ -1,3 +1,7 @@
 export default function FindId() {
-  return <></>;
+  return (
+    <>
+      <h1>findId</h1>
+    </>
+  );
 }
