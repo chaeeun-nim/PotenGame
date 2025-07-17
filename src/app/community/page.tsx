@@ -1,3 +1,7 @@
 export default function Community() {
-  return <></>;
+  return (
+    <>
+      <h1>community</h1>
+    </>
+  );
 }

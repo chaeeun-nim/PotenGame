@@ -43,7 +43,7 @@ export default function FooterContents() {
             </ul>
           </div>
           <div className="lg:col-span-2">
-            <h3 className="text-lg mb-4 font-bold">닌텐도 Switch 02</h3>
+            <h3 className="text-lg mb-4 font-bold">닌텐도 Switch 2</h3>
             <ul className="text-poten-gray-2 flex gap-1 flex-col">
               <li>
                 <Link href="/">중고 게임</Link>

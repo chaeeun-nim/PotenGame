@@ -1,3 +1,7 @@
 export default function FindPw() {
-  return <></>;
+  return (
+    <>
+      <h1>findpw</h1>
+    </>
+  );
 }
