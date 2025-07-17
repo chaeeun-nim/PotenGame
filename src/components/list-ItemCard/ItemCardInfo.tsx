@@ -5,6 +5,7 @@ import cartAdded from '@/assets/icons/addcart.svg';
 import usedTag from '@/assets/icons/used-tag.svg';
 import { useState } from 'react';
 import ItemLikeBtn, { ItemLikeBtnProps } from './ItemLikeBtn';
+import Link from 'next/link';
 // import newTag from '@/assets/icons/new-tag.svg'
 
 //TODO 서버 데이터 도입, info 교체
@@ -24,9 +25,11 @@ export default function ItemCardInfo({ className }: ItemLikeBtnProps) {
         <time dateTime='2025-06-05'>발매 25.06.05</time>
       </header>
 
-      <h3 className="font-bold text-sm my-2 md:text-xl xl:text-[22px] line-clamp-1">
-        젤다의 전설 야생의 숨결
-      </h3>
+      <Link href={'/list/1'}>
+        <h3 className="font-bold text-sm my-2 md:text-xl xl:text-[22px] line-clamp-1">
+          젤다의 전설 야생의 숨결
+        </h3>
+      </Link>
 
       <section className="mb-2" aria-labelledby='price-info'>
         <span id='price-info' className='sr-only'>가격 정보</span>
