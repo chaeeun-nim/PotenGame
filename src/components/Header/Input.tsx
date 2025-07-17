@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import game from "@/assets/icons/game.svg";
 import search from "@/assets/icons/search.svg";
@@ -8,30 +8,40 @@ import close from "@/assets/icons/close.svg";
 export default function Input(){
 
   const [ title, setTitle ] = useState('');
-
   const [ searched, setSearched ] = useState<string[]>([]);
+  // 모바일 상태에서 검색버튼 눌렀을때 상태관리
+  const [ isSearchClick, setIsSearchClick ] = useState<HTMLButtonElement | false | true>(false);
 
-  const searchList = localStorage.getItem('최근 검색어') as string;
+  useEffect(() => {
+    if(typeof window !== 'undefined' ){
+      const stored = window.localStorage.getItem('최근 검색어');
+      if(stored){
+        setSearched(JSON.parse(stored));
+      }
+    }
+  },[])
   
+  const updateStorage = (newArr: string[]) => {
+    setSearched(newArr);
+    window.localStorage.setItem('최근 검색어',JSON.stringify(newArr));
+  }
+
   const deleteStorage = (i: number) => {
-    const arr = JSON.parse(searchList);
-    arr.splice(i, 1);
-    setSearched(arr);
-    window.localStorage.setItem('최근 검색어',JSON.stringify(arr));
+    const newArr = [...searched];
+    newArr.splice(i, 1);
+    updateStorage(newArr);
   };
 
   const deleteAll = () => {
-    const arr = JSON.parse(searchList);
-    arr.length = 0;
-    setSearched(arr);
-    window.localStorage.setItem('최근 검색어',JSON.stringify(arr));
+    updateStorage([]);
   }
 
   const addStorage = () => {
-    const newSearch = [...new Set([...searched, title])];
-    setSearched(newSearch);
-    window.localStorage.setItem('최근 검색어', JSON.stringify(newSearch));
-  }
+    if (!title.trim()) return;
+    const newSearch = [...new Set([title.trim(), ...searched])];
+    updateStorage(newSearch);
+    setTitle('');
+  };
 
   const handleKeyDown = (e:React.KeyboardEvent) => {
     if(e.key === 'Enter'){
@@ -39,15 +49,11 @@ export default function Input(){
     }
   }
 
-  // 모바일 상태에서 검색버튼 눌렀을때 상태관리
-  const [ isSearchClick, setIsSearchClick ] = useState<HTMLButtonElement | false | true>(false);
+  
   
   const handleSearchClick = () => {
-    setIsSearchClick(!isSearchClick)
+    setIsSearchClick(prev => !prev);
   }
-
-  
-
 
   return(
     <>
@@ -62,16 +68,16 @@ export default function Input(){
         placeholder="어떤 상품을 찾으시나요? 중고 게임칩, 신상 게임칩, 게임기 모두 검색"
         onChange={ e => setTitle(e.target.value) }
         value={ title }
-        onKeyDown={ e => handleKeyDown(e) }
+        onKeyDown={ handleKeyDown }
         />
-        <button className="absolute right-3" value={ title } onClick={ () => addStorage() }>
+        <button className="absolute right-3" value={ title } onClick={addStorage }>
           <Image src={search} alt='검색'></Image>
         </button>
       </div>
 
 
       {/* 모바일창 검색버튼 */}
-        <button className=" md:hidden" onClick={ () => handleSearchClick() }>
+        <button className=" md:hidden" onClick={ handleSearchClick }>
           { isSearchClick? <Image src={search} alt="검색"/> : <Image src={close} alt="닫기"/> }
         </button>
       {/* 모바일 검색창 */}
@@ -88,9 +94,9 @@ export default function Input(){
               placeholder="어떤 상품을 찾으시나요?"
               onChange={ e => setTitle(e.target.value) }
               value={ title }
-              onKeyDown={ e => handleKeyDown(e) }
+              onKeyDown={ handleKeyDown }
               />
-              <button className="absolute right-3" value={ title } onClick={ () => addStorage() }>
+              <button className="absolute right-3" value={ title } onClick={addStorage}>
                 <Image src={search} alt='검색'></Image>
               </button>
             </div>
@@ -98,19 +104,15 @@ export default function Input(){
             <div>
               <p className="flex items-center justify-between border-b-2 border-poten-gray-1  p-2 my-2">
                 <span className="font-bold">최근 검색어</span>
-                <button onClick={ ()=> deleteAll() } className="rounded-4xl border-1 border-poten-gray-1 p-2 text-xs">모두 지우기</button>
+                <button onClick={ deleteAll } className="rounded-4xl border-1 border-poten-gray-1 p-2 text-xs">모두 지우기</button>
                 </p>
               <div className="py-2">
-                { searchList? 
-                JSON.parse(searchList).map((item: string, i:number) => {
-                  return(
+                {searched.map((item, i) =>(
                     <span key={i} className="inline-block justify-between m-1 p-2  border-2 border-poten-gray-1 rounded-4xl whitespace-nowrap">
                       <span>{item}</span>
                       <button className="mx-2" onClick={ () => deleteStorage(i) }> x </button>
                     </span>
-                )})
-                : null
-              }
+                ))}
               </div>
             </div>
           </div>
