@@ -39,7 +39,7 @@ export default function SelectBar() {
         
       <hr className="my-3 md:my-4 xl:my-5 border-poten-gray-1" />
      
-      <div className='flex flex-col md:flex-row md:justify-between gap-4 md:gap-0 mb-5'>
+      <nav className='flex flex-col md:flex-row md:justify-between gap-4 md:gap-0 mb-5'>
         <ul className='flex overflow-x-auto gap-2 md:gap-3 xl:gap-0 scrollbar-hide pl-2 pr-2 -mr-2'>
           { labels.map((label, index) => (
             <li
@@ -67,7 +67,7 @@ export default function SelectBar() {
           <option value="most-likes">인기상품</option>
           <option value="most-reviews">리뷰순</option>
         </select>
-      </div>
+      </nav>
     </>
   );
 }

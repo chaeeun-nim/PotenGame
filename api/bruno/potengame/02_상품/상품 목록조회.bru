@@ -11,6 +11,8 @@ get {
 }
 
 params:query {
+  custom: {"extra.category":{"$all":["HARDWARE","PLAYSTATION05","NEW"]}}
+  keyword: 야생
   limit: 12
   sort: {"extra.releaseDate": -1}
   ~custom: {"extra.category":{"$all":["GAME","NINTENDO02","NEW"]}}
