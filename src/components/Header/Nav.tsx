@@ -68,7 +68,7 @@ export function Nav() {
           </li>
 
           <li className='group relative py-5'>
-            <Link href={'/'}>
+            <Link href={'/list'}>
               <span className='group-hover:font-bold group-hover:text-poten-red'>닌텐도 DS</span>
             </Link>
             <div className='hidden w-150 bg-white border-1 border-poten-gray-1 xl:group-hover:flex  hover:flex absolute top-16 z-1'>
@@ -83,7 +83,7 @@ export function Nav() {
           </li>
 
           <li className='group relative py-5'>
-            <Link href={'/'}>
+            <Link href={'/list'}>
               <span className='group-hover:font-bold group-hover:text-poten-red'>닌텐도 스위치</span>
             </Link>
             <div className='hidden w-150 bg-white border-1 border-poten-gray-1 xl:group-hover:flex hover:flex absolute top-16 z-1'>
@@ -98,7 +98,7 @@ export function Nav() {
           </li>
 
           <li className='group relative py-5'>
-            <Link href={'/'}>
+            <Link href={'/list'}>
               <span className='group-hover:font-bold group-hover:text-poten-red'>닌텐도 스위치 2</span>
             </Link>
             <div className='hidden w-150 bg-white border-1 border-poten-gray-1 xl:group-hover:flex hover:flex absolute top-16 z-1'>
@@ -113,7 +113,7 @@ export function Nav() {
           </li>
 
           <li className='group relative py-5'>
-            <Link href={'/'}>
+            <Link href={'/list'}>
               <span className='group-hover:font-bold group-hover:text-poten-red'>플레이스테이션</span>
             </Link>
             <div className='hidden w-170 bg-white border-1 border-poten-gray-1 xl:group-hover:flex hover:flex absolute top-16 z-1'>
