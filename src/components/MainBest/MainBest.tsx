@@ -1,23 +1,14 @@
-import { getNewProducts } from '@/data/functions/products';
-import Image from 'next/image';
+import BestSellerTabs from './BestSellerTabs';
 
 export default async function MainBest() {
-  const data = await getNewProducts();
   return (
     <>
-      <section>베스트섹션</section>
-      {data.ok
-        ? data.item.map((item, i) => (
-            <div key={i}>
-              {item.name}
-              <Image
-                src={`https://fesp-api.koyeb.app/market/${item.mainImages[0].path}`}
-                alt="대표이미지"
-                width={300}
-                height={300}></Image>
-            </div>
-          ))
-        : '데이터 조회 실패'}
+      <section className="mt-12 xl:max-w-[1200px] mx-auto mb-[80px]">
+        <h2 className="sr-only md:not-sr-only text-[22px] md:px-[24px] font-bold">
+          역대 최다판매
+        </h2>
+        <BestSellerTabs />
+      </section>
     </>
   );
 }

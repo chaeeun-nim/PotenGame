@@ -7,7 +7,7 @@ const CLIENT_ID = process.env.NEXT_PUBLIC_CLIENT_ID || '';
 // 최신순으로 상품 조회
 export async function getNewProducts(): ApiResPromise<Iproduct[]> {
   try {
-    const res = await fetch(`${API_URL}//products?limit=12&page=1`, {
+    const res = await fetch(`${API_URL}/products?limit=12&page=1`, {
       headers: {
         'Client-Id': CLIENT_ID,
       },

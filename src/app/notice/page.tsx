@@ -1,18 +1,13 @@
-
 'use client';
 
-import { useState } from "react";
-import PageBottomNav from '@/components/Pagination';
+import { useState } from 'react';
+import Pagination from '@/components/Pagination';
 
 export default function Page() {
   const [openedId, setOpenedId] = useState<number | null>(null);
 
-
-
-
-
   // {공지사항}
-    const noticeList = [
+  const noticeList = [
     {
       id: 1,
       title: '[공지] 포텐게임 런칭 안내',
@@ -113,10 +108,11 @@ export default function Page() {
 
   return (
     <div className="max-w-screen-xl mx-auto px-10 py-12 space-y-12">
-
       {/* 공지사항 */}
       <section className="relative">
-        <h2 className="text-lg font-bold mb-4" style={{ color: 'var(--color-poten-black)' }}>
+        <h2
+          className="text-lg font-bold mb-4"
+          style={{ color: 'var(--color-poten-black)' }}>
           공지사항
         </h2>
         <div className="border-t border-b border-gray-200">
@@ -126,32 +122,29 @@ export default function Page() {
             <div className="col-span-2 text-center">조회수</div>
           </div>
           {noticeList.map((item) => (
-      <div key={item.id}>
-        <div
-          className="grid grid-cols-12 py-3 border-t text-sm hover:bg-gray-50 cursor-pointer"
-          onClick={() => setOpenedId(openedId === item.id ? null : item.id)}
-        >
-          <div className="col-span-8 pl-4">{item.title}</div>
-          <div className="col-span-2 text-center">{item.date}</div>
-          <div className="col-span-2 text-center">{item.views}</div>
+            <div key={item.id}>
+              <div
+                className="grid grid-cols-12 py-3 border-t text-sm hover:bg-gray-50 cursor-pointer"
+                onClick={() => setOpenedId(openedId === item.id ? null : item.id)}>
+                <div className="col-span-8 pl-4">{item.title}</div>
+                <div className="col-span-2 text-center">{item.date}</div>
+                <div className="col-span-2 text-center">{item.views}</div>
+              </div>
+
+              {openedId === item.id && (
+                <div className="col-span-12 px-4 py-4 text-sm bg-gray-50 border-t">
+                  {item.content}
+                </div>
+              )}
+            </div>
+          ))}
         </div>
-
-        {openedId === item.id && (
-          <div className="col-span-12 px-4 py-4 text-sm bg-gray-50 border-t">
-            {item.content}
-          </div>
-            )}
-          </div>
-        ))}
-      </div>
-
 
         {/* 관리자만 글쓰기 버튼 보기 */}
         {currentUser.role === 'admin' && (
           <button
             className="absolute right-0 -bottom-16 bg-[#E6001F] text-white text-sm rounded-md font-semibold shadow"
-            style={{ width: '160px', height: '45px' }}
-          >
+            style={{ width: '160px', height: '45px' }}>
             글쓰기
           </button>
         )}
@@ -165,10 +158,8 @@ export default function Page() {
       */}
 
       <div className="flex justify-center pt-4">
-        <PageBottomNav />
+        <Pagination />
       </div>
-
     </div>
   );
 }
-
