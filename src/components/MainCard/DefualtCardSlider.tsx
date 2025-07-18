@@ -12,8 +12,10 @@ import { dataArray } from './makeSliderArray';
 
 export default function DefualtCardSlider({
   ProductItems,
+  btnId,
 }: {
   ProductItems: Iproduct[];
+  btnId: string;
 }) {
   const data = dataArray(ProductItems, 4);
 
@@ -34,15 +36,15 @@ export default function DefualtCardSlider({
         effect={'creative'}
         speed={700}
         navigation={{
-          prevEl: '.my-prev',
-          nextEl: '.my-next',
+          prevEl: `.prev-${btnId}`,
+          nextEl: `.next-${btnId}`,
         }}
         loop={true}>
         {SlidItems}
       </Swiper>
 
-      <button className="my-prev">왼쪽</button>
-      <button className="my-next">오른쪽</button>
+      <button className={`prev-${btnId}`}>왼쪽</button>
+      <button className={`next-${btnId}`}>오른쪽</button>
     </>
   );
 }

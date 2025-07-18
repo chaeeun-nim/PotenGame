@@ -9,7 +9,13 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { Navigation } from 'swiper/modules';
 
-export default function TabletCardSlider({ ProductItems }: { ProductItems: Iproduct[] }) {
+export default function TabletCardSlider({
+  ProductItems,
+  btnId,
+}: {
+  ProductItems: Iproduct[];
+  btnId: string;
+}) {
   const SlidItemsTablet = ProductItems.map((item, i) => (
     <SwiperSlide key={i}>
       <MainCard key={item._id} item={item}></MainCard>
@@ -26,14 +32,14 @@ export default function TabletCardSlider({ ProductItems }: { ProductItems: Iprod
           speed={300}
           slidesPerView={3}
           navigation={{
-            prevEl: '.my-prev',
-            nextEl: '.my-next',
+            prevEl: `.prev-${btnId}`,
+            nextEl: `.next-${btnId}`,
           }}>
           {SlidItemsTablet}
         </Swiper>
+        <button className={`prev-${btnId}`}>왼쪽</button>
+        <button className={`next-${btnId}`}>오른쪽</button>
       </div>
-      <button className="my-prev disabled:bg-amber-600 bg-black">왼쪽</button>
-      <button className="my-next">오른쪽</button>
     </>
   );
 }

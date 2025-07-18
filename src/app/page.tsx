@@ -12,8 +12,14 @@ export default function Home() {
       <MainGameLink />
       <section className="bg-poten-snowgray1 w-full py-[32px] mt-[50px]">
         <h2 className="sr-only">신상게임 및 최저가 게임 목록</h2>
-        <MainCardList dataType={{ 'extra.releaseDate': -1 }} gameType={['GAME', 'NEW']}>
+        <MainCardList
+          dataType={{ 'extra.releaseDate': -1 }}
+          gameType={['GAME', 'NEW']}
+          btnId="NewGame">
           따끈따끈 신상게임
+        </MainCardList>
+        <MainCardList dataType={{ price: 1 }} gameType={['GAME']} btnId="CheapGame">
+          역대 최저가 게임
         </MainCardList>
       </section>
 

@@ -3,21 +3,46 @@ import Image from 'next/image';
 import NintendoSwitchIcon from '../../assets/icons/nintendoIcon.svg';
 import PsIcon from '../../assets/icons/psicon.svg';
 import NintendoDsIcon from '../../assets/icons/nintendods.svg';
+import Link from 'next/link';
 
 export default function MainCard({ item }: { item: Iproduct }) {
   let PlatformIcons;
   let PlatformColor;
   switch (item.extra.platform) {
     case 'Nintendo Switch': {
-      PlatformIcons = NintendoSwitchIcon;
+      PlatformIcons = (
+        <Image
+          src={NintendoSwitchIcon}
+          alt={item.extra.platform}
+          className="w-5 h-auto "
+          width={36}
+          height={36}
+        />
+      );
       break;
     }
     case 'Nintendo NDS': {
-      PlatformIcons = NintendoDsIcon;
+      PlatformIcons = (
+        <Image
+          src={NintendoDsIcon}
+          alt={item.extra.platform}
+          className="w-8 h-auto "
+          width={36}
+          height={36}
+        />
+      );
       break;
     }
     case 'PlayStation': {
-      PlatformIcons = PsIcon;
+      PlatformIcons = (
+        <Image
+          src={PsIcon}
+          alt={item.extra.platform}
+          className="w-5 h-auto "
+          width={36}
+          height={36}
+        />
+      );
       break;
     }
   }
@@ -27,7 +52,7 @@ export default function MainCard({ item }: { item: Iproduct }) {
       break;
     }
     case 'Nintendo NDS': {
-      PlatformColor = 'bg-poten-nintendo';
+      PlatformColor = 'bg-[#000]';
       break;
     }
     case 'PlayStation': {
@@ -39,16 +64,12 @@ export default function MainCard({ item }: { item: Iproduct }) {
   return (
     <>
       <li>
-        <div className="rounded-[8px] bg-white overflow-hidden shadow">
+        <Link
+          href={`/list/${item._id}`}
+          className="rounded-[8px] bg-white block overflow-hidden shadow">
           <div
-            className={`${PlatformColor} flex gap-1 justify-center items-center py-1 `}>
-            <Image
-              src={PlatformIcons}
-              alt={item.extra.platform}
-              className="w-5 h-auto "
-              width={36}
-              height={36}
-            />
+            className={`${PlatformColor} flex gap-1 justify-center items-center py-1 h-[30px]`}>
+            {PlatformIcons}
             <p className="font-extrabold text-[20px] text-white leading-[100%]">
               {item.extra.platform !== 'Nintendo NDS' ? item.extra.platformVersion : null}
             </p>
@@ -59,8 +80,11 @@ export default function MainCard({ item }: { item: Iproduct }) {
             alt={item.mainImages[0].name}
             width={100}
             height={100}></Image>
-        </div>
+        </Link>
+        <p>발매일 {item.extra.releaseDate}</p>
         <p>{item.name}</p>
+        <p>{item.extra.originalPrice}</p>
+        <p>{item.price}</p>
       </li>
     </>
   );

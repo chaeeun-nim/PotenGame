@@ -10,10 +10,12 @@ export default async function MainCardList({
   children,
   dataType,
   gameType,
+  btnId,
 }: {
   children: string;
   dataType: sortNews | sortPrice;
   gameType: GameUsedType;
+  btnId: string;
 }) {
   const data = await mainCardListData(dataType, gameType);
 
@@ -23,7 +25,11 @@ export default async function MainCardList({
         <h3 className="font-extrabold text-[20px] md:text-[22px] xl:text-[24px] px-[16px] md:px-[24px] xl:px[0px]">
           {children}
         </h3>
-        {data.ok ? <CardSlier ProductItems={data.item} /> : <p>데이터로딩실패 </p>}
+        {data.ok ? (
+          <CardSlier ProductItems={data.item} btnId={btnId} />
+        ) : (
+          <p>데이터로딩실패 </p>
+        )}
       </div>
     </>
   );

@@ -8,37 +8,38 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { Navigation } from 'swiper/modules';
-import { dataArray } from './makeSliderArray';
 
-export default function PcCardSlider({ ProductItems }: { ProductItems: Iproduct[] }) {
-  const data = dataArray(ProductItems, 4);
-
-  const SlidItems = data.map((group, i) => (
+export default function PcCardSlider({
+  ProductItems,
+  btnId,
+}: {
+  ProductItems: Iproduct[];
+  btnId: string;
+}) {
+  const SlidItemsTablet = ProductItems.map((item, i) => (
     <SwiperSlide key={i}>
-      <ul className="grid grid-cols-2 grid-rows-2 xl:grid-rows-1 md:grid-cols-3 xl:grid-cols-4 gap-4 mx-4">
-        {group.map((item) => (
-          <MainCard key={item._id} item={item}></MainCard>
-        ))}
-      </ul>
+      <MainCard key={item._id} item={item}></MainCard>
     </SwiperSlide>
   ));
 
   return (
     <>
-      <Swiper
-        modules={[Navigation]}
-        effect={'creative'}
-        speed={700}
-        navigation={{
-          prevEl: '.my-prev',
-          nextEl: '.my-next',
-        }}
-        loop={true}>
-        {SlidItems}
-      </Swiper>
-
-      <button className="my-prev">왼쪽</button>
-      <button className="my-next">오른쪽</button>
+      <div className="py-6 px-[24px]">
+        <Swiper
+          modules={[Navigation]}
+          effect={'creative'}
+          spaceBetween={24}
+          speed={300}
+          slidesPerView={4}
+          navigation={{
+            prevEl: `.prev-${btnId}`,
+            nextEl: `.next-${btnId}`,
+          }}>
+          {SlidItemsTablet}
+        </Swiper>
+      </div>
+      <button className={`prev-${btnId}`}>왼쪽</button>
+      <button className={`next-${btnId}`}>오른쪽</button>
     </>
   );
 }
