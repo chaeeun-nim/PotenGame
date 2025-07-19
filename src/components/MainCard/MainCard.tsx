@@ -4,6 +4,7 @@ import NintendoSwitchIcon from '../../assets/icons/nintendoIcon.svg';
 import PsIcon from '../../assets/icons/psicon.svg';
 import NintendoDsIcon from '../../assets/icons/nintendods.svg';
 import Link from 'next/link';
+import MainCardInfo from './MainCardInfo';
 
 export default function MainCard({ item }: { item: Iproduct }) {
   let PlatformIcons;
@@ -63,10 +64,10 @@ export default function MainCard({ item }: { item: Iproduct }) {
 
   return (
     <>
-      <li>
+      <div>
         <Link
           href={`/list/${item._id}`}
-          className="rounded-[8px] bg-white block overflow-hidden shadow">
+          className="rounded-[4px] md:rounded-[8px] bg-white block overflow-hidden shadow">
           <div
             className={`${PlatformColor} flex gap-1 justify-center items-center py-1 h-[30px]`}>
             {PlatformIcons}
@@ -75,17 +76,14 @@ export default function MainCard({ item }: { item: Iproduct }) {
             </p>
           </div>
           <Image
-            className="mx-auto p-4 w-[150px]"
+            className="mx-auto p-2 md:p-4 w-[100px] md:w-[150px]"
             src={`https://fesp-api.koyeb.app/market/${item.mainImages[0].path}`}
             alt={item.mainImages[0].name}
             width={100}
             height={100}></Image>
         </Link>
-        <p>발매일 {item.extra.releaseDate}</p>
-        <p>{item.name}</p>
-        <p>{item.extra.originalPrice}</p>
-        <p>{item.price}</p>
-      </li>
+        <MainCardInfo item={item} />
+      </div>
     </>
   );
 }

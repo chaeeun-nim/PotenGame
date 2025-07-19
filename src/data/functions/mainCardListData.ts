@@ -21,7 +21,7 @@ export async function mainCardListData(
 ): ApiResPromise<Iproduct[]> {
   try {
     const res = await fetch(
-      `${API_URL}/products?limit=12&page=1&custom={"extra.category":{"$all":${JSON.stringify(gameType)}}}&sort=${JSON.stringify(sort)}`,
+      `${API_URL}/products?limit=24&page=1&custom={"extra.category":{"$all":${JSON.stringify(gameType)}}}&sort=${JSON.stringify(sort)}`,
       {
         headers: {
           'Client-Id': CLIENT_ID,

@@ -21,8 +21,8 @@ export default async function MainCardList({
 
   return (
     <>
-      <div className="bg-poten-snowgray1 xl:max-w-[1200px] mx-auto">
-        <h3 className="font-extrabold text-[20px] md:text-[22px] xl:text-[24px] px-[16px] md:px-[24px] xl:px[0px]">
+      <div className="bg-poten-snowgray1 xl:max-w-[1200px] mx-auto my-[16px] mb-[32px]">
+        <h3 className="font-extrabold text-[20px] md:text-[22px] mb-4 xl:text-[24px] px-[16px] md:px-[24px] xl:px[0px]">
           {children}
         </h3>
         {data.ok ? (

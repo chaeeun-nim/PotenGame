@@ -9,6 +9,8 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { Navigation } from 'swiper/modules';
 import { dataArray } from './makeSliderArray';
+import SlideBtnLeft from './SlideBtnLeft';
+import SlideBtnRight from './SlideBtnRight';
 
 export default function DefualtCardSlider({
   ProductItems,
@@ -21,7 +23,7 @@ export default function DefualtCardSlider({
 
   const SlidItems = data.map((group, i) => (
     <SwiperSlide key={i}>
-      <ul className="grid grid-cols-2 grid-rows-2 xl:grid-rows-1 md:grid-cols-3 xl:grid-cols-4 gap-4 mx-4">
+      <ul className="grid grid-cols-2 grid-rows-2 xl:grid-rows-1 md:grid-cols-3 xl:grid-cols-4 gap-4 mx-4 gap-y-8">
         {group.map((item) => (
           <MainCard key={item._id} item={item}></MainCard>
         ))}
@@ -39,12 +41,14 @@ export default function DefualtCardSlider({
           prevEl: `.prev-${btnId}`,
           nextEl: `.next-${btnId}`,
         }}
-        loop={true}>
+        loop={false}>
         {SlidItems}
       </Swiper>
 
-      <button className={`prev-${btnId}`}>왼쪽</button>
-      <button className={`next-${btnId}`}>오른쪽</button>
+      <div className="z-10 text-right p-4">
+        <SlideBtnLeft btnId={`prev-${btnId}`} />
+        <SlideBtnRight btnId={`next-${btnId}`} />
+      </div>
     </>
   );
 }

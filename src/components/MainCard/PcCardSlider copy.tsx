@@ -8,6 +8,8 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { Navigation } from 'swiper/modules';
+import SlideBtnLeft from './SlideBtnLeft';
+import SlideBtnRight from './SlideBtnRight';
 
 export default function PcCardSlider({
   ProductItems,
@@ -38,8 +40,10 @@ export default function PcCardSlider({
           {SlidItemsTablet}
         </Swiper>
       </div>
-      <button className={`prev-${btnId}`}>왼쪽</button>
-      <button className={`next-${btnId}`}>오른쪽</button>
+      <div className="z-10 text-right p-4">
+        <SlideBtnLeft btnId={`prev-${btnId}`} />
+        <SlideBtnRight btnId={`next-${btnId}`} />
+      </div>
     </>
   );
 }
