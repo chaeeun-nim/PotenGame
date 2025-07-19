@@ -1,3 +1,5 @@
+'use client';
+
 import { Iproduct } from '@/types/products';
 import { isNewProducts } from './isNewProducts';
 import { DateFormat } from './DateFormat';
@@ -6,16 +8,34 @@ import NewTag from './NewTag';
 import Link from 'next/link';
 import noLikeIcon from '@/assets/icons/heart-gray.svg';
 import Image from 'next/image';
+import { JSX, useEffect, useState } from 'react';
+
+import CartBtn from './CartBtn';
 
 export default function MainCardInfo({ item }: { item: Iproduct }) {
-  const isNew = isNewProducts(item.extra.releaseDate);
-  const releaseDate = DateFormat(item.extra.releaseDate);
+  const [releaseDate, setReleaseDate] = useState('');
+
+  const [Tags, setTags] = useState<JSX.Element | null>(null);
+
+  useEffect(() => {
+    setReleaseDate(DateFormat(item.extra.releaseDate));
+    const isNew = isNewProducts(item.extra.releaseDate);
+
+    if (item.extra.used) {
+      setTags(<UsedTag />);
+    } else if (isNew) {
+      setTags(<NewTag />);
+    } else {
+      setTags(null);
+    }
+  }, [item.extra.used, item.extra.releaseDate]);
+
   return (
     <>
       <div className="py-1 leading-[150%] ">
         <Link href={`/list/${item._id}`} className=" mb- flex flex-col p-0.5 md:p-2">
           <div className="flex flex-row gap-2  md:gap-4  items-center">
-            {item.extra.used ? <UsedTag /> : isNew ? <NewTag /> : null}
+            {Tags}
             <p className="text-[12px] md:text-[16px] text-poten-gray-2">
               발매 {releaseDate}
             </p>
@@ -34,8 +54,8 @@ export default function MainCardInfo({ item }: { item: Iproduct }) {
             </p>
           </div>
         </Link>
-        <div className="w-full bg-red-600 flex flex-row items-center justify-between">
-          <button className="bg-poten-newblue ">담기</button>
+        <div className="w-full flex flex-row items-center justify-between">
+          <CartBtn ItemId={item._id} />
           <button>
             <Image
               src={noLikeIcon}

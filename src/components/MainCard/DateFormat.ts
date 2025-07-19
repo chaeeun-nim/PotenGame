@@ -4,7 +4,7 @@ export function DateFormat(releaseDate: string): string {
   const release = new Date(releaseDate);
   const Year = release.getFullYear().toString();
   const Month = release.getMonth().toString().padStart(2, '0');
-  const Day = release.getDay().toString().padStart(2, '0');
+  const date = release.getDate().toString().padStart(2, '0');
 
-  return `${Year.slice(2)}.${Month}.${Day}`;
+  return `${Year.slice(2)}.${Month}.${date}`;
 }

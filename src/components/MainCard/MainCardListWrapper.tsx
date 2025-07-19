@@ -4,9 +4,9 @@ import {
   sortNews,
   sortPrice,
 } from '@/data/functions/mainCardListData';
-import CardSlier from './CardSlider';
+import CardSliderView from './CardSliderView';
 
-export default async function MainCardList({
+export default async function MainCardListWrapper({
   children,
   dataType,
   gameType,
@@ -22,11 +22,11 @@ export default async function MainCardList({
   return (
     <>
       <div className="bg-poten-snowgray1 xl:max-w-[1200px] mx-auto my-[16px] mb-[32px]">
-        <h3 className="font-extrabold text-[20px] md:text-[22px] mb-4 xl:text-[24px] px-[16px] md:px-[24px] xl:px[0px]">
+        <h3 className="font-extrabold text-[20px] md:text-[22px] mb- xl:text-[24px] px-[16px] md:px-[24px] xl:px[0px]">
           {children}
         </h3>
         {data.ok ? (
-          <CardSlier ProductItems={data.item} btnId={btnId} />
+          <CardSliderView ProductItems={data.item} btnId={btnId} />
         ) : (
           <p>데이터로딩실패 </p>
         )}

@@ -1,3 +1,5 @@
+'use client';
+
 import { Iproduct } from '@/types/products';
 import Image from 'next/image';
 import NintendoSwitchIcon from '../../assets/icons/nintendoIcon.svg';

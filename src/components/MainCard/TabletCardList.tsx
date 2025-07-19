@@ -11,7 +11,7 @@ import { Navigation } from 'swiper/modules';
 import SlideBtnLeft from './SlideBtnLeft';
 import SlideBtnRight from './SlideBtnRight';
 
-export default function PcCardSlider({
+export default function TabletCardList({
   ProductItems,
   btnId,
 }: {
@@ -32,17 +32,17 @@ export default function PcCardSlider({
           effect={'creative'}
           spaceBetween={24}
           speed={300}
-          slidesPerView={4}
+          slidesPerView={3}
           navigation={{
             prevEl: `.prev-${btnId}`,
             nextEl: `.next-${btnId}`,
           }}>
           {SlidItemsTablet}
         </Swiper>
-      </div>
-      <div className="z-10 text-right p-4">
-        <SlideBtnLeft btnId={`prev-${btnId}`} />
-        <SlideBtnRight btnId={`next-${btnId}`} />
+        <div className="z-10 text-right p-4">
+          <SlideBtnLeft btnId={`prev-${btnId}`} />
+          <SlideBtnRight btnId={`next-${btnId}`} />
+        </div>
       </div>
     </>
   );

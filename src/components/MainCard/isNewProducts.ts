@@ -1,3 +1,5 @@
+'use client';
+
 export function isNewProducts(releaseDate: string): boolean {
   const today = new Date();
   const release = new Date(releaseDate);

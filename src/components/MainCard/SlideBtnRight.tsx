@@ -1,3 +1,5 @@
+'use client';
+
 export default function SlideBtnRight({ btnId }: { btnId: string }) {
   return (
     <>

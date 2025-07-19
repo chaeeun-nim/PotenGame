@@ -1,31 +1,40 @@
-import MainBest from '@/components/MainBest/MainBest';
-import MainCardList from '@/components/MainCard/MainCardList';
+// import MainBest from '@/components/MainBest/MainBest';
+import MainCardListWrapper from '@/components/MainCard/MainCardListWrapper';
+
 import MainGameLink from '@/components/MainGameLink/MainGameLink';
 import MainMdPick from '@/components/MainMdPick/MainMdPick';
 import MainPromotion from '@/components/MainPromotion';
 import MainSlider from '@/components/MainSlider/MainSlide';
+import TestLoginBtn from '@/components/testLoginBtn';
 
-export default function Home() {
+// import PotenRanking from '@/components/potenRanking/PotenRanking';
+
+export default async function Home() {
   return (
     <>
+      <TestLoginBtn />
       <MainSlider />
       <MainGameLink />
       <section className="bg-poten-snowgray1 w-full py-[32px] mt-[50px]">
         <h2 className="sr-only">신상게임 및 최저가 게임 목록</h2>
-        <MainCardList
+        <MainCardListWrapper
           dataType={{ 'extra.releaseDate': -1 }}
           gameType={['GAME', 'NEW']}
           btnId="NewGame">
           따끈따끈 신상게임
-        </MainCardList>
-        <MainCardList dataType={{ price: 1 }} gameType={['GAME']} btnId="CheapGame">
+        </MainCardListWrapper>
+        <MainCardListWrapper
+          dataType={{ price: 1 }}
+          gameType={['GAME']}
+          btnId="CheapGame">
           역대 최저가 게임
-        </MainCardList>
+        </MainCardListWrapper>
       </section>
 
       <MainMdPick />
       <MainPromotion />
-      <MainBest />
+      {/* <MainBest /> */}
+      {/* <PotenRanking /> */}
     </>
   );
 }
