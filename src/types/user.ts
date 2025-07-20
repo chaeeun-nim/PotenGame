@@ -35,3 +35,9 @@ export interface IuserExtra {
   membershipClass: 'MC01' | 'MC02';
   addressBook: Iaddress[];
 }
+
+export interface UserState {
+  user: Iuser | null;
+  setUser: (user: Iuser) => void;
+  resetUser: () => void;
+}

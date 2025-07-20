@@ -11,6 +11,7 @@ import Image from 'next/image';
 import { JSX, useEffect, useState } from 'react';
 
 import CartBtn from './CartBtn';
+import ItemLikeBtn from '../list-ItemCard/ItemLikeBtn';
 
 export default function MainCardInfo({ item }: { item: Iproduct }) {
   const [releaseDate, setReleaseDate] = useState('');
@@ -54,16 +55,9 @@ export default function MainCardInfo({ item }: { item: Iproduct }) {
             </p>
           </div>
         </Link>
-        <div className="w-full flex flex-row items-center justify-between">
+        <div className="mt-[16px] w-full flex flex-row items-center justify-between gap-4">
           <CartBtn ItemId={item._id} />
-          <button>
-            <Image
-              src={noLikeIcon}
-              className="w-full"
-              alt="찜하기"
-              width={30}
-              height={30}></Image>
-          </button>
+          <ItemLikeBtn className={`w-[30px] h-[30px]`} />
         </div>
       </div>
     </>

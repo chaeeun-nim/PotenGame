@@ -1,17 +1,7 @@
-import { getCart } from '@/data/functions/getCart';
-
-export default async function CartPage() {
-  const data = await getCart();
-  console.log(data);
+export default function CartPage() {
   return (
     <>
-      {data.ok ? (
-        data.item.map((item) => {
-          return <p key={item._id}>{item.product.name}</p>;
-        })
-      ) : (
-        <p>로그인하시오 ㅋ</p>
-      )}
+      <h1>카트페이지</h1>
     </>
   );
 }

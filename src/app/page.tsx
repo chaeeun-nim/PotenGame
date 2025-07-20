@@ -5,14 +5,12 @@ import MainGameLink from '@/components/MainGameLink/MainGameLink';
 import MainMdPick from '@/components/MainMdPick/MainMdPick';
 import MainPromotion from '@/components/MainPromotion';
 import MainSlider from '@/components/MainSlider/MainSlide';
-import TestLoginBtn from '@/components/testLoginBtn';
 
 // import PotenRanking from '@/components/potenRanking/PotenRanking';
 
 export default async function Home() {
   return (
     <>
-      <TestLoginBtn />
       <MainSlider />
       <MainGameLink />
       <section className="bg-poten-snowgray1 w-full py-[32px] mt-[50px]">

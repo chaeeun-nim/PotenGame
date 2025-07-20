@@ -23,8 +23,9 @@ export default async function testLogin() {
 
     if (data.ok) {
       const user: Iuser = data.item; // 구조만 잘 맞으면 그대로!
+      console.log('로그인시작!');
       setUser(user); // 여기서 상태에 바로 저장!
-      console.log('로그인됨ㅋ');
+      console.log('로그인성공?');
     }
   } catch (error) {
     // 네트워크 오류 처리

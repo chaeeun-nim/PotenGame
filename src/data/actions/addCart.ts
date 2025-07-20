@@ -2,14 +2,12 @@
 
 import { ApiRes, ApiResPromise } from '@/types/api';
 import { IcartPostReq } from '@/types/Cart';
-import useUserStore from '@/zustand/loginTestStore';
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL;
 const CLIENT_ID = process.env.NEXT_PUBLIC_CLIENT_ID || '';
 
 export async function addCart(formData: FormData): ApiResPromise<IcartPostReq> {
   const body = Object.fromEntries(formData.entries());
-  const accesToken = useUserStore.getState().user?.token.accessToken;
 
   let res: Response;
   let data: ApiRes<IcartPostReq>;
@@ -20,7 +18,7 @@ export async function addCart(formData: FormData): ApiResPromise<IcartPostReq> {
       headers: {
         'Content-Type': 'application/json',
         'Client-Id': CLIENT_ID,
-        Authorization: `Bearer ${accesToken}`,
+        // Authorization: `Bearer ${accesToken}`,
       },
       body: JSON.stringify(body),
     });

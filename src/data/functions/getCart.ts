@@ -5,7 +5,9 @@ export const API_URL = process.env.NEXT_PUBLIC_API_URL;
 const CLIENT_ID = process.env.NEXT_PUBLIC_CLIENT_ID || '';
 
 // 장바구니상품조회
-export async function getCart(): Promise<IcartProductRes | { ok: 0; message: string }> {
+export async function getCart(
+  token: string,
+): Promise<IcartProductRes | { ok: 0; message: string }> {
   const accesToken = useUserStore.getState().user?.token.accessToken;
   console.log('액세스토큰', accesToken);
 
@@ -14,7 +16,7 @@ export async function getCart(): Promise<IcartProductRes | { ok: 0; message: str
       method: 'GET',
       headers: {
         'Client-Id': CLIENT_ID,
-        Authorization: `Bearer ${accesToken}`,
+        Authorization: `Bearer ${token}`,
       },
       cache: 'force-cache',
     });

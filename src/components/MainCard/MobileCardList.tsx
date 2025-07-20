@@ -28,7 +28,7 @@ export default function MobileCardList({
   return (
     <>
       <div className="mb-[100px]">
-        <div className="grid grid-cols-2 grid-rows-2  gap-4 mx-4 gap-y-8">
+        <div className="grid grid-cols-2 grid-rows-2  gap-4 mx-4 gap-y-12">
           {viewGame.map((item) => (
             <MainCard key={item._id} item={item}></MainCard>
           ))}
