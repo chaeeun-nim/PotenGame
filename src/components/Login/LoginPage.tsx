@@ -51,7 +51,7 @@ export default function LoginPage(){
                     className="inline-block w-4 h-4 cursor-pointer mx-1">
                 <Image src={ isLoginChecked? checked : unchecked} alt="로그인 상태 유지" />
               </label>
-              <span>로그인 정보저장</span>
+              <span>로그인 유지하기</span>
             </div>
           </div>
 
