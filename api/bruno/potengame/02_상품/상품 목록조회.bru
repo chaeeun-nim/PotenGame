@@ -5,18 +5,18 @@ meta {
 }
 
 get {
-  url: {{url}}/products
+  url: {{url}}/products?keyword=잼버리
   body: none
   auth: inherit
 }
 
 params:query {
+  keyword: 잼버리
   ~custom: {"extra.category":{"$all":["HARDWARE","PLAYSTATION05","NEW"]}}
   ~keyword: 야생
   ~limit: 12
   ~sort: {"extra.releaseDate": -1}
   ~custom: {"extra.category":{"$all":["GAME","NINTENDO02","NEW"]}}
-  ~keyword: 포켓몬
   ~page: 1
   ~sort: {"price": -1}
 }
