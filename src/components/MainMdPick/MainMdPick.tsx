@@ -9,7 +9,7 @@ export default function MainMdPick() {
   ));
   return (
     <>
-      <section className="w-full xl:max-w-[1200px] mx-auto px-[16px] md:px-[24px] my-[50px]">
+      <section className="w-full xl:max-w-[1200px] mx-auto px-[16px] md:px-[24px] xl:px-[0px] my-[50px]">
         <Image
           className="w-[160px] md:w-[170px]"
           src={logo}
