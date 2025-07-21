@@ -1,32 +1,57 @@
 'use client';
 import Image from 'next/image';
+import { useState } from 'react';
+import Link from 'next/link';
 import cart from '@/assets/icons/cart.svg';
 import cartAdded from '@/assets/icons/addcart.svg';
 import usedTag from '@/assets/icons/used-tag.svg';
-import { useState } from 'react';
-import ItemLikeBtn, { ItemLikeBtnProps } from './ItemLikeBtn';
-import Link from 'next/link';
+import { useItemCardContext } from '@/components/list-ItemCard/ItemCardContext';
+import ItemLikeBtn from '@/components/list-ItemCard/ItemLikeBtn';
 // import newTag from '@/assets/icons/new-tag.svg'
 
 //TODO 서버 데이터 도입, info 교체
-export default function ItemCardInfo({ className }: ItemLikeBtnProps) {
+export default function ItemCardInfo() {
+  const { variant } = useItemCardContext();
+
+  const getInfoStyles = () => {
+    switch (variant) {
+      case 'detailed': 
+        return {
+          container: "flex flex-row justify-between items-center flex-1 mx-3",
+          title: "text-sm md:text-base",
+          showDetails: true,
+        };
+      default:
+        return {
+          container: "flex flex-col justify-start flex-1 m-3",
+          title: "text-sm md:text-xl xl:text-[22px] line-clamp-1",
+          showDetails: true
+        };
+      };
+  };
+
+  const styles = getInfoStyles();
+
   const [isInCart, setIsInCart] = useState(false);
   const handleCartClick = () => {
     setIsInCart(!isInCart);
   };
 
   return (
-    <article className="flex flex-col justify-start flex-1 m-3">
-      <header className="flex flex-row gap-1.5 text-[10px] md:text-sm xl:text-base">
-        <span className="items-center flex flex-row gap-0.5 font-bold italic text-poten-usedorange">
-          <Image src={usedTag} alt="new item" className="w-4 h-4" />
-          S급 중고
-        </span>
-        <time dateTime='2025-06-05'>발매 25.06.05</time>
-      </header>
+    <article className={styles.container}>
+      {/* variant에 따라 조건부 렌더링 */}
+      {styles.showDetails && (
+        <header className="flex flex-row gap-1.5 text-[10px] md:text-sm xl:text-base">
+          <span className="items-center flex flex-row gap-0.5 font-bold italic text-poten-usedorange">
+            <Image src={usedTag} alt="new item" className="w-4 h-4" />
+            S급 중고
+          </span>
+          <time dateTime='2025-06-05'>발매 25.06.05</time>
+        </header>
+      )}
 
       <Link href={'/list/1'}>
-        <h3 className="font-bold text-sm my-2 md:text-xl xl:text-[22px] line-clamp-1">
+        <h3 className={`font-bold my-2 ${styles.title}`}>
           젤다의 전설 야생의 숨결
         </h3>
       </Link>
@@ -58,7 +83,7 @@ export default function ItemCardInfo({ className }: ItemLikeBtnProps) {
           />
         </button>
 
-        <ItemLikeBtn className={`w-5 h-5 ${className}`} />
+        <ItemLikeBtn />
       </footer>
     </article>
   );
