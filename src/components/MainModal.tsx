@@ -6,6 +6,9 @@ import likelionLogo from '../../public/logo/likelionlogo.png';
 import { useRouter } from 'next/navigation';
 
 export default function MainModal() {
+  useEffect(() => {
+    throw new Error('테스트용 에러 껑!');
+  }, []);
   const rounter = useRouter();
 
   if (sessionStorage.getItem('modal') === null) {
