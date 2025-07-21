@@ -6,8 +6,6 @@ import { DateFormat } from './DateFormat';
 import UsedTag from './UsedTag';
 import NewTag from './NewTag';
 import Link from 'next/link';
-import noLikeIcon from '@/assets/icons/heart-gray.svg';
-import Image from 'next/image';
 import { JSX, useEffect, useState } from 'react';
 
 import CartBtn from './CartBtn';

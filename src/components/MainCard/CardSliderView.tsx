@@ -25,6 +25,7 @@ export default function CardSliderView({
   const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1279 });
 
   if (!mount) return null;
+
   return (
     <>
       {isDeskTop && <PcCardList ProductItems={ProductItems} btnId={btnId} />}
