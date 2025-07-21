@@ -1,23 +1,30 @@
 'use client';
 
-// import { useRouter } from 'next/router';
 import Image from 'next/image';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import likelionLogo from '../../public/logo/likelionlogo.png';
-import useModalStore from '@/zustand/modalStore';
-import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 export default function MainModal() {
-  // const rounter = useRouter();
-  const { modal, closeModal } = useModalStore((s) => ({
-    modal: s.modal,
-    closeModal: s.closeModal,
-  }));
+  const rounter = useRouter();
 
-  // function aboutLink() {
-  //   closeModal();
-  //   rounter.push('./about');
-  // }
+  if (sessionStorage.getItem('modal') === null) {
+    sessionStorage.setItem('modal', JSON.stringify(true));
+  } else {
+    sessionStorage.setItem('modal', JSON.stringify(false));
+  }
+  const modalSession = sessionStorage.getItem('modal');
+  const [modal, setModal] = useState<boolean | null>(modalSession ? true : false);
+
+  function closeModal() {
+    setModal(false);
+    sessionStorage.setItem('modal', JSON.stringify(false));
+  }
+
+  const aboutLink = () => {
+    closeModal();
+    rounter.push('./about');
+  };
 
   useEffect(() => {
     if (modal) {
@@ -61,8 +68,8 @@ export default function MainModal() {
                 <button
                   type="button"
                   className="bg-poten-red text-white rounded-4xl py-[4px] px-[32px] font-bold mr-[16px]"
-                  onClick={closeModal}>
-                  <Link href="/about">프로젝트 소개</Link>
+                  onClick={aboutLink}>
+                  프로젝트 소개
                 </button>
                 <button
                   type="button"
