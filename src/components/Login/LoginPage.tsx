@@ -1,14 +1,23 @@
 "use client";
 
-import logo1 from "@/../public/logo/logo1.svg";
 import LoginInput from "@/components/Login/LoginInput";
-import { useState } from "react";
 import LoginButton from "@/components/Login/LoginButton";
+
+import { useState } from "react";
+
 import Image from "next/image";
 import Link from "next/link";
 
+import logo1 from "@/../public/logo/logo1.svg";
+import checked from "@/assets/icons/checked.svg";
+import unchecked from "@/assets/icons/unchecked.svg";
+
 export default function LoginPage(){
   const [ isSubmit, setIsSubmit ] = useState(false);
+
+  const [ isLoginChecked, setIsLoginChecked ] = useState(false);
+
+
 
   return (
 
@@ -37,8 +46,12 @@ export default function LoginPage(){
             </div>
       
             <div>
-              <input type="checkbox" className=""/>
-              <label htmlFor="로그인 정보저장">로그인 정보저장</label>
+              <input id="login-maintain" type="checkbox" className="hidden" checked={isLoginChecked} onChange={() => {setIsLoginChecked(prev => !prev)}}/>
+              <label htmlFor="login-maintain" 
+                    className="inline-block w-4 h-4 cursor-pointer mx-1">
+                <Image src={ isLoginChecked? checked : unchecked} alt="로그인 상태 유지" />
+              </label>
+              <span>로그인 정보저장</span>
             </div>
           </div>
 
