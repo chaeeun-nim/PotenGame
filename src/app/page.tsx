@@ -1,12 +1,10 @@
-// import MainBest from '@/components/MainBest/MainBest';
+import MainBest from '@/components/MainBest/MainBest';
 import MainCardListWrapper from '@/components/MainCard/MainCardListWrapper';
 
 import MainGameLink from '@/components/MainGameLink/MainGameLink';
 import MainMdPick from '@/components/MainMdPick/MainMdPick';
 import MainPromotion from '@/components/MainPromotion';
 import MainSlider from '@/components/MainSlider/MainSlide';
-
-// import PotenRanking from '@/components/potenRanking/PotenRanking';
 
 export default async function Home() {
   return (
@@ -31,8 +29,7 @@ export default async function Home() {
 
       <MainMdPick />
       <MainPromotion />
-      {/* <MainBest /> */}
-      {/* <PotenRanking /> */}
+      <MainBest />
     </>
   );
 }
