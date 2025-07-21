@@ -6,36 +6,35 @@ import likelionLogo from '../../public/logo/likelionlogo.png';
 import { useRouter } from 'next/navigation';
 
 export default function MainModal() {
-  useEffect(() => {
-    throw new Error('테스트용 에러 껑!');
-  }, []);
-  const rounter = useRouter();
+  const router = useRouter();
+  const [modal, setModal] = useState<boolean | null>(false);
 
-  if (sessionStorage.getItem('modal') === null) {
-    sessionStorage.setItem('modal', JSON.stringify(true));
-  } else {
-    sessionStorage.setItem('modal', JSON.stringify(false));
-  }
-  const modalSession = sessionStorage.getItem('modal');
-  const [modal, setModal] = useState<boolean | null>(modalSession ? true : false);
+  useEffect(() => {
+    const modalSession = sessionStorage.getItem('modal');
+    if (modalSession === null) {
+      sessionStorage.setItem('modal', JSON.stringify(true));
+      setModal(true);
+      document.body.style.overflow = 'hidden';
+    } else if (modalSession === 'true') {
+      sessionStorage.setItem('modal', JSON.stringify(false));
+      document.body.style.overflow = '';
+      setModal(false);
+    } else {
+      setModal(false);
+      document.body.style.overflow = '';
+    }
+  }, []);
 
   function closeModal() {
     setModal(false);
     sessionStorage.setItem('modal', JSON.stringify(false));
+    document.body.style.overflow = '';
   }
 
   const aboutLink = () => {
     closeModal();
-    rounter.push('./about');
+    router.push('./about');
   };
-
-  useEffect(() => {
-    if (modal) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = '';
-    }
-  }, [modal]);
 
   return (
     <>

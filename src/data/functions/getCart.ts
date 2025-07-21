@@ -6,16 +6,17 @@ const CLIENT_ID = process.env.NEXT_PUBLIC_CLIENT_ID || '';
 
 // 장바구니상품조회
 export async function getCart(): Promise<IcartProductRes | { ok: 0; message: string }> {
-// token: string,
   // const accesToken = useUserStore.getState().user?.token.accessToken;
   // console.log('액세스토큰', accesToken);
+  const token =
+    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsInR5cGUiOiJzZWxsZXIiLCJuYW1lIjoi64Sk7JikIiwiZW1haWwiOiJzMUBtYXJrZXQuY29tIiwiaW1hZ2UiOiJmaWxlcy9mZWJjMTMtZmluYWwxNC1lbWpmL3VzZXItbmVvLnBuZyIsImxvZ2luVHlwZSI6ImVtYWlsIiwiaWF0IjoxNzUzMDk5ODkxLCJleHAiOjE3NTMxODYyOTEsImlzcyI6IkZFQkMifQ.DfWqE3baJ8O3vUpdpraR341QHmlxSpMhpgIi5hhi4NM';
 
   try {
     const res = await fetch(`${API_URL}/carts/`, {
       method: 'GET',
       headers: {
         'Client-Id': CLIENT_ID,
-        // Authorization: `Bearer ${token}`,
+        Authorization: `Bearer ${token}`,
       },
       cache: 'force-cache',
     });
