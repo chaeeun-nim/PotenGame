@@ -1,12 +1,12 @@
 'use client';
 
-// import { useRouter } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 import errorImg from '@/assets/img/errorimg.png';
 import Image from 'next/image';
 import Link from 'next/link';
 
-export default function ErrorPage({ reset }: { reset: () => void }) {
-  // const rounter = useRouter();
+export default function NotFoundPage() {
+  const router = useRouter();
   return (
     <section className="w-full bg-poten-snowgray1 py-[80px] md:py-[100px] xl:py-[120px]">
       <Image
@@ -17,16 +17,14 @@ export default function ErrorPage({ reset }: { reset: () => void }) {
         height={711}
       />
       <h1 className="text-center font-medium py-[24px] md:py-[36px] text-[16px] md:text-[20px]">
-        네트워크 연결이 잠시 원활하지 않습니다. <br />
-        잠시 후 다시 시도해주세요!
+        존재하지 않는 페이지에 접근하셨군요! <br />
+        무엇을 찾고 계셨나요?
       </h1>
       <div className="flex gap-4 mx-auto justify-center items-center">
         <button
           className="px-[24px] py-[4px] md:px-[50px] md:py-[10px] cursor-pointer text-white bg-poten-red font-bold rounded-4xl block  text-[16px] md:text-[20px]"
-          onClick={() => {
-            reset();
-          }}>
-          다시 시도하기
+          onClick={router.back}>
+          이전으로 이동
         </button>
         <Link
           href="/"

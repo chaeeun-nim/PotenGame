@@ -1,16 +1,17 @@
-// import MainBest from '@/components/MainBest/MainBest';
+import Datainit from '@/components/Datainit';
+import MainBest from '@/components/MainBest/MainBest';
 import MainCardListWrapper from '@/components/MainCard/MainCardListWrapper';
-
 import MainGameLink from '@/components/MainGameLink/MainGameLink';
 import MainMdPick from '@/components/MainMdPick/MainMdPick';
+import MainModal from '@/components/MainModal';
 import MainPromotion from '@/components/MainPromotion';
 import MainSlider from '@/components/MainSlider/MainSlide';
-
-// import PotenRanking from '@/components/potenRanking/PotenRanking';
 
 export default async function Home() {
   return (
     <>
+      <Datainit />
+      <MainModal />
       <MainSlider />
       <MainGameLink />
       <section className="bg-poten-snowgray1 w-full py-[32px] mt-[50px]">
@@ -31,8 +32,7 @@ export default async function Home() {
 
       <MainMdPick />
       <MainPromotion />
-      {/* <MainBest /> */}
-      {/* <PotenRanking /> */}
+      <MainBest />
     </>
   );
 }
