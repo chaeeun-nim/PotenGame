@@ -3,10 +3,13 @@
 import { addCart } from '@/data/actions/addCart';
 import useCartStore from '@/zustand/cartStore';
 import { useActionState, useEffect } from 'react';
+import addCartIcon from '@/assets/icons/cart-gray.svg';
+import Image from 'next/image';
+import LoadingRing from './LoadingRing';
 
 export default function AddCartBtn({ ItemId }: { ItemId: number }) {
   // 카트 추가하는 서버액션
-  const [state, formAction] = useActionState(addCart, null);
+  const [state, formAction, isLoading] = useActionState(addCart, null);
   // 전역상태를 갱신하는 함수
   const { setCart } = useCartStore();
 
@@ -15,7 +18,7 @@ export default function AddCartBtn({ ItemId }: { ItemId: number }) {
     if (state?.ok === 1) {
       setCart(state.item);
     }
-  }, [state]);
+  }, [state]); // eslinkt 경고는 무시하셔도됩니다
   // 전역 상태가 변경되었음으로, 그에 따른 버튼의 상태변화로 연결
 
   return (
@@ -25,8 +28,24 @@ export default function AddCartBtn({ ItemId }: { ItemId: number }) {
         <input type="number" name="product_id" hidden defaultValue={ItemId} />
         {/* 제품의 갯수 전달하기 위한 숨겨진 input */}
         <input type="number" name="quantity" hidden defaultValue={1} />
-        <button className="border-1 rounded-[2px] border-poten-gray-1 " type="submit">
-          담기
+        <button
+          className="flex items-center w-[100px] md:w-[150px] xl:w-[200px] font-medium text-[16px] md:text-[18px] xl:text-[20px] text-poten-gray-2  flex-row place-content-center  h-[32px] xl:h-[36px] bg-white  rounded-sm gap-1 border-1 border-poten-gray-1"
+          type="submit">
+          {/* 버튼 상태변화 딜레이가 있어, 데이터 통신상태를 시각적으로 표현 */}
+          {isLoading ? (
+            <LoadingRing />
+          ) : (
+            <>
+              담기
+              <Image
+                className="xl:w-[20px]"
+                src={addCartIcon}
+                alt="카트에 담기"
+                width={18}
+                height={18}
+              />
+            </>
+          )}
         </button>
       </form>
     </>

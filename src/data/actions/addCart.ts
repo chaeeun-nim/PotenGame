@@ -1,4 +1,4 @@
-'use client';
+'use server';
 
 import { ApiRes, ApiResPromise } from '@/types/api';
 import { IcartItem } from '@/types/Cart';

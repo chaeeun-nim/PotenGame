@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import useCartStore from '@/zustand/cartStore';
 import AddCartBtn from './AddCartBtn';
+import RemoveCartBtn from './RemoveCartBtn';
 
 export default function CartBtn({ ItemId }: { ItemId: number }) {
   // DBinit 함수에서 저장한 전역상태 호출
@@ -23,5 +24,7 @@ export default function CartBtn({ ItemId }: { ItemId: number }) {
   // 태초에 mount시, 전역 상태(세션스토리지) 에 저장되어 있는 상태에 의존하여 useEffect로 상태 전환
   // 전역상태를 의존하는 useEffect 여도 useEffect 안에서 다시 전역상태를 갱신하지 않음으로 무한루프X
 
-  return <>{!isInCart ? <AddCartBtn ItemId={ItemId} /> : <p>이미담김</p>}</>;
+  return (
+    <>{!isInCart ? <AddCartBtn ItemId={ItemId} /> : <RemoveCartBtn ItemId={ItemId} />}</>
+  );
 }

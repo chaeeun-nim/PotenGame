@@ -24,6 +24,12 @@ export interface IcartProductRes {
   cost: IcartCost;
 }
 
+// 장바구니 삭제시 응답타입
+export interface IcartDeletRes {
+  item: IcartItem[];
+  cost: IcartCost;
+}
+
 // 장바구니 안에있는 아이템 타입
 export interface IcartItem {
   _id: number;
