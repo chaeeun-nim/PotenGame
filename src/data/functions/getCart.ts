@@ -18,9 +18,8 @@ export async function getCart(): Promise<IcartProductRes | { ok: 0; message: str
         'Client-Id': CLIENT_ID,
         Authorization: `Bearer ${token}`,
       },
-      cache: 'force-cache',
+      cache: 'no-cache',
     });
-
     return res.json();
   } catch (error) {
     // 네트워크 오류 처리

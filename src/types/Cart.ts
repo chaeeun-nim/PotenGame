@@ -28,13 +28,13 @@ export interface IcartItem {
 }
 
 export interface IcartCost {
-  products: number;
-  shippingFees: number;
-  total: number;
+  products: number | null;
+  shippingFees: number | null;
+  total: number | null;
   discount: IcartCostDiscount;
 }
 
 export interface IcartCostDiscount {
-  products: number;
-  shippingFees: number;
+  products: number | null;
+  shippingFees: number | null;
 }
