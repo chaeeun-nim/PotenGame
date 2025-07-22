@@ -26,7 +26,7 @@ export default function PcCardList({
 
   return (
     <>
-      <div className="py-6 px-[24px]">
+      <div className="py-6">
         <Swiper
           modules={[Navigation]}
           effect={'creative'}
