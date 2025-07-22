@@ -30,9 +30,7 @@ export default function BestLoading() {
                 <p className="font-extrabold mb-[16px] text-poten-gray3 leading-tight lg:text-[22px]">
                   <span className="text-[24px] lg:text-[32px]">0{i + 2}</span>위
                 </p>
-                <div
-                  className="w-[180px] mx-auto xl:w-[220px] aspect-square bg-poten-snowgray1"
-                  aspect-square></div>
+                <div className="w-[180px] mx-auto xl:w-[220px] aspect-square bg-poten-snowgray1"></div>
               </div>
             );
           })}

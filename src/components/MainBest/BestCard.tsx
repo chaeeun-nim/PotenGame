@@ -14,7 +14,6 @@ export default function BestCard({
 }) {
   const firstItem = items[0];
   const othersItem = items.slice(1);
-  console.log(othersItem);
 
   const borderClass =
     firstItem.extra.platform === 'Nintendo Switch'
