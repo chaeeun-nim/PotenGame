@@ -1,0 +1,24 @@
+import { create } from 'zustand';
+
+type Store = {
+  modal: boolean;
+  closeModal: () => void;
+};
+
+/*
+(set) => ({
+  modal: true,
+  closeModal: () => {
+    set({ modal: false });
+  },
+})
+*/
+
+const useModalStore = create<Store>()((set) => ({
+  modal: true,
+  closeModal: () => {
+    set({ modal: false });
+  },
+}));
+
+export default useModalStore;
