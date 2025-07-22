@@ -5,6 +5,12 @@ export interface IcartPostReq {
   products: IcartProductReq[];
 }
 
+// 장바구니 추가후 응답타입
+export interface IcartPostRes {
+  ok: 1 | 0;
+  item: IcartItem[];
+}
+
 // 짱바구니 배열중 1개의 아이템
 export interface IcartProductReq {
   _id: number;
