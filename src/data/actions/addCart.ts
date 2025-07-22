@@ -15,8 +15,7 @@ export async function addCart(
     quantity: Number(formData.get('quantity')),
   };
   const token =
-    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsInR5cGUiOiJzZWxsZXIiLCJuYW1lIjoi64Sk7JikIiwiZW1haWwiOiJzMUBtYXJrZXQuY29tIiwiaW1hZ2UiOiJmaWxlcy9mZWJjMTMtZmluYWwxNC1lbWpmL3VzZXItbmVvLnBuZyIsImxvZ2luVHlwZSI6ImVtYWlsIiwiaWF0IjoxNzUzMDk5ODkxLCJleHAiOjE3NTMxODYyOTEsImlzcyI6IkZFQkMifQ.DfWqE3baJ8O3vUpdpraR341QHmlxSpMhpgIi5hhi4NM';
-
+    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsInR5cGUiOiJzZWxsZXIiLCJuYW1lIjoi64Sk7JikIiwiZW1haWwiOiJzMUBtYXJrZXQuY29tIiwiaW1hZ2UiOiJmaWxlcy9mZWJjMTMtZmluYWwxNC1lbWpmL3VzZXItbmVvLnBuZyIsImxvZ2luVHlwZSI6ImVtYWlsIiwiaWF0IjoxNzUzMTYwNTQ1LCJleHAiOjE3NTMyNDY5NDUsImlzcyI6IkZFQkMifQ.LBiGPBppEydcFU5DySbgkr_EvPUS010Jo6KfIxA5s1s';
   let res: Response;
   let data: ApiRes<IcartPostReq>;
 
@@ -31,6 +30,7 @@ export async function addCart(
       body: JSON.stringify(body),
     });
     data = await res.json();
+
     return data;
   } catch (error) {
     console.error(error);

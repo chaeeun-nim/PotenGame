@@ -21,6 +21,7 @@ export interface IcartProductRes {
 // 장바구니 안에있는 아이템 타입
 export interface IcartItem {
   _id: number;
+  quantity: number;
   product_id: number;
   createdAt: string;
   updatedAt: string;
