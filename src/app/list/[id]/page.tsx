@@ -1,4 +1,5 @@
-import ItemCard from "@/components/list-ItemCard/ItemCard";
+import ItemCard from "@/components/List-ItemCard/ItemCard";
+import SelectBar from "@/components/SelectBar";
 
 // interface PageProps {
 //   params: {
@@ -10,11 +11,9 @@ import ItemCard from "@/components/list-ItemCard/ItemCard";
 
 export default function ItemDetailPage() {
   return (
-    <>
-      <h1>
-        상품 상세 페이지
-      </h1>
-      <ItemCard className="" />
-    </>
+    <div className="bg-poten-snowgray1">
+      <SelectBar variant="itemDetail" />
+      <ItemCard variant="detailed" />
+    </div>
   );
 }
