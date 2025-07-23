@@ -11,7 +11,6 @@ export default function FooterHeader() {
       left: 0,
       behavior: 'smooth',
     });
-    // console.log('되냐?');
   }
 
   return (

@@ -5,6 +5,12 @@ export interface IcartPostReq {
   products: IcartProductReq[];
 }
 
+// 장바구니 추가후 응답타입
+export interface IcartPostRes {
+  ok: 1 | 0;
+  item: IcartItem[];
+}
+
 // 짱바구니 배열중 1개의 아이템
 export interface IcartProductReq {
   _id: number;
@@ -18,9 +24,16 @@ export interface IcartProductRes {
   cost: IcartCost;
 }
 
+// 장바구니 삭제시 응답타입
+export interface IcartDeletRes {
+  item: IcartItem[];
+  cost: IcartCost;
+}
+
 // 장바구니 안에있는 아이템 타입
 export interface IcartItem {
   _id: number;
+  quantity: number;
   product_id: number;
   createdAt: string;
   updatedAt: string;
@@ -28,13 +41,13 @@ export interface IcartItem {
 }
 
 export interface IcartCost {
-  products: number;
-  shippingFees: number;
-  total: number;
+  products: number | null;
+  shippingFees: number | null;
+  total: number | null;
   discount: IcartCostDiscount;
 }
 
 export interface IcartCostDiscount {
-  products: number;
-  shippingFees: number;
+  products: number | null;
+  shippingFees: number | null;
 }

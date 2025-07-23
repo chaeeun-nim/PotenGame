@@ -6,34 +6,38 @@ import likelionLogo from '../../public/logo/likelionlogo.png';
 import { useRouter } from 'next/navigation';
 
 export default function MainModal() {
-  const router = useRouter();
-  const [modal, setModal] = useState<boolean | null>(false);
+  const router = useRouter(); // 버튼의 경로지정을 위한 라우터
+  const [modal, setModal] = useState<boolean | null>(false); // 모달의 상태
 
   useEffect(() => {
-    const modalSession = sessionStorage.getItem('modal');
+    const modalSession = sessionStorage.getItem('modal'); //세션스토리지에 모달의 상태를 저장
+
     if (modalSession === null) {
+      // 세션스토리지에 모달 정보가 없는 첫 방문인 경우: 모달을 띄우고 상태 저장
       sessionStorage.setItem('modal', JSON.stringify(true));
       setModal(true);
       document.body.style.overflow = 'hidden';
     } else if (modalSession === 'true') {
-      sessionStorage.setItem('modal', JSON.stringify(false));
+      //만일 세션스토리지에 트루값이 저장되어있다면, (새로고침 or 타 페이지 이동후 재접속 하였을떄)
+      sessionStorage.setItem('modal', JSON.stringify(false)); //상태를 거짓으로 변경
       document.body.style.overflow = '';
       setModal(false);
     } else {
-      setModal(false);
+      setModal(false); //그 외에 거짓인 상태에서 접속했을때도 똑같이 상태를 거짓으로 저장
       document.body.style.overflow = '';
     }
   }, []);
 
+  // 모달 닫기 함수
   function closeModal() {
-    setModal(false);
-    sessionStorage.setItem('modal', JSON.stringify(false));
-    document.body.style.overflow = '';
+    setModal(false); //상태 거짓으로 변경
+    sessionStorage.setItem('modal', JSON.stringify(false)); //세션스토리지에도 거짓 저장
+    document.body.style.overflow = ''; // 오버플로우 히든 없애기
   }
 
   const aboutLink = () => {
     closeModal();
-    router.push('./about');
+    router.push('./about'); // 회사소개 페이지로 이동을 위한 라우터
   };
 
   return (
