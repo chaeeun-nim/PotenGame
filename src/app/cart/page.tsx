@@ -1,4 +1,3 @@
-// import CartListWrapper from '@/components/cart/CartListWrapper';
 import CartList from '@/components/cart/CartList';
 import PaymentBar from '@/components/cart/PaymentBar';
 import MainPromotion from '@/components/MainPromotion';

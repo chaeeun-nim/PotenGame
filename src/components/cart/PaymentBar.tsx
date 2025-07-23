@@ -1,3 +1,5 @@
+'use client';
+
 import { IcartCost, IcartItem } from '@/types/Cart';
 
 export default function PaymentBar({
