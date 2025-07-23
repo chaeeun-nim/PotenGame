@@ -1,6 +1,7 @@
 
 'use client';
 
+import Link from 'next/link';
 import React from 'react';
 
 export default function MyPage() {
@@ -183,15 +184,21 @@ export default function MyPage() {
         <div className="flex flex-col">
           {/* 버튼 그룹 */}
           <div className="flex gap-2 mb-6">
-            <button className="w-[90px] h-[25px] text-[14px] border border-[var(--color-poten-gray-2)] text-[var(--color-poten-gray-2)] rounded-[4px]">
-              회원정보수정
-            </button>
-            <button className="w-[95px] h-[25px] text-[14px] border border-[var(--color-poten-gray-2)] text-[var(--color-poten-gray-2)] rounded-[4px]">
-              배송지 주소록
-            </button>
-            <button className="w-[70px] h-[25px] text-[14px] border border-[var(--color-poten-gray-2)] text-[var(--color-poten-gray-2)] rounded-[4px]">
-              작성한 글
-            </button>
+            <Link href="/myPage/profile">
+              <button className="w-[90px] h-[25px] text-[14px] border border-[var(--color-poten-gray-2)] text-[var(--color-poten-gray-2)] rounded-[4px] hover:text-[var(--color-poten-red)] cursor-pointer">
+                회원정보수정
+              </button>
+            </Link>
+            <Link href="/myPage/address">
+              <button className="w-[95px] h-[25px] text-[14px] border border-[var(--color-poten-gray-2)] text-[var(--color-poten-gray-2)] rounded-[4px] hover:text-[var(--color-poten-red)] cursor-pointer">
+                배송지 주소록
+              </button>
+            </Link>
+            <Link href="/myPage/mypost">
+              <button className="w-[70px] h-[25px] text-[14px] border border-[var(--color-poten-gray-2)] text-[var(--color-poten-gray-2)] rounded-[4px] hover:text-[var(--color-poten-red)] cursor-pointer">
+                작성한 글
+              </button>
+            </Link>
           </div>
 
       {/* 주문처리 현황 */}
