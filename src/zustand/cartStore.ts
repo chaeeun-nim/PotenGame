@@ -7,6 +7,7 @@ type Store = {
   cost: IcartCost;
   setCart: (dataItems: IcartItem[]) => void;
   setCost: (IcartCost: IcartCost) => void;
+  resetStore: () => void;
 };
 
 /*
@@ -32,6 +33,17 @@ const useCartStore = create<Store>()(
       },
       setCost: (IcartCost: IcartCost) => {
         set({ cost: IcartCost });
+      },
+      resetStore: () => {
+        set({ cart: [] });
+        set({
+          cost: {
+            products: 0,
+            shippingFees: 0,
+            discount: { products: 0, shippingFees: 0 },
+            total: 0,
+          },
+        });
       },
     }),
     {

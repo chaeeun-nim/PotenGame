@@ -1,24 +1,22 @@
-'use client';
-
 import { ApiRes, ApiResPromise } from '@/types/api';
-import { IcartPostReq } from '@/types/Cart';
+import { IcartItem } from '@/types/Cart';
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL;
 const CLIENT_ID = process.env.NEXT_PUBLIC_CLIENT_ID || '';
 
 export async function addCart(
-  state: ApiRes<IcartPostReq> | null,
+  state: ApiRes<IcartItem[]> | null,
   formData: FormData,
-): ApiResPromise<IcartPostReq> {
+): ApiResPromise<IcartItem[]> {
   const body = {
     product_id: Number(formData.get('product_id')),
     quantity: Number(formData.get('quantity')),
   };
-  const token =
-    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsInR5cGUiOiJzZWxsZXIiLCJuYW1lIjoi64Sk7JikIiwiZW1haWwiOiJzMUBtYXJrZXQuY29tIiwiaW1hZ2UiOiJmaWxlcy9mZWJjMTMtZmluYWwxNC1lbWpmL3VzZXItbmVvLnBuZyIsImxvZ2luVHlwZSI6ImVtYWlsIiwiaWF0IjoxNzUzMDk5ODkxLCJleHAiOjE3NTMxODYyOTEsImlzcyI6IkZFQkMifQ.DfWqE3baJ8O3vUpdpraR341QHmlxSpMhpgIi5hhi4NM';
 
+  const token =
+    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsInR5cGUiOiJzZWxsZXIiLCJuYW1lIjoi64Sk7JikIiwiZW1haWwiOiJzMUBtYXJrZXQuY29tIiwiaW1hZ2UiOiJmaWxlcy9mZWJjMTMtZmluYWwxNC1lbWpmL3VzZXItbmVvLnBuZyIsImxvZ2luVHlwZSI6ImVtYWlsIiwiaWF0IjoxNzUzMjQ4MzUwLCJleHAiOjE3NTMzMzQ3NTAsImlzcyI6IkZFQkMifQ.h_zWw76tKdk_sfjS99VBQDPKTJDpZRS1bKDfAi5ljEA';
   let res: Response;
-  let data: ApiRes<IcartPostReq>;
+  let data: ApiRes<IcartItem[]>;
 
   try {
     res = await fetch(`${API_URL}/carts`, {
@@ -30,10 +28,13 @@ export async function addCart(
       },
       body: JSON.stringify(body),
     });
+
     data = await res.json();
-    return data;
   } catch (error) {
+    // 네트워크 오류 처리
     console.error(error);
-    return { ok: 0, message: '일시적인 네트워크 문제로 등록에 실패했습니다.' };
+    return { ok: 0, message: '일시적인 네트워크 문제가 발생했습니다.' };
   }
+
+  return data;
 }

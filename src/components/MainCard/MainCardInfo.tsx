@@ -9,25 +9,27 @@ import Link from 'next/link';
 import { JSX, useEffect, useState } from 'react';
 
 import CartBtn from './CartBtn';
-import ItemLikeBtn from '../list-ItemCard/ItemLikeBtn';
+import ItemLikeBtn from '../List-ItemCard/ItemLikeBtn';
 
 export default function MainCardInfo({ item }: { item: Iproduct }) {
   const [releaseDate, setReleaseDate] = useState('');
 
+  // 제품의 상태(중고, 신상)임을 판별하여 적절한 택을 달아주는 상태
   const [Tags, setTags] = useState<JSX.Element | null>(null);
 
   useEffect(() => {
-    setReleaseDate(DateFormat(item.extra.releaseDate));
-    const isNew = isNewProducts(item.extra.releaseDate);
+    setReleaseDate(DateFormat(item.extra.releaseDate)); //신상인지 아닌지 체크하는 함수. 현재 날짜를 기준으로 180일 이내 출시시 신상품
+    const isNew = isNewProducts(item.extra.releaseDate); //신상이면 true 아니면 false
 
     if (item.extra.used) {
-      setTags(<UsedTag />);
+      // 중고품목 체크 조건문
+      setTags(<UsedTag />); // 중고면 중고 택
     } else if (isNew) {
-      setTags(<NewTag />);
+      setTags(<NewTag />); // 중고가 아니고 신상품이면 신상 택
     } else {
-      setTags(null);
+      setTags(null); // 둘중에 아무것도 아니면 택 없이
     }
-  }, [item.extra.used, item.extra.releaseDate]);
+  }, []); // eslint 경고 무시
 
   return (
     <>
@@ -54,7 +56,9 @@ export default function MainCardInfo({ item }: { item: Iproduct }) {
           </div>
         </Link>
         <div className="mt-[16px] w-full flex flex-row items-center justify-between gap-4">
+          {/* 장바구니 담기버튼 */}
           <CartBtn ItemId={item._id} />
+          {/* 찜하기 버튼 */}
           <ItemLikeBtn className={`w-[30px] h-[30px]`} />
         </div>
       </div>

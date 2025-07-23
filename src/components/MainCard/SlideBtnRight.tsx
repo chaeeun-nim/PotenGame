@@ -1,5 +1,6 @@
 'use client';
 
+// 각 슬라이드에 쓰일 고유의 버튼 ID를 받아서 button클래스에 적용
 export default function SlideBtnRight({ btnId }: { btnId: string }) {
   return (
     <>

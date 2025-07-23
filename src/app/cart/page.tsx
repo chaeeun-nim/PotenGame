@@ -1,7 +1,9 @@
-'use client';
+export const dynamic = 'force-dynamic';
 
-// import CartListWrapper from '@/components/cart/CartListWrapper';
+import CartList from '@/components/cart/CartList';
+import PaymentBar from '@/components/cart/PaymentBar';
 import MainPromotion from '@/components/MainPromotion';
+import { getCart } from '@/data/functions/getCart';
 
 /*
 로직정리
@@ -19,13 +21,13 @@ X버튼을 누르면 즉시 장바구니 자체에서 삭제되면서 다시 렌
 장바구니 전체가 비워진다.
 
 - 수량변경 -> 장바구니에있는 제품 수량을 변경한다.. (직접 서버에있는 장바구니제품수량을 직접 수정한다.)
-
 - 결제하기 버튼을 누르면 선택된 제품만 선별하여 결제창으로 넘어간다
-
 
 */
 
-export default function CartPage() {
+export default async function CartPage() {
+  const res = await getCart();
+
   return (
     <>
       <MainPromotion />
@@ -37,9 +39,14 @@ export default function CartPage() {
           </div>
         </header>
         <div className="w-full bg-poten-snowgray1 pt-[10px] pb-[24px] md:pt-[30px] xl:pt-[50px] md:pb-[100px] ">
-          {/* <CartListWrapper /> */}
+          {res.ok ? <CartList items={res.item} /> : <p>네트워크 에러발생</p>}
         </div>
       </section>
+      {res.ok ? (
+        <PaymentBar cost={res.cost} items={res.item} />
+      ) : (
+        <p>네트워크 에러발생</p>
+      )}
     </>
   );
 }
