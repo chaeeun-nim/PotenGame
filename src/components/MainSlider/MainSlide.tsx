@@ -21,12 +21,13 @@ import Link from 'next/link';
 export default function MainSlider() {
   return (
     <>
-      <Swiper
+      <Swiper //전체 슬라이드를 감싸는 부모
         className="!pb-[40px] !mt-[16px] lg:!mt-[22px] md:!mt-[20px] md:!pb-[60px] !px-[0px] md:!px-[16px]"
         modules={[Pagination, Navigation, Autoplay]}
         autoplay={{ delay: 1000, disableOnInteraction: false }}
         slidesPerView={'auto'}
         speed={800}
+        // Swiper의 반응형 옵션, 테일윈드와 작동방식 유사
         breakpoints={{
           0: {
             spaceBetween: 0,
@@ -44,6 +45,7 @@ export default function MainSlider() {
           clickable: true,
         }}
         navigation={false}>
+        {/* 슬라이드 아이템 1개 */}
         <SwiperSlide className="xl:!w-[1000px] md:!w-[80%] !w-full">
           <Link href="/">
             <Image
