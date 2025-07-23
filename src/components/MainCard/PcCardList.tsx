@@ -20,6 +20,7 @@ export default function PcCardList({
 }) {
   const SlidItemsTablet = ProductItems.map((item, i) => (
     <SwiperSlide key={i}>
+      {/* 받아온 데이터로 카드 아이템 리스트를 만들어줍니다. */}
       <MainCard key={item._id} item={item}></MainCard>
     </SwiperSlide>
   ));
@@ -34,13 +35,15 @@ export default function PcCardList({
           speed={300}
           slidesPerView={4}
           navigation={{
-            prevEl: `.prev-${btnId}`,
-            nextEl: `.next-${btnId}`,
+            prevEl: `.prev-${btnId}`, // 이부분에 들어간 Class가 해당 슬라이드의 버튼
+            nextEl: `.next-${btnId}`, // 이부분에 들어간 Class가 해당 슬라이드의 버튼
           }}>
+          {/* 해당 데이터를 Swiper안에 넣어줍니다. */}
           {SlidItemsTablet}
         </Swiper>
       </div>
       <div className="z-10 text-right p-4">
+        {/* 좌우 버튼 클래스를 각 버튼 컴포넌트로 전달 */}
         <SlideBtnLeft btnId={`prev-${btnId}`} />
         <SlideBtnRight btnId={`next-${btnId}`} />
       </div>

@@ -12,11 +12,12 @@ export default async function MainCardListWrapper({
   gameType,
   btnId,
 }: {
-  children: string;
-  dataType: sortNews | sortPrice;
-  gameType: GameUsedType;
-  btnId: string;
+  children: string; // 섹션의 제목
+  dataType: sortNews | sortPrice; //받을 데이터의 정렬
+  gameType: GameUsedType; //받을 데이터의 타입(중고 or 새제품)
+  btnId: string; // 카드 슬라이드(PC,태블릿)의 버튼 ID (각기 유니크한 버튼 id를 사용하지 않으면, 한개의 버튼으로 연동이됨.)
 }) {
+  // 카드 데이터 받아오기
   const data = await mainCardListData(dataType, gameType);
 
   return (
@@ -26,6 +27,7 @@ export default async function MainCardListWrapper({
           {children}
         </h3>
         {data.ok ? (
+          // 슬라이드 영역
           <CardSliderView ProductItems={data.item} btnId={btnId} />
         ) : (
           <p>데이터로딩실패 </p>

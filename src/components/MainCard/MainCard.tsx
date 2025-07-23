@@ -11,6 +11,8 @@ import MainCardInfo from './MainCardInfo';
 export default function MainCard({ item }: { item: Iproduct }) {
   let PlatformIcons;
   let PlatformColor;
+
+  // 플렛폼에 따른 상단 아이콘 변경을 위한 조건문
   switch (item.extra.platform) {
     case 'Nintendo Switch': {
       PlatformIcons = (
@@ -49,6 +51,8 @@ export default function MainCard({ item }: { item: Iproduct }) {
       break;
     }
   }
+
+  // 플렛폼에 따른 상단 띠 배경색상 변경을 위한 조건문
   switch (item.extra.platform) {
     case 'Nintendo Switch': {
       PlatformColor = 'bg-poten-nintendo';
@@ -74,6 +78,7 @@ export default function MainCard({ item }: { item: Iproduct }) {
             className={`${PlatformColor} flex gap-1 justify-center items-center py-1 h-[30px]`}>
             {PlatformIcons}
             <p className="font-extrabold text-[20px] text-white leading-[100%]">
+              {/* 닌텐도 DS 시리즈는 따로 플랫폼 버전 숫자가 없으므로, NDS에서 분기하여 처리 */}
               {item.extra.platform !== 'Nintendo NDS' ? item.extra.platformVersion : null}
             </p>
           </div>
@@ -84,7 +89,7 @@ export default function MainCard({ item }: { item: Iproduct }) {
             width={100}
             height={100}></Image>
         </Link>
-        <MainCardInfo item={item} />
+        <MainCardInfo item={item} /> {/* 카드 내용 컴포넌트 */}
       </div>
     </>
   );
