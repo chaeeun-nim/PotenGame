@@ -1,5 +1,3 @@
-'use server';
-
 import { ApiRes, ApiResPromise } from '@/types/api';
 import { IcartItem } from '@/types/Cart';
 
@@ -14,7 +12,7 @@ export async function addCart(
     product_id: Number(formData.get('product_id')),
     quantity: Number(formData.get('quantity')),
   };
-  console.log('장바구니 바디', body);
+
   const token =
     'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsInR5cGUiOiJzZWxsZXIiLCJuYW1lIjoi64Sk7JikIiwiZW1haWwiOiJzMUBtYXJrZXQuY29tIiwiaW1hZ2UiOiJmaWxlcy9mZWJjMTMtZmluYWwxNC1lbWpmL3VzZXItbmVvLnBuZyIsImxvZ2luVHlwZSI6ImVtYWlsIiwiaWF0IjoxNzUzMTYwNTQ1LCJleHAiOjE3NTMyNDY5NDUsImlzcyI6IkZFQkMifQ.LBiGPBppEydcFU5DySbgkr_EvPUS010Jo6KfIxA5s1s';
 

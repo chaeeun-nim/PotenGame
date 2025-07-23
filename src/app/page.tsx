@@ -10,7 +10,7 @@ import MainSlider from '@/components/MainSlider/MainSlide';
 export default async function Home() {
   return (
     <>
-      <Datainit /> {/* 태초에 데이터를 받아오기 위한 목적의 컴포넌트입니다. */}
+      <Datainit /> {/* 태초에 데이터를 받아오기 위한 목적의 컴포넌트입니다.*/}
       <MainModal /> {/* 모달창 컴포넌트입니다. */}
       <MainSlider /> {/* 메인 비쥬얼 슬라이드 컴포넌트입니다. */}
       <MainGameLink />

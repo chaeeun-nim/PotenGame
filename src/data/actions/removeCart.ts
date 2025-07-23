@@ -1,5 +1,3 @@
-'use server';
-
 import { IcartProductRes } from '@/types/Cart';
 // import useUserStore from '@/zustand/loginTestStore';
 
@@ -23,7 +21,7 @@ export async function removeCart(
       },
       cache: 'no-cache',
     });
-    console.log('제거시도');
+
     return res.json();
   } catch (error) {
     // 네트워크 오류 처리

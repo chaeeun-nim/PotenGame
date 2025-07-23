@@ -1,5 +1,3 @@
-'use server';
-
 import { IcartProductRes } from '@/types/Cart';
 // import useUserStore from '@/zustand/loginTestStore';
 
@@ -9,7 +7,7 @@ const CLIENT_ID = process.env.NEXT_PUBLIC_CLIENT_ID || '';
 // 장바구니상품조회
 export async function getCart(): Promise<IcartProductRes | { ok: 0; message: string }> {
   // const accesToken = useUserStore.getState().user?.token.accessToken;
-  // console.log('액세스토큰', accesToken);
+
   const token =
     'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsInR5cGUiOiJzZWxsZXIiLCJuYW1lIjoi64Sk7JikIiwiZW1haWwiOiJzMUBtYXJrZXQuY29tIiwiaW1hZ2UiOiJmaWxlcy9mZWJjMTMtZmluYWwxNC1lbWpmL3VzZXItbmVvLnBuZyIsImxvZ2luVHlwZSI6ImVtYWlsIiwiaWF0IjoxNzUzMTYwNTQ1LCJleHAiOjE3NTMyNDY5NDUsImlzcyI6IkZFQkMifQ.LBiGPBppEydcFU5DySbgkr_EvPUS010Jo6KfIxA5s1s';
   try {
