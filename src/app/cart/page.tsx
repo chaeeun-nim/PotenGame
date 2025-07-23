@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic';
+
 import CartList from '@/components/cart/CartList';
 import PaymentBar from '@/components/cart/PaymentBar';
 import MainPromotion from '@/components/MainPromotion';

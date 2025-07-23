@@ -9,8 +9,7 @@ export async function getCart(): Promise<IcartProductRes | { ok: 0; message: str
   // const accesToken = useUserStore.getState().user?.token.accessToken;
 
   const token =
-    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsInR5cGUiOiJzZWxsZXIiLCJuYW1lIjoi64Sk7JikIiwiZW1haWwiOiJzMUBtYXJrZXQuY29tIiwiaW1hZ2UiOiJmaWxlcy9mZWJjMTMtZmluYWwxNC1lbWpmL3VzZXItbmVvLnBuZyIsImxvZ2luVHlwZSI6ImVtYWlsIiwiaWF0IjoxNzUzMTYwNTQ1LCJleHAiOjE3NTMyNDY5NDUsImlzcyI6IkZFQkMifQ.LBiGPBppEydcFU5DySbgkr_EvPUS010Jo6KfIxA5s1s';
-
+    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsInR5cGUiOiJzZWxsZXIiLCJuYW1lIjoi64Sk7JikIiwiZW1haWwiOiJzMUBtYXJrZXQuY29tIiwiaW1hZ2UiOiJmaWxlcy9mZWJjMTMtZmluYWwxNC1lbWpmL3VzZXItbmVvLnBuZyIsImxvZ2luVHlwZSI6ImVtYWlsIiwiaWF0IjoxNzUzMjQ4MzUwLCJleHAiOjE3NTMzMzQ3NTAsImlzcyI6IkZFQkMifQ.h_zWw76tKdk_sfjS99VBQDPKTJDpZRS1bKDfAi5ljEA';
   try {
     const res = await fetch(`${API_URL}/carts/`, {
       method: 'GET',
@@ -18,7 +17,7 @@ export async function getCart(): Promise<IcartProductRes | { ok: 0; message: str
         'Client-Id': CLIENT_ID,
         Authorization: `Bearer ${token}`,
       },
-      // cache: 'no-cache',
+      cache: 'no-cache',
     });
     return res.json();
   } catch (error) {
