@@ -24,7 +24,7 @@ export default function PaymentBar({
   return (
     <>
       <div className="fixed w-full h-[72px] bg-black rounded-t-lg bottom-0 z-[999999999] flex justify-center items-center">
-        <form action="directPayment">
+        <form action="/">
           <input type="hidden" name="orderData" value={JSON.stringify(orderList)} />
           <button
             type="submit"
