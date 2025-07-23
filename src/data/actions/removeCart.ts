@@ -11,7 +11,7 @@ export async function removeCart(
   // const accesToken = useUserStore.getState().user?.token.accessToken;
   // console.log('액세스토큰', accesToken);
   const token =
-    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsInR5cGUiOiJzZWxsZXIiLCJuYW1lIjoi64Sk7JikIiwiZW1haWwiOiJzMUBtYXJrZXQuY29tIiwiaW1hZ2UiOiJmaWxlcy9mZWJjMTMtZmluYWwxNC1lbWpmL3VzZXItbmVvLnBuZyIsImxvZ2luVHlwZSI6ImVtYWlsIiwiaWF0IjoxNzUzMTg1MTA3LCJleHAiOjE3NTMyNzE1MDcsImlzcyI6IkZFQkMifQ.Dba5Oj3rlHnMB7dgN8gQ88J1B5CS6UfTYh4-d1fL_jc';
+    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsInR5cGUiOiJzZWxsZXIiLCJuYW1lIjoi64Sk7JikIiwiZW1haWwiOiJzMUBtYXJrZXQuY29tIiwiaW1hZ2UiOiJmaWxlcy9mZWJjMTMtZmluYWwxNC1lbWpmL3VzZXItbmVvLnBuZyIsImxvZ2luVHlwZSI6ImVtYWlsIiwiaWF0IjoxNzUzMjQ4MzUwLCJleHAiOjE3NTMzMzQ3NTAsImlzcyI6IkZFQkMifQ.h_zWw76tKdk_sfjS99VBQDPKTJDpZRS1bKDfAi5ljEA';
   try {
     const res = await fetch(`${API_URL}/carts/${_id}`, {
       method: 'DELETE',
