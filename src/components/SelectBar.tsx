@@ -37,28 +37,30 @@ export default function SelectBar({ variant = 'default', categories}: SelectBarP
   //상품 상세 페이지 '/list/[id]' 구조: 'itemDetail' (상품 상세 페이지 코드)
   if ( variant === 'itemDetail') {
     return (
-      <section className='mt-17 mb-5.5 mx-3'>
-        <div className='flex items-center mb-3 md:mb-0'>
-          <h2 className="font-semibold pl-2 md:pl-3 mx-3 xl:pl-4 border-l-2 md:border-l-3 xl:border-l-4 border-l-poten-red text-sm md:text-base xl:text-lg">
-            닌텐도 DS
-          </h2>
+      <section className='flex flex-col pt-10 mb-5.5'>
+        <div className='w-[336px] md:w-[714px] xl:w-[1200px] mx-auto'>
+          <div className='flex items-center mb-3 md:mb-0'>
+            <h2 className="font-semibold pl-2 md:pl-3 mx-3 xl:pl-4 border-l-2 md:border-l-3 xl:border-l-4 border-l-poten-red text-sm md:text-base xl:text-lg">
+              닌텐도 DS
+            </h2>
 
-          <Image src={rightIcon} alt='' className='mr-2'/>
+            <Image src={rightIcon} alt='' className='mr-2'/>
 
-          <select
-            name="product-filter"
-            id="filter-option-select"
-            className="border-1 border-poten-gray-1 pl-2 pr-15 py-1.5 md:pl-3 md:pr-26 md:py-2 xl:py-2 rounded-xs bg-white text-xs appearance-none bg-[url('../assets/icons/selector-arrow.svg')] bg-no-repeat bg-[right_12px_center] bg-[length:10px_10px]">
-            <option value="lastest">최신순</option>
-            <option value="name-abc">상품명</option>
-            <option value="lowest-price">낮은가격</option>
-            <option value="highest-price">높은가격</option>
-            <option value="most-likes">인기상품</option>
-            <option value="most-reviews">리뷰순</option>
-          </select>
-        </div>
+            <select
+              name="product-filter"
+              id="filter-option-select"
+              className="border-1 border-poten-gray-1 pl-2 pr-15 py-1.5 md:pl-3 md:pr-26 md:py-2 xl:py-2 rounded-xs bg-white text-xs appearance-none bg-[url('../assets/icons/selector-arrow.svg')] bg-no-repeat bg-[right_12px_center] bg-[length:10px_10px]">
+              <option value="lastest">최신순</option>
+              <option value="name-abc">상품명</option>
+              <option value="lowest-price">낮은가격</option>
+              <option value="highest-price">높은가격</option>
+              <option value="most-likes">인기상품</option>
+              <option value="most-reviews">리뷰순</option>
+            </select>
+          </div>
           
-        <hr className="my-3 md:my-4 md:mx-3 xl:my-5 xl:mx-2 border-poten-gray-2" />
+          <hr className="mt-3 mb-0 xl:mt-5 border-poten-gray-1" />
+        </div>
       </section> 
     )
   }
@@ -86,7 +88,7 @@ export default function SelectBar({ variant = 'default', categories}: SelectBarP
       <hr className="my-3 md:my-4 xl:my-5 border-poten-gray-1" />
     
       <nav className='flex flex-col md:flex-row md:justify-between gap-4 md:gap-0 mb-5'>
-        <ul className='flex overflow-x-auto gap-2 md:gap-3 xl:gap-0 scrollbar-hide pl-2 pr-2 -mr-2'>
+        <ul className='flex items-center overflow-x-auto gap-2 md:gap-3 xl:gap-0 scrollbar-hide pl-2 pr-2 -mr-2'>
           { labels.map((label, index) => (
             <li
               key={ index }

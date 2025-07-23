@@ -1,5 +1,5 @@
 'use client'
-import { useItemCardContext } from "@/components/list-ItemCard/ItemCardContext";
+import { useItemCardContext } from "@/components/List-ItemCard/ItemCardContext";
 
 
 export default function ItemCardImage() {
@@ -9,8 +9,8 @@ export default function ItemCardImage() {
     switch (variant) {
       case 'detailed':
         return {
-          container: "w-[336px] h-[250px] md:w-[351px] md:h-[388px] xl:w-[429px] xl:h-[429px]",
-          image: "w-[211px] h-[211px] md:w-[283px] md:h-[283px]"
+          container: "w-[336px] h-[250px] md:w-[351px] md:h-[388px] xl:w-[486px] xl:h-[560px]",
+          image: "w-[211px] h-[211px] md:w-[283px] md:h-[283px] xl:w-[429px] xl:h-[429px]"
         };
       default:
         return {
