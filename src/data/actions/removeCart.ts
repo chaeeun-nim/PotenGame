@@ -1,3 +1,5 @@
+'use server';
+
 import { IcartProductRes } from '@/types/Cart';
 // import useUserStore from '@/zustand/loginTestStore';
 

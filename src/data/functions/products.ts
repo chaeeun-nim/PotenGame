@@ -1,3 +1,5 @@
+'use server';
+
 import { ApiResPromise } from '@/types/api';
 import { Iproduct } from '@/types/products';
 
