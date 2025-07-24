@@ -20,9 +20,7 @@ export default function LoginForm() {
   const [ isLoginChecked, setIsLoginChecked ] = useState(false);
 
   const router = useRouter();
-  const [ userState, formAction, isLoading ] = useActionState(login, null);
-
-  console.log(isLoading, userState);
+  const [ userState, formAction ] = useActionState(login, null);
 
   const redirect = useSearchParams().get('redirect');
 
@@ -41,7 +39,6 @@ export default function LoginForm() {
           refreshToken: userState.item.token?.refreshToken || '',
         },
       });
-      alert('로그인이 완료되었습니다.');
       if(redirect){
         router.replace(redirect); // 돌아갈 페이지가 있을 경우 이동한다.
       }else{

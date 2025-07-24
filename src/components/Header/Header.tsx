@@ -19,21 +19,13 @@ import logOut from "@/assets/icons/logout.svg";
 
 import '@/app/globals.css';
 import { Nav } from "@/components/Header/Nav";
-import React, { useEffect } from "react";
+import React from "react";
 import Input from "@/components/Header/Input";
 import useUserStore from "@/zustand/userStore";
 
 export function Header() {
 
-// 로그인 여부
-// const [ isLogin, setIsLogin ] = useState(false);
-
-const { user } = useUserStore();
-
-  useEffect(() => {
-    // setIsLogin(true);
-    // setIsLogin(false);
-  },[]);
+const { user, resetUser } = useUserStore();
 
   return(
     <>
@@ -78,10 +70,10 @@ const { user } = useUserStore();
           </Link>
         </li>
         <li>
-          <Link href='/' className="flex gap-x-2 whitespace-nowrap">
+          <button onClick={() => resetUser()} className="flex gap-x-2 whitespace-nowrap cursor-pointer">
             <Image src={logOut} alt="로그아웃" />
             <span>로그아웃</span>
-          </Link>
+          </button>
         </li>
       </ul>
       :<ul className="hidden md:flex  gap-x-2.5 col-start-10 col-span-3 ">
