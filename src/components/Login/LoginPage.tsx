@@ -1,24 +1,12 @@
-"use client";
-
-import LoginInput from "@/components/Login/LoginInput";
+import Image from "next/image";
+import LoginForm from "@/components/Login/LoginForm";
 import LoginButton from "@/components/Login/LoginButton";
 
-import { useState } from "react";
-
-import Image from "next/image";
-import Link from "next/link";
-
 import logo1 from "@/../public/logo/logo1.svg";
-import checked from "@/assets/icons/checked.svg";
-import unchecked from "@/assets/icons/unchecked.svg";
+import { Suspense } from "react";
 
 export default function LoginPage(){
-  const [ isSubmit, setIsSubmit ] = useState(false);
-
-  const [ isLoginChecked, setIsLoginChecked ] = useState(false);
-
-
-
+  
   return (
 
     // 배경
@@ -33,32 +21,9 @@ export default function LoginPage(){
       <h1 className="font-bold mt-10 text-2xl"> 로그인 </h1>
       <p className="mb-10">포텐게임에 오신것을 환영합니다.</p>
 
-      <form action="/" className="w-full flex flex-col">
-
-        <LoginInput isSubmit={isSubmit} type={'email'} value={'이메일 계정'} />
-        <LoginInput isSubmit={isSubmit} type={'password'} value={'비밀번호'} />
-        
-
-          <div className="flex justify-between mt-3 mb-10">
-            <div>
-              <Link href='/find/findId' className="mr-5">아이디 찾기</Link>
-              <Link href='/find/findPw'>비밀번호 찾기</Link>
-            </div>
-      
-            <div>
-              <input id="login-maintain" type="checkbox" className="hidden" checked={isLoginChecked} onChange={() => {setIsLoginChecked(prev => !prev)}}/>
-              <label htmlFor="login-maintain" 
-                    className="inline-block w-4 h-4 cursor-pointer mx-1">
-                <Image src={ isLoginChecked? checked : unchecked} alt="로그인 상태 유지" />
-              </label>
-              <span>로그인 유지하기</span>
-            </div>
-          </div>
-
-        <LoginButton setIsSubmit={setIsSubmit} type={'submit'} value={'로그인'} color={'red'} />
-        <LoginButton link={'/login/signUp'} type={'button'} value={'회원가입'} color={'gray3'} />
-      </form>
-
+      <Suspense fallback={<div>로딩 중...</div>}>
+        <LoginForm />
+      </Suspense>
 
       <div className="w-full">
         <h2 className="font-bold text-center my-10 text-2xl">소셜 로그인</h2>
