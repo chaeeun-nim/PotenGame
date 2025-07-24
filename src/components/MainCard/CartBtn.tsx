@@ -4,10 +4,14 @@ import { useEffect, useState } from 'react';
 import useCartStore from '@/zustand/cartStore';
 import AddCartBtn from './AddCartBtn';
 import RemoveCartBtn from './RemoveCartBtn';
+import useUserStore from '@/zustand/userStore';
+import useLoginModal from '@/zustand/areyouLogin';
 
 export default function CartBtn({ ItemId }: { ItemId: number }) {
   // DBinit 함수에서 저장한 전역상태 호출
   const { cart } = useCartStore();
+  const { user } = useUserStore();
+  const { openViewModal } = useLoginModal();
   // 각 제품별 전역상태에 따라 카트 유무 판별 (카트에 있으면 true 없으면 false)
   const [isInCart, setIsIncart] = useState(
     cart.some((item) => item.product._id === ItemId),
@@ -25,6 +29,14 @@ export default function CartBtn({ ItemId }: { ItemId: number }) {
   // 전역상태를 의존하는 useEffect 여도 useEffect 안에서 다시 전역상태를 갱신하지 않음으로 무한루프X
 
   return (
-    <>{!isInCart ? <AddCartBtn ItemId={ItemId} /> : <RemoveCartBtn ItemId={ItemId} />}</>
+    <>
+      {user === null ? (
+        <button onClick={openViewModal}>버튼</button>
+      ) : isInCart ? (
+        <RemoveCartBtn ItemId={ItemId} />
+      ) : (
+        <AddCartBtn ItemId={ItemId} />
+      )}
+    </>
   );
 }

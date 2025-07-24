@@ -14,6 +14,7 @@ import { removeCart } from '@/data/functions/removeCart';
 import CartCountForm from './CartCountForm';
 import useCartStore from '@/zustand/cartStore';
 import CartItemCost from './CartItemCost';
+import useUserStore from '@/zustand/userStore';
 
 export default function CartItem({ item }: { item: IcartItem }) {
   const [view, setview] = useState(true);
@@ -22,10 +23,11 @@ export default function CartItem({ item }: { item: IcartItem }) {
   const [Tags, setTags] = useState<JSX.Element | null>(null);
   const setCart = useCartStore((state) => state.setCart);
   const setCost = useCartStore((state) => state.setCost);
+  const user = useUserStore((state) => state.user);
 
   const deleteHandle = async () => {
     setview(false);
-    const res = await removeCart(item._id);
+    const res = await removeCart(user?.token.accessToken as string, item._id);
     if (res.ok) {
       setCart(res.item);
       setCost(res.cost);
@@ -94,6 +96,7 @@ export default function CartItem({ item }: { item: IcartItem }) {
               </div>
             </div>
           </div>
+
           {item.product.quantity - item.product.buyQuantity >= 1 ? (
             /* 수량 수정 - 상품수량과 카트 ID전달 */
             <CartCountForm

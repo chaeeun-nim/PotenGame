@@ -10,13 +10,12 @@ export async function addCart(
   state: ApiRes<IcartItem[]> | null,
   formData: FormData,
 ): ApiResPromise<IcartItem[]> {
+  const token = formData.get('token') as string;
   const body = {
     product_id: Number(formData.get('product_id')),
     quantity: Number(formData.get('quantity')),
   };
 
-  const token =
-    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsInR5cGUiOiJzZWxsZXIiLCJuYW1lIjoi64Sk7JikIiwiZW1haWwiOiJzMUBtYXJrZXQuY29tIiwiaW1hZ2UiOiJmaWxlcy9mZWJjMTMtZmluYWwxNC1lbWpmL3VzZXItbmVvLnBuZyIsImxvZ2luVHlwZSI6ImVtYWlsIiwiaWF0IjoxNzUzMjQ4MzUwLCJleHAiOjE3NTMzMzQ3NTAsImlzcyI6IkZFQkMifQ.h_zWw76tKdk_sfjS99VBQDPKTJDpZRS1bKDfAi5ljEA';
   let res: Response;
   let data: ApiRes<IcartItem[]>;
 

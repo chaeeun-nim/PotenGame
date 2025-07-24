@@ -2,6 +2,7 @@
 
 import { quantityCart } from '@/data/functions/quantityCart';
 import useCartStore from '@/zustand/cartStore';
+import useUserStore from '@/zustand/userStore';
 import { useState } from 'react';
 
 export default function CartCountForm({
@@ -15,12 +16,17 @@ export default function CartCountForm({
 }) {
   const [quantityState, setQuantityState] = useState(quantity);
   const { setCart, setCost } = useCartStore();
+  const user = useUserStore((state) => state.user);
 
   const addHandle = async () => {
     if (quantityState < maxquaintity) {
       const newQuantity = quantityState + 1;
       setQuantityState(newQuantity);
-      const res = await quantityCart(newQuantity, cartId);
+      const res = await quantityCart(
+        user?.token.accessToken as string,
+        newQuantity,
+        cartId,
+      );
       if (res.ok) {
         setCart(res.item);
         setCost(res.cost);
@@ -32,7 +38,11 @@ export default function CartCountForm({
     if (quantityState > 1) {
       const newQuantity = quantityState - 1;
       setQuantityState(newQuantity);
-      const res = await quantityCart(newQuantity, cartId);
+      const res = await quantityCart(
+        user?.token.accessToken as string,
+        newQuantity,
+        cartId,
+      );
       if (res.ok) {
         setCart(res.item);
         setCost(res.cost);

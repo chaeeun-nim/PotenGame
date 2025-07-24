@@ -5,15 +5,6 @@ type Store = {
   closeModal: () => void;
 };
 
-/*
-(set) => ({
-  modal: true,
-  closeModal: () => {
-    set({ modal: false });
-  },
-})
-*/
-
 const useModalStore = create<Store>()((set) => ({
   modal: true,
   closeModal: () => {
