@@ -12,30 +12,42 @@ import { useActionState, useEffect, useState } from "react";
 
 import checked from "@/assets/icons/checked.svg";
 import unchecked from "@/assets/icons/unchecked.svg";
+import useUserStore from "@/zustand/userStore";
 
 export default function LoginForm() {
 
   const [ isSubmit, setIsSubmit ] = useState(false);
-
   const [ isLoginChecked, setIsLoginChecked ] = useState(false);
 
   const router = useRouter();
-
   const [ userState, formAction, isLoading ] = useActionState(login, null);
 
   console.log(isLoading, userState);
 
   const redirect = useSearchParams().get('redirect');
 
+  const setUser = useUserStore(state => state.setUser);
+
   // setUser는 상태를 변경하는 함수이므로 useEffect에서 호출해야 한다.
   useEffect(() => {
     if(userState?.ok){
+      setUser({
+        _id: userState.item._id,
+        email: userState.item.email,
+        name: userState.item.name,
+        type: userState.item.type,
+        token: {
+          accessToken: userState.item.token?.accessToken || '',
+          refreshToken: userState.item.token?.refreshToken || '',
+        },
+      });
       alert('로그인이 완료되었습니다.');
       if(redirect){
         router.replace(redirect); // 돌아갈 페이지가 있을 경우 이동한다.
       }else{
         router.back(); // 이전 페이지로 이동한다.
       }
+      
     }else{
       if(!userState?.errors && userState?.message){ // 입력값 검증에러가 아닌 경우
         alert(userState.message); // 로그인 실패 메세지
