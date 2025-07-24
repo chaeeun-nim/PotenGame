@@ -11,7 +11,7 @@ export default function CartList() {
   return (
     <>
       <div className="xl:max-w-[1200px]  mx-auto">
-        {cartList.length === 0 ? <Nocart /> : cartList}
+        {cart.length === 0 ? <Nocart /> : cartList}
       </div>
     </>
   );

@@ -1,5 +1,4 @@
 'use client';
-
 import { quantityCart } from '@/data/functions/quantityCart';
 import useCartStore from '@/zustand/cartStore';
 import useUserStore from '@/zustand/userStore';
@@ -52,12 +51,12 @@ export default function CartCountForm({
 
   return (
     <>
-      <div className="flex gap-[12px] justify-end mt-[18px]">
+      <div className="flex gap-3 justify-end items-center xl:text-[20px]">
         <p className="text-poten-black">수량</p>
         <div className="border-2 flex border-poten-gray-1 text-poten-black-2 rounded-[4px] overflow-hidden">
           <button
             type="button"
-            className="w-[32px] font-bold border-r-2 border-poten-gray-1 disabled:text-poten-gray-1"
+            className="w-[32px] xl:w-[40px] font-bold border-r-2 border-poten-gray-1 disabled:text-poten-gray-1"
             disabled={quantityState <= 1 ? true : false}
             onClick={minusHandle}>
             -
@@ -67,7 +66,7 @@ export default function CartCountForm({
             type="button"
             onClick={addHandle}
             disabled={quantityState >= maxquaintity ? true : false}
-            className="w-[32px] font-bold border-l-2 border-poten-gray-1 disabled:text-poten-gray-1">
+            className="w-[32px] xl:w-[40px] font-bold border-l-2 border-poten-gray-1 disabled:text-poten-gray-1">
             +
           </button>
         </div>

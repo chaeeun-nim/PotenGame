@@ -6,6 +6,8 @@ import AddCartBtn from './AddCartBtn';
 import RemoveCartBtn from './RemoveCartBtn';
 import useUserStore from '@/zustand/userStore';
 import useLoginModal from '@/zustand/areyouLogin';
+import Image from 'next/image';
+import addCartIcon from '@/assets/icons/cart-gray.svg';
 
 export default function CartBtn({ ItemId }: { ItemId: number }) {
   // DBinit 함수에서 저장한 전역상태 호출
@@ -31,7 +33,18 @@ export default function CartBtn({ ItemId }: { ItemId: number }) {
   return (
     <>
       {user === null ? (
-        <button onClick={openViewModal}>버튼</button>
+        <button
+          className="flex items-center w-[100px] md:w-[150px] xl:w-[200px] font-medium text-[16px] md:text-[18px] xl:text-[20px] text-poten-gray-2  flex-row place-content-center  h-[32px] xl:h-[36px] bg-white  rounded-sm gap-1 border-1 border-poten-gray-1"
+          onClick={openViewModal}>
+          담기
+          <Image
+            className="xl:w-[20px]"
+            src={addCartIcon}
+            alt="카트에 담기"
+            width={18}
+            height={18}
+          />
+        </button>
       ) : isInCart ? (
         <RemoveCartBtn ItemId={ItemId} />
       ) : (

@@ -64,52 +64,70 @@ export default function CartItem({ item }: { item: IcartItem }) {
   return (
     <>
       {view ? (
-        <div className="bg-white w-full mb-3 p-[16px] ">
-          <div className="flex justify-between items-center">
-            <input type="checkbox" />
-            <RemoveCartBtn deleteHandle={deleteHandle} />
-          </div>
-          <div className="flex   gap-x-[10px] align-middle leading-tight">
-            <div className="flex gap-[16px] items-center   w-full">
+        <div
+          className="bg-white w-full mb-3 p-[16px] md:p-[32px]
+        [box-shadow:rgba(99,99,99,0.2)_0px_2px_8px_0px]">
+          <div className="flex  align-middle leading-tight ">
+            <div className="flex gap-[16px] md:gap-[20px] xl:gap-[24px] items-center  w-full ">
               <Link
                 href={`/list/${item.product_id}`}
-                className="w-[100px] h-[100px] shrink-0 flex items-center justify-center  border-1 border-poten-gray-1">
+                className="w-[100px] h-[100px] md:w-[150px] md:h-[150px]  shrink-0 flex items-center justify-center  border-1 border-poten-gray-1">
                 <Image
-                  className="w-[80px]"
+                  className="w-[80px] md:w-[100px]"
                   src={`https://fesp-api.koyeb.app/market/${item.product.image.path}`}
                   alt={item.product.name}
                   width={500}
                   height={500}
                 />
               </Link>
-              <div className=" flex flex-col  min-w-0">
-                <p className="font-medium text-poten-gray-2 text-[14px] ">
+
+              <div className=" flex flex-col gap-1 min-w-0  md:gap-2 md:h-full md:py-3 xl:w-full">
+                <p className="font-medium text-poten-gray-2 text-[14px] md:text-[16px] md:font-bold">
                   <DeliveryDate />
                 </p>
-                <div className="my-[8px]">
-                  <p className="text-[14px]">{platform}</p>
-                  <p className="text-poten-black font-bold w-full block text-[18px] truncate">
-                    {item.product.name}
-                  </p>
-                </div>
-                {Tags}
+                <p className="text-[14px] md:text-[15px]">{platform}</p>
+
+                <p className="text-poten-black font-bold w-full block text-[18px] md:text-[20px] truncate">
+                  {item.product.name}
+                </p>
+
+                <span className="block">{Tags}</span>
+                <p className=" mt-[18px] mb-1 md:m-[0px] hidden md:block text-poten-black ">
+                  제품금액
+                  <span className="text-[20px]  ml-5 font-bold">
+                    {item.product.price.toLocaleString()}원
+                  </span>
+                </p>
               </div>
+            </div>
+            <div className="flex items-start ">
+              <RemoveCartBtn deleteHandle={deleteHandle} />
             </div>
           </div>
 
-          {item.product.quantity - item.product.buyQuantity >= 1 ? (
-            /* 수량 수정 - 상품수량과 카트 ID전달 */
-            <CartCountForm
-              cartId={item._id}
-              quantity={item.quantity}
-              maxquaintity={item.product.quantity - item.product.buyQuantity}
-            />
-          ) : (
-            <p>품절</p>
-          )}
+          <p className="text-right mt-[18px]  mb-1 md:m-[0px] md:hidden  text-poten-black ">
+            제품금액
+            <span className="text-[20px] ml-5 font-bold">
+              {item.product.price.toLocaleString()}원
+            </span>
+          </p>
+          <div>
+            <div>
+              {item.product.quantity - item.product.buyQuantity >= 1 ? (
+                /* 수량 수정 - 상품수량과 카트 ID전달 */
+                <CartCountForm
+                  cartId={item._id}
+                  quantity={item.quantity}
+                  maxquaintity={item.product.quantity - item.product.buyQuantity}
+                />
+              ) : (
+                <p>품절</p>
+              )}
 
-          <hr className="border-1 border-poten-gray-1 my-[16px]" />
-          <CartItemCost cartId={item._id} />
+              <hr className="border-1 border-poten-gray-1 my-[16px]" />
+              <CartItemCost cartId={item._id} />
+            </div>
+          </div>
         </div>
       ) : null}
     </>

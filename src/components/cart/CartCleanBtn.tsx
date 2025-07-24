@@ -18,7 +18,7 @@ export default function CartCleanBtn() {
   return (
     <>
       <button
-        className="text-poten-gray-2 ml-auto font-bold cursor-pointer border-poten-gray-2"
+        className="text-poten-gray-2 text-[16px] md:bg-white md:border-1 md:px-[24px] md:py-[8px] md:rounded-[4px] mr-[16px] mb-[14px] ml-auto font-bold cursor-pointer border-poten-gray-2"
         onClick={cleanHandle}>
         전체삭제
       </button>
