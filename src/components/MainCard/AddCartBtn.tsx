@@ -6,17 +6,24 @@ import { useActionState, useEffect } from 'react';
 import addCartIcon from '@/assets/icons/cart-gray.svg';
 import Image from 'next/image';
 import LoadingRing from './LoadingRing';
+import { getCart } from '@/data/functions/getCart';
 
 export default function AddCartBtn({ ItemId }: { ItemId: number }) {
   // 카트 추가하는 서버액션
   const [state, formAction, isLoading] = useActionState(addCart, null);
   // 전역상태를 갱신하는 함수
-  const { setCart } = useCartStore();
+  const { setCart, setCost } = useCartStore();
 
   // 서버액션이 종료되면, 종료 이후 받은 데이터를 전역상태에 저장
   useEffect(() => {
     if (state?.ok === 1) {
       setCart(state.item);
+      (async () => {
+        const res = await getCart();
+        if (res.ok) {
+          setCost(res.cost);
+        }
+      })();
     }
   }, [state]); // eslinkt 경고는 무시하셔도됩니다
   // 전역 상태가 변경되었음으로, 그에 따른 버튼의 상태변화로 연결

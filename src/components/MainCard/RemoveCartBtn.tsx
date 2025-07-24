@@ -4,7 +4,7 @@ import Image from 'next/image';
 import removeCartIcon from '@/assets/icons/addcart.svg';
 
 import useCartStore from '@/zustand/cartStore';
-import { removeCart } from '@/data/actions/removeCart';
+import { removeCart } from '@/data/functions/removeCart';
 import { useState } from 'react';
 import LoadingRing from './LoadingRing';
 

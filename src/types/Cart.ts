@@ -1,4 +1,4 @@
-import { Iproduct } from './products';
+import { IproductExtra } from './products';
 
 // 짱바구니 저장할때 보내느 폼의 타입
 export interface IcartPostReq {
@@ -37,7 +37,24 @@ export interface IcartItem {
   product_id: number;
   createdAt: string;
   updatedAt: string;
-  product: Iproduct;
+  product: ICartProductItem;
+}
+
+export interface ICartProductItem {
+  _id: number;
+  name: string;
+  price: number;
+  seller_id: number;
+  quantity: number;
+  buyQuantity: number;
+  image: ICartProductItemImg;
+  extra: IproductExtra;
+}
+
+interface ICartProductItemImg {
+  path: string;
+  name: string;
+  originalname: string;
 }
 
 export interface IcartCost {

@@ -1,15 +1,10 @@
 'use client';
 
-import { IcartCost, IcartItem } from '@/types/Cart';
+import useCartStore from '@/zustand/cartStore';
 
-export default function PaymentBar({
-  cost,
-  items,
-}: {
-  cost: IcartCost;
-  items: IcartItem[];
-}) {
-  const countItem = items.reduce((sum, next) => sum + next.quantity, 0);
+export default function PaymentBar() {
+  const { cart, cost } = useCartStore();
+  const countItem = cart.reduce((sum, next) => sum + next.quantity, 0);
 
   class Order {
     _id: number;
@@ -21,7 +16,7 @@ export default function PaymentBar({
     }
   }
 
-  const orderList = items.map((item) => new Order(item._id, item.quantity));
+  const orderList = cart.map((item) => new Order(item._id, item.quantity));
 
   return (
     <>
