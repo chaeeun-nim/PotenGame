@@ -1,10 +1,9 @@
-""
-
 import Image from "next/image";
 import LoginForm from "@/components/Login/LoginForm";
 import LoginButton from "@/components/Login/LoginButton";
 
 import logo1 from "@/../public/logo/logo1.svg";
+import { Suspense } from "react";
 
 export default function LoginPage(){
   
@@ -22,7 +21,9 @@ export default function LoginPage(){
       <h1 className="font-bold mt-10 text-2xl"> 로그인 </h1>
       <p className="mb-10">포텐게임에 오신것을 환영합니다.</p>
 
-      <LoginForm />
+      <Suspense fallback={<div>로딩 중...</div>}>
+        <LoginForm />
+      </Suspense>
 
       <div className="w-full">
         <h2 className="font-bold text-center my-10 text-2xl">소셜 로그인</h2>
