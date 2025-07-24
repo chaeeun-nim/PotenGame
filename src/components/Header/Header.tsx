@@ -19,17 +19,20 @@ import logOut from "@/assets/icons/logout.svg";
 
 import '@/app/globals.css';
 import { Nav } from "@/components/Header/Nav";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import Input from "@/components/Header/Input";
+import useUserStore from "@/zustand/userStore";
 
 export function Header() {
 
 // 로그인 여부
-const [ isLogin, setIsLogin ] = useState(false);
+// const [ isLogin, setIsLogin ] = useState(false);
+
+const { user } = useUserStore();
 
   useEffect(() => {
     // setIsLogin(true);
-    setIsLogin(false);
+    // setIsLogin(false);
   },[]);
 
   return(
@@ -60,7 +63,7 @@ const [ isLogin, setIsLogin ] = useState(false);
         
 
       {/* 비로그인: 로그인, 회원가입 버튼 / 로그인: 마이페이지, 장바구니, 로그아웃*/}
-      { isLogin?
+      { user?
       <ul className="hidden md:flex items-center gap-x-2.5 col-start-10 col-span-3 ">
         <li>
           <Link href='/myPage' className="flex gap-x-2 whitespace-nowrap ">
