@@ -1,15 +1,14 @@
-import { IcartProductRes } from '@/types/Cart';
+// 카트 초기화 함수
 
-export const API_URL = process.env.NEXT_PUBLIC_API_URL;
+const API_URL = process.env.NEXT_PUBLIC_API_URL;
 const CLIENT_ID = process.env.NEXT_PUBLIC_CLIENT_ID || '';
 
-// 장바구니상품조회
-export async function getCart(
+export async function resetCart(
   token: string,
-): Promise<IcartProductRes | { ok: 0; message: string }> {
+): Promise<{ ok: 1 } | { ok: 0; message: string }> {
   try {
-    const res = await fetch(`${API_URL}/carts/`, {
-      method: 'GET',
+    const res = await fetch(`${API_URL}/carts/cleanup`, {
+      method: 'DELETE',
       headers: {
         'Client-Id': CLIENT_ID,
         Authorization: `Bearer ${token}`,

@@ -1,33 +1,38 @@
-"use client";
+'use client';
 
-import Image from "next/image";
-import Link from "next/link";
+import Image from 'next/image';
+import Link from 'next/link';
 
-import logo1 from "@/../public/logo/logo1.svg";
-import logo2 from "@/../public/logo/logo2.svg";
-import bannerSm from "@/assets/img/top-banner-sm.webp";
-import bannerMd from "@/assets/img/top-banner-md.webp";
-import bannerLg from "@/assets/img/top-banner-lg.webp";
+import logo1 from '@/../public/logo/logo1.svg';
+import logo2 from '@/../public/logo/logo2.svg';
+import bannerSm from '@/assets/img/top-banner-sm.webp';
+import bannerMd from '@/assets/img/top-banner-md.webp';
+import bannerLg from '@/assets/img/top-banner-lg.webp';
 
-import loginLogo from "@/assets/icons/login.svg";
-import signinLogo from "@/assets/icons/signin.svg";
+import loginLogo from '@/assets/icons/login.svg';
+import signinLogo from '@/assets/icons/signin.svg';
 
-import myPage from "@/assets/icons/mypage.svg";
-import cart from "@/assets/icons/cart.svg";
-import logOut from "@/assets/icons/logout.svg";
-
+import myPage from '@/assets/icons/mypage.svg';
+import cart from '@/assets/icons/cart.svg';
+import logOut from '@/assets/icons/logout.svg';
 
 import '@/app/globals.css';
-import { Nav } from "@/components/Header/Nav";
-import React from "react";
-import Input from "@/components/Header/Input";
-import useUserStore from "@/zustand/userStore";
+import { Nav } from '@/components/Header/Nav';
+import React from 'react';
+import Input from '@/components/Header/Input';
+import useUserStore from '@/zustand/userStore';
+import useCartStore from '@/zustand/cartStore';
 
 export function Header() {
+  const { user, resetUser } = useUserStore();
+  const { resetStore } = useCartStore();
 
-const { user, resetUser } = useUserStore();
+  const handleLogout = () => {
+    resetUser();
+    resetStore();
+  };
 
-  return(
+  return (
     <>
     {/* 상단 광고 */}
     <div className="bg-[#0E0E0E]">
@@ -68,7 +73,7 @@ const { user, resetUser } = useUserStore();
           </Link>
         </li>
         <li>
-          <button onClick={() => resetUser()} className="flex gap-x-2 whitespace-nowrap cursor-pointer">
+          <button onClick={() => handleLogout()} className="flex gap-x-2 whitespace-nowrap cursor-pointer">
             <Image src={logOut} alt="로그아웃" />
             <span>로그아웃</span>
           </button>
@@ -95,5 +100,5 @@ const { user, resetUser } = useUserStore();
     
     <Nav />
     </>
-  )
+  );
 }

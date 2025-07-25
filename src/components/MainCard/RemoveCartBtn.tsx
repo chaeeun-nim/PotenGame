@@ -4,19 +4,21 @@ import Image from 'next/image';
 import removeCartIcon from '@/assets/icons/addcart.svg';
 
 import useCartStore from '@/zustand/cartStore';
-import { removeCart } from '@/data/actions/removeCart';
+import { removeCart } from '@/data/functions/removeCart';
 import { useState } from 'react';
 import LoadingRing from './LoadingRing';
+import useUserStore from '@/zustand/userStore';
 
 export default function RemoveCartBtn({ ItemId }: { ItemId: number }) {
   const { cart, setCart, setCost } = useCartStore();
+  const { user } = useUserStore();
   const cartBasket = cart.find((item) => item.product._id === ItemId);
   const [isLoading, setLoading] = useState(false);
 
   async function removeHandle() {
     if (cartBasket?._id) {
       setLoading(true);
-      const res = await removeCart(cartBasket._id);
+      const res = await removeCart(user?.token.accessToken as string, cartBasket._id);
       setLoading(false);
       if (res.ok) {
         setCart(res.item);
