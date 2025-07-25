@@ -1,5 +1,6 @@
 export const dynamic = 'force-dynamic';
 
+import CartAllBtn from '@/components/cart/CartAllBtn';
 import CartCleanBtn from '@/components/cart/CartCleanBtn';
 import CartCosttable from '@/components/cart/CartCosttable';
 import CartList from '@/components/cart/CartList';
@@ -39,6 +40,7 @@ export default async function CartPage() {
         </header>
         <div className="w-full bg-poten-snowgray1 pt-[10px] md:px-[24px] pb-[24px] md:pt-[30px] xl:pt-[50px] md:pb-[100px] ">
           <div className="flex justify-end mx-auto xl:max-w-[1200px]">
+            <CartAllBtn />
             <CartCleanBtn />
           </div>
           <CartList />

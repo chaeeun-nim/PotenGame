@@ -12,12 +12,9 @@ import { useEffect } from 'react';
 
 export default function Datainit() {
   const user = useUserStore((state) => state.user);
-  const { setCart, setCost, resetStore } = useCartStore(); // 카트 스토어에 제품을 셋팅하는 함수와 리셋 함수를 호출합니다.
+  const { setCart, setCost } = useCartStore(); // 카트 스토어에 제품을 셋팅하는 함수와 리셋 함수를 호출합니다.
 
   useEffect(() => {
-    resetStore(); // 마운팅 이후, 카트 스토어를 한번 비워줍니다.
-    useCartStore.persist.clearStorage(); // 스토어와 함께 세션스토리지도 비워줍니다.
-
     // 카트 목록을 호출하는 함수를 제작합니다.
     const fetchData = async () => {
       const res = await getCart(user?.token.accessToken as string);
