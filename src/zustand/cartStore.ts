@@ -10,14 +10,6 @@ type Store = {
   resetStore: () => void;
 };
 
-/*
-const useCartStore = create<Store>()((set) => ({
-  cart: [],
-  setCart: (dataItems: IcartItem[]) => {
-    set({ cart: dataItems });
-  },
-})); */
-
 const useCartStore = create<Store>()(
   persist(
     (set) => ({
