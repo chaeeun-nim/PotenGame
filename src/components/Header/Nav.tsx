@@ -1,3 +1,5 @@
+"use client";
+
 import '@/app/globals.css';
 
 import timeBlack from '@/assets/icons/time-black.svg';
@@ -16,41 +18,51 @@ import ps5 from '@/assets/img/ps5.webp';
 
 import Image from 'next/image';
 import Link from 'next/link';
+import useUserStore from '@/zustand/userStore';
 
 export function Nav() {
+
+  const { user } = useUserStore();
+
   return(
     <>
     <div>
       {/* 모바일 하단 네비게이터 */}
-      <div className='bg-white fixed bottom-0  z-4 w-full shadow-2xl md:hidden'>
+      <div style={{ boxShadow: '0 -4px 6px -1px rgba(0,0,0,0.1)' }} className='bg-white fixed bottom-0  z-4 w-full rounded-t-lg shadow-lg shadow-black  md:hidden'>
         <ul className='flex justify-around p-3 '>
           <li>
-            <Link href={'/'}>
-              <Image src={timeRed} alt="타임세일" className="m-auto"/>
+            <Link className='flex flex-col items-center' href={'/'}>
+              <Image src={timeRed} alt="타임세일"/>
               <span>타임세일</span>
             </Link>
           </li>
           <li>
-            <Link href={'/mypage'}>
-              <Image src={mypage} alt="내 정보" className="m-auto"/>
+            { user? 
+            <Link className='flex flex-col items-center' href={'/mypage'}>
+              <Image src={mypage} alt="내 정보"/>
               <span>내 정보</span>
             </Link>
+            :<Link className='flex flex-col items-center' href={'/login'}>
+              <Image src={mypage} alt="로그인"/>
+              <span>로그인</span>
+            </Link>
+            }
           </li>
           <li>
-            <Link href={'/mypage'}>
-              <Image src={category} alt="카테고리" className="m-auto"/>
+            <Link className='flex flex-col items-center' href={'/mypage'}>
+              <Image src={category} alt="카테고리"/>
               <span>카테고리</span>
             </Link>
           </li>
-          <li>
-            <Link href={'/'}>
-              <Image src={like} alt="찜" className="m-auto"/>
-              <span>찜</span>
+          <li >
+            <Link className='flex flex-col items-center' href={'/'}>
+              <Image src={like} alt="찜" />
+              <span >찜</span>
             </Link>
           </li>
           <li>
-            <Link href={'/cart'}>
-              <Image src={cart} alt="장바구니" className="m-auto"/>
+            <Link className='flex flex-col items-center' href={'/cart'}>
+              <Image src={cart} alt="장바구니"/>
               <span>장바구니</span>
             </Link>
           </li>
@@ -58,7 +70,7 @@ export function Nav() {
       </div>
 
       {/* 상단 네비게이터 */}
-      <div className='border-2 border-poten-gray-1 bg-white sticky top-0 z-2 w-full'>  
+      <div className='border-y-2 border-poten-gray-1 bg-white sticky top-0 z-2 w-full'>  
         <ul 
         className='flex md:p-0 gap-5 whitespace-nowrap overflow-x-scroll [&::-webkit-scrollbar]:hidden md:overflow-visible justify-around items-center max-w-300 m-auto '>
           <li className='hidden xl:block border-x-2 border-poten-gray-1'>

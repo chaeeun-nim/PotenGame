@@ -1,4 +1,9 @@
 import { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
+
+import logo1 from "@/../public/logo/logo1.svg";
+import SignUpInput from "@/components/SignUp/SignUpInput";
 
 export const metadata: Metadata = {
   title: '회원가입',
@@ -7,19 +12,21 @@ export const metadata: Metadata = {
 
 export default function signUp() {
   return (
-    <>
-    <h1> 회원가입 </h1>
-    <form action="/">
-      <input type="email" placeholder="이메일을 입력하세요"/>
-      <input type="text" placeholder="비밀번호를 입력하세요"/>
-      <input type="text" placeholder="이름을 입력하세요" />
-      <input type="phone" placeholder="전화번호를 입력하세요"/>
-      <input type="address" placeholder="주소를 입력하세요"/>
+    <div className="flex flex-col items-center">
+     
+    {/* 로고 */}
+    <Image className="w-50 h-20 mt-20 mb-10" src={logo1} alt="메인 로고"/>
 
-      <input type="radio" id="user" name="user" value="user" />
-        <label htmlFor="user">  구매자 </label>
-      <input type="radio" id="seller" name="seller" value="seller" />
-        <label htmlFor="option2">판매자</label>
+    <span>이미 회원이신가요?</span>
+    <Link href='/login' className="text-poten-red font-bold">로그인 하기</Link>
+ 
+    <h1> 회원가입 </h1>
+    <form action="/" className="flex flex-col items-center">
+      <SignUpInput type={'email'} title={"이메일"} placeholder={"이메일을 입력해 주세요"}/>
+      <SignUpInput type={"password"} title={"비밀번호"} placeholder={"비밀번호를 입력해 주세요"}/>
+      <SignUpInput type={"password"} title={"비밀번호"} placeholder={"한번 더 입력해 주세요"}/>
+      <SignUpInput type={"tel"} title={"휴대폰 번호"} placeholder={"휴대폰 번호를 입력해 주세요"}/>
+      <SignUpInput type={"text"} title={"별명"} placeholder={"사용하실 별명을 입력해 주세요"}/>
 
       <input type="checkbox" id="scales" name="scales" />
         <label htmlFor="scales">[필수] 만 14세 이상입니다.</label>
@@ -32,6 +39,6 @@ export default function signUp() {
 
       <button type="submit">가입하기</button>
     </form>
-    </>
+    </div>
   );
 }

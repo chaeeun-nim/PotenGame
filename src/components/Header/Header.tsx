@@ -46,16 +46,14 @@ const { user, resetUser } = useUserStore();
         <Image className="hidden md:hidden xl:block" src={logo1} alt="메인 로고" width={177} height={70}/> 
       </Link>
 
-      
-
       {/*검색창*/}
       <div className="col-span-full row-start-2">
       <Input />
       </div>
-        
 
-      {/* 비로그인: 로그인, 회원가입 버튼 / 로그인: 마이페이지, 장바구니, 로그아웃*/}
+      {/* 상단 아이콘 */}
       { user?
+      // 로그인o: 마이페이지, 장바구니, 로그아웃
       <ul className="hidden md:flex items-center gap-x-2.5 col-start-10 col-span-3 ">
         <li>
           <Link href='/myPage' className="flex gap-x-2 whitespace-nowrap ">
@@ -76,6 +74,7 @@ const { user, resetUser } = useUserStore();
           </button>
         </li>
       </ul>
+      // 로그인x: 로그인, 회원가입
       :<ul className="hidden md:flex  gap-x-2.5 col-start-10 col-span-3 ">
         <li>
           <Link href='/login' className="flex gap-x-2 whitespace-nowrap">
@@ -91,8 +90,9 @@ const { user, resetUser } = useUserStore();
         </li>
       </ul>
       }
-    </div>
 
+    </div>
+    
     <Nav />
     </>
   )
