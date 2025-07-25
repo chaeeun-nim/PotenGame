@@ -15,7 +15,6 @@ import CartCountForm from './CartCountForm';
 import useCartStore from '@/zustand/cartStore';
 import CartItemCost from './CartItemCost';
 import useUserStore from '@/zustand/userStore';
-import SelectBtn from './SelectBtn';
 
 export default function CartItem({ item }: { item: IcartItem }) {
   const [view, setview] = useState(true);
@@ -103,7 +102,6 @@ export default function CartItem({ item }: { item: IcartItem }) {
             </div>
             <div className="flex items-start ">
               <RemoveCartBtn deleteHandle={deleteHandle} />
-              <SelectBtn />
             </div>
           </div>
 
