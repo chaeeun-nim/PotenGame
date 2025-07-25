@@ -4,10 +4,16 @@ import { useEffect, useState } from 'react';
 import useCartStore from '@/zustand/cartStore';
 import AddCartBtn from './AddCartBtn';
 import RemoveCartBtn from './RemoveCartBtn';
+import useUserStore from '@/zustand/userStore';
+import useLoginModal from '@/zustand/areyouLogin';
+import Image from 'next/image';
+import addCartIcon from '@/assets/icons/cart-gray.svg';
 
 export default function CartBtn({ ItemId }: { ItemId: number }) {
   // DBinit 함수에서 저장한 전역상태 호출
   const { cart } = useCartStore();
+  const { user } = useUserStore();
+  const { openViewModal } = useLoginModal();
   // 각 제품별 전역상태에 따라 카트 유무 판별 (카트에 있으면 true 없으면 false)
   const [isInCart, setIsIncart] = useState(
     cart.some((item) => item.product._id === ItemId),
@@ -25,6 +31,25 @@ export default function CartBtn({ ItemId }: { ItemId: number }) {
   // 전역상태를 의존하는 useEffect 여도 useEffect 안에서 다시 전역상태를 갱신하지 않음으로 무한루프X
 
   return (
-    <>{!isInCart ? <AddCartBtn ItemId={ItemId} /> : <RemoveCartBtn ItemId={ItemId} />}</>
+    <>
+      {user === null ? (
+        <button
+          className="flex items-center w-[100px] md:w-[150px] xl:w-[200px] font-medium text-[16px] md:text-[18px] xl:text-[20px] text-poten-gray-2  flex-row place-content-center  h-[32px] xl:h-[36px] bg-white  rounded-sm gap-1 border-1 border-poten-gray-1"
+          onClick={openViewModal}>
+          담기
+          <Image
+            className="xl:w-[20px]"
+            src={addCartIcon}
+            alt="카트에 담기"
+            width={18}
+            height={18}
+          />
+        </button>
+      ) : isInCart ? (
+        <RemoveCartBtn ItemId={ItemId} />
+      ) : (
+        <AddCartBtn ItemId={ItemId} />
+      )}
+    </>
   );
 }
