@@ -23,7 +23,7 @@ export default function MyPostPage() {
       <MyPageSide variant="mobileOnly" />
 
       {/* PC 전용 */}
-      <section className="hidden xl:block bg-white rounded-lg -mt-6 mb-8 px-4">
+      <section className="hidden xl:block bg-white rounded-lg -mt-2 mb-8 px-4">
         <PostSection title="질의응답 게시판 / 작성한 글" posts={qnaPosts} size="lg" />
         <PostSection title="자유 게시판 / 작성한 글" posts={freePosts} size="lg" />
       </section>
@@ -54,9 +54,9 @@ function PostSection({
 }) {
   const isQnA = title.includes('질의응답');
   const textSize = {
-    lg: '16px',
-    md: '14px',
-    sm: '13px',
+    lg: '18px',
+    md: '16px',
+    sm: '14px',
   }[size];
 
   return (

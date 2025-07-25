@@ -5,6 +5,7 @@ import Link from 'next/link';
 import React from 'react';
 
 export default function MyPage() {
+  // 더미 주문 내역 데이터 
   const recentOrders = [
     {
       id: 1,
