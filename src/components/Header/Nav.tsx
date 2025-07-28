@@ -28,8 +28,10 @@ export function Nav() {
     <>
     <div>
       {/* 모바일 하단 네비게이터 */}
-      <div style={{ boxShadow: '0 -4px 6px -1px rgba(0,0,0,0.1)' }} className='bg-white fixed bottom-0  z-4 w-full rounded-t-lg shadow-lg shadow-black  md:hidden'>
-        <ul className='flex justify-around p-3 '>
+      <div style={{ boxShadow: '0 -4px 6px -1px rgba(0,0,0,0.1)' }} 
+          className='bg-white fixed bottom-0 z-4 w-full rounded-t-lg shadow-lg shadow-black md:hidden'
+      >
+        <ul className='flex justify-around items-center h-15'>
           <li>
             <Link className='flex flex-col items-center' href={'/'}>
               <Image src={timeRed} alt="타임세일"/>
