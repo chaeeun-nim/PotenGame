@@ -28,6 +28,7 @@ export function Header() {
   const { resetStore } = useCartStore();
 
   const handleLogout = () => {
+    location.reload();
     resetUser();
     resetStore();
   };
