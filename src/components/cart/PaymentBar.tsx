@@ -7,13 +7,11 @@ import Image from 'next/image';
 import useCartStore from '@/zustand/cartStore';
 
 import { useRouter } from 'next/navigation';
-import { useState } from 'react';
 
 export default function PaymentBar() {
   const { cart, cost } = useCartStore();
   const countItem = cart.reduce((sum, next) => sum + next.quantity, 0);
   const router = useRouter();
-  const [payBtn] = useState(cart.length > 0 ? false : true);
 
   const payHandle = async () => {
     const res = await fetch('/api/can_payment', { method: 'POST' });
@@ -65,7 +63,7 @@ export default function PaymentBar() {
             </div>
             <button
               onClick={payHandle}
-              disabled={payBtn}
+              disabled={cart.length === 0 ? true : false}
               className="flex items-center justify-center font-bold text-[18px] rounded-[50px] md:rounded-none
             text-white shrink-0 bg-poten-red py-2 px-10 xl:px-16
             disabled:bg-poten-gray-2

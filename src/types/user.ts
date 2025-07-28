@@ -33,7 +33,7 @@ export interface IuserExtra {
   nickname: string;
   birthday: string;
   membershipClass: 'MC01' | 'MC02';
-  addressBook: Iaddress[];
+  address: Iaddress[];
 }
 
 export interface UserState {
