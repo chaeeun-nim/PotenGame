@@ -38,7 +38,7 @@ export default function SelectBar({ variant = 'default', categories}: SelectBarP
   if ( variant === 'itemDetail') {
     return (
       <section className='flex flex-col pt-10 mb-5.5'>
-        <div className='w-[336px] md:w-[714px] xl:w-[1200px] mx-auto'>
+        <div className='mx-4 xl:w-[1200px] xl:mx-auto'>
           <div className='flex items-center mb-3 md:mb-0'>
             <h2 className="font-semibold pl-2 md:pl-3 mx-3 xl:pl-4 border-l-2 md:border-l-3 xl:border-l-4 border-l-poten-red text-sm md:text-base xl:text-lg">
               닌텐도 DS
