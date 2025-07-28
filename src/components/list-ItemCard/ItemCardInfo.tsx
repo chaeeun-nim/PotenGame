@@ -18,13 +18,14 @@ export default function ItemCardInfo() {
   const handleCartClick = () => {
     setIsInCart(!isInCart);
   };
+  const [quantity, setQuantity] = useState(1);
 
   // variant가 'detailed'일 경우 해당 HTML 구조 반환
   if (variant === 'detailed') {
     return (
       <>
         <article className="flex flex-col flex-1 mx-3">
-          <div className='ml-2'>
+          <div className="ml-2">
             <h3 className={'font-bold my-2 text-[22px] xl:text-[32px]'}>
               젤다의 전설 야생의 숨결
             </h3>
@@ -47,7 +48,7 @@ export default function ItemCardInfo() {
 
           <hr className="border-1 border-poten-gray-1 ml-[-10px] xl:ml-[-15px] mt-2 mb-3.5 xl:mt-2 xl:mb-4" />
 
-          <div className='ml-2'>
+          <div className="ml-2">
             {/* TODO 추후 API 수량 기입 필요 */}
             <section className="hidden xl:flex flex-row gap-8 mb-6">
               <div className="flex flex-row items-center">
@@ -60,9 +61,9 @@ export default function ItemCardInfo() {
               </div>
               <div className="flex flex-row items-center">
                 <Image
-                src={cart}
-                alt="남은 상품 수량"
-                className="w-[18px] h-[18px] mr-0.5"
+                  src={cart}
+                  alt="남은 상품 수량"
+                  className="w-[18px] h-[18px] mr-0.5"
                 />
                 <span>남은수량 5개</span>
               </div>
@@ -97,14 +98,14 @@ export default function ItemCardInfo() {
               </ul>
             </section>
           </div>
-          
-          <div className='hidden xl:grid h-full rounded-md border-1 border-poten-gray-1 bg-white xl:col-span-2'>
-          <ItemNumInput />
+
+          <div className="hidden xl:grid h-full rounded-md border-1 border-poten-gray-1 bg-white xl:col-span-2">
+            <ItemNumInput value={quantity} onChange={setQuantity} />
           </div>
         </article>
 
-        <div className='rounded-md mt-4 md:mt-4 xl:hidden h-full border-1 border-poten-gray-1 bg-white md:col-span-2 xl:col-span-2'>
-          <ItemNumInput />
+        <div className="rounded-md mt-4 md:mt-4 xl:hidden h-full border-1 border-poten-gray-1 bg-white md:col-span-2 xl:col-span-2">
+          <ItemNumInput value={quantity} onChange={setQuantity} />
         </div>
       </>
     );
@@ -112,40 +113,50 @@ export default function ItemCardInfo() {
 
   // 기본 variant 'default' HTML 구조
   return (
-    <article className="flex flex-col justify-start flex-1 m-3">
-      <header className="flex flex-row gap-1.5 text-[10px] md:text-sm xl:text-base">
-        <span className="items-center flex flex-row gap-0.5 font-bold italic text-poten-usedorange">
-          <Image src={usedTag} alt="new item" className="w-4 h-4" />
-          S급 중고
-        </span>
-        <time dateTime="2025-06-05">발매 25.06.05</time>
-      </header>
+    <article className="py-1 leading-[150%] flex flex-col justify-start flex-1">
+      <div className="flex flex-col p-0.5 md:p-2">
+        <header className="flex flex-row gap-2 md:gap-4 items-center text-[10px] md:text-sm xl:text-base">
+          <span className="items-center flex flex-row gap-0.5 font-bold italic text-poten-usedorange">
+            <Image src={usedTag} alt="new item" className="w-4 h-4" />
+            S급 중고
+          </span>
+          <time dateTime="2025-06-05" className="text-poten-gray-2">
+            발매 25.06.05
+          </time>
+        </header>
 
-      <Link href={'/list/1'}>
-        <h3 className={'font-bold my-2 text-sm md:text-xl xl:text-[22px] line-clamp-1'}>
-          젤다의 전설 야생의 숨결
-        </h3>
-      </Link>
+        <Link href={'/list/1'}>
+          <h3
+            className={
+              'font-extrabold my-[2px] md:my-[8px] text-lg md:text-xl xl:text-[22px] text-poten-black line-clamp-1'
+            }>
+            젤다의 전설 야생의 숨결
+          </h3>
+        </Link>
 
-      <section className="mb-2" aria-labelledby="price-info">
-        <span id="price-info" className="sr-only">
-          가격 정보
-        </span>
-        <p className="text-poten-gray-2 font-bold text-xs xl:text-[13px] line-through">
-          <span className="sr-only">정가</span>
-          1,000,000원
-        </p>
-        <p className="text-poten-nintendo font-bold">
-          <span className="sr-only">할인가</span>
-          89,900원
-        </p>
-      </section>
+        <section
+          className="tracking-tight leading-[120%] md:leading-[150%]"
+          aria-labelledby="price-info">
+          <span id="price-info" className="sr-only">
+            가격 정보
+          </span>
+          <p className="font-bold text-poten-gray-2 text-[14px] xl:text-base line-through">
+            <span className="sr-only">정가</span>
+            1,000,000원
+          </p>
+          <p className="font-extrabold text-[18px] md:text-[22px] xl:text-[24px] text-poten-red">
+            <span className="sr-only">할인가</span>
+            89,900원
+          </p>
+        </section>
+      </div>
 
-      <footer className="flex flex-row justify-between">
+      <footer className="mt-[16px] w-full flex flex-row items-center justify-between gap-4">
         <button
           onClick={handleCartClick}
-          className={`items-center flex flex-row place-content-center sm:text-xs w-[95px] h-[26px] md:w-[152px] md:h-[28px] xl:w-[152px] xl:h-[32px] rounded-sm gap-1 border-1 ${!isInCart ? 'border-poten-gray-2' : ''}`}>
-          <span className={!isInCart ? 'text-poten-gray-2' : ''}>
+          className={`items-center flex flex-row place-content-center flex-1 h-[30px] rounded-sm gap-1 border-1 ${!isInCart ? 'border-poten-gray-2' : ''}`}>
+          <span
+            className={`text-sm md:text-base ${!isInCart ? 'text-poten-gray-2' : ''}`}>
             {isInCart ? '장바구니' : '담기'}
           </span>
           <Image
@@ -163,7 +174,7 @@ export default function ItemCardInfo() {
           />
         </button>
 
-        <ItemLikeBtn />
+        <ItemLikeBtn className="w-[30px] h-[30px]" />
       </footer>
     </article>
   );
