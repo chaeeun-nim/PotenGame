@@ -5,7 +5,7 @@ import game from "@/assets/icons/game.svg";
 import search from "@/assets/icons/search.svg";
 import close from "@/assets/icons/close.svg";
 
-export default function Input(){
+export default function HeaderInput(){
 
   const [ title, setTitle ] = useState('');
   const [ searched, setSearched ] = useState<string[]>([]);

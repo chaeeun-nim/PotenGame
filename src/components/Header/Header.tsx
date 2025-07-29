@@ -19,7 +19,7 @@ import logOut from '@/assets/icons/logout.svg';
 import '@/app/globals.css';
 import { Nav } from '@/components/Header/Nav';
 import React from 'react';
-import Input from '@/components/Header/Input';
+import HeaderInput from '@/components/Header/HeaderInput';
 import useUserStore from '@/zustand/userStore';
 import useCartStore from '@/zustand/cartStore';
 
@@ -54,7 +54,7 @@ export function Header() {
 
       {/*검색창*/}
       <div className="col-span-full row-start-2">
-      <Input />
+      <HeaderInput />
       </div>
 
       {/* 상단 아이콘 */}

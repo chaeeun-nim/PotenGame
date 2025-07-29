@@ -1,24 +1,25 @@
 interface SignUpInputType{
-  type: "email" | "password" | "tel" | "text"
+  type: string;
   title:string;
   placeholder: string;
+  button: boolean;
 }
 
-export default function SignUpInput({title, type, placeholder}: SignUpInputType){
+export default function SignUpInput({title, type, placeholder, button}: SignUpInputType){
 
   const authButton = () => {
     switch(type){
       case 'email':
-        return "이메일 인증"
-        break;
+        case 'text':
+          return "중복 확인"
+          break;
       case 'tel':
         return "휴대폰 인증"
         break;
-      case 'text':
-        return "중복 확인"
-        break;
     }
   }
+
+  // const emailRegex = /[-A-Za-z0-9!#$%&'*+\/=?^_`{|}~]+(?:\.[-A-Za-z0-9!#$%&'*+\/=?^_`{|}~]+)*@(?:[A-Za-z0-9](?:[-A-Za-z0-9]*[A-Za-z0-9])?\.)+[A-Za-z0-9](?:[-A-Za-z0-9]*[A-Za-z0-9])?/i;
 
   return(
       <div className="mb-6 h-20 ">
@@ -38,7 +39,7 @@ export default function SignUpInput({title, type, placeholder}: SignUpInputType)
                         md:basis-4/5 flex-grow"
           />
 
-          {type !== 'password' && 
+          {button &&
             <button 
               className="float-right my-2 md:my-0 bg-poten-gray3 text-white font-bold whitespace-nowrap p-3 border-none rounded-lg ml-6 
                           md:basis-1/5">
