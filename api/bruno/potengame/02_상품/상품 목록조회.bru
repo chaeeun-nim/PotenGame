@@ -5,13 +5,13 @@ meta {
 }
 
 get {
-  url: {{url}}/products?keyword=젤다
+  url: {{url}}/products
   body: none
   auth: inherit
 }
 
 params:query {
-  keyword: 젤다
+  ~keyword: 젤다
   ~limit: 5
   ~page: 1
   ~custom: {"extra.platform": "${platform}","extra.category":{"$all":["GAME"]}}
