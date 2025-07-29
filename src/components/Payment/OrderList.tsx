@@ -9,7 +9,7 @@ export default function OrderList() {
   const productList = cart.map((item) => (
     <div
       key={item._id}
-      className="bg-white border-y-1  md:border-1 border-poten-gray-1 flex flex-col gap-4 leading-tight w-full mx-auto md:max-w-[894px] p-4 md:p-6 ">
+      className="bg-white border-y-1  xl:border-1 border-poten-gray-1 flex flex-col gap-4 leading-tight w-full mx-auto xl:max-w-[894px] p-4 md:p-6 ">
       <div className="flex gap-4">
         <div className="w-[100px] h-[100px]  border-1 border-poten-gray-1 flex justify-center items-center rounded-[4px]">
           <Image
@@ -67,16 +67,16 @@ export default function OrderList() {
     <>
       <div className="flex flex-col gap-4 ">
         {productList}
-        <div className="px-4">
+        <div className="px-4 md:px-6">
           <div
             className="flex justify-between mt-4 items-center w-full
-          mx-auto md:max-w-[894px] bg-poten-red text-white px-4 py-2 md:py-4 rounded-[4px] md:rounded-[8px] font-bold">
+          mx-auto xl:max-w-[894px] bg-poten-red text-white px-4 py-2 md:py-4 rounded-[4px] md:rounded-[8px] font-bold">
             <p className="font-medium">총 주문금액</p>
             <p className="text-[24px]">{cost.total?.toLocaleString()}원</p>
           </div>
         </div>
-        <div className="px-4 md:px-0 ">
-          <div className=" px-4 py-1 md:py-2 border-l-8 border-poten-gray-1 w-full mx-auto md:max-w-[894px]">
+        <div className="px-4 md:px-6 xl:px-0 ">
+          <div className=" px-4 py-1 md:py-2 border-l-8 border-poten-gray-1 w-full mx-auto xl:max-w-[894px]">
             <div className="flex justify-between">
               <p className="text-[16px] md:text-[18px] font-medium">전체 상품금액</p>
               <p className="font-bold text-[18px] md:tex-[20px]">

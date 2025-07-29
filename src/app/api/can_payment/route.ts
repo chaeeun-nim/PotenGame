@@ -6,7 +6,7 @@ export async function POST() {
   cookieStore.set('can_payment', 'true', {
     httpOnly: true,
     path: '/payment',
-    maxAge: 60000000,
+    maxAge: 60,
   });
 
   return NextResponse.json({ ok: true });

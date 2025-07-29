@@ -8,6 +8,7 @@ import { useEffect } from 'react';
 import PayAddress from './PayAddress';
 import OrderList from './OrderList';
 import OrderPay from './OrderPay';
+import OrderBtnBar from './OrderBtnBar';
 
 export default function OrderSetup() {
   const { user } = useUserStore();
@@ -55,6 +56,7 @@ export default function OrderSetup() {
         결제수단
       </h3>
       <OrderPay />
+      <OrderBtnBar />
     </>
   );
 }

@@ -4,15 +4,19 @@ import { useState } from 'react';
 import CreditCart from './CreditCart';
 import PhonePay from './PhonePay';
 import BankBookPay from './BankBookPay';
+import useOrderSotre from '@/zustand/orderStore';
+import { Iorder } from '@/types/order';
 
 export default function OrderPay() {
+  const { updateOrder } = useOrderSotre();
+
   const [payState, setPayState] = useState([
     {
       payname: '신용카드',
       active: true,
     },
     {
-      payname: '휴대폰',
+      payname: '휴대폰 결제',
       active: false,
     },
     {
@@ -22,6 +26,13 @@ export default function OrderPay() {
   ]);
 
   const payBtnHandle = (i: number) => {
+    updateOrder((prev: Iorder) => ({
+      ...prev,
+      payment: {
+        ...prev.payment,
+        pay_method: payState[i].payname,
+      },
+    }));
     setPayState((prev) =>
       prev.map((item, index) => {
         return { ...item, active: index === i };
@@ -42,8 +53,10 @@ export default function OrderPay() {
 
   return (
     <>
-      <div className="flex w-full md:max-w-[896px] mx-auto flex-row gap-[8px] p-[8px] rounded-[4px] border-1 border-poten-gray-1 bg-poten-inputgray">
-        {payBtnList}
+      <div className="px-4 md:px-6 xl:px-0 ">
+        <div className="flex w-full  xl:max-w-[896px] mx-auto flex-row gap-[8px] p-[8px] rounded-[4px] border-1 border-poten-gray-1 bg-poten-inputgray">
+          {payBtnList}
+        </div>
       </div>
       {payState.findIndex((item) => item.active) === 0 && <CreditCart />}
       {payState.findIndex((item) => item.active) === 1 && <PhonePay />}

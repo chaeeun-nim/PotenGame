@@ -15,6 +15,8 @@ export interface Iorder {
     pay_method: string;
     pg_type: string;
     card_name: string;
+    card_num: string;
+    pay_phone_num: string;
   };
   extra: {
     parcelmemo: string;

@@ -23,9 +23,11 @@ const useOrderSotre = create<Store>()(
           parcelmemo: '',
         },
         payment: {
+          card_num: '',
           card_name: '',
           pay_method: '',
           pg_type: '',
+          pay_phone_num: '',
           success: true,
         },
       },
@@ -45,9 +47,11 @@ const useOrderSotre = create<Store>()(
               parcelmemo: '',
             },
             payment: {
+              card_num: '',
               card_name: '',
               pay_method: '',
               pg_type: '',
+              pay_phone_num: '',
               success: true,
             },
           },
