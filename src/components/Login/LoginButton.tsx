@@ -36,13 +36,11 @@ export default function LoginButton({value, color, type, link, setIsSubmit }: Bu
 
 
   return(
-    <>
-      <button onClick={ () => clickHandler(link as string) } type={type}
-        className={`${bgColor} flex items-center justify-center w-full my-2 py-3 rounded-md font-bold cursor-pointer`}>
-        {color === 'kakao'  ? <Image src={kakao} alt={color} width='24' height='24'/> : null }
-        {color === 'naver' ? <Image src={naver} alt={color} width='24' height='24'/> : null }
-        { value }
-      </button>
-    </>
+    <button onClick={ () => clickHandler(link as string) } type={type}
+      className={`${bgColor} flex items-center justify-center w-full my-2 py-3 rounded-md font-bold cursor-pointer`}>
+      {color === 'kakao'  ? <Image src={kakao} alt={color} width='24' height='24'/> : null }
+      {color === 'naver' ? <Image src={naver} alt={color} width='24' height='24'/> : null }
+      { value }
+    </button>
   );
 }
