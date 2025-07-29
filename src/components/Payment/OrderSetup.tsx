@@ -6,6 +6,8 @@ import useOrderSotre from '@/zustand/orderStore';
 import useUserStore from '@/zustand/userStore';
 import { useEffect } from 'react';
 import PayAddress from './PayAddress';
+import OrderList from './OrderList';
+import OrderPay from './OrderPay';
 
 export default function OrderSetup() {
   const { user } = useUserStore();
@@ -34,11 +36,25 @@ export default function OrderSetup() {
   return (
     <>
       <h3
-        className=" max-w-[894px] mx-auto w-full font-bold
-      mt-[40px] mb-[16px] md:mt-[16px]  text-[20px] md:text-[22px] pl-[16px] md:pl-[24px] xl:pl-[0px]">
+        className=" xl:max-w-[894px] mx-auto w-full  font-bold mt-[40px] mb-[16px] md:mt-[16px] 
+      text-[20px] md:text-[22px] pl-[16px] md:pl-[24px] xl:pl-[0px]">
         배송지
       </h3>
       <PayAddress />
+
+      <h3
+        className=" xl:max-w-[894px] mx-auto w-full  font-bold xl:mt-[40px] md:mt-[36px] mt-[20px]  mb-[16px] 
+      text-[20px] md:text-[22px] pl-[16px] md:pl-[24px] xl:pl-[0px]">
+        주문상품
+      </h3>
+      <OrderList />
+
+      <h3
+        className=" xl:max-w-[894px] mx-auto w-full  font-bold xl:mt-[40px] md:mt-[36px] mt-[20px]  mb-[16px] 
+      text-[20px] md:text-[22px] pl-[16px] md:pl-[24px] xl:pl-[0px]">
+        결제수단
+      </h3>
+      <OrderPay />
     </>
   );
 }
