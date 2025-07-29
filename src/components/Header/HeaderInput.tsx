@@ -5,12 +5,12 @@ import game from "@/assets/icons/game.svg";
 import search from "@/assets/icons/search.svg";
 import close from "@/assets/icons/close.svg";
 
-export default function Input(){
+export default function HeaderInput(){
 
   const [ title, setTitle ] = useState('');
   const [ searched, setSearched ] = useState<string[]>([]);
   // 모바일 상태에서 검색버튼 눌렀을때 상태관리
-  const [ isSearchClick, setIsSearchClick ] = useState<HTMLButtonElement | false | true>(false);
+  const [ isSearchClick, setIsSearchClick ] = useState<HTMLButtonElement | false | true>(true);
 
   useEffect(() => {
     if(typeof window !== 'undefined' ){
@@ -71,7 +71,7 @@ export default function Input(){
         onKeyDown={ handleKeyDown }
         />
         <button className="absolute right-3" value={ title } onClick={addStorage }>
-          <Image src={search} alt='검색'></Image>
+          <Image src={search} alt='검색' />
         </button>
       </div>
 
