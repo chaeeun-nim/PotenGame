@@ -1,5 +1,5 @@
 'use client';
-import ItemNumSpinner from '@/components/List-ItemCard/ItemNumSpinner';
+import ItemNumSpinner from '@/components/list-ItemCard/ItemNumSpinner';
 import { JSX } from 'react';
 
 interface ItemNumInputProps {

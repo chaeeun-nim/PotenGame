@@ -1,7 +1,7 @@
 /* 상품 상세 페이지 '/list' 구현한 페이지 입니다. */
 'use client';
 
-import ItemCard from '@/components/List-ItemCard/ItemCard';
+import ItemCard from '@/components/list-ItemCard/ItemCard';
 import MainPromotion from '@/components/MainPromotion';
 import Pagination from '@/components/Pagination';
 import SelectBar from '@/components/SelectBar';
