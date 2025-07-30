@@ -5,11 +5,24 @@ import minusIcon from '@/assets/icons/minusicon.svg';
 import equalIcon from '@/assets/icons/equalicon.svg';
 import Image from 'next/image';
 import useCartStore from '@/zustand/cartStore';
-import Link from 'next/link';
+
+import { useRouter } from 'next/navigation';
 
 export default function PaymentBar() {
   const { cart, cost } = useCartStore();
   const countItem = cart.reduce((sum, next) => sum + next.quantity, 0);
+  const router = useRouter();
+
+  const payHandle = async () => {
+    const res = await fetch('/api/can_payment', { method: 'POST' });
+    const result = await res.json();
+
+    if (result?.ok) {
+      router.push('/payment');
+    } else {
+      throw new Error('결제 진입 실패');
+    }
+  };
 
   return (
     <>
@@ -48,10 +61,13 @@ export default function PaymentBar() {
                 {cost.total?.toLocaleString() ?? 0}원
               </p>
             </div>
-            <Link
-              href="/payment"
+            <button
+              onClick={payHandle}
+              disabled={cart.length === 0 ? true : false}
               className="flex items-center justify-center font-bold text-[18px] rounded-[50px] md:rounded-none
-            text-white shrink-0 bg-poten-red py-2 px-10 xl:px-16">
+            text-white shrink-0 bg-poten-red py-2 px-10 xl:px-16
+            disabled:bg-poten-gray-2
+            ">
               <span className="md:hidden">{cost.products?.toLocaleString() ?? 0}원</span>
               결제하기
               <div
@@ -59,7 +75,7 @@ export default function PaymentBar() {
             text-[16px] ml-2">
                 {countItem}
               </div>
-            </Link>
+            </button>
           </div>
         </div>
       </div>

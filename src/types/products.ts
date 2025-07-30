@@ -38,6 +38,7 @@ export interface IproductSellerExtra {
 export interface Iaddress {
   id: number;
   name: string;
+  addressNumber: number;
   value: string;
 }
 
