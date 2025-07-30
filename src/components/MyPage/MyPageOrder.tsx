@@ -1,53 +1,96 @@
 'use client';
 
-import React from 'react';
-
-const orderSteps = ['결제전', '상품준비중', '배송중', '배송완료'];
+import React, { useEffect, useState } from 'react';
+import { IOrderSummaryRes } from '@/types/myorder';
 
 export default function MyPageOrder() {
+  const [orderData, setOrderData] = useState<IOrderSummaryRes[]>([]);
+  const orderSteps = ['결제전', '상품준비중', '배송중', '배송완료'] as const;
+
+  const statusCounts: Record<(typeof orderSteps)[number], number> = {
+    결제전: 0,
+    상품준비중: 0,
+    배송중: 0,
+    배송완료: 0,
+  };
+
+  const stateToStepMap: Record<string, (typeof orderSteps)[number]> = {
+    OS010: '결제전',
+    OS020: '상품준비중',
+    OS030: '배송중',
+    OS040: '배송완료',
+  };
+
+    useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const raw = sessionStorage.getItem('user'); // 전체 유저 정보 JSON
+        const parsed = JSON.parse(raw || '{}');
+        const token = parsed?.state?.user?.token?.accessToken;
+
+        if (!token) return;
+
+        const res = await fetch('/api/order/summary', {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
+
+        const json = await res.json();
+        if (json.ok) {
+          setOrderData(json.item);
+        }
+      } catch (err) {
+        console.error('데이터를 불러오지 못했습니다. 다시 시도해 주세요.', err);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  // 상태 count 세팅
+  orderData.forEach((order) => {
+    const step = stateToStepMap[order.state];
+    if (step) statusCounts[step] += order.count;
+  });
+
   return (
     <>
-    
-     {/* PC 전용 */}
+      {/* PC 전용 */}
       <section className="hidden xl:block bg-white rounded-lg mb-10 px-4">
         <SectionHeader title="주문처리 현황" subtitle="(최근 6개월 기준)" />
-
         <div className="flex justify-center items-end gap-6 max-w-[700px] mx-auto">
           {orderSteps.map((label, index) => (
             <React.Fragment key={label}>
-              <StatusItem label={label} count={label === '배송완료' ? 8 : 0} size="xl" />
+              <StatusItem label={label} count={statusCounts[label]} size="xl" />
               {index < 3 && <Arrow size="xl" />}
             </React.Fragment>
           ))}
         </div>
       </section>
 
-
-
       {/* 태블릿 전용 */}
-        <section className="hidden md:block xl:hidden bg-white pt-6 py-12 px-4 w-full">
-          <div className="w-full max-w-[895px] mx-auto">
-            <SectionHeader title="주문처리 현황" subtitle="(최근 6개월 기준)" />
-            <div className="flex justify-center items-end gap-4">
-              {orderSteps.map((label, index) => (
-                <React.Fragment key={label}>
-                  <StatusItem label={label} count={label === '배송완료' ? 2 : 0} size="md" />
-                  {index < 3 && <Arrow size="md" />}
-                </React.Fragment>
-              ))}
-            </div>
+      <section className="hidden md:block xl:hidden bg-white pt-6 py-12 px-4 w-full">
+        <div className="w-full max-w-[895px] mx-auto">
+          <SectionHeader title="주문처리 현황" subtitle="(최근 6개월 기준)" />
+          <div className="flex justify-center items-end gap-4">
+            {orderSteps.map((label, index) => (
+              <React.Fragment key={label}>
+                <StatusItem label={label} count={statusCounts[label]} size="md" />
+                {index < 3 && <Arrow size="md" />}
+              </React.Fragment>
+            ))}
           </div>
-        </section>
-
+        </div>
+      </section>
 
       {/* 모바일 전용 */}
       <section className="block md:hidden w-full bg-white py-6 px-4">
         <SectionHeader title="주문처리 현황" subtitle="(최근 6개월 기준)" />
-
         <div className="flex justify-center items-end gap-4">
           {orderSteps.map((label, index) => (
             <React.Fragment key={label}>
-              <StatusItem label={label} count={label === '배송완료' ? 2 : 0} size="sm" />
+              <StatusItem label={label} count={statusCounts[label]} size="sm" />
               {index < 3 && <Arrow size="sm" />}
             </React.Fragment>
           ))}
@@ -76,7 +119,7 @@ function StatusItem({
   size,
 }: {
   label: string;
-  count: number | string;
+  count: number;
   size: 'xl' | 'md' | 'sm';
 }) {
   const textSize = {
