@@ -1,38 +1,39 @@
-"use client";
+'use client';
 
-import Image from "next/image";
-import Link from "next/link";
+import Image from 'next/image';
+import Link from 'next/link';
 
-import logo1 from "@/../public/logo/logo1.svg";
-import logo2 from "@/../public/logo/logo2.svg";
-import bannerSm from "@/assets/img/top-banner-sm.webp";
-import bannerMd from "@/assets/img/top-banner-md.webp";
-import bannerLg from "@/assets/img/top-banner-lg.webp";
+import logo1 from '@/../public/logo/logo1.svg';
+import logo2 from '@/../public/logo/logo2.svg';
+import bannerSm from '@/assets/img/top-banner-sm.webp';
+import bannerMd from '@/assets/img/top-banner-md.webp';
+import bannerLg from '@/assets/img/top-banner-lg.webp';
 
-import loginLogo from "@/assets/icons/login.svg";
-import signinLogo from "@/assets/icons/signin.svg";
+import loginLogo from '@/assets/icons/login.svg';
+import signinLogo from '@/assets/icons/signin.svg';
 
-import myPage from "@/assets/icons/mypage.svg";
-import cart from "@/assets/icons/cart.svg";
-import logOut from "@/assets/icons/logout.svg";
-
+import myPage from '@/assets/icons/mypage.svg';
+import cart from '@/assets/icons/cart.svg';
+import logOut from '@/assets/icons/logout.svg';
 
 import '@/app/globals.css';
-import { Nav } from "@/components/Header/Nav";
-import React, { useEffect, useState } from "react";
-import Input from "@/components/Header/Input";
+import { Nav } from '@/components/Header/Nav';
+import React from 'react';
+import HeaderInput from '@/components/Header/HeaderInput';
+import useUserStore from '@/zustand/userStore';
+import useCartStore from '@/zustand/cartStore';
 
 export function Header() {
+  const { user, resetUser } = useUserStore();
+  const { resetStore } = useCartStore();
 
-// 로그인 여부
-const [ isLogin, setIsLogin ] = useState(false);
+  const handleLogout = () => {
+    location.reload();
+    resetUser();
+    resetStore();
+  };
 
-  useEffect(() => {
-    // setIsLogin(true);
-    setIsLogin(false);
-  },[]);
-
-  return(
+  return (
     <>
     {/* 상단 광고 */}
     <div className="bg-[#0E0E0E]">
@@ -51,16 +52,14 @@ const [ isLogin, setIsLogin ] = useState(false);
         <Image className="hidden md:hidden xl:block" src={logo1} alt="메인 로고" width={177} height={70}/> 
       </Link>
 
-      
-
       {/*검색창*/}
       <div className="col-span-full row-start-2">
-      <Input />
+      <HeaderInput />
       </div>
-        
 
-      {/* 비로그인: 로그인, 회원가입 버튼 / 로그인: 마이페이지, 장바구니, 로그아웃*/}
-      { isLogin?
+      {/* 상단 아이콘 */}
+      { user?
+      // 로그인o: 마이페이지, 장바구니, 로그아웃
       <ul className="hidden md:flex items-center gap-x-2.5 col-start-10 col-span-3 ">
         <li>
           <Link href='/myPage' className="flex gap-x-2 whitespace-nowrap ">
@@ -75,12 +74,13 @@ const [ isLogin, setIsLogin ] = useState(false);
           </Link>
         </li>
         <li>
-          <Link href='/' className="flex gap-x-2 whitespace-nowrap">
+          <button onClick={() => handleLogout()} className="flex gap-x-2 whitespace-nowrap cursor-pointer">
             <Image src={logOut} alt="로그아웃" />
             <span>로그아웃</span>
-          </Link>
+          </button>
         </li>
       </ul>
+      // 로그인x: 로그인, 회원가입
       :<ul className="hidden md:flex  gap-x-2.5 col-start-10 col-span-3 ">
         <li>
           <Link href='/login' className="flex gap-x-2 whitespace-nowrap">
@@ -96,9 +96,10 @@ const [ isLogin, setIsLogin ] = useState(false);
         </li>
       </ul>
       }
-    </div>
 
+    </div>
+    
     <Nav />
     </>
-  )
+  );
 }

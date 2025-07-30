@@ -1,9 +1,11 @@
 export const dynamic = 'force-dynamic';
 
+import CartCleanBtn from '@/components/cart/CartCleanBtn';
+import CartCosttable from '@/components/cart/CartCosttable';
 import CartList from '@/components/cart/CartList';
 import PaymentBar from '@/components/cart/PaymentBar';
 import MainPromotion from '@/components/MainPromotion';
-import { getCart } from '@/data/functions/getCart';
+import SectionHeader from '@/components/SectionHeader';
 
 /*
 로직정리
@@ -26,27 +28,20 @@ X버튼을 누르면 즉시 장바구니 자체에서 삭제되면서 다시 렌
 */
 
 export default async function CartPage() {
-  const res = await getCart();
-
   return (
     <>
       <MainPromotion />
       <section>
-        <header className="  w-full gap-4 xl:max-w-[1200px] px-[16px] md:px-[24px] xl:px-[0px] xl:mx-auto  my-[18px] md:my-[32px]">
-          <div className="flex gap-4 border-b-2 border-poten-gray-1 pb-[14px] md:pb-[20px] justify-start items-center">
-            <span className="block w-[5px] h-[20px] md:h-[24px] rounded-[2px] bg-poten-red"></span>
-            <h1 className="font-bold text-[18px] xl:text-[22px]">장바구니</h1>
+        <SectionHeader>장바구니</SectionHeader>
+        <div className="w-full bg-poten-snowgray1 pt-[10px] md:px-[24px] pb-[24px] md:pt-[30px] xl:pt-[50px] md:pb-[100px] ">
+          <div className="flex justify-end mx-auto xl:max-w-[1200px]">
+            <CartCleanBtn />
           </div>
-        </header>
-        <div className="w-full bg-poten-snowgray1 pt-[10px] pb-[24px] md:pt-[30px] xl:pt-[50px] md:pb-[100px] ">
-          {res.ok ? <CartList items={res.item} /> : <p>네트워크 에러발생</p>}
+          <CartList />
         </div>
       </section>
-      {res.ok ? (
-        <PaymentBar cost={res.cost} items={res.item} />
-      ) : (
-        <p>네트워크 에러발생</p>
-      )}
+      <CartCosttable />
+      <PaymentBar />
     </>
   );
 }

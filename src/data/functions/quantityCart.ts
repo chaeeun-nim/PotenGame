@@ -1,27 +1,30 @@
+// 카트 수량을 변경하는 함수
 import { IcartProductRes } from '@/types/Cart';
 // import useUserStore from '@/zustand/loginTestStore';
 
 export const API_URL = process.env.NEXT_PUBLIC_API_URL;
 const CLIENT_ID = process.env.NEXT_PUBLIC_CLIENT_ID || '';
 
-// 장바구니상품조회
-export async function removeCart(
-  _id: number,
+// 수량변경
+export async function quantityCart(
+  token: string,
+  quantity: number,
+  cartId: number,
 ): Promise<IcartProductRes | { ok: 0; message: string }> {
   // const accesToken = useUserStore.getState().user?.token.accessToken;
-  // console.log('액세스토큰', accesToken);
-  const token =
-    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsInR5cGUiOiJzZWxsZXIiLCJuYW1lIjoi64Sk7JikIiwiZW1haWwiOiJzMUBtYXJrZXQuY29tIiwiaW1hZ2UiOiJmaWxlcy9mZWJjMTMtZmluYWwxNC1lbWpmL3VzZXItbmVvLnBuZyIsImxvZ2luVHlwZSI6ImVtYWlsIiwiaWF0IjoxNzUzMjQ4MzUwLCJleHAiOjE3NTMzMzQ3NTAsImlzcyI6IkZFQkMifQ.h_zWw76tKdk_sfjS99VBQDPKTJDpZRS1bKDfAi5ljEA';
+  const body = { quantity: quantity };
+
   try {
-    const res = await fetch(`${API_URL}/carts/${_id}`, {
-      method: 'DELETE',
+    const res = await fetch(`${API_URL}/carts/${cartId}`, {
+      method: 'PATCH',
       headers: {
         'Client-Id': CLIENT_ID,
         Authorization: `Bearer ${token}`,
+        'Content-Type': 'application/json',
       },
+      body: JSON.stringify(body),
       cache: 'no-cache',
     });
-
     return res.json();
   } catch (error) {
     // 네트워크 오류 처리
