@@ -1,5 +1,5 @@
 'use client';
-import { useItemCardContext } from '@/components/List-ItemCard/ItemCardContext';
+import { useItemCardContext } from '@/components/list-ItemCard/ItemCardContext';
 
 export default function ItemCardImage() {
   const { variant, productData } = useItemCardContext();
