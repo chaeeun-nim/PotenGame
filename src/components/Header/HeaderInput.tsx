@@ -63,7 +63,7 @@ export default function HeaderInput(){
           <Image src={game} alt="검색창" />
         </div>
         <input 
-        className="md:w-full xl:w-[689] h-[50] pl-10 rounded-xl bg-poten-gray-1" 
+        className="md:w-full xl:w-[689] h-[50] pl-10 rounded-xl bg-poten-inputgray" 
         type="text" 
         placeholder="어떤 상품을 찾으시나요? 중고 게임칩, 신상 게임칩, 게임기 모두 검색"
         onChange={ e => setTitle(e.target.value) }
@@ -89,7 +89,7 @@ export default function HeaderInput(){
           <div className=" md:hidden bg-white z-4 h-90 p-3 absolute left-0 top-28 w-full">
             <div className="flex relative items-center">
               <input 
-              className="bg-poten-gray-1 rounded-xl h-10 w-full my-3 p-2" 
+              className="bg-poten-inputgray rounded-xl h-10 w-full my-3 p-2" 
               type="text" 
               placeholder="어떤 상품을 찾으시나요?"
               onChange={ e => setTitle(e.target.value) }
