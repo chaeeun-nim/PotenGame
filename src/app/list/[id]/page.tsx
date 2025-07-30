@@ -1,6 +1,6 @@
-import ItemCard from "@/components/List-ItemCard/ItemCard";
-import ItemDetail from "@/components/List-ItemDetail/ItemDetail";
-import SelectBar from "@/components/SelectBar";
+import ItemCard from '@/components/list-ItemCard/ItemCard';
+import ItemDetail from '@/components/List-ItemDetail/ItemDetail';
+import SelectBar from '@/components/SelectBar';
 
 // interface PageProps {
 //   params: {

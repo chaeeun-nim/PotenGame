@@ -1,4 +1,5 @@
 'use client'
+import { Iproduct } from "@/types/products";
 import { createContext, ReactNode, useContext } from "react";
 
 
@@ -8,7 +9,7 @@ export type ItemCardVariant = 'default' | 'detailed';
 // Context에서 제공할 값 타입
 interface ItemCardContextValue {
   variant: ItemCardVariant;
-  // 필요 시 기타 상태 추가 가능
+  productData?: Iproduct; // 상품 데이터 추가
 }
 
 const ItemCardContext = createContext<ItemCardContextValue | undefined>(undefined);
@@ -17,11 +18,13 @@ const ItemCardContext = createContext<ItemCardContextValue | undefined>(undefine
 interface ItemCardProviderProps {
   children: ReactNode;
   variant: ItemCardVariant;
+  productData?: Iproduct; // 상품 데이터 추가
 }
 
-export const ItemCardProvider = ({ children, variant }: ItemCardProviderProps) => {
+export const ItemCardProvider = ({ children, variant, productData }: ItemCardProviderProps) => {
   const value: ItemCardContextValue = {
     variant,
+    productData,
   }
   
   return (

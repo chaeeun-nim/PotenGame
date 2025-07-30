@@ -5,6 +5,7 @@ import CartCosttable from '@/components/cart/CartCosttable';
 import CartList from '@/components/cart/CartList';
 import PaymentBar from '@/components/cart/PaymentBar';
 import MainPromotion from '@/components/MainPromotion';
+import SectionHeader from '@/components/SectionHeader';
 
 /*
 로직정리
@@ -31,12 +32,7 @@ export default async function CartPage() {
     <>
       <MainPromotion />
       <section>
-        <header className="  w-full gap-4 xl:max-w-[1200px] px-[16px] md:px-[24px] xl:px-[0px] xl:mx-auto  my-[18px] md:my-[32px]">
-          <div className="flex gap-4 border-b-2 border-poten-gray-1 pb-[14px] md:pb-[20px] justify-start items-center">
-            <span className="block w-[5px] h-[20px] md:h-[24px] rounded-[2px] bg-poten-red"></span>
-            <h1 className="font-bold text-[18px] xl:text-[22px]">장바구니</h1>
-          </div>
-        </header>
+        <SectionHeader>장바구니</SectionHeader>
         <div className="w-full bg-poten-snowgray1 pt-[10px] md:px-[24px] pb-[24px] md:pt-[30px] xl:pt-[50px] md:pb-[100px] ">
           <div className="flex justify-end mx-auto xl:max-w-[1200px]">
             <CartCleanBtn />

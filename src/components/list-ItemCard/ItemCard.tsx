@@ -5,17 +5,23 @@ import { useState } from 'react';
 import {
   ItemCardProvider,
   ItemCardVariant,
-} from '@/components/List-ItemCard/ItemCardContext';
-import ItemCardImage from '@/components/List-ItemCard/ItemCardImage';
-import ItemCardInfo from '@/components/List-ItemCard/ItemCardInfo';
+} from '@/components/list-ItemCard/ItemCardContext';
+import ItemCardImage from '@/components/list-ItemCard/ItemCardImage';
+import ItemCardInfo from '@/components/list-ItemCard/ItemCardInfo';
 import Link from 'next/link';
+import { Iproduct } from '@/types/products';
 
 interface ItemCardProps {
   variant?: ItemCardVariant;
   className?: string;
+  productData?: Iproduct;
 }
 
-export default function ItemCard({ variant = 'default', className }: ItemCardProps) {
+export default function ItemCard({
+  variant = 'default',
+  className,
+  productData,
+}: ItemCardProps) {
   const [isLiked, setIsLiked] = useState(false);
 
   const handleLikeClick = () => {
@@ -87,10 +93,14 @@ export default function ItemCard({ variant = 'default', className }: ItemCardPro
     }
   };
 
+  // 상품 ID 결정 (productData가 있을 시 사용, 없을 시 기본값)
+  const productId = productData?._id || 1;
+  const productLink = `/list/${productId}`;
+
   return (
-    <ItemCardProvider variant={variant}>
+    <ItemCardProvider variant={variant} productData={productData}>
       <section className={`${getCardStyles()} ${className || ''}`}>
-        <Link href={'/list/1'}>
+        <Link href={productLink}>
           <ItemCardImage />
         </Link>
         <ItemCardInfo />
@@ -103,7 +113,7 @@ export default function ItemCard({ variant = 'default', className }: ItemCardPro
           </button>
 
           <Link
-            href={'/list'}
+            href={productLink}
             className="bg-poten-red text-white rounded-md font-bold flex justify-center items-center w-[160px] h-[35px] md:w-[183px] md:h-[47px] xl:w-[174px] xl:h-[47px]">
             바로 구매
           </Link>

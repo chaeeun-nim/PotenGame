@@ -1,8 +1,8 @@
 'use client';
-import { useItemCardContext } from '@/components/List-ItemCard/ItemCardContext';
+import { useItemCardContext } from '@/components/list-ItemCard/ItemCardContext';
 
 export default function ItemCardImage() {
-  const { variant } = useItemCardContext();
+  const { variant, productData } = useItemCardContext();
 
   const getImageStyles = () => {
     switch (variant) {
@@ -22,16 +22,30 @@ export default function ItemCardImage() {
 
   const styles = getImageStyles();
 
+  // 이미지 URL 결정 (productData가 있을 시 사용, 없을면 기본값)
+  const imageUrl = productData?.mainImages?.[0]?.path
+    ? `http://fesp-api.koyeb.app/market/${productData.mainImages[0].path}`
+    : 'http://fesp-api.koyeb.app/market/files/febc13-final14-emjf/pro-27-thumbnail.webp';
+
+  const imageAlt =
+    productData?.mainImages?.[0]?.name || productData?.name || 'item thumbnail';
+
   return (
     <div
       className={`rounded-md flex justify-center items-center ${styles.container} border-1 border-poten-gray-1 bg-white`}>
       <div className={`flex justify-center items-center ${styles.image}`}>
         <img
-          src="https://fesp-api.koyeb.app/market/files/febc13-final14-emjf/pro-27-thumbnail.webp"
+          src={imageUrl}
           width={125}
           height={125}
-          alt="item thumbnail"
+          alt={imageAlt}
           className="object-cover w-full h-full"
+          onError={(e) => {
+            // 이미지 로드 실패시 기본 이미지 대체
+            const target = e.target as HTMLImageElement;
+            target.src =
+              'http://fesp-api.koyeb.app/market/files/febc13-final14-emjf/pro-27-thumbnail.webp';
+          }}
         />
       </div>
     </div>
