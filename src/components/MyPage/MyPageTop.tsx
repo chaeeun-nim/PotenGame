@@ -1,6 +1,7 @@
 'use client';
 
 import useUserStore from '@/zustand/userStore'; // 실제 전역 상태에서 가져오는 경우
+import Link from 'next/link';
 // import { Iuser } from '@/types/user'; // 필요 시 유지
 
 export default function MyPageTop() {
@@ -12,6 +13,9 @@ export default function MyPageTop() {
   const badgeLabel = isVip ? '단골' : '일반';
   const remaining = Math.max(3 - purchases, 0);
   const userName = user?.name ?? '사용자';
+
+   // 관심상품 수 (북마크의 products 사용, 기본값 0)
+  const likedCount = user?.bookmark?.products ?? 0;
 
   return (
     <>
@@ -63,7 +67,8 @@ export default function MyPageTop() {
             <div className="col-span-1 sm:col-span-1 xl:col-span-3 h-[250px] bg-white rounded-lg shadow px-6 py-4 flex flex-col justify-between">
               <div className="text-[18px] font-semibold text-gray-600">관심 상품</div>
               <p className="text-5xl font-bold text-[#E5242B] mt-auto mb-3">
-                8<span className="text-base text-black font-normal ml-1">개</span>
+                {likedCount}
+                <span className="text-base text-black font-normal ml-1">개</span>
               </p>
               <button className="mt-4 w-fit px-6 py-2 border border-poten-gray-1 rounded-full text-sm font-medium">관심상품 조회</button>
             </div>
@@ -105,9 +110,14 @@ export default function MyPageTop() {
               <div className="grid grid-cols-2 gap-4 px-2">
                 <div className="border rounded-md p-4 border-[var(--color-poten-gray-1)]">
                   <p className="text-sm font-medium text-black mb-1 pl-1">관심 상품</p>
-                  <p className="text-[28px] text-[#E5242B] font-bold leading-none pl-1">8<span className="text-sm text-black font-medium ml-1">개</span></p>
+                  <p className="text-[28px] text-[#E5242B] font-bold leading-none pl-1">
+                    {likedCount}
+                    <span className="text-sm text-black font-medium ml-1">개</span>
+                  </p>
                   <div className="flex justify-end mt-4">
-                    <button className="px-3 py-1 text-sm text-black font-medium border border-poten-gray-1 rounded-full">관심상품 조회</button>
+                    <Link href="/myPage/like">
+                      <button className="px-3 py-1 text-sm text-black font-medium border border-poten-gray-1 rounded-full">관심상품 조회</button>
+                    </Link>
                   </div>
                 </div>
                 <div className="border rounded-md p-4 border-[var(--color-poten-gray-1)]">
@@ -157,7 +167,10 @@ export default function MyPageTop() {
               <div className="grid grid-cols-2 gap-4 px-2">
                 <div className="border rounded-md p-4 border-[var(--color-poten-gray-1)]">
                   <p className="text-sm font-medium text-black mb-1 pl-1">관심 상품</p>
-                  <p className="text-[28px] text-[#E5242B] font-bold leading-none pl-1">8<span className="text-sm text-black font-medium ml-1">개</span></p>
+                  <p className="text-[28px] text-[#E5242B] font-bold leading-none pl-1">
+                    {likedCount}
+                    <span className="text-sm text-black font-medium ml-1">개</span>
+                  </p>
                 </div>
                 <div className="border rounded-md p-4 border-[var(--color-poten-gray-1)]">
                   <p className="text-sm font-medium text-black mb-1 pl-1">총 주문</p>

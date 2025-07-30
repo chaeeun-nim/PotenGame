@@ -5,6 +5,7 @@ import { IOrderSummaryRes } from '@/types/myorder';
 
 export default function MyPageOrder() {
   const [orderData, setOrderData] = useState<IOrderSummaryRes[]>([]);
+
   const orderSteps = ['결제전', '상품준비중', '배송중', '배송완료'] as const;
 
   const statusCounts: Record<(typeof orderSteps)[number], number> = {
@@ -21,16 +22,16 @@ export default function MyPageOrder() {
     OS040: '배송완료',
   };
 
-    useEffect(() => {
+  useEffect(() => {
     const fetchData = async () => {
       try {
-        const raw = sessionStorage.getItem('user'); // 전체 유저 정보 JSON
+        const raw = sessionStorage.getItem('user');
         const parsed = JSON.parse(raw || '{}');
         const token = parsed?.state?.user?.token?.accessToken;
 
         if (!token) return;
 
-        const res = await fetch('/api/order/summary', {
+        const res = await fetch('/api/myorder', {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -41,14 +42,14 @@ export default function MyPageOrder() {
           setOrderData(json.item);
         }
       } catch (err) {
-        console.error('데이터를 불러오지 못했습니다. 다시 시도해 주세요.', err);
+        console.error('주문 요약 정보를 불러오지 못했습니다.', err);
       }
     };
 
     fetchData();
   }, []);
 
-  // 상태 count 세팅
+  // 주문 상태 요약 데이터 → 상태별 count로 분류
   orderData.forEach((order) => {
     const step = stateToStepMap[order.state];
     if (step) statusCounts[step] += order.count;
