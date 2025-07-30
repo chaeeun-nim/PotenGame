@@ -5,13 +5,14 @@ meta {
 }
 
 get {
-  url: {{url}}/products?custom={"extra.used": true}
+  url: {{url}}/products
   body: none
   auth: inherit
 }
 
 params:query {
-  custom: {"extra.used": true}
+
+  ~custom: {"extra.used": true}
   ~keyword: 젤다
   ~limit: 5
   ~page: 1
