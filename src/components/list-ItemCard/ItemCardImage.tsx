@@ -1,5 +1,6 @@
 'use client';
 import { useItemCardContext } from '@/components/list-ItemCard/ItemCardContext';
+import Image from 'next/image';
 
 export default function ItemCardImage() {
   const { variant, productData } = useItemCardContext();
@@ -33,8 +34,8 @@ export default function ItemCardImage() {
   return (
     <div
       className={`rounded-md flex justify-center items-center ${styles.container} border-1 border-poten-gray-1 bg-white`}>
-      <div className={`flex justify-center items-center ${styles.image}`}>
-        <img
+      <div className={`flex justify-center items-center ${styles.image} relative`}>
+        <Image
           src={imageUrl}
           width={125}
           height={125}
