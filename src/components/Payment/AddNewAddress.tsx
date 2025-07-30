@@ -2,7 +2,7 @@
 
 import useOrderSotre from '@/zustand/orderStore';
 import { useState } from 'react';
-import { Iorder } from '@/types/order';
+import { Iorder } from '@/types/payorder';
 
 export default function AddNewAddress({
   ModalCloseHandle,
