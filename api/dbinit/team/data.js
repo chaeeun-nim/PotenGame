@@ -123,11 +123,13 @@ export const initData = async (clientId, nextSeq) => {
             {
               id: 1,
               name: '회사',
+              addressNumber: 12345,
               value: '서울시 강동구 천호동 123',
             },
             {
               id: 2,
               name: '집',
+              addressNumber: 12345,
               value: '서울시 강동구 성내동 234',
             },
           ],

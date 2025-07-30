@@ -15,6 +15,7 @@ import unchecked from '@/assets/icons/unchecked.svg';
 import useUserStore from '@/zustand/userStore';
 import { getCart } from '@/data/functions/getCart';
 import useCartStore from '@/zustand/cartStore';
+import { Iaddress } from '@/types/products';
 
 export default function LoginForm() {
   const [isSubmit, setIsSubmit] = useState(false);
@@ -36,9 +37,17 @@ export default function LoginForm() {
         email: userState.item.email,
         name: userState.item.name,
         type: userState.item.type,
+        phone: userState.item.phone,
         token: {
           accessToken: userState.item.token?.accessToken || '',
           refreshToken: userState.item.token?.refreshToken || '',
+        },
+        extra: {
+          purchases: userState.item.extra?.purchases as number,
+          address: userState.item.extra?.address as Iaddress[],
+          nickname: userState.item.extra?.nickname as string,
+          birthday: userState.item.extra?.birthday as string,
+          membershipClass: userState.item.extra?.membershipClass as 'MC01' | 'MC02',
         },
       });
       if (redirect) {
