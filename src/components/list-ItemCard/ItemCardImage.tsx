@@ -14,8 +14,8 @@ export default function ItemCardImage() {
       default:
         return {
           container:
-            'w-full aspect-[3/2] rounded-md flex justify-center items-center border-1 border-poten-gray-1 bg-white',
-          image: 'w-1/2 flex justify-center items-center',
+            'w-full h-[120px] md:h-[160px] xl:h-[300px] rounded-md flex justify-center items-center border-1 border-poten-gray-1 bg-white ',
+          image: 'h-8/9 flex justify-center items-center',
         };
     }
   };
