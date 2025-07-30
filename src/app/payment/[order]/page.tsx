@@ -5,15 +5,12 @@ import SectionHeader from '@/components/SectionHeader';
 
 import OrderOk from '@/components/Payment/OrderOk';
 
-interface OrderIdPageProps {
-  params: {
-    order: string;
-  };
-}
-
-export default async function PaymentOrder({ params }: OrderIdPageProps) {
-  const orderId = params.order;
-  console.log(orderId);
+export default async function PaymentOrder({
+  params,
+}: {
+  params: Promise<{ order: string }>;
+}) {
+  const orderId = (await params).order;
 
   return (
     <>

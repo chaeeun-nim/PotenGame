@@ -10,7 +10,7 @@ import { useEffect, useState } from 'react';
 
 export default function OrderBtnBar() {
   const { order, resetStore } = useOrderSotre();
-  const { resetCartStore } = useCartStore();
+  const { cost, resetCartStore } = useCartStore();
   const [active, setActive] = useState(true);
   const { user } = useUserStore();
   const router = useRouter();
@@ -46,17 +46,17 @@ export default function OrderBtnBar() {
   return (
     <>
       <div
-        className="fixed w-full  h-[60px] md:h-[80px] bg-black rounded-t-lg bottom-0 z-[999999999] flex
+        className="fixed w-full  pb-2 md:pb-0  h-[80px] md:h-[80px] bg-black bottom-0 z-[999999999] flex
       justify-center items-center transform-none md:rounded-none">
         <div className="md:flex md:w-full justify-end  xl:max-w-[1200px] mx-auto md:px-8 xl:px-0">
           <button
             disabled={active}
             onClick={orderHandle}
-            type="button"
-            className="items-end font-bold text-[18px] rounded-[50px] md:rounded-none
+            className="flex items-center justify-center font-bold text-[18px] rounded-[50px] md:rounded-none
             text-white shrink-0 bg-poten-red py-2 px-10 xl:px-16
-            disabled:bg-poten-gray-2
+            disabled:bg-poten-gray-2 cursor-pointer
             ">
+            <span className="md:hidden pr-1">{cost.total?.toLocaleString()}원</span>
             결제하기
           </button>
         </div>

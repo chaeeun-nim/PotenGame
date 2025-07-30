@@ -3865,7 +3865,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-57-thumbnail.webp`,
+            path: `files/${clientId}/pro-58-thumbnail.webp`,
             name: 'pro-57-thumbnail.jpg',
             originalname: '사이버펑크2077 얼티밋 에디션.webp',
           },
@@ -7505,16 +7505,16 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-113-thumbnail.webp`,
-            name: 'pro-113-thumbnail.jpg',
+            path: `files/${clientId}/pro-114-thumbnail.webp`,
+            name: 'pro-114-thumbnail.jpg',
             originalname: '블리치 리버스 오브 소울즈.webp',
           },
         ],
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-113-detail.webp`,
-            name: 'pro-113-detail.webp',
+            path: `files/${clientId}/pro-114-detail.webp`,
+            name: 'pro-114-detail.webp',
             originalname: '블리치 리버스 오브 소울즈.webp',
           },
         ],

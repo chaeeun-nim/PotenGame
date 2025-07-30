@@ -49,7 +49,7 @@ export default function OrderPay() {
         payBtnHandle(i);
       }}
       key={i}
-      className={` w-full text-center rounded-[4px] py-1 ${item.active ? 'bg-white text-poten-black' : 'bg-poten-inputgray text-poten-gray-2'}`}>
+      className={`cursor-pointer w-full text-center rounded-[4px] py-1 ${item.active ? 'bg-white text-poten-black' : 'bg-poten-inputgray text-poten-gray-2'}`}>
       {item.payname}
     </button>
   ));

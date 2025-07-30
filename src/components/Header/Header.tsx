@@ -22,14 +22,17 @@ import React from 'react';
 import HeaderInput from '@/components/Header/HeaderInput';
 import useUserStore from '@/zustand/userStore';
 import useCartStore from '@/zustand/cartStore';
+import useOrderSotre from '@/zustand/orderStore';
 
 export function Header() {
   const { user, resetUser } = useUserStore();
-  const { resetCartStore: resetStore } = useCartStore();
+  const { resetCartStore } = useCartStore();
+  const { resetStore } = useOrderSotre();
 
   const handleLogout = () => {
     location.reload();
     resetUser();
+    resetCartStore();
     resetStore();
   };
 

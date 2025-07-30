@@ -98,7 +98,7 @@ export default function PayAddress() {
           </h4>
           <button
             onClick={ModalOpenHandle}
-            className="border-2 py-[4px] px-[14px] rounded-[4px] border-poten-gray-1">
+            className="border-2 py-[4px] px-[14px] rounded-[4px] border-poten-gray-1 cursor-pointer">
             {user?.extra?.address ? '변경' : '등록'}
           </button>
         </div>
@@ -126,7 +126,7 @@ export default function PayAddress() {
             name="payAddress"
             id="payAddress"
             onChange={addressMemoHandle}
-            className="appearance-none mt-[16px] w-full px-4 py-4 border border-poten-gray-1 text-poten-gray-2 font-semibold rounded-[4px] leading-[14px] text-4">
+            className="appearance-none mt-[16px] cursor-pointer w-full px-4 py-4 border border-poten-gray-1 text-poten-gray-2 font-semibold rounded-[4px] leading-[14px] text-4">
             <option value="">배송 메모를 선택해주세요</option>
             <option value="부재 시 문 앞에 놓아주세요">부재 시 문 앞에 놓아주세요</option>
             <option value="경비실에 맡겨주세요">경비실에 맡겨주세요</option>
