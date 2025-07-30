@@ -1,5 +1,5 @@
 import { emailCheck } from "@/data/functions/emailCheck";
-import { NameCheck } from "@/data/functions/nicknameCheck";
+import { NameCheck } from "@/data/functions/nameCheck";
 import { useState } from "react";
 
 interface SignUpInputType{
@@ -14,6 +14,13 @@ export default function SignUpInput({title, type, placeholder, button}: SignUpIn
   const [ email, setEmail ] = useState('');
   const [ name, setName ] = useState('');
 
+  const [ emailMessage, setEmailMessage ] = useState('');
+  const [ nameMessage, setNameMessage ] = useState('');
+
+
+  // 이메일 정규식
+  const emailRegex = /[-A-Za-z0-9!#$%&'*+\/=?^_`{|}~]+(?:\.[-A-Za-z0-9!#$%&'*+\/=?^_`{|}~]+)*@(?:[A-Za-z0-9](?:[-A-Za-z0-9]*[A-Za-z0-9])?\.)+[A-Za-z0-9](?:[-A-Za-z0-9]*[A-Za-z0-9])?/i;
+
   const authButton = () => {
     switch(type){
       case 'email':
@@ -26,26 +33,30 @@ export default function SignUpInput({title, type, placeholder, button}: SignUpIn
     }
   }
 
+
   // 이메일 중복 체크
   const checkEmail = async (email: string) => {
     const res = await emailCheck(email);
-    if(res.ok){
-      console.log('가능한 이메일입니다.');
-    }else{
-      console.log('중복된 이메일입니다.');
+
+    if(!emailRegex.test(email))
+      setEmailMessage("아이디는 이메일 형식으로 입력해주세요");
+    else{
+      if(!res.ok)
+        setEmailMessage("이미 존재하는 이메일입니다.");
+      else setEmailMessage("사용가능");
     }
   }
+    
 
   // 별명 중복 체크
   const checkText = async (name: string) => {
     const res = await NameCheck(name);
-    if(res.ok){
-      console.log('가능한 별명입니다.');
-    }else{
-      console.log('중복된 별명입니다.');
-    }
-  }
 
+    if(!res.ok) 
+      setNameMessage("이미 존재하는 별명입니다.");
+    else setNameMessage("사용가능");
+  }
+    
 
   return(
       <div className="mb-6 h-20 ">
@@ -61,7 +72,7 @@ export default function SignUpInput({title, type, placeholder, button}: SignUpIn
             id={type} 
             type={type} 
             placeholder={placeholder} 
-            value={type === "email"? email: type === "text"? name : undefined}
+            value={ type === "email"? email: type === "text"? name : undefined } 
             onChange={(e) => type === "email" ? setEmail(e.target.value) : type === "text"? setName(e.target.value): undefined}
             className="block bg-poten-inputgray rounded-lg p-3 w-full
                         md:basis-4/5 flex-grow"
@@ -69,7 +80,7 @@ export default function SignUpInput({title, type, placeholder, button}: SignUpIn
 
           {button &&
             <button 
-              type="button"
+              type="button" 
               onClick={ type === "email" 
                         ? () => checkEmail(email)
                         : type === "text" 
@@ -80,7 +91,23 @@ export default function SignUpInput({title, type, placeholder, button}: SignUpIn
               { authButton() }
             </button>
           }
+
         </div>
+
+          {/*  */}
+          <p className={`
+            font-bold
+            ${ emailMessage || nameMessage === "사용가능" ? 'text-poten-safegreen' : 'text-poten-error-color'}
+            `}
+          >
+          { type === "email" && emailMessage?
+            emailMessage
+            : type === "text" && nameMessage?
+            nameMessage
+            : undefined
+          }
+          </p>
+
       </div>
   );
 }
