@@ -1,5 +1,5 @@
 
-import { IOrderSummaryRes } from '@/types/Order';
+import { IOrderSummaryRes } from '@/types/myorder';
 
 export const API_URL = process.env.NEXT_PUBLIC_API_URL;
 const CLIENT_ID = process.env.NEXT_PUBLIC_CLIENT_ID || '';

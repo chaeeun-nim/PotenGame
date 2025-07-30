@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
-import { IOrderSummaryRes } from '@/types/Order';
+import { IOrderSummaryRes } from '@/types/myorder';
 
 export default function MyPageOrder() {
   const [orderData, setOrderData] = useState<IOrderSummaryRes[]>([]);
