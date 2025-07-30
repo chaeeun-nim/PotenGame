@@ -1,11 +1,11 @@
-import { EmailCheckResponse } from "@/types/DupCheck";
+import { NameCheckResponse } from "@/types/DupCheck";
 
 export const API_URL = process.env.NEXT_PUBLIC_API_URL;
 const CLIENT_ID = process.env.NEXT_PUBLIC_CLIENT_ID || '';
 
-export async function emailCheck(email: string):Promise<EmailCheckResponse>{
+export async function NameCheck(name: string):Promise<NameCheckResponse>{
   try {
-    const res = await fetch(`${API_URL}/users/email?email=${email}`, {
+    const res = await fetch(`${API_URL}/users/name?name=${name}`, {
       method: 'GET',
       headers: {
         'Client-Id': CLIENT_ID,
