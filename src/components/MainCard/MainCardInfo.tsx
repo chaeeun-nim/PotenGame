@@ -9,7 +9,7 @@ import Link from 'next/link';
 import { JSX, useEffect, useState } from 'react';
 
 import CartBtn from './CartBtn';
-import ItemLikeBtn from '../list-ItemCard/ItemLikeBtn';
+import ItemLikeBtn from '../List-ItemCard/ItemLikeBtn';
 
 export default function MainCardInfo({ item }: { item: Iproduct }) {
   const [releaseDate, setReleaseDate] = useState('');
@@ -34,7 +34,7 @@ export default function MainCardInfo({ item }: { item: Iproduct }) {
   return (
     <>
       <div className="py-1 leading-[150%] ">
-        <Link href={`/list/${item._id}`} className=" mb- flex flex-col p-0.5 md:p-2">
+        <Link href={`/list/${item._id}`} className="flex flex-col p-0.5 md:p-2">
           <div className="flex flex-row gap-2  md:gap-4  items-center">
             {Tags}
             <p className="text-[12px] md:text-[16px] text-poten-gray-2">

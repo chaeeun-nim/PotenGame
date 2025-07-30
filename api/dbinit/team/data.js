@@ -123,11 +123,13 @@ export const initData = async (clientId, nextSeq) => {
             {
               id: 1,
               name: '회사',
+              addressNumber: 12345,
               value: '서울시 강동구 천호동 123',
             },
             {
               id: 2,
               name: '집',
+              addressNumber: 12345,
               value: '서울시 강동구 성내동 234',
             },
           ],
@@ -8728,13 +8730,13 @@ export const initData = async (clientId, nextSeq) => {
         state: 'OS020',
         products: [
           {
-            _id: 2,
+            _id: 4,
             state: 'OS020',
             name: '젤다의 전설 야생의 숨결',
             image: {
-              path: `files/${clientId}/pro-02-thumbnail.jpg`,
-              name: 'pro-02-thumbnail.jpg',
-              originalname: '젤다의 전설 야생의 숨결.jpg',
+              path: `files/${clientId}/pro-54-thumbnail.webp`,
+              name: 'pro-54-thumbnail.jpg',
+              originalname: '젤다의 전설 야생의 숨결.webp',
             },
             quantity: 1,
             price: 84800,
@@ -8749,6 +8751,146 @@ export const initData = async (clientId, nextSeq) => {
             shippingFees: 4000,
           },
           total: 84800,
+        },
+        address: {
+          name: '회사',
+          value: '서울시 강남구 신사동 234',
+        },
+        createdAt: getTime(-6, -60 * 60 * 3),
+        updatedAt: getTime(-6, -60 * 60 * 3),
+      },
+      {
+        _id: await nextSeq('order'),
+        user_id: 4,
+        state: 'OS020',
+        products: [
+          {
+            _id: 54,
+            state: 'OS035',
+            name: '젤다의 전설 야생의 숨결',
+            image: {
+              path: `files/${clientId}/pro-54-thumbnail.webp`,
+              name: 'pro-54-thumbnail.jpg',
+              originalname: '젤다의 전설 야생의 숨결.webp',
+            },
+            quantity: 1,
+            price: 84800,
+            review_id: 0,
+          },
+        ],
+        cost: {
+          products: 84800,
+          shippingFees: 4000,
+          discount: {
+            products: 0,
+            shippingFees: 4000,
+          },
+          total: 84800,
+        },
+        address: {
+          name: '회사',
+          value: '서울시 강남구 신사동 234',
+        },
+        createdAt: getTime(-6, -60 * 60 * 3),
+        updatedAt: getTime(-6, -60 * 60 * 3),
+      },
+      {
+        _id: await nextSeq('order'),
+        user_id: 4,
+        state: 'OS020',
+        products: [
+          {
+            _id: 101,
+            state: 'OS040',
+            name: 'NBA 2K24',
+            image: {
+              path: `files/${clientId}/pro-101-thumbnail.webp`,
+              name: 'pro-101-thumbnail.jpg',
+              originalname: 'NBA 2K24.webp',
+            },
+            quantity: 1,
+            price: 22500,
+            review_id: 0,
+          },
+        ],
+        cost: {
+          products: 22500,
+          shippingFees: 4000,
+          discount: {
+            products: 0,
+            shippingFees: 0,
+          },
+          total: 22500,
+        },
+        address: {
+          name: '회사',
+          value: '서울시 강남구 신사동 234',
+        },
+        createdAt: getTime(-6, -60 * 60 * 3),
+        updatedAt: getTime(-6, -60 * 60 * 3),
+      },
+      {
+        _id: await nextSeq('order'),
+        user_id: 4,
+        state: 'OS030',
+        products: [
+          {
+            _id: 80,
+            state: 'OS040',
+            name: '다운타운 열혈이야기 SP',
+            image: {
+              path: `files/${clientId}/pro-80-thumbnail.webp`,
+              name: 'pro-80-thumbnail.jpg',
+              originalname: '다운타운 열혈이야기 SP.webp',
+            },
+            quantity: 1,
+            price: 35000,
+            review_id: 0,
+          },
+        ],
+        cost: {
+          products: 35000,
+          shippingFees: 4000,
+          discount: {
+            products: 0,
+            shippingFees: 0,
+          },
+          total: 39000,
+        },
+        address: {
+          name: '회사',
+          value: '서울시 강남구 신사동 234',
+        },
+        createdAt: getTime(-6, -60 * 60 * 3),
+        updatedAt: getTime(-6, -60 * 60 * 3),
+      },
+      {
+        _id: await nextSeq('order'),
+        user_id: 4,
+        state: 'OS040',
+        products: [
+          {
+            _id: 60,
+            state: 'OS040',
+            name: 'SWITCH2 닌텐도 스위치 2 본체 마리오 카트 월드 세트',
+            image: {
+              path: `files/${clientId}/pro-60-thumbnail.webp`,
+              name: 'pro-60-thumbnail.webp',
+              originalname: 'SWITCH2 닌텐도 스위치 2 본체 마리오 카트 월드 세트.webp',
+            },
+            quantity: 1,
+            price: 688000,
+            review_id: 0,
+          },
+        ],
+        cost: {
+          products: 688000,
+          shippingFees: 4000,
+          discount: {
+            products: 0,
+            shippingFees: 4000,
+          },
+          total: 688000,
         },
         address: {
           name: '회사',

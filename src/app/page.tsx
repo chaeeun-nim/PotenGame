@@ -2,6 +2,7 @@ import Datainit from '@/components/Datainit';
 import MainBest from '@/components/MainBest/MainBest';
 import MainCardListWrapper from '@/components/MainCard/MainCardListWrapper';
 import MainGameLink from '@/components/MainGameLink/MainGameLink';
+import MainLoginModal from '@/components/MainLoginModal';
 import MainMdPick from '@/components/MainMdPick/MainMdPick';
 import MainModal from '@/components/MainModal';
 import MainPromotion from '@/components/MainPromotion';
@@ -10,6 +11,7 @@ import MainSlider from '@/components/MainSlider/MainSlide';
 export default async function Home() {
   return (
     <>
+      <MainLoginModal />
       <Datainit /> {/* 태초에 데이터를 받아오기 위한 목적의 컴포넌트입니다.*/}
       <MainModal /> {/* 모달창 컴포넌트입니다. */}
       <MainSlider /> {/* 메인 비쥬얼 슬라이드 컴포넌트입니다. */}

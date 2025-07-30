@@ -19,7 +19,7 @@ export default function MyPageTop() {
                   <b className="text-black font-bold mx-1">3번 구매</b>가 필요합니다.
                 </p>
               </div>
-              <button className="self-start w-fit px-6 py-2 border rounded-full text-sm font-medium">등급별 혜택</button>
+              <button className="self-start w-fit px-6 py-2 border border-poten-gray-1 rounded-full text-sm font-medium">등급별 혜택</button>
             </div>
 
             {/* 총 주문 */}
@@ -28,7 +28,7 @@ export default function MyPageTop() {
               <p className="text-5xl font-bold text-[#E5242B] mt-auto mb-3">
                 2<span className="text-base text-black font-normal ml-1">회</span>
               </p>
-              <button className="mt-4 w-fit px-6 py-2 border rounded-full text-sm font-medium">주문 배송 조회</button>
+              <button className="mt-4 w-fit px-6 py-2 border border-poten-gray-1 rounded-full text-sm font-medium">주문 배송 조회</button>
             </div>
 
             {/* 관심 상품 */}
@@ -37,7 +37,7 @@ export default function MyPageTop() {
               <p className="text-5xl font-bold text-[#E5242B] mt-auto mb-3">
                 8<span className="text-base text-black font-normal ml-1">개</span>
               </p>
-              <button className="mt-4 w-fit px-6 py-2 border rounded-full text-sm font-medium">관심상품 조회</button>
+              <button className="mt-4 w-fit px-6 py-2 border border-poten-gray-1 rounded-full text-sm font-medium">관심상품 조회</button>
             </div>
           </div>
         </div>
@@ -54,21 +54,21 @@ export default function MyPageTop() {
                 <span className="text-red-500 font-semibold">단골 등급</span>을 위해서 <b>3번 구매</b>가 필요합니다.
               </p>
               <div className="flex justify-end mt-6 mb-5 pr-2">
-                <button className="h-[32px] px-4 text-sm font-medium border rounded-full border-[var(--color-poten-gray-1)] text-black">등급별 혜택</button>
+                <button className="h-[32px] px-4 text-sm font-medium border rounded-full border-poten-gray-1 text-black">등급별 혜택</button>
               </div>
               <div className="grid grid-cols-2 gap-4 px-2">
                 <div className="border rounded-md p-4 border-[var(--color-poten-gray-1)]">
                   <p className="text-sm font-medium text-black mb-1 pl-1">관심 상품</p>
                   <p className="text-[28px] text-[#E5242B] font-bold leading-none pl-1">8<span className="text-sm text-black font-medium ml-1">개</span></p>
                   <div className="flex justify-end mt-4">
-                    <button className="px-3 py-1 text-sm border text-black font-medium border rounded-full">관심상품 조회</button>
+                    <button className="px-3 py-1 text-sm text-black font-medium border border-poten-gray-1 rounded-full">관심상품 조회</button>
                   </div>
                 </div>
                 <div className="border rounded-md p-4 border-[var(--color-poten-gray-1)]">
                   <p className="text-sm font-medium text-black mb-1 pl-1">총 주문</p>
                   <p className="text-[28px] text-[#E5242B] font-bold leading-none pl-1">2<span className="text-sm text-black font-medium ml-1">회</span></p>
                   <div className="flex justify-end mt-4">
-                    <button className="px-3 py-1 text-sm text-black border border rounded-full">주문배송 조회</button>
+                    <button className="px-3 py-1 text-sm text-black border border-poten-gray-1 rounded-full">주문배송 조회</button>
                   </div>
                 </div>
               </div>

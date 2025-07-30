@@ -11,15 +11,15 @@ export interface Iuser {
   _id: number;
   email: string;
   name: string;
-  phone: string;
-  address: string;
+  phone?: string;
+  address?: string;
   type: 'admin' | 'seller' | 'user';
-  loginType: 'email';
-  image: string;
-  createdAt: string;
-  updatedAt: string;
-  extra: IuserExtra;
-  notifications: Array<string>;
+  loginType?: 'email';
+  image?: string;
+  createdAt?: string;
+  updatedAt?: string;
+  extra?: IuserExtra;
+  notifications?: Array<string>;
   token: IuserToken;
 }
 
@@ -33,7 +33,7 @@ export interface IuserExtra {
   nickname: string;
   birthday: string;
   membershipClass: 'MC01' | 'MC02';
-  addressBook: Iaddress[];
+  address: Iaddress[];
 }
 
 export interface UserState {
