@@ -9,7 +9,7 @@ import Link from 'next/link';
 import { JSX, useEffect, useState } from 'react';
 
 import CartBtn from './CartBtn';
-import ItemLikeBtn from '../List-ItemCard/ItemLikeBtn';
+import ItemLikeBtn from '../list-ItemCard/ItemLikeBtn';
 
 export default function MainCardInfo({ item }: { item: Iproduct }) {
   const [releaseDate, setReleaseDate] = useState('');

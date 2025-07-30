@@ -7,9 +7,9 @@ import cartAdded from '@/assets/icons/addcart.svg';
 import usedTag from '@/assets/icons/used-tag.svg';
 import newTag from '@/assets/icons/new-tag.svg';
 import filledHeart from '@/assets/icons/heart-filled.svg';
-import { useItemCardContext } from '@/components/List-ItemCard/ItemCardContext';
-import ItemLikeBtn from '@/components/List-ItemCard/ItemLikeBtn';
-import ItemNumInput from '@/components/List-ItemCard/ItemNumInput';
+import { useItemCardContext } from '@/components/list-ItemCard/ItemCardContext';
+import ItemLikeBtn from '@/components/list-ItemCard/ItemLikeBtn';
+import ItemNumInput from '@/components/list-ItemCard/ItemNumInput';
 
 // 날짜 포멧팅 함수
 function formatDate(dateString: string): string {
