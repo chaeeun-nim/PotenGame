@@ -5,9 +5,9 @@ import { useState } from 'react';
 import {
   ItemCardProvider,
   ItemCardVariant,
-} from '@/components/List-ItemCard/ItemCardContext';
-import ItemCardImage from '@/components/List-ItemCard/ItemCardImage';
-import ItemCardInfo from '@/components/List-ItemCard/ItemCardInfo';
+} from '@/components/list-ItemCard/ItemCardContext';
+import ItemCardImage from '@/components/list-ItemCard/ItemCardImage';
+import ItemCardInfo from '@/components/list-ItemCard/ItemCardInfo';
 import Link from 'next/link';
 import { Iproduct } from '@/types/products';
 
@@ -95,10 +95,10 @@ export default function ItemCard({
 
   // 상품 ID 결정 (productData가 있을 시 사용, 없을 시 기본값)
   const productId = productData?._id || 1;
-  const productLink = `/list/${productId}`
+  const productLink = `/list/${productId}`;
 
   return (
-    <ItemCardProvider variant={variant} productData ={productData}>
+    <ItemCardProvider variant={variant} productData={productData}>
       <section className={`${getCardStyles()} ${className || ''}`}>
         <Link href={productLink}>
           <ItemCardImage />
