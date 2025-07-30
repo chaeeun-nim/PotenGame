@@ -1,100 +1,64 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
-import useUserStore from '@/zustand/userStore';
-
-const orderSteps = ['결제전', '상품준비중', '배송중', '배송완료'] as const;
-type OrderStep = typeof orderSteps[number];
-
-type Order = {
-  state: string;
-};
+import { IOrderSummaryRes } from '@/types/Order';
 
 export default function MyPageOrder() {
-  const user = useUserStore((state) => state.user);
+  const [orderData, setOrderData] = useState<IOrderSummaryRes[]>([]);
+  const orderSteps = ['결제전', '상품준비중', '배송중', '배송완료'] as const;
 
-  const [statusCounts, setStatusCounts] = useState<Record<OrderStep, number>>({
+  const statusCounts: Record<(typeof orderSteps)[number], number> = {
     결제전: 0,
     상품준비중: 0,
     배송중: 0,
     배송완료: 0,
-  });
+  };
 
-  useEffect(() => {
-    if (!user || !user?._id || !user?.token?.accessToken) {
-      console.warn('⛔️ user 또는 토큰 정보 없음, 요청 중단');
-      return;
-    }
+  const stateToStepMap: Record<string, (typeof orderSteps)[number]> = {
+    OS010: '결제전',
+    OS020: '상품준비중',
+    OS030: '배송중',
+    OS040: '배송완료',
+  };
 
-    const fetchOrders = async () => {
-      console.log('user:', user);
-      console.log('userId:', user._id);
-      console.log('accessToken:', user.token.accessToken);
-
+    useEffect(() => {
+    const fetchData = async () => {
       try {
-        const res = await fetch(`/api/orders/${user._id}`, {
-          method: 'GET',
+        const raw = sessionStorage.getItem('user'); // 전체 유저 정보 JSON
+        const parsed = JSON.parse(raw || '{}');
+        const token = parsed?.state?.user?.token?.accessToken;
+
+        if (!token) return;
+
+        const res = await fetch('/api/order/summary', {
           headers: {
-            Authorization: `Bearer ${user.token.accessToken}`,
-            'Content-Type': 'application/json',
+            Authorization: `Bearer ${token}`,
           },
         });
 
-        const data = await res.json();
-        console.log('응답 데이터:', data);
-
-        if (!data.ok || !Array.isArray(data.item)) {
-          console.error('API 응답 오류:', data);
-          return;
+        const json = await res.json();
+        if (json.ok) {
+          setOrderData(json.item);
         }
-
-        const stepMap: Record<string, OrderStep> = {
-          OS010: '결제전',
-          OS020: '상품준비중',
-          OS030: '배송중',
-          OS040: '배송완료',
-        };
-
-        const counts: Record<OrderStep, number> = {
-          결제전: 0,
-          상품준비중: 0,
-          배송중: 0,
-          배송완료: 0,
-        };
-
-        data.item.forEach((order: Order) => {
-          const step = stepMap[order.state];
-          if (step) counts[step]++;
-        });
-
-        console.log('상태별 주문 수:', counts);
-        setStatusCounts(counts);
       } catch (err) {
-        console.error('주문 데이터를 불러오지 못했습니다:', err);
+        console.error('데이터를 불러오지 못했습니다. 다시 시도해 주세요.', err);
       }
     };
 
-    fetchOrders();
-  }, [user]);
+    fetchData();
+  }, []);
 
-  // 조건부 렌더링: user 없으면 메시지 출력
-  if (!user) {
-    return (
-      <div className="text-center text-gray-500 py-10">
-        로그인 후 주문처리 현황을 확인할 수 있습니다.
-      </div>
-    );
-  }
-
-
+  // 상태 count 세팅
+  orderData.forEach((order) => {
+    const step = stateToStepMap[order.state];
+    if (step) statusCounts[step] += order.count;
+  });
 
   return (
     <>
-    
-     {/* PC 전용 */}
+      {/* PC 전용 */}
       <section className="hidden xl:block bg-white rounded-lg mb-10 px-4">
         <SectionHeader title="주문처리 현황" subtitle="(최근 6개월 기준)" />
-
         <div className="flex justify-center items-end gap-6 max-w-[700px] mx-auto">
           {orderSteps.map((label, index) => (
             <React.Fragment key={label}>
@@ -105,28 +69,24 @@ export default function MyPageOrder() {
         </div>
       </section>
 
-
-
       {/* 태블릿 전용 */}
-        <section className="hidden md:block xl:hidden bg-white pt-6 py-12 px-4 w-full">
-          <div className="w-full max-w-[895px] mx-auto">
-            <SectionHeader title="주문처리 현황" subtitle="(최근 6개월 기준)" />
-            <div className="flex justify-center items-end gap-4">
-              {orderSteps.map((label, index) => (
-                <React.Fragment key={label}>
-                  <StatusItem label={label} count={statusCounts[label]} size="md" />
-                  {index < 3 && <Arrow size="md" />}
-                </React.Fragment>
-              ))}
-            </div>
+      <section className="hidden md:block xl:hidden bg-white pt-6 py-12 px-4 w-full">
+        <div className="w-full max-w-[895px] mx-auto">
+          <SectionHeader title="주문처리 현황" subtitle="(최근 6개월 기준)" />
+          <div className="flex justify-center items-end gap-4">
+            {orderSteps.map((label, index) => (
+              <React.Fragment key={label}>
+                <StatusItem label={label} count={statusCounts[label]} size="md" />
+                {index < 3 && <Arrow size="md" />}
+              </React.Fragment>
+            ))}
           </div>
-        </section>
-
+        </div>
+      </section>
 
       {/* 모바일 전용 */}
       <section className="block md:hidden w-full bg-white py-6 px-4">
         <SectionHeader title="주문처리 현황" subtitle="(최근 6개월 기준)" />
-
         <div className="flex justify-center items-end gap-4">
           {orderSteps.map((label, index) => (
             <React.Fragment key={label}>
@@ -159,7 +119,7 @@ function StatusItem({
   size,
 }: {
   label: string;
-  count: number | string;
+  count: number;
   size: 'xl' | 'md' | 'sm';
 }) {
   const textSize = {

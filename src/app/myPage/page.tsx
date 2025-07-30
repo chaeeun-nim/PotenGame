@@ -1,16 +1,21 @@
+import { Metadata } from 'next';
+
 import MobileMyPageNav from '@/components/MyPage/MobileMyPageNav';
-import OrderStatusSection from '@/components/MyPage/MyPageOrder';
-import RecentOrderSection from '@/components/MyPage/MyPageRecent';
+import MyPageOrder from '@/components/MyPage/MyPageOrder';
+import MyPageRecent from '@/components/MyPage/MyPageRecent';
+
+
+export const metadata: Metadata = {
+  title: '마이페이지',
+  description: '나의 주문 정보, 관심상품을 확인할 수 있습니다.',
+};
 
 export default function MyPage() {
   return (
     <>
-      {/* 모바일 전용 버튼 그룹 */}
       <MobileMyPageNav />
-      {/* 주문처리 현황 */}
-      <OrderStatusSection />
-      {/* 최근 주문 상품 */}
-      <RecentOrderSection />
+      <MyPageOrder />
+      <MyPageRecent />
     </>
   );
 }

@@ -1,18 +1,17 @@
 'use client';
 
-import useUserStore from '@/zustand/userStore';
-
+import useUserStore from '@/zustand/userStore'; // 실제 전역 상태에서 가져오는 경우
+// import { Iuser } from '@/types/user'; // 필요 시 유지
 
 export default function MyPageTop() {
-  const user = useUserStore((state) => state.user);
+  const user = useUserStore((state) => state.user); // 전역 상태에서 유저 정보 가져옴
 
-  //유저 정보 구조 분해
+  // 유저 정보 구조 분해
   const { membershipClass, purchases = 0 } = user?.extra ?? {};
   const isVip = membershipClass === 'MC02';
   const badgeLabel = isVip ? '단골' : '일반';
   const remaining = Math.max(3 - purchases, 0);
   const userName = user?.name ?? '사용자';
-
 
   return (
     <>
