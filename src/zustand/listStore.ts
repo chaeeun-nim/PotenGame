@@ -5,7 +5,6 @@ import { Iproduct } from '@/types/products';
 import { persist } from 'zustand/middleware';
 import { SortType } from '@/types/sort';
 
-
 interface FilterState {
   platform?: string;
   condition?: string;
@@ -58,8 +57,8 @@ const useListStore = create<ListState>()(
           currentPage: 1, // 필터 변경 시 첫 페이지로
         })),
       setSortBy: (sortBy) => set({ sortBy, currentPage: 1 }),
-      setCurrentPage: (currentPage) => set({ currentPage }),
-      setTotalPages: (totalPages) => set({ totalPages }),
+      setCurrentPage: (page) => set({ currentPage: page }),
+      setTotalPages: (pages) => set({ totalPages: pages }),
       resetFilters: () =>
         set({
           filters: {},
