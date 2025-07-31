@@ -5,7 +5,7 @@ import CreditCart from './CreditCart';
 import PhonePay from './PhonePay';
 import BankBookPay from './BankBookPay';
 import useOrderSotre from '@/zustand/orderStore';
-import { Iorder } from '@/types/order';
+import { Iorder } from '@/types/payorder';
 
 export default function OrderPay() {
   const { updateOrder } = useOrderSotre();
@@ -30,6 +30,9 @@ export default function OrderPay() {
       ...prev,
       payment: {
         ...prev.payment,
+        card_name: '',
+        card_num: '',
+        pay_phone_num: '',
         pay_method: payState[i].payname,
       },
     }));
@@ -46,7 +49,7 @@ export default function OrderPay() {
         payBtnHandle(i);
       }}
       key={i}
-      className={` w-full text-center rounded-[4px] py-1 ${item.active ? 'bg-white text-poten-black' : 'bg-poten-inputgray text-poten-gray-2'}`}>
+      className={`cursor-pointer w-full text-center rounded-[4px] py-1 ${item.active ? 'bg-white text-poten-black' : 'bg-poten-inputgray text-poten-gray-2'}`}>
       {item.payname}
     </button>
   ));

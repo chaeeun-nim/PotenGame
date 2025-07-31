@@ -1,6 +1,6 @@
 'use client';
 
-import { Iorder } from '@/types/order';
+import { Iorder } from '@/types/payorder';
 import useCartStore from '@/zustand/cartStore';
 import useOrderSotre from '@/zustand/orderStore';
 import useUserStore from '@/zustand/userStore';

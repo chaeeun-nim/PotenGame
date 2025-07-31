@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import { useState } from 'react';
 import errorIcon from '@/assets/icons/erroricon.svg';
-import { Iorder } from '@/types/order';
+import { Iorder } from '@/types/payorder';
 import useOrderSotre from '@/zustand/orderStore';
 
 export default function PhonePay() {
@@ -23,7 +23,7 @@ export default function PhonePay() {
         ...prev,
         payment: {
           ...prev.payment,
-          card_num: `010${newPhoneNum.join(' ').slice(0, 3)}*****`,
+          pay_phone_num: `010${newPhoneNum.join(' ').slice(0, 3)}*****`,
         },
       }));
     }
