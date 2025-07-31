@@ -87,9 +87,7 @@ export default function LoginForm() {
 
         <div className="flex justify-between mt-3 mb-10">
           <div>
-            <Link href="/find/findId" className="mr-5">
-              아이디 찾기
-            </Link>
+            <Link href="/find/findId" className="mr-2 md:mr-5">아이디 찾기</Link>
             <Link href="/find/findPw">비밀번호 찾기</Link>
           </div>
 

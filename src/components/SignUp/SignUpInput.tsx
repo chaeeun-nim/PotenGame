@@ -94,7 +94,7 @@ export default function SignUpInput({title, type, placeholder, button}: SignUpIn
 
         </div>
 
-          {/*  */}
+          
           <p className={`
             font-bold
             ${ emailMessage || nameMessage === "사용가능" ? 'text-poten-safegreen' : 'text-poten-error-color'}
