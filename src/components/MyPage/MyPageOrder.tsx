@@ -5,6 +5,7 @@ import { IOrderSummaryRes } from '@/types/myorder';
 
 export default function MyPageOrder() {
   const [orderData, setOrderData] = useState<IOrderSummaryRes[]>([]);
+
   const orderSteps = ['결제전', '상품준비중', '배송중', '배송완료'] as const;
 
   const statusCounts: Record<(typeof orderSteps)[number], number> = {
@@ -21,16 +22,16 @@ export default function MyPageOrder() {
     OS040: '배송완료',
   };
 
-    useEffect(() => {
+  useEffect(() => {
     const fetchData = async () => {
       try {
-        const raw = sessionStorage.getItem('user'); // 전체 유저 정보 JSON
+        const raw = sessionStorage.getItem('user');
         const parsed = JSON.parse(raw || '{}');
         const token = parsed?.state?.user?.token?.accessToken;
 
         if (!token) return;
 
-        const res = await fetch('/api/order/summary', {
+        const res = await fetch('/api/myorder', {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -41,14 +42,14 @@ export default function MyPageOrder() {
           setOrderData(json.item);
         }
       } catch (err) {
-        console.error('데이터를 불러오지 못했습니다. 다시 시도해 주세요.', err);
+        console.error('주문 요약 정보를 불러오지 못했습니다.', err);
       }
     };
 
     fetchData();
   }, []);
 
-  // 상태 count 세팅
+   // API에서 받아온 주문 데이터를 카운트로 정리
   orderData.forEach((order) => {
     const step = stateToStepMap[order.state];
     if (step) statusCounts[step] += order.count;
@@ -57,14 +58,17 @@ export default function MyPageOrder() {
   return (
     <>
       {/* PC 전용 */}
-      <section className="hidden xl:block bg-white rounded-lg mb-10 px-4">
+     <section className="hidden xl:block bg-white rounded-lg mb-10 px-4">
         <SectionHeader title="주문처리 현황" subtitle="(최근 6개월 기준)" />
         <div className="flex justify-center items-end gap-6 max-w-[700px] mx-auto">
           {orderSteps.map((label, index) => (
-            <React.Fragment key={label}>
-              <StatusItem label={label} count={statusCounts[label]} size="xl" />
-              {index < 3 && <Arrow size="xl" />}
-            </React.Fragment>
+            <StatusItem
+              key={label}
+              label={label}
+              count={statusCounts[label]}
+              size="xl"
+              showArrow={index < orderSteps.length - 1}
+            />
           ))}
         </div>
       </section>
@@ -75,10 +79,13 @@ export default function MyPageOrder() {
           <SectionHeader title="주문처리 현황" subtitle="(최근 6개월 기준)" />
           <div className="flex justify-center items-end gap-4">
             {orderSteps.map((label, index) => (
-              <React.Fragment key={label}>
-                <StatusItem label={label} count={statusCounts[label]} size="md" />
-                {index < 3 && <Arrow size="md" />}
-              </React.Fragment>
+              <StatusItem
+                key={label}
+                label={label}
+                count={statusCounts[label]}
+                size="md"
+                showArrow={index < orderSteps.length - 1}
+              />
             ))}
           </div>
         </div>
@@ -89,10 +96,13 @@ export default function MyPageOrder() {
         <SectionHeader title="주문처리 현황" subtitle="(최근 6개월 기준)" />
         <div className="flex justify-center items-end gap-4">
           {orderSteps.map((label, index) => (
-            <React.Fragment key={label}>
-              <StatusItem label={label} count={statusCounts[label]} size="sm" />
-              {index < 3 && <Arrow size="sm" />}
-            </React.Fragment>
+            <StatusItem
+              key={label}
+              label={label}
+              count={statusCounts[label]}
+              size="sm"
+              showArrow={index < orderSteps.length - 1}
+            />
           ))}
         </div>
       </section>
@@ -117,39 +127,49 @@ function StatusItem({
   label,
   count,
   size,
+  showArrow = false,
 }: {
   label: string;
   count: number;
   size: 'xl' | 'md' | 'sm';
+  showArrow?: boolean;
 }) {
+  
   const textSize = {
-    xl: 'text-[28px] sm:text-5xl md:text-6xl xl:text-8xl',
-    md: 'text-[28px] sm:text-4xl md:text-5xl',
-    sm: 'text-3xl sm:text-4xl',
+  xl: 'text-[28px] sm:text-5xl md:text-6xl xl:text-8xl',
+  md: 'text-[28px] sm:text-4xl md:text-5xl',
+  sm: 'text-3xl sm:text-4xl',
   }[size];
 
-  const width = {
-    xl: 'w-[100px]',
-    md: 'w-[65px]',
-    sm: 'w-[65px]',
+  const labelSize = {
+    xl: 'text-base',
+    md: 'text-sm',
+    sm: 'text-sm',
   }[size];
 
-  const color = label === '배송완료' ? 'text-[var(--color-poten-red)]' : 'text-[var(--color-poten-gray-2)]';
+  const arrowSize = {
+    xl: 'text-[52px]',
+    md: 'text-[40px]',
+    sm: 'text-[32px]',
+  }[size];
+
+  const color = count > 0
+  ? 'text-[var(--color-poten-red)]'
+  : 'text-[var(--color-poten-gray-2)]';
 
   return (
-    <div className={`flex flex-col items-center ${width} shrink-0`}>
-      <span className="text-sm text-black">{label}</span>
-      <span className={`${textSize} font-bold leading-none ${color}`}>{count}</span>
+    <div className="flex items-center gap-3">
+      {/* 라벨 + 숫자 */}
+      <div className="flex flex-col items-center">
+        <span className={`${labelSize} text-black mb-1`}>{label}</span>
+        <span className={`${textSize} font-bold leading-none ${color}`}>{count}</span>
+      </div>
+      {/* 오른쪽 화살표 */}
+      {showArrow && (
+    <div className="flex items-center h-full">
+      <span className={`${arrowSize} text-[var(--color-poten-gray-2)] leading-none relative top-[10px]`}>›</span>
     </div>
+  )}
+</div>
   );
-}
-
-function Arrow({ size }: { size: 'xl' | 'md' | 'sm' }) {
-  const arrowSize = {
-    xl: 'text-[40px]',
-    md: 'text-[18px]',
-    sm: 'text-[20px]',
-  }[size];
-
-  return <span className={`${arrowSize} text-[var(--color-poten-gray-2)]`}>›</span>;
 }
