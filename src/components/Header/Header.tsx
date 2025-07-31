@@ -39,7 +39,7 @@ export function Header() {
   return (
     <>
       {/* 상단 광고 */}
-      <div className="bg-[#0E0E0E]">
+      <div className="bg-[#0E0E0E] w-full md:px-6">
         <Image
           src={bannerSm}
           alt="컨디션 최상의 중고칩 국내 최다보유 포텐 게임에서 인생게임을 찾아보세요"
@@ -48,12 +48,12 @@ export function Header() {
         <Image
           src={bannerMd}
           alt="컨디션 최상의 중고칩 국내 최다보유 포텐 게임에서 인생게임을 찾아보세요"
-          className="w-full m-auto hidden md:block xl:hidden "
+          className="w-auto max-h-[100px] m-auto hidden md:block xl:hidden "
         />
         <Image
           src={bannerLg}
           alt="컨디션 최상의 중고칩 국내 최다보유 포텐 게임에서 인생게임을 찾아보세요"
-          className="w-full m-auto hidden xl:block max-w-[1280px]"
+          className="m-auto hidden xl:block max-w-[1200px]"
         />
       </div>
 

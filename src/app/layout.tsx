@@ -4,6 +4,7 @@ import Footer from '@/components/Footer';
 import { Metadata } from 'next';
 
 import localFont from 'next/font/local';
+import MobileGnb from '@/components/Header/MobileGnb';
 
 const pretendard = localFont({
   src: '../../font/pretendard/PretendardVariable.woff2',
@@ -67,6 +68,7 @@ export default function RootLayout({
       </head>
       <body>
         <Header />
+        <MobileGnb />
         {children}
         <Footer />
       </body>
