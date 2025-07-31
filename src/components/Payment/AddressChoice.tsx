@@ -1,6 +1,6 @@
 'use client';
 
-import { Iorder } from '@/types/order';
+import { Iorder } from '@/types/payorder';
 import useOrderSotre from '@/zustand/orderStore';
 
 interface AddressChoice {

@@ -7,7 +7,7 @@ type Store = {
   cost: IcartCost;
   setCart: (dataItems: IcartItem[]) => void;
   setCost: (IcartCost: IcartCost) => void;
-  resetStore: () => void;
+  resetCartStore: () => void;
 };
 
 const useCartStore = create<Store>()(
@@ -26,7 +26,7 @@ const useCartStore = create<Store>()(
       setCost: (IcartCost: IcartCost) => {
         set({ cost: IcartCost });
       },
-      resetStore: () => {
+      resetCartStore: () => {
         set({ cart: [] });
         set({
           cost: {
