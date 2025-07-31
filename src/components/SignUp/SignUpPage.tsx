@@ -13,6 +13,9 @@ import { useState } from "react";
 
 export default function SignUpPage() {
 
+  const [ password, setPassword ] = useState('');
+  const [ passwordCheck, setPasswordCheck ] = useState('');
+
   const [checkboxes, setCheckboxes] = useState([
     { id: 0, label: "만 14세 이상입니다.", checked: false, required: true },
     { id: 1, label: "포텐게임 이용약관에 동의", checked: false, required: true },
@@ -23,7 +26,7 @@ export default function SignUpPage() {
   const inputs = [
     { id: 0, type: "email", title: "이메일", placeholder: "이메일을 입력해 주세요", button: true},
     { id: 1, type: "password", title: "비밀번호", placeholder: "비밀번호를 입력해 주세요", button: false},
-    { id: 2, type: "password-check", title: "비밀번호 확인", placeholder: "한 번 더 입력해 주세요", button: false},
+    { id: 2, type: "password", title: "비밀번호 확인", placeholder: "한 번 더 입력해 주세요", button: false},
     { id: 3, type: "tel", title: "휴대폰 번호", placeholder: "휴대폰 번호를 입력해 주세요", button: true},
     { id: 4, type: "text", title: "별명", placeholder: "사용하실 별명을 입력해 주세요", button: true},
   ];
@@ -59,6 +62,11 @@ export default function SignUpPage() {
           title={input.title}
           placeholder={input.placeholder}
           button={input.button}
+          password={password}
+          passwordCheck={passwordCheck}
+          setPassword={setPassword}
+          setPasswordCheck={setPasswordCheck}
+
         />
       ))}
 
