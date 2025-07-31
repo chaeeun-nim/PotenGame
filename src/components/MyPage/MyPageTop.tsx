@@ -41,7 +41,10 @@ export default function MyPageTop() {
                 {/* 등급 안내 메시지 */}
                 <p className="text-[15px] text-gray-600">
                   {isVip ? (
-                    <span className="text-[var(--color-poten-red)] font-bold">단골 등급입니다.</span>
+                    <>
+                      <span className="text-[var(--color-poten-red)] font-bold">단골</span>
+                      <span className="text-[var(--color-poten-black)] font-bold"> 등급입니다.</span>
+                    </>
                   ) : (
                     <>
                       <span className="text-[var(--color-poten-red)] font-bold">단골 등급</span>을 위해서
