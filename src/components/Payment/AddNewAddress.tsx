@@ -1,19 +1,32 @@
 'use client';
 
 import useOrderSotre from '@/zustand/orderStore';
-import { useState } from 'react';
-import { Iorder } from '@/types/order';
+import { useEffect, useState } from 'react';
+import { Iorder } from '@/types/payorder';
+import Image from 'next/image';
+import errorIcon from '@/assets/icons/erroricon.svg';
 
 export default function AddNewAddress({
   ModalCloseHandle,
   formRef,
+  addressModal,
 }: {
   ModalCloseHandle: () => void;
   formRef: React.RefObject<HTMLFormElement | null>;
+  addressModal: boolean;
 }) {
   const [addressInputError, setAddressInputError] = useState(false);
+  const [addressInput, setAddressInput] = useState('');
   const [addressNumberInputError, setAddressNumberInputError] = useState(false);
+  const [addressNumberInput, setAddressNumberInput] = useState('');
   const { updateOrder } = useOrderSotre();
+
+  useEffect(() => {
+    setAddressInputError(false);
+    setAddressNumberInputError(false);
+    setAddressInput('');
+    setAddressNumberInput('');
+  }, [addressModal]);
 
   const submitAddressHandle = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -24,7 +37,6 @@ export default function AddNewAddress({
 
     if (!newAddress || newAddress.length === 0) {
       setAddressInputError(true);
-      console.log('주소실패');
     } else {
       setAddressInputError(false);
     }
@@ -32,17 +44,17 @@ export default function AddNewAddress({
     if (
       !newAddressNumber ||
       !/^\d+$/.test(newAddressNumber) ||
-      newAddressNumber.length > 6
+      newAddressNumber.length <= 5
     ) {
       setAddressNumberInputError(true);
     } else {
-      setAddressInputError(false);
+      setAddressNumberInputError(false);
     }
 
     if (
       newAddressNumber &&
       /^\d+$/.test(newAddressNumber) &&
-      newAddressNumber.length <= 6 &&
+      newAddressNumber.length >= 5 &&
       newAddress &&
       newAddress.length > 0
     ) {
@@ -55,8 +67,22 @@ export default function AddNewAddress({
         },
       }));
       if (formRef) formRef.current?.reset();
+      setAddressInput('');
+      setAddressNumberInput('');
       ModalCloseHandle();
     }
+  };
+
+  const addressInputHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    setAddressInput(value);
+    setAddressInputError(value.trim().length === 0);
+  };
+  const addressNumberInputHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    const onlyNumbers = value.replace(/[^0-9]/g, '').slice(0, 6);
+    setAddressNumberInput(onlyNumbers);
+    setAddressNumberInputError(value.trim().length < 5);
   };
 
   return (
@@ -71,12 +97,27 @@ export default function AddNewAddress({
             type="text"
             id="newAddress"
             name="newAddress"
+            value={addressInput}
+            onChange={(e) => {
+              addressInputHandler(e);
+            }}
             placeholder="도착 배송주소를 입력해주세요."
             className="placeholder:font-bold font-medium bg-poten-inputgray rounded-[4px] px-[16px] py-[12px] md:px-[20px] md:py-[16px]
                 placeholder:text-poten-gray-2 text-poten-black"
           />
           {addressInputError ? (
-            <p>도착 배송지의 주소를 입력해주세요.</p>
+            <div className="flex gap-x-2 items-center">
+              <Image
+                className="w-4 pt-0.5"
+                src={errorIcon}
+                width={16}
+                height={16}
+                alt="에러아이콘"
+              />
+              <p className="text-poten-usedorange font-bold mt-1 text-[16px]">
+                도착 배송지의 주소를 입력해주세요.
+              </p>
+            </div>
           ) : (
             <span className="h-[24px]"></span>
           )}
@@ -89,12 +130,27 @@ export default function AddNewAddress({
             type="text"
             id="newAddressNumber"
             name="newAddressNumber"
+            value={addressNumberInput}
+            onChange={(e) => {
+              addressNumberInputHandler(e);
+            }}
             placeholder="도착 배송지의 우편번호를 입력해주세요."
             className="placeholder:font-bold font-medium bg-poten-inputgray rounded-[4px] px-[16px] py-[12px] md:px-[20px] md:py-[16px]
                 placeholder:text-poten-gray-2 text-poten-black appearance-none "
           />
           {addressNumberInputError ? (
-            <p>우편번호 숫자 최대 6글자 이상 입력해주세요.</p>
+            <div className="flex gap-x-2 items-center">
+              <Image
+                className="w-4 pt-0.5"
+                src={errorIcon}
+                width={16}
+                height={16}
+                alt="에러아이콘"
+              />
+              <p className="text-poten-usedorange font-bold mt-1 text-[16px]">
+                우편번호 숫자 최대 5글자 이상 입력해주세요.
+              </p>
+            </div>
           ) : (
             <span className="h-[24px]"></span>
           )}

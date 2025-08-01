@@ -1,4 +1,4 @@
-import { Iorder } from '@/types/order';
+import { Iorder } from '@/types/payorder';
 import { create } from 'zustand';
 import { createJSONStorage, persist } from 'zustand/middleware';
 
@@ -25,7 +25,7 @@ const useOrderSotre = create<Store>()(
         payment: {
           card_num: '',
           card_name: '',
-          pay_method: '',
+          pay_method: '신용카드',
           pg_type: '',
           pay_phone_num: '',
           success: true,
@@ -49,7 +49,7 @@ const useOrderSotre = create<Store>()(
             payment: {
               card_num: '',
               card_name: '',
-              pay_method: '',
+              pay_method: '신용카드',
               pg_type: '',
               pay_phone_num: '',
               success: true,
