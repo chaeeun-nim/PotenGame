@@ -5,15 +5,14 @@ meta {
 }
 
 get {
-  url: {{url}}/products
+  url: {{url}}/products?keyword=스위치 2
   body: none
   auth: inherit
 }
 
 params:query {
-
+  keyword: 스위치 2
   ~custom: {"extra.used": true}
-  ~keyword: 젤다
   ~limit: 5
   ~page: 1
   ~custom: {"extra.platform": "${platform}","extra.category":{"$all":["GAME"]}}
