@@ -5,13 +5,12 @@ meta {
 }
 
 get {
-  url: {{url}}/products?keyword=스위치 2
+  url: {{url}}/products
   body: none
   auth: inherit
 }
 
 params:query {
-  keyword: 스위치 2
   ~custom: {"extra.used": true}
   ~limit: 5
   ~page: 1

@@ -74,7 +74,7 @@ export default function CartItem({ item }: { item: IcartItem }) {
                 className="w-[100px] h-[100px] md:w-[150px] md:h-[150px]  shrink-0 flex items-center justify-center  border-1 border-poten-gray-1">
                 <Image
                   className="w-[80px] md:w-[100px]"
-                  src={`https://fesp-api.koyeb.app/market/${item.product.image.path}`}
+                  src={item.product.image.path}
                   alt={item.product.name}
                   width={500}
                   height={500}
