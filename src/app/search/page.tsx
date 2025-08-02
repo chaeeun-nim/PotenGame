@@ -4,6 +4,7 @@ import { searchProducts } from '@/data/functions/searchProducts';
 import exclamationIcon from '@/assets/icons/exclamation-gray.svg';
 import NotFoundPage from '../not-found';
 import Image from 'next/image';
+import MainLoginModal from '@/components/MainLoginModal';
 
 export default async function SearchPage({
   searchParams,
@@ -48,6 +49,7 @@ export default async function SearchPage({
       ));
       return (
         <>
+          <MainLoginModal />
           <SectionHeader>
             검색결과 <span className="text-poten-red">{result.length.toString()}</span> 건
           </SectionHeader>

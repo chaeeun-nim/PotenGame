@@ -16,6 +16,8 @@ import useUserStore from '@/zustand/userStore';
 import { getCart } from '@/data/functions/getCart';
 import useCartStore from '@/zustand/cartStore';
 import { Iaddress } from '@/types/products';
+import { getLike } from '@/data/functions/getLike';
+import useLikeStore from '@/zustand/likeStore';
 
 export default function LoginForm() {
   const [isSubmit, setIsSubmit] = useState(false);
@@ -28,6 +30,7 @@ export default function LoginForm() {
 
   const setUser = useUserStore((state) => state.setUser);
   const { setCart, setCost } = useCartStore();
+  const { setLike } = useLikeStore();
 
   // setUser는 상태를 변경하는 함수이므로 useEffect에서 호출해야 한다.
   useEffect(() => {
@@ -61,6 +64,12 @@ export default function LoginForm() {
         if (res.ok) {
           setCart(res.item);
           setCost(res.cost);
+        }
+      })();
+      (async () => {
+        const res = await getLike(userState.item.token.accessToken);
+        if (res.ok) {
+          setLike(res.item);
         }
       })();
     } else {
