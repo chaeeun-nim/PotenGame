@@ -1,12 +1,11 @@
 import { IbookmarksItem } from '@/types/bookmarks';
+
 import { create } from 'zustand';
 import { createJSONStorage, persist } from 'zustand/middleware';
 
 type Store = {
   Like: IbookmarksItem[];
-
   setLike: (dataItems: IbookmarksItem[]) => void;
-
   resetLikeStore: () => void;
 };
 

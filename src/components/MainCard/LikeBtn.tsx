@@ -8,6 +8,7 @@ import { addLike } from '@/data/functions/addLike';
 import useUserStore from '@/zustand/userStore';
 import useLoginModal from '@/zustand/areyouLogin';
 import { getLike } from '@/data/functions/getLike';
+import { removeLike } from '@/data/functions/removeLike';
 
 export default function LikeBtn({ productId }: { productId: number }) {
   const { Like, setLike } = useLikeStore();
@@ -17,6 +18,10 @@ export default function LikeBtn({ productId }: { productId: number }) {
   const [isLiked, setIsLiked] = useState(false);
 
   useEffect(() => {
+    if (!user) {
+      return setIsLiked(false);
+    }
+
     setIsLiked(Like?.some((item) => item.product._id === productId));
   }, [Like]);
 
@@ -28,8 +33,14 @@ export default function LikeBtn({ productId }: { productId: number }) {
       setLike(res.item);
     }
   };
-  const handleRemoveLike = () => {
+  const handleRemoveLike = async () => {
     setIsLiked(false);
+    const LikeId = Like.find((item) => item.product._id === productId);
+    await removeLike(user?.token.accessToken as string, LikeId?._id as number);
+    const res = await getLike(user?.token.accessToken as string);
+    if (res.ok) {
+      setLike(res.item);
+    }
   };
 
   return (

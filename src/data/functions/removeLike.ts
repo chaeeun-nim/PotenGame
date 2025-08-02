@@ -6,7 +6,7 @@ export async function removeLike(
   _id: number,
 ): Promise<{ ok: 1 } | { ok: 0; message: string }> {
   try {
-    const res = await fetch(`${API_URL}/carts/${_id}`, {
+    const res = await fetch(`${API_URL}/bookmarks/${_id}`, {
       method: 'DELETE',
       headers: {
         'Client-Id': CLIENT_ID,
