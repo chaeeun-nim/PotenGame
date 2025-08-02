@@ -1,7 +1,6 @@
 'use client';
 
 import useLikeStore from '@/zustand/likeStore';
-import SectionHeader from '../SectionHeader';
 
 export default function LikepageHeader() {
   const { Like } = useLikeStore();

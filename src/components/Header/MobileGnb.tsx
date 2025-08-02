@@ -121,9 +121,9 @@ export default function MobileGnb() {
             </button>
           </li>
           <li
-            className={` p-2 rounded-[4px] w-full ${pathName === '/mypage/like' ? 'bg-poten-snowgray2 shadow-[inset_1px_1px_1px_0_rgba(0,0,0,0.16)]' : null} `}>
+            className={` p-2 rounded-[4px] w-full ${pathName === '/myPage/like' ? 'bg-poten-snowgray2 shadow-[inset_1px_1px_1px_0_rgba(0,0,0,0.16)]' : null} `}>
             <Link
-              href="/mypage/like"
+              href="/myPage/like"
               className="w-full flex justify-center items-center flex-col">
               <Image className="mb-0.5" src={LikeIcon} alt="찜" width={24} height={24} />
               <p className="text-[10px] text-center">찜 목록</p>
