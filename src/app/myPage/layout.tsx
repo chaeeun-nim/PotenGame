@@ -1,9 +1,7 @@
-
 'use client';
 
 import MyPageTop from '@/components/MyPage/MyPageTop';
 import MyPageSide from '@/components/MyPage/MyPageSide';
-
 
 export default function MyPageLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -38,4 +36,3 @@ export default function MyPageLayout({ children }: { children: React.ReactNode }
     </div>
   );
 }
-

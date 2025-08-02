@@ -1,11 +1,11 @@
-import { IproductExtra, IproductImg } from './products';
+import { Iproduct, IproductExtra, IproductImg } from './products';
 
 // 북마크 products 타입지정
 export interface IbookmarksItem {
   _id: number; //북마크 ID
   user_id: number;
   createAt: string;
-  product: IbookmarksProducts;
+  product: Iproduct;
 }
 
 export interface IbookmarksProducts {
