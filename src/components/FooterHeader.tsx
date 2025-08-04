@@ -15,7 +15,7 @@ export default function FooterHeader() {
 
   return (
     <>
-      <header className="w-full lg:max-w-[1200px] mx-auto p-[12px] md:px-[18px] md:py-[24px]  flex justify-between">
+      <section className="w-full lg:max-w-[1200px] mx-auto p-[12px] md:px-[18px] md:py-[24px]  flex justify-between">
         <h2>
           <Image
             src={logoWhite}
@@ -37,7 +37,7 @@ export default function FooterHeader() {
             height={24}
           />
         </button>
-      </header>
+      </section>
     </>
   );
 }
