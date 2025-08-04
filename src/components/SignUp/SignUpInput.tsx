@@ -196,6 +196,10 @@ export default function SignUpInput({
             : "비밀번호가 다릅니다."}
         </p>
       )}
+
+      {title === "비밀번호" && password && password.length<4 &&(
+        <p className="font-bold text-poten-error-color">비밀번호는 4자 이상 입력해주세요.</p>
+      )}
     </div>
   );
 }

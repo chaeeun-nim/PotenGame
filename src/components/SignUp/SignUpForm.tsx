@@ -29,7 +29,7 @@ export default function SignUpForm() {
     { id: 0, label: "만 14세 이상입니다.", checked: false, required: true },
     { id: 1, label: "포텐게임 이용약관에 동의", checked: false, required: true },
     { id: 2, label: "개인정보 수집 및 이용에 동의.", checked: false, required: true },
-    { id: 3, label: "마케팅 정보 수신 및 선택적 개인정보 제공", checked: false, required: true },
+    { id: 3, label: "마케팅 정보 수신 및 선택적 개인정보 제공", checked: false, required: false },
   ]);
 
   const inputs = [
@@ -130,6 +130,7 @@ export default function SignUpForm() {
             title={boxes.label}
             isChecked={boxes.checked}
             onToggle={() => handleSingleCheck(boxes.id)}
+            required={boxes.required}
           />
         ))}
       </div>
