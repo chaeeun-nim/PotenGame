@@ -110,8 +110,13 @@ export default function PayAddress() {
         {order.address.value ? (
           <p className="text-4 font-medium">{order.address.value}</p>
         ) : (
-          <p>배송지를 등록해주세요.</p>
+          <p className="font-bold text-poten-red text-[18px]">배송지를 등록해주세요.</p>
         )}
+        {order.address.value ? (
+          <p className="text-4 font-medium text-poten-gray-2">
+            ({order.address.addressNumber})
+          </p>
+        ) : null}
 
         {/* -----< 배송메모 >----- */}
         <div className="relative">
