@@ -23,7 +23,6 @@ export default function RemoveCartBtn({ ItemId }: { ItemId: number }) {
       if (res.ok) {
         setCart(res.item);
         setCost(res.cost);
-        console.log('제거완료');
       }
     }
   }

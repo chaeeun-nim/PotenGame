@@ -25,8 +25,6 @@ export default function BestCard({
       ? 'bg-poten-nintendo'
       : 'bg-poten-psblue';
 
-  console.log(firstItem?.mainImages[0].path);
-
   return (
     <>
       <div className="grid grid-cols-12 gap-4 md:p-[8px]">
