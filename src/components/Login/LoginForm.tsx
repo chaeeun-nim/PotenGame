@@ -16,6 +16,8 @@ import useUserStore from '@/zustand/userStore';
 import { getCart } from '@/data/functions/getCart';
 import useCartStore from '@/zustand/cartStore';
 import { Iaddress } from '@/types/products';
+import { getLike } from '@/data/functions/getLike';
+import useLikeStore from '@/zustand/likeStore';
 
 export default function LoginForm() {
   const [isSubmit, setIsSubmit] = useState(false);
@@ -28,6 +30,7 @@ export default function LoginForm() {
 
   const setUser = useUserStore((state) => state.setUser);
   const { setCart, setCost } = useCartStore();
+  const { setLike } = useLikeStore();
 
   // setUser는 상태를 변경하는 함수이므로 useEffect에서 호출해야 한다.
   useEffect(() => {
@@ -63,6 +66,12 @@ export default function LoginForm() {
           setCost(res.cost);
         }
       })();
+      (async () => {
+        const res = await getLike(userState.item.token.accessToken);
+        if (res.ok) {
+          setLike(res.item);
+        }
+      })();
     } else {
       if (!userState?.errors && userState?.message) {
         // 입력값 검증에러가 아닌 경우
@@ -87,9 +96,7 @@ export default function LoginForm() {
 
         <div className="flex justify-between mt-3 mb-10">
           <div>
-            <Link href="/find/findId" className="mr-5">
-              아이디 찾기
-            </Link>
+            <Link href="/find/findId" className="mr-2 md:mr-5">아이디 찾기</Link>
             <Link href="/find/findPw">비밀번호 찾기</Link>
           </div>
 

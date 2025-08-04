@@ -23,16 +23,19 @@ import HeaderInput from '@/components/Header/HeaderInput';
 import useUserStore from '@/zustand/userStore';
 import useCartStore from '@/zustand/cartStore';
 import useOrderSotre from '@/zustand/orderStore';
+import useLikeStore from '@/zustand/likeStore';
 
 export function Header() {
   const { user, resetUser } = useUserStore();
   const { resetCartStore } = useCartStore();
   const { resetStore } = useOrderSotre();
+  const { resetLikeStore } = useLikeStore();
 
   const handleLogout = () => {
     location.reload();
     resetUser();
     resetCartStore();
+    resetLikeStore();
     resetStore();
   };
 

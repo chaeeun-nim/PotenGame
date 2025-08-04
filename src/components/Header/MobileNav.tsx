@@ -15,6 +15,7 @@ import nintendoSwitch2 from '@/assets/img/switch02.webp';
 import ps4 from '@/assets/img/01-ps4.webp';
 import ps5 from '@/assets/img/01-ps5.webp';
 import PotenLogo from '../../../public/logo/logo1.svg';
+import useLikeStore from '@/zustand/likeStore';
 
 export default function MobileNav({
   animation,
@@ -28,12 +29,14 @@ export default function MobileNav({
   const { user, resetUser } = useUserStore();
   const { resetCartStore } = useCartStore();
   const { resetStore } = useOrderSotre();
+  const { resetLikeStore } = useLikeStore();
 
   const handleLogout = () => {
-    location.reload();
     resetUser();
     resetCartStore();
     resetStore();
+    resetLikeStore();
+    location.reload();
   };
 
   return (

@@ -9,9 +9,10 @@ interface SignUpCheckboxType{
   title: string;
   isChecked: boolean;
   onToggle: (id: number) => void;
+  required: boolean;
 }
 
-export default function SignUpCheckbox({id, title, isChecked, onToggle}: SignUpCheckboxType){
+export default function SignUpCheckbox({id, title, isChecked, onToggle, required}: SignUpCheckboxType){
 
   return(
      <div>
@@ -27,7 +28,11 @@ export default function SignUpCheckbox({id, title, isChecked, onToggle}: SignUpC
         className="inline-block w-4 h-4 cursor-pointer mx-1">
         <Image src={isChecked ? checked : unchecked} alt="로그인 상태 유지" />
       </label>
-      <span>[필수]{title}</span>
+      <span>
+        { required === true? "[필수]" : "[선택]"}
+        
+        {title}
+      </span>
     </div>
   );
 }

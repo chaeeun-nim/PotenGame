@@ -13,8 +13,8 @@ export async function emailCheck(email: string):Promise<EmailCheckResponse>{
       cache: 'no-cache',
     });
 
-    
     return await res.json();
+    
     } catch (error) {
       // 네트워크 오류 처리
       console.error(error);

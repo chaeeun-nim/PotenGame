@@ -33,8 +33,7 @@ export default function LoginInput({type, value, isSubmit}: LoginInputType){
           <span className={`absolute left-2 text-poten-gray-2 ${ password? 'top-0' : 'group-focus-within:top-[-2]'} group-focus-within:top-[-2]`} >{value}</span>
           <input name='password' value={password} onChange={ e => setPassword(e.target.value) } type='password' className=" w-full h-full pl-2 focus:bg-poten-inputgray focus:outline-none" required/>
         </div>
-        {/* { isSubmit && type === 'password' && !passwordRegex.test(password) && <span className="text-poten-red">비밀번호를 올바르게 입력해주세요</span>} */}
-        { type === 'password' && password.length > 0 && password.length < 8 && <span className="text-poten-red">비밀번호 8자리 이상을 입력해주세요</span>}
+        { type === 'password' && password.length > 0 && password.length < 4 && <span className="text-poten-red">비밀번호 4자리 이상을 입력해주세요</span>}
       </>
     }
     </>
