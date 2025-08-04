@@ -13,10 +13,10 @@ export default function LoginPage(){
     <div className="bg-poten-snowgray1 flex flex-col items-center"> 
 
     {/* 로고 */}
-    <Image className="hidden xl:inline-block w-50 h-20 mt-20 mb-10" src={logo1} alt="메인 로고"/> 
+    <Image className="hidden xl:inline-block w-50 h-20 mt-20" src={logo1} alt="메인 로고"/> 
 
     {/* 흰색 박스 */}
-    <div className="bg-white p-10 flex flex-col items-center w-150 mb-30">
+    <div className="bg-white w-full p-6 flex flex-col items-center md:w-150 md:p-10 mb-30 mt-10">
 
       <h1 className="font-bold mt-10 text-2xl"> 로그인 </h1>
       <p className="mb-10">포텐게임에 오신것을 환영합니다.</p>

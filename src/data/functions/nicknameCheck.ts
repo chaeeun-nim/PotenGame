@@ -1,9 +1,9 @@
-import { NameCheckResponse } from "@/types/DupCheck";
+import { NicknameCheckResponse } from "@/types/DupCheck";
 
 export const API_URL = process.env.NEXT_PUBLIC_API_URL;
 const CLIENT_ID = process.env.NEXT_PUBLIC_CLIENT_ID || '';
 
-export async function NameCheck(name: string):Promise<NameCheckResponse>{
+export async function NicknameCheck(name: string):Promise<NicknameCheckResponse>{
   try {
     const res = await fetch(`${API_URL}/users/name?name=${name}`, {
       method: 'GET',
@@ -13,8 +13,8 @@ export async function NameCheck(name: string):Promise<NameCheckResponse>{
       cache: 'no-cache',
     });
 
-    
     return await res.json();
+    
     } catch (error) {
       // 네트워크 오류 처리
       console.error(error);
