@@ -152,7 +152,8 @@ export default function SelectBar({ variant = 'default', categories }: SelectBar
 
             <Image src={rightIcon} alt="" className="mr-2" />
 
-            <select
+            {/* 개발 일정으로 기능구현 일시 중지 */}
+            {/* <select
               name="product-filter"
               id="filter-option-select"
               value={sortBy}
@@ -163,7 +164,7 @@ export default function SelectBar({ variant = 'default', categories }: SelectBar
                   {option.label}
                 </option>
               ))}
-            </select>
+            </select> */}
           </div>
 
           <hr className="mt-3 mb-0 xl:mt-5 border-poten-gray-1" />

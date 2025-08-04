@@ -20,10 +20,12 @@ export default function ItemDetailImage({ productId, category }: ItemDetailImage
   // 상품 상세 이미지 URL 생성 (productId 활용)
   const getDetailImageUrl = () => {
     if (productId) {
-      return `https://fesp-api.koyeb.app/market/files/febc13-final14-emjf/pro-${productId}-detail.webp`;
+      // return `https://fesp-api.koyeb.app/market/files/febc13-final14-emjf/pro-${productId}-detail.webp`;
+      return '';
     }
     // 기본 이미지 (fallback)
-    return "https://fesp-api.koyeb.app/market/files/febc13-final14-emjf/pro-27-detail.webp";
+    // return "https://fesp-api.koyeb.app/market/files/febc13-final14-emjf/pro-27-detail.webp";
+    return '';
   };
 
   return (
@@ -52,13 +54,13 @@ export default function ItemDetailImage({ productId, category }: ItemDetailImage
             height={800}
             className="w-full h-auto object-contain"
             priority={false}
-            placeholder="blur"
-            blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
+            // placeholder="blur"
+            // blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
             onError={(e) => {
               // 이미지 로드 실패 시 기본 이미지로 변경
               const target = e.target as HTMLImageElement;
-              target.src =
-                'https://fesp-api.koyeb.app/market/files/febc13-final14-emjf/pro-27-detail.webp';
+              target.src = '';
+                // 'https://fesp-api.koyeb.app/market/files/febc13-final14-emjf/pro-27-detail.webp';
             }}
           />
         </div>

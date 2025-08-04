@@ -21,7 +21,7 @@ function ProductListSkeleton() {
     <>
       {Array.from({ length: 12 }).map((_, index) => (
         <li key={index} className="animate-pulse w-full">
-          <div className="w-full min-h-[200px] md:min-h-[240px] xl:min-w-[300px] xl:min-h-[280px] flex flex-col rounded-[4px] md:rounded-[8px] overflow-hidden bg-white">
+          <div className="w-full min-h-[238px] md:min-h-[310px] xl:min-w-[300px] xl:min-h-[350px] flex flex-col rounded-[4px] md:rounded-[8px] overflow-hidden bg-white">
             <div className="bg-gray-200 h-[101px] md:h-[142px] xl:h-[182px] w-full"></div>
             <div className="p-3 flex-1 flex flex-col min-h-[99px] md:min-h-[98px] xl:min-h-[98px]">
               <div className="bg-gray-200 h-4 rounded mb-2 w-full"></div>
@@ -283,64 +283,62 @@ export default function CategoryProductList({ category }: CategoryProductListPro
   const totalProductsCount = allProducts.length;
 
   return (
-    <section className="flex flex-col pt-10 pb-20">
-      <div className="mx-4 xl:w-[1200px] xl:mx-auto">
-        <MainPromotion />
+    <>
+      <MainPromotion />
 
-        <div className="mt-9">
-          {/* SelectBar에 동적 카테고리 전달 */}
-          <SelectBar categories={createDynamicCategories(category)} />
-        </div>
-
-        {/* 상품 목록 그리드 */}
-        <div className="w-full">
-          {loading && displayedProducts.length === 0 ? (
-            <ul className="w-full grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-3 md:gap-4 xl:gap-6">
-              <ProductListSkeleton />
-            </ul>
-          ) : error ? (
-            <ErrorState error={error} onRetry={fetchInitialProducts} />
-          ) : displayedProducts.length === 0 ? (
-            <EmptyState />
-          ) : (
-            <>
-              <ul className="w-full grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-3 md:gap-4 xl:gap-6">
-                {displayedProducts.map((product) => (
-                  <ItemCard key={product._id} productData={product} />
-                ))}
-              </ul>
-
-              {/* 더보기 버튼 */}
-              {hasMore && (
-                <div className="flex justify-center mt-8">
-                  <button
-                    onClick={handleLoadMore}
-                    disabled={loadingMore}
-                    className="px-8 py-3 bg-poten-red text-white rounded-md hover:bg-red-700 disabled:bg-gray-400 transition-colors">
-                    {loadingMore ? '로딩 중...' : '더보기'}
-                  </button>
-                </div>
-              )}
-
-              {/* 페이지네이션 (옵션) */}
-              {totalPages > 1 && (
-                <div className="mt-8">
-                  <Pagination
-                    onLoadMore={handleLoadMore}
-                    loading={loadingMore}
-                    hasMore={hasMore}
-                  />
-                </div>
-              )}
-
-              {/* 상품 수 표시 */}
-              <div className="mt-4 text-center text-sm text-gray-600">
-                전체 {totalProductsCount}개 상품 중 {displayedProducts.length}개 표시
-              </div>
-            </>
-          )}
-        </div>
+      <div className="mx-4 xl:max-w-[1280px] xl:mx-auto my-8">
+        {/* SelectBar에 동적 카테고리 전달 */}
+        <SelectBar categories={createDynamicCategories(category)} />
       </div>
-    </section>
+      <section className="flex flex-col pt-10 pb-20">
+        <div className="mx-4 xl:w-[1200px] xl:mx-auto">
+          {/* 상품 목록 그리드 */}
+          <div className="w-full">
+            {loading && displayedProducts.length === 0 ? (
+              <ul className="w-full grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-3 md:gap-4 xl:gap-6">
+                <ProductListSkeleton />
+              </ul>
+            ) : error ? (
+              <ErrorState error={error} onRetry={fetchInitialProducts} />
+            ) : displayedProducts.length === 0 ? (
+              <EmptyState />
+            ) : (
+              <>
+                <ul className="w-full grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-3 md:gap-4 xl:gap-6">
+                  {displayedProducts.map((product) => (
+                    <ItemCard key={product._id} productData={product} />
+                  ))}
+                </ul>
+                {/* 더보기 버튼 */}
+                {hasMore && (
+                  <div className="flex justify-center mt-8">
+                    <button
+                      onClick={handleLoadMore}
+                      disabled={loadingMore}
+                      className="px-8 py-3 bg-poten-red text-white rounded-md hover:bg-red-700 disabled:bg-gray-400 transition-colors">
+                      {loadingMore ? '로딩 중...' : '더보기'}
+                    </button>
+                  </div>
+                )}
+                {/* 페이지네이션 (옵션) */}
+                {totalPages > 1 && (
+                  <div className="mt-8">
+                    <Pagination
+                      onLoadMore={handleLoadMore}
+                      loading={loadingMore}
+                      hasMore={hasMore}
+                    />
+                  </div>
+                )}
+                {/* 상품 수 표시 */}
+                <div className="mt-4 text-center text-sm text-gray-600">
+                  전체 {totalProductsCount}개 상품 중 {displayedProducts.length}개 표시
+                </div>
+              </>
+            )}
+          </div>
+        </div>
+      </section>
+    </>
   );
 }
