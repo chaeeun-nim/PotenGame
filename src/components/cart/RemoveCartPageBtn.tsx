@@ -10,7 +10,7 @@ export default function RemoveCartPageBtn({
 }) {
   return (
     <>
-      <button onClick={deleteHandle} type="button">
+      <button onClick={deleteHandle} type="button" className="cursor-pointer">
         <Image src={closeIcon} width={20} height={20} alt="삭제버튼" />
       </button>
     </>

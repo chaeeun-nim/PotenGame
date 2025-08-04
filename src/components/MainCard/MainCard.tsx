@@ -84,7 +84,7 @@ export default function MainCard({ item }: { item: Iproduct }) {
           </div>
           <Image
             className="mx-auto p-2 md:p-4 w-[100px] md:w-[150px]"
-            src={`https://fesp-api.koyeb.app/market/${item.mainImages[0].path}`}
+            src={item.mainImages[0].path}
             alt={item.mainImages[0].name}
             width={100}
             height={100}></Image>

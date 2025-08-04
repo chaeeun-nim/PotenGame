@@ -9,7 +9,7 @@ export default function FooterContents() {
           className="px-6 py-6 text-poten-gray-1 lg:max-w-[1200px]
         lg:mx-auto grid grid-cols-2 md:grid-cols-4 lg:grid-cols-12 grid-rows-5 md:grid-rows-3 gap-y-[32px]">
           <div className="lg:col-span-2">
-            <h3 className="text-lg mb-4 font-bold">닌텐도 NDS</h3>
+            <h3 className="text-lg mb-4 font-bold">닌텐도 DS</h3>
             <ul className="text-poten-gray-2 flex gap-1 flex-col">
               <li>
                 <Link href="/">중고 게임</Link>
@@ -26,7 +26,7 @@ export default function FooterContents() {
             </ul>
           </div>
           <div className="lg:col-span-2">
-            <h3 className="text-lg mb-4 font-bold">닌텐도 Switch</h3>
+            <h3 className="text-lg mb-4 font-bold">닌텐도 스위치</h3>
             <ul className="text-poten-gray-2 flex gap-1 flex-col">
               <li>
                 <Link href="/">중고 게임</Link>
@@ -43,7 +43,7 @@ export default function FooterContents() {
             </ul>
           </div>
           <div className="lg:col-span-2">
-            <h3 className="text-lg mb-4 font-bold">닌텐도 Switch 2</h3>
+            <h3 className="text-lg mb-4 font-bold">닌텐도 스위치 2</h3>
             <ul className="text-poten-gray-2 flex gap-1 flex-col">
               <li>
                 <Link href="/">중고 게임</Link>
@@ -60,7 +60,7 @@ export default function FooterContents() {
             </ul>
           </div>
           <div className="lg:col-span-2">
-            <h3 className="text-lg mb-4 font-bold">PlayStation 4</h3>
+            <h3 className="text-lg mb-4 font-bold">플레이스테이션 4</h3>
             <ul className="text-poten-gray-2 flex gap-1 flex-col">
               <li>
                 <Link href="/">중고 게임</Link>
@@ -77,7 +77,7 @@ export default function FooterContents() {
             </ul>
           </div>
           <div className="lg:col-span-2">
-            <h3 className="text-lg mb-4 font-bold">PlayStation 5</h3>
+            <h3 className="text-lg mb-4 font-bold">플레이스테이션 5</h3>
             <ul className="text-poten-gray-2 flex gap-1 flex-col">
               <li>
                 <Link href="/">중고 게임</Link>
@@ -114,13 +114,13 @@ export default function FooterContents() {
             <h3 className="text-lg mb-4 font-bold">포텐게임</h3>
             <ul className="text-poten-gray-2 flex gap-1 flex-col">
               <li>
-                <Link href="/">메인화면</Link>
-              </li>
-              <li>
-                <Link href="/">타임 세일</Link>
-              </li>
-              <li>
                 <Link href="/">회사소개</Link>
+              </li>
+              <li>
+                <Link href="/">공지사항</Link>
+              </li>
+              <li>
+                <Link href="/">자유게시판</Link>
               </li>
             </ul>
           </div>

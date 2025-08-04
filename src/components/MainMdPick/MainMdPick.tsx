@@ -20,9 +20,7 @@ export default function MainMdPick() {
         <h2 className="text-poten-black font-extrabold text-[26px] md:text-[36px] mt-[4px] mb-[30px]">
           MD’s PICK 베스트 게임
         </h2>
-        <div className="grid gap-y-5 md:grid-cols-2 md:gap-4 xl:gap-6  auto-rows-auto">
-          {ItemList}
-        </div>
+        <div className="grid gap-4 grid-cols-1 md:grid-cols-2">{ItemList}</div>
       </section>
     </>
   );
