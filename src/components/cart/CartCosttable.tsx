@@ -24,12 +24,15 @@ export default function CartCosttable() {
           <div className="flex justify-between px-[16px] text-poten-black">
             <p>배송비</p>
             <p className="font-bold text-[18px]">
-              {cost?.shippingFees?.toLocaleString() ?? 0}
+              {(
+                (cost?.shippingFees ?? 0) - (cost.discount.shippingFees ?? 0)
+              ).toLocaleString()}
+              원
             </p>
           </div>
           <div className="flex justify-between px-[16px] text-poten-black">
             <p>할인금액</p>
-            <p className="font-bold text-[18px]">
+            <p className="font-bold text-[18px] text-poten-red">
               -
               {(
                 (cost?.discount?.shippingFees ?? 0) + (cost?.discount?.products ?? 0)

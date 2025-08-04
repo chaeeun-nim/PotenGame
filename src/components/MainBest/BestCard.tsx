@@ -25,6 +25,8 @@ export default function BestCard({
       ? 'bg-poten-nintendo'
       : 'bg-poten-psblue';
 
+  console.log(firstItem?.mainImages[0].path);
+
   return (
     <>
       <div className="grid grid-cols-12 gap-4 md:p-[8px]">
@@ -44,7 +46,7 @@ export default function BestCard({
           </div>
           <Image
             className={`w-[300px] mx-auto md:w-[400px] xl:w-[450px] ${opacity} transition-all ease-in-out duration-500`}
-            src={`https://fesp-api.koyeb.app/market/${firstItem?.mainImages[0].path}`}
+            src={firstItem?.mainImages[0].path}
             alt="대표이미지"
             width={600}
             height={600}></Image>
@@ -61,7 +63,7 @@ export default function BestCard({
                 </p>
                 <Image
                   className={`w-[180px] mx-auto xl:w-[220px] ${opacity} transition-all ease-in-out duration-500`}
-                  src={`https://fesp-api.koyeb.app/market/${item?.mainImages[0].path}`}
+                  src={item?.mainImages[0].path}
                   alt="대표이미지"
                   width={300}
                   height={300}></Image>

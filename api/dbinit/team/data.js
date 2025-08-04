@@ -17,7 +17,7 @@ export const initData = async (clientId, nextSeq) => {
         address: '서울시 강남구 역삼동 123',
         type: 'admin',
         loginType: 'email',
-        image: `files/${clientId}/user-muzi.png`,
+        image: `uploadFiles/user-muzi.png`,
         createdAt: getTime(-100, -60 * 60 * 3),
         updatedAt: getTime(-100, -60 * 60 * 3),
         extra: {
@@ -48,7 +48,7 @@ export const initData = async (clientId, nextSeq) => {
         address: '서울시 강남구 삼성동 456',
         type: 'seller',
         loginType: 'email',
-        image: `files/${clientId}/user-neo.png`,
+        image: `uploadFiles/user-neo.png`,
         createdAt: getTime(-50),
         updatedAt: getTime(-30, -60 * 60 * 3),
         extra: {
@@ -79,7 +79,7 @@ export const initData = async (clientId, nextSeq) => {
         address: '서울시 강남구 도곡동 789',
         type: 'user',
         loginType: 'email',
-        image: `files/${clientId}/user-apeach.png`,
+        image: `uploadFiles/user-apeach.png`,
         createdAt: getTime(-40, -60 * 30),
         updatedAt: getTime(-30, -60 * 20),
         extra: {
@@ -111,7 +111,7 @@ export const initData = async (clientId, nextSeq) => {
         address: '서울시 강남구 논현동 222',
         type: 'user',
         loginType: 'email',
-        image: `files/${clientId}/user-jayg.webp`,
+        image: `uploadFiles/user-jayg.webp`,
         createdAt: getTime(-20, -60 * 30),
         updatedAt: getTime(-10, -60 * 60 * 12),
         extra: {
@@ -159,7 +159,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-01-thumbnail.webp`,
+            path: `uploadFiles/pro-01-thumbnail.webp`,
             name: 'pro-01-thumbnail.jpg',
             originalname: '포켓몬스터 소울실버.webp',
           },
@@ -167,7 +167,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-01-detail.webp`,
+            path: `uploadFiles/pro-01-detail.webp`,
             name: 'pro-01-detail.webp',
             originalname: '포켓몬스터 소울실버.webp',
           },
@@ -224,7 +224,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-02-thumbnail.webp`,
+            path: `uploadFiles/pro-02-thumbnail.webp`,
             name: 'pro-02-thumbnail.jpg',
             originalname: '뉴 슈퍼 마리오브라더스.webp',
           },
@@ -232,7 +232,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-02-detail.webp`,
+            path: `uploadFiles/pro-02-detail.webp`,
             name: 'pro-02-detail.webp',
             originalname: '뉴 슈퍼 마리오브라더스.webp',
           },
@@ -289,7 +289,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-03-thumbnail.webp`,
+            path: `uploadFiles/pro-03-thumbnail.webp`,
             name: 'pro-03-thumbnail.jpg',
             originalname: '마리오&루이지 RPG 시간의파트너.webp',
           },
@@ -297,7 +297,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-03-detail.webp`,
+            path: `uploadFiles/pro-03-detail.webp`,
             name: 'pro-03-detail.webp',
             originalname: '마리오&루이지 RPG 시간의파트너.webp',
           },
@@ -354,7 +354,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-04-thumbnail.webp`,
+            path: `uploadFiles/pro-04-thumbnail.webp`,
             name: 'pro-04-thumbnail.jpg',
             originalname: '포켓몬스터 블랙 2.webp',
           },
@@ -362,7 +362,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-04-detail.webp`,
+            path: `uploadFiles/pro-04-detail.webp`,
             name: 'pro-04-detail.webp',
             originalname: '포켓몬스터 블랙 2.webp',
           },
@@ -419,7 +419,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-05-thumbnail.webp`,
+            path: `uploadFiles/pro-05-thumbnail.webp`,
             name: 'pro-05-thumbnail.jpg',
             originalname: '포켓몬스터 화이트.webp',
           },
@@ -427,7 +427,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-05-detail.webp`,
+            path: `uploadFiles/pro-05-detail.webp`,
             name: 'pro-05-detail.webp',
             originalname: '포켓몬스터 화이트.webp',
           },
@@ -484,7 +484,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-06-thumbnail.webp`,
+            path: `uploadFiles/pro-06-thumbnail.webp`,
             name: 'pro-06-thumbnail.jpg',
             originalname: '소닉 러시 어드밴처.webp',
           },
@@ -492,7 +492,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-06-detail.webp`,
+            path: `uploadFiles/pro-06-detail.webp`,
             name: 'pro-06-detail.webp',
             originalname: '소닉 러시 어드밴처.webp',
           },
@@ -549,7 +549,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-07-thumbnail.webp`,
+            path: `uploadFiles/pro-07-thumbnail.webp`,
             name: 'pro-07-thumbnail.jpg',
             originalname: '리듬세상.webp',
           },
@@ -557,7 +557,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-07-detail.webp`,
+            path: `uploadFiles/pro-07-detail.webp`,
             name: 'pro-07-detail.webp',
             originalname: '리듬세상.webp',
           },
@@ -614,7 +614,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-08-thumbnail.webp`,
+            path: `uploadFiles/pro-08-thumbnail.webp`,
             name: 'pro-08-thumbnail.jpg',
             originalname: '마리오와 소닉 베이징 올림픽.webp',
           },
@@ -622,7 +622,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-08-detail.webp`,
+            path: `uploadFiles/pro-08-detail.webp`,
             name: 'pro-08-detail.webp',
             originalname: '마리오와 소닉 베이징 올림픽.webp',
           },
@@ -679,7 +679,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-09-thumbnail.webp`,
+            path: `uploadFiles/pro-09-thumbnail.webp`,
             name: 'pro-09-thumbnail.jpg',
             originalname: '밴쿠버 2010 동계올림픽.webp',
           },
@@ -687,7 +687,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-09-detail.webp`,
+            path: `uploadFiles/pro-09-detail.webp`,
             name: 'pro-09-detail.webp',
             originalname: '밴쿠버 2010 동계올림픽.webp',
           },
@@ -744,7 +744,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-10-thumbnail.webp`,
+            path: `uploadFiles/pro-10-thumbnail.webp`,
             name: 'pro-10-thumbnail.jpg',
             originalname: '포켓몬스터Pt 기라티나.webp',
           },
@@ -752,7 +752,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-10-detail.webp`,
+            path: `uploadFiles/pro-10-detail.webp`,
             name: 'pro-10-detail.webp',
             originalname: '포켓몬스터Pt 기라티나.webp',
           },
@@ -809,7 +809,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-11-thumbnail.webp`,
+            path: `uploadFiles/pro-11-thumbnail.webp`,
             name: 'pro-11-thumbnail.jpg',
             originalname: '놀러오세요 동물의 숲.webp',
           },
@@ -817,7 +817,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-11-detail.webp`,
+            path: `uploadFiles/pro-11-detail.webp`,
             name: 'pro-11-detail.webp',
             originalname: '놀러오세요 동물의 숲.webp',
           },
@@ -874,7 +874,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-12-thumbnail.webp`,
+            path: `uploadFiles/pro-12-thumbnail.webp`,
             name: 'pro-12-thumbnail.jpg',
             originalname: '포켓몬스터DP 디아루가.webp',
           },
@@ -882,7 +882,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-12-detail.webp`,
+            path: `uploadFiles/pro-12-detail.webp`,
             name: 'pro-12-detail.webp',
             originalname: '포켓몬스터DP 디아루가.webp',
           },
@@ -939,7 +939,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-13-thumbnail.webp`,
+            path: `uploadFiles/pro-13-thumbnail.webp`,
             name: 'pro-13-thumbnail.jpg',
             originalname: '닌텐도 DSi.webp',
           },
@@ -947,7 +947,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-13-detail.webp`,
+            path: `uploadFiles/pro-13-detail.webp`,
             name: 'pro-13-detail.webp',
             originalname: '닌텐도 DSi.webp',
           },
@@ -1004,7 +1004,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-14-thumbnail.webp`,
+            path: `uploadFiles/pro-14-thumbnail.webp`,
             name: 'pro-14-thumbnail.jpg',
             originalname: '닌텐도 DSi.webp',
           },
@@ -1012,7 +1012,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-14-detail.webp`,
+            path: `uploadFiles/pro-14-detail.webp`,
             name: 'pro-14-detail.webp',
             originalname: '닌텐도 DSi.webp',
           },
@@ -1069,7 +1069,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-15-thumbnail.webp`,
+            path: `uploadFiles/pro-15-thumbnail.webp`,
             name: 'pro-15-thumbnail.jpg',
             originalname: '스낵월드 트레져러스.webp',
           },
@@ -1077,7 +1077,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-15-detail.webp`,
+            path: `uploadFiles/pro-15-detail.webp`,
             name: 'pro-15-detail.webp',
             originalname: '스낵월드 트레져러스.webp',
           },
@@ -1134,7 +1134,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-16-thumbnail.webp`,
+            path: `uploadFiles/pro-16-thumbnail.webp`,
             name: 'pro-16-thumbnail.jpg',
             originalname: '피트니스 복싱.webp',
           },
@@ -1142,7 +1142,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-16-detail.webp`,
+            path: `uploadFiles/pro-16-detail.webp`,
             name: 'pro-16-detail.webp',
             originalname: '피트니스 복싱.webp',
           },
@@ -1199,7 +1199,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-17-thumbnail.webp`,
+            path: `uploadFiles/pro-17-thumbnail.webp`,
             name: 'pro-17-thumbnail.jpg',
             originalname: '칼리굴라 오버도즈.webp',
           },
@@ -1207,7 +1207,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-17-detail.webp`,
+            path: `uploadFiles/pro-17-detail.webp`,
             name: 'pro-17-detail.webp',
             originalname: '칼리굴라 오버도즈.webp',
           },
@@ -1264,7 +1264,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-18-thumbnail.webp`,
+            path: `uploadFiles/pro-18-thumbnail.webp`,
             name: 'pro-18-thumbnail.jpg',
             originalname: '열혈경파 쿠니오군 외전 리버시티 걸즈.webp',
           },
@@ -1272,7 +1272,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-18-detail.webp`,
+            path: `uploadFiles/pro-18-detail.webp`,
             name: 'pro-18-detail.webp',
             originalname: '열혈경파 쿠니오군 외전 리버시티 걸즈.webp',
           },
@@ -1329,7 +1329,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-19-thumbnail.webp`,
+            path: `uploadFiles/pro-19-thumbnail.webp`,
             name: 'pro-19-thumbnail.jpg',
             originalname: '건볼트 스트라이커팩.webp',
           },
@@ -1337,7 +1337,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-19-detail.webp`,
+            path: `uploadFiles/pro-19-detail.webp`,
             name: 'pro-19-detail.webp',
             originalname: '건볼트 스트라이커팩.webp',
           },
@@ -1394,7 +1394,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-20-thumbnail.webp`,
+            path: `uploadFiles/pro-20-thumbnail.webp`,
             name: 'pro-20-thumbnail.jpg',
             originalname: '사이쿄 컬렉션 Vol.1.webp',
           },
@@ -1402,7 +1402,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-20-detail.webp`,
+            path: `uploadFiles/pro-20-detail.webp`,
             name: 'pro-20-detail.webp',
             originalname: '사이쿄 컬렉션 Vol.1.webp',
           },
@@ -1459,7 +1459,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-21-thumbnail.webp`,
+            path: `uploadFiles/pro-21-thumbnail.webp`,
             name: 'pro-21-thumbnail.jpg',
             originalname: '건볼트 크로니클 루미너스 어벤저 iX.webp',
           },
@@ -1467,7 +1467,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-21-detail.webp`,
+            path: `uploadFiles/pro-21-detail.webp`,
             name: 'pro-21-detail.webp',
             originalname: '건볼트 크로니클 루미너스 어벤저 iX.webp',
           },
@@ -1524,7 +1524,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-22-thumbnail.webp`,
+            path: `uploadFiles/pro-22-thumbnail.webp`,
             name: 'pro-22-thumbnail.jpg',
             originalname: '피파20.webp',
           },
@@ -1532,7 +1532,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-22-detail.webp`,
+            path: `uploadFiles/pro-22-detail.webp`,
             name: 'pro-22-detail.webp',
             originalname: '피파20.webp',
           },
@@ -1589,7 +1589,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-23-thumbnail.webp`,
+            path: `uploadFiles/pro-23-thumbnail.webp`,
             name: 'pro-23-thumbnail.jpg',
             originalname: '베리드 스타즈.webp',
           },
@@ -1597,7 +1597,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-23-detail.webp`,
+            path: `uploadFiles/pro-23-detail.webp`,
             name: 'pro-23-detail.webp',
             originalname: '베리드 스타즈.webp',
           },
@@ -1654,7 +1654,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-24-thumbnail.webp`,
+            path: `uploadFiles/pro-24-thumbnail.webp`,
             name: 'pro-24-thumbnail.jpg',
             originalname: '마리오 골프 슈퍼 러시.webp',
           },
@@ -1662,7 +1662,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-24-detail.webp`,
+            path: `uploadFiles/pro-24-detail.webp`,
             name: 'pro-24-detail.webp',
             originalname: '마리오 골프 슈퍼 러시.webp',
           },
@@ -1719,7 +1719,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-25-thumbnail.webp`,
+            path: `uploadFiles/pro-25-thumbnail.webp`,
             name: 'pro-25-thumbnail.jpg',
             originalname: '뿌이뿌이 모이카 모두 함께 모루카 파티.webp',
           },
@@ -1727,7 +1727,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-25-detail.webp`,
+            path: `uploadFiles/pro-25-detail.webp`,
             name: 'pro-25-detail.webp',
             originalname: '뿌이뿌이 모이카 모두 함께 모루카 파티.webp',
           },
@@ -1784,7 +1784,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-26-thumbnail.webp`,
+            path: `uploadFiles/pro-26-thumbnail.webp`,
             name: 'pro-26-thumbnail.jpg',
             originalname: '네모바지 스폰지밥.webp',
           },
@@ -1792,7 +1792,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-26-detail.webp`,
+            path: `uploadFiles/pro-26-detail.webp`,
             name: 'pro-26-detail.webp',
             originalname: '네모바지 스폰지밥.webp',
           },
@@ -1849,7 +1849,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-27-thumbnail.webp`,
+            path: `uploadFiles/pro-27-thumbnail.webp`,
             name: 'pro-27-thumbnail.jpg',
             originalname: '젤다의 전설 브레스 오브 더 와일드.webp',
           },
@@ -1857,7 +1857,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-27-detail.webp`,
+            path: `uploadFiles/pro-27-detail.webp`,
             name: 'pro-27-detail.webp',
             originalname: '젤다의 전설 브레스 오브 더 와일드.webp',
           },
@@ -1914,7 +1914,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-28-thumbnail.webp`,
+            path: `uploadFiles/pro-28-thumbnail.webp`,
             name: 'pro-28-thumbnail.jpg',
             originalname: '마리오카트 8 디럭스.webp',
           },
@@ -1922,7 +1922,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-28-detail.webp`,
+            path: `uploadFiles/pro-28-detail.webp`,
             name: 'pro-28-detail.webp',
             originalname: '마리오카트 8 디럭스.webp',
           },
@@ -1979,7 +1979,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-29-thumbnail.webp`,
+            path: `uploadFiles/pro-29-thumbnail.webp`,
             name: 'pro-29-thumbnail.jpg',
             originalname: '닌텐도 스위치 본체 그레이.webp',
           },
@@ -1987,7 +1987,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-29-detail.webp`,
+            path: `uploadFiles/pro-29-detail.webp`,
             name: 'pro-29-detail.webp',
             originalname: '닌텐도 스위치 본체 그레이.webp',
           },
@@ -2044,7 +2044,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-30-thumbnail.webp`,
+            path: `uploadFiles/pro-30-thumbnail.webp`,
             name: 'pro-30-thumbnail.jpg',
             originalname: '닌텐도 스위치 본체 네온.webp',
           },
@@ -2052,7 +2052,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-30-detail.webp`,
+            path: `uploadFiles/pro-30-detail.webp`,
             name: 'pro-30-detail.webp',
             originalname: '닌텐도 스위치 본체 네온.webp',
           },
@@ -2109,7 +2109,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-31-thumbnail.webp`,
+            path: `uploadFiles/pro-31-thumbnail.webp`,
             name: 'pro-31-thumbnail.jpg',
             originalname: '스위치 본체 모여봐요 동물의 숲 에디션.webp',
           },
@@ -2117,7 +2117,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-31-detail.webp`,
+            path: `uploadFiles/pro-31-detail.webp`,
             name: 'pro-31-detail.webp',
             originalname: '스위치 본체 모여봐요 동물의 숲 에디션.webp',
           },
@@ -2174,7 +2174,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-32-thumbnail.webp`,
+            path: `uploadFiles/pro-32-thumbnail.webp`,
             name: 'pro-32-thumbnail.jpg',
             originalname: 'NBA 2K18.webp',
           },
@@ -2182,7 +2182,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-32-detail.webp`,
+            path: `uploadFiles/pro-32-detail.webp`,
             name: 'pro-32-detail.webp',
             originalname: 'NBA 2K18.webp',
           },
@@ -2239,7 +2239,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-33-thumbnail.webp`,
+            path: `uploadFiles/pro-33-thumbnail.webp`,
             name: 'pro-33-thumbnail.jpg',
             originalname: '엘더스크롤5 스카이림.webp',
           },
@@ -2247,7 +2247,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-33-detail.webp`,
+            path: `uploadFiles/pro-33-detail.webp`,
             name: 'pro-33-detail.webp',
             originalname: '엘더스크롤5 스카이림.webp',
           },
@@ -2304,7 +2304,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-34-thumbnail.webp`,
+            path: `uploadFiles/pro-34-thumbnail.webp`,
             name: 'pro-34-thumbnail.jpg',
             originalname: '리디&수르의 아틀리에.webp',
           },
@@ -2312,7 +2312,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-34-detail.webp`,
+            path: `uploadFiles/pro-34-detail.webp`,
             name: 'pro-34-detail.webp',
             originalname: '리디&수르의 아틀리에.webp',
           },
@@ -2369,7 +2369,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-35-thumbnail.webp`,
+            path: `uploadFiles/pro-35-thumbnail.webp`,
             name: 'pro-35-thumbnail.jpg',
             originalname: '블레이블루 크로스 태그 배틀.webp',
           },
@@ -2377,7 +2377,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-35-detail.webp`,
+            path: `uploadFiles/pro-35-detail.webp`,
             name: 'pro-35-detail.webp',
             originalname: '블레이블루 크로스 태그 배틀.webp',
           },
@@ -2434,7 +2434,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-36-thumbnail.webp`,
+            path: `uploadFiles/pro-36-thumbnail.webp`,
             name: 'pro-36-thumbnail.jpg',
             originalname: '월드 오브 파이널 판타지 맥시마.webp',
           },
@@ -2442,7 +2442,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-36-detail.webp`,
+            path: `uploadFiles/pro-36-detail.webp`,
             name: 'pro-36-detail.webp',
             originalname: '월드 오브 파이널 판타지 맥시마.webp',
           },
@@ -2499,7 +2499,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-37-thumbnail.webp`,
+            path: `uploadFiles/pro-37-thumbnail.webp`,
             name: 'pro-37-thumbnail.jpg',
             originalname: '테니스 월드 투어.webp',
           },
@@ -2507,7 +2507,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-37-detail.webp`,
+            path: `uploadFiles/pro-37-detail.webp`,
             name: 'pro-37-detail.webp',
             originalname: '테니스 월드 투어.webp',
           },
@@ -2564,7 +2564,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-38-thumbnail.webp`,
+            path: `uploadFiles/pro-38-thumbnail.webp`,
             name: 'pro-38-thumbnail.jpg',
             originalname: '멋진 이 세계 Final Remix.webp',
           },
@@ -2572,7 +2572,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-38-detail.webp`,
+            path: `uploadFiles/pro-38-detail.webp`,
             name: 'pro-38-detail.webp',
             originalname: '멋진 이 세계 Final Remix.webp',
           },
@@ -2629,7 +2629,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-39-thumbnail.webp`,
+            path: `uploadFiles/pro-39-thumbnail.webp`,
             name: 'pro-39-thumbnail.jpg',
             originalname: '테트리스 99.webp',
           },
@@ -2637,7 +2637,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-39-detail.webp`,
+            path: `uploadFiles/pro-39-detail.webp`,
             name: 'pro-39-detail.webp',
             originalname: '테트리스 99.webp',
           },
@@ -2694,7 +2694,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-40-thumbnail.webp`,
+            path: `uploadFiles/pro-40-thumbnail.webp`,
             name: 'pro-40-thumbnail.jpg',
             originalname: '포켓몬스터 소드.webp',
           },
@@ -2702,7 +2702,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-40-detail.webp`,
+            path: `uploadFiles/pro-40-detail.webp`,
             name: 'pro-40-detail.webp',
             originalname: '포켓몬스터 소드.webp',
           },
@@ -2759,7 +2759,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-41-thumbnail.webp`,
+            path: `uploadFiles/pro-41-thumbnail.webp`,
             name: 'pro-41-thumbnail.jpg',
             originalname: '포켓몬스터 실드.webp',
           },
@@ -2767,7 +2767,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-41-detail.webp`,
+            path: `uploadFiles/pro-41-detail.webp`,
             name: 'pro-41-detail.webp',
             originalname: '포켓몬스터 실드.webp',
           },
@@ -2824,7 +2824,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-42-thumbnail.webp`,
+            path: `uploadFiles/pro-42-thumbnail.webp`,
             name: 'pro-42-thumbnail.jpg',
             originalname: '마리오와 소닉 2020도쿄올림픽.webp',
           },
@@ -2832,7 +2832,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-42-detail.webp`,
+            path: `uploadFiles/pro-42-detail.webp`,
             name: 'pro-42-detail.webp',
             originalname: '마리오와 소닉 2020도쿄올림픽.webp',
           },
@@ -2889,7 +2889,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-42-thumbnail.webp`,
+            path: `uploadFiles/pro-42-thumbnail.webp`,
             name: 'pro-42-thumbnail.jpg',
             originalname: '제물과 눈의 세츠나.webp',
           },
@@ -2897,7 +2897,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-42-detail.webp`,
+            path: `uploadFiles/pro-42-detail.webp`,
             name: 'pro-42-detail.webp',
             originalname: '제물과 눈의 세츠나.webp',
           },
@@ -2954,7 +2954,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-44-thumbnail.webp`,
+            path: `uploadFiles/pro-44-thumbnail.webp`,
             name: 'pro-44-thumbnail.jpg',
             originalname: '닌텐도 스위치 마리오 레드블루 한정판 세트.webp',
           },
@@ -2962,7 +2962,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-44-detail.webp`,
+            path: `uploadFiles/pro-44-detail.webp`,
             name: 'pro-44-detail.webp',
             originalname: '닌텐도 스위치 마리오 레드블루 한정판 세트.webp',
           },
@@ -3019,7 +3019,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-45-thumbnail.webp`,
+            path: `uploadFiles/pro-45-thumbnail.webp`,
             name: 'pro-45-thumbnail.jpg',
             originalname: '닌텐도 스위치 OLED.webp',
           },
@@ -3027,7 +3027,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-45-detail.webp`,
+            path: `uploadFiles/pro-45-detail.webp`,
             name: 'pro-45-detail.webp',
             originalname: '닌텐도 스위치 OLED.webp',
           },
@@ -3084,7 +3084,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-46-thumbnail.webp`,
+            path: `uploadFiles/pro-46-thumbnail.webp`,
             name: 'pro-46-thumbnail.jpg',
             originalname: '닌텐도 스위치 라이트.webp',
           },
@@ -3092,7 +3092,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-46-detail.webp`,
+            path: `uploadFiles/pro-46-detail.webp`,
             name: 'pro-46-detail.webp',
             originalname: '닌텐도 스위치 라이트.webp',
           },
@@ -3150,7 +3150,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-47-thumbnail.webp`,
+            path: `uploadFiles/pro-47-thumbnail.webp`,
             name: 'pro-47-thumbnail.jpg',
             originalname: '마리오파티 잼버리 TV.webp',
           },
@@ -3158,7 +3158,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-47-detail.webp`,
+            path: `uploadFiles/pro-47-detail.webp`,
             name: 'pro-47-detail.webp',
             originalname: '마리오파티 잼버리 TV.webp',
           },
@@ -3215,7 +3215,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-48-thumbnail.webp`,
+            path: `uploadFiles/pro-48-thumbnail.webp`,
             name: 'pro-48-thumbnail.jpg',
             originalname: '동키콩 바난자.webp',
           },
@@ -3223,7 +3223,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-48-detail.webp`,
+            path: `uploadFiles/pro-48-detail.webp`,
             name: 'pro-48-detail.webp',
             originalname: '동키콩 바난자.webp',
           },
@@ -3280,7 +3280,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-49-thumbnail.webp`,
+            path: `uploadFiles/pro-49-thumbnail.webp`,
             name: 'pro-49-thumbnail.jpg',
             originalname: '다마고치 원더 샵.webp',
           },
@@ -3288,7 +3288,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-49-detail.webp`,
+            path: `uploadFiles/pro-49-detail.webp`,
             name: 'pro-49-detail.webp',
             originalname: '다마고치 원더 샵.webp',
           },
@@ -3345,7 +3345,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-50-thumbnail.webp`,
+            path: `uploadFiles/pro-50-thumbnail.webp`,
             name: 'pro-50-thumbnail.jpg',
             originalname: '스트리트 파이터 6 Years 1-2 파이터즈 에디션.webp',
           },
@@ -3353,7 +3353,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-50-detail.webp`,
+            path: `uploadFiles/pro-50-detail.webp`,
             name: 'pro-50-detail.webp',
             originalname: '스트리트 파이터 6 Years 1-2 파이터즈 에디션.webp',
           },
@@ -3410,7 +3410,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-51-thumbnail.webp`,
+            path: `uploadFiles/pro-51-thumbnail.webp`,
             name: 'pro-51-thumbnail.jpg',
             originalname: '스플릿 픽션.webp',
           },
@@ -3418,7 +3418,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-51-detail.webp`,
+            path: `uploadFiles/pro-51-detail.webp`,
             name: 'pro-51-detail.webp',
             originalname: '스플릿 픽션.webp',
           },
@@ -3475,7 +3475,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-52-thumbnail.webp`,
+            path: `uploadFiles/pro-52-thumbnail.webp`,
             name: 'pro-52-thumbnail.jpg',
             originalname: '호그와트 레거시.webp',
           },
@@ -3483,7 +3483,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-52-detail.webp`,
+            path: `uploadFiles/pro-52-detail.webp`,
             name: 'pro-52-detail.webp',
             originalname: '호그와트 레거시.webp',
           },
@@ -3540,7 +3540,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-53-thumbnail.webp`,
+            path: `uploadFiles/pro-53-thumbnail.webp`,
             name: 'pro-53-thumbnail.jpg',
             originalname: '젤다의전설 왕국의 눈물.webp',
           },
@@ -3548,7 +3548,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-53-detail.webp`,
+            path: `uploadFiles/pro-53-detail.webp`,
             name: 'pro-53-detail.webp',
             originalname: '젤다의전설 왕국의 눈물.webp',
           },
@@ -3605,7 +3605,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-54-thumbnail.webp`,
+            path: `uploadFiles/pro-54-thumbnail.webp`,
             name: 'pro-54-thumbnail.jpg',
             originalname: '젤다의 전설 야생의 숨결.webp',
           },
@@ -3613,7 +3613,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-54-detail.webp`,
+            path: `uploadFiles/pro-54-detail.webp`,
             name: 'pro-54-detail.webp',
             originalname: '젤다의 전설 야생의 숨결.webp',
           },
@@ -3670,7 +3670,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-55-thumbnail.webp`,
+            path: `uploadFiles/pro-55-thumbnail.webp`,
             name: 'pro-55-thumbnail.jpg',
             originalname: '마리오 카트 월드.webp',
           },
@@ -3678,7 +3678,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-55-detail.webp`,
+            path: `uploadFiles/pro-55-detail.webp`,
             name: 'pro-55-detail.webp',
             originalname: '마리오 카트 월드.webp',
           },
@@ -3735,7 +3735,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-56-thumbnail.webp`,
+            path: `uploadFiles/pro-56-thumbnail.webp`,
             name: 'pro-56-thumbnail.jpg',
             originalname: '뿌요뿌요 테트리스 2S.webp',
           },
@@ -3743,7 +3743,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-56-detail.webp`,
+            path: `uploadFiles/pro-56-detail.webp`,
             name: 'pro-56-detail.webp',
             originalname: '뿌요뿌요 테트리스 2S.webp',
           },
@@ -3800,7 +3800,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-57-thumbnail.webp`,
+            path: `uploadFiles/pro-57-thumbnail.webp`,
             name: 'pro-57-thumbnail.jpg',
             originalname: '소닉 섀도우 제너레이션즈.webp',
           },
@@ -3808,7 +3808,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-57-detail.webp`,
+            path: `uploadFiles/pro-57-detail.webp`,
             name: 'pro-57-detail.webp',
             originalname: '소닉 섀도우 제너레이션즈.webp',
           },
@@ -3865,7 +3865,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-57-thumbnail.webp`,
+            path: `uploadFiles/pro-58-thumbnail.webp`,
             name: 'pro-57-thumbnail.jpg',
             originalname: '사이버펑크2077 얼티밋 에디션.webp',
           },
@@ -3873,7 +3873,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-57-detail.webp`,
+            path: `uploadFiles/pro-57-detail.webp`,
             name: 'pro-57-detail.webp',
             originalname: '사이버펑크2077 얼티밋 에디션.webp',
           },
@@ -3930,7 +3930,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-59-thumbnail.webp`,
+            path: `uploadFiles/pro-59-thumbnail.webp`,
             name: 'pro-59-thumbnail.jpg',
             originalname: 'SWITCH2 닌텐도 스위치 2 본체.webp',
           },
@@ -3938,7 +3938,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-59-detail.webp`,
+            path: `uploadFiles/pro-59-detail.webp`,
             name: 'pro-59-detail.webp',
             originalname: 'SWITCH2 닌텐도 스위치 2 본체.webp',
           },
@@ -3995,7 +3995,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-60-thumbnail.webp`,
+            path: `uploadFiles/pro-60-thumbnail.webp`,
             name: 'pro-60-thumbnail.jpg',
             originalname: 'SWITCH2 닌텐도 스위치 2 본체 마리오 카트 월드 세트.webp',
           },
@@ -4003,7 +4003,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-60-detail.webp`,
+            path: `uploadFiles/pro-60-detail.webp`,
             name: 'pro-60-detail.webp',
             originalname: 'SWITCH2 닌텐도 스위치 2 본체 마리오 카트 월드 세트.webp',
           },
@@ -4060,7 +4060,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-61-thumbnail.webp`,
+            path: `uploadFiles/pro-61-thumbnail.webp`,
             name: 'pro-61-thumbnail.jpg',
             originalname: '바이오 하자드 RE 2.webp',
           },
@@ -4068,7 +4068,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-61-detail.webp`,
+            path: `uploadFiles/pro-61-detail.webp`,
             name: 'pro-61-detail.webp',
             originalname: '바이오 하자드 RE 2.webp',
           },
@@ -4125,7 +4125,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-62-thumbnail.webp`,
+            path: `uploadFiles/pro-62-thumbnail.webp`,
             name: 'pro-62-thumbnail.jpg',
             originalname: '어쌔신크리드4 블랙플래그.webp',
           },
@@ -4133,7 +4133,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-62-detail.webp`,
+            path: `uploadFiles/pro-62-detail.webp`,
             name: 'pro-62-detail.webp',
             originalname: '어쌔신크리드4 블랙플래그.webp',
           },
@@ -4190,7 +4190,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-63-thumbnail.webp`,
+            path: `uploadFiles/pro-63-thumbnail.webp`,
             name: 'pro-63-thumbnail.jpg',
             originalname: '낵 (KNACK).webp',
           },
@@ -4198,7 +4198,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-63-detail.webp`,
+            path: `uploadFiles/pro-63-detail.webp`,
             name: 'pro-63-detail.webp',
             originalname: '낵 (KNACK).webp',
           },
@@ -4255,7 +4255,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-64-thumbnail.webp`,
+            path: `uploadFiles/pro-64-thumbnail.webp`,
             name: 'pro-64-thumbnail.jpg',
             originalname: '죠죠의 기묘한 모험 아이즈 오브 헤븐.webp',
           },
@@ -4263,7 +4263,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-64-detail.webp`,
+            path: `uploadFiles/pro-64-detail.webp`,
             name: 'pro-64-detail.webp',
             originalname: '죠죠의 기묘한 모험 아이즈 오브 헤븐.webp',
           },
@@ -4320,7 +4320,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-65-thumbnail.webp`,
+            path: `uploadFiles/pro-65-thumbnail.webp`,
             name: 'pro-65-thumbnail.jpg',
             originalname: '에일리언네이션 한글판.webp',
           },
@@ -4328,7 +4328,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-65-detail.webp`,
+            path: `uploadFiles/pro-65-detail.webp`,
             name: 'pro-65-detail.webp',
             originalname: '에일리언네이션 한글판.webp',
           },
@@ -4385,7 +4385,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-66-thumbnail.webp`,
+            path: `uploadFiles/pro-66-thumbnail.webp`,
             name: 'pro-66-thumbnail.jpg',
             originalname: '파크라이4 컴플리트에디션.webp',
           },
@@ -4393,7 +4393,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-66-detail.webp`,
+            path: `uploadFiles/pro-66-detail.webp`,
             name: 'pro-66-detail.webp',
             originalname: '파크라이4 컴플리트에디션.webp',
           },
@@ -4450,7 +4450,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-67-thumbnail.webp`,
+            path: `uploadFiles/pro-67-thumbnail.webp`,
             name: 'pro-67-thumbnail.jpg',
             originalname: '라이즈 오브 툼레이더 20주년 에디션.webp',
           },
@@ -4458,7 +4458,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-67-detail.webp`,
+            path: `uploadFiles/pro-67-detail.webp`,
             name: 'pro-67-detail.webp',
             originalname: '라이즈 오브 툼레이더 20주년 에디션.webp',
           },
@@ -4515,7 +4515,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-68-thumbnail.webp`,
+            path: `uploadFiles/pro-68-thumbnail.webp`,
             name: 'pro-68-thumbnail.jpg',
             originalname: '플레이스테이션 VR 월드.webp',
           },
@@ -4523,7 +4523,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-68-detail.webp`,
+            path: `uploadFiles/pro-68-detail.webp`,
             name: 'pro-68-detail.webp',
             originalname: '플레이스테이션 VR 월드.webp',
           },
@@ -4580,7 +4580,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-69-thumbnail.webp`,
+            path: `uploadFiles/pro-69-thumbnail.webp`,
             name: 'pro-69-thumbnail.jpg',
             originalname: '드라이브클럽 VR.webp',
           },
@@ -4588,7 +4588,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-69-detail.webp`,
+            path: `uploadFiles/pro-69-detail.webp`,
             name: 'pro-69-detail.webp',
             originalname: '드라이브클럽 VR.webp',
           },
@@ -4645,7 +4645,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-70-thumbnail.webp`,
+            path: `uploadFiles/pro-70-thumbnail.webp`,
             name: 'pro-70-thumbnail.jpg',
             originalname: '용과같이 제로 맹세의 장소.webp',
           },
@@ -4653,7 +4653,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-70-detail.webp`,
+            path: `uploadFiles/pro-70-detail.webp`,
             name: 'pro-70-detail.webp',
             originalname: '용과같이 제로 맹세의 장소.webp',
           },
@@ -4710,7 +4710,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-71-thumbnail.webp`,
+            path: `uploadFiles/pro-71-thumbnail.webp`,
             name: 'pro-71-thumbnail.jpg',
             originalname: '타이탄폴2.webp',
           },
@@ -4718,7 +4718,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-71-detail.webp`,
+            path: `uploadFiles/pro-71-detail.webp`,
             name: 'pro-71-detail.webp',
             originalname: '타이탄폴2.webp',
           },
@@ -4775,7 +4775,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-72-thumbnail.webp`,
+            path: `uploadFiles/pro-72-thumbnail.webp`,
             name: 'pro-72-thumbnail.jpg',
             originalname: '배트맨 아캄나이트 고티 GOTY 에디션.webp',
           },
@@ -4783,7 +4783,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-72-detail.webp`,
+            path: `uploadFiles/pro-72-detail.webp`,
             name: 'pro-72-detail.webp',
             originalname: '배트맨 아캄나이트 고티 GOTY 에디션.webp',
           },
@@ -4840,7 +4840,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-73-thumbnail.webp`,
+            path: `uploadFiles/pro-73-thumbnail.webp`,
             name: 'pro-73-thumbnail.jpg',
             originalname: '엑스컴2.webp',
           },
@@ -4848,7 +4848,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-73-detail.webp`,
+            path: `uploadFiles/pro-73-detail.webp`,
             name: 'pro-73-detail.webp',
             originalname: '엑스컴2.webp',
           },
@@ -4905,7 +4905,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-74-thumbnail.webp`,
+            path: `uploadFiles/pro-74-thumbnail.webp`,
             name: 'pro-74-thumbnail.jpg',
             originalname: '도쿄 재너두 eX+.webp',
           },
@@ -4913,7 +4913,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-74-detail.webp`,
+            path: `uploadFiles/pro-74-detail.webp`,
             name: 'pro-74-detail.webp',
             originalname: '도쿄 재너두 eX+.webp',
           },
@@ -4970,7 +4970,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-75-thumbnail.webp`,
+            path: `uploadFiles/pro-75-thumbnail.webp`,
             name: 'pro-75-thumbnail.jpg',
             originalname: '신형 본체 2218B (1TB).webp',
           },
@@ -4978,7 +4978,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-75-detail.webp`,
+            path: `uploadFiles/pro-75-detail.webp`,
             name: 'pro-75-detail.webp',
             originalname: '신형 본체 2218B (1TB).webp',
           },
@@ -5035,7 +5035,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-76-thumbnail.webp`,
+            path: `uploadFiles/pro-76-thumbnail.webp`,
             name: 'pro-76-thumbnail.jpg',
             originalname: 'PS4 PRO 킹덤하츠 3 리미티드 에디션 프로 본체 7218 (1TB).webp',
           },
@@ -5043,7 +5043,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-76-detail.webp`,
+            path: `uploadFiles/pro-76-detail.webp`,
             name: 'pro-76-detail.webp',
             originalname: 'PS4 PRO 킹덤하츠 3 리미티드 에디션 프로 본체 7218 (1TB).webp',
           },
@@ -5100,7 +5100,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-77-thumbnail.webp`,
+            path: `uploadFiles/pro-77-thumbnail.webp`,
             name: 'pro-77-thumbnail.jpg',
             originalname: '프로 본체 (1TB).webp',
           },
@@ -5108,7 +5108,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-77-detail.webp`,
+            path: `uploadFiles/pro-77-detail.webp`,
             name: 'pro-77-detail.webp',
             originalname: '프로 본체 (1TB).webp',
           },
@@ -5165,7 +5165,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-78-thumbnail.webp`,
+            path: `uploadFiles/pro-78-thumbnail.webp`,
             name: 'pro-78-thumbnail.jpg',
             originalname: '렘넌트 프롬 디 애쉬.webp',
           },
@@ -5173,7 +5173,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-78-detail.webp`,
+            path: `uploadFiles/pro-78-detail.webp`,
             name: 'pro-78-detail.webp',
             originalname: '렘넌트 프롬 디 애쉬.webp',
           },
@@ -5230,7 +5230,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-79-thumbnail.webp`,
+            path: `uploadFiles/pro-79-thumbnail.webp`,
             name: 'pro-79-thumbnail.jpg',
             originalname: '데드 바이 데이라이트.webp',
           },
@@ -5238,7 +5238,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-79-detail.webp`,
+            path: `uploadFiles/pro-79-detail.webp`,
             name: 'pro-79-detail.webp',
             originalname: '데드 바이 데이라이트.webp',
           },
@@ -5295,7 +5295,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-80-thumbnail.webp`,
+            path: `uploadFiles/pro-80-thumbnail.webp`,
             name: 'pro-80-thumbnail.jpg',
             originalname: '다운타운 열혈이야기 SP.webp',
           },
@@ -5303,7 +5303,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-80-detail.webp`,
+            path: `uploadFiles/pro-80-detail.webp`,
             name: 'pro-80-detail.webp',
             originalname: '다운타운 열혈이야기 SP.webp',
           },
@@ -5360,7 +5360,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-81-thumbnail.webp`,
+            path: `uploadFiles/pro-81-thumbnail.webp`,
             name: 'pro-81-thumbnail.jpg',
             originalname: '디비전2 워싱턴 DC 에디션.webp',
           },
@@ -5368,7 +5368,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-81-detail.webp`,
+            path: `uploadFiles/pro-81-detail.webp`,
             name: 'pro-81-detail.webp',
             originalname: '디비전2 워싱턴 DC 에디션.webp',
           },
@@ -5425,7 +5425,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-82-thumbnail.webp`,
+            path: `uploadFiles/pro-82-thumbnail.webp`,
             name: 'pro-82-thumbnail.jpg',
             originalname: '용과같이8 외전.webp',
           },
@@ -5433,7 +5433,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-82-detail.webp`,
+            path: `uploadFiles/pro-82-detail.webp`,
             name: 'pro-82-detail.webp',
             originalname: '용과같이8 외전.webp',
           },
@@ -5490,7 +5490,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-83-thumbnail.webp`,
+            path: `uploadFiles/pro-83-thumbnail.webp`,
             name: 'pro-83-thumbnail.jpg',
             originalname: '콜오브 듀티 블랙옵스6.webp',
           },
@@ -5498,7 +5498,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-83-detail.webp`,
+            path: `uploadFiles/pro-83-detail.webp`,
             name: 'pro-83-detail.webp',
             originalname: '콜오브 듀티 블랙옵스6.webp',
           },
@@ -5555,7 +5555,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-84-thumbnail.webp`,
+            path: `uploadFiles/pro-84-thumbnail.webp`,
             name: 'pro-84-thumbnail.jpg',
             originalname: '이스 셀세타의 수해 Kai.webp',
           },
@@ -5563,7 +5563,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-84-detail.webp`,
+            path: `uploadFiles/pro-84-detail.webp`,
             name: 'pro-84-detail.webp',
             originalname: '이스 셀세타의 수해 Kai.webp',
           },
@@ -5620,7 +5620,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-85-thumbnail.webp`,
+            path: `uploadFiles/pro-85-thumbnail.webp`,
             name: 'pro-85-thumbnail.jpg',
             originalname: '렉페스트.webp',
           },
@@ -5628,7 +5628,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-85-detail.webp`,
+            path: `uploadFiles/pro-85-detail.webp`,
             name: 'pro-85-detail.webp',
             originalname: '렉페스트.webp',
           },
@@ -5685,7 +5685,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-86-thumbnail.webp`,
+            path: `uploadFiles/pro-86-thumbnail.webp`,
             name: 'pro-86-thumbnail.jpg',
             originalname: '원피스 월드 시커 디럭스 에디션.webp',
           },
@@ -5693,7 +5693,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-86-detail.webp`,
+            path: `uploadFiles/pro-86-detail.webp`,
             name: 'pro-86-detail.webp',
             originalname: '원피스 월드 시커 디럭스 에디션.webp',
           },
@@ -5750,7 +5750,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-87-thumbnail.webp`,
+            path: `uploadFiles/pro-87-thumbnail.webp`,
             name: 'pro-87-thumbnail.jpg',
             originalname: '언더나이트 인버스2 시스타 셀레스.webp',
           },
@@ -5758,7 +5758,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-87-detail.webp`,
+            path: `uploadFiles/pro-87-detail.webp`,
             name: 'pro-87-detail.webp',
             originalname: '언더나이트 인버스2 시스타 셀레스.webp',
           },
@@ -5815,7 +5815,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-88-thumbnail.webp`,
+            path: `uploadFiles/pro-88-thumbnail.webp`,
             name: 'pro-88-thumbnail.jpg',
             originalname: '용과같이8.webp',
           },
@@ -5823,7 +5823,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-88-detail.webp`,
+            path: `uploadFiles/pro-88-detail.webp`,
             name: 'pro-88-detail.webp',
             originalname: '용과같이8.webp',
           },
@@ -5880,7 +5880,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-89-thumbnail.webp`,
+            path: `uploadFiles/pro-89-thumbnail.webp`,
             name: 'pro-89-thumbnail.jpg',
             originalname: '어쌔신크리드 미라지.webp',
           },
@@ -5888,7 +5888,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-89-detail.webp`,
+            path: `uploadFiles/pro-89-detail.webp`,
             name: 'pro-89-detail.webp',
             originalname: '어쌔신크리드 미라지.webp',
           },
@@ -5945,7 +5945,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-90-thumbnail.webp`,
+            path: `uploadFiles/pro-90-thumbnail.webp`,
             name: 'pro-90-thumbnail.jpg',
             originalname: '신형 본체 2117A (500GB) / 화이트.webp',
           },
@@ -5953,7 +5953,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-90-detail.webp`,
+            path: `uploadFiles/pro-90-detail.webp`,
             name: 'pro-90-detail.webp',
             originalname: '신형 본체 2117A (500GB) / 화이트.webp',
           },
@@ -6010,7 +6010,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-91-thumbnail.webp`,
+            path: `uploadFiles/pro-91-thumbnail.webp`,
             name: 'pro-91-thumbnail.jpg',
             originalname: '파이널판타지 16.webp',
           },
@@ -6018,7 +6018,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-91-detail.webp`,
+            path: `uploadFiles/pro-91-detail.webp`,
             name: 'pro-91-detail.webp',
             originalname: '파이널판타지 16.webp',
           },
@@ -6075,7 +6075,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-92-thumbnail.webp`,
+            path: `uploadFiles/pro-92-thumbnail.webp`,
             name: 'pro-92-thumbnail.jpg',
             originalname: '바이오하자드 RE4.webp',
           },
@@ -6083,7 +6083,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-92-detail.webp`,
+            path: `uploadFiles/pro-92-detail.webp`,
             name: 'pro-92-detail.webp',
             originalname: '바이오하자드 RE4.webp',
           },
@@ -6140,7 +6140,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-93-thumbnail.webp`,
+            path: `uploadFiles/pro-93-thumbnail.webp`,
             name: 'pro-93-thumbnail.jpg',
             originalname: '스타워즈 아웃로.webp',
           },
@@ -6148,7 +6148,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-93-detail.webp`,
+            path: `uploadFiles/pro-93-detail.webp`,
             name: 'pro-93-detail.webp',
             originalname: '스타워즈 아웃로.webp',
           },
@@ -6205,7 +6205,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-94-thumbnail.webp`,
+            path: `uploadFiles/pro-94-thumbnail.webp`,
             name: 'pro-94-thumbnail.jpg',
             originalname: '콜오브듀티 뱅가드.webp',
           },
@@ -6213,7 +6213,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-94-detail.webp`,
+            path: `uploadFiles/pro-94-detail.webp`,
             name: 'pro-94-detail.webp',
             originalname: '콜오브듀티 뱅가드.webp',
           },
@@ -6270,7 +6270,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-95-thumbnail.webp`,
+            path: `uploadFiles/pro-95-thumbnail.webp`,
             name: 'pro-95-thumbnail.jpg',
             originalname: 'MLB 더 쇼 22.webp',
           },
@@ -6278,7 +6278,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-95-detail.webp`,
+            path: `uploadFiles/pro-95-detail.webp`,
             name: 'pro-95-detail.webp',
             originalname: 'MLB 더 쇼 22.webp',
           },
@@ -6335,7 +6335,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-96-thumbnail.webp`,
+            path: `uploadFiles/pro-96-thumbnail.webp`,
             name: 'pro-96-thumbnail.jpg',
             originalname: '택틱스 오우거 리본.webp',
           },
@@ -6343,7 +6343,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-96-detail.webp`,
+            path: `uploadFiles/pro-96-detail.webp`,
             name: 'pro-96-detail.webp',
             originalname: '택틱스 오우거 리본.webp',
           },
@@ -6400,7 +6400,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-97-thumbnail.webp`,
+            path: `uploadFiles/pro-97-thumbnail.webp`,
             name: 'pro-97-thumbnail.jpg',
             originalname: '영웅전설 여의궤적2 크림슨.webp',
           },
@@ -6408,7 +6408,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-97-detail.webp`,
+            path: `uploadFiles/pro-97-detail.webp`,
             name: 'pro-97-detail.webp',
             originalname: '영웅전설 여의궤적2 크림슨.webp',
           },
@@ -6465,7 +6465,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-98-thumbnail.webp`,
+            path: `uploadFiles/pro-98-thumbnail.webp`,
             name: 'pro-98-thumbnail.jpg',
             originalname: '와일드 하츠.webp',
           },
@@ -6473,7 +6473,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-98-detail.webp`,
+            path: `uploadFiles/pro-98-detail.webp`,
             name: 'pro-98-detail.webp',
             originalname: '와일드 하츠.webp',
           },
@@ -6530,7 +6530,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-99-thumbnail.webp`,
+            path: `uploadFiles/pro-99-thumbnail.webp`,
             name: 'pro-99-thumbnail.jpg',
             originalname: '스타워즈 제다이 서바이버.webp',
           },
@@ -6538,7 +6538,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-99-detail.webp`,
+            path: `uploadFiles/pro-99-detail.webp`,
             name: 'pro-99-detail.webp',
             originalname: '스타워즈 제다이 서바이버.webp',
           },
@@ -6595,7 +6595,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-100-thumbnail.webp`,
+            path: `uploadFiles/pro-100-thumbnail.webp`,
             name: 'pro-100-thumbnail.jpg',
             originalname: '성탑신기 트리니티 트리거.webp',
           },
@@ -6603,7 +6603,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-100-detail.webp`,
+            path: `uploadFiles/pro-100-detail.webp`,
             name: 'pro-100-detail.webp',
             originalname: '성탑신기 트리니티 트리거.webp',
           },
@@ -6660,7 +6660,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-101-thumbnail.webp`,
+            path: `uploadFiles/pro-101-thumbnail.webp`,
             name: 'pro-101-thumbnail.jpg',
             originalname: 'NBA 2K24.webp',
           },
@@ -6668,7 +6668,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-101-detail.webp`,
+            path: `uploadFiles/pro-101-detail.webp`,
             name: 'pro-101-detail.webp',
             originalname: 'NBA 2K24.webp',
           },
@@ -6725,7 +6725,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-102-thumbnail.webp`,
+            path: `uploadFiles/pro-102-thumbnail.webp`,
             name: 'pro-102-thumbnail.jpg',
             originalname: '소닉 섀도우 제너레이션즈.webp',
           },
@@ -6733,7 +6733,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-102-detail.webp`,
+            path: `uploadFiles/pro-102-detail.webp`,
             name: 'pro-102-detail.webp',
             originalname: '소닉 섀도우 제너레이션즈.webp',
           },
@@ -6790,7 +6790,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-103-thumbnail.webp`,
+            path: `uploadFiles/pro-103-thumbnail.webp`,
             name: 'pro-103-thumbnail.jpg',
             originalname: '파이널판타지16.webp',
           },
@@ -6798,7 +6798,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-103-detail.webp`,
+            path: `uploadFiles/pro-103-detail.webp`,
             name: 'pro-103-detail.webp',
             originalname: '파이널판타지16.webp',
           },
@@ -6855,7 +6855,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-104-thumbnail.webp`,
+            path: `uploadFiles/pro-104-thumbnail.webp`,
             name: 'pro-104-thumbnail.jpg',
             originalname: 'PS5 프로 콘솔.webp',
           },
@@ -6863,7 +6863,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-104-detail.webp`,
+            path: `uploadFiles/pro-104-detail.webp`,
             name: 'pro-104-detail.webp',
             originalname: 'PS5 프로 콘솔.webp',
           },
@@ -6920,7 +6920,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-105-thumbnail.webp`,
+            path: `uploadFiles/pro-105-thumbnail.webp`,
             name: 'pro-105-thumbnail.jpg',
             originalname: 'PS5본체 1018A / 디스크.webp',
           },
@@ -6928,7 +6928,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-105-detail.webp`,
+            path: `uploadFiles/pro-105-detail.webp`,
             name: 'pro-105-detail.webp',
             originalname: 'PS5본체 1018A / 디스크.webp',
           },
@@ -6985,7 +6985,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-106-thumbnail.webp`,
+            path: `uploadFiles/pro-106-thumbnail.webp`,
             name: 'pro-106-thumbnail.jpg',
             originalname: '사가 프론티어2 리마스터.webp',
           },
@@ -6993,7 +6993,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-106-detail.webp`,
+            path: `uploadFiles/pro-106-detail.webp`,
             name: 'pro-106-detail.webp',
             originalname: '사가 프론티어2 리마스터.webp',
           },
@@ -7050,7 +7050,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-107-thumbnail.webp`,
+            path: `uploadFiles/pro-107-thumbnail.webp`,
             name: 'pro-107-thumbnail.jpg',
             originalname: '그림 가디언즈 서번트 오브 더 다크.webp',
           },
@@ -7058,7 +7058,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-107-detail.webp`,
+            path: `uploadFiles/pro-107-detail.webp`,
             name: 'pro-107-detail.webp',
             originalname: '그림 가디언즈 서번트 오브 더 다크.webp',
           },
@@ -7115,7 +7115,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-108-thumbnail.webp`,
+            path: `uploadFiles/pro-108-thumbnail.webp`,
             name: 'pro-108-thumbnail.jpg',
             originalname: '아랑전설 시티 오브 더 울브스 스페셜 에디션.webp',
           },
@@ -7123,7 +7123,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-108-detail.webp`,
+            path: `uploadFiles/pro-108-detail.webp`,
             name: 'pro-108-detail.webp',
             originalname: '아랑전설 시티 오브 더 울브스 스페셜 에디션.webp',
           },
@@ -7180,7 +7180,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-109-thumbnail.webp`,
+            path: `uploadFiles/pro-109-thumbnail.webp`,
             name: 'pro-109-thumbnail.jpg',
             originalname: '데빌위딘 삿갓.webp',
           },
@@ -7188,7 +7188,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-109-detail.webp`,
+            path: `uploadFiles/pro-109-detail.webp`,
             name: 'pro-109-detail.webp',
             originalname: '데빌위딘 삿갓.webp',
           },
@@ -7245,7 +7245,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-110-thumbnail.webp`,
+            path: `uploadFiles/pro-110-thumbnail.webp`,
             name: 'pro-110-thumbnail.jpg',
             originalname: '동방 스펠 카니발.webp',
           },
@@ -7253,7 +7253,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-110-detail.webp`,
+            path: `uploadFiles/pro-110-detail.webp`,
             name: 'pro-110-detail.webp',
             originalname: '동방 스펠 카니발.webp',
           },
@@ -7310,7 +7310,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-111-thumbnail.webp`,
+            path: `uploadFiles/pro-111-thumbnail.webp`,
             name: 'pro-111-thumbnail.jpg',
             originalname: 'MLB 25 더쇼.webp',
           },
@@ -7318,7 +7318,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-111-detail.webp`,
+            path: `uploadFiles/pro-111-detail.webp`,
             name: 'pro-111-detail.webp',
             originalname: 'MLB 25 더쇼.webp',
           },
@@ -7375,7 +7375,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-112-thumbnail.webp`,
+            path: `uploadFiles/pro-112-thumbnail.webp`,
             name: 'pro-112-thumbnail.jpg',
             originalname: '슈퍼 테크노스 월드 열혈 아케이드 클래식 컬렉션.webp',
           },
@@ -7383,7 +7383,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-112-detail.webp`,
+            path: `uploadFiles/pro-112-detail.webp`,
             name: 'pro-112-detail.webp',
             originalname: '슈퍼 테크노스 월드 열혈 아케이드 클래식 컬렉션.webp',
           },
@@ -7440,7 +7440,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-113-thumbnail.webp`,
+            path: `uploadFiles/pro-113-thumbnail.webp`,
             name: 'pro-113-thumbnail.jpg',
             originalname: '유미아의 아틀리에 추억의 연금술사와 창환의 땅.webp',
           },
@@ -7448,7 +7448,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-113-detail.webp`,
+            path: `uploadFiles/pro-113-detail.webp`,
             name: 'pro-113-detail.webp',
             originalname: '유미아의 아틀리에 추억의 연금술사와 창환의 땅.webp',
           },
@@ -7505,16 +7505,16 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-113-thumbnail.webp`,
-            name: 'pro-113-thumbnail.jpg',
+            path: `uploadFiles/pro-114-thumbnail.webp`,
+            name: 'pro-114-thumbnail.jpg',
             originalname: '블리치 리버스 오브 소울즈.webp',
           },
         ],
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-113-detail.webp`,
-            name: 'pro-113-detail.webp',
+            path: `uploadFiles/pro-114-detail.webp`,
+            name: 'pro-114-detail.webp',
             originalname: '블리치 리버스 오브 소울즈.webp',
           },
         ],
@@ -7570,7 +7570,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-115-thumbnail.webp`,
+            path: `uploadFiles/pro-115-thumbnail.webp`,
             name: 'pro-115-thumbnail.jpg',
             originalname: '묶이지 않은 자들을 위한 우주.webp',
           },
@@ -7578,7 +7578,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-115-detail.webp`,
+            path: `uploadFiles/pro-115-detail.webp`,
             name: 'pro-115-detail.webp',
             originalname: '묶이지 않은 자들을 위한 우주.webp',
           },
@@ -7635,7 +7635,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-116-thumbnail.webp`,
+            path: `uploadFiles/pro-116-thumbnail.webp`,
             name: 'pro-116-thumbnail.jpg',
             originalname: 'WWE 2K25.webp',
           },
@@ -7643,7 +7643,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-116-detail.webp`,
+            path: `uploadFiles/pro-116-detail.webp`,
             name: 'pro-116-detail.webp',
             originalname: 'WWE 2K25.webp',
           },
@@ -7700,7 +7700,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-117-thumbnail.webp`,
+            path: `uploadFiles/pro-117-thumbnail.webp`,
             name: 'pro-117-thumbnail.jpg',
             originalname: '어쌔신크리드 섀도우스 스페셜 에디션.webp',
           },
@@ -7708,7 +7708,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-117-detail.webp`,
+            path: `uploadFiles/pro-117-detail.webp`,
             name: 'pro-117-detail.webp',
             originalname: '어쌔신크리드 섀도우스 스페셜 에디션.webp',
           },
@@ -7765,7 +7765,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-118-thumbnail.webp`,
+            path: `uploadFiles/pro-118-thumbnail.webp`,
             name: 'pro-118-thumbnail.jpg',
             originalname: '신듀얼리티 에코 오브 에이다 디럭스 에디션.webp',
           },
@@ -7773,7 +7773,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-118-detail.webp`,
+            path: `uploadFiles/pro-118-detail.webp`,
             name: 'pro-118-detail.webp',
             originalname: '신듀얼리티 에코 오브 에이다 디럭스 에디션.webp',
           },
@@ -7830,7 +7830,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-119-thumbnail.webp`,
+            path: `uploadFiles/pro-119-thumbnail.webp`,
             name: 'pro-119-thumbnail.jpg',
             originalname: '아스트레아 식스 사이디드 오라클.webp',
           },
@@ -7838,7 +7838,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-119-detail.webp`,
+            path: `uploadFiles/pro-119-detail.webp`,
             name: 'pro-119-detail.webp',
             originalname: '아스트레아 식스 사이디드 오라클.webp',
           },
@@ -7895,7 +7895,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-120-thumbnail.webp`,
+            path: `uploadFiles/pro-120-thumbnail.webp`,
             name: 'pro-120-thumbnail.jpg',
             originalname: '프리덤 워즈 리마스터.webp',
           },
@@ -7903,7 +7903,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-120-detail.webp`,
+            path: `uploadFiles/pro-120-detail.webp`,
             name: 'pro-120-detail.webp',
             originalname: '프리덤 워즈 리마스터.webp',
           },
@@ -7960,7 +7960,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-121-thumbnail.webp`,
+            path: `uploadFiles/pro-121-thumbnail.webp`,
             name: 'pro-121-thumbnail.jpg',
             originalname: '시드마이어의 문명 7 VII 스탠다드에디션.webp',
           },
@@ -7968,7 +7968,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-121-detail.webp`,
+            path: `uploadFiles/pro-121-detail.webp`,
             name: 'pro-121-detail.webp',
             originalname: '시드마이어의 문명 7 VII 스탠다드에디션.webp',
           },
@@ -8025,7 +8025,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-122-thumbnail.webp`,
+            path: `uploadFiles/pro-122-thumbnail.webp`,
             name: 'pro-122-thumbnail.jpg',
             originalname: '울프팽 스컬팽 새턴 트리뷰트 부스티드.webp',
           },
@@ -8033,7 +8033,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-122-detail.webp`,
+            path: `uploadFiles/pro-122-detail.webp`,
             name: 'pro-122-detail.webp',
             originalname: '울프팽 스컬팽 새턴 트리뷰트 부스티드.webp',
           },
@@ -8090,7 +8090,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-123-thumbnail.webp`,
+            path: `uploadFiles/pro-123-thumbnail.webp`,
             name: 'pro-123-thumbnail.jpg',
             originalname: '네온 블러드.webp',
           },
@@ -8098,7 +8098,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-123-detail.webp`,
+            path: `uploadFiles/pro-123-detail.webp`,
             name: 'pro-123-detail.webp',
             originalname: '네온 블러드.webp',
           },
@@ -8155,7 +8155,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-124-thumbnail.webp`,
+            path: `uploadFiles/pro-124-thumbnail.webp`,
             name: 'pro-124-thumbnail.jpg',
             originalname: '투포인트 뮤지엄 익스플로러 에디션.webp',
           },
@@ -8163,7 +8163,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-124-detail.webp`,
+            path: `uploadFiles/pro-124-detail.webp`,
             name: 'pro-124-detail.webp',
             originalname: '투포인트 뮤지엄 익스플로러 에디션.webp',
           },
@@ -8220,7 +8220,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-125-thumbnail.webp`,
+            path: `uploadFiles/pro-125-thumbnail.webp`,
             name: 'pro-125-thumbnail.jpg',
             originalname: '언더 디피트.webp',
           },
@@ -8228,7 +8228,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-125-detail.webp`,
+            path: `uploadFiles/pro-125-detail.webp`,
             name: 'pro-125-detail.webp',
             originalname: '언더 디피트.webp',
           },
@@ -8285,7 +8285,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-126-thumbnail.webp`,
+            path: `uploadFiles/pro-126-thumbnail.webp`,
             name: 'pro-126-thumbnail.jpg',
             originalname: '몬스터헌터 와일즈.webp',
           },
@@ -8293,7 +8293,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-126-detail.webp`,
+            path: `uploadFiles/pro-126-detail.webp`,
             name: 'pro-126-detail.webp',
             originalname: '몬스터헌터 와일즈.webp',
           },
@@ -8350,7 +8350,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-127-thumbnail.webp`,
+            path: `uploadFiles/pro-127-thumbnail.webp`,
             name: 'pro-127-thumbnail.jpg',
             originalname: '돌연변이 닌자 거북이 슈레더의 복수 얼티밋 에디션.webp',
           },
@@ -8358,7 +8358,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-127-detail.webp`,
+            path: `uploadFiles/pro-127-detail.webp`,
             name: 'pro-127-detail.webp',
             originalname: '돌연변이 닌자 거북이 슈레더의 복수 얼티밋 에디션.webp',
           },
@@ -8415,7 +8415,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-128-thumbnail.webp`,
+            path: `uploadFiles/pro-128-thumbnail.webp`,
             name: 'pro-128-thumbnail.jpg',
             originalname: '바이오하자드 7 레지던트 이블 공드에디션.webp',
           },
@@ -8423,7 +8423,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-128-detail.webp`,
+            path: `uploadFiles/pro-128-detail.webp`,
             name: 'pro-128-detail.webp',
             originalname: '바이오하자드 7 레지던트 이블 공드에디션.webp',
           },
@@ -8480,7 +8480,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-129-thumbnail.webp`,
+            path: `uploadFiles/pro-129-thumbnail.webp`,
             name: 'pro-129-thumbnail.jpg',
             originalname: '퍼스트 버서커 카잔.webp',
           },
@@ -8488,7 +8488,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-129-detail.webp`,
+            path: `uploadFiles/pro-129-detail.webp`,
             name: 'pro-129-detail.webp',
             originalname: '퍼스트 버서커 카잔.webp',
           },
@@ -8545,7 +8545,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-130-thumbnail.webp`,
+            path: `uploadFiles/pro-130-thumbnail.webp`,
             name: 'pro-130-thumbnail.jpg',
             originalname: 'PS5 Slim 슬림 본체 에디션 CFI-2018A / 디스크버전.webp',
           },
@@ -8553,7 +8553,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-130-detail.webp`,
+            path: `uploadFiles/pro-130-detail.webp`,
             name: 'pro-130-detail.webp',
             originalname: 'PS5 Slim 슬림 본체 에디션 CFI-2018A / 디스크버전.webp',
           },
@@ -8610,7 +8610,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-131-thumbnail.webp`,
+            path: `uploadFiles/pro-131-thumbnail.webp`,
             name: 'pro-131-thumbnail.jpg',
             originalname: 'PS5 Slim 슬림 본체 에디션 CFI-2018B / 디지털 버전.webp',
           },
@@ -8618,7 +8618,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-131-detail.webp`,
+            path: `uploadFiles/pro-131-detail.webp`,
             name: 'pro-131-detail.webp',
             originalname: 'PS5 Slim 슬림 본체 에디션 CFI-2018B / 디지털 버전.webp',
           },
@@ -8675,7 +8675,7 @@ export const initData = async (clientId, nextSeq) => {
         // 메인이미지
         mainImages: [
           {
-            path: `files/${clientId}/pro-131-thumbnail.webp`,
+            path: `uploadFiles/pro-131-thumbnail.webp`,
             name: 'pro-131-thumbnail.jpg',
             originalname: 'PS5본체 CFI-1018A / 디스크버전.webp',
           },
@@ -8683,7 +8683,7 @@ export const initData = async (clientId, nextSeq) => {
         // 상세설명, 상세페이지(원래 쌤 코드는 div박스였으나 우리팀은 이미지로 대체함으로 메인이미지와 같은형식으로 차용)
         content: [
           {
-            path: `files/${clientId}/pro-131-detail.webp`,
+            path: `uploadFiles/pro-131-detail.webp`,
             name: 'pro-131-detail.webp',
             originalname: 'PS5본체 CFI-1018A / 디스크버전.webp',
           },
@@ -8734,7 +8734,7 @@ export const initData = async (clientId, nextSeq) => {
             state: 'OS020',
             name: '젤다의 전설 야생의 숨결',
             image: {
-              path: `files/${clientId}/pro-54-thumbnail.webp`,
+              path: `uploadFiles/pro-54-thumbnail.webp`,
               name: 'pro-54-thumbnail.jpg',
               originalname: '젤다의 전설 야생의 숨결.webp',
             },
@@ -8769,7 +8769,7 @@ export const initData = async (clientId, nextSeq) => {
             state: 'OS035',
             name: '젤다의 전설 야생의 숨결',
             image: {
-              path: `files/${clientId}/pro-54-thumbnail.webp`,
+              path: `uploadFiles/pro-54-thumbnail.webp`,
               name: 'pro-54-thumbnail.jpg',
               originalname: '젤다의 전설 야생의 숨결.webp',
             },
@@ -8804,7 +8804,7 @@ export const initData = async (clientId, nextSeq) => {
             state: 'OS040',
             name: 'NBA 2K24',
             image: {
-              path: `files/${clientId}/pro-101-thumbnail.webp`,
+              path: `uploadFiles/pro-101-thumbnail.webp`,
               name: 'pro-101-thumbnail.jpg',
               originalname: 'NBA 2K24.webp',
             },
@@ -8839,7 +8839,7 @@ export const initData = async (clientId, nextSeq) => {
             state: 'OS040',
             name: '다운타운 열혈이야기 SP',
             image: {
-              path: `files/${clientId}/pro-80-thumbnail.webp`,
+              path: `uploadFiles/pro-80-thumbnail.webp`,
               name: 'pro-80-thumbnail.jpg',
               originalname: '다운타운 열혈이야기 SP.webp',
             },
@@ -8874,7 +8874,7 @@ export const initData = async (clientId, nextSeq) => {
             state: 'OS040',
             name: 'SWITCH2 닌텐도 스위치 2 본체 마리오 카트 월드 세트',
             image: {
-              path: `files/${clientId}/pro-60-thumbnail.webp`,
+              path: `uploadFiles/pro-60-thumbnail.webp`,
               name: 'pro-60-thumbnail.webp',
               originalname: 'SWITCH2 닌텐도 스위치 2 본체 마리오 카트 월드 세트.webp',
             },
@@ -8952,7 +8952,7 @@ export const initData = async (clientId, nextSeq) => {
         user: {
           _id: 2,
           name: '네오',
-          image: `files/${clientId}/user-neo.png`,
+          image: `uploadFiles/user-neo.png`,
         },
         title: '회원 가입했어요.',
         content: '잘 부탁드려요.',
