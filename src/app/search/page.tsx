@@ -6,11 +6,24 @@ import NotFoundPage from '../not-found';
 import Image from 'next/image';
 import MainLoginModal from '@/components/MainLoginModal';
 
-export default async function SearchPage({
-  searchParams,
-}: {
+type Props = {
   searchParams: Promise<{ keyword?: string }>;
-}) {
+};
+
+export async function generateMetadata({ searchParams }: Props) {
+  const { keyword } = await searchParams;
+
+  return {
+    title: `${keyword} : 포텐게임 검색`,
+    description: `${keyword}에 대한 검색결과`,
+    openGraph: {
+      title: `${keyword} : 포텐게임 검색`,
+      description: `${keyword}에 대한 검색결과`,
+    },
+  };
+}
+
+export default async function SearchPage({ searchParams }: Props) {
   const { keyword } = await searchParams;
   if (!keyword) {
     return <NotFoundPage />;

@@ -6,7 +6,7 @@ import Image from 'next/image';
 import ArrowIcon from '@/assets/icons/down.svg';
 import AddressChoice from './AddressChoice';
 import { useRef, useState } from 'react';
-import Noaddress from './Noaddress';
+import NoNotice from './NoNotice';
 
 import AddNewAddress from './AddNewAddress';
 
@@ -36,17 +36,19 @@ export default function PayAddress() {
     document.body.style.overflow = 'hidden';
   };
 
-  const userAddressList = user?.extra?.address.map((item) => (
-    <AddressChoice
-      key={item.id}
-      addressName={item.name}
-      userName={user.name}
-      userphone={user.phone as string}
-      addressNumber={item.addressNumber}
-      addressValue={item.value}
-      ModalCloseHandle={ModalCloseHandle}
-    />
-  ));
+  const userAddressList = user
+    ? (user.extra?.address ?? []).map((item) => (
+        <AddressChoice
+          key={item.id}
+          addressName={item.name}
+          userName={user.name}
+          userphone={user.phone as string}
+          addressNumber={item.addressNumber}
+          addressValue={item.value}
+          ModalCloseHandle={ModalCloseHandle}
+        />
+      ))
+    : [];
 
   if (!order && !user) return null;
 
@@ -71,12 +73,12 @@ export default function PayAddress() {
           <h5 className="font-bold text-[18px] md:text-[20px] mb-[10px] md:mb-[16px]">
             기존배송지 선택
           </h5>
-          {user?.extra?.address.length && user?.extra?.address.length > 0 ? (
+          {userAddressList.length > 0 ? (
             <div className="overflow-y-scroll md:max-h-[200px] max-h-[150px]  shadow-inner bg-poten-snowgray2 p-2 md:p-4">
               {userAddressList}
             </div>
           ) : (
-            <Noaddress />
+            <NoNotice title="등록된 배송지가 없습니다." />
           )}
 
           <button
@@ -108,11 +110,10 @@ export default function PayAddress() {
         {order.address.value ? (
           <p className="text-4 font-medium">{order.address.value}</p>
         ) : (
-          <p>배송지를 등록해주세요.</p>
+          <p className="font-bold text-poten-red text-[18px]">배송지를 등록해주세요.</p>
         )}
-
-        {order.address.addressNumber ? (
-          <p className="text-[14px] font-medium text-poten-gray-2">
+        {order.address.value ? (
+          <p className="text-4 font-medium text-poten-gray-2">
             ({order.address.addressNumber})
           </p>
         ) : null}

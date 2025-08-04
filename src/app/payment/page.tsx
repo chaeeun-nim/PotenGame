@@ -3,8 +3,18 @@ import MainPromotion from '@/components/MainPromotion';
 import LinkNav from '@/components/Payment/LinkNav';
 import OrderSetup from '@/components/Payment/OrderSetup';
 import SectionHeader from '@/components/SectionHeader';
+import { Metadata } from 'next';
 import { cookies } from 'next/headers';
 import { redirect } from 'next/navigation';
+
+export const metadata: Metadata = {
+  title: '상품결제',
+  description: '포텐게임 상품결제 페이지',
+  openGraph: {
+    title: '상품결제',
+    description: '포텐게임 상품결제 페이지',
+  },
+};
 
 export default async function PaymentPage() {
   const cookiesStore = await cookies();

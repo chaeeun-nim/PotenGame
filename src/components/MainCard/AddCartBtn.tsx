@@ -45,6 +45,7 @@ export default function AddCartBtn({ ItemId }: { ItemId: number }) {
         />
         <button
           className="flex items-center w-[100px] md:w-[150px] xl:w-[200px] font-medium text-[16px] md:text-[18px] xl:text-[20px] text-poten-gray-2  flex-row place-content-center  h-[32px] xl:h-[36px] bg-white  rounded-sm gap-1 border-1 border-poten-gray-1"
+          disabled={isLoading}
           type="submit">
           {/* 버튼 상태변화 딜레이가 있어, 데이터 통신상태를 시각적으로 표현 */}
           {isLoading ? (
