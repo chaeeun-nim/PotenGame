@@ -67,7 +67,11 @@ function EmptyState() {
   );
 }
 
-export default function ProductList() {
+interface CategoryProductListProps {
+  category: string;
+}
+
+export default function CategoryProductList({ category }: CategoryProductListProps) {
   const {
     products,
     loading,
@@ -81,6 +85,8 @@ export default function ProductList() {
     setError,
     setTotalPages,
     setCurrentPage,
+    setFilters,
+    resetFilters,
   } = useListStore();
 
   // 로컬 상태 관리
@@ -89,6 +95,19 @@ export default function ProductList() {
   const [hasMore, setHasMore] = useState(true);
   const [allProducts, setAllProducts] = useState<Iproduct[]>([]);
   const [currentDisplayCount, setCurrentDisplayCount] = useState(ITEMS_PER_PAGE);
+
+  // 카테고리 코드에 따른 플랫폼 값 반환
+  const getCategoryValue = (categoryCode: string): string => {
+    const categoryMap: { [key: string]: string } = {
+      NINTENDONDS: '닌텐도 NDS',
+      NINTENDO01: '닌텐도 스위치 1',
+      NINTENDO02: '닌텐도 스위치 2',
+      PLAYSTATION04: '플레이스테이션 4',
+      PLAYSTATION05: '플레이스테이션 5',
+    };
+
+    return categoryMap[categoryCode] || '전체 상품';
+  };
 
   // 초기 상품 목록 조회 함수
   const fetchInitialProducts = async () => {
@@ -101,6 +120,7 @@ export default function ProductList() {
       const searchParams: ProductSearchParams = {
         page: 1,
         sort: sortBy as SortType, // 명시적 타입 캐스팅
+        platform: getCategoryValue(category), // 카테고리별 플랫폼 필터
         ...filters,
       };
 
@@ -108,15 +128,20 @@ export default function ProductList() {
 
       if (result.ok === 1) {
         const products = result.item || [];
-        setProducts(products);
-        setAllProducts(products);
+        // 카테고리별 필터링 (서버에서 지원하지 않는 경우를 위한 클라이언트 렌더링)
+        const filteredProducts = products.filter((product) =>
+          product.extra?.category?.includes(category),
+        );
+
+        setProducts(filteredProducts);
+        setAllProducts(filteredProducts);
 
         // 첫 20개 표시
-        setDisplayedProducts(products.slice(0, ITEMS_PER_PAGE));
+        setDisplayedProducts(filteredProducts.slice(0, ITEMS_PER_PAGE));
         setCurrentDisplayCount(ITEMS_PER_PAGE);
 
         // 더 보여줄 상품 있는지 확인
-        setHasMore(products.length > ITEMS_PER_PAGE);
+        setHasMore(filteredProducts.length > ITEMS_PER_PAGE);
 
         if (result.pagination) {
           setTotalPages(result.pagination.totalPages);
@@ -151,6 +176,7 @@ export default function ProductList() {
       const searchParams: ProductSearchParams = {
         page: nextPage,
         sort: sortBy as SortType,
+        platform: getCategoryValue(category),
         ...filters,
       };
 
@@ -158,7 +184,10 @@ export default function ProductList() {
 
       if (result.ok === 1 && result.item) {
         const newProducts = result.item;
-        const updatedAllProducts = [...allProducts, ...newProducts];
+        const filteredNewProducts = newProducts.filter((product) =>
+          product.extra?.category?.includes(category),
+        );
+        const updatedAllProducts = [...allProducts, ...filteredNewProducts];
 
         setAllProducts(updatedAllProducts);
         setProducts(updatedAllProducts);
@@ -200,6 +229,16 @@ export default function ProductList() {
       fetchMoreProducts();
     }
   };
+
+  // 컴포넌트 마운트 시 카테고리별 필터 설정 및 데이터 조회
+  useEffect(() => {
+    // 카테고리별 플랫폼 필터 설정
+    const platformValue = getCategoryValue(category);
+    resetFilters();
+    setFilters({ platform: platformValue });
+
+    fetchInitialProducts();
+  }, [category, resetFilters, setFilters]);
 
   // 필터, 정렬, 페이지 변경 시 데이터 새로 조회
   useEffect(() => {

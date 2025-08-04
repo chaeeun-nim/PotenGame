@@ -19,61 +19,93 @@ import ps5 from '@/assets/img/ps5.webp';
 import MobileGnb from './MobileGnb';
 
 export function Nav() {
+  const { user } = useUserStore();
+
   const topNavElems = [
-    { id: 0, title: '닌텐도 DS', link: '/', img: ds },
-    { id: 1, title: '닌텐도 스위치', link: '/', img: switch1 },
-    { id: 2, title: '닌텐도 스위치 2', link: '/', img: switch2 },
-    { id: 3, title: '플레이스테이션 4', link: '/', img: ps4 },
-    { id: 4, title: '플레이스테이션 5', link: '/', img: ps5 },
+    {
+      id: 0,
+      title: '닌텐도 DS',
+      link: '/list/NINTENDONDS',
+      img: ds,
+      categoryCode: 'NINTENDONDS',
+    },
+    {
+      id: 1,
+      title: '닌텐도 스위치',
+      link: '/list/NINTENDO01',
+      img: switch1,
+      categoryCode: 'NINTENDO01',
+    },
+    {
+      id: 2,
+      title: '닌텐도 스위치 2',
+      link: '/list/NINTENDO02',
+      img: switch2,
+      categoryCode: 'NINTENDO02',
+    },
+    {
+      id: 3,
+      title: '플레이스테이션 4',
+      link: '/list/PLAYSTATION04',
+      img: ps4,
+      categoryCode: 'PLAYSTATION04',
+    },
+    {
+      id: 4,
+      title: '플레이스테이션 5',
+      link: '/list/PLAYSTATION05',
+      img: ps5,
+      categoryCode: 'PLAYSTATION05',
+    },
   ];
 
   return (
     <>
       <div>
         {/* 모바일 하단 네비게이터 */}
-        {/* <div style={{ boxShadow: '0 -4px 6px -1px rgba(0,0,0,0.1)' }} 
-          className='bg-white fixed bottom-0 z-4 w-full rounded-t-lg shadow-lg shadow-black md:hidden'
-      >
-        <ul className='flex justify-around items-center h-15'>
-          <li>
-            <Link className='flex flex-col items-center' href={'/'}>
-              <Image src={timeRed} alt="타임세일"/>
-              <span>타임세일</span>
-            </Link>
-          </li>
-          <li>
-            { user? 
-            <Link className='flex flex-col items-center' href={'/mypage'}>
-              <Image src={mypage} alt="내 정보"/>
-              <span>내 정보</span>
-            </Link>
-            :<Link className='flex flex-col items-center' href={'/login'}>
-              <Image src={mypage} alt="로그인"/>
-              <span>로그인</span>
-            </Link>
-            }
-          </li>
-          <li>
-            <Link className='flex flex-col items-center' href={'/mypage'}>
-              <Image src={category} alt="카테고리"/>
-              <span>카테고리</span>
-            </Link>
-          </li>
-          <li >
-            <Link className='flex flex-col items-center' href={'/'}>
-              <Image src={like} alt="찜" />
-              <span >찜</span>
-            </Link>
-          </li>
-          <li>
-            <Link className='flex flex-col items-center' href={'/cart'}>
-              <Image src={cart} alt="장바구니"/>
-              <span>장바구니</span>
-            </Link>
-          </li>
-        </ul> 
-      </div> */}
-        <MobileGnb />
+        <div
+          style={{ boxShadow: '0 -4px 6px -1px rgba(0,0,0,0.1)' }}
+          className="bg-white fixed bottom-0 z-4 w-full rounded-t-lg shadow-lg shadow-black md:hidden">
+          <ul className="flex justify-around items-center h-15">
+            <li>
+              <Link className="flex flex-col items-center" href={'/'}>
+                <Image src={timeRed} alt="타임세일" />
+                <span>타임세일</span>
+              </Link>
+            </li>
+            <li>
+              {user ? (
+                <Link className="flex flex-col items-center" href={'/mypage'}>
+                  <Image src={mypage} alt="내 정보" />
+                  <span>내 정보</span>
+                </Link>
+              ) : (
+                <Link className="flex flex-col items-center" href={'/login'}>
+                  <Image src={mypage} alt="로그인" />
+                  <span>로그인</span>
+                </Link>
+              )}
+            </li>
+            <li>
+              <Link className="flex flex-col items-center" href={'/mypage'}>
+                <Image src={category} alt="카테고리" />
+                <span>카테고리</span>
+              </Link>
+            </li>
+            <li>
+              <Link className="flex flex-col items-center" href={'/'}>
+                <Image src={like} alt="찜" />
+                <span>찜</span>
+              </Link>
+            </li>
+            <li>
+              <Link className="flex flex-col items-center" href={'/cart'}>
+                <Image src={cart} alt="장바구니" />
+                <span>장바구니</span>
+              </Link>
+            </li>
+          </ul>
+        </div>
 
         {/* 상단 네비게이터 */}
         <div className="border-y-2 border-poten-gray-1 bg-white sticky top-0 z-2 w-full">
@@ -90,6 +122,7 @@ export function Nav() {
                 link={elem.link}
                 title={elem.title}
                 img={elem.img}
+                categoryCode={elem.categoryCode}
               />
             ))}
 
@@ -102,7 +135,7 @@ export function Nav() {
               <div className="hidden bg-white border-1 border-poten-gray-1 xl:group-hover:flex hover:flex absolute top-16 z-1">
                 <ul className="flex flex-col gap-3 p-6 border-r-1 border-poten-gray-1">
                   <li>
-                    <Link href={'/'}>회사소개</Link>
+                    <Link href={'/about'}>회사소개</Link>
                   </li>
                   <li>
                     <Link href={'/'}>공지사항</Link>
