@@ -16,12 +16,11 @@ import switch1 from '@/assets/img/switch01.webp';
 import switch2 from '@/assets/img/switch02.webp';
 import ps4 from '@/assets/img/ps4.webp';
 import ps5 from '@/assets/img/ps5.webp';
-import useUserStore from '@/zustand/userStore';
+
+import MobileGnb from './MobileGnb';
 // import MobileGnb from './MobileGnb';
 
 export function Nav() {
-  const { user } = useUserStore();
-
   const topNavElems = [
     {
       id: 0,
@@ -64,49 +63,7 @@ export function Nav() {
     <>
       <div>
         {/* 모바일 하단 네비게이터 */}
-        <div
-          style={{ boxShadow: '0 -4px 6px -1px rgba(0,0,0,0.1)' }}
-          className="bg-white fixed bottom-0 z-4 w-full rounded-t-lg shadow-lg shadow-black md:hidden">
-          <ul className="flex justify-around items-center h-15">
-            <li>
-              <Link className="flex flex-col items-center" href={'/'}>
-                <Image src='' /*{timeRed}*/ alt="타임세일" />
-                <span>타임세일</span>
-              </Link>
-            </li>
-            <li>
-              {user ? (
-                <Link className="flex flex-col items-center" href={'/mypage'}>
-                  <Image src="" /*{mypage}*/ alt="내 정보" />
-                  <span>내 정보</span>
-                </Link>
-              ) : (
-                <Link className="flex flex-col items-center" href={'/login'}>
-                  <Image src="" /*{mypage}*/ alt="로그인" />
-                  <span>로그인</span>
-                </Link>
-              )}
-            </li>
-            <li>
-              <Link className="flex flex-col items-center" href={'/mypage'}>
-                <Image src="" /*{category}*/ alt="카테고리" />
-                <span>카테고리</span>
-              </Link>
-            </li>
-            <li>
-              <Link className="flex flex-col items-center" href={'/'}>
-                <Image src="" /*{like}*/ alt="찜" />
-                <span>찜</span>
-              </Link>
-            </li>
-            <li>
-              <Link className="flex flex-col items-center" href={'/cart'}>
-                <Image src='' /*{cart}*/ alt="장바구니" />
-                <span>장바구니</span>
-              </Link>
-            </li>
-          </ul>
-        </div>
+        <MobileGnb />
 
         {/* 상단 네비게이터 */}
         <div className="border-y-2 border-poten-gray-1 bg-white sticky top-0 z-2 w-full">
