@@ -85,7 +85,7 @@ export default function MainCard({ item }: { item: Iproduct }) {
           <Image
             className="mx-auto p-2 md:p-4 w-[100px] md:w-[150px]"
             src={item.mainImages[0].path}
-            alt={item.mainImages[0].name}
+            alt={item.name}
             width={100}
             height={100}></Image>
         </Link>

@@ -3,7 +3,6 @@
 import Image from 'next/image';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-import linkGame1 from '@/assets/img/01-switchlit.webp';
 import linkGame2 from '@/assets/img/01-swtich.webp';
 import linkGame3 from '@/assets/img/01-switch2.webp';
 import linkGame4 from '@/assets/img/01-ps4.webp';
@@ -28,20 +27,6 @@ export default function SliderLink() {
         freeMode={true}
         navigation={false}
         slidesPerView={'auto'}>
-        <SwiperSlide className="!w-[90px] md:!w-[130px] xl:!w-[150px] !ml-[16px] md:!ml-[24px] xl:!ml-[0px]  ">
-          <Link
-            href="/"
-            className="flex flex-col justify-center items-center transition-transform ease-in-out hover:translate-y-[-10px]">
-            <Image
-              className="md:rounded"
-              src={linkGame1}
-              width={800}
-              height={800}
-              alt="닌텐도 스위치 라이트"
-            />
-            <h3 className="text-[14px] text-center">Nintendo Switch Lite</h3>
-          </Link>
-        </SwiperSlide>
         <SwiperSlide className="!w-[90px] md:!w-[130px] xl:!w-[150px] !ml-[16px] md:!ml-[12px] xl:!ml-[0px]  ">
           <Link
             href="/"
