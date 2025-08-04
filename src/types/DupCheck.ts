@@ -3,7 +3,7 @@ export interface EmailCheckResponse {
   message: string;
 }
 
-export interface NameCheckResponse {
+export interface NicknameCheckResponse {
   ok: 0 | 1;
   message: string;
 }
