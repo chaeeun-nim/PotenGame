@@ -56,7 +56,7 @@ export default function CartCountForm({
         <div className="border-2 flex border-poten-gray-1 text-poten-black-2 rounded-[4px] overflow-hidden">
           <button
             type="button"
-            className="w-[32px] xl:w-[40px] font-bold border-r-2 border-poten-gray-1 disabled:text-poten-gray-1"
+            className="w-[32px] xl:w-[40px] font-bold border-r-2 border-poten-gray-1 disabled:text-poten-gray-1 cursor-pointer"
             disabled={quantityState <= 1 ? true : false}
             onClick={minusHandle}>
             -
@@ -66,7 +66,7 @@ export default function CartCountForm({
             type="button"
             onClick={addHandle}
             disabled={quantityState >= maxquaintity ? true : false}
-            className="w-[32px] xl:w-[40px] font-bold border-l-2 border-poten-gray-1 disabled:text-poten-gray-1">
+            className="w-[32px] xl:w-[40px] font-bold border-l-2 border-poten-gray-1 disabled:text-poten-gray-1 cursor-pointer">
             +
           </button>
         </div>

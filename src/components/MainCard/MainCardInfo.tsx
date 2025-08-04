@@ -9,7 +9,7 @@ import Link from 'next/link';
 import { JSX, useEffect, useState } from 'react';
 
 import CartBtn from './CartBtn';
-import ItemLikeBtn from '../list-ItemCard/ItemLikeBtn';
+import LikeBtn from './LikeBtn';
 
 export default function MainCardInfo({ item }: { item: Iproduct }) {
   const [releaseDate, setReleaseDate] = useState('');
@@ -59,7 +59,7 @@ export default function MainCardInfo({ item }: { item: Iproduct }) {
           {/* 장바구니 담기버튼 */}
           <CartBtn ItemId={item._id} />
           {/* 찜하기 버튼 */}
-          <ItemLikeBtn className={`w-[30px] h-[30px]`} />
+          <LikeBtn productId={item._id} />
         </div>
       </div>
     </>

@@ -5,7 +5,7 @@ import useCartStore from '@/zustand/cartStore';
 import useUserStore from '@/zustand/userStore';
 
 export default function CartCleanBtn() {
-  const resetStore = useCartStore((state) => state.resetStore);
+  const resetStore = useCartStore((state) => state.resetCartStore);
   const { user } = useUserStore();
 
   const cleanHandle = async () => {

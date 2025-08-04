@@ -106,7 +106,7 @@ export default function CreditCart() {
             onChange={cardChoiceHandle}
             name="payAddress"
             id="payAddress"
-            className="appearance-none w-full px-4 py-4 border bg-white border-poten-gray-1 text-poten-gray-2 font-semibold rounded-[4px] leading-[14px] text-4">
+            className="cursor-pointer appearance-none w-full px-4 py-4 border bg-white border-poten-gray-1 text-poten-gray-2 font-semibold rounded-[4px] leading-[14px] text-4">
             <option value="">카드를 선택해주세요</option>
             <option className="text-poten-black" value="신한">
               신한

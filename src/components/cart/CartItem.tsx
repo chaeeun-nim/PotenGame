@@ -74,7 +74,7 @@ export default function CartItem({ item }: { item: IcartItem }) {
                 className="w-[100px] h-[100px] md:w-[150px] md:h-[150px]  shrink-0 flex items-center justify-center  border-1 border-poten-gray-1">
                 <Image
                   className="w-[80px] md:w-[100px]"
-                  src={`https://fesp-api.koyeb.app/market/${item.product.image.path}`}
+                  src={item.product.image.path}
                   alt={item.product.name}
                   width={500}
                   height={500}
@@ -120,12 +120,16 @@ export default function CartItem({ item }: { item: IcartItem }) {
                   quantity={item.quantity}
                   maxquaintity={item.product.quantity - item.product.buyQuantity}
                 />
-              ) : (
-                <p>품절</p>
-              )}
+              ) : null}
 
               <hr className="border-1 border-poten-gray-1 my-[16px]" />
-              <CartItemCost cartId={item._id} />
+              {item.product.quantity - item.product.buyQuantity >= 1 ? (
+                <CartItemCost cartId={item._id} />
+              ) : (
+                <div className="flex justify-between items-start leading-[26px] xl:pb-[0px] pb-[16px] md:justify-end">
+                  <p className="font-extrabold text-poten-gray-2 text-[26px]">품절</p>
+                </div>
+              )}
             </div>
           </div>
         </div>

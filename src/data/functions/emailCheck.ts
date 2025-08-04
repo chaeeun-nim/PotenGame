@@ -1,17 +1,20 @@
+import { EmailCheckResponse } from "@/types/DupCheck";
+
 export const API_URL = process.env.NEXT_PUBLIC_API_URL;
 const CLIENT_ID = process.env.NEXT_PUBLIC_CLIENT_ID || '';
 
-export async function emaiilCheck(){
+export async function emailCheck(email: string):Promise<EmailCheckResponse>{
   try {
-      const res = await fetch(`${API_URL}/users/email`, {
-        method: 'GET',
-        headers: {
-          'Client-Id': CLIENT_ID,
-        },
-        cache: 'no-cache',
-      });
-  
-      return res.json();
+    const res = await fetch(`${API_URL}/users/email?email=${email}`, {
+      method: 'GET',
+      headers: {
+        'Client-Id': CLIENT_ID,
+      },
+      cache: 'no-cache',
+    });
+
+    return await res.json();
+    
     } catch (error) {
       // 네트워크 오류 처리
       console.error(error);
