@@ -37,7 +37,7 @@ export default function OrderOk({ id }: { id: string }) {
         <div className="w-[100px] h-[100px]  border-1 border-poten-gray-1 flex justify-center items-center rounded-[4px]">
           <Image
             className="w-[80%]"
-            src={`https://fesp-api.koyeb.app/market/${item.image.path}`}
+            src={item.image.path}
             alt={item.image.originalname}
             width={500}
             height={500}

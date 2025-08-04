@@ -1,0 +1,16 @@
+meta {
+  name: 데이터초기화
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{url}}/db/init
+  body: multipartForm
+  auth: inherit
+}
+
+body:multipart-form {
+  initData: @file(C:\Users\user\likelion-bootcamp\04_final-project\final-14-z1zone1004\api\dbinit\team\data.json)
+  attach: @file(C:\Users\user\likelion-bootcamp\04_final-project\final-14-z1zone1004\api\dbinit\team\uploadFiles\pro-01-detail.webp)
+}

@@ -1,4 +1,6 @@
-export default function SectionHeader({ children }: { children: string }) {
+import { ReactNode } from 'react';
+
+export default function SectionHeader({ children }: { children: ReactNode }) {
   return (
     <>
       <header className="  w-full gap-4 xl:max-w-[1200px] px-[16px] md:px-[24px] xl:px-[0px] xl:mx-auto  my-[18px] md:my-[32px]">
