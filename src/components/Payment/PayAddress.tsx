@@ -6,7 +6,7 @@ import Image from 'next/image';
 import ArrowIcon from '@/assets/icons/down.svg';
 import AddressChoice from './AddressChoice';
 import { useRef, useState } from 'react';
-import Noaddress from './Noaddress';
+import NoNotice from './NoNotice';
 
 import AddNewAddress from './AddNewAddress';
 
@@ -78,7 +78,7 @@ export default function PayAddress() {
               {userAddressList}
             </div>
           ) : (
-            <Noaddress />
+            <NoNotice title="등록된 배송지가 없습니다." />
           )}
 
           <button
