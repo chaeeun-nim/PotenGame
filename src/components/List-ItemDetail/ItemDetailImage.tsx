@@ -1,14 +1,29 @@
 /* 상품 상세 페이지 '/list/[id]' 하단부 (상품 상세 정보) 상세 이미지 component를 구현한 컴포넌트입니다.(상품 상세 페이지 하단부) */
 'use client';
+import Image from 'next/image';
 import { useState } from 'react';
 
-export default function ItemDetailImage() {
+interface ItemDetailImageProps {
+  productId?: string;
+  category?: string;
+}
+
+export default function ItemDetailImage({ productId, category }: ItemDetailImageProps) {
   // 상세 이미지 열림, 닫힘 상태 관리 (초기값 false)
   const [isDetailOpen, setIsDetailOpen] = useState(false);
 
   // 더보기 혹은 닫기 버튼 click 시 상태 토글
   const handleToggleDetail = () => {
     setIsDetailOpen((prev) => !prev);
+  };
+
+  // 상품 상세 이미지 URL 생성 (productId 활용)
+  const getDetailImageUrl = () => {
+    if (productId) {
+      return `https://fesp-api.koyeb.app/market/files/febc13-final14-emjf/pro-${productId}-detail.webp`;
+    }
+    // 기본 이미지 (fallback)
+    return "https://fesp-api.koyeb.app/market/files/febc13-final14-emjf/pro-27-detail.webp";
   };
 
   return (
@@ -30,16 +45,21 @@ export default function ItemDetailImage() {
 
         {/* 상품 상세 이미지 */}
         <div className="flex flex-col gap-2">
-          {/* <img
-            src="https://fesp-api.koyeb.app/market/files/febc13-final14-emjf/pro-27-detail.webp"
-            alt="상품 상세 이미지 1"
+          <Image
+            src={getDetailImageUrl()}
+            alt={`${category || '상품'} 상세 이미지`}
+            width={1200}
+            height={800}
             className="w-full h-auto object-contain"
-          /> */}
-          <img
-            src="https://fesp-api.koyeb.app/market/files/febc13-final14-emjf/pro-27-detail.webp"
-            alt="상품 상세 이미지 2"
-            className="w-full h-auto object-contain"
-            loading="lazy"
+            priority={false}
+            placeholder="blur"
+            blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
+            onError={(e) => {
+              // 이미지 로드 실패 시 기본 이미지로 변경
+              const target = e.target as HTMLImageElement;
+              target.src =
+                'https://fesp-api.koyeb.app/market/files/febc13-final14-emjf/pro-27-detail.webp';
+            }}
           />
         </div>
       </div>
