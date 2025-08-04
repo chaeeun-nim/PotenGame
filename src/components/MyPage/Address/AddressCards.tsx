@@ -1,17 +1,9 @@
 'use client';
 
-type Address = {
-  id: number;
-  label: string;
-  address: string;
-  zip: string;
-  phone: string;
-  isDefault: boolean;
-  isSelected: boolean;
-};
+import type { MyAddress } from '@/types/MyAddress';
 
 type Props = {
-  addresses: Address[];
+  addresses: MyAddress[];
   size: 'lg' | 'md' | 'sm';
 };
 
