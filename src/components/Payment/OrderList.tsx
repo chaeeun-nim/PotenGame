@@ -14,7 +14,7 @@ export default function OrderList() {
         <div className="w-[100px] h-[100px]  border-1 border-poten-gray-1 flex justify-center items-center rounded-[4px]">
           <Image
             className="w-[80%]"
-            src={item.product.image.path}
+            src={item.product.image?.path || '/default-image.jpg'}
             alt={item.product.name}
             width={500}
             height={500}

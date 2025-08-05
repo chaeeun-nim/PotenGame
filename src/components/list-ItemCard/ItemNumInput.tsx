@@ -50,7 +50,7 @@ export default function ItemNumInput({
       shippingFee,
       totalPrice,
     };
-  }, [data.price, data.shippingFees, currentQuantity]);
+  }, [data.price, data.shippingFees, currentQuantity, value]);
 
   // 가격을 원화 형식으로 포맷팅하는 함수
   const formatPrice = (price: number): string => {

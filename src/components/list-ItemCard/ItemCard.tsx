@@ -35,22 +35,38 @@ export default function ItemCard({
   const addToCart = useCartStore((state) => state.addToCart);
 
   // 상품 기본값 설정
-  const defaultData = {
+  const defaultData: Iproduct = {
     _id: 1,
-    name: '젤다의 전설 야생의 숨결',
+    seller_id: 1,
     price: 89900,
+    shippingFees: 4000,
+    show: true,
+    active: true,
+    name: '젤다의 전설 야생의 숨결',
+    quantity: 5,
+    buyQuantity: 0,
+    bookmarks: 240,
+    mainImages: [
+      {
+        path: '/images/default-product.jpg',
+        name: 'default-product.jpg',
+        originalname: '젤다의 전설 야생의 숨결.webp',
+      },
+    ],
     extra: {
-      originalPrice: 1000000,
       releaseDate: '2008-05-24',
-      used: false,
-      platform: 'Nintendo Switch',
+      isNew: false,
+      isBest: false,
+      category: ['GAME', 'NINTENDO01', 'NEW'],
+      sort: 1,
       condition: '미사용 중고',
+      used: false,
       ageGrade: '전체 이용가',
+      platform: 'Nintendo Switch',
+      platformVersion: 1,
+      originalPrice: 100000,
       language: '음성-영어,일본어 / 자막-한국어',
     },
-    shippingFees: 4000,
-    bookmarks: 240,
-    quantity: 5,
   };
 
   const currentProductData = productData || defaultData;
@@ -58,14 +74,20 @@ export default function ItemCard({
   const handleLikeClick = () => {
     setIsLiked(!isLiked);
   };
-  const handleAddToCart = (e: React.MouseEvent) => {
+
+  const handleAddToCart = async (e: React.MouseEvent) => {
     e.preventDefault(); // Link 클릭 방지
 
-    // 기본 수량 1로 장바구니에 추가
-    addToCart(currentProductData, 1);
+    try {
+      // 장바구니에 추가 - 실제 API 함수 사용
+      await addToCart(currentProductData, 1);
 
-    // 모달 열기
-    setIsModalOpen(true);
+      // 모달 열기 (CartModal 컴포넌트가 있는 경우)
+      setIsModalOpen(true);
+    } catch (error) {
+      console.error('장바구니 추가 실패:', error);
+      // 에러 처리 로직
+    }
   };
 
   // 하트 아이콘 관련 코드
