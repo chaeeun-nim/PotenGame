@@ -6,7 +6,6 @@ import { SortType } from '@/types/sort';
 const API_URL = process.env.NEXT_PUBLIC_API_URL;
 const CLIENT_ID = process.env.NEXT_PUBLIC_CLIENT_ID || '';
 
-
 // 검색/필터 파라미터 타입
 export interface ProductSearchParams {
   page?: number;
@@ -18,6 +17,15 @@ export interface ProductSearchParams {
   priceMax?: number;
   search?: string;
   category?: string; // listStore와 일치
+  extra?: {
+    category?: string;
+    condition?: string;
+    platform?: string;
+    used?: boolean;
+    isNew?: boolean;
+    isBest?: boolean;
+    [key: string]: string | number | boolean | null | undefined;
+  };
 }
 
 // 커스텀 필터 타입 정의
@@ -182,4 +190,48 @@ export async function getProductDetail(productId: number): ApiResPromise<Iproduc
     console.error(error);
     return { ok: 0, message: '상품 정보를 불러오는 중 오류가 발생했습니다.' };
   }
+}
+
+// 카테고리를 포함한 상품 상세 조회 (기존 함수 확장)
+export async function getProductDetailWithCategory(
+  productId: number,
+  category?: string,
+): ApiResPromise<Iproduct> {
+  try {
+    let url = `${API_URL}/products/${productId}`;
+
+    // 카테고리가 있는 경우 쿼리 파라미터로 추가
+    if (category) {
+      const customFilter = {
+        'extra.category': { $all: ['GAME', category.toUpperCase()] },
+      };
+      url += `?custom=${encodeURIComponent(JSON.stringify(customFilter))}`;
+    }
+
+    const res = await fetch(url, {
+      headers: {
+        'Client-Id': CLIENT_ID,
+      },
+      cache: 'no-store', // 상세 페이지는 항상 최신 정보
+    });
+
+    return res.json();
+  } catch (error) {
+    console.error(error);
+    return { ok: 0, message: '상품 정보를 불러오는 중 오류가 발생했습니다.' };
+  }
+}
+
+// 문자열 ID도 지원하는 상품 상세 조회
+export async function getProductDetailById(
+  productId: string | number,
+  category?: string,
+): ApiResPromise<Iproduct> {
+  const id = typeof productId === 'string' ? parseInt(productId) : productId;
+
+  if (isNaN(id)) {
+    return { ok: 0, message: '유효하지 않은 상품 ID입니다.' };
+  }
+
+  return getProductDetailWithCategory(id, category);
 }

@@ -35,6 +35,9 @@ export default function CartItem({ item }: { item: IcartItem }) {
   };
 
   useEffect(() => {
+    // extra 타입 체크 추가
+    if (!item.product.extra) return;
+
     const isNew = isNewProducts(item.product.extra.releaseDate); //신상이면 true 아니면 false
 
     if (item.product.extra.used) {
@@ -47,19 +50,25 @@ export default function CartItem({ item }: { item: IcartItem }) {
     }
   }, []); // eslint 경고 무시
 
-  let platform;
+  let platform = '알 수 없음'; // 기본값 설정
 
-  if (item.product.extra.category?.includes('NINTENDO02')) {
-    platform = '닌텐도 스위치 2';
-  } else if (item.product.extra.category?.includes('NINTENDO01')) {
-    platform = '닌텐도 스위치 1';
-  } else if (item.product.extra.category?.includes('PLAYSTATION05')) {
-    platform = '플레이스테이션 5';
-  } else if (item.product.extra.category?.includes('PLAYSTATION04')) {
-    platform = '플레이스테이션 4';
-  } else if (item.product.extra.category?.includes('NINTENDONDS')) {
-    platform = '닌텐도 DS';
+  // category가 존재하는지 먼저 확인
+  if (item.product.extra?.category) {
+    if (item.product.extra.category.includes('NINTENDO02')) {
+      platform = '닌텐도 스위치 2';
+    } else if (item.product.extra.category.includes('NINTENDO01')) {
+      platform = '닌텐도 스위치 1';
+    } else if (item.product.extra.category.includes('PLAYSTATION05')) {
+      platform = '플레이스테이션 5';
+    } else if (item.product.extra.category.includes('PLAYSTATION04')) {
+      platform = '플레이스테이션 4';
+    } else if (item.product.extra.category.includes('NINTENDONDS')) {
+      platform = '닌텐도 DS';
+    }
   }
+  // 이미지 경로 안전성 확보
+  const imagePath = item.product.image?.path || '/images/default-product.jpg';
+  const imageAlt = item.product.name || '상품 이미지';
 
   return (
     <>
@@ -74,8 +83,8 @@ export default function CartItem({ item }: { item: IcartItem }) {
                 className="w-[100px] h-[100px] md:w-[150px] md:h-[150px]  shrink-0 flex items-center justify-center  border-1 border-poten-gray-1">
                 <Image
                   className="w-[80px] md:w-[100px]"
-                  src={item.product.image.path}
-                  alt={item.product.name}
+                  src={imagePath}
+                  alt={imageAlt}
                   width={500}
                   height={500}
                 />
