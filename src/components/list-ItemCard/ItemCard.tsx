@@ -10,11 +10,14 @@ import ItemCardImage from '@/components/list-ItemCard/ItemCardImage';
 import ItemCardInfo from '@/components/list-ItemCard/ItemCardInfo';
 import Link from 'next/link';
 import { Iproduct } from '@/types/products';
+import { useParams } from 'next/navigation';
 
 interface ItemCardProps {
   variant?: ItemCardVariant;
   className?: string;
   productData?: Iproduct;
+  productId?: string;
+  category?: string;
 }
 
 export default function ItemCard({
@@ -22,6 +25,8 @@ export default function ItemCard({
   className,
   productData,
 }: ItemCardProps) {
+  const params = useParams();
+  const currentCategory = params.category as string;
   const [isLiked, setIsLiked] = useState(false);
 
   const handleLikeClick = () => {
@@ -95,8 +100,9 @@ export default function ItemCard({
 
   // 상품 ID 결정 (productData가 있을 시 사용, 없을 시 기본값)
   const productId = productData?._id || 1;
-  const productLink = `/list/${productId}`;
-
+  const productLink = currentCategory
+    ? `/list/${currentCategory}/${productId}`
+    : `/list/${productId}`;
   return (
     <ItemCardProvider variant={variant} productData={productData}>
       <section className={`${getCardStyles()} ${className || ''}`}>

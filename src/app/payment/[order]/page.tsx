@@ -4,6 +4,16 @@ import Right from '@/assets/icons/right.svg';
 import SectionHeader from '@/components/SectionHeader';
 
 import OrderOk from '@/components/Payment/OrderOk';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: '결제완료',
+  description: '포텐게임 결제완료 페이지',
+  openGraph: {
+    title: '결제완료',
+    description: '포텐게임 결제완료 페이지',
+  },
+};
 
 export default async function PaymentOrder({
   params,

@@ -15,7 +15,6 @@ export default function OrderBtnBar() {
   const { user } = useUserStore();
   const router = useRouter();
   const orderHandle = async () => {
-    console.log(order);
     const res = await addOrder(user?.token.accessToken as string, order);
     if (res.ok) {
       resetStore();
