@@ -1,94 +1,89 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import AddressHeader from './AddressHeader';        // 섹션 상단 타이틀 및 구분선 UI
-import AddressCards from './AddressCards';          // 주소 카드 리스트 UI
-import EmptyState from '@/components/MyPage/EmptyState'; // 비어 있을 때 보여줄 안내 컴포넌트
-import type { MyAddress } from '@/types/MyAddress'; // 주소 타입 정의
+import AddressHeader from './AddressHeader';
+import AddressCards from './AddressCards';
+import EmptyState from '@/components/MyPage/EmptyState';
+import useUserStore from '@/zustand/userStore';
+import { useUserAddress } from '@/zustand/userAddress'; // 전역 주소 store 사용
 
 export default function AddressList() {
-  // 주소 데이터를 저장할 상태
-  const [addresses, setAddresses] = useState<MyAddress[]>([]);
-  // 데이터 로딩 상태
+  const user = useUserStore((state) => state.user);
+  const { addresses, fetchAddresses } = useUserAddress(); // 전역 상태와 fetch 함수 사용
+
   const [loading, setLoading] = useState(true);
-  // 에러 메시지 상태
   const [error, setError] = useState<string | null>(null);
 
-  // 컴포넌트 마운트 시 주소 API 호출
+  const token = user?.token?.accessToken as string | undefined;
+
+  // 주소 API 호출
   useEffect(() => {
-    const token = sessionStorage.getItem('token'); // 세션 스토리지에서 토큰 가져옴
-    if (!token) {
-      console.warn('세션에 토큰이 없습니다.');
-      setLoading(false);
-      return;
-    }
+    const fetch = async () => {
+      const userId = user?._id;
+      if (!token || !userId) {
+        console.warn('토큰 또는 userId 누락');
+        setLoading(false);
+        return;
+      }
 
-    const fetchAddresses = async () => {
-      try {
-        const res = await fetch('https://fesp-api.koyeb.app/user/address', {
-          headers: {
-            Authorization: `Bearer ${token}`, // 인증 토큰 포함
-          },
-        });
-
-        const data = await res.json();
-        console.log('주소 API 응답:', data); // 응답 구조 확인용 로그
-
-        // 응답이 정상이고 item이 배열이면 주소 리스트 저장
-        if (data.ok && Array.isArray(data.item)) {
-          setAddresses(data.item);
-        } else {
-          setError('주소 데이터를 불러올 수 없습니다.');
-        }
+    try {
+        await fetchAddresses(`${userId}`, token);
       } catch (err) {
         console.error('주소 API 호출 오류:', err);
         setError('주소를 가져오는 중 오류가 발생했습니다.');
       } finally {
-        setLoading(false); // 로딩 완료
+        setLoading(false);
       }
     };
 
-    fetchAddresses();
-  }, []);
+  fetch();
+  }, [user?._id, token, fetchAddresses]);
+
+  // 상태 반영 후 주소가 없는 경우 에러 메시지 출력
+  useEffect(() => {
+    if (!loading && addresses.length === 0) {
+      setError('등록된 주소가 없습니다.');
+    }
+  }, [addresses, loading]);
 
   return (
     <>
-      {/* PC 전용 (화면 너비 xl 이상) */}
+      {/* PC 화면용 (화면 너비 ≥ 1280px) */}
       <section className="hidden xl:block bg-white rounded-lg -mt-2 mb-8 px-4">
         <AddressHeader />
-        {/* 에러 발생 시 에러 메시지 표시 */}
-        {error ? (
+        {loading ? (
+          <p className="text-sm text-gray-400 px-2 py-4">로딩 중입니다...</p>
+        ) : error ? (
           <p className="text-sm text-red-500 px-2 py-4">{error}</p>
-        ) : 
-        // 로딩이 끝났고 주소가 없으면 EmptyState 표시
-        !loading && addresses.length === 0 ? (
+        ) : addresses.length === 0 ? (
           <EmptyState message="등록된 배송지가 없습니다." />
         ) : (
-          // 주소가 있을 경우 주소 카드 리스트 표시
           <AddressCards addresses={addresses} size="lg" />
         )}
       </section>
 
-      {/* 태블릿 전용 (화면 너비 md 이상 ~ xl 미만) */}
+      {/* 태블릿 화면용 (768px ≤ 너비 < 1280px) */}
       <section className="hidden md:block xl:hidden bg-white rounded-lg -mt-2 mb-8 px-4">
         <AddressHeader textSize="16px" barHeight="20px" />
-        {error ? (
+        {loading ? (
+          <p className="text-sm text-gray-400 px-2 py-4">로딩 중입니다...</p>
+        ) : error ? (
           <p className="text-sm text-red-500 px-2 py-4">{error}</p>
-        ) : 
-        !loading && addresses.length === 0 ? (
+        ) : addresses.length === 0 ? (
           <EmptyState message="등록된 배송지가 없습니다." />
         ) : (
           <AddressCards addresses={addresses} size="md" />
         )}
       </section>
 
-      {/* 모바일 전용 (화면 너비 md 미만) */}
+      {/* 모바일 화면용 (너비 < 768px) */}
       <section className="block md:hidden bg-white rounded-lg -mt-2 mb-8 px-4">
         <AddressHeader textSize="15px" barHeight="18px" />
-        {error ? (
+        {loading ? (
+          <p className="text-sm text-gray-400 px-2 py-4">로딩 중입니다...</p>
+        ) : error ? (
           <p className="text-sm text-red-500 px-2 py-4">{error}</p>
-        ) : 
-        !loading && addresses.length === 0 ? (
+        ) : addresses.length === 0 ? (
           <EmptyState message="등록된 배송지가 없습니다." />
         ) : (
           <AddressCards addresses={addresses} size="sm" />
