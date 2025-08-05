@@ -1,8 +1,12 @@
 'use client';
 
+import { useEffect } from 'react';
 import useUserStore from '@/zustand/userStore'; // 실제 전역 상태에서 가져오는 경우
 import Link from 'next/link';
 // import { Iuser } from '@/types/user'; // 필요 시 유지
+import useLikeStore from '@/zustand/likeStore'; // 관심상품 상태
+import { IbookmarksItem } from '@/types/bookmarks';
+
 
 export default function MyPageTop() {
   const user = useUserStore((state) => state.user); // 전역 상태에서 유저 정보 가져옴
@@ -14,8 +18,37 @@ export default function MyPageTop() {
   const remaining = Math.max(3 - purchases, 0);
   const userName = user?.name ?? '사용자';
 
-   // 관심상품 수 (북마크의 products 사용, 기본값 0)
-  const likedCount = user?.bookmark?.products ?? 0;
+  const { Like, setLike } = useLikeStore(); // Zustand 상태 사용
+  const likedCount = Like.length;
+
+   // 관심상품 API 호출 (최초 1회)
+  useEffect(() => {
+    const fetchLikedItems = async () => {
+      try {
+        const token = sessionStorage.getItem('token');
+        if (!token || Like.length > 0) return;
+
+        const res = await fetch('https://fesp-api.koyeb.app/bookmark', {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
+
+        const data = await res.json();
+        if (data.ok && Array.isArray(data.item?.products)) {
+          setLike(data.item.products as IbookmarksItem[]);
+        } else {
+          setLike([]);
+        }
+      } catch (error) {
+        console.error('관심상품 불러오기 실패:', error);
+        setLike([]);
+      }
+    };
+
+    fetchLikedItems();
+  }, [setLike, Like.length]);
+
 
   return (
     <>
@@ -69,12 +102,17 @@ export default function MyPageTop() {
             {/* 관심 상품 */}
             <div className="col-span-1 sm:col-span-1 xl:col-span-3 h-[250px] bg-white rounded-lg shadow px-6 py-4 flex flex-col justify-between">
               <div className="text-[18px] font-semibold text-gray-600">관심 상품</div>
-              <p className="text-5xl font-bold text-[#E5242B] mt-auto mb-3">
-                {likedCount}
-                <span className="text-base text-black font-normal ml-1">개</span>
-              </p>
-              <button className="mt-4 w-fit px-6 py-2 border border-poten-gray-1 rounded-full text-sm font-medium">관심상품 조회</button>
-            </div>
+                <p className="text-5xl font-bold text-[#E5242B] mt-auto mb-3">
+                  {likedCount}
+                  <span className="text-base text-black font-normal ml-1">개</span>
+                </p>
+                <Link
+                  href="/myPage/like"
+                  className="mt-4 w-fit px-6 py-2 border border-poten-gray-1 rounded-full text-sm font-medium inline-block text-center"
+                >
+                  관심상품 조회
+                </Link>
+              </div>
           </div>
         </div>
       </div>
@@ -118,8 +156,11 @@ export default function MyPageTop() {
                     <span className="text-sm text-black font-medium ml-1">개</span>
                   </p>
                   <div className="flex justify-end mt-4">
-                    <Link href="/myPage/like">
-                      <button className="px-3 py-1 text-sm text-black font-medium border border-poten-gray-1 rounded-full">관심상품 조회</button>
+                    <Link
+                      href="/myPage/like"
+                      className="px-3 py-1 text-sm text-black font-medium border border-poten-gray-1 rounded-full inline-block text-center"
+                    >
+                      관심상품 조회
                     </Link>
                   </div>
                 </div>
