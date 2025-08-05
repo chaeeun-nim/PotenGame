@@ -139,6 +139,49 @@ export default function CategoryProductList({ category }: CategoryProductListPro
     [getCategoryValue, setFilters, filters],
   );
 
+  // 필터에 따른 상품 필터링 함수 - filterUtils의 FILTER_MAPPINGS 활용
+  const filterProductsByConditions = useCallback(
+    (products: Iproduct[]): Iproduct[] => {
+      return products.filter((product) => {
+        // 카테고리 필터링 (기본 - 현재 카테고리에 속하는 상품만)
+        const productCategories = product.extra?.category || [];
+        const belongsToCategory = productCategories.includes(category);
+
+        if (!belongsToCategory) return false;
+
+        // 조건 필터링 (used/new) - filterUtils 매핑 활용
+        if (filters.condition) {
+          if (filters.condition === 'used' && !product.extra?.used) return false;
+          if (filters.condition === 'new' && product.extra?.used) return false;
+        }
+
+        // 카테고리 타입 필터링 (GAME/CONSOLE) - filterUtils 매핑 활용
+        if (filters.category) {
+          if (filters.category === 'GAME' && !productCategories.includes('GAME'))
+            return false;
+          if (filters.category === 'CONSOLE' && !productCategories.includes('CONSOLE'))
+            return false;
+        }
+
+        // 가격 범위 필터링
+        if (filters.priceMin !== undefined && product.price < filters.priceMin)
+          return false;
+        if (filters.priceMax !== undefined && product.price > filters.priceMax)
+          return false;
+
+        // 검색어 필터링
+        if (filters.search) {
+          const searchLower = filters.search.toLowerCase();
+          const productNameLower = product.name.toLowerCase();
+          if (!productNameLower.includes(searchLower)) return false;
+        }
+
+        return true;
+      });
+    },
+    [category, filters],
+  );
+
   const fetchInitialProducts = useCallback(async () => {
     // 중복 호출 방지
     if (isLoadingRef.current) {
@@ -162,14 +205,8 @@ export default function CategoryProductList({ category }: CategoryProductListPro
       if (result.ok === 1) {
         const products = result.item || [];
 
-        // 백엔드 데이터 구조에 맞는 필터링
-        const filteredProducts = products.filter((product) => {
-          // 백엔드 데이터: extra.category 배열에서 카테고리 코드 확인
-          const productCategories = product.extra?.category || [];
-
-          // extra.category 배열에 현재 카테고리 코드가 포함되어 있는지 확인
-          return productCategories.includes(category);
-        });
+        // 필터 조건에 다른 상품 필터링
+        const filteredProducts = filterProductsByConditions(products);
 
         setProducts(filteredProducts);
         setAllProducts(filteredProducts);
@@ -207,7 +244,7 @@ export default function CategoryProductList({ category }: CategoryProductListPro
     category,
     sortBy,
     filters,
-    getCategoryValue,
+    filterProductsByConditions,
     setLoading,
     setError,
     setCurrentPage,
@@ -235,10 +272,7 @@ export default function CategoryProductList({ category }: CategoryProductListPro
         const newProducts = result.item;
 
         // 클라이언트 사이드 필터링 적용
-        const filteredNewProducts = newProducts.filter((product) => {
-          const productCategories = product.extra?.category || [];
-          return productCategories.includes(category);
-        });
+        const filteredNewProducts = filterProductsByConditions(newProducts);
 
         const updatedAllProducts = [...allProducts, ...filteredNewProducts];
 
@@ -265,11 +299,11 @@ export default function CategoryProductList({ category }: CategoryProductListPro
     sortBy,
     category,
     filters,
+    filterProductsByConditions,
     allProducts,
     currentDisplayCount,
     totalPages,
     setCurrentPage,
-    getCategoryValue,
   ]);
 
   // 로컬에서 더 보기 (이미 로드된 상품 중에서)
@@ -339,6 +373,9 @@ export default function CategoryProductList({ category }: CategoryProductListPro
   // 카테고리별 동적 라벨 생성
   const dynamicCategories = createDynamicCategories(category);
 
+  // 빈 상태 조건 확인
+  const isEmpty = !loading && !error && displayedProducts.length === 0;
+
   return (
     <>
       <MainPromotion />
@@ -376,7 +413,7 @@ export default function CategoryProductList({ category }: CategoryProductListPro
             ) : error ? (
               // 에러 상태
               <ErrorState error={error} onRetry={fetchInitialProducts} />
-            ) : displayedProducts.length === 0 ? (
+            ) : isEmpty ? (
               // 빈 상태
               <EmptyState />
             ) : (
