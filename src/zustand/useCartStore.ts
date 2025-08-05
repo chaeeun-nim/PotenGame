@@ -1,5 +1,5 @@
 // src/stores/useCartStore.ts
-import { IcartCost, IcartItem } from '@/types/Cart';
+import { IcartCost, IcartItem, ICartProductItem } from '@/types/Cart';
 import { Iproduct } from '@/types/products';
 import { create } from 'zustand';
 import { createJSONStorage, persist } from 'zustand/middleware';
@@ -37,7 +37,19 @@ const convertToCartItem = (product: Iproduct, quantity: number): IcartItem => {
       shippingFees: product.shippingFees || 0,
       extra: product.extra,
       bookmarks: product.bookmarks || 0,
-    },
+      // mainImages 배열의 첫 번째 이미지를 image로 변환
+      image:
+        product.mainImages && product.mainImages.length > 0
+          ? {
+              path: product.mainImages[0].path,
+              name: product.mainImages[0].name,
+              originalname: product.mainImages[0].originalname,
+            }
+          : undefined,
+    } as ICartProductItem, // 타입 단언 사용
+    // 누락된 필드들 추가
+    createdAt: new Date().toISOString(),
+    updatedAt: new Date().toISOString(),
   };
 };
 
