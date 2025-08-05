@@ -16,9 +16,7 @@ import switch1 from '@/assets/img/switch01.webp';
 import switch2 from '@/assets/img/switch02.webp';
 import ps4 from '@/assets/img/ps4.webp';
 import ps5 from '@/assets/img/ps5.webp';
-
-import MobileGnb from './MobileGnb';
-// import MobileGnb from './MobileGnb';
+import MobileGnb from '@/components/Header/MobileGnb';
 
 export function Nav() {
   const topNavElems = [

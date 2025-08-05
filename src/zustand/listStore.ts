@@ -51,7 +51,7 @@ const useListStore = create<ListState>()(
       setProducts: (products) => set({ products }),
       setLoading: (loading) => set({ loading }),
       setError: (error) => set({ error }),
-      setFilters: (newFilters) =>
+      setFilters: (newFilters: Partial<FilterState>) =>
         set((state) => ({
           filters: { ...state.filters, ...newFilters },
           currentPage: 1, // 필터 변경 시 첫 페이지로

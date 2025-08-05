@@ -121,7 +121,7 @@ export default function ItemCard({
           <Link
             href={productLink}
             className="bg-poten-red text-white rounded-md font-bold flex justify-center items-center w-[160px] h-[35px] md:w-[183px] md:h-[47px] xl:w-[174px] xl:h-[47px]">
-            바로 구매
+            장바구니
           </Link>
         </div>
       </section>
