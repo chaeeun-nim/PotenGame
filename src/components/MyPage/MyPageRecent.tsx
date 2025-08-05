@@ -2,17 +2,60 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react';
+import React, { useEffect } from 'react';
+import useUserStore from '@/zustand/userStore';
 import { IRecentOrder } from '@/types/RecentOrder';
 import EmptyState from '@/components/MyPage/EmptyState';
 
 
-type Props = {
-  recentOrders: IRecentOrder[];
-};
+const API_URL = process.env.NEXT_PUBLIC_API_URL!;
+const CLIENT_ID = process.env.NEXT_PUBLIC_CLIENT_ID || '';
 
-export default function MyPageRecent({ recentOrders }: Props) {
-  const visibleOrders = recentOrders.slice(0, 2); // 최대 2개만 노출
+export default function MyPageRecent() {
+  const { user, setUser } = useUserStore();
+  const token = user?.token?.accessToken as string | undefined;
+
+  const orders = user?.extra?.orders ?? [];
+
+  useEffect(() => {
+    if (!token || orders.length > 0) return; // 이미 있으면 요청 생략
+
+    const fetchOrders = async () => {
+      try {
+        const res = await fetch(`${API_URL}/orders`, {
+          headers: {
+            Authorization: `Bearer ${token}`,
+            'Client-ID': CLIENT_ID,
+          },
+        });
+
+        const json = await res.json();
+        if (json.ok) {
+          const updatedUser = {
+            ...user!,
+            extra: {
+              ...user!.extra,
+              purchases: user?.extra?.purchases ?? 0,
+              nickname: user?.extra?.nickname ?? '',
+              birthday: user?.extra?.birthday ?? '',
+              membershipClass: user?.extra?.membershipClass ?? 'MC01',
+              address: user?.extra?.address ?? [],
+              orders: json.item, // 전역 상태에 저장
+            },
+          };
+          setUser(updatedUser);
+        } else {
+          console.warn('❗ /orders API 응답 실패:', json);
+        }
+      } catch (err) {
+        console.error('🚨 /orders 요청 실패:', err);
+      }
+    };
+
+    fetchOrders();
+  }, [token, orders.length, user, setUser]);
+
+  const visibleOrders = orders.slice(0, 2); // 최대 2개 노출
 
   return (
     <>
