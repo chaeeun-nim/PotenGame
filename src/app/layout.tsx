@@ -7,7 +7,7 @@ import localFont from 'next/font/local';
 import MobileGnb from '@/components/Header/MobileGnb';
 
 const pretendard = localFont({
-  src: '../../font/pretendard/PretendardVariable.woff2',
+  src: '../../public/font/pretendard/PretendardVariable.woff2',
   display: 'swap',
   weight: '100 900',
   variable: '--font-pretendard',
