@@ -1,4 +1,5 @@
 import { Iaddress } from './products';
+import { IRecentOrder } from './RecentOrder';
 
 // 로그인시 응답
 export interface ILoginRes {
@@ -35,6 +36,7 @@ export interface IuserExtra {
   birthday: string;
   membershipClass: 'MC01' | 'MC02';
   address: Iaddress[];
+  orders?: IRecentOrder[];
 }
 
 export interface IuserBookmark {

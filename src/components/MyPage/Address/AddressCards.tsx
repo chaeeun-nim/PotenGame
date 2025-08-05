@@ -5,6 +5,7 @@ import type { MyAddress } from '@/types/MyAddress';
 import useUserStore from '@/zustand/userStore';
 import { useMyModalStore } from '@/zustand/myModal';
 import AddressModal from './AddressModal';
+import { useUserAddress } from '@/zustand/userAddress';
 
 // 환경 변수에서 API URL과 Client ID 추출
 const API_URL = process.env.NEXT_PUBLIC_API_URL!;
@@ -19,6 +20,8 @@ export default function AddressCards({ addresses, size }: Props) {
   const { user, setUser } = useUserStore(); // 전역 상태에서 유저 정보 및 setter
   const { isAddressModalOpen, openAddressModal } = useMyModalStore(); // 모달 상태 제어
   const [selectedAddress, setSelectedAddress] = useState<MyAddress | null>(null); // 수정용 선택 주소
+  const { fetchAddresses } = useUserAddress();
+  const { closeAddressModal } = useMyModalStore();
 
   // 전역 상태에서 토큰 추출 및 타입 단언
   const token = user?.token?.accessToken as string | undefined;
@@ -35,13 +38,6 @@ export default function AddressCards({ addresses, size }: Props) {
     lg: ['16px', '14px', '13px'],
     md: ['15px', '13px', '12px'],
     sm: ['14px', '12px', '11px'],
-  }[size];
-
-  // 버튼 패딩 설정
-  const buttonPad = {
-    lg: 'px-4 py-1',
-    md: 'px-3 py-[2px]',
-    sm: 'px-2 py-[2px]',
   }[size];
 
   // 버튼/카드 radius 설정
@@ -94,10 +90,12 @@ export default function AddressCards({ addresses, size }: Props) {
     if (!confirmDelete) return;
 
     // 해당 ID 제외한 주소 목록 생성
-    const updated = user.extra.address.filter((addr) => addr.id !== deleteId);
+    const updated = user.extra.address.filter(
+  (addr) => Number(addr.id) !== Number(deleteId)
+  );
 
     try {
-      const res = await fetch(`${API_URL}/user/${user._id}`, {
+      const res = await fetch(`${API_URL}/users/${user._id}`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',
@@ -115,7 +113,9 @@ export default function AddressCards({ addresses, size }: Props) {
       if (res.ok) {
         const data = await res.json();
         setUser(data.item); // 전역 상태 업데이트
-        alert('배송지가 삭제되었습니다.');
+        await fetchAddresses(user._id.toString(), token); // 주소 목록 최신화
+        closeAddressModal(); // 모달 닫기
+        alert('배송지가 삭제되었습니다.'); // 알림 표시
       }
     } catch (err) {
       console.error('배송지 삭제 실패:', err);
@@ -209,11 +209,21 @@ export default function AddressCards({ addresses, size }: Props) {
           >
             {/* 삭제 버튼 */}
             <button
-              onClick={() => handleDeleteAddress(addr.id)}
-              className={`border text-sm text-gray-500 border-poten-gray-1 ${buttonPad} ${radius}`}
-            >
-              삭제
-            </button>
+  onClick={() => handleDeleteAddress(addr.id)}
+  className={`
+    text-[12px] md:text-[14px]
+    px-2 md:px-4
+    py-[2px] md:py-[6px]
+    border border-gray-300
+    text-gray-600
+    rounded-sm md:rounded
+    whitespace-nowrap
+    w-full md:w-auto
+  `}
+>
+  삭제
+</button>
+
 
             {/* 수정 버튼: 모달 열기 */}
             <button
@@ -221,7 +231,16 @@ export default function AddressCards({ addresses, size }: Props) {
                 setSelectedAddress(addr);
                 openAddressModal();
               }}
-              className={`border text-sm text-gray-500 border-poten-black ${buttonPad} ${radius}`}
+              className={`
+                text-[12px] md:text-[14px]
+                px-2 md:px-4
+                py-[2px] md:py-[6px]
+                border border-black
+                text-gray-800
+                rounded-sm md:rounded
+                whitespace-nowrap
+                w-full md:w-auto
+              `}
             >
               수정
             </button>
@@ -230,7 +249,16 @@ export default function AddressCards({ addresses, size }: Props) {
             {!addr.isDefault && (
               <button
                 onClick={() => handleSetDefaultAddress(addr.id)}
-                className={`border text-sm text-[var(--color-poten-red)] border-[var(--color-poten-red)] ${buttonPad} ${radius}`}
+                className={`
+                  border border-[var(--color-poten-red)]
+                  text-[12px] md:text-[14px]
+                  px-2 md:px-4
+                  py-[2px] md:py-[6px]
+                  text-[var(--color-poten-red)]
+                  rounded-sm md:rounded
+                  whitespace-nowrap
+                  w-full md:w-auto
+                `}
               >
                 기본배송지로 변경
               </button>
@@ -238,12 +266,21 @@ export default function AddressCards({ addresses, size }: Props) {
 
             {/* 선택 버튼 */}
             {!addr.isSelected && (
-              <button
-                onClick={() => handleSelectAddress(addr.id)}
-                className={`border text-sm text-blue-600 border-blue-400 ${buttonPad} ${radius}`}
-              >
-                선택
-              </button>
+             <button
+              onClick={() => handleSelectAddress(addr.id)}
+              className={`
+                text-[12px] md:text-[14px]
+                px-2 md:px-4
+                py-[2px] md:py-[6px]
+                border border-blue-400
+                text-blue-600
+                rounded-sm md:rounded
+                whitespace-nowrap
+                w-full md:w-auto
+              `}
+            >
+              선택
+            </button>
             )}
           </div>
         </div>
