@@ -15,7 +15,7 @@ export default function ItemDetailHeader({
   const tabs = [
     { name: '상품 상세 정보', id: 'detail-image' },
     { name: '교환/반품 안내', id: 'detail-notice' },
-    { name: '상품 후기', id: 'detail-review' },
+    // { name: '상품 후기', id: 'detail-review' },
   ];
 
   const handleTabClick = (tab: { name: string; id: string }) => {
@@ -24,7 +24,7 @@ export default function ItemDetailHeader({
 
   return (
     <section
-      className={`w-full z-50 transition-all duration-300 ease-in-out
+      className={`w-full z-30 transition-all duration-300 ease-in-out
         ${isSticky ? 'fixed top-0 left-0 bg-white shadow-xs' : 'relative'}`}>
       <div
         className={`mx-4 xl:w-[1200px] xl:mx-auto
