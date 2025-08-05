@@ -1,3 +1,18 @@
+// 상품 조건 타입들
+export type ProductCondition = '새상품' | '중고' | '미사용 중고';
+export type AgeGrade =
+  | '전체 이용가'
+  | '12세 이용가'
+  | '15세 이용가'
+  | '18세 이용가'
+  | '청소년 이용불가';
+export type PlatformName =
+  | '닌텐도 NDS'
+  | '닌텐도 스위치 1'
+  | '닌텐도 스위치 2'
+  | '플레이스테이션 4'
+  | '플레이스테이션 5';
+
 // 상품 extra 타입
 export interface IproductExtra {
   releaseDate: string;
@@ -9,7 +24,7 @@ export interface IproductExtra {
   used: boolean;
   ageGrade: string;
   platform: string;
-  platformVersion: number;
+  platformVersion: number | null;
   originalPrice: number;
   language: string;
 }
@@ -61,13 +76,34 @@ export interface Iproduct {
   quantity: number;
   buyQuantity: number;
   mainImages: IproductImg[];
+  content?: IproductImg[]; // 상세 이미지 추가
   createdAt: string;
   updatedAt: string;
   extra: IproductExtra;
-  seller: IproductSeller;
-  replies: number;
-  bookmarks: number;
-  options: number;
+  seller?: IproductSeller;
+  replies?: number;
+  bookmarks?: number;
+  options?: number;
+}
+
+// 검색/필터용 extra 타입
+export interface ProductExtraFilters {
+  category?: string;
+  condition?: ProductCondition;
+  used?: boolean;
+  isNew?: boolean;
+  isBest?: boolean;
+  platform?: PlatformName;
+  platformVersion?: number | null;
+  ageGrade?: AgeGrade;
+  priceRange?: {
+    min?: number;
+    max?: number;
+  };
+  releaseDateRange?: {
+    from?: string;
+    to?: string;
+  };
 }
 
 // 상품 목록 조회시 응답 타입

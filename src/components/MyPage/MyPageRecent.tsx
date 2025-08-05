@@ -6,6 +6,7 @@ import React from 'react';
 import { IRecentOrder } from '@/types/RecentOrder';
 import EmptyState from '@/components/MyPage/EmptyState';
 
+
 type Props = {
   recentOrders: IRecentOrder[];
 };
@@ -96,29 +97,36 @@ function Card({
     >
       {/* 상품 이미지 */}
       <div className={`${imageSize} bg-white shadow-inner rounded-md overflow-hidden`}>
-        <Image
-          // 서버에서 받은 경로 조합
-          src={`/files/febc13-final14-emjf/${order.image.path}`}
-          alt={order.title}
-          width={160}
-          height={160}
-          className="w-full h-full object-contain"
-        />
+        {order.products?.length > 0 ? (
+          <Image
+            src={order.products[0].image.path}
+            alt={order.products[0].image.originalname || order.products[0].name}
+            width={160}
+            height={160}
+            className="w-full h-full object-contain"
+            style={{ width: '100%', height: 'auto' }} // 명시적 비율 유지
+          />
+        ) : (
+          <div className="w-full h-full flex items-center justify-center text-sm text-gray-400">
+            이미지 없음
+          </div>
+        )}
       </div>
+
 
       {/* 텍스트 정보 영역 */}
       <div className="flex flex-col justify-between flex-1 py-1">
         <div className="flex flex-col gap-1">
           <p className="text-[14px] font-bold text-black">{order.status}</p>
           <p className="text-[12px] text-[var(--color-poten-gray-2)]">{order.date}</p>
-          <p className="text-[14px] text-black mt-1">{order.title}</p>
+          <p className="text-[14px] text-black mt-1">{order.products[0].name}</p>
           <p className="text-[16px] font-bold text-black">{order.price}</p>
         </div>
 
         {/* 상세보기 / 리뷰쓰기 버튼 */}
         <div className="mt-2 flex justify-between items-center">
           <Link
-            href={`/list/${order.productId}`} // 상품 상세 페이지 링크
+            href={`/list/${order.products[0]._id}`} // 상품 상세 페이지 링크
             className="flex items-center gap-1 text-sm text-[var(--color-poten-red)]"
           >
             상세보기

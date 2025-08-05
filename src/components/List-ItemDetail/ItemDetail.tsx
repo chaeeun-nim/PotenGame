@@ -3,15 +3,22 @@ import ItemDetailHeader from '@/components/List-ItemDetail/ItemDetailHeader';
 import ItemDetailImage from '@/components/List-ItemDetail/ItemDetailImage';
 import ItemDetailNotice from '@/components/List-ItemDetail/ItemDetailNotice';
 import ItemDetailReview from '@/components/List-ItemDetail/ItemDetailReview';
+import { useParams } from 'next/navigation';
 import { useEffect, useRef, useState } from 'react';
 
 /* 상품 상세 페이지 '/list/[id]' 하단부 (상품 상세 정보, 교환/반품 안내, 상품 후기)를 구현한 컴포넌트입니다.(상품 상세 페이지 하단부) */
 interface ItemDetailProps {
   // ItemCard가 페이지에 있을 시 ref 받도록 props 추가
   itemCardRef?: React.RefObject<HTMLElement>;
+  productId?: string;
+  category?: string;
 }
 
 export default function ItemDetail({ itemCardRef }: ItemDetailProps) {
+  const params = useParams();
+  const category = params.category as string;
+  const productId = params.id as string;
+
   const [activeSection, setActiveSection] = useState<string>('상품 상세 정보');
   const [isHeaderSticky, setIsHeaderSticky] = useState(false);
   const itemDetailRef = useRef<HTMLDivElement>(null);
@@ -95,7 +102,7 @@ export default function ItemDetail({ itemCardRef }: ItemDetailProps) {
           id="detail-image"
           data-section="상품 상세 정보"
           className="scroll-mt-20 mb-20">
-          <ItemDetailImage />
+          <ItemDetailImage productId={productId} category={category} />
         </section>
         <section
           id="detail-notice"
@@ -107,7 +114,7 @@ export default function ItemDetail({ itemCardRef }: ItemDetailProps) {
           id="detail-review"
           data-section="상품 후기"
           className="scroll-mt-20 mb-20">
-          <ItemDetailReview />
+          <ItemDetailReview productId={productId} />
         </section>
       </div>
     </div>
