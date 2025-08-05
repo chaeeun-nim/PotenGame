@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import EmptyIcon from '@/assets/img/errorimg.png';
+import EmptyIcon from '@/assets/icons/exclamation-gray.svg';
 
 export default function EmptyState({
   message = '최근 주문한 상품이 없습니다.',

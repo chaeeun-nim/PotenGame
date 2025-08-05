@@ -146,11 +146,7 @@ export default function OrderOk({ id }: { id: string }) {
               <div className="flex justify-between">
                 <p className="font-medium text-[16px]">단골할인</p>
                 <p className="font-bold text-[18px] text-poten-red">
-                  -
-                  {(
-                    data.cost.discount.products + data.cost.discount.shippingFees
-                  ).toLocaleString()}
-                  원
+                  -{data.cost.discount.products.toLocaleString()}원
                 </p>
               </div>
               <div className="flex justify-between">

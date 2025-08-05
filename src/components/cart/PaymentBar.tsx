@@ -89,11 +89,11 @@ export default function PaymentBar() {
                 {cost.products?.toLocaleString() ?? 0}원
               </span>
               결제하기
-              <div
+              <span
                 className="text-poten-red md:hidden bg-white text-center w-8 h-8 rounded-4xl flex justify-center items-center
             text-[16px] ml-2">
                 {countItem}
-              </div>
+              </span>
             </button>
           </div>
         </div>

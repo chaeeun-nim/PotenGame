@@ -30,7 +30,7 @@ export default function LoginForm() {
 
   const setUser = useUserStore((state) => state.setUser);
   const { setCart, setCost } = useCartStore();
-  const { setLike } = useLikeStore();
+  const { setLike, addLikeNum } = useLikeStore();
 
   // setUser는 상태를 변경하는 함수이므로 useEffect에서 호출해야 한다.
   useEffect(() => {
@@ -58,7 +58,6 @@ export default function LoginForm() {
       } else {
         router.back(); // 이전 페이지로 이동한다.
       }
-
       (async () => {
         const res = await getCart(userState.item.token.accessToken);
         if (res.ok) {
@@ -70,6 +69,7 @@ export default function LoginForm() {
         const res = await getLike(userState.item.token.accessToken);
         if (res.ok) {
           setLike(res.item);
+          res.item.forEach((item) => addLikeNum(item.product._id));
         }
       })();
     } else {
@@ -96,7 +96,9 @@ export default function LoginForm() {
 
         <div className="flex justify-between mt-3 mb-10">
           <div>
-            <Link href="/find/findId" className="mr-2 md:mr-5">아이디 찾기</Link>
+            <Link href="/find/findId" className="mr-2 md:mr-5">
+              아이디 찾기
+            </Link>
             <Link href="/find/findPw">비밀번호 찾기</Link>
           </div>
 

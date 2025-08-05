@@ -21,18 +21,21 @@ export default function OrderSetup() {
       quantity: item.quantity,
     }));
 
+    const firstAddress = user?.extra?.address?.[0];
+
     updateOrder((prev: Iorder) => ({
       ...prev,
       products: productList,
       address: {
-        addressNumber: user?.extra?.address[0].addressNumber || 0,
-        name: user?.extra?.address[0].name || '',
-        value: user?.extra?.address[0].value || '',
+        addressNumber: firstAddress?.addressNumber || 0,
+        name: firstAddress?.name || '',
+        value: firstAddress?.value || '',
       },
     }));
   }, [user, cart, cost]);
 
   if (!user && !cart && !cost) return null;
+  if (!user) return null;
 
   return (
     <>

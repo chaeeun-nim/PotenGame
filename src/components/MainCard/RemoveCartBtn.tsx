@@ -23,7 +23,6 @@ export default function RemoveCartBtn({ ItemId }: { ItemId: number }) {
       if (res.ok) {
         setCart(res.item);
         setCost(res.cost);
-        console.log('제거완료');
       }
     }
   }
@@ -33,6 +32,7 @@ export default function RemoveCartBtn({ ItemId }: { ItemId: number }) {
       <button
         onClick={removeHandle}
         className="flex items-center w-[100px] md:w-[150px] xl:w-[200px] font-medium text-[16px] md:text-[18px] xl:text-[20px] text-poten-gray3  flex-row place-content-center  h-[32px] xl:h-[36px] bg-white  rounded-sm gap-1 border-1 border-poten-gray-1"
+        disabled={isLoading}
         type="button">
         {isLoading ? (
           <LoadingRing />

@@ -1,8 +1,8 @@
 'use client';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
-import cart from '@/assets/icons/cart.svg';
+import cartIcon from '@/assets/icons/cart.svg';
 import cartAdded from '@/assets/icons/addcart.svg';
 import usedTag from '@/assets/icons/used-tag.svg';
 import newTag from '@/assets/icons/new-tag.svg';
@@ -10,6 +10,13 @@ import filledHeart from '@/assets/icons/heart-filled.svg';
 import { useItemCardContext } from '@/components/list-ItemCard/ItemCardContext';
 import ItemLikeBtn from '@/components/list-ItemCard/ItemLikeBtn';
 import ItemNumInput from '@/components/list-ItemCard/ItemNumInput';
+// 추가 import
+import useCartStore from '@/zustand/cartStore';
+import useUserStore from '@/zustand/userStore';
+import useLoginModal from '@/zustand/areyouLogin';
+import { addCart } from '@/data/actions/addCart';
+import { getCart } from '@/data/functions/getCart';
+import { removeCart } from '@/data/functions/removeCart';
 
 // 날짜 포멧팅 함수
 function formatDate(dateString: string): string {
@@ -32,14 +39,15 @@ function formatDate(dateString: string): string {
 
 export default function ItemCardInfo() {
   const { variant, productData } = useItemCardContext();
-  const [isInCart, setIsInCart] = useState(false);
   const [quantity, setQuantity] = useState(1);
 
-  const handleCartClick = () => {
-    setIsInCart(!isInCart);
-  };
+  //전역 상태 관리 추가
+  const { cart, setCart, setCost } = useCartStore();
+  const { user } = useUserStore();
+  const { openViewModal } = useLoginModal();
+  const [isLoading, setLoading] = useState(false);
 
-  // 기본값 설정
+  // 상품 기본값 설정
   const defaultData = {
     _id: 1,
     name: '젤다의 전설 야생의 숨결',
@@ -58,8 +66,79 @@ export default function ItemCardInfo() {
     quantity: 5,
   };
 
-  // productData 있을시 사용, 없을시 기본값
   const data = productData || defaultData;
+
+  // 장바구니 상태 체크 (MainCard CardBtn과 동일 로직)
+  const [isInCart, setIsInCart] = useState(
+    cart.some((item) => item.product._id === data._id),
+  );
+
+  // 전역 상태 변경 시 로컬 상태 업데이트 (CartBtn과 동일)
+  useEffect(() => {
+    setIsInCart(cart.some((item) => item.product._id === data._id));
+  }, [cart, data._id]);
+
+  // 장바구니 추가 함수 (AddCartBtn과 동일 로직)
+  const handleAddToCart = async () => {
+    if (!user) {
+      openViewModal();
+      return;
+    }
+
+    setLoading(true);
+
+    const formData = new FormData();
+    formData.append('product_id', data._id.toString());
+    formData.append('quantity', '1');
+    formData.append('token', user.token.accessToken);
+
+    try {
+      const result = await addCart(null, formData);
+      if (result?.ok === 1) {
+        setCart(result.item);
+        const res = await getCart(user.token.accessToken);
+        if (res.ok) {
+          setCost(res.cost);
+        }
+      }
+    } catch (error) {
+      console.error('장바구니 추가 실패:', error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  // 장바구니 제거 함수 (RemoveCartBtn과 동일 로직)
+  const handleRemoveFromCart = async () => {
+    if (!user) return;
+
+    const cartBasket = cart.find((item) => item.product._id === data._id);
+    if (!cartBasket?._id) return;
+
+    setLoading(true);
+    try {
+      const res = await removeCart(user.token.accessToken, cartBasket._id);
+      if (res.ok) {
+        setCart(res.item);
+        setCost(res.cost);
+      }
+    } catch (error) {
+      console.error('장바구니 제거 실패:', error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  // 장바구니 버튼 클릭 핸들러
+  const handleCartClick = () => {
+    if (isInCart) {
+      handleRemoveFromCart();
+    } else {
+      handleAddToCart();
+    }
+  };
+
+  // productData 있을시 사용, 없을시 기본값
   const releaseDate = formatDate(
     data.extra?.releaseDate || defaultData.extra.releaseDate,
   );
@@ -109,7 +188,7 @@ export default function ItemCardInfo() {
               </div>
               <div className="flex flex-row items-center">
                 <Image
-                  src={cart}
+                  src={cartIcon}
                   alt="남은 상품 수량"
                   className="w-[18px] h-[18px] mr-0.5"
                 />
@@ -220,26 +299,37 @@ export default function ItemCardInfo() {
       </div>
 
       <footer className="mt-[16px] w-full flex flex-row items-center justify-between gap-4">
+        {/* MainCard의 CardBtn과 동일 로직 적용  */}
         <button
           onClick={handleCartClick}
-          className={`items-center flex flex-row place-content-center flex-1 h-[30px] rounded-sm gap-1 border-1 ${!isInCart ? 'border-poten-gray-2' : ''}`}>
-          <span
-            className={`text-sm md:text-base ${!isInCart ? 'text-poten-gray-2' : ''}`}>
-            {isInCart ? '장바구니' : '담기'}
-          </span>
-          <Image
-            src={isInCart ? cartAdded : cart}
-            alt={isInCart ? '장바구니에서 제거' : '장바구니에 추가'}
-            className="w-5 h-5"
-            style={
-              !isInCart
-                ? {
-                    filter:
-                      'brightness(0) saturate(100%) invert(69%) sepia(6%) saturate(365%) hue-rotate(181deg) brightness(92%) contrast(86%)',
-                  }
-                : {}
-            }
-          />
+          disabled={isLoading}
+          className={`items-center flex flex-row place-content-center flex-1 h-[30px] rounded-sm gap-1 border-1
+            ${!isInCart ? 'border-poten-gray-2' : ''}
+            ${isLoading ? 'opacity-50 cursor-not-allowed' : ''}
+          `}>
+          {isLoading ? (
+            <div className="w-4 h-4 border-2 border-t-transparent border-current rounded-full animate-spin"></div>
+          ) : (
+            <>
+              <span
+                className={`text-sm md:text-base ${!isInCart ? 'text-poten-gray-2' : ''}`}>
+                {isInCart ? '장바구니' : '담기'}
+              </span>
+              <Image
+                src={isInCart ? cartAdded : cartIcon}
+                alt={isInCart ? '장바구니에서 제거' : '장바구니에 추가'}
+                className="w-5 h-5"
+                style={
+                  !isInCart
+                    ? {
+                        filter:
+                          'brightness(0) saturate(100%) invert(69%) sepia(6%) saturate(365%) hue-rotate(181deg) brightness(92%) contrast(86%)',
+                      }
+                    : {}
+                }
+              />
+            </>
+          )}
         </button>
 
         <ItemLikeBtn className="w-[30px] h-[30px]" />

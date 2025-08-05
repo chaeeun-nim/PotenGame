@@ -108,7 +108,7 @@ export default function MobileGnb() {
           <li
             className={` p-2 rounded-[4px] w-full ${menuActive ? 'bg-poten-snowgray2 shadow-[inset_1px_1px_1px_0_rgba(0,0,0,0.16)]' : null} `}>
             <button
-              className="w-full flex justify-center items-center flex-col"
+              className="w-full flex justify-center items-center flex-col text-[10px] text-center"
               onClick={menuHandle}>
               <Image
                 className="mb-0.5"
@@ -117,7 +117,7 @@ export default function MobileGnb() {
                 width={24}
                 height={24}
               />
-              <p className="text-[10px] text-center">메뉴</p>
+              메뉴
             </button>
           </li>
           <li
