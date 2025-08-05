@@ -12,7 +12,7 @@ const ImageSkeleton = ({ variant }: { variant: 'default' | 'detailed' }) => {
       case 'detailed':
         return 'w-full h-[200px] md:h-[300px] xl:h-[400px]';
       default:
-        return 'w-full h-[101px] md:h-[142px] xl:h-[182px]';
+        return 'w-full min-h-[238px] md:min-h-[310px] xl:min-w-[300px] xl:min-h-[350px] flex flex-col rounded-[4px] md:rounded-[8px] overflow-hidden';
     }
   };
 
@@ -45,9 +45,9 @@ export default function ItemCardImage() {
   const getImageStyles = () => {
     switch (variant) {
       case 'detailed':
-        return 'w-full h-[200px] md:h-[300px] xl:h-[400px] object-cover rounded-lg';
+        return 'w-full h-[200px] md:h-[300px] xl:h-[400px] object-contain rounded-lg';
       default:
-        return 'w-full h-[101px] md:h-[142px] xl:h-[182px] object-cover';
+        return 'w-full h-full object-contain';
     }
   };
 
@@ -56,13 +56,13 @@ export default function ItemCardImage() {
       case 'detailed':
         return 'w-full flex justify-center items-center md:justify-start xl:justify-start';
       default:
-        return 'w-full flex-shrink-0';
+        return 'w-full h-[238px] md:h-[310px] xl:h-[350px] xl:w-[282px] object-cover flex-shrink-0';
     }
   };
 
   // 이미지 URL 생성  (productData가 있을 시 사용, 없을면 기본값)
   const imageUrl = productData?.mainImages?.[0]?.path
-    ? `${process.env.NEXT_PUBLIC_API_URL}/${productData.mainImages[0].path}`
+    ? `${productData.mainImages[0].path}`
     : ErrorImg;
 
   // 전역으로 5개의 에러 발생, 혹은 local에서 이미지 에러 발생 시

@@ -6,7 +6,6 @@ import { SortType } from '@/types/sort';
 const API_URL = process.env.NEXT_PUBLIC_API_URL;
 const CLIENT_ID = process.env.NEXT_PUBLIC_CLIENT_ID || '';
 
-
 // 검색/필터 파라미터 타입
 export interface ProductSearchParams {
   page?: number;
@@ -18,6 +17,15 @@ export interface ProductSearchParams {
   priceMax?: number;
   search?: string;
   category?: string; // listStore와 일치
+  extra?: {
+    category?: string;
+    condition?: string;
+    platform?: string;
+    used?: boolean;
+    isNew?: boolean;
+    isBest?: boolean;
+    [key: string]: string | number | boolean | null | undefined;
+  };
 }
 
 // 커스텀 필터 타입 정의

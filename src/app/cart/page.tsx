@@ -6,6 +6,7 @@ import CartList from '@/components/cart/CartList';
 import PaymentBar from '@/components/cart/PaymentBar';
 import MainPromotion from '@/components/MainPromotion';
 import SectionHeader from '@/components/SectionHeader';
+import { Metadata } from 'next';
 
 /*
 로직정리
@@ -26,6 +27,15 @@ X버튼을 누르면 즉시 장바구니 자체에서 삭제되면서 다시 렌
 - 결제하기 버튼을 누르면 선택된 제품만 선별하여 결제창으로 넘어간다
 
 */
+
+export const metadata: Metadata = {
+  title: '장바구니',
+  description: '포텐게임 장바구니 페이지',
+  openGraph: {
+    title: '장바구니',
+    description: '포텐게임 장바구니 페이지',
+  },
+};
 
 export default async function CartPage() {
   return (

@@ -4,8 +4,8 @@ import Link from 'next/link';
 export default function FooterContents() {
   return (
     <>
-      <main className="w-full bg-poten-black-2 pb-[100px]">
-        <section
+      <section className="w-full bg-poten-black-2 pb-[100px]">
+        <div
           className="px-6 py-6 text-poten-gray-1 lg:max-w-[1200px]
         lg:mx-auto grid grid-cols-2 md:grid-cols-4 lg:grid-cols-12 grid-rows-5 md:grid-rows-3 gap-y-[32px]">
           <div className="lg:col-span-2">
@@ -152,8 +152,8 @@ export default function FooterContents() {
               Like Lion FrontEnd BootCamp 13
             </p>
           </div>
-        </section>
-      </main>
+        </div>
+      </section>
     </>
   );
 }
