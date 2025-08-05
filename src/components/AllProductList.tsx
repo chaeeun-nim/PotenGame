@@ -117,7 +117,7 @@ export default function AllProductList() {
         // 첫 20개 표시
         setDisplayedProducts(products.slice(0, ITEMS_PER_PAGE));
         setCurrentDisplayCount(ITEMS_PER_PAGE);
-
+        console.log('API 응답:', result);
         // 더 보여줄 상품 있는지 확인
         setHasMore(products.length > ITEMS_PER_PAGE);
 

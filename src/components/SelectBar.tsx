@@ -45,7 +45,8 @@ export default function SelectBar({ variant = 'default', categories }: SelectBar
   // 로컬 상태 (카테고리 버튼 비활성화 상태)
   const [activeButtons, setActiveButton] = useState<Set<number>>(new Set());
 
-  const labels = categories || DEFAULT_CATEGORIES;
+  const navLabels = DEFAULT_CATEGORIES;
+  // const labels = categories || DEFAULT_CATEGORIES;
 
   // 정렬 옵션 정의
   const sortOptions: { value: SortType; label: string }[] = [
@@ -66,14 +67,14 @@ export default function SelectBar({ variant = 'default', categories }: SelectBar
       category: (filters.category as 'GAME' | 'CONSOLE') || undefined,
     };
 
-    const activeIndices = getActiveButtonIndices(labels, compatibleFilters);
+    const activeIndices = getActiveButtonIndices(navLabels, compatibleFilters);
     setActiveButton(new Set(activeIndices));
-  }, [filters, labels]);
+  }, [filters, navLabels]);
 
   // 초기 활성 버튼 설정 (카테고리별 페이지 진입 시)
   useEffect(() => {
-    if (categories) {
-      // 카테고리별 페이지에서 처음 3개 버튼 활성화
+    if (!categories) {
+      // 전체 페이지에서만 처음 3개 버튼 활성화
       setActiveButton(new Set([0, 1, 2]));
     }
   }, [categories]);
@@ -88,6 +89,18 @@ export default function SelectBar({ variant = 'default', categories }: SelectBar
       newActiveButtons.delete(index);
     } else {
       newActiveButtons.add(index);
+    }
+
+    // 플랫폼 필터 클릭 시 처리 방지
+    if (category.value.startsWith('platform-')) {
+      // 플랫폼 버튼은 UI 상태만 토글하고 실제 필터는 적용하지 않음
+      if (isCurrentlyActive) {
+        newActiveButtons.delete(index);
+      } else {
+        newActiveButtons.add(index);
+      }
+      setActiveButton(newActiveButtons);
+      return; // 함수 종료, 실제 필터 적용 방지
     }
 
     // listStore FilterState를 filterUtils FilterState로 변환
@@ -119,6 +132,11 @@ export default function SelectBar({ variant = 'default', categories }: SelectBar
 
   // 현 카테고리 텍스트 호출
   const getCurrentCategoryText = (): string => {
+    // 카테고리별 페이지에서는 플랫폼 정보 표시, 전체 페이지에서는 "전체 상품"
+    if (categories && filters.platform) {
+      // 카테고리별 페이지 확인 추가
+      return filters.platform;
+    }
     return filters.platform || '전체 상품';
   };
 
@@ -126,13 +144,19 @@ export default function SelectBar({ variant = 'default', categories }: SelectBar
   const handleResetFilters = () => {
     resetFilters();
     setActiveButton(new Set());
+
     window.location.href = '/list';
   };
 
   // 개별 필터 제거 핸들러
   const handleRemoveFilter = (filterKey: keyof ListStoreFilterState) => {
-    const newFilters = { ...filters };
+    // 플랫폼 필터 제거 시 전체 상품 페이지로 이동
+    if (filterKey === 'platform') {
+      window.location.href = '/list';
+      return;
+    }
 
+    const newFilters = { ...filters };
     // 타입 안전한 속성 제거
     if (filterKey in newFilters) {
       newFilters[filterKey] = undefined;
@@ -217,7 +241,7 @@ export default function SelectBar({ variant = 'default', categories }: SelectBar
       <nav className="flex flex-col md:flex-row md:justify-between gap-4 md:gap-0 mb-5">
         {/* 카테고리 필터 버튼들 */}
         <ul className="flex items-center overflow-x-auto gap-2 md:gap-3 xl:gap-0 scrollbar-hide pl-2 pr-2 -mr-2">
-          {labels.map((label, index) => (
+          {navLabels.map((label, index) => (
             <li
               key={index}
               className={
@@ -261,7 +285,8 @@ export default function SelectBar({ variant = 'default', categories }: SelectBar
               {(filters as FilterState).platform}
               <button
                 onClick={() => handleRemoveFilter('platform')}
-                className="ml-1 hover:bg-red-700 rounded-full w-4 h-4 flex items-center justify-center">
+                className="ml-1 hover:bg-red-700 rounded-full w-4 h-4 flex items-center justify-center"
+                title="전체 상품으로 이동">
                 ×
               </button>
             </span>
