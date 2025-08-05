@@ -27,16 +27,6 @@ function formatDate(dateString: string): string {
   return `${year}.${month}.${day}`;
 }
 
-// 신상품 체크 함수 (180일 이내)
-//! 구현하였으나 현재 미사용, 향후 필요할 수 있음으로 유지
-// function isNewProduct(releaseDate: string): boolean {
-//   const today = new Date();
-//   const release = new Date(releaseDate);
-//   const diffTime = today.getTime() - release.getTime();
-//   const diffDays = diffTime / (1000 * 60 * 60 * 24);
-//   return diffDays <= 180;
-// }
-
 export default function ItemCardInfo() {
   const { variant, productData } = useItemCardContext();
   const [quantity, setQuantity] = useState(1);
@@ -70,12 +60,12 @@ export default function ItemCardInfo() {
 
   // 장바구니 상태 체크 (MainCard CardBtn과 동일 로직)
   const [isInCart, setIsInCart] = useState(
-    cart.some((item) => item.product._id === data._id),
+    cart.some((item) => Number(item.product._id) === Number(data._id)),
   );
 
   // 전역 상태 변경 시 로컬 상태 업데이트 (CartBtn과 동일)
   useEffect(() => {
-    setIsInCart(cart.some((item) => item.product._id === data._id));
+    setIsInCart(cart.some((item) => Number(item.product._id) === Number(data._id)));
   }, [cart, data._id]);
 
   // 장바구니 추가 함수 (AddCartBtn과 동일 로직)
@@ -88,7 +78,7 @@ export default function ItemCardInfo() {
     setLoading(true);
 
     const formData = new FormData();
-    formData.append('product_id', data._id.toString());
+    formData.append('product_id', `${data._id}`);
     formData.append('quantity', '1');
     formData.append('token', user.token.accessToken);
 
@@ -112,12 +102,13 @@ export default function ItemCardInfo() {
   const handleRemoveFromCart = async () => {
     if (!user) return;
 
-    const cartBasket = cart.find((item) => item.product._id === data._id);
+    const cartBasket = cart.find((item) => Number(item.product._id) === Number(data._id));
     if (!cartBasket?._id) return;
 
     setLoading(true);
     try {
-      const res = await removeCart(user.token.accessToken, cartBasket._id);
+      const cartId = Number(cartBasket._id);
+      const res = await removeCart(user.token.accessToken, cartId);
       if (res.ok) {
         setCart(res.item);
         setCost(res.cost);
@@ -206,8 +197,8 @@ export default function ItemCardInfo() {
                 </li>
                 <li className="grid grid-cols-3 my-1 xl:my-2 xl:order-3">
                   <span className="text-poten-gray-2 font-bold text-sm">발매일</span>
+                  <p className="text-sm col-span-2">{releaseDate}</p>
                 </li>
-                <p className="text-sm col-span-2">{releaseDate}</p>
                 <li className="grid grid-cols-3 my-1 xl:my-2 xl:order-5">
                   <span className="text-poten-gray-2 font-bold text-sm">플랫폼</span>
                   <p className="text-sm col-span-2">

@@ -3,10 +3,10 @@
 import ItemDetailHeader from '@/components/List-ItemDetail/ItemDetailHeader';
 import ItemDetailImage from '@/components/List-ItemDetail/ItemDetailImage';
 import ItemDetailNotice from '@/components/List-ItemDetail/ItemDetailNotice';
-import ItemDetailReview from '@/components/List-ItemDetail/ItemDetailReview';
 import { Iproduct } from '@/types/products';
 import { useParams } from 'next/navigation';
 import { useEffect, useRef, useState } from 'react';
+// import ItemDetailReview from '@/components/List-ItemDetail/ItemDetailReview';
 
 /* 상품 상세 페이지 '/list/[category]/[id]' 하단부 (상품 상세 정보, 교환/반품 안내, 상품 후기)를 구현한 컴포넌트입니다.(상품 상세 페이지 하단부) */
 interface ItemDetailProps {
@@ -122,12 +122,13 @@ export default function ItemDetail({
           className="scroll-mt-20 mb-20">
           <ItemDetailNotice />
         </section>
-        <section
+        {/* 개발 일정 이슈로 추후 개발 */}
+        {/* <section
           id="detail-review"
           data-section="상품 후기"
           className="scroll-mt-20 mb-20">
           <ItemDetailReview productId={resolvedProductId} productData={productData} />
-        </section>
+        </section> */}
       </div>
     </div>
   );

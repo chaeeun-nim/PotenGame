@@ -11,6 +11,8 @@ import ItemCardInfo from '@/components/list-ItemCard/ItemCardInfo';
 import Link from 'next/link';
 import { Iproduct } from '@/types/products';
 import { useParams } from 'next/navigation';
+import useCartStore from '@/zustand/useCartStore';
+import CartModal from '@/components/cart/CartModal';
 
 interface ItemCardProps {
   variant?: ItemCardVariant;
@@ -28,9 +30,42 @@ export default function ItemCard({
   const params = useParams();
   const currentCategory = params.category as string;
   const [isLiked, setIsLiked] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const addToCart = useCartStore((state) => state.addToCart);
+
+  // 상품 기본값 설정
+  const defaultData = {
+    _id: 1,
+    name: '젤다의 전설 야생의 숨결',
+    price: 89900,
+    extra: {
+      originalPrice: 1000000,
+      releaseDate: '2008-05-24',
+      used: false,
+      platform: 'Nintendo Switch',
+      condition: '미사용 중고',
+      ageGrade: '전체 이용가',
+      language: '음성-영어,일본어 / 자막-한국어',
+    },
+    shippingFees: 4000,
+    bookmarks: 240,
+    quantity: 5,
+  };
+
+  const currentProductData = productData || defaultData;
 
   const handleLikeClick = () => {
     setIsLiked(!isLiked);
+  };
+  const handleAddToCart = (e: React.MouseEvent) => {
+    e.preventDefault(); // Link 클릭 방지
+
+    // 기본 수량 1로 장바구니에 추가
+    addToCart(currentProductData, 1);
+
+    // 모달 열기
+    setIsModalOpen(true);
   };
 
   // 하트 아이콘 관련 코드
@@ -104,27 +139,33 @@ export default function ItemCard({
     ? `/list/${currentCategory}/${productId}`
     : `/list/${productId}`;
   return (
-    <ItemCardProvider variant={variant} productData={productData}>
-      <section className={`${getCardStyles()} ${className || ''}`}>
-        <Link href={productLink}>
-          <ItemCardImage />
-        </Link>
-        <ItemCardInfo />
-
-        {/* 상품 목록 페이지(/list) 일 때, 아래 버튼 들을 숨기는 코드 */}
-        <div className={getButtonContainerStyles()}>
-          <button onClick={handleLikeClick} className={getLikeButtonStyles()}>
-            좋아요
-            <HeartIcon className="w-[18px] h-[18px] text-poten-gray-2 ml-0.5" />
-          </button>
-
-          <Link
-            href={productLink}
-            className="bg-poten-red text-white rounded-md font-bold flex justify-center items-center w-[160px] h-[35px] md:w-[183px] md:h-[47px] xl:w-[174px] xl:h-[47px]">
-            장바구니
+    <>
+      <ItemCardProvider variant={variant} productData={productData}>
+        <section className={`${getCardStyles()} ${className || ''}`}>
+          <Link href={productLink}>
+            <ItemCardImage />
           </Link>
-        </div>
-      </section>
-    </ItemCardProvider>
+          <ItemCardInfo />
+          {/* 상품 목록 페이지(/list) 일 때, 아래 버튼 들을 숨기는 코드 */}
+          <div className={getButtonContainerStyles()}>
+            <button onClick={handleLikeClick} className={getLikeButtonStyles()}>
+              좋아요
+              <HeartIcon className="w-[18px] h-[18px] text-poten-gray-2 ml-0.5" />
+            </button>
+            <button
+              onClick={handleAddToCart}
+              className="bg-poten-red text-white rounded-md font-bold flex justify-center items-center w-[160px] h-[35px] md:w-[183px] md:h-[47px] xl:w-[174px] xl:h-[47px] hover:bg-red-600 transition-colors">
+              장바구니에 추가
+            </button>
+          </div>
+        </section>
+      </ItemCardProvider>
+      {/* 장바구니 추가 확인 모달 */}
+      <CartModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        productName={currentProductData.name}
+      />
+    </>
   );
 }
