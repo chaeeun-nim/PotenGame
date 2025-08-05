@@ -1,18 +1,28 @@
+// src/components/List-ItemDetail/ItemDetailReview.tsx
 /* 상품 상세 페이지 '/list/[id]' 하단부 (상품 상세 정보) 상품 후기 component를 구현한 컴포넌트입니다.(상품 상세 페이지 하단부) */
 
+import MainLoginModal from '@/components/MainLoginModal';
+import { Iproduct } from '@/types/products';
 import useLoginModal from '@/zustand/areyouLogin';
 import useUserStore from '@/zustand/userStore';
 
 interface ItemDetailReviewProps {
   productId?: string;
+  productData?: Iproduct;
 }
 
-export default function ItemDetailReview({ productId }: ItemDetailReviewProps) {
+export default function ItemDetailReview({
+  productId,
+  productData,
+}: ItemDetailReviewProps) {
   //전역 상태 관리 추가
   const { user } = useUserStore();
   const { openViewModal } = useLoginModal();
 
-  // 샘플 리뷰 데이터 (실제로 productId를 사용해서 API에서 가져와야 함)
+  // 상품명 가져오기 (productData 우선 사용)
+  const productName = productData?.name || '상품';
+
+  // 샘플 리뷰 데이터 (실제로 productId를 사용해서 API에서 호출)
   const reviews = [
     {
       id: 1,
@@ -53,12 +63,15 @@ export default function ItemDetailReview({ productId }: ItemDetailReviewProps) {
   const handleWriteReview = () => {
     if (!user) {
       openViewModal(); // 로그인 모달 열기
+      <MainLoginModal />;
       return;
     }
 
-    if (productId) {
-      console.log(`상품 ${productId}에 대한 리뷰 작성 페이지로 이동`);
-      //TODO 실제 구현: 리뷰 작성 모달 열기 또는 페이지 이동
+    const currentProductId = productData?._id || productId;
+    if (currentProductId) {
+      console.log(
+        `상품 ${currentProductId}(${productName})에 대한 리뷰 작성 페이지로 이동`,
+      );
     }
   };
 
@@ -117,11 +130,11 @@ export default function ItemDetailReview({ productId }: ItemDetailReviewProps) {
       </div>
 
       {/* 디버그 정보 (개발 중에만 표시) */}
-      {process.env.NODE_ENV === 'development' && productId && (
+      {/* {process.env.NODE_ENV === 'development' && productId && (
         <div className="mt-4 p-2 bg-gray-100 rounded text-xs text-gray-600">
           Debug: Product ID = {productId} | User: {user ? '로그인됨' : '로그인 안됨'}
         </div>
-      )}
+      )} */}
     </div>
   );
 }

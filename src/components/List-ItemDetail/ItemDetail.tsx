@@ -1,23 +1,31 @@
+// src/components/List-ItemDetail/ItemDetail.tsx
 'use client';
 import ItemDetailHeader from '@/components/List-ItemDetail/ItemDetailHeader';
 import ItemDetailImage from '@/components/List-ItemDetail/ItemDetailImage';
 import ItemDetailNotice from '@/components/List-ItemDetail/ItemDetailNotice';
 import ItemDetailReview from '@/components/List-ItemDetail/ItemDetailReview';
+import { Iproduct } from '@/types/products';
 import { useParams } from 'next/navigation';
 import { useEffect, useRef, useState } from 'react';
 
-/* 상품 상세 페이지 '/list/[id]' 하단부 (상품 상세 정보, 교환/반품 안내, 상품 후기)를 구현한 컴포넌트입니다.(상품 상세 페이지 하단부) */
+/* 상품 상세 페이지 '/list/[category]/[id]' 하단부 (상품 상세 정보, 교환/반품 안내, 상품 후기)를 구현한 컴포넌트입니다.(상품 상세 페이지 하단부) */
 interface ItemDetailProps {
   // ItemCard가 페이지에 있을 시 ref 받도록 props 추가
   itemCardRef?: React.RefObject<HTMLElement>;
   productId?: string;
   category?: string;
+  productData?: Iproduct;
 }
 
-export default function ItemDetail({ itemCardRef }: ItemDetailProps) {
+export default function ItemDetail({
+  itemCardRef,
+  productId,
+  category,
+  productData,
+}: ItemDetailProps) {
   const params = useParams();
-  const category = params.category as string;
-  const productId = params.id as string;
+  const resolvedCategory = category || (params.category as string);
+  const resolvedProductId = productId || (params.id as string);
 
   const [activeSection, setActiveSection] = useState<string>('상품 상세 정보');
   const [isHeaderSticky, setIsHeaderSticky] = useState(false);
@@ -102,7 +110,11 @@ export default function ItemDetail({ itemCardRef }: ItemDetailProps) {
           id="detail-image"
           data-section="상품 상세 정보"
           className="scroll-mt-20 mb-20">
-          <ItemDetailImage productId={productId} category={category} />
+          <ItemDetailImage
+            productId={resolvedProductId}
+            productData={productData}
+            category={resolvedCategory}
+          />
         </section>
         <section
           id="detail-notice"
@@ -114,7 +126,7 @@ export default function ItemDetail({ itemCardRef }: ItemDetailProps) {
           id="detail-review"
           data-section="상품 후기"
           className="scroll-mt-20 mb-20">
-          <ItemDetailReview productId={productId} />
+          <ItemDetailReview productId={resolvedProductId} productData={productData} />
         </section>
       </div>
     </div>
