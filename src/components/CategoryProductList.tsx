@@ -86,6 +86,7 @@ export default function CategoryProductList({ category }: CategoryProductListPro
     setError,
     setTotalPages,
     setCurrentPage,
+    setFilters,
     resetFilters,
   } = useListStore();
 
@@ -117,10 +118,30 @@ export default function CategoryProductList({ category }: CategoryProductListPro
     [],
   );
 
+  // 카테고리에 따른 필터 상태 설정
+  const setCategoryFilter = useCallback(
+    (categoryCode: string) => {
+      const platformName = getCategoryValue(categoryCode);
+
+      if (platformName !== '전체 상품') {
+        // 카테고리별 페이지에서는 해당 플랫폼 필터를 설정
+        setFilters({
+          platform: platformName,
+          // 기존 다른 필터들은 유지
+          condition: filters.condition,
+          category: filters.category,
+          priceMin: filters.priceMin,
+          priceMax: filters.priceMax,
+          search: filters.search,
+        });
+      }
+    },
+    [getCategoryValue, setFilters, filters],
+  );
+
   const fetchInitialProducts = useCallback(async () => {
     // 중복 호출 방지
     if (isLoadingRef.current) {
-      console.log('이미 로딩 중, API 호출 스킵');
       return;
     }
 
@@ -136,33 +157,19 @@ export default function CategoryProductList({ category }: CategoryProductListPro
         sort: sortBy as SortType,
       };
 
-      console.log('⭐ 수정된 API 호출 파라미터:', searchParams);
       const result = await getProductList(searchParams);
-      console.log('⭐ API 응답:', result);
 
       if (result.ok === 1) {
         const products = result.item || [];
-        console.log('⭐ 받은 상품 수:', products.length);
 
         // 백엔드 데이터 구조에 맞는 필터링
         const filteredProducts = products.filter((product) => {
           // 백엔드 데이터: extra.category 배열에서 카테고리 코드 확인
           const productCategories = product.extra?.category || [];
 
-          console.log(
-            '🔥 상품명:',
-            product.name,
-            '카테고리 배열:',
-            productCategories,
-            '찾는 카테고리:',
-            category,
-          );
-
           // extra.category 배열에 현재 카테고리 코드가 포함되어 있는지 확인
           return productCategories.includes(category);
         });
-
-        console.log('필터링된 상품 수:', filteredProducts.length);
 
         setProducts(filteredProducts);
         setAllProducts(filteredProducts);
@@ -298,7 +305,6 @@ export default function CategoryProductList({ category }: CategoryProductListPro
   useEffect(() => {
     // category 변경 확인
     if (currentCategoryRef.current !== category) {
-      console.log('카테고리 변경 감지:', currentCategoryRef.current, '->', category);
       currentCategoryRef.current = category;
       hasInitializedRef.current = false;
 
@@ -308,18 +314,21 @@ export default function CategoryProductList({ category }: CategoryProductListPro
       setAllProducts([]);
       setCurrentDisplayCount(ITEMS_PER_PAGE);
       setHasMore(true);
+
+      // 카테고리에 맞는 필터 설정
+      setCategoryFilter(category);
+
       hasInitializedRef.current = true;
 
       // 즉시 API 호출
       fetchInitialProducts();
     }
-  }, [category, resetFilters, fetchInitialProducts]);
+  }, [category, resetFilters, fetchInitialProducts, setCategoryFilter]);
 
   // 필터/정렬 변경 시에만 API 호출
   useEffect(() => {
     // 초기화가 완료되었고, 카테고리가 현재 카테고리와 일치할 때만 API 호출
     if (hasInitializedRef.current) {
-      console.log('필터/정렬 변경으로 인한 API 호출');
       fetchInitialProducts();
     }
   }, [filters, sortBy, fetchInitialProducts]);
