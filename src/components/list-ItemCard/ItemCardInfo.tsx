@@ -122,6 +122,12 @@ export default function ItemCardInfo() {
 
   // 장바구니 버튼 클릭 핸들러
   const handleCartClick = () => {
+    // 먼저 로그인 확인
+    if (!user) {
+      openViewModal();
+      return;
+    }
+
     if (isInCart) {
       handleRemoveFromCart();
     } else {
@@ -323,7 +329,7 @@ export default function ItemCardInfo() {
           )}
         </button>
 
-        <ItemLikeBtn className="w-[30px] h-[30px]" />
+        <ItemLikeBtn className="w-[30px] h-[30px]" productId={data._id} />
       </footer>
     </article>
   );

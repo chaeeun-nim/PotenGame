@@ -13,6 +13,8 @@ import { Iproduct } from '@/types/products';
 import { useParams } from 'next/navigation';
 import useCartStore from '@/zustand/useCartStore';
 import CartModal from '@/components/cart/CartModal';
+import useUserStore from '@/zustand/userStore';
+import useLoginModal from '@/zustand/areyouLogin';
 
 interface ItemCardProps {
   variant?: ItemCardVariant;
@@ -33,6 +35,8 @@ export default function ItemCard({
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const addToCart = useCartStore((state) => state.addToCart);
+  const { user } = useUserStore(); // 추가
+  const { openViewModal } = useLoginModal(); // 추가
 
   // 상품 기본값 설정
   const defaultData: Iproduct = {
@@ -72,11 +76,21 @@ export default function ItemCard({
   const currentProductData = productData || defaultData;
 
   const handleLikeClick = () => {
+    if (!user) {
+      openViewModal();
+      return;
+    }
     setIsLiked(!isLiked);
   };
 
   const handleAddToCart = async (e: React.MouseEvent) => {
     e.preventDefault(); // Link 클릭 방지
+
+    // 로그인 확인
+    if (!user) {
+      openViewModal();
+      return;
+    }
 
     try {
       // 장바구니에 추가 - 실제 API 함수 사용

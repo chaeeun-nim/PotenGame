@@ -5,18 +5,17 @@ meta {
 }
 
 get {
-  url: {{url}}/products?custom={"extra.used": true}
+  url: {{url}}/products?custom={"extra.category":{"$all":["HARDWARE","PLAYSTATION05","NEW"]}}
   body: none
   auth: inherit
 }
 
 params:query {
-  custom: {"extra.used": true}
+  custom: {"extra.category":{"$all":["HARDWARE","PLAYSTATION05","NEW"]}}
   ~limit: 5
   ~page: 1
   ~custom: {"extra.platform": "${platform}","extra.category":{"$all":["GAME"]}}
   ~sort: {"buyQuantity": -1}
-  ~custom: {"extra.category":{"$all":["HARDWARE","PLAYSTATION05","NEW"]}}
   ~limit: 12
   ~sort: {"extra.releaseDate": -1}
   ~custom: {"extra.category":{"$all":["GAME","NINTENDO02","NEW"]}}
