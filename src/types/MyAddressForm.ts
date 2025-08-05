@@ -1,6 +1,6 @@
 // src/types/MyAddressForm.ts
 export interface MyAddressForm {
-  id: number;             // 고유 ID
+  id: string;             // 고유 ID
   label: string;          // 배송지 이름 (예: 집, 회사)
   address: string;        // 상세 주소
   zip: string;            // 우편번호 (string이 맞음)
