@@ -11,7 +11,7 @@ export async function getUserInfo(
   token: string,
 ): Promise<{ ok: 1; item: Iuser } | { ok: 0; message: string }> {
   try {
-    const res = await fetch(`${API_URL}/user/me`, {
+    const res = await fetch(`${API_URL}/users/me`, {
       method: 'GET',
       headers: {
         'Client-Id': CLIENT_ID,

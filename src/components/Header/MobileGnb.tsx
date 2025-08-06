@@ -82,7 +82,7 @@ export default function MobileGnb() {
             <li
               className={` p-2 rounded-[4px] w-full ${pathName === '/myPage' ? 'bg-poten-snowgray2 shadow-[inset_1px_1px_1px_0_rgba(0,0,0,0.16)]' : null} `}>
               <Link
-                href="/myPage"
+                href="/mypages"
                 onClick={closeMenu}
                 className="w-full flex justify-center items-center flex-col">
                 <Image
@@ -133,7 +133,7 @@ export default function MobileGnb() {
             className={` p-2 rounded-[4px] w-full ${pathName === '/myPage/like' ? 'bg-poten-snowgray2 shadow-[inset_1px_1px_1px_0_rgba(0,0,0,0.16)]' : null} `}>
             {user ? (
               <Link
-                href="/myPage/like"
+                href="/mypages/like"
                 onClick={closeMenu}
                 className="w-full flex justify-center items-center flex-col">
                 <Image
