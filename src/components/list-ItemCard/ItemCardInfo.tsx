@@ -17,6 +17,7 @@ import useLoginModal from '@/zustand/areyouLogin';
 import { addCart } from '@/data/actions/addCart';
 import { getCart } from '@/data/functions/getCart';
 import { removeCart } from '@/data/functions/removeCart';
+import useLikeStore from '@/zustand/likeStore';
 
 // 날짜 포멧팅 함수
 function formatDate(dateString: string): string {
@@ -27,16 +28,6 @@ function formatDate(dateString: string): string {
   return `${year}.${month}.${day}`;
 }
 
-// 신상품 체크 함수 (180일 이내)
-//! 구현하였으나 현재 미사용, 향후 필요할 수 있음으로 유지
-// function isNewProduct(releaseDate: string): boolean {
-//   const today = new Date();
-//   const release = new Date(releaseDate);
-//   const diffTime = today.getTime() - release.getTime();
-//   const diffDays = diffTime / (1000 * 60 * 60 * 24);
-//   return diffDays <= 180;
-// }
-
 export default function ItemCardInfo() {
   const { variant, productData } = useItemCardContext();
   const [quantity, setQuantity] = useState(1);
@@ -46,6 +37,11 @@ export default function ItemCardInfo() {
   const { user } = useUserStore();
   const { openViewModal } = useLoginModal();
   const [isLoading, setLoading] = useState(false);
+
+  // 좋아요 관련 상태 추가
+  const { likeNum } = useLikeStore();
+  const [currentLikeCount, setCurrentLikeCount] = useState(0);
+  const [isCurrentlyLiked, setIsCurrentlyLiked] = useState(false);
 
   // 상품 기본값 설정
   const defaultData = {
@@ -68,14 +64,23 @@ export default function ItemCardInfo() {
 
   const data = productData || defaultData;
 
+  // 좋아요 상태 및 개수 추적
+  useEffect(() => {
+    const baseCount = data.bookmarks || defaultData.bookmarks;
+    const isLiked = user && likeNum?.some((item) => item === data._id);
+
+    setIsCurrentlyLiked(!!isLiked);
+    setCurrentLikeCount(baseCount); // 기본값으로 설정
+  }, [likeNum, data._id, data.bookmarks, defaultData.bookmarks, user]);
+
   // 장바구니 상태 체크 (MainCard CardBtn과 동일 로직)
   const [isInCart, setIsInCart] = useState(
-    cart.some((item) => item.product._id === data._id),
+    cart.some((item) => Number(item.product._id) === Number(data._id)),
   );
 
   // 전역 상태 변경 시 로컬 상태 업데이트 (CartBtn과 동일)
   useEffect(() => {
-    setIsInCart(cart.some((item) => item.product._id === data._id));
+    setIsInCart(cart.some((item) => Number(item.product._id) === Number(data._id)));
   }, [cart, data._id]);
 
   // 장바구니 추가 함수 (AddCartBtn과 동일 로직)
@@ -88,7 +93,7 @@ export default function ItemCardInfo() {
     setLoading(true);
 
     const formData = new FormData();
-    formData.append('product_id', data._id.toString());
+    formData.append('product_id', `${data._id}`);
     formData.append('quantity', '1');
     formData.append('token', user.token.accessToken);
 
@@ -112,12 +117,13 @@ export default function ItemCardInfo() {
   const handleRemoveFromCart = async () => {
     if (!user) return;
 
-    const cartBasket = cart.find((item) => item.product._id === data._id);
+    const cartBasket = cart.find((item) => Number(item.product._id) === Number(data._id));
     if (!cartBasket?._id) return;
 
     setLoading(true);
     try {
-      const res = await removeCart(user.token.accessToken, cartBasket._id);
+      const cartId = Number(cartBasket._id);
+      const res = await removeCart(user.token.accessToken, cartId);
       if (res.ok) {
         setCart(res.item);
         setCost(res.cost);
@@ -131,6 +137,12 @@ export default function ItemCardInfo() {
 
   // 장바구니 버튼 클릭 핸들러
   const handleCartClick = () => {
+    // 먼저 로그인 확인
+    if (!user) {
+      openViewModal();
+      return;
+    }
+
     if (isInCart) {
       handleRemoveFromCart();
     } else {
@@ -184,7 +196,10 @@ export default function ItemCardInfo() {
                   alt="좋아요 갯수"
                   className="w-[18px] h-[18px] mr-0.5"
                 />
-                <span>좋아요 {data.bookmarks || defaultData.bookmarks}개</span>
+                <span
+                  className={`transition-colors duration-200 ${isCurrentlyLiked ? 'text-poten-red font-bold' : ''}`}>
+                  좋아요 {currentLikeCount.toLocaleString()}개
+                </span>
               </div>
               <div className="flex flex-row items-center">
                 <Image
@@ -206,8 +221,8 @@ export default function ItemCardInfo() {
                 </li>
                 <li className="grid grid-cols-3 my-1 xl:my-2 xl:order-3">
                   <span className="text-poten-gray-2 font-bold text-sm">발매일</span>
+                  <p className="text-sm col-span-2">{releaseDate}</p>
                 </li>
-                <p className="text-sm col-span-2">{releaseDate}</p>
                 <li className="grid grid-cols-3 my-1 xl:my-2 xl:order-5">
                   <span className="text-poten-gray-2 font-bold text-sm">플랫폼</span>
                   <p className="text-sm col-span-2">
@@ -332,7 +347,7 @@ export default function ItemCardInfo() {
           )}
         </button>
 
-        <ItemLikeBtn className="w-[30px] h-[30px]" />
+        <ItemLikeBtn className="w-[30px] h-[30px]" productId={data._id} />
       </footer>
     </article>
   );

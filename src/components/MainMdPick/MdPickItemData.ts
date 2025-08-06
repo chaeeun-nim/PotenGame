@@ -11,11 +11,12 @@ export interface MdItem {
   price: number;
   originalPrice: number;
   releaseDate: string;
+  category: string[];
 }
 
 export const MdItems: MdItem[] = [
   {
-    _id: 1,
+    _id: 47,
     title: '슈퍼 마리오 파티 잼버리/잼버리 TV',
     src: mdbest1,
     contents:
@@ -24,9 +25,10 @@ export const MdItems: MdItem[] = [
     price: 74800,
     originalPrice: 84800,
     releaseDate: '2025-07-24',
+    category: ['GAME', 'NINTENDO02', 'NEW'],
   },
   {
-    _id: 2,
+    _id: 49,
     title: '다마고치 원더 샵',
     src: mdbest2,
     contents:
@@ -35,5 +37,6 @@ export const MdItems: MdItem[] = [
     price: 49800,
     originalPrice: 59800,
     releaseDate: '2025-06-26',
+    category: ['GAME', 'NINTENDO02', 'NEW'],
   },
 ];

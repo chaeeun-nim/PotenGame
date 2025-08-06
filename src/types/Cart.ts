@@ -33,6 +33,7 @@ export interface IcartDeletRes {
 // 장바구니 안에있는 아이템 타입
 export interface IcartItem {
   _id: number;
+  user_id: number;
   quantity: number;
   product_id: number;
   createdAt: string;
@@ -41,14 +42,17 @@ export interface IcartItem {
 }
 
 export interface ICartProductItem {
-  _id: number;
+  _id: string | number;
   name: string;
   price: number;
   seller_id: number;
   quantity: number;
   buyQuantity: number;
-  image: ICartProductItemImg;
+  active: boolean; // 추가
+  shippingFees: number;
   extra: IproductExtra;
+  bookmarks: number;
+  image?: ICartProductItemImg;
 }
 
 interface ICartProductItemImg {
