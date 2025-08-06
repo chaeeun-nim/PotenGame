@@ -2,17 +2,59 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react';
+import React, { useEffect } from 'react';
+import useUserStore from '@/zustand/userStore';
 import { IRecentOrder } from '@/types/RecentOrder';
 import EmptyState from '@/components/MyPage/EmptyState';
 
+const API_URL = process.env.NEXT_PUBLIC_API_URL!;
+const CLIENT_ID = process.env.NEXT_PUBLIC_CLIENT_ID || '';
 
-type Props = {
-  recentOrders: IRecentOrder[];
-};
+export default function MyPageRecent() {
+  const { user, setUser } = useUserStore();
+  const token = user?.token?.accessToken as string | undefined;
 
-export default function MyPageRecent({ recentOrders }: Props) {
-  const visibleOrders = recentOrders.slice(0, 2); // 최대 2개만 노출
+  const orders = user?.extra?.orders ?? [];
+
+  useEffect(() => {
+    if (!token || orders.length > 0) return; // 이미 있으면 요청 생략
+
+    const fetchOrders = async () => {
+      try {
+        const res = await fetch(`${API_URL}/orders`, {
+          headers: {
+            Authorization: `Bearer ${token}`,
+            'Client-ID': CLIENT_ID,
+          },
+        });
+
+        const json = await res.json();
+        if (json.ok) {
+          const updatedUser = {
+            ...user!,
+            extra: {
+              ...user!.extra,
+              purchases: user?.extra?.purchases ?? 0,
+              nickname: user?.extra?.nickname ?? '',
+              birthday: user?.extra?.birthday ?? '',
+              membershipClass: user?.extra?.membershipClass ?? 'MC01',
+              address: user?.extra?.address ?? [],
+              orders: json.item, // 전역 상태에 저장
+            },
+          };
+          setUser(updatedUser);
+        } else {
+          console.warn('❗ /orders API 응답 실패:', json);
+        }
+      } catch (err) {
+        console.error('🚨 /orders 요청 실패:', err);
+      }
+    };
+
+    fetchOrders();
+  }, [token, orders.length, user, setUser]);
+
+  const visibleOrders = orders.slice(0, 2); // 최대 2개 노출
 
   return (
     <>
@@ -20,7 +62,7 @@ export default function MyPageRecent({ recentOrders }: Props) {
       <section className="hidden xl:block bg-white rounded-lg px-4 mb-8">
         <SectionHeader />
         {visibleOrders.length === 0 ? (
-          <EmptyState /> 
+          <EmptyState />
         ) : (
           visibleOrders.map((order) => <Card order={order} key={order.id} size="lg" />)
         )}
@@ -66,7 +108,9 @@ function SectionHeader() {
         <div className="w-[4px] h-[20px] bg-[var(--color-poten-red)] rounded-sm" />
         <div className="flex items-baseline gap-2">
           <h2 className="text-[16px] font-semibold text-black">최근 주문 상품</h2>
-          <span className="text-[13px] text-[var(--color-poten-gray-2)]">(최근 1개월 기준)</span>
+          <span className="text-[13px] text-[var(--color-poten-gray-2)]">
+            (최근 1개월 기준)
+          </span>
         </div>
       </div>
       <div className="w-full border-t border-[var(--color-poten-gray-2)] mb-4" />
@@ -75,15 +119,8 @@ function SectionHeader() {
 }
 
 // 주문 카드 컴포넌트
-function Card({
-  order,
-  size,
-}: {
-  order: IRecentOrder;
-  size: 'lg' | 'md' | 'sm';
-}) {
-  const imageSize =
-    size === 'lg' ? 'w-[169px] h-[169px]' : 'w-full h-[100px]';
+function Card({ order, size }: { order: IRecentOrder; size: 'lg' | 'md' | 'sm' }) {
+  const imageSize = size === 'lg' ? 'w-[169px] h-[169px]' : 'w-full h-[100px]';
 
   const layoutClass =
     size === 'lg'
@@ -93,8 +130,7 @@ function Card({
   return (
     <div
       // 카드 배경 및 테두리, 반응형 레이아웃 클래스 조합
-      className={`bg-[var(--color-poten-snowgray1)] border border-[var(--color-poten-gray-1)] rounded-[8px] ${layoutClass}`}
-    >
+      className={`bg-[var(--color-poten-snowgray1)] border border-[var(--color-poten-gray-1)] rounded-[8px] ${layoutClass}`}>
       {/* 상품 이미지 */}
       <div className={`${imageSize} bg-white shadow-inner rounded-md overflow-hidden`}>
         {order.products?.length > 0 ? (
@@ -113,7 +149,6 @@ function Card({
         )}
       </div>
 
-
       {/* 텍스트 정보 영역 */}
       <div className="flex flex-col justify-between flex-1 py-1">
         <div className="flex flex-col gap-1">
@@ -127,8 +162,7 @@ function Card({
         <div className="mt-2 flex justify-between items-center">
           <Link
             href={`/list/${order.products[0]._id}`} // 상품 상세 페이지 링크
-            className="flex items-center gap-1 text-sm text-[var(--color-poten-red)]"
-          >
+            className="flex items-center gap-1 text-sm text-[var(--color-poten-red)]">
             상세보기
             <svg width="11" height="11" viewBox="0 0 24 24" fill="none">
               <path

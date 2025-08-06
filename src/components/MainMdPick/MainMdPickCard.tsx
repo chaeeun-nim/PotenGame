@@ -5,7 +5,7 @@ import Link from 'next/link';
 export default function MainMdPickCard({ cardItem }: { cardItem: MdItem }) {
   return (
     <>
-      <Link href="/" className="w-full">
+      <Link href={`/list/${cardItem.category[1]}/${cardItem._id}`} className="w-full">
         <Image
           className="rounded-t-[8px]"
           src={cardItem.src}
