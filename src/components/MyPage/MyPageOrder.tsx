@@ -1,9 +1,16 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
+import useUserStore from '@/zustand/userStore';
 import { IOrderSummaryRes } from '@/types/myorder';
 
+const API_URL = process.env.NEXT_PUBLIC_API_URL!;
+const CLIENT_ID = process.env.NEXT_PUBLIC_CLIENT_ID || '';
+
 export default function MyPageOrder() {
+  const { user } = useUserStore();
+  const token = user?.token?.accessToken as string | undefined;
+
   const [orderData, setOrderData] = useState<IOrderSummaryRes[]>([]);
 
   const orderSteps = ['결제전', '상품준비중', '배송중', '배송완료'] as const;
@@ -23,23 +30,24 @@ export default function MyPageOrder() {
   };
 
   useEffect(() => {
+    if (!token) return;
+
     const fetchData = async () => {
       try {
-        const raw = sessionStorage.getItem('user');
-        const parsed = JSON.parse(raw || '{}');
-        const token = parsed?.state?.user?.token?.accessToken;
-
-        if (!token) return;
-
-        const res = await fetch('/api/myorder', {
+        const res = await fetch(`${API_URL}/orders`, {
           headers: {
             Authorization: `Bearer ${token}`,
+            'Client-ID': CLIENT_ID,
           },
         });
 
-        const json = await res.json();
-        if (json.ok) {
-          setOrderData(json.item);
+        if (res.ok) {
+          const json = await res.json();
+          if (json.ok) {
+            setOrderData(json.item);
+          } else {
+            console.warn('market/orders API 응답 실패:', json);
+          }
         }
       } catch (err) {
         console.error('주문 요약 정보를 불러오지 못했습니다.', err);
@@ -47,14 +55,15 @@ export default function MyPageOrder() {
     };
 
     fetchData();
-  }, []);
+  }, [token]);
 
-   // API에서 받아온 주문 데이터를 카운트로 정리
+  // 주문 상태별 건수 누적
   orderData.forEach((order) => {
     const step = stateToStepMap[order.state];
-    if (step) statusCounts[step] += order.count;
+    if (step) {
+      statusCounts[step] += 1; // 각 주문은 1건씩
+    }
   });
-
   return (
     <>
       {/* PC 전용 */}
@@ -63,7 +72,7 @@ export default function MyPageOrder() {
         <div className="flex justify-center items-end gap-6 max-w-[700px] mx-auto">
           {orderSteps.map((label, index) => (
             <StatusItem
-              key={label}
+              key={`xl-${label}`}
               label={label}
               count={statusCounts[label]}
               size="xl"
@@ -80,7 +89,7 @@ export default function MyPageOrder() {
           <div className="flex justify-center items-end gap-4">
             {orderSteps.map((label, index) => (
               <StatusItem
-                key={label}
+                key={`md-${label}`}
                 label={label}
                 count={statusCounts[label]}
                 size="md"
@@ -97,7 +106,7 @@ export default function MyPageOrder() {
         <div className="flex justify-center items-end gap-4">
           {orderSteps.map((label, index) => (
             <StatusItem
-              key={label}
+              key={`sm-${label}`}
               label={label}
               count={statusCounts[label]}
               size="sm"
@@ -162,7 +171,9 @@ function StatusItem({
       {/* 라벨 + 숫자 */}
       <div className="flex flex-col items-center">
         <span className={`${labelSize} text-black mb-1 whitespace-nowrap`}>{label}</span>
-        <span className={`${textSize} font-bold leading-none ${color}`}>{count}</span>
+        <span className={`${textSize} font-bold leading-none ${color}`}>
+            {Number.isFinite(count) ? count : 0}
+        </span>
       </div>
       {/* 오른쪽 화살표 */}
       {showArrow && (

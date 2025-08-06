@@ -22,7 +22,7 @@ export default function MainLoginModal() {
 
   const loginLink = () => {
     closeViewModal();
-    router.push('./login');
+    router.push('/login');
   };
 
   if (viewModal) {

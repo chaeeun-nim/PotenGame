@@ -3,6 +3,7 @@
 import Image, { StaticImageData } from 'next/image';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
+import linkGame1 from '@/assets/img/01-ninds.webp';
 import linkGame2 from '@/assets/img/01-swtich.webp';
 import linkGame3 from '@/assets/img/01-switch2.webp';
 import linkGame4 from '@/assets/img/01-ps4.webp';
@@ -22,6 +23,14 @@ interface GameConsole {
 export default function SliderLink() {
   // 게임기별 카테고리 정보 배열
   const gameConsoles: GameConsole[] = [
+    {
+      id: 'nintendo-ds',
+      name: 'Nintendo DS',
+      displayName: 'Nintendo DS',
+      image: linkGame1,
+      alt: '닌텐도 DS',
+      categoryPath: '/list/NINTENDONDS',
+    },
     {
       id: 'nintendo-switch',
       name: 'Nintendo Switch',

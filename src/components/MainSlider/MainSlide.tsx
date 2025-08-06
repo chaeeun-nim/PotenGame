@@ -47,7 +47,7 @@ export default function MainSlider() {
         navigation={false}>
         {/* 슬라이드 아이템 1개 */}
         <SwiperSlide className="xl:!w-[1000px] md:!w-[80%] !w-full">
-          <Link href="/">
+          <Link href="/list/NINTENDO02/55">
             <Image
               className="md:rounded"
               src={visual1}
@@ -58,7 +58,7 @@ export default function MainSlider() {
           </Link>
         </SwiperSlide>
         <SwiperSlide className="xl:!w-[1000px] md:!w-[80%] !w-full ">
-          <Link href="/">
+          <Link href="/list/NINTENDO02/54">
             <Image
               className="md:rounded"
               src={visual2}
@@ -69,7 +69,7 @@ export default function MainSlider() {
           </Link>
         </SwiperSlide>
         <SwiperSlide className="xl:!w-[1000px] md:!w-[80%] !w-full">
-          <Link href="/">
+          <Link href="/list/NINTENDO02/48">
             <Image
               className="md:rounded"
               src={visual3}
@@ -80,7 +80,7 @@ export default function MainSlider() {
           </Link>
         </SwiperSlide>
         <SwiperSlide className="xl:!w-[1000px] md:!w-[80%] !w-full">
-          <Link href="/">
+          <Link href="/list/NINTENDO02/50">
             <Image
               className=" md:rounded"
               src={visual4}
@@ -91,7 +91,7 @@ export default function MainSlider() {
           </Link>
         </SwiperSlide>
         <SwiperSlide className="xl:!w-[1000px] md:!w-[80%] !w-full">
-          <Link href="/">
+          <Link href="/list/NINTENDO02/53">
             <Image
               className=" md:rounded"
               src={visual5}
