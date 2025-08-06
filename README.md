@@ -1,7 +1,7 @@
 🔗 [`포텐게임 웹사이트 바로가기`](https://poten-game.vercel.app/)  
 🖌️ [`피그마 디자인 보기`](https://www.figma.com/design/8TP0tsKHT2BWPThthqh3XZ/z1%EC%A1%B4%ED%8F%AC%ED%85%901004---final-project?node-id=0-1&t=wGKzQFjFvdCcnHYr-0)
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/f3ab585c-7266-4795-83a7-86ecddbf1512" alt="포텐게임 대표 이미지" width="600"/>
+  <img src="https://github.com/user-attachments/assets/f3ab585c-7266-4795-83a7-86ecddbf1512" alt="포텐게임 대표 이미지" width="900"/>
 </p>
 
 # 🎮 Final-14-z1zone1004 - 포텐게임 프로젝트
@@ -39,11 +39,6 @@
   <img src="https://github.com/user-attachments/assets/ee227c61-b3af-48f0-ba64-88e6fd8e678b" width="180"/>
   <img src="https://github.com/user-attachments/assets/542a6f6a-ec2e-434c-8043-9e5f70206362" width="180"/>
 </p>
-<p>
-  <img src="https://github.com/user-attachments/assets/75fad99c-fc45-4604-8017-99dc3f13f24d" width="180"/>
-  <img src="https://github.com/user-attachments/assets/ee227c61-b3af-48f0-ba64-88e6fd8e678b" width="180"/>
-  <img src="https://github.com/user-attachments/assets/542a6f6a-ec2e-434c-8043-9e5f70206362" width="180"/>
-</p>
 
 ---
 
@@ -54,10 +49,6 @@
 - 카드형 UI로 구성된 게임 리스트
 - 카드형 UI로 구성된 게임 리스트
 
-<p>
-  <img src="https://github.com/user-attachments/assets/a1a1e164-174b-449d-8920-d887209b2b64" width="180"/>
-  <img src="https://github.com/user-attachments/assets/5b83f5cf-9759-4244-8ec3-24851575d6e5" width="180"/>
-</p>
 <p>
   <img src="https://github.com/user-attachments/assets/a1a1e164-174b-449d-8920-d887209b2b64" width="180"/>
   <img src="https://github.com/user-attachments/assets/5b83f5cf-9759-4244-8ec3-24851575d6e5" width="180"/>
@@ -75,10 +66,6 @@
   <img src="https://github.com/user-attachments/assets/6a6ae291-4b5d-4677-8ba9-51965d5095e0" width="180"/>
   <img src="https://github.com/user-attachments/assets/4a7bbf8a-1b00-4118-9f02-3729fccab2a9" width="180"/>
 </p>
-<p>
-  <img src="https://github.com/user-attachments/assets/6a6ae291-4b5d-4677-8ba9-51965d5095e0" width="180"/>
-  <img src="https://github.com/user-attachments/assets/4a7bbf8a-1b00-4118-9f02-3729fccab2a9" width="180"/>
-</p>
 
 ---
 
@@ -89,11 +76,6 @@
 - 사이드바 및 하단 GNB로 빠른 접근 가능
 - 사이드바 및 하단 GNB로 빠른 접근 가능
 
-<p>
-  <img src="https://github.com/user-attachments/assets/a2a7c379-81f5-4ddd-b80d-0519a2e71bd7" width="180"/>
-  <img src="https://github.com/user-attachments/assets/2a6eef00-7cbf-4547-bdf5-48959c50f9b5" width="180"/>
-  <img src="https://github.com/user-attachments/assets/cfd8133a-f0ff-48bc-b751-f2d8dba39012" width="180"/>
-</p>
 <p>
   <img src="https://github.com/user-attachments/assets/a2a7c379-81f5-4ddd-b80d-0519a2e71bd7" width="180"/>
   <img src="https://github.com/user-attachments/assets/2a6eef00-7cbf-4547-bdf5-48959c50f9b5" width="180"/>
