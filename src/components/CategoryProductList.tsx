@@ -126,60 +126,16 @@ export default function CategoryProductList({ category }: CategoryProductListPro
       if (platformName !== '전체 상품') {
         // 카테고리별 페이지에서는 해당 플랫폼 필터를 설정
         setFilters({
-          platform: platformName,
-          // 기존 다른 필터들은 유지
-          condition: filters.condition,
-          category: filters.category,
-          priceMin: filters.priceMin,
-          priceMax: filters.priceMax,
-          search: filters.search,
+          // platform 필터는 설정하지 않음 (URL category로 처리)
+          condition: undefined,
+          category: undefined, // GAME/HARDWARE 필터 초기화
+          priceMin: undefined,
+          priceMax: undefined,
+          search: undefined,
         });
       }
     },
-    [getCategoryValue, setFilters, filters],
-  );
-
-  // 필터에 따른 상품 필터링 함수 - filterUtils의 FILTER_MAPPINGS 활용
-  const filterProductsByConditions = useCallback(
-    (products: Iproduct[]): Iproduct[] => {
-      return products.filter((product) => {
-        // 카테고리 필터링 (기본 - 현재 카테고리에 속하는 상품만)
-        const productCategories = product.extra?.category || [];
-        const belongsToCategory = productCategories.includes(category);
-
-        if (!belongsToCategory) return false;
-
-        // 조건 필터링 (used/new) - filterUtils 매핑 활용
-        if (filters.condition) {
-          if (filters.condition === 'used' && !product.extra?.used) return false;
-          if (filters.condition === 'new' && product.extra?.used) return false;
-        }
-
-        // 카테고리 타입 필터링 (GAME/CONSOLE) - filterUtils 매핑 활용
-        if (filters.category) {
-          if (filters.category === 'GAME' && !productCategories.includes('GAME'))
-            return false;
-          if (filters.category === 'CONSOLE' && !productCategories.includes('CONSOLE'))
-            return false;
-        }
-
-        // 가격 범위 필터링
-        if (filters.priceMin !== undefined && product.price < filters.priceMin)
-          return false;
-        if (filters.priceMax !== undefined && product.price > filters.priceMax)
-          return false;
-
-        // 검색어 필터링
-        if (filters.search) {
-          const searchLower = filters.search.toLowerCase();
-          const productNameLower = product.name.toLowerCase();
-          if (!productNameLower.includes(searchLower)) return false;
-        }
-
-        return true;
-      });
-    },
-    [category, filters],
+    [getCategoryValue, setFilters],
   );
 
   const fetchInitialProducts = useCallback(async () => {
@@ -194,29 +150,36 @@ export default function CategoryProductList({ category }: CategoryProductListPro
     setCurrentPage(1);
 
     try {
-      // API 호출
+      // category와 filters를 분리하여 전달
       const searchParams: ProductSearchParams = {
         page: 1,
         sort: sortBy as SortType,
+
+        // URL 카테고리는 별도로 처리 (플랫폼 필터)
+        category: category,
+
+        // SelectBar 필터들은 다른 이름으로 전달
+        condition: filters.condition,
+        // filters.category는 productType으로 전달
+        productType: filters.category as 'GAME' | 'HARDWARE',
+        priceMin: filters.priceMin,
+        priceMax: filters.priceMax,
+        search: filters.search,
       };
+
+      console.log('CategoryProductList API 호출 파라미터:', searchParams);
 
       const result = await getProductList(searchParams);
 
       if (result.ok === 1) {
         const products = result.item || [];
+        console.log('받은 상품 수:', products.length);
 
-        // 필터 조건에 다른 상품 필터링
-        const filteredProducts = filterProductsByConditions(products);
-
-        setProducts(filteredProducts);
-        setAllProducts(filteredProducts);
-
-        // 첫 20개 표시
-        setDisplayedProducts(filteredProducts.slice(0, ITEMS_PER_PAGE));
+        setProducts(products);
+        setAllProducts(products);
+        setDisplayedProducts(products.slice(0, ITEMS_PER_PAGE));
         setCurrentDisplayCount(ITEMS_PER_PAGE);
-
-        // 더 보여줄 상품 있는지 확인
-        setHasMore(filteredProducts.length > ITEMS_PER_PAGE);
+        setHasMore(products.length > ITEMS_PER_PAGE);
 
         if (result.pagination) {
           setTotalPages(result.pagination.totalPages);
@@ -227,7 +190,6 @@ export default function CategoryProductList({ category }: CategoryProductListPro
         setAllProducts([]);
         setDisplayedProducts([]);
         setHasMore(false);
-        console.warn('API 응답 오류:', result.message);
       }
     } catch (err) {
       console.error('API 호출 오류:', err);
@@ -244,7 +206,6 @@ export default function CategoryProductList({ category }: CategoryProductListPro
     category,
     sortBy,
     filters,
-    filterProductsByConditions,
     setLoading,
     setError,
     setCurrentPage,
@@ -264,27 +225,27 @@ export default function CategoryProductList({ category }: CategoryProductListPro
       const searchParams: ProductSearchParams = {
         page: nextPage,
         sort: sortBy as SortType,
+        category: category,
+        condition: filters.condition,
+        productType: filters.category as 'GAME' | 'HARDWARE',
+        priceMin: filters.priceMin,
+        priceMax: filters.priceMax,
+        search: filters.search,
       };
 
       const result = await getProductList(searchParams);
 
       if (result.ok === 1 && result.item) {
         const newProducts = result.item;
-
-        // 클라이언트 사이드 필터링 적용
-        const filteredNewProducts = filterProductsByConditions(newProducts);
-
-        const updatedAllProducts = [...allProducts, ...filteredNewProducts];
+        const updatedAllProducts = [...allProducts, ...newProducts];
 
         setAllProducts(updatedAllProducts);
         setCurrentPage(nextPage);
 
-        // 현재 표시 갯수에서 + 20 더 표시
         const newDisplayCount = currentDisplayCount + ITEMS_PER_PAGE;
         setDisplayedProducts(updatedAllProducts.slice(0, newDisplayCount));
         setCurrentDisplayCount(newDisplayCount);
 
-        // 더 가져올 페이지 확인
         setHasMore(nextPage < totalPages || updatedAllProducts.length > newDisplayCount);
       }
     } catch (err) {
@@ -299,7 +260,6 @@ export default function CategoryProductList({ category }: CategoryProductListPro
     sortBy,
     category,
     filters,
-    filterProductsByConditions,
     allProducts,
     currentDisplayCount,
     totalPages,
