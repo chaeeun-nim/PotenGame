@@ -21,6 +21,7 @@ import {
   toggleFilter,
   getActiveButtonIndices,
   isFiltersEmpty,
+  isLabelActive,
 } from '@/utils/filterUtils';
 
 // listStore의 실제 FilterState 타입 정의
@@ -107,26 +108,18 @@ export default function SelectBar({ variant = 'default', categories }: SelectBar
 
   // 카테고리 버튼 클릭 핸들러
   const handleCategoryClick = (index: number, category: Category) => {
-    const newActiveButtons = new Set(activeButtons);
-    const isCurrentlyActive = activeButtons.has(index);
-
-    // 버튼 상태 토글
-    if (isCurrentlyActive) {
-      newActiveButtons.delete(index);
-    } else {
-      newActiveButtons.add(index);
-    }
-
     // 플랫폼 필터 클릭 시 처리 방지
     if (category.value.startsWith('platform-')) {
-      // 플랫폼 버튼은 UI 상태만 토글하고 실제 필터는 적용하지 않음
+      const newActiveButtons = new Set(activeButtons);
+      const isCurrentlyActive = activeButtons.has(index);
+
       if (isCurrentlyActive) {
         newActiveButtons.delete(index);
       } else {
         newActiveButtons.add(index);
       }
       setActiveButton(newActiveButtons);
-      return; // 함수 종료, 실제 필터 적용 방지
+      return;
     }
 
     // listStore FilterState를 filterUtils FilterState로 변환
@@ -135,6 +128,9 @@ export default function SelectBar({ variant = 'default', categories }: SelectBar
       condition: (filters.condition as 'used' | 'new') || undefined,
       category: (filters.category as 'GAME' | 'HARDWARE') || undefined,
     };
+
+    // 현재 버튼이 활성화되어 있는지 확인
+    const isCurrentlyActive = isLabelActive(category, compatibleFilters);
 
     // 필터 토글 적용
     const newFilters = toggleFilter(category, compatibleFilters, isCurrentlyActive);
@@ -146,7 +142,10 @@ export default function SelectBar({ variant = 'default', categories }: SelectBar
       category: newFilters.category,
     };
 
-    setActiveButton(newActiveButtons);
+    // 활성 버튼 상태 업데이트
+    const activeIndices = getActiveButtonIndices(navLabels, newFilters);
+    setActiveButton(new Set(activeIndices));
+
     setFilters(listStoreFilters);
   };
 
