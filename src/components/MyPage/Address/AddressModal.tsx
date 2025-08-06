@@ -123,7 +123,7 @@ export default function AddressModal({ selectedAddress }: Props) {
                 ...addr,
                 isDefault: form.isDefault ? false : addr.isDefault,
                 isSelected: form.isSelected ? false : addr.isSelected,
-              }
+              },
         )
       : [
           ...currentList.map((addr) => ({
@@ -134,7 +134,6 @@ export default function AddressModal({ selectedAddress }: Props) {
           newAddress,
         ];
 
-
     const body = {
       extra: {
         ...user.extra,
@@ -142,7 +141,6 @@ export default function AddressModal({ selectedAddress }: Props) {
       },
     };
 
-    console.log(body);     
     try {
       const res = await fetch(`${API_URL}/users/${userId}`, {
         method: 'PATCH',
@@ -154,7 +152,6 @@ export default function AddressModal({ selectedAddress }: Props) {
         body: JSON.stringify(body),
       });
 
-      console.log(body);
       if (res.ok) {
         const data = await res.json();
         setUser(data.item);
@@ -174,8 +171,7 @@ export default function AddressModal({ selectedAddress }: Props) {
     <div
       className={`${
         isAddressModalOpen ? 'fixed' : 'hidden'
-      } top-0 left-0 w-full h-full bg-black/40 z-[99999] flex justify-center items-center`}
-    >
+      } top-0 left-0 w-full h-full bg-black/40 z-[99999] flex justify-center items-center`}>
       <div className="bg-white p-6 rounded-lg w-[90%] max-w-md">
         <h2 className="text-lg font-bold mb-4">
           {selectedAddress ? '배송지 수정' : '신규 배송지 등록'}
@@ -220,8 +216,7 @@ export default function AddressModal({ selectedAddress }: Props) {
           </button>
           <button
             onClick={handleSave}
-            className="px-4 py-2 bg-[var(--color-poten-red)] text-white rounded"
-          >
+            className="px-4 py-2 bg-[var(--color-poten-red)] text-white rounded">
             저장
           </button>
         </div>
