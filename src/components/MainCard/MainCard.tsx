@@ -72,7 +72,7 @@ export default function MainCard({ item }: { item: Iproduct }) {
     <>
       <div>
         <Link
-          href={`/list/${item._id}`}
+          href={`/list/${item.extra.category[1]}/${item._id}`}
           className="rounded-[4px] md:rounded-[8px] bg-white block overflow-hidden shadow">
           <div
             className={`${PlatformColor} flex gap-1 justify-center items-center py-1 h-[30px]`}>

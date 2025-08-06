@@ -29,7 +29,7 @@ export default function BestCard({
     <>
       <div className="grid grid-cols-12 gap-4 md:p-[8px]">
         <Link
-          href={`/list/${firstItem._id}`}
+          href={`/list/${firstItem.extra.category[1]}/${firstItem._id}`}
           className={`col-span-12 md:col-span-6 border-4 ${borderClass} bg-white rounded-lg pb-[36px] px-[36px]`}>
           <div
             className={`${bgClass} px-[16px] py-[8px] md:px-[28px]  inline-block rounded-b-xl mb-[18px] md:mb-[28px]`}>
@@ -53,7 +53,7 @@ export default function BestCard({
           {othersItem.map((item, i) => {
             return (
               <Link
-                href={`/list/${item._id}`}
+                href={`/list/${item.extra.category[1]}/${item._id}`}
                 key={item._id}
                 className="border-1 rounded-md border-poten-gray-1 p-[16px] bg-white">
                 <p className="font-extrabold mb-[16px] text-poten-gray3 leading-tight lg:text-[22px]">

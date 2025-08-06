@@ -5,12 +5,13 @@ meta {
 }
 
 get {
-  url: {{url}}/products
+  url: {{url}}/products?keyword=카트
   body: none
   auth: inherit
 }
 
 params:query {
+  keyword: 카트
   ~limit: 5
   ~page: 1
   ~custom: {"extra.platform": "${platform}","extra.category":{"$all":["GAME"]}}
