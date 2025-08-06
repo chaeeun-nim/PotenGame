@@ -132,7 +132,7 @@ export default function AddressCards({ addresses, size }: Props) {
     }));
 
     try {
-      const res = await fetch(`${API_URL}/user/${user._id}`, {
+      const res = await fetch(`${API_URL}/users/${user._id}`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',
