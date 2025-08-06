@@ -83,7 +83,7 @@ export function Nav() {
             ))}
 
             <li className="group relative py-5">
-              <Link href="/">
+              <Link href="/about">
                 <span className="group-hover:font-bold group-hover:text-poten-red">
                   포텐게임
                 </span>
