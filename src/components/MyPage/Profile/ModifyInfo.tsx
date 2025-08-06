@@ -12,6 +12,7 @@ export default function ModifyInfo() {
   const redirect = useSearchParams().get('redirect');
 
   const [ userId, setUserId ] = useState<number | null>(null);
+  // const [ _id, set_Id ] = useState<number | null>(null);
   const [ name, setName ] = useState('');
   const [ email, setEmail ] = useState('');
   const [ phone, setPhone ] = useState('');
@@ -20,10 +21,13 @@ export default function ModifyInfo() {
     const userData = sessionStorage.getItem('user');
     if (userData) {
       const parsed = JSON.parse(userData);
-      const Id = parsed.state.user._id;
+      const id = parsed.state.user._id;
+      setEmail(parsed.state.user.email);
+      setPhone(parsed.state.user.phone);
+      setName(parsed.state.user.name);
       
 
-      setUserId(Id);
+      setUserId(id);
     }
   },[])
 
@@ -70,9 +74,10 @@ export default function ModifyInfo() {
               if (userId){
 
                 const res = await modifyUser(user?.token?.accessToken, userId, {
-                  name: name || undefined,
-                  email: email || undefined,
-                  phone: phone || undefined
+                  _id: id,
+                  name: name,
+                  email: email,
+                  phone: phone
                 });
 
 
