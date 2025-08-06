@@ -16,6 +16,7 @@ import ps4 from '@/assets/img/01-ps4.webp';
 import ps5 from '@/assets/img/01-ps5.webp';
 import PotenLogo from '../../../public/logo/logo1.svg';
 import useLikeStore from '@/zustand/likeStore';
+import useListStore from '@/zustand/listStore';
 
 export default function MobileNav({
   animation,
@@ -30,6 +31,7 @@ export default function MobileNav({
   const { resetCartStore } = useCartStore();
   const { resetStore } = useOrderSotre();
   const { resetLikeStore } = useLikeStore();
+  const { setFilters, resetFilters } = useListStore();
 
   const handleLogout = () => {
     resetUser();
@@ -37,6 +39,44 @@ export default function MobileNav({
     resetStore();
     resetLikeStore();
     location.reload();
+  };
+
+  // 카테고리 클릭 핸들러
+  const handleCategoryClick = (
+    platForm:
+      | 'NINTENDONDS'
+      | 'NINTENDO01'
+      | 'NINTENDO02'
+      | 'PLAYSTATION04'
+      | 'PLAYSTATION05',
+  ) => {
+    closeMenu();
+    // 카테고리 플랫폼 필터 설정
+    const platformValue = platForm;
+    resetFilters(); // 기존 필터 초기화
+    setFilters({ platform: platformValue }); // 해당 카테고리 필터 설정
+  };
+
+  const handleSubCategoryClick = (
+    condition: 'used' | 'new',
+    category: 'GAME' | 'HARDWARE',
+    platForm:
+      | 'NINTENDONDS'
+      | 'NINTENDO01'
+      | 'NINTENDO02'
+      | 'PLAYSTATION04'
+      | 'PLAYSTATION05',
+  ) => {
+    closeMenu();
+    const platformValue = platForm;
+    resetFilters(); // 기존 필터 초기화
+
+    // 플랫폼, 컨디션, 카테고리 필터 동시 설정
+    setFilters({
+      platform: platformValue,
+      condition: condition === 'used' ? 'used' : 'new',
+      category: category,
+    });
   };
 
   return (
@@ -109,28 +149,41 @@ export default function MobileNav({
           <ul className="bg-poten-snowgray1 pl-4 py-6 w-[480px] border-r-1 border-poten-gray-1">
             <li className="pb-4">
               <Link
-                href="/"
+                href="/list/NINTENDONDS"
+                onClick={() => handleCategoryClick('NINTENDONDS')}
                 className="font-bold text-[18px] flex items-center border-l-6 border-poten-red px-2">
                 닌텐도 DS
               </Link>
             </li>
             <li className="mb-1">
-              <Link href="/" className="p-1 ">
+              <Link
+                href="/list/NINTENDONDS"
+                onClick={() => handleSubCategoryClick('used', 'HARDWARE', 'NINTENDONDS')}
+                className="p-1 ">
                 중고 게임기
               </Link>
             </li>
             <li className="mb-1">
-              <Link href="/" className="p-1 ">
+              <Link
+                href="/list/NINTENDONDS"
+                onClick={() => handleSubCategoryClick('used', 'GAME', 'NINTENDONDS')}
+                className="p-1 ">
                 중고 게임
               </Link>
             </li>
             <li className="mb-1">
-              <Link href="/" className="p-1 ">
+              <Link
+                href="/list/NINTENDONDS"
+                onClick={() => handleSubCategoryClick('new', 'HARDWARE', 'NINTENDONDS')}
+                className="p-1 ">
                 새제품 게임기
               </Link>
             </li>
             <li className="mb-1">
-              <Link href="/" className="p-1 ">
+              <Link
+                href="/list/NINTENDONDS"
+                onClick={() => handleSubCategoryClick('new', 'GAME', 'NINTENDONDS')}
+                className="p-1 ">
                 새제품 게임
               </Link>
             </li>
@@ -150,28 +203,41 @@ export default function MobileNav({
           <ul className="bg-poten-snowgray1 pl-4 py-6 w-[480px] border-r-1 border-poten-gray-1">
             <li className="pb-4">
               <Link
-                href="/"
+                href="/list/NINTENDO01"
+                onClick={() => handleCategoryClick('NINTENDO01')}
                 className="font-bold text-[18px] flex items-center border-l-6 border-poten-red px-2">
                 닌텐도 스위치
               </Link>
             </li>
             <li className="mb-1">
-              <Link href="/" className="p-1 ">
+              <Link
+                href="/list/NINTENDO01"
+                onClick={() => handleSubCategoryClick('used', 'HARDWARE', 'NINTENDO01')}
+                className="p-1 ">
                 중고 게임기
               </Link>
             </li>
             <li className="mb-1">
-              <Link href="/" className="p-1 ">
+              <Link
+                href="/list/NINTENDO01"
+                onClick={() => handleSubCategoryClick('used', 'GAME', 'NINTENDO01')}
+                className="p-1 ">
                 중고 게임
               </Link>
             </li>
             <li className="mb-1">
-              <Link href="/" className="p-1 ">
+              <Link
+                href="/list/NINTENDO01"
+                onClick={() => handleSubCategoryClick('new', 'HARDWARE', 'NINTENDO01')}
+                className="p-1 ">
                 새제품 게임기
               </Link>
             </li>
             <li className="mb-1">
-              <Link href="/" className="p-1 ">
+              <Link
+                href="/list/NINTENDO01"
+                onClick={() => handleSubCategoryClick('new', 'GAME', 'NINTENDO01')}
+                className="p-1 ">
                 새제품 게임
               </Link>
             </li>
@@ -190,28 +256,41 @@ export default function MobileNav({
           <ul className="bg-poten-snowgray1 pl-4 py-6 w-[480px] border-r-1 border-poten-gray-1">
             <li className="pb-4">
               <Link
-                href="/"
+                href="/list/NINTENDO02"
+                onClick={() => handleCategoryClick('NINTENDO02')}
                 className="font-bold text-[18px] flex items-center border-l-6 border-poten-red px-2">
                 닌텐도 스위치 2
               </Link>
             </li>
             <li className="mb-1">
-              <Link href="/" className="p-1 ">
+              <Link
+                href="/list/NINTENDO02"
+                onClick={() => handleSubCategoryClick('used', 'HARDWARE', 'NINTENDO02')}
+                className="p-1 ">
                 중고 게임기
               </Link>
             </li>
             <li className="mb-1">
-              <Link href="/" className="p-1 ">
+              <Link
+                href="/list/NINTENDO02"
+                onClick={() => handleSubCategoryClick('used', 'GAME', 'NINTENDO02')}
+                className="p-1 ">
                 중고 게임
               </Link>
             </li>
             <li className="mb-1">
-              <Link href="/" className="p-1 ">
+              <Link
+                href="/list/NINTENDO02"
+                onClick={() => handleSubCategoryClick('new', 'HARDWARE', 'NINTENDO02')}
+                className="p-1 ">
                 새제품 게임기
               </Link>
             </li>
             <li className="mb-1">
-              <Link href="/" className="p-1 ">
+              <Link
+                href="/list/NINTENDO02"
+                onClick={() => handleSubCategoryClick('new', 'GAME', 'NINTENDO02')}
+                className="p-1 ">
                 새제품 게임
               </Link>
             </li>
@@ -230,28 +309,43 @@ export default function MobileNav({
           <ul className="bg-poten-snowgray1 pl-4 py-6 w-[480px] border-r-1 border-poten-gray-1">
             <li className="pb-4">
               <Link
-                href="/"
+                href="/list/PLAYSTATION04"
+                onClick={() => handleCategoryClick('PLAYSTATION04')}
                 className="font-bold text-[18px] flex items-center border-l-6 border-poten-red px-2">
                 플레이스테이션 4
               </Link>
             </li>
             <li className="mb-1">
-              <Link href="/" className="p-1 ">
+              <Link
+                href="/list/PLAYSTATION04"
+                onClick={() =>
+                  handleSubCategoryClick('used', 'HARDWARE', 'PLAYSTATION04')
+                }
+                className="p-1 ">
                 중고 게임기
               </Link>
             </li>
             <li className="mb-1">
-              <Link href="/" className="p-1 ">
+              <Link
+                href="/list/PLAYSTATION04"
+                onClick={() => handleSubCategoryClick('used', 'GAME', 'PLAYSTATION04')}
+                className="p-1 ">
                 중고 게임
               </Link>
             </li>
             <li className="mb-1">
-              <Link href="/" className="p-1 ">
+              <Link
+                href="/list/PLAYSTATION04"
+                onClick={() => handleSubCategoryClick('new', 'HARDWARE', 'PLAYSTATION04')}
+                className="p-1 ">
                 새제품 게임기
               </Link>
             </li>
             <li className="mb-1">
-              <Link href="/" className="p-1 ">
+              <Link
+                href="/list/PLAYSTATION04"
+                onClick={() => handleSubCategoryClick('new', 'GAME', 'PLAYSTATION04')}
+                className="p-1 ">
                 새제품 게임
               </Link>
             </li>
@@ -270,28 +364,43 @@ export default function MobileNav({
           <ul className="bg-poten-snowgray1 pl-4 py-6 w-[480px] border-r-1 border-poten-gray-1">
             <li className="pb-4">
               <Link
-                href="/"
+                href="/list/PLAYSTATION05"
+                onClick={() => handleCategoryClick('PLAYSTATION05')}
                 className="font-bold text-[18px] flex items-center border-l-6 border-poten-red px-2">
                 플레이스테이션 5
               </Link>
             </li>
             <li className="mb-1">
-              <Link href="/" className="p-1 ">
+              <Link
+                href="/list/PLAYSTATION05"
+                onClick={() =>
+                  handleSubCategoryClick('used', 'HARDWARE', 'PLAYSTATION05')
+                }
+                className="p-1 ">
                 중고 게임기
               </Link>
             </li>
             <li className="mb-1">
-              <Link href="/" className="p-1 ">
+              <Link
+                href="/list/PLAYSTATION05"
+                onClick={() => handleSubCategoryClick('used', 'GAME', 'PLAYSTATION05')}
+                className="p-1 ">
                 중고 게임
               </Link>
             </li>
             <li className="mb-1">
-              <Link href="/" className="p-1 ">
+              <Link
+                href="/list/PLAYSTATION05"
+                onClick={() => handleSubCategoryClick('new', 'HARDWARE', 'PLAYSTATION05')}
+                className="p-1 ">
                 새제품 게임기
               </Link>
             </li>
             <li className="mb-1">
-              <Link href="/" className="p-1 ">
+              <Link
+                href="/list/PLAYSTATION05"
+                onClick={() => handleSubCategoryClick('new', 'GAME', 'PLAYSTATION05')}
+                className="p-1 ">
                 새제품 게임
               </Link>
             </li>
@@ -310,13 +419,13 @@ export default function MobileNav({
           <ul className="bg-poten-snowgray1 pl-4 py-6 w-[480px] border-r-1 border-poten-gray-1">
             <li className="pb-4">
               <Link
-                href="/"
+                href="/about"
                 className="font-bold text-[18px] flex items-center border-l-6 border-poten-red px-2">
                 포텐게임
               </Link>
             </li>
             <li className="mb-1">
-              <Link href="/" className="p-1 ">
+              <Link href="/about" className="p-1 ">
                 회사소개
               </Link>
             </li>

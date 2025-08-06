@@ -142,9 +142,9 @@ function StatusItem({
   }[size];
 
   const labelSize = {
-    xl: 'text-base',
-    md: 'text-sm',
-    sm: 'text-sm',
+  xl: 'text-base',
+  md: 'text-[13px]',
+  sm: 'text-[12px]',
   }[size];
 
   const arrowSize = {
@@ -161,7 +161,7 @@ function StatusItem({
     <div className="flex items-center gap-3">
       {/* 라벨 + 숫자 */}
       <div className="flex flex-col items-center">
-        <span className={`${labelSize} text-black mb-1`}>{label}</span>
+        <span className={`${labelSize} text-black mb-1 whitespace-nowrap`}>{label}</span>
         <span className={`${textSize} font-bold leading-none ${color}`}>{count}</span>
       </div>
       {/* 오른쪽 화살표 */}

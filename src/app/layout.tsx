@@ -5,9 +5,11 @@ import { Metadata } from 'next';
 
 import localFont from 'next/font/local';
 import MobileGnb from '@/components/Header/MobileGnb';
+import MainModal from '@/components/MainModal';
+import MainLoginModal from '@/components/MainLoginModal';
 
 const pretendard = localFont({
-  src: '../../font/pretendard/PretendardVariable.woff2',
+  src: '../../public/font/pretendard/PretendardVariable.woff2',
   display: 'swap',
   weight: '100 900',
   variable: '--font-pretendard',
@@ -71,6 +73,10 @@ export default function RootLayout({
         <MobileGnb />
         {children}
         <Footer />
+
+        {/* 전역 모달들 - 모든 페이지에서 사용 가능 */}
+        <MainModal />
+        <MainLoginModal />
       </body>
     </html>
   );
