@@ -13,6 +13,7 @@ import useUserStore from '@/zustand/userStore';
 import { usePathname } from 'next/navigation';
 import { useEffect, useRef, useState } from 'react';
 import MobileNav from './MobileNav';
+import useLoginModal from '@/zustand/areyouLogin';
 
 export default function MobileGnb() {
   const { user } = useUserStore();
@@ -20,6 +21,12 @@ export default function MobileGnb() {
   const [menuActive, setMunuActive] = useState(false);
   const [animation, setAnimation] = useState('top-[100%]');
   const navRef = useRef<HTMLDivElement>(null);
+  const { openViewModal } = useLoginModal();
+
+  const openLoginHandler = () => {
+    closeMenu();
+    openViewModal();
+  };
 
   const menuHandle = () => {
     setMunuActive(!menuActive);
@@ -76,6 +83,7 @@ export default function MobileGnb() {
               className={` p-2 rounded-[4px] w-full ${pathName === '/myPage' ? 'bg-poten-snowgray2 shadow-[inset_1px_1px_1px_0_rgba(0,0,0,0.16)]' : null} `}>
               <Link
                 href="/myPage"
+                onClick={closeMenu}
                 className="w-full flex justify-center items-center flex-col">
                 <Image
                   className="mb-0.5"
@@ -92,6 +100,7 @@ export default function MobileGnb() {
               className={` p-2 rounded-[4px] w-full ${pathName === '/login' ? 'bg-poten-snowgray2 shadow-[inset_1px_1px_1px_0_rgba(0,0,0,0.16)]' : null} `}>
               <Link
                 href="/login"
+                onClick={closeMenu}
                 className="w-full flex justify-center items-center flex-col">
                 <Image
                   className="mb-0.5"
@@ -122,27 +131,65 @@ export default function MobileGnb() {
           </li>
           <li
             className={` p-2 rounded-[4px] w-full ${pathName === '/myPage/like' ? 'bg-poten-snowgray2 shadow-[inset_1px_1px_1px_0_rgba(0,0,0,0.16)]' : null} `}>
-            <Link
-              href="/myPage/like"
-              className="w-full flex justify-center items-center flex-col">
-              <Image className="mb-0.5" src={LikeIcon} alt="찜" width={24} height={24} />
-              <p className="text-[10px] text-center">찜 목록</p>
-            </Link>
+            {user ? (
+              <Link
+                href="/myPage/like"
+                onClick={closeMenu}
+                className="w-full flex justify-center items-center flex-col">
+                <Image
+                  className="mb-0.5"
+                  src={LikeIcon}
+                  alt="찜"
+                  width={24}
+                  height={24}
+                />
+                <p className="text-[10px] text-center">찜 목록</p>
+              </Link>
+            ) : (
+              <button
+                onClick={openLoginHandler}
+                className="w-full flex justify-center items-center flex-col cursor-pointer">
+                <Image
+                  className="mb-0.5"
+                  src={LikeIcon}
+                  alt="찜"
+                  width={24}
+                  height={24}
+                />
+                <span className="text-[10px] text-center blcok">찜 목록</span>
+              </button>
+            )}
           </li>
           <li
             className={` p-2 rounded-[4px] w-full ${pathName === '/cart' ? 'bg-poten-snowgray2 shadow-[inset_1px_1px_1px_0_rgba(0,0,0,0.16)]' : null} `}>
-            <Link
-              href="/cart"
-              className="w-full flex justify-center items-center flex-col">
-              <Image
-                className="mb-0.5"
-                src={cartIcon}
-                alt="장바구니"
-                width={24}
-                height={24}
-              />
-              <p className="text-[10px] text-center">장바구니</p>
-            </Link>
+            {user ? (
+              <Link
+                href="/cart"
+                onClick={closeMenu}
+                className="w-full flex justify-center items-center flex-col">
+                <Image
+                  className="mb-0.5"
+                  src={cartIcon}
+                  alt="장바구니"
+                  width={24}
+                  height={24}
+                />
+                <p className="text-[10px] text-center">장바구니</p>
+              </Link>
+            ) : (
+              <button
+                onClick={openLoginHandler}
+                className="w-full flex justify-center items-center flex-col cursor-pointer">
+                <Image
+                  className="mb-0.5"
+                  src={cartIcon}
+                  alt="장바구니"
+                  width={24}
+                  height={24}
+                />
+                <span className="text-[10px] text-center blcok">장바구니</span>
+              </button>
+            )}
           </li>
         </ul>
       </nav>
