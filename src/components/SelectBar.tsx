@@ -64,7 +64,7 @@ export default function SelectBar({ variant = 'default', categories }: SelectBar
     const compatibleFilters: FilterState = {
       platform: filters.platform,
       condition: (filters.condition as 'used' | 'new') || undefined,
-      category: (filters.category as 'GAME' | 'CONSOLE') || undefined,
+      category: (filters.category as 'GAME' | 'HARDWARE') || undefined,
     };
 
     const activeIndices = getActiveButtonIndices(navLabels, compatibleFilters);
@@ -107,7 +107,7 @@ export default function SelectBar({ variant = 'default', categories }: SelectBar
     const compatibleFilters: FilterState = {
       platform: filters.platform,
       condition: (filters.condition as 'used' | 'new') || undefined,
-      category: (filters.category as 'GAME' | 'CONSOLE') || undefined,
+      category: (filters.category as 'GAME' | 'HARDWARE') || undefined,
     };
 
     // 필터 토글 적용
@@ -210,7 +210,7 @@ export default function SelectBar({ variant = 'default', categories }: SelectBar
           {(!isFiltersEmpty({
             platform: filters.platform,
             condition: (filters.condition as 'used' | 'new') || undefined,
-            category: (filters.category as 'GAME' | 'CONSOLE') || undefined,
+            category: (filters.category as 'GAME' | 'HARDWARE') || undefined,
           } as FilterState) ||
             sortBy !== '-extra.releaseDate') && (
             <button
@@ -274,7 +274,7 @@ export default function SelectBar({ variant = 'default', categories }: SelectBar
       {!isFiltersEmpty({
         platform: filters.platform,
         condition: (filters.condition as 'used' | 'new') || undefined,
-        category: (filters.category as 'GAME' | 'CONSOLE') || undefined,
+        category: (filters.category as 'GAME' | 'HARDWARE') || undefined,
       } as FilterState) && (
         <div className="mb-4 flex flex-wrap gap-2 items-center">
           <span className="text-xs text-poten-gray-2">적용된 필터:</span>
