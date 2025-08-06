@@ -8,26 +8,6 @@ import MainPromotion from '@/components/MainPromotion';
 import SectionHeader from '@/components/SectionHeader';
 import { Metadata } from 'next';
 
-/*
-로직정리
-1.카트 내용을 조회한다...
-2.처음에 전체 선택된 상태에서 보여준다
-(전체가 선택되어있을때만 체크표시 -> 전체 체크 아닐때는 전체 선택 체크 X안되어야하며
-체크 된 상품들만) 
-3.하단 플롯팅바에서 선택상품금액, 배송비, 단골할인등 할인이 들어간다.
-
-- 닫기버튼 로직
-X버튼을 누르면 즉시 장바구니 자체에서 삭제되면서 다시 렌더링이되고..
-1번부터 - 3번 까지 다시시작
-
--전체 삭제를 누르면..
-장바구니 전체가 비워진다.
-
-- 수량변경 -> 장바구니에있는 제품 수량을 변경한다.. (직접 서버에있는 장바구니제품수량을 직접 수정한다.)
-- 결제하기 버튼을 누르면 선택된 제품만 선별하여 결제창으로 넘어간다
-
-*/
-
 export const metadata: Metadata = {
   title: '장바구니',
   description: '포텐게임 장바구니 페이지',
