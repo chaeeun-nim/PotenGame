@@ -6,15 +6,17 @@ const CLIENT_ID = process.env.NEXT_PUBLIC_CLIENT_ID || '';
 interface modifyUserType{
   name?: string;
   email?: string;
-  phone?: number;
+  phone?: string;
 }
 
-export async function modifyUser(id: number, data: Partial<modifyUserType>):Promise<ILoginRes>{
+export async function modifyUser(token: string | undefined, id: number, data: modifyUserType):Promise<ILoginRes>{
   try {
     const res = await fetch(`${API_URL}/users/${id}`, {
       method: 'PATCH',
       headers: {
         'Client-Id': CLIENT_ID,
+        Authorization: `Bearer ${token}`,
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify(data),
       cache: 'no-cache',

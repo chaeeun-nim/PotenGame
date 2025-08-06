@@ -2,30 +2,35 @@
 
 import ProfileInput from '@/components/MyPage/Profile/ProfileInput';
 import { modifyUser } from '@/data/functions/modifyUser';
+import useUserStore from '@/zustand/userStore';
+import { useSearchParams } from 'next/navigation';
+import Router from 'next/router';
 import React, { useEffect, useState } from 'react';
 
 export default function ModifyInfo() {
+  const { user, setUser } = useUserStore();
+  const redirect = useSearchParams().get('redirect');
 
   const [ userId, setUserId ] = useState<number | null>(null);
   const [ name, setName ] = useState('');
   const [ email, setEmail ] = useState('');
-  const [ phone, setPhone ] = useState<number>(0);
+  const [ phone, setPhone ] = useState('');
 
   useEffect(()=>{
     const userData = sessionStorage.getItem('user');
-
     if (userData) {
       const parsed = JSON.parse(userData);
       const Id = parsed.state.user._id;
+      
 
       setUserId(Id);
     }
   },[])
 
   const inputs = [
-  { id: 0, name: "nickname", type: "text", title: "별명", value: "name", setValue: setName },
-  { id: 1, name: "email", type: "email", title: "이메일", value: "email", setValue: setEmail },
-  { id: 2, name: "phone", type: "tel", title: "휴대폰 번호", value: "phone ?? ''", setValue: (val: string) => setPhone(Number(val)) },
+  { id: 0, name: "nickname", type: "text", title: "별명", value: name, setValue: setName },
+  { id: 1, name: "email", type: "email", title: "이메일", value: email, setValue: setEmail },
+  { id: 2, name: "phone", type: "tel", title: "휴대폰 번호", value: phone, setValue: (val: string) => setPhone((val)) },
 ];
 
 
@@ -61,17 +66,31 @@ export default function ModifyInfo() {
           </button>
           <button 
             className="w-[100px] h-[45px] bg-[var(--color-poten-red)] text-white rounded text-sm font-medium"
-            disabled={userId === null}
             onClick={async () => {
               if (userId){
-              const res = await modifyUser(userId, {
-                  name,
-                  email,
-                  phone
+
+                const res = await modifyUser(user?.token?.accessToken, userId, {
+                  name: name || undefined,
+                  email: email || undefined,
+                  phone: phone || undefined
                 });
-              console.log('받은 사용자:', res);
+
+
+              if (res.ok) {
+               setUser(res.item);
+               alert("정보가 성공적으로 수정되었습니다.");
+
+               if (redirect) {
+                Router.replace(redirect); // 돌아갈 페이지가 있을 경우 이동한다.
+              } else {
+                Router.back(); // 이전 페이지로 이동한다.
               }
-            }}
+             } else {
+               alert("정보 수정에 실패했습니다.");
+             }
+              }
+            }
+          }
           >
             저장
           </button>
