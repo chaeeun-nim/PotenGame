@@ -1,11 +1,17 @@
 'use client';
 
 import qrCord from '@/assets/img/qr.png';
+import useLoginModal from '@/zustand/areyouLogin';
 import useListStore from '@/zustand/listStore';
+import useUserStore from '@/zustand/userStore';
 import Image from 'next/image';
 import Link from 'next/link';
+
 export default function FooterContents() {
   const { setFilters, resetFilters } = useListStore();
+  const { user } = useUserStore();
+  const { openViewModal } = useLoginModal();
+
   // 카테고리 클릭 핸들러
   const handleCategoryClick = (
     platForm:
@@ -258,16 +264,40 @@ export default function FooterContents() {
             <h3 className="text-lg mb-4 font-bold">마이페이지</h3>
             <ul className="text-poten-gray-2 flex gap-1 flex-col">
               <li>
-                <Link href="/cart">장바구니</Link>
+                {user ? (
+                  <Link href="/cart">장바구니</Link>
+                ) : (
+                  <button className="cursor-pointer" onClick={openViewModal}>
+                    장바구니
+                  </button>
+                )}
               </li>
               <li>
-                <Link href="/myPage/like">찜목록</Link>
+                {user ? (
+                  <Link href="/myPage/like">찜목록</Link>
+                ) : (
+                  <button className="cursor-pointer" onClick={openViewModal}>
+                    찜목록
+                  </button>
+                )}
               </li>
               <li>
-                <Link href="/myPage/address">배송지등록</Link>
+                {user ? (
+                  <Link href="/myPage/address">배송지등록</Link>
+                ) : (
+                  <button className="cursor-pointer" onClick={openViewModal}>
+                    배송지등록
+                  </button>
+                )}
               </li>
               <li>
-                <Link href="/myPage/profile">개인정보수정</Link>
+                {user ? (
+                  <Link href="/myPage/profile">개인정보수정</Link>
+                ) : (
+                  <button className="cursor-pointer" onClick={openViewModal}>
+                    개인정보수정
+                  </button>
+                )}
               </li>
             </ul>
           </div>
