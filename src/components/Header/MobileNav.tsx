@@ -104,7 +104,7 @@ export default function MobileNav({
               <Link
                 href="/myPage"
                 className="flex flex-row gap-1 justify-start items-center">
-                <h2 className="font-bold text-[20px] mb-2 ">{user?.extra?.nickname}님</h2>
+                <h2 className="font-bold text-[20px] mb-2 ">{user.name}님</h2>
                 <Image
                   src={linkArrow}
                   className="w-[14px] pb-1"
@@ -430,12 +430,12 @@ export default function MobileNav({
               </Link>
             </li>
             <li className="mb-1">
-              <Link href="/" className="p-1 ">
+              <Link href="/making" className="p-1 ">
                 공지사항
               </Link>
             </li>
             <li className="mb-1">
-              <Link href="/" className="p-1 ">
+              <Link href="/making" className="p-1 ">
                 자유게시판
               </Link>
             </li>
