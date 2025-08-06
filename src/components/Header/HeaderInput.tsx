@@ -46,6 +46,7 @@ export default function HeaderInput() {
     const newSearch = [...new Set([title.trim(), ...searched])];
     updateStorage(newSearch);
     setTitle('');
+    setIsSearchClick(true);
     router.push(`search?keyword=${encodeURIComponent(title.trim())}`);
   };
 

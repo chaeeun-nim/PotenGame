@@ -103,6 +103,7 @@ export default function MobileNav({
             {user ? (
               <Link
                 href="/myPage"
+                onClick={closeMenu}
                 className="flex flex-row gap-1 justify-start items-center">
                 <h2 className="font-bold text-[20px] mb-2 ">{user.name}님</h2>
                 <Image
@@ -133,11 +134,13 @@ export default function MobileNav({
               <div className="flex flex-row gap-4">
                 <Link
                   href="/login"
+                  onClick={closeMenu}
                   className="inline-block px-[12px] rounded-[2px] py-[2px] bg-poten-red text-white font-semibold">
                   로그인
                 </Link>
                 <Link
-                  href="/singup"
+                  href="/login/signUp"
+                  onClick={closeMenu}
                   className="inline-block px-[12px] rounded-[2px] py-[2px] bg-white text-poten-gray-2 border-1 border-poten-gray-1 font-semibold">
                   회원가입
                 </Link>
