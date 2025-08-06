@@ -102,7 +102,7 @@ export default function MobileNav({
           <div>
             {user ? (
               <Link
-                href="/myPage"
+                href="/mypages"
                 onClick={closeMenu}
                 className="flex flex-row gap-1 justify-start items-center">
                 <h2 className="font-bold text-[20px] mb-2 ">{user.name}님</h2>

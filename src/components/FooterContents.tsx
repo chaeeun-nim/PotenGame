@@ -274,7 +274,7 @@ export default function FooterContents() {
               </li>
               <li>
                 {user ? (
-                  <Link href="/myPage/like">찜목록</Link>
+                  <Link href="/mypages/like">찜목록</Link>
                 ) : (
                   <button className="cursor-pointer" onClick={openViewModal}>
                     찜목록
@@ -283,7 +283,7 @@ export default function FooterContents() {
               </li>
               <li>
                 {user ? (
-                  <Link href="/myPage/address">배송지등록</Link>
+                  <Link href="/mypages/address">배송지등록</Link>
                 ) : (
                   <button className="cursor-pointer" onClick={openViewModal}>
                     배송지등록
@@ -292,7 +292,7 @@ export default function FooterContents() {
               </li>
               <li>
                 {user ? (
-                  <Link href="/myPage/profile">개인정보수정</Link>
+                  <Link href="/mypages/profile">개인정보수정</Link>
                 ) : (
                   <button className="cursor-pointer" onClick={openViewModal}>
                     개인정보수정
