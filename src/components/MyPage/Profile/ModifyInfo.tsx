@@ -3,46 +3,64 @@
 import ProfileInput from '@/components/MyPage/Profile/ProfileInput';
 import { modifyUser } from '@/data/functions/modifyUser';
 import useUserStore from '@/zustand/userStore';
-import { useSearchParams } from 'next/navigation';
-import Router from 'next/router';
+import { useRouter, useSearchParams } from 'next/navigation';
+
 import React, { useEffect, useState } from 'react';
 
 export default function ModifyInfo() {
   const { user, setUser } = useUserStore();
   const redirect = useSearchParams().get('redirect');
+  const router = useRouter();
 
-  const [ userId, setUserId ] = useState<number | null>(null);
-  const [ _id, set_Id ] = useState<number | null>(null);
-  const [ name, setName ] = useState('');
-  const [ email, setEmail ] = useState('');
-  const [ phone, setPhone ] = useState('');
+  const [userId, setUserId] = useState<number | null>(null);
 
-  useEffect(()=>{
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
+
+  useEffect(() => {
     const userData = sessionStorage.getItem('user');
     if (userData) {
       const parsed = JSON.parse(userData);
       const id = parsed.state.user._id;
-      set_Id(id);
+
       setEmail(parsed.state.user.email);
       setPhone(parsed.state.user.phone);
       setName(parsed.state.user.name);
-      
 
       setUserId(id);
     }
-  },[])
+  }, []);
 
   const inputs = [
-  { id: 0, name: "nickname", type: "text", title: "별명", value: name, setValue: setName },
-  { id: 1, name: "email", type: "email", title: "이메일", value: email, setValue: setEmail },
-  { id: 2, name: "phone", type: "tel", title: "휴대폰 번호", value: phone, setValue: (val: string) => setPhone((val)) },
-];
-
+    {
+      id: 0,
+      name: 'nickname',
+      type: 'text',
+      title: '별명',
+      value: name,
+      setValue: setName,
+    },
+    {
+      id: 1,
+      name: 'email',
+      type: 'email',
+      title: '이메일',
+      value: email,
+      setValue: setEmail,
+    },
+    {
+      id: 2,
+      name: 'phone',
+      type: 'tel',
+      title: '휴대폰 번호',
+      value: phone,
+      setValue: (val: string) => setPhone(val),
+    },
+  ];
 
   return (
     <div className="w-full xl:pl-[20px] -mt-4">
-
-
       {/* 기본정보 변경 */}
       <section className="hidden xl:block bg-white mb-10">
         {/* 제목 */}
@@ -63,47 +81,41 @@ export default function ModifyInfo() {
           />
         ))}
 
-
         {/* 하단 버튼 */}
         <div className="flex justify-end gap-3 mt-8">
           <button className="w-[100px] h-[45px] border border-gray-300 rounded text-sm font-medium">
             취소
           </button>
-          <button 
+          <button
             className="w-[100px] h-[45px] bg-[var(--color-poten-red)] text-white rounded text-sm font-medium"
             onClick={async () => {
-              if (userId){
-
+              console.log('누름');
+              if (userId) {
                 const res = await modifyUser(user?.token?.accessToken, userId, {
-                  id: _id,
                   name: name,
                   email: email,
-                  phone: phone
+                  phone: phone,
                 });
 
+                if (res.ok) {
+                  console.log('통신성공');
+                  setUser(res.item);
+                  alert('정보가 성공적으로 수정되었습니다.');
 
-              if (res.ok) {
-               setUser(res.item);
-               alert("정보가 성공적으로 수정되었습니다.");
-
-               if (redirect) {
-                Router.replace(redirect); // 돌아갈 페이지가 있을 경우 이동한다.
-              } else {
-                Router.back(); // 이전 페이지로 이동한다.
+                  if (redirect) {
+                    router.replace(redirect); // 돌아갈 페이지가 있을 경우 이동한다.
+                  } else {
+                    router.back(); // 이전 페이지로 이동한다.
+                  }
+                } else {
+                  alert('정보 수정에 실패했습니다.');
+                }
               }
-             } else {
-               alert("정보 수정에 실패했습니다.");
-             }
-              }
-            }
-          }
-          >
+            }}>
             저장
           </button>
         </div>
       </section>
-
-      
     </div>
   );
 }
