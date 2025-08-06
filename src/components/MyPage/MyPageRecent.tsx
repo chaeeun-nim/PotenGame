@@ -29,21 +29,24 @@ export default function MyPageRecent() {
         });
 
         const json = await res.json();
-        if (json.ok) {
-          const updatedUser = {
-            ...user!,
-            extra: {
-              ...user!.extra,
-              purchases: user?.extra?.purchases ?? 0,
-              nickname: user?.extra?.nickname ?? '',
-              birthday: user?.extra?.birthday ?? '',
-              membershipClass: user?.extra?.membershipClass ?? 'MC01',
-              address: user?.extra?.address ?? [],
-              orders: json.item, // 전역 상태에 저장
-            },
-          };
-          setUser(updatedUser);
-        } else {
+          if (json.ok) {
+            const item = json.item;
+            const normalized = Array.isArray(item) ? item : [item];
+
+            const updatedUser = {
+              ...user!,
+              extra: {
+                ...user!.extra,
+                purchases: user?.extra?.purchases ?? 0,
+                nickname: user?.extra?.nickname ?? '',
+                birthday: user?.extra?.birthday ?? '',
+                membershipClass: user?.extra?.membershipClass ?? 'MC01',
+                address: user?.extra?.address ?? [],
+                orders: normalized, // 배열 보장
+              },
+            };
+            setUser(updatedUser);
+          } else {
           console.warn('❗ /orders API 응답 실패:', json);
         }
       } catch (err) {
@@ -52,7 +55,7 @@ export default function MyPageRecent() {
     };
 
     fetchOrders();
-  }, [token, orders.length, user, setUser]);
+  }, [token]);
 
   const visibleOrders = orders.slice(0, 2); // 최대 2개 노출
 
@@ -64,7 +67,7 @@ export default function MyPageRecent() {
         {visibleOrders.length === 0 ? (
           <EmptyState />
         ) : (
-          visibleOrders.map((order) => <Card order={order} key={order.id} size="lg" />)
+          visibleOrders.map((order, index) => <Card order={order} key={`lg-${order.id ?? index}`} size="lg" />)
         )}
       </section>
       {/* 태블릿 전용 */}
@@ -75,8 +78,8 @@ export default function MyPageRecent() {
             <EmptyState />
           ) : (
             <div className="flex flex-col">
-              {visibleOrders.map((order) => (
-                <Card order={order} key={order.id} size="md" />
+              {visibleOrders.map((order, index) => (
+                <Card order={order} key={`md-${order.id ?? index}`} size="md" />
               ))}
             </div>
           )}
@@ -90,8 +93,8 @@ export default function MyPageRecent() {
           <EmptyState />
         ) : (
           <div className="flex flex-col">
-            {visibleOrders.map((order) => (
-              <Card order={order} key={order.id} size="sm" />
+            {visibleOrders.map((order, index) => (
+              <Card order={order} key={`sm-${order.id ?? index}`} size="sm" />
             ))}
           </div>
         )}
