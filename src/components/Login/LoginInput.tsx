@@ -10,8 +10,8 @@ interface LoginInputType{
 
 export default function LoginInput({type, value, isSubmit}: LoginInputType){
 
-  const [ email, setEmail ] = useState("u1@market.com");
-  const [ password, setPassword ] = useState('11111111');
+  const [ email, setEmail ] = useState(""); // u1@market.com
+  const [ password, setPassword ] = useState(''); // 11111111
 
   const emailRegex = /[-A-Za-z0-9!#$%&'*+\/=?^_`{|}~]+(?:\.[-A-Za-z0-9!#$%&'*+\/=?^_`{|}~]+)*@(?:[A-Za-z0-9](?:[-A-Za-z0-9]*[A-Za-z0-9])?\.)+[A-Za-z0-9](?:[-A-Za-z0-9]*[A-Za-z0-9])?/i;
 
