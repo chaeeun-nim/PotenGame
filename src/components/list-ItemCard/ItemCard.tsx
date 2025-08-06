@@ -173,7 +173,7 @@ export default function ItemCard({
   const productId = productData?._id || 1;
   const productLink = currentCategory
     ? `/list/${currentCategory}/${productId}`
-    : `/list/${productId}`;
+    : `/list/${currentCategory}`;
   return (
     <>
       <ItemCardProvider variant={variant} productData={productData}>

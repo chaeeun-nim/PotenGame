@@ -1,61 +1,113 @@
+🔗 [`포텐게임 웹사이트 바로가기`](https://poten-game.vercel.app/)  
+🖌️ [`피그마 디자인 보기`](https://www.figma.com/design/8TP0tsKHT2BWPThthqh3XZ/z1%EC%A1%B4%ED%8F%AC%ED%85%901004---final-project?node-id=0-1&t=wGKzQFjFvdCcnHYr-0)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/f3ab585c-7266-4795-83a7-86ecddbf1512" alt="포텐게임 대표 이미지" width="900"/>
+</p>
+
 # 🎮 Final-14-z1zone1004 - 포텐게임 프로젝트
 
+---
+
 ## 📌 프로젝트 개요
+
 - **프로젝트명**: 포텐게임 (PotenGame)
 - **목표**: 게임 상품 판매를 위한 반응형 웹사이트 구축
 - **주요 기능**: 상품 리스트, 상세 페이지, 장바구니, 결제, 회원가입/로그인, 관리자 페이지
 
 ---
 
+## 👥 팀원 소개
+
+| ![](https://github.com/user-attachments/assets/2e7f6794-6a23-47b4-ab96-9e3ee49f43fd) | ![](https://github.com/user-attachments/assets/e826632a-abde-4224-8d25-4f194dfcd798) | ![](https://github.com/user-attachments/assets/7405848f-08c2-4145-8b0b-d33de25e85cb) | ![](https://github.com/user-attachments/assets/0005eaad-8404-4f26-9681-897ee1847948) |
+|:--:|:--:|:--:|:--:|
+| **이도울** | **송채은** | **배동초** | **김태우** |
+| PM | PL | DR | PR |
+| 헤더 GNB, 로그인, 회원가입, 유저기록관리 | 메인페이지, 모바일 하단 GNB, Footer, 장바구니, 상품구매, 검색, 좋아요 | 마이페이지, 주문조회, 유저상세조회, 주소등록, 게시판UI | 상품 목록 조회, 필터링, 정렬, 상세 페이지, 페이지 경로관리 |
+| [GitHub](https://github.com/dooollee) | [GitHub](https://github.com/chaeeun-nim) | [GitHub](https://github.com/sua17) | [GitHub](https://github.com/twkimfe) |
+
+---
+
 ## 🖼️ 주요 화면 구성 및 UI 구조
 
-### 🏠 메인 페이지  
-- 배너, 추천 상품, 카테고리별 게임 리스트  
-- 반응형 구조로 PC/태블릿/모바일 모두 대응  
-🔗 [피그마 디자인 보기](https://www.figma.com/design/8TP0tsKHT2BWPThthqh3XZ/z1%EC%A1%B4%ED%8F%AC%ED%85%901004---final-project?node-id=0-1&t=wGKzQFjFvdCcnHYr-0)
+### 🏠 메인 페이지
 
+- 배너, 추천 상품, 카테고리별 게임 리스트
+- 반응형 구조로 PC/태블릿/모바일 모두 대응
+
+<p>
+  <img src="https://github.com/user-attachments/assets/75fad99c-fc45-4604-8017-99dc3f13f24d" width="180"/>
+  <img src="https://github.com/user-attachments/assets/ee227c61-b3af-48f0-ba64-88e6fd8e678b" width="180"/>
+  <img src="https://github.com/user-attachments/assets/542a6f6a-ec2e-434c-8043-9e5f70206362" width="180"/>
+</p>
 
 ---
 
 ### 🛍️ 상품 목록 페이지
-- 필터링, 정렬 기능 포함
-- 카드형 UI로 구성된 게임 리스트  
-🔗 [피그마 디자인 보기](https://www.figma.com/design/8TP0tsKHT2BWPThthqh3XZ/z1%EC%A1%B4%ED%8F%AC%ED%85%901004---final-project?node-id=0-1&t=wGKzQFjFvdCcnHYr-0)
 
+
+- 필터링, 정렬 기능 포함
+- 카드형 UI로 구성된 게임 리스트
+- 카드형 UI로 구성된 게임 리스트
+
+<p>
+  <img src="https://github.com/user-attachments/assets/a1a1e164-174b-449d-8920-d887209b2b64" width="180"/>
+  <img src="https://github.com/user-attachments/assets/5b83f5cf-9759-4244-8ec3-24851575d6e5" width="180"/>
+</p>
 
 ---
 
 ### 📄 상품 상세 페이지
-- 게임 정보, 가격, 구매 버튼, 리뷰 영역
-- 구매 안내 및 사용자 리뷰 기능 포함  
-🔗 [피그마 디자인 보기](https://www.figma.com/design/8TP0tsKHT2BWPThthqh3XZ/z1%EC%A1%B4%ED%8F%AC%ED%85%901004---final-project?node-id=0-1&t=wGKzQFjFvdCcnHYr-0)
 
+
+- 게임 정보, 가격, 구매 버튼, 리뷰 영역
+- 구매 안내 및 제품 상세 페이지
+
+<p>
+  <img src="https://github.com/user-attachments/assets/6a6ae291-4b5d-4677-8ba9-51965d5095e0" width="180"/>
+  <img src="https://github.com/user-attachments/assets/4a7bbf8a-1b00-4118-9f02-3729fccab2a9" width="180"/>
+</p>
 
 ---
 
 ### 🙋‍♂️ 마이페이지
-- 관심 목록, 배송 주소록, 회원 정보 관리, 고객센터
-- 사이드바 및 하단 GNB로 빠른 접근 가능  
-🔗 [피그마 디자인 보기](https://www.figma.com/design/8TP0tsKHT2BWPThthqh3XZ/z1%EC%A1%B4%ED%8F%AC%ED%85%901004---final-project?node-id=0-1&t=wGKzQFjFvdCcnHYr-0)
 
+
+- 관심 목록, 배송 주소록, 회원 정보 관리, 고객센터
+- 사이드바 및 하단 GNB로 빠른 접근 가능
+- 사이드바 및 하단 GNB로 빠른 접근 가능
+
+<p>
+  <img src="https://github.com/user-attachments/assets/a2a7c379-81f5-4ddd-b80d-0519a2e71bd7" width="180"/>
+  <img src="https://github.com/user-attachments/assets/2a6eef00-7cbf-4547-bdf5-48959c50f9b5" width="180"/>
+  <img src="https://github.com/user-attachments/assets/cfd8133a-f0ff-48bc-b751-f2d8dba39012" width="180"/>
+</p>
 
 ---
 
-### 🧑‍💼 회원가입 / 프로필 페이지
-- 사용자 정보 입력 및 수정
-- 에러 메시지 및 유효성 검사 포함  
-🔗 [피그마 디자인 보기](https://www.figma.com/design/8TP0tsKHT2BWPThthqh3XZ/z1%EC%A1%B4%ED%8F%AC%ED%85%901004---final-project?node-id=0-1&t=wGKzQFjFvdCcnHYr-0)
+### 🧑‍💼 로그인 / 회원가입 / 프로필 페이지
 
+### 🧑‍💼 로그인 / 회원가입 / 프로필 페이지
+
+- 사용자 정보 입력 및 수정
+- 에러 메시지 및 유효성 검사 포함
+
+<p>
+  <img src="https://github.com/user-attachments/assets/aa2deb57-1661-4df3-91a8-5e8d21312b91" width="180"/>
+  <img src="https://github.com/user-attachments/assets/9a37d4f0-d99f-4149-bad1-11d32557e012" width="180"/>
+  <img src="https://github.com/user-attachments/assets/279ba8ac-259c-4188-988c-b3049dd0bfe4" width="180"/>
+</p>
 
 ---
 
 ## 📱 반응형 디자인
 
-- **디바이스 대응**: PC, 태블릿, 모바일
-- **레이아웃 변화**:
-  - 📱 모바일: 햄버거 메뉴, 카드형 리스트, 하단 GNB
-  - 📟 태블릿: 2단 구성
-  - 🖥️ PC: 전체 레이아웃 노출
+### 💡 디바이스별 레이아웃 변화
+
+| 디바이스 | 레이아웃 설명 |
+|----------|----------------|
+| 📱 모바일 | 햄버거 메뉴, 카드형 리스트, 하단 GNB |
+| 📟 태블릿 | 2단 구성 |
+| 🖥️ PC     | 전체 레이아웃 노출 |
 
 ---
 
@@ -76,25 +128,28 @@
 ## 🛠️ 사용 기술 스택
 
 ### 💻 Frontend
+
 ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
-![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
 ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
 ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
 ![React Zustand](https://img.shields.io/badge/react%20zustand-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
 
 ### ⚙️ Backend
+
 - Node.js
 - Express
 
 ### 🗄️ Database
+
 - MongoDB
 
 ### 🚀 Deployment
+
 ![Next JS](https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white)
 ![Vercel](https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white)
-- AWS
 
 ### 🤝 협업 툴
+
 ![Notion](https://img.shields.io/badge/Notion-%23000000.svg?style=for-the-badge&logo=notion&logoColor=white)
 ![Figma](https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white)
 ![Discord](https://img.shields.io/badge/Discord-%235865F2.svg?style=for-the-badge&logo=discord&logoColor=white)
@@ -109,17 +164,6 @@
 
 ---
 
-## 👥 팀원 소개
-
-| 이름     | 역할 | 담당 업무 | GitHub |
-|----------|------|-----------|--------|
-| 이도울   | PM   | 헤더 GNB, 로그인, 회원가입, 유저기록관리 | [dooollee](https://github.com/dooollee) |
-| 송채은   | PL   | 메인페이지, 모바일 하단 GNB, Footer, 장바구니, 상품구매, 검색, 좋아요 | [chaeeun-nim](https://github.com/chaeeun-nim) |
-| 배동초   | DR   | 마이페이지, 주문조회, 유저상세조회, 주소등록, 게시판UI | [sua17](https://github.com/sua17) |
-| 김태우   | PR   | 상품 목록 조회, 필터링, 정렬, 상세 페이지, 페이지 경로관리 | [twkimfe](https://github.com/twkimfe) |
-
----
-
 ## 📣 기타 참고 사항
 
 - 모든 페이지는 **에러 처리** 및 **로딩 상태**를 고려하여 설계됨  
@@ -130,8 +174,8 @@
 
 ## 🔗 배포 및 문서 링크
 
-- 🌐 **Live Demo**: [포텐게임 웹사이트](https://poten-game.vercel.app/)
-- 📘 **프로젝트 문서 (Notion)**: [팀 노션 페이지](https://www.notion.so/14-z1-1004-22973873401a80b88e1bca614d28504b)
+- 🌐 [포텐게임 웹사이트](https://poten-game.vercel.app/)
+- 📘 [팀 노션 페이지](https://www.notion.so/14-z1-1004-22973873401a80b88e1bca614d28504b)
 
 ---
 
@@ -141,3 +185,16 @@
 ```bash
 git clone https://github.com/FRONTENDBOOTCAMP-13th/Final-14-z1zone1004.git
 npm i
+```
+### 💻 개발 서버 구동
+```bash
+npm run dev
+```
+### 🚀 Next.js 빌드 및 실행
+```bash
+npm run build
+npm start
+```
+
+
+

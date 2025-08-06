@@ -17,6 +17,7 @@ export interface ProductSearchParams {
   priceMax?: number;
   search?: string;
   category?: string; // listStore와 일치
+  productType?: 'GAME' | 'HARDWARE' | 'ALL';
   extra?: {
     category?: string;
     condition?: string;
@@ -30,7 +31,7 @@ export interface ProductSearchParams {
 
 // 커스텀 필터 타입 정의
 export interface CustomFilter {
-  'extra.category'?: { $all: string[] };
+  'extra.category'?: { $all: string[] } | { $in: string[] };
   'extra.platform'?: string;
   'extra.used'?: boolean;
   price?: { $gte?: number; $lte?: number };
@@ -56,7 +57,6 @@ export interface ProductListResponse {
   message?: string;
 }
 
-// 상품 목록 조회 (검색/필터/정렬 지원)
 export async function getProductList(params: ProductSearchParams = {}): Promise<
   ApiRes<Iproduct[]> & {
     pagination?: { page: number; limit: number; total: number; totalPages: number };
@@ -72,41 +72,62 @@ export async function getProductList(params: ProductSearchParams = {}): Promise<
       priceMin,
       priceMax,
       search,
-      category,
+      category, // URL에서 오는 카테고리 (NINTENDO01, PLAYSTATION05 등)
+      productType, // SelectBar에서 오는 상품 타입 (GAME, HARDWARE)
     } = params;
 
-    // 커스텀 필터 객체 생성
-    const customFilter: CustomFilter = {
-      'extra.category': { $all: ['GAME'] }, // 'HARDWARE'로 하드코딩 시, 게임기만 호출
-    };
+    const customFilter: CustomFilter = {};
 
-    // 플랫폼 필터
+    // ✅ 1. 먼저 URL 카테고리 처리 (플랫폼 필터)
+    if (
+      category &&
+      [
+        'NINTENDONDS',
+        'NINTENDO01',
+        'NINTENDO02',
+        'PLAYSTATION04',
+        'PLAYSTATION05',
+      ].includes(category.toUpperCase())
+    ) {
+      customFilter['extra.category'] = { $all: [category.toUpperCase()] };
+    }
+
+    // ✅ 2. SelectBar의 상품 타입 필터 추가 적용
+    if (productType && customFilter['extra.category']) {
+      // 기존 플랫폼 필터에 상품 타입 추가
+      if ('$all' in customFilter['extra.category']) {
+        customFilter['extra.category'] = {
+          $all: [...customFilter['extra.category'].$all, productType],
+        };
+      }
+    } else if (productType) {
+      // 플랫폼 필터 없이 상품 타입만 있는 경우
+      customFilter['extra.category'] = { $all: [productType] };
+    } else if (!category) {
+      // 기본값: 전체 상품 목록일 때
+      customFilter['extra.category'] = { $in: ['GAME', 'HARDWARE'] };
+    }
+
+    // ✅ 3. platform 필터는 SelectBar에서 오는 것만 처리
     if (platform) {
       customFilter['extra.platform'] = platform;
     }
 
-    // 상태 필터
+    // 나머지 필터들은 기존과 동일
     if (condition === 'new') {
       customFilter['extra.used'] = false;
     } else if (condition === 'used') {
       customFilter['extra.used'] = true;
     }
 
-    // 가격 범위 필터
     if (priceMin !== undefined || priceMax !== undefined) {
       customFilter.price = {};
       if (priceMin !== undefined) customFilter.price['$gte'] = priceMin;
       if (priceMax !== undefined) customFilter.price['$lte'] = priceMax;
     }
 
-    // 검색어 필터
     if (search) {
       customFilter.name = { $regex: search, $options: 'i' };
-    }
-
-    // 카테고리 필터 (추가 카테고리 있을 시)
-    if (category && category !== 'GAME') {
-      customFilter['extra.category'] = { $all: ['GAME', category] };
     }
 
     // 정렬 객체 생성
@@ -117,6 +138,8 @@ export async function getProductList(params: ProductSearchParams = {}): Promise<
       sortObj[sort] = 1;
     }
 
+    console.log('Final customFilter:', JSON.stringify(customFilter, null, 2));
+
     // URL 구성
     const queryParams = new URLSearchParams({
       limit: limit.toString(),
@@ -126,17 +149,17 @@ export async function getProductList(params: ProductSearchParams = {}): Promise<
     });
 
     const url = `${API_URL}/products?${queryParams.toString()}`;
+    console.log('API URL:', url);
 
     const res = await fetch(url, {
       headers: {
         'Client-Id': CLIENT_ID,
       },
-      cache: 'no-store', // 실시간 데이터를 위해 캐시 비활성화
+      cache: 'no-store',
     });
 
     const data = await res.json();
 
-    // ApiRes 형태로 반환, pagination 정보 추가
     if (data.ok) {
       return {
         ok: 1,
@@ -157,11 +180,29 @@ export async function getProductList(params: ProductSearchParams = {}): Promise<
     };
   }
 }
+
 // 인기 상품 조회
-export async function getPopularProducts(limit: number = 8): ApiResPromise<Iproduct[]> {
+export async function getPopularProducts(
+  limit: number = 8,
+  productType: 'GAME' | 'HARDWARE' | 'ALL' = 'GAME',
+): ApiResPromise<Iproduct[]> {
   try {
+    let categoryFilter;
+
+    switch (productType) {
+      case 'GAME':
+        categoryFilter = '{"extra.category":{"$all":["GAME"]}}';
+        break;
+      case 'HARDWARE':
+        categoryFilter = '{"extra.category":{"$all":["HARDWARE"]}}';
+        break;
+      case 'ALL':
+        categoryFilter = '{"extra.category":{"$in":["GAME","HARDWARE"]}}';
+        break;
+    }
+
     const res = await fetch(
-      `${API_URL}/products?limit=${limit}&page=1&custom={"extra.category":{"$all":["GAME"]}}&sort={"buyQuantity": -1}`,
+      `${API_URL}/products?limit=${limit}&page=1&custom=${categoryFilter}&sort={"buyQuantity": -1}`,
       {
         headers: {
           'Client-Id': CLIENT_ID,
