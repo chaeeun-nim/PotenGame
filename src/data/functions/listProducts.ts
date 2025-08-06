@@ -77,7 +77,7 @@ export async function getProductList(params: ProductSearchParams = {}): Promise<
 
     // 커스텀 필터 객체 생성
     const customFilter: CustomFilter = {
-      'extra.category': { $all: ['GAME'] },
+      'extra.category': { $all: ['GAME'] }, // 'HARDWARE'로 하드코딩 시, 게임기만 호출
     };
 
     // 플랫폼 필터
