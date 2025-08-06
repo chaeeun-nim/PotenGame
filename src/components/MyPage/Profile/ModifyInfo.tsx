@@ -7,6 +7,9 @@ import React, { useEffect, useState } from 'react';
 export default function ModifyInfo() {
 
   const [ userId, setUserId ] = useState<number | null>(null);
+  const [ name, setName ] = useState('');
+  const [ email, setEmail ] = useState('');
+  const [ phone, setPhone ] = useState<number>(0);
 
   useEffect(()=>{
     const userData = sessionStorage.getItem('user');
@@ -20,10 +23,11 @@ export default function ModifyInfo() {
   },[])
 
   const inputs = [
-    { id: 0, name: "nickname", type: "text", title: "별명", placeholder: "사용하실 별명을 입력해 주세요"},
-    { id: 1, name: "email", type: "email", title: "이메일", placeholder: "이메일을 입력해 주세요"},
-    { id: 2, name: "phone", type: "tel", title: "휴대폰 번호", placeholder: "휴대폰 번호를 입력해 주세요"},
-  ];
+  { id: 0, name: "nickname", type: "text", title: "별명", value: "name", setValue: setName },
+  { id: 1, name: "email", type: "email", title: "이메일", value: "email", setValue: setEmail },
+  { id: 2, name: "phone", type: "tel", title: "휴대폰 번호", value: "phone ?? ''", setValue: (val: string) => setPhone(Number(val)) },
+];
+
 
   return (
     <div className="w-full xl:pl-[20px] -mt-4">
@@ -37,24 +41,18 @@ export default function ModifyInfo() {
           <h2 className="text-lg font-bold text-poten-red">기본정보 변경</h2>
         </div>
 
-        {/* 별명 */}
-        <ProfileInput name={"nickname"} title={"별명"} type={"text"}/>
-
-        {/* 이메일 */}
-        <ProfileInput name={"email"} title={"이메일"} type={"email"}/>
-
-        {/* 휴대폰 번호 */}
-        <ProfileInput name={"phone"} title={"휴대폰 번호"} type={"phone"}/>
-
         {/* 인풋창 목록 */}
-        { inputs.map(input => (
-          <ProfileInput 
+        {inputs.map((input) => (
+          <ProfileInput
             key={input.id}
             type={input.type}
             title={input.title}
-            name={input.name} 
+            name={input.name}
+            value={input.value}
+            setValue={input.setValue}
           />
         ))}
+
 
         {/* 하단 버튼 */}
         <div className="flex justify-end gap-3 mt-8">
@@ -66,7 +64,11 @@ export default function ModifyInfo() {
             disabled={userId === null}
             onClick={async () => {
               if (userId){
-              const res = await modifyUser(userId);
+              const res = await modifyUser(userId, {
+                  name,
+                  email,
+                  phone
+                });
               console.log('받은 사용자:', res);
               }
             }}

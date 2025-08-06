@@ -7,11 +7,12 @@ interface ProfileInputType {
   title: string;
   type: string
   name: string;
+  value: string;
+  setValue: (value: string) => void;
 }
 
-export default function ProfileInput({title, type, name}: ProfileInputType) {
+export default function ProfileInput({title, type, name, value, setValue}: ProfileInputType) {
 
-  const [ value, setValue ] = useState('');
   const [ canUse, setCanUse ] = useState<boolean>();
 
   const DupCheck = async () =>{
