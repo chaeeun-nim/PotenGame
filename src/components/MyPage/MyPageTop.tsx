@@ -106,9 +106,9 @@ export default function MyPageTop() {
                 {purchases}
                 <span className="text-base text-black font-normal ml-1">회</span>
               </p>
-              <Link href="/mypages/orders">
+              <Link href="/cart">
                 <button className="mt-4 w-fit px-6 py-2 border border-poten-gray-1 rounded-full text-sm font-medium">
-                  주문 조회
+                  추가 주문
                 </button>
               </Link>
             </div>
