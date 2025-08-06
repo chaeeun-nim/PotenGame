@@ -103,8 +103,9 @@ export default function MobileNav({
             {user ? (
               <Link
                 href="/myPage"
+                onClick={closeMenu}
                 className="flex flex-row gap-1 justify-start items-center">
-                <h2 className="font-bold text-[20px] mb-2 ">{user?.extra?.nickname}님</h2>
+                <h2 className="font-bold text-[20px] mb-2 ">{user.name}님</h2>
                 <Image
                   src={linkArrow}
                   className="w-[14px] pb-1"
@@ -133,11 +134,13 @@ export default function MobileNav({
               <div className="flex flex-row gap-4">
                 <Link
                   href="/login"
+                  onClick={closeMenu}
                   className="inline-block px-[12px] rounded-[2px] py-[2px] bg-poten-red text-white font-semibold">
                   로그인
                 </Link>
                 <Link
-                  href="/singup"
+                  href="/login/signUp"
+                  onClick={closeMenu}
                   className="inline-block px-[12px] rounded-[2px] py-[2px] bg-white text-poten-gray-2 border-1 border-poten-gray-1 font-semibold">
                   회원가입
                 </Link>
@@ -430,12 +433,12 @@ export default function MobileNav({
               </Link>
             </li>
             <li className="mb-1">
-              <Link href="/" className="p-1 ">
+              <Link href="/making" className="p-1 ">
                 공지사항
               </Link>
             </li>
             <li className="mb-1">
-              <Link href="/" className="p-1 ">
+              <Link href="/making" className="p-1 ">
                 자유게시판
               </Link>
             </li>
