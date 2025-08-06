@@ -17,6 +17,7 @@ export interface ProductSearchParams {
   priceMax?: number;
   search?: string;
   category?: string; // listStore와 일치
+  productType?: 'GAME' | 'HARDWARE' | 'ALL';
   extra?: {
     category?: string;
     condition?: string;
@@ -30,7 +31,7 @@ export interface ProductSearchParams {
 
 // 커스텀 필터 타입 정의
 export interface CustomFilter {
-  'extra.category'?: { $all: string[] };
+  'extra.category'?: { $all: string[] } | { $in: string[] };
   'extra.platform'?: string;
   'extra.used'?: boolean;
   price?: { $gte?: number; $lte?: number };
@@ -56,6 +57,71 @@ export interface ProductListResponse {
   message?: string;
 }
 
+// 카테고리 코드에 따른 상품 타입 매핑 함수
+function getProductTypeByCategory(category?: string): 'GAME' | 'HARDWARE' | 'ALL' {
+  if (!category) return 'ALL';
+
+  // 플랫폼 카테고리는 모든 상품(게임+하드웨어) 포함
+  const platformCategories = [
+    'NINTENDONDS',
+    'NINTENDO01',
+    'NINTENDO02',
+    'PLAYSTATION04',
+    'PLAYSTATION05',
+  ];
+
+  if (platformCategories.includes(category.toUpperCase())) {
+    return 'ALL'; // 플랫폼별 페이지에서는 게임과 하드웨어 모두 표시
+  }
+
+  // 특정 상품 타입 카테고리
+  switch (category.toUpperCase()) {
+    case 'GAME':
+      return 'GAME';
+    case 'HARDWARE':
+    case 'CONSOLE':
+      return 'HARDWARE';
+    default:
+      return 'ALL';
+  }
+}
+
+// 동적 카테고리 필터 생성 함수
+function createCategoryFilter(
+  params: ProductSearchParams,
+): { $all: string[] } | { $in: string[] } | undefined {
+  const { category, productType } = params;
+
+  // productType이 명시적으로 전달된 경우
+  if (productType) {
+    switch (productType) {
+      case 'GAME':
+        return { $all: ['GAME'] };
+      case 'HARDWARE':
+        return { $all: ['HARDWARE'] };
+      case 'ALL':
+        return { $in: ['GAME', 'HARDWARE'] };
+    }
+  }
+
+  // category 파라미터 기반으로 판단
+  if (category) {
+    const productTypeFromCategory = getProductTypeByCategory(category);
+
+    switch (productTypeFromCategory) {
+      case 'GAME':
+        return { $all: ['GAME'] };
+      case 'HARDWARE':
+        return { $all: ['HARDWARE'] };
+      case 'ALL':
+        return { $in: ['GAME', 'HARDWARE'] };
+    }
+  }
+
+  // 기본값: 모든 상품 타입
+  return { $in: ['GAME', 'HARDWARE'] };
+}
+
 // 상품 목록 조회 (검색/필터/정렬 지원)
 export async function getProductList(params: ProductSearchParams = {}): Promise<
   ApiRes<Iproduct[]> & {
@@ -73,12 +139,17 @@ export async function getProductList(params: ProductSearchParams = {}): Promise<
       priceMax,
       search,
       category,
+      productType,
     } = params;
 
     // 커스텀 필터 객체 생성
-    const customFilter: CustomFilter = {
-      'extra.category': { $all: ['GAME'] }, // 'HARDWARE'로 하드코딩 시, 게임기만 호출
-    };
+    const customFilter: CustomFilter = {};
+
+    // 동적 카테고리 필터 적용
+    const categoryFilter = createCategoryFilter({ category, productType });
+    if (categoryFilter) {
+      customFilter['extra.category'] = categoryFilter;
+    }
 
     // 플랫폼 필터
     if (platform) {
@@ -104,9 +175,26 @@ export async function getProductList(params: ProductSearchParams = {}): Promise<
       customFilter.name = { $regex: search, $options: 'i' };
     }
 
-    // 카테고리 필터 (추가 카테고리 있을 시)
-    if (category && category !== 'GAME') {
-      customFilter['extra.category'] = { $all: ['GAME', category] };
+    // 추가 카테고리 필터 (GAME + 다른 카테고리 조합)
+    if (category && !['GAME', 'HARDWARE', 'CONSOLE'].includes(category.toUpperCase())) {
+      // 플랫폼 카테고리인 경우, 기존 필터를 덮어쓰지 않고 추가 조건 적용
+      const platformCategories = [
+        'NINTENDONDS',
+        'NINTENDO01',
+        'NINTENDO02',
+        'PLAYSTATION04',
+        'PLAYSTATION05',
+      ];
+
+      if (platformCategories.includes(category.toUpperCase())) {
+        // 플랫폼별 필터: 해당 플랫폼의 게임과 하드웨어 모두 포함
+        customFilter['extra.category'] = { $all: [category.toUpperCase()] };
+      } else if (categoryFilter && '$all' in categoryFilter && categoryFilter.$all) {
+        // 기존 GAME/HARDWARE 필터에 추가 카테고리 조건 추가
+        customFilter['extra.category'] = {
+          $all: [...categoryFilter.$all, category.toUpperCase()],
+        };
+      }
     }
 
     // 정렬 객체 생성
@@ -157,11 +245,29 @@ export async function getProductList(params: ProductSearchParams = {}): Promise<
     };
   }
 }
+
 // 인기 상품 조회
-export async function getPopularProducts(limit: number = 8): ApiResPromise<Iproduct[]> {
+export async function getPopularProducts(
+  limit: number = 8,
+  productType: 'GAME' | 'HARDWARE' | 'ALL' = 'GAME',
+): ApiResPromise<Iproduct[]> {
   try {
+    let categoryFilter;
+
+    switch (productType) {
+      case 'GAME':
+        categoryFilter = '{"extra.category":{"$all":["GAME"]}}';
+        break;
+      case 'HARDWARE':
+        categoryFilter = '{"extra.category":{"$all":["HARDWARE"]}}';
+        break;
+      case 'ALL':
+        categoryFilter = '{"extra.category":{"$in":["GAME","HARDWARE"]}}';
+        break;
+    }
+
     const res = await fetch(
-      `${API_URL}/products?limit=${limit}&page=1&custom={"extra.category":{"$all":["GAME"]}}&sort={"buyQuantity": -1}`,
+      `${API_URL}/products?limit=${limit}&page=1&custom=${categoryFilter}&sort={"buyQuantity": -1}`,
       {
         headers: {
           'Client-Id': CLIENT_ID,
