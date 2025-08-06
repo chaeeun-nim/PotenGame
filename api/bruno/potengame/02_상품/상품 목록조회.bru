@@ -5,13 +5,13 @@ meta {
 }
 
 get {
-  url: {{url}}/products?custom={"extra.category":{"$all":["HARDWARE","PLAYSTATION05","NEW"]}}
+  url: {{url}}/products
   body: none
   auth: inherit
 }
 
 params:query {
-  custom: {"extra.category":{"$all":["HARDWARE","PLAYSTATION05","NEW"]}}
+  ~custom: {"extra.category":{"$all":["HARDWARE","PLAYSTATION05","NEW"]}}
   ~limit: 5
   ~page: 1
   ~custom: {"extra.platform": "${platform}","extra.category":{"$all":["GAME"]}}

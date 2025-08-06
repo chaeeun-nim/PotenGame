@@ -29,21 +29,24 @@ export default function MyPageRecent() {
         });
 
         const json = await res.json();
-        if (json.ok) {
-          const updatedUser = {
-            ...user!,
-            extra: {
-              ...user!.extra,
-              purchases: user?.extra?.purchases ?? 0,
-              nickname: user?.extra?.nickname ?? '',
-              birthday: user?.extra?.birthday ?? '',
-              membershipClass: user?.extra?.membershipClass ?? 'MC01',
-              address: user?.extra?.address ?? [],
-              orders: json.item, // 전역 상태에 저장
-            },
-          };
-          setUser(updatedUser);
-        } else {
+          if (json.ok) {
+            const item = json.item;
+            const normalized = Array.isArray(item) ? item : [item];
+
+            const updatedUser = {
+              ...user!,
+              extra: {
+                ...user!.extra,
+                purchases: user?.extra?.purchases ?? 0,
+                nickname: user?.extra?.nickname ?? '',
+                birthday: user?.extra?.birthday ?? '',
+                membershipClass: user?.extra?.membershipClass ?? 'MC01',
+                address: user?.extra?.address ?? [],
+                orders: normalized, // 배열 보장
+              },
+            };
+            setUser(updatedUser);
+          } else {
           console.warn('❗ /orders API 응답 실패:', json);
         }
       } catch (err) {
@@ -52,7 +55,7 @@ export default function MyPageRecent() {
     };
 
     fetchOrders();
-  }, [token, orders.length, user, setUser]);
+  }, [token]);
 
   const visibleOrders = orders.slice(0, 2); // 최대 2개 노출
 
@@ -64,7 +67,7 @@ export default function MyPageRecent() {
         {visibleOrders.length === 0 ? (
           <EmptyState />
         ) : (
-          visibleOrders.map((order) => <Card order={order} key={order.id} size="lg" />)
+          visibleOrders.map((order, index) => <Card order={order} key={`lg-${order.id ?? index}`} size="lg" />)
         )}
       </section>
       {/* 태블릿 전용 */}
@@ -75,8 +78,8 @@ export default function MyPageRecent() {
             <EmptyState />
           ) : (
             <div className="flex flex-col">
-              {visibleOrders.map((order) => (
-                <Card order={order} key={order.id} size="md" />
+              {visibleOrders.map((order, index) => (
+                <Card order={order} key={`md-${order.id ?? index}`} size="md" />
               ))}
             </div>
           )}
@@ -90,8 +93,8 @@ export default function MyPageRecent() {
           <EmptyState />
         ) : (
           <div className="flex flex-col">
-            {visibleOrders.map((order) => (
-              <Card order={order} key={order.id} size="sm" />
+            {visibleOrders.map((order, index) => (
+              <Card order={order} key={`sm-${order.id ?? index}`} size="sm" />
             ))}
           </div>
         )}
@@ -118,6 +121,13 @@ function SectionHeader() {
   );
 }
 
+// 주문 상태 코드 → 한글 매핑
+const stateToLabel: Record<string, string> = {
+  OS010: '결제전',
+  OS020: '상품준비중',
+  OS030: '배송중',
+  OS040: '배송완료',
+};
 // 주문 카드 컴포넌트
 function Card({ order, size }: { order: IRecentOrder; size: 'lg' | 'md' | 'sm' }) {
   const imageSize = size === 'lg' ? 'w-[169px] h-[169px]' : 'w-full h-[100px]';
@@ -152,10 +162,21 @@ function Card({ order, size }: { order: IRecentOrder; size: 'lg' | 'md' | 'sm' }
       {/* 텍스트 정보 영역 */}
       <div className="flex flex-col justify-between flex-1 py-1">
         <div className="flex flex-col gap-1">
-          <p className="text-[14px] font-bold text-black">{order.status}</p>
-          <p className="text-[12px] text-[var(--color-poten-gray-2)]">{order.date}</p>
-          <p className="text-[14px] text-black mt-1">{order.products[0].name}</p>
-          <p className="text-[16px] font-bold text-black">{order.price}</p>
+          <p className="text-[14px] font-bold text-black">{stateToLabel[order.state]}</p>
+            <p className="text-[12px] text-[var(--color-poten-gray-2)]">
+                {new Date(order.createdAt)
+                  .toLocaleDateString('ko-KR', {
+                    year: '2-digit',
+                    month: '2-digit',
+                    day: '2-digit',
+                  })
+                  .replace(/\./g, '.')
+                  .replace(/\s/g, '')} 주문
+              </p>
+            <p className="text-[14px] text-black mt-1">{order.products[0].name}</p>
+            <p className="text-[16px] font-bold text-black">
+              {order.cost.total.toLocaleString()}원
+            </p>
         </div>
 
         {/* 상세보기 / 리뷰쓰기 버튼 */}

@@ -151,7 +151,7 @@ export default function About() {
               몬스터를 잡을 수 있게 됩니다.
             </p>
             <p className=" text-poten-black ">
-              멋쟁이사저처럼 프론트엔드 부트캠프의 수료라는
+              멋쟁이사자처럼 프론트엔드 부트캠프의 수료라는
               <br />
               전직에 앞서 저희는 파이널프로젝트라는 사냥터에서
               <br />
@@ -175,7 +175,7 @@ export default function About() {
               전직후에 더욱 강해지며 더 강한 몬스터를 잡을 수 있게 됩니다.
             </p>
             <p className=" text-poten-black ">
-              멋쟁이사저처럼 프론트엔드 부트캠프의 수료라는 전직에 앞서
+              멋쟁이사자처럼 프론트엔드 부트캠프의 수료라는 전직에 앞서
               <br />
               저희는 파이널프로젝트라는 사냥터에서
               <span className="font-bold text-poten-red">깊은 인내</span>와
@@ -450,19 +450,22 @@ export default function About() {
             포텐게임의 앞으로의 변화
           </h2>
           <p className=" text-white xl:text-[20px] font-medium text-center hidden md:inline-block">
-            공부중인 학생들이 모여 최선을 다해 제작한 프로젝트이지만,
+            한달이라는 짧은 프로젝트 기간을 염두해 두고, 빠른 제작 및 결과물 도출을 위해
             <br />
-            마지막이자 시작이기에 완벽한 프로젝트는 될 수 없었습니다. 포텐게임팀은 앞으로
+            저희는 포텐게임의 기본기능만 작동되는 프로토타입을 목표로 제작하였습니다.
             <br />
-            포텐게임을 어떻게 보강해 나갈 수 있을까요?
+            앞으로 어떻게 더 보강해 나갈 수 있을까요?
           </p>
           <p className=" text-white xl:text-[18px] font-medium text-center inline-block  md:hidden">
-            공부중인 학생들이 모여 최선을 다해 제작한
+            한달이라는 짧은 프로젝트 기간을 염두해 두고,
             <br />
-            프로젝트이지만, 마지막이자 시작이기에 완벽한 프로젝트는
-            <br />될 수 없었습니다. z1존포텐1004팀은 앞으로
+            빠른 제작 및 결과물 도출을 위해
             <br />
-            포텐게임을 어떻게 보강해 나갈 수 있을까요?
+            저희는 포텐게임의 기본기능만 작동되는
+            <br />
+            프로토타입을 목표로 제작하였습니다.
+            <br />
+            앞으로 어떻게 더 보강해 나갈 수 있을까요?
           </p>
           <div
             className="xl:w-[1200px] w-full mx-auto grid grid-cols-12 gap-4 xl:gap-8 text-white
