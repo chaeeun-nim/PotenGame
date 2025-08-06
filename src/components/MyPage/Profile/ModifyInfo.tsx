@@ -3,13 +3,12 @@
 import ProfileInput from '@/components/MyPage/Profile/ProfileInput';
 import { modifyUser } from '@/data/functions/modifyUser';
 import useUserStore from '@/zustand/userStore';
-import { useRouter, useSearchParams } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 
 import React, { useEffect, useState } from 'react';
 
 export default function ModifyInfo() {
   const { user, setUser } = useUserStore();
-  const redirect = useSearchParams().get('redirect');
   const router = useRouter();
 
   const [userId, setUserId] = useState<number | null>(null);
@@ -102,11 +101,7 @@ export default function ModifyInfo() {
                   setUser(res.item);
                   alert('정보가 성공적으로 수정되었습니다.');
 
-                  if (redirect) {
-                    router.replace(redirect); // 돌아갈 페이지가 있을 경우 이동한다.
-                  } else {
-                    router.back(); // 이전 페이지로 이동한다.
-                  }
+                  router.refresh(); //새로고침
                 } else {
                   alert('정보 수정에 실패했습니다.');
                 }
