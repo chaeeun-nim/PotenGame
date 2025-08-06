@@ -9,38 +9,43 @@
 
 ## 🖼️ 주요 화면 구성 및 UI 구조
 
-### 🏠 메인 페이지
-- 배너, 추천 상품, 카테고리별 게임 리스트
+### 🏠 메인 페이지  
+- 배너, 추천 상품, 카테고리별 게임 리스트  
 - 반응형 구조로 PC/태블릿/모바일 모두 대응  
-`<Image>` 메인 페이지 UI 와이어프레임 (PC/모바일 대응) `</Image>`
+🔗 [피그마 디자인 보기](https://www.figma.com/design/8TP0tsKHT2BWPThthqh3XZ/z1%EC%A1%B4%ED%8F%AC%ED%85%901004---final-project?node-id=0-1&t=wGKzQFjFvdCcnHYr-0)
+
 
 ---
 
 ### 🛍️ 상품 목록 페이지
 - 필터링, 정렬 기능 포함
 - 카드형 UI로 구성된 게임 리스트  
-`<Image>` 상품 목록 페이지 UI (PC/태블릿 vs 모바일) `</Image>`
+🔗 [피그마 디자인 보기](https://www.figma.com/design/8TP0tsKHT2BWPThthqh3XZ/z1%EC%A1%B4%ED%8F%AC%ED%85%901004---final-project?node-id=0-1&t=wGKzQFjFvdCcnHYr-0)
+
 
 ---
 
 ### 📄 상품 상세 페이지
 - 게임 정보, 가격, 구매 버튼, 리뷰 영역
 - 구매 안내 및 사용자 리뷰 기능 포함  
-`<Image>` 상품 상세 페이지 UI (PC 버전) `</Image>`
+🔗 [피그마 디자인 보기](https://www.figma.com/design/8TP0tsKHT2BWPThthqh3XZ/z1%EC%A1%B4%ED%8F%AC%ED%85%901004---final-project?node-id=0-1&t=wGKzQFjFvdCcnHYr-0)
+
 
 ---
 
 ### 🙋‍♂️ 마이페이지
 - 관심 목록, 배송 주소록, 회원 정보 관리, 고객센터
 - 사이드바 및 하단 GNB로 빠른 접근 가능  
-`<Image>` 마이페이지 UI (PC/태블릿 vs 모바일) `</Image>`
+🔗 [피그마 디자인 보기](https://www.figma.com/design/8TP0tsKHT2BWPThthqh3XZ/z1%EC%A1%B4%ED%8F%AC%ED%85%901004---final-project?node-id=0-1&t=wGKzQFjFvdCcnHYr-0)
+
 
 ---
 
 ### 🧑‍💼 회원가입 / 프로필 페이지
 - 사용자 정보 입력 및 수정
 - 에러 메시지 및 유효성 검사 포함  
-`<Image>` 회원가입 및 프로필 페이지 UI (PC/태블릿 vs 모바일) `</Image>`
+🔗 [피그마 디자인 보기](https://www.figma.com/design/8TP0tsKHT2BWPThthqh3XZ/z1%EC%A1%B4%ED%8F%AC%ED%85%901004---final-project?node-id=0-1&t=wGKzQFjFvdCcnHYr-0)
+
 
 ---
 
