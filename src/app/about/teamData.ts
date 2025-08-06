@@ -11,7 +11,7 @@ export interface teamPerson {
   title: string;
   subtitle: string;
   position: string;
-  work: string;
+  work: string[];
   reviewtitle: string;
   review: string;
   img: StaticImageData;
@@ -24,7 +24,7 @@ export const teamData: teamPerson[] = [
     githubLink: 'https://github.com/dooollee',
     title: '목표를 향해 꾸준히\n걸어가는 개발자',
     subtitle: '확실한 목표를 동기부여로 삼고\n조금씩 천천히 나아가는 개발자',
-    work: '헤더 GNB\n로그인\n회원가입\n유저기록관리',
+    work: ['헤더 GNB', '로그인', '회원가입', '유저기록관리'],
     position: 'PM',
     reviewtitle: '함께의 중요성을 깨닳았어요.',
     img: member1,
@@ -37,7 +37,15 @@ export const teamData: teamPerson[] = [
     githubLink: 'https://github.com/chaeeun-nim',
     title: '365일 연구중인 연구 및\n탐색형 개발자 입니다.',
     subtitle: '학습 욕심이 많아 분야를 가리지 않고\n꾸준히 연구하는 개발자',
-    work: '메인페이지\n모바일 하단 GNB\nFooter\n장바구니\n상품구매\n검색\n좋아요',
+    work: [
+      '메인페이지',
+      '모바일 하단 GNB',
+      'Footer',
+      '장바구니',
+      '상품구매',
+      '검색',
+      '좋아요',
+    ],
     position: 'PL',
     reviewtitle: '더 좋은 개발자,\n더 좋은 사람이 될 수 있었어요.',
     img: member2,
@@ -50,7 +58,7 @@ export const teamData: teamPerson[] = [
     githubLink: 'https://github.com/sua17',
     title: '계속해서 배우며 성장하는\n개발자 입니다.',
     subtitle: '끊임없이 배우고 실천하며, 성장하는\n개발자',
-    work: '마이페이지\n주문조회\n유저상세조회\n주소등록\n게시판UI',
+    work: ['마이페이지', '주문조회', '유저상세조회', '주소등록', '게시판UI'],
     position: 'DR',
     reviewtitle: '협업 속에서 팀과 함께\n온전히 성장할 수 있었어요.',
     img: member3,
@@ -62,7 +70,13 @@ export const teamData: teamPerson[] = [
     githubLink: 'https://github.com/twkimfe',
     title: '꾸준히 학습하고, 구현에\n파고드는 개발자 입니다.',
     subtitle: '스스로 부족한 부분을 찾아\n끈기있게 공부하여 결국 해내는 개발자',
-    work: '상품 목록 조회\n상품 필터링\n상품 목록 정렬\n상품 상세 페이지\n페이지 경로관리',
+    work: [
+      '상품 목록 조회',
+      '상품 필터링',
+      '상품 목록 정렬',
+      '상품 상세 페이지',
+      '페이지 경로관리',
+    ],
     position: 'PR',
     reviewtitle:
       '사실 이번 프로젝트에서 맡은 바 업무를\n제대로 수행할 수 있을까 걱정이 됐어요.',

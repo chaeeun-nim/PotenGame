@@ -1,58 +1,43 @@
 import { create } from 'zustand';
 import { MyAddress } from '@/types/MyAddress';
 
-interface UserWithAddress {
-  _id: string;
-  phone?: string;
-  extra?: {
-    address?: MyAddress[];
-    addressBook?: MyAddress[];
-  };
-}
+// 직접 환경변수 선언 (config import 없이)
+const API_URL = process.env.NEXT_PUBLIC_API_URL!;
+const CLIENT_ID = process.env.NEXT_PUBLIC_CLIENT_ID || '';
 
-type State = {
+type AddressState = {
   addresses: MyAddress[];
+  setAddresses: (addresses: MyAddress[]) => void;
   fetchAddresses: (userId: string, token: string) => Promise<void>;
 };
 
-export const useUserAddress = create<State>((set) => ({
+export const useUserAddress = create<AddressState>((set) => ({
   addresses: [],
+
+  // 전역 상태 설정 함수
+  setAddresses: (addresses) => set({ addresses }),
+
+  // API 호출 → 상태 저장
   fetchAddresses: async (userId, token) => {
     try {
-      const res = await fetch(`https://fesp-api.koyeb.app/user/${userId}`, {
+      const res = await fetch(`${API_URL}/user/${userId}`, {
+        method: 'GET',
         headers: {
           Authorization: `Bearer ${token}`,
+          'Content-Type': 'application/json',
+          'Client-ID': CLIENT_ID,
         },
       });
 
-      const data = await res.json();
-      const item = data.item as UserWithAddress | UserWithAddress[];
-
-      const user = Array.isArray(item)
-        ? item.find((u) => String(u._id) === String(userId))
-        : item;
-
-      const rawList = user?.extra?.address ?? user?.extra?.addressBook ?? [];
-
-      console.log('API 응답:', data);
-      console.log('user:', user);
-      console.log('rawList:', rawList);
-
-      const phone = user?.phone ?? '';
-      const list: MyAddress[] = rawList.map((item) => ({
-        id: item.id,
-        name: item.name ?? '',
-        value: item.value ?? '',
-        addressNumber: String(item.addressNumber ?? ''),
-        phone: item.phone ?? phone,
-        isDefault: item.isDefault ?? false,
-        isSelected: item.isSelected ?? false,
-      }));
-
-      set({ addresses: list });
+      if (res.ok) {
+        const data = await res.json();
+        const addressList = data.item?.extra?.address ?? [];
+        set({ addresses: addressList }); // 전역 상태에 저장
+      } else {
+        console.error('주소 조회 실패: ', res.status);
+      }
     } catch (error) {
-      console.error('주소 가져오기 실패:', error);
-      set({ addresses: [] });
+      console.error('주소 조회 중 오류:', error);
     }
   },
 }));

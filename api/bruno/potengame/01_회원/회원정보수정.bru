@@ -5,7 +5,33 @@ meta {
 }
 
 patch {
-  url: {{url}}/users/
-  body: none
+  url: {{url}}/users/4
+  body: json
   auth: inherit
+}
+
+body:json {
+  {
+      "address": [
+        {
+          "id": 1,
+          "name": "회사",
+          "addressNumber": 12345,
+          "value": "서울시 강동구 천호동 123"
+        },
+        {
+          "id": 2,
+          "name": "집",
+          "addressNumber": 12345,
+          "value": "서울시 강동구 성내동 234"
+        },
+              {
+          "id": 3,
+          "name": "미국",
+          "addressNumber": 12345,
+          "value": "미국주소"
+        }
+      ]
+  }
+  
 }

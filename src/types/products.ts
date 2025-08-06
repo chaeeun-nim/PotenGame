@@ -75,14 +75,22 @@ export interface Iproduct {
   name: string;
   quantity: number;
   buyQuantity: number;
-  mainImages: IproductImg[];
-  content?: IproductImg[]; // 상세 이미지 추가
-  createdAt: string;
-  updatedAt: string;
+  bookmarks?: number;
+  mainImages: Array<{
+    path: string;
+    name: string;
+    originalname: string;
+  }>;
+  content?: Array<{
+    path: string;
+    name: string;
+    originalname: string;
+  }>;
   extra: IproductExtra;
+  createdAt?: string;
+  updatedAt?: string;
   seller?: IproductSeller;
   replies?: number;
-  bookmarks?: number;
   options?: number;
 }
 
