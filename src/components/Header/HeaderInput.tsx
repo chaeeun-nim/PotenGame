@@ -47,7 +47,7 @@ export default function HeaderInput() {
     updateStorage(newSearch);
     setTitle('');
     setIsSearchClick(true);
-    router.push(`search?keyword=${encodeURIComponent(title.trim())}`);
+    router.push(`/search?keyword=${encodeURIComponent(title.trim())}`);
   };
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
