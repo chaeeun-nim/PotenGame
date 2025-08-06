@@ -20,7 +20,7 @@ export const useUserAddress = create<AddressState>((set) => ({
   // API 호출 → 상태 저장
   fetchAddresses: async (userId, token) => {
     try {
-      const res = await fetch(`${API_URL}/user/${userId}`, {
+      const res = await fetch(`${API_URL}/users/${userId}`, {
         method: 'GET',
         headers: {
           Authorization: `Bearer ${token}`,
