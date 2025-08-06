@@ -39,14 +39,25 @@
   <img src="https://github.com/user-attachments/assets/ee227c61-b3af-48f0-ba64-88e6fd8e678b" width="180"/>
   <img src="https://github.com/user-attachments/assets/542a6f6a-ec2e-434c-8043-9e5f70206362" width="180"/>
 </p>
+<p>
+  <img src="https://github.com/user-attachments/assets/75fad99c-fc45-4604-8017-99dc3f13f24d" width="180"/>
+  <img src="https://github.com/user-attachments/assets/ee227c61-b3af-48f0-ba64-88e6fd8e678b" width="180"/>
+  <img src="https://github.com/user-attachments/assets/542a6f6a-ec2e-434c-8043-9e5f70206362" width="180"/>
+</p>
 
 ---
 
 ### 🛍️ 상품 목록 페이지
 
+
 - 필터링, 정렬 기능 포함
 - 카드형 UI로 구성된 게임 리스트
+- 카드형 UI로 구성된 게임 리스트
 
+<p>
+  <img src="https://github.com/user-attachments/assets/a1a1e164-174b-449d-8920-d887209b2b64" width="180"/>
+  <img src="https://github.com/user-attachments/assets/5b83f5cf-9759-4244-8ec3-24851575d6e5" width="180"/>
+</p>
 <p>
   <img src="https://github.com/user-attachments/assets/a1a1e164-174b-449d-8920-d887209b2b64" width="180"/>
   <img src="https://github.com/user-attachments/assets/5b83f5cf-9759-4244-8ec3-24851575d6e5" width="180"/>
@@ -56,9 +67,14 @@
 
 ### 📄 상품 상세 페이지
 
+
 - 게임 정보, 가격, 구매 버튼, 리뷰 영역
 - 구매 안내 및 제품 상세 페이지
 
+<p>
+  <img src="https://github.com/user-attachments/assets/6a6ae291-4b5d-4677-8ba9-51965d5095e0" width="180"/>
+  <img src="https://github.com/user-attachments/assets/4a7bbf8a-1b00-4118-9f02-3729fccab2a9" width="180"/>
+</p>
 <p>
   <img src="https://github.com/user-attachments/assets/6a6ae291-4b5d-4677-8ba9-51965d5095e0" width="180"/>
   <img src="https://github.com/user-attachments/assets/4a7bbf8a-1b00-4118-9f02-3729fccab2a9" width="180"/>
@@ -68,7 +84,9 @@
 
 ### 🙋‍♂️ 마이페이지
 
+
 - 관심 목록, 배송 주소록, 회원 정보 관리, 고객센터
+- 사이드바 및 하단 GNB로 빠른 접근 가능
 - 사이드바 및 하단 GNB로 빠른 접근 가능
 
 <p>
@@ -76,8 +94,15 @@
   <img src="https://github.com/user-attachments/assets/2a6eef00-7cbf-4547-bdf5-48959c50f9b5" width="180"/>
   <img src="https://github.com/user-attachments/assets/cfd8133a-f0ff-48bc-b751-f2d8dba39012" width="180"/>
 </p>
+<p>
+  <img src="https://github.com/user-attachments/assets/a2a7c379-81f5-4ddd-b80d-0519a2e71bd7" width="180"/>
+  <img src="https://github.com/user-attachments/assets/2a6eef00-7cbf-4547-bdf5-48959c50f9b5" width="180"/>
+  <img src="https://github.com/user-attachments/assets/cfd8133a-f0ff-48bc-b751-f2d8dba39012" width="180"/>
+</p>
 
 ---
+
+### 🧑‍💼 로그인 / 회원가입 / 프로필 페이지
 
 ### 🧑‍💼 로그인 / 회원가입 / 프로필 페이지
 

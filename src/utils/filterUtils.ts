@@ -7,7 +7,7 @@ export interface Category {
 export interface FilterState {
   platform?: string;
   condition?: 'used' | 'new';
-  category?: 'GAME' | 'CONSOLE';
+  category?: 'GAME' | 'HARDWARE';
   [key: string]: string | undefined;
 }
 
@@ -17,13 +17,13 @@ export const FILTER_MAPPINGS = {
   used: { condition: 'used' as const },
   new: { condition: 'new' as const },
   game: { category: 'GAME' as const },
-  console: { category: 'CONSOLE' as const },
+  console: { category: 'HARDWARE' as const },
 
   // 복합 필터
   'used-game': { condition: 'used' as const, category: 'GAME' as const },
-  'used-console': { condition: 'used' as const, category: 'CONSOLE' as const },
+  'used-console': { condition: 'used' as const, category: 'HARDWARE' as const },
   'new-game': { condition: 'new' as const, category: 'GAME' as const },
-  'new-console': { condition: 'new' as const, category: 'CONSOLE' as const },
+  'new-console': { condition: 'new' as const, category: 'HARDWARE' as const },
 } as const;
 
 export type FilterMappingKey = keyof typeof FILTER_MAPPINGS;
