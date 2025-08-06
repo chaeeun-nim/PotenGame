@@ -86,7 +86,7 @@ export function Header() {
           // 로그인o: 마이페이지, 장바구니, 로그아웃
           <ul className="hidden md:flex items-center gap-x-4 md:row-start-1 md:col-end-13">
             <li>
-              <Link href="/myPage" className="flex gap-x-2 whitespace-nowrap ">
+              <Link href="/mypages" className="flex gap-x-2 whitespace-nowrap ">
                 <Image src={myPage} alt="마이페이지" />
                 <span>마이페이지</span>
               </Link>
