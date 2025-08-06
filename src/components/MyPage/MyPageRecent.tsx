@@ -33,6 +33,11 @@ export default function MyPageRecent() {
             const item = json.item;
             const normalized = Array.isArray(item) ? item : [item];
 
+            const deduped = normalized.filter(
+                  (order, index, self) =>
+                    index === self.findIndex((o) => o.id === order.id)
+                );
+
             const updatedUser = {
               ...user!,
               extra: {
@@ -42,7 +47,7 @@ export default function MyPageRecent() {
                 birthday: user?.extra?.birthday ?? '',
                 membershipClass: user?.extra?.membershipClass ?? 'MC01',
                 address: user?.extra?.address ?? [],
-                orders: normalized, // 배열 보장
+                orders: deduped, // 중복 제거된 배열 사용
               },
             };
             setUser(updatedUser);
