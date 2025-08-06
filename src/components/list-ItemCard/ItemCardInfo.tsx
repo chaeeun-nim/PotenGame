@@ -17,6 +17,7 @@ import useLoginModal from '@/zustand/areyouLogin';
 import { addCart } from '@/data/actions/addCart';
 import { getCart } from '@/data/functions/getCart';
 import { removeCart } from '@/data/functions/removeCart';
+import useLikeStore from '@/zustand/likeStore';
 
 // 날짜 포멧팅 함수
 function formatDate(dateString: string): string {
@@ -36,6 +37,11 @@ export default function ItemCardInfo() {
   const { user } = useUserStore();
   const { openViewModal } = useLoginModal();
   const [isLoading, setLoading] = useState(false);
+
+  // 좋아요 관련 상태 추가
+  const { likeNum } = useLikeStore();
+  const [currentLikeCount, setCurrentLikeCount] = useState(0);
+  const [isCurrentlyLiked, setIsCurrentlyLiked] = useState(false);
 
   // 상품 기본값 설정
   const defaultData = {
@@ -57,6 +63,15 @@ export default function ItemCardInfo() {
   };
 
   const data = productData || defaultData;
+
+  // 좋아요 상태 및 개수 추적
+  useEffect(() => {
+    const baseCount = data.bookmarks || defaultData.bookmarks;
+    const isLiked = user && likeNum?.some((item) => item === data._id);
+
+    setIsCurrentlyLiked(!!isLiked);
+    setCurrentLikeCount(baseCount); // 기본값으로 설정
+  }, [likeNum, data._id, data.bookmarks, defaultData.bookmarks, user]);
 
   // 장바구니 상태 체크 (MainCard CardBtn과 동일 로직)
   const [isInCart, setIsInCart] = useState(
@@ -122,6 +137,12 @@ export default function ItemCardInfo() {
 
   // 장바구니 버튼 클릭 핸들러
   const handleCartClick = () => {
+    // 먼저 로그인 확인
+    if (!user) {
+      openViewModal();
+      return;
+    }
+
     if (isInCart) {
       handleRemoveFromCart();
     } else {
@@ -175,7 +196,10 @@ export default function ItemCardInfo() {
                   alt="좋아요 갯수"
                   className="w-[18px] h-[18px] mr-0.5"
                 />
-                <span>좋아요 {data.bookmarks || defaultData.bookmarks}개</span>
+                <span
+                  className={`transition-colors duration-200 ${isCurrentlyLiked ? 'text-poten-red font-bold' : ''}`}>
+                  좋아요 {currentLikeCount.toLocaleString()}개
+                </span>
               </div>
               <div className="flex flex-row items-center">
                 <Image
@@ -323,7 +347,7 @@ export default function ItemCardInfo() {
           )}
         </button>
 
-        <ItemLikeBtn className="w-[30px] h-[30px]" />
+        <ItemLikeBtn className="w-[30px] h-[30px]" productId={data._id} />
       </footer>
     </article>
   );
