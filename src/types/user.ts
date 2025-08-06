@@ -21,7 +21,7 @@ export interface Iuser {
   updatedAt?: string;
   extra?: IuserExtra;
   notifications?: Array<string>;
-  token: IuserToken;
+  token?: IuserToken;
   bookmark?: IuserBookmark;
 }
 

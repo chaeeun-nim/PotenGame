@@ -12,17 +12,17 @@ interface ProfileInputType {
 export default function ProfileInput({title, type, name}: ProfileInputType) {
 
   const [ value, setValue ] = useState('');
-  const [ canUse, setCanUse ] = useState(false);
+  const [ canUse, setCanUse ] = useState<boolean>();
 
   const DupCheck = async () =>{
     switch(name){
       case "nickname":
         const nickname = await NicknameCheck(value);
-        if(nickname.ok) setCanUse(true)
+        setCanUse(!!nickname.ok)
         break;
       case "email":
         const email = await emailCheck(value);
-        if(email.ok) setCanUse(true)
+        setCanUse(!!email.ok)
         break;
       default: return null;
     }
@@ -52,6 +52,7 @@ export default function ProfileInput({title, type, name}: ProfileInputType) {
         </div>
 
         {/* 확인 메세지 */}
+        { canUse !== undefined && (
         <div className="flex items-center gap-2 mb-4 ml-1">
           { canUse ? 
           <>
@@ -69,6 +70,7 @@ export default function ProfileInput({title, type, name}: ProfileInputType) {
           </>
           }
         </div>
+        )}
     </div>
   );
 }

@@ -1,0 +1,15 @@
+meta {
+  name: 회원 정보 조회
+  type: http
+  seq: 7
+}
+
+get {
+  url: {{url}}/users/10
+  body: none
+  auth: inherit
+}
+
+settings {
+  encodeUrl: true
+}
