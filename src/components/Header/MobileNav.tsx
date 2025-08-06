@@ -121,7 +121,7 @@ export default function MobileNav({
               <div className="flex flex-row gap-4">
                 <Link
                   className="inline-block px-[12px] rounded-[2px] py-[2px] bg-poten-red text-white font-semibold"
-                  href="/login">
+                  href="/cart">
                   장바구니
                 </Link>
                 <button

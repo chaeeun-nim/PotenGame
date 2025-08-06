@@ -58,7 +58,7 @@ export default function FooterContents() {
             <Link
               href="/list/NINTENDONDS"
               onClick={() => handleCategoryClick('NINTENDONDS')}
-              className="text-lg mb-4 font-bold">
+              className="text-lg mb-4 font-bold block">
               닌텐도 DS
             </Link>
             <ul className="text-poten-gray-2 flex gap-1 flex-col">
@@ -100,7 +100,7 @@ export default function FooterContents() {
             <Link
               href="/list/NINTENDO01"
               onClick={() => handleCategoryClick('NINTENDO01')}
-              className="text-lg mb-4 font-bold">
+              className="text-lg mb-4 font-bold block">
               닌텐도 스위치
             </Link>
             <ul className="text-poten-gray-2 flex gap-1 flex-col">
@@ -140,7 +140,7 @@ export default function FooterContents() {
             <Link
               href="/list/NINTENDO02"
               onClick={() => handleCategoryClick('NINTENDO02')}
-              className="text-lg mb-4 font-bold">
+              className="text-lg mb-4 font-bold block">
               닌텐도 스위치 2
             </Link>
             <ul className="text-poten-gray-2 flex gap-1 flex-col">
@@ -180,7 +180,7 @@ export default function FooterContents() {
             <Link
               href="/list/PLAYSTATION04"
               onClick={() => handleCategoryClick('PLAYSTATION04')}
-              className="text-lg mb-4 font-bold">
+              className="text-lg mb-4 font-bold block">
               플레이스테이션 4
             </Link>
             <ul className="text-poten-gray-2 flex gap-1 flex-col">
@@ -222,7 +222,7 @@ export default function FooterContents() {
             <Link
               href="/list/PLAYSTATION05"
               onClick={() => handleCategoryClick('PLAYSTATION05')}
-              className="text-lg mb-4 font-bold">
+              className="text-lg mb-4 font-bold block">
               플레이스테이션 5
             </Link>
             <ul className="text-poten-gray-2 flex gap-1 flex-col">
@@ -261,7 +261,7 @@ export default function FooterContents() {
             </ul>
           </div>
           <div className="lg:col-span-2 lg:row-start-2 hidden md:block">
-            <h3 className="text-lg mb-4 font-bold">마이페이지</h3>
+            <h3 className="text-lg mb-4 font-bold block">마이페이지</h3>
             <ul className="text-poten-gray-2 flex gap-1 flex-col">
               <li>
                 {user ? (
@@ -302,7 +302,7 @@ export default function FooterContents() {
             </ul>
           </div>
           <div className="lg:col-span-2 lg:row-start-2">
-            <h3 className="text-lg mb-4 font-bold">포텐게임</h3>
+            <h3 className="text-lg mb-4 font-bold block">포텐게임</h3>
             <ul className="text-poten-gray-2 flex gap-1 flex-col">
               <li>
                 <Link href="/about">회사소개</Link>
