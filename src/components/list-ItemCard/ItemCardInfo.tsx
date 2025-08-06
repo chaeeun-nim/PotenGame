@@ -18,6 +18,7 @@ import { addCart } from '@/data/actions/addCart';
 import { getCart } from '@/data/functions/getCart';
 import { removeCart } from '@/data/functions/removeCart';
 import useLikeStore from '@/zustand/likeStore';
+import { useParams } from 'next/navigation';
 
 // 날짜 포멧팅 함수
 function formatDate(dateString: string): string {
@@ -31,6 +32,15 @@ function formatDate(dateString: string): string {
 export default function ItemCardInfo() {
   const { variant, productData } = useItemCardContext();
   const [quantity, setQuantity] = useState(1);
+
+  const params = useParams();
+  const currentCategory = params.category as string;
+
+  // 상품 ID 결정 (productData가 있을 시 사용, 없을 시 기본값)
+  const productId = productData?._id || 1;
+  const productLink = currentCategory
+    ? `/list/${currentCategory}/${productId}`
+    : `/list/${currentCategory}`;
 
   //전역 상태 관리 추가
   const { cart, setCart, setCost } = useCartStore();
@@ -284,7 +294,7 @@ export default function ItemCardInfo() {
           </time>
         </header>
 
-        <Link href={`/list/${data._id}`}>
+        <Link href={productLink}>
           <h3
             className={
               'font-extrabold my-[2px] md:my-[8px] text-lg md:text-xl xl:text-[22px] text-poten-black line-clamp-1'
