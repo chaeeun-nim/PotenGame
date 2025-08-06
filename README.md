@@ -8,43 +8,66 @@
 ---
 
 ## 🖼️ 주요 화면 구성 및 UI 구조
+### 🏠 메인 페이지
 
-### 🏠 메인 페이지  
-- 배너, 추천 상품, 카테고리별 게임 리스트  
-- 반응형 구조로 PC/태블릿/모바일 모두 대응  
-🔗 [피그마 디자인 보기](https://www.figma.com/design/8TP0tsKHT2BWPThthqh3XZ/z1%EC%A1%B4%ED%8F%AC%ED%85%901004---final-project?node-id=0-1&t=wGKzQFjFvdCcnHYr-0)
+- 배너, 추천 상품, 카테고리별 게임 리스트
+- 반응형 구조로 PC/태블릿/모바일 모두 대응
 
+<p>
+  <img src="https://github.com/user-attachments/assets/75fad99c-fc45-4604-8017-99dc3f13f24d" width="180"/>
+  <img src="https://github.com/user-attachments/assets/ee227c61-b3af-48f0-ba64-88e6fd8e678b" width="180"/>
+  <img src="https://github.com/user-attachments/assets/542a6f6a-ec2e-434c-8043-9e5f70206362" width="180"/>
+</p>
 
 ---
 
 ### 🛍️ 상품 목록 페이지
-- 필터링, 정렬 기능 포함
-- 카드형 UI로 구성된 게임 리스트  
-🔗 [피그마 디자인 보기](https://www.figma.com/design/8TP0tsKHT2BWPThthqh3XZ/z1%EC%A1%B4%ED%8F%AC%ED%85%901004---final-project?node-id=0-1&t=wGKzQFjFvdCcnHYr-0)
 
+- 필터링, 정렬 기능 포함
+- 카드형 UI로 구성된 게임 리스트
+
+<p>
+  <img src="https://github.com/user-attachments/assets/a1a1e164-174b-449d-8920-d887209b2b64" width="180"/>
+  <img src="https://github.com/user-attachments/assets/5b83f5cf-9759-4244-8ec3-24851575d6e5" width="180"/>
+</p>
 
 ---
 
 ### 📄 상품 상세 페이지
-- 게임 정보, 가격, 구매 버튼, 리뷰 영역
-- 구매 안내 및 사용자 리뷰 기능 포함  
-🔗 [피그마 디자인 보기](https://www.figma.com/design/8TP0tsKHT2BWPThthqh3XZ/z1%EC%A1%B4%ED%8F%AC%ED%85%901004---final-project?node-id=0-1&t=wGKzQFjFvdCcnHYr-0)
 
+- 게임 정보, 가격, 구매 버튼, 리뷰 영역
+- 구매 안내 및 사용자 리뷰 기능 포함
+
+<p>
+  <img src="https://github.com/user-attachments/assets/6a6ae291-4b5d-4677-8ba9-51965d5095e0" width="180"/>
+  <img src="https://github.com/user-attachments/assets/4a7bbf8a-1b00-4118-9f02-3729fccab2a9" width="180"/>
+</p>
 
 ---
 
 ### 🙋‍♂️ 마이페이지
-- 관심 목록, 배송 주소록, 회원 정보 관리, 고객센터
-- 사이드바 및 하단 GNB로 빠른 접근 가능  
-🔗 [피그마 디자인 보기](https://www.figma.com/design/8TP0tsKHT2BWPThthqh3XZ/z1%EC%A1%B4%ED%8F%AC%ED%85%901004---final-project?node-id=0-1&t=wGKzQFjFvdCcnHYr-0)
 
+- 관심 목록, 배송 주소록, 회원 정보 관리, 고객센터
+- 사이드바 및 하단 GNB로 빠른 접근 가능
+
+<p>
+  <img src="https://github.com/user-attachments/assets/a2a7c379-81f5-4ddd-b80d-0519a2e71bd7" width="180"/>
+  <img src="https://github.com/user-attachments/assets/2a6eef00-7cbf-4547-bdf5-48959c50f9b5" width="180"/>
+  <img src="https://github.com/user-attachments/assets/cfd8133a-f0ff-48bc-b751-f2d8dba39012" width="180"/>
+</p>
 
 ---
 
-### 🧑‍💼 회원가입 / 프로필 페이지
+### 🧑‍💼 로그인 / 회원가입 / 프로필 페이지
+
 - 사용자 정보 입력 및 수정
-- 에러 메시지 및 유효성 검사 포함  
-🔗 [피그마 디자인 보기](https://www.figma.com/design/8TP0tsKHT2BWPThthqh3XZ/z1%EC%A1%B4%ED%8F%AC%ED%85%901004---final-project?node-id=0-1&t=wGKzQFjFvdCcnHYr-0)
+- 에러 메시지 및 유효성 검사 포함
+
+<p>
+  <img src="https://github.com/user-attachments/assets/aa2deb57-1661-4df3-91a8-5e8d21312b91" width="180"/>
+  <img src="https://github.com/user-attachments/assets/9a37d4f0-d99f-4149-bad1-11d32557e012" width="180"/>
+  <img src="https://github.com/user-attachments/assets/279ba8ac-259c-4188-988c-b3049dd0bfe4" width="180"/>
+</p>
 
 
 ---
