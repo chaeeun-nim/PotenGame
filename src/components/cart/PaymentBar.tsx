@@ -63,7 +63,7 @@ export default function PaymentBar() {
             </div>
             <Image src={minusIcon} alt="빼기" className="w-auto hidden md:block" />
             <div className="hidden md:block text-white shrink-0">
-              <p>단골할인</p>
+              <p>할인</p>
               <p className="md:text-[20px] xl:text-[28px] font-bold">
                 {(
                   (cost.discount.products ?? 0) + (cost.discount.shippingFees ?? 0)
