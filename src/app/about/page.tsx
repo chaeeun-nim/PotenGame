@@ -314,7 +314,8 @@ export default function About() {
                   alt="x 아이콘"
                 />
                 <p>
-                  노후화로 인한 어려운 유지보수 및<br className="md:hidden" />
+                  노후화로 인한 어려운 유지보수 및&nbsp;
+                  <br className="md:hidden" />
                   복잡한 UI
                 </p>
               </li>
@@ -330,7 +331,7 @@ export default function About() {
                   alt="x 아이콘"
                 />
                 <p>
-                  다양한 크기의 디바이스 대비가 불가능한
+                  다양한 크기의 디바이스 대비가 불가능한&nbsp;
                   <br className="md:hidden" />
                   적응형 홈페이지
                 </p>
@@ -347,7 +348,7 @@ export default function About() {
                   alt="x 아이콘"
                 />
                 <p>
-                  지나치게 비공식적으로 보여지는
+                  지나치게 비공식적으로 보여지는&nbsp;
                   <br className="md:hidden" />
                   촌스러운 디자인
                 </p>
@@ -364,7 +365,7 @@ export default function About() {
                   alt="x 아이콘"
                 />
                 <p>
-                  사용자를 불편하고 헷갈리게 만드는
+                  사용자를 불편하고 헷갈리게 만드는&nbsp;
                   <br className="md:hidden" />
                   마케팅 요소들
                 </p>
@@ -390,9 +391,9 @@ export default function About() {
                   alt="체크 아이콘"
                 />
                 <p>
-                  필요 정보를 한번에 알 수 있도록 직관적이고,
+                  필요 정보를 한번에 알 수 있도록&nbsp;
                   <br className="md:hidden" />
-                  편리한 UI
+                  직관적이고, 편리한 UI
                 </p>
               </li>
               <li
@@ -407,7 +408,7 @@ export default function About() {
                   alt="체크 아이콘"
                 />
                 <p>
-                  다양한 사이즈에 대응 가능한 디스플레이
+                  다양한 사이즈에 대응 가능한 디스플레이&nbsp;
                   <br className="md:hidden" />
                   반응형 홈페이지
                 </p>
