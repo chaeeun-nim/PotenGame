@@ -29,29 +29,28 @@ export default function MyPageRecent() {
         });
 
         const json = await res.json();
-          if (json.ok) {
-            const item = json.item;
-            const normalized = Array.isArray(item) ? item : [item];
+        if (json.ok) {
+          const item = json.item;
+          const normalized = Array.isArray(item) ? item : [item];
 
-            const deduped = normalized.filter(
-                  (order, index, self) =>
-                    index === self.findIndex((o) => o.id === order.id)
-                );
+          const deduped = normalized.filter(
+            (order, index, self) => index === self.findIndex((o) => o.id === order.id),
+          );
 
-            const updatedUser = {
-              ...user!,
-              extra: {
-                ...user!.extra,
-                purchases: user?.extra?.purchases ?? 0,
-                nickname: user?.extra?.nickname ?? '',
-                birthday: user?.extra?.birthday ?? '',
-                membershipClass: user?.extra?.membershipClass ?? 'MC01',
-                address: user?.extra?.address ?? [],
-                orders: deduped, // 중복 제거된 배열 사용
-              },
-            };
-            setUser(updatedUser);
-          } else {
+          const updatedUser = {
+            ...user!,
+            extra: {
+              ...user!.extra,
+              purchases: user?.extra?.purchases ?? 0,
+              nickname: user?.extra?.nickname ?? '',
+              birthday: user?.extra?.birthday ?? '',
+              membershipClass: user?.extra?.membershipClass ?? 'MC01',
+              address: user?.extra?.address ?? [],
+              orders: deduped, // 중복 제거된 배열 사용
+            },
+          };
+          setUser(updatedUser);
+        } else {
           console.warn('❗ /orders API 응답 실패:', json);
         }
       } catch (err) {
@@ -72,7 +71,9 @@ export default function MyPageRecent() {
         {visibleOrders.length === 0 ? (
           <EmptyState />
         ) : (
-          visibleOrders.map((order, index) => <Card order={order} key={`lg-${order.id ?? index}`} size="lg" />)
+          visibleOrders.map((order, index) => (
+            <Card order={order} key={`lg-${order.id ?? index}`} size="lg" />
+          ))
         )}
       </section>
       {/* 태블릿 전용 */}
@@ -168,20 +169,21 @@ function Card({ order, size }: { order: IRecentOrder; size: 'lg' | 'md' | 'sm' }
       <div className="flex flex-col justify-between flex-1 py-1">
         <div className="flex flex-col gap-1">
           <p className="text-[14px] font-bold text-black">{stateToLabel[order.state]}</p>
-            <p className="text-[12px] text-[var(--color-poten-gray-2)]">
-                {new Date(order.createdAt)
-                  .toLocaleDateString('ko-KR', {
-                    year: '2-digit',
-                    month: '2-digit',
-                    day: '2-digit',
-                  })
-                  .replace(/\./g, '.')
-                  .replace(/\s/g, '')} 주문
-              </p>
-            <p className="text-[14px] text-black mt-1">{order.products[0].name}</p>
-            <p className="text-[16px] font-bold text-black">
-              {order.cost.total.toLocaleString()}원
-            </p>
+          <p className="text-[12px] text-[var(--color-poten-gray-2)]">
+            {new Date(order.createdAt)
+              .toLocaleDateString('ko-KR', {
+                year: '2-digit',
+                month: '2-digit',
+                day: '2-digit',
+              })
+              .replace(/\./g, '.')
+              .replace(/\s/g, '')}{' '}
+            주문
+          </p>
+          <p className="text-[14px] text-black mt-1">{order.products[0].name}</p>
+          <p className="text-[16px] font-bold text-black">
+            {order.cost.total.toLocaleString()}원
+          </p>
         </div>
 
         {/* 상세보기 / 리뷰쓰기 버튼 */}
