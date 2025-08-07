@@ -11,7 +11,6 @@ import ItemCardInfo from '@/components/list-ItemCard/ItemCardInfo';
 import Link from 'next/link';
 import { Iproduct } from '@/types/products';
 import { useParams } from 'next/navigation';
-import useCartStore from '@/zustand/useCartStore';
 import CartModal from '@/components/cart/CartModal';
 import useUserStore from '@/zustand/userStore';
 import useLoginModal from '@/zustand/areyouLogin';
@@ -19,6 +18,7 @@ import useLikeStore from '@/zustand/likeStore';
 import { removeLike } from '@/data/functions/removeLike';
 import { addLike } from '@/data/functions/addLike';
 import { getLike } from '@/data/functions/getLike';
+import AddCart from './AddCart';
 
 interface ItemCardProps {
   variant?: ItemCardVariant;
@@ -37,8 +37,8 @@ export default function ItemCard({
   const currentCategory = params.category as string;
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isLikeLoading, setIsLikeLoading] = useState(false);
+  const [quantity, setQuantity] = useState(1); //장바구니수량
 
-  const addToCart = useCartStore((state) => state.addToCart);
   const { user } = useUserStore();
   const { openViewModal } = useLoginModal();
 
@@ -185,25 +185,8 @@ export default function ItemCard({
     }
   };
 
-  const handleAddToCart = async (e: React.MouseEvent) => {
-    e.preventDefault(); // Link 클릭 방지
-
-    // 로그인 확인
-    if (!user) {
-      openViewModal();
-      return;
-    }
-
-    try {
-      // 장바구니에 추가 - 실제 API 함수 사용
-      await addToCart(currentProductData, 1);
-
-      // 모달 열기 (CartModal 컴포넌트가 있는 경우)
-      setIsModalOpen(true);
-    } catch (error) {
-      console.error('장바구니 추가 실패:', error);
-      // 에러 처리 로직
-    }
+  const openCartGoModal = () => {
+    setIsModalOpen(true);
   };
 
   // 하트 아이콘 관련 코드
@@ -292,7 +275,7 @@ export default function ItemCard({
           <Link href={productLink}>
             <ItemCardImage />
           </Link>
-          <ItemCardInfo />
+          <ItemCardInfo quantity={quantity} setQuantity={setQuantity} />
           {/* 상품 목록 페이지(/list) 일 때, 아래 버튼 들을 숨기는 코드 */}
           <div className={getButtonContainerStyles()}>
             <button
@@ -311,11 +294,11 @@ export default function ItemCard({
                 </>
               )}
             </button>
-            <button
-              onClick={handleAddToCart}
-              className="bg-poten-red text-white rounded-md font-bold flex justify-center items-center w-[160px] h-[35px] md:w-[183px] md:h-[47px] xl:w-[174px] xl:h-[47px] hover:bg-red-600 transition-colors">
-              장바구니에 추가
-            </button>
+            <AddCart
+              ItemId={productData?._id as number}
+              quantity={quantity}
+              openCartGoModal={openCartGoModal}
+            />
           </div>
         </section>
       </ItemCardProvider>
