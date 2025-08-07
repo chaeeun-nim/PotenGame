@@ -11,6 +11,7 @@ import { useEffect, useState } from 'react';
 import rightIcon from '@/assets/icons/right.svg';
 import useListStore from '@/zustand/listStore';
 import { SortType } from '@/types/sort';
+import { usePathname } from 'next/navigation';
 
 // 필터 유틸리티 함수들 import
 import {
@@ -20,6 +21,7 @@ import {
   toggleFilter,
   getActiveButtonIndices,
   isFiltersEmpty,
+  isLabelActive,
 } from '@/utils/filterUtils';
 
 // listStore의 실제 FilterState 타입 정의
@@ -45,6 +47,9 @@ export default function SelectBar({ variant = 'default', categories }: SelectBar
   // 로컬 상태 (카테고리 버튼 비활성화 상태)
   const [activeButtons, setActiveButton] = useState<Set<number>>(new Set());
 
+  // 현재 경로 가져오기
+  const pathname = usePathname();
+
   const navLabels = DEFAULT_CATEGORIES;
   // const labels = categories || DEFAULT_CATEGORIES;
 
@@ -58,6 +63,28 @@ export default function SelectBar({ variant = 'default', categories }: SelectBar
     { value: '-buyQuantity', label: '인기상품' },
     { value: '-replies', label: '리뷰순' },
   ];
+
+  // URL에서 카테고리명 추출하는 함수
+  const getCategoryFromPath = (): string | null => {
+    const pathSegments = pathname.split('/');
+
+    if (pathSegments.length >= 3 && pathSegments[1] === 'list') {
+      const categoryParam = pathSegments[2];
+
+      // 카테고리 매핑
+      const categoryMap: { [key: string]: string } = {
+        NINTENDONDS: '닌텐도 NDS',
+        NINTENDO01: '닌텐도 스위치 1',
+        NINTENDO02: '닌텐도 스위치 2',
+        PLAYSTATION04: '플레이스테이션 4',
+        PLAYSTATION05: '플레이스테이션 5',
+      };
+
+      return categoryMap[categoryParam] || null;
+    }
+
+    return null;
+  };
 
   // 필터 상태에 따라 활성 버튼 동기화
   useEffect(() => {
@@ -81,26 +108,18 @@ export default function SelectBar({ variant = 'default', categories }: SelectBar
 
   // 카테고리 버튼 클릭 핸들러
   const handleCategoryClick = (index: number, category: Category) => {
-    const newActiveButtons = new Set(activeButtons);
-    const isCurrentlyActive = activeButtons.has(index);
-
-    // 버튼 상태 토글
-    if (isCurrentlyActive) {
-      newActiveButtons.delete(index);
-    } else {
-      newActiveButtons.add(index);
-    }
-
     // 플랫폼 필터 클릭 시 처리 방지
     if (category.value.startsWith('platform-')) {
-      // 플랫폼 버튼은 UI 상태만 토글하고 실제 필터는 적용하지 않음
+      const newActiveButtons = new Set(activeButtons);
+      const isCurrentlyActive = activeButtons.has(index);
+
       if (isCurrentlyActive) {
         newActiveButtons.delete(index);
       } else {
         newActiveButtons.add(index);
       }
       setActiveButton(newActiveButtons);
-      return; // 함수 종료, 실제 필터 적용 방지
+      return;
     }
 
     // listStore FilterState를 filterUtils FilterState로 변환
@@ -109,6 +128,9 @@ export default function SelectBar({ variant = 'default', categories }: SelectBar
       condition: (filters.condition as 'used' | 'new') || undefined,
       category: (filters.category as 'GAME' | 'HARDWARE') || undefined,
     };
+
+    // 현재 버튼이 활성화되어 있는지 확인
+    const isCurrentlyActive = isLabelActive(category, compatibleFilters);
 
     // 필터 토글 적용
     const newFilters = toggleFilter(category, compatibleFilters, isCurrentlyActive);
@@ -120,7 +142,10 @@ export default function SelectBar({ variant = 'default', categories }: SelectBar
       category: newFilters.category,
     };
 
-    setActiveButton(newActiveButtons);
+    // 활성 버튼 상태 업데이트
+    const activeIndices = getActiveButtonIndices(navLabels, newFilters);
+    setActiveButton(new Set(activeIndices));
+
     setFilters(listStoreFilters);
   };
 
@@ -132,12 +157,19 @@ export default function SelectBar({ variant = 'default', categories }: SelectBar
 
   // 현 카테고리 텍스트 호출
   const getCurrentCategoryText = (): string => {
-    // 카테고리별 페이지에서는 플랫폼 정보 표시, 전체 페이지에서는 "전체 상품"
-    if (categories && filters.platform) {
-      // 카테고리별 페이지 확인 추가
+    // 1. URL에서 카테고리 추출 시도
+    const categoryFromPath = getCategoryFromPath();
+    if (categoryFromPath) {
+      return categoryFromPath;
+    }
+
+    // 2. 필터에서 플랫폼 정보 확인
+    if (filters.platform) {
       return filters.platform;
     }
-    return filters.platform || '전체 상품';
+
+    // 3. 기본값
+    return '전체 상품';
   };
 
   // 필터 초기화 핸들러 개선

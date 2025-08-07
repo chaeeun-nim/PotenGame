@@ -1,7 +1,7 @@
 'use client';
 // src/components/ItemCard.tsx
 /* 상품 목록 && 상세 페이지 '/list/[id]'중 상품 정보 카드를 구현한 컴포넌트입니다.(list페이지 중 ItemCard + 상품 상세 페이지 상단부) */
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import {
   ItemCardProvider,
   ItemCardVariant,
@@ -15,6 +15,10 @@ import useCartStore from '@/zustand/useCartStore';
 import CartModal from '@/components/cart/CartModal';
 import useUserStore from '@/zustand/userStore';
 import useLoginModal from '@/zustand/areyouLogin';
+import useLikeStore from '@/zustand/likeStore';
+import { removeLike } from '@/data/functions/removeLike';
+import { addLike } from '@/data/functions/addLike';
+import { getLike } from '@/data/functions/getLike';
 
 interface ItemCardProps {
   variant?: ItemCardVariant;
@@ -31,12 +35,18 @@ export default function ItemCard({
 }: ItemCardProps) {
   const params = useParams();
   const currentCategory = params.category as string;
-  const [isLiked, setIsLiked] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isLikeLoading, setIsLikeLoading] = useState(false);
 
   const addToCart = useCartStore((state) => state.addToCart);
-  const { user } = useUserStore(); // 추가
-  const { openViewModal } = useLoginModal(); // 추가
+  const { user } = useUserStore();
+  const { openViewModal } = useLoginModal();
+
+  // 좋아요 관련 상태
+  const { Like, likeNum, addLikeNum, removeLikeNum, setLike, removeLikeStore } =
+    useLikeStore();
+  const [isLiked, setIsLiked] = useState(false);
+  const [optimisticLikeCount, setOptimisticLikeCount] = useState(0);
 
   // 상품 기본값 설정
   const defaultData: Iproduct = {
@@ -75,12 +85,104 @@ export default function ItemCard({
 
   const currentProductData = productData || defaultData;
 
+  // 좋아요 상태 초기화
+  useEffect(() => {
+    if (!user || !Like) {
+      setIsLiked(false);
+    } else {
+      setIsLiked(likeNum?.some((item) => item === currentProductData._id) || false);
+    }
+
+    // 초기 좋아요 개수 설정 - undefined 체크 추가
+    const initialLikeCount = currentProductData.bookmarks ?? defaultData.bookmarks ?? 0;
+    setOptimisticLikeCount(initialLikeCount);
+  }, [
+    likeNum,
+    currentProductData._id,
+    user,
+    Like,
+    currentProductData.bookmarks,
+    defaultData.bookmarks,
+  ]);
+
+  // 좋아요 추가 함수
+  const handleAddLike = async () => {
+    if (!user) {
+      openViewModal();
+      return;
+    }
+
+    // 낙관적 업데이트
+    setIsLiked(true);
+    setOptimisticLikeCount((prev) => prev + 1);
+    setIsLikeLoading(true);
+
+    // 전역 상태 업데이트
+    addLikeNum(currentProductData._id);
+
+    try {
+      await addLike(user.token.accessToken, currentProductData._id);
+      const res = await getLike(user.token.accessToken);
+      if (res.ok) {
+        setLike(res.item);
+      } else {
+        // 실패 시 롤백
+        setIsLiked(false);
+        setOptimisticLikeCount((prev) => prev - 1);
+        removeLikeNum(currentProductData._id);
+      }
+    } catch (error) {
+      console.error('좋아요 추가 실패:', error);
+      // 실패 시 롤백
+      setIsLiked(false);
+      setOptimisticLikeCount((prev) => prev - 1);
+      removeLikeNum(currentProductData._id);
+    } finally {
+      setIsLikeLoading(false);
+    }
+  };
+
+  // 좋아요 제거 함수
+  const handleRemoveLike = async () => {
+    if (!user) return;
+
+    // 낙관적 업데이트
+    setIsLiked(false);
+    setOptimisticLikeCount((prev) => prev - 1);
+    setIsLikeLoading(true);
+
+    // 전역 상태 업데이트
+    removeLikeNum(currentProductData._id);
+    const LikeId = Like.find((item) => item.product._id === currentProductData._id);
+    removeLikeStore(currentProductData._id);
+
+    try {
+      await removeLike(user.token.accessToken, LikeId?._id as number);
+    } catch (error) {
+      console.error('좋아요 제거 실패:', error);
+      // 실패 시 롤백
+      setIsLiked(true);
+      setOptimisticLikeCount((prev) => prev + 1);
+      addLikeNum(currentProductData._id);
+    } finally {
+      setIsLikeLoading(false);
+    }
+  };
+
+  // 좋아요 클릭 핸들러
   const handleLikeClick = () => {
     if (!user) {
       openViewModal();
       return;
     }
-    setIsLiked(!isLiked);
+
+    if (isLikeLoading) return; // 로딩 중이면 클릭 방지
+
+    if (isLiked) {
+      handleRemoveLike();
+    } else {
+      handleAddLike();
+    }
   };
 
   const handleAddToCart = async (e: React.MouseEvent) => {
@@ -174,9 +276,18 @@ export default function ItemCard({
   const productLink = currentCategory
     ? `/list/${currentCategory}/${productId}`
     : `/list/${currentCategory}`;
+
+  // Context에 좋아요 관련 데이터 전달을 위한 확장된 productData
+  const extendedProductData = {
+    ...currentProductData,
+    isLiked,
+    optimisticLikeCount,
+    isLikeLoading,
+  };
+
   return (
     <>
-      <ItemCardProvider variant={variant} productData={productData}>
+      <ItemCardProvider variant={variant} productData={extendedProductData}>
         <section className={`${getCardStyles()} ${className || ''}`}>
           <Link href={productLink}>
             <ItemCardImage />
@@ -184,9 +295,21 @@ export default function ItemCard({
           <ItemCardInfo />
           {/* 상품 목록 페이지(/list) 일 때, 아래 버튼 들을 숨기는 코드 */}
           <div className={getButtonContainerStyles()}>
-            <button onClick={handleLikeClick} className={getLikeButtonStyles()}>
-              좋아요
-              <HeartIcon className="w-[18px] h-[18px] text-poten-gray-2 ml-0.5" />
+            <button
+              onClick={handleLikeClick}
+              className={getLikeButtonStyles()}
+              disabled={isLikeLoading}>
+              {isLikeLoading ? (
+                <div className="flex items-center">
+                  <div className="w-4 h-4 border-2 border-t-transparent border-current rounded-full animate-spin mr-1"></div>
+                  좋아요
+                </div>
+              ) : (
+                <>
+                  좋아요
+                  <HeartIcon className="w-[18px] h-[18px] text-poten-gray-2 ml-0.5" />
+                </>
+              )}
             </button>
             <button
               onClick={handleAddToCart}

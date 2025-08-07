@@ -104,7 +104,12 @@ export default function AllProductList() {
       const searchParams: ProductSearchParams = {
         page: 1,
         sort: sortBy as SortType,
-        ...filters,
+
+        condition: filters.condition,
+        productType: filters.category as 'GAME' | 'HARDWARE', // filters.category를 productType으로 매핑
+        priceMin: filters.priceMin,
+        priceMax: filters.priceMax,
+        search: filters.search,
       };
 
       const result = await getProductList(searchParams);
@@ -154,7 +159,12 @@ export default function AllProductList() {
       const searchParams: ProductSearchParams = {
         page: nextPage,
         sort: sortBy as SortType,
-        ...filters,
+        
+        condition: filters.condition,
+        productType: filters.category as 'GAME' | 'HARDWARE', // filters.category를 productType으로 매핑
+        priceMin: filters.priceMin,
+        priceMax: filters.priceMax,
+        search: filters.search,
       };
 
       const result = await getProductList(searchParams);
