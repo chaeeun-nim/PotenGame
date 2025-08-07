@@ -54,6 +54,7 @@
 
 - 필터링, 정렬 기능 포함
 - 카드형 UI로 구성된 게임 리스트
+- 반응형 구조로 PC/태블릿/모바일 모두 대응
 
 |상품 목록 화면|
 |:----:|
@@ -65,8 +66,9 @@
 ### 📄 상품 상세 페이지
 
 
-- 게임 정보, 가격, 구매 버튼, 리뷰 영역
+- 게임 정보, 가격, 구매 버튼
 - 구매 안내 및 제품 상세 페이지
+- 반응형 구조로 PC/태블릿/모바일 모두 대응
 
 |상세 1|상세 2|
 |:----:|:----:|
@@ -80,6 +82,7 @@
 
 - 관심 목록, 배송 주소록, 회원 정보 관리, 고객센터
 - 사이드바 및 하단 GNB로 빠른 접근 가능
+- 반응형 구조로 PC/태블릿/모바일 모두 대응
 
 |마이 페이지1|마이 페이지2|마이 페이지3|
 |:----:|:----:|:----:|
@@ -133,16 +136,18 @@
 ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
 ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
 ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
-![React Zustand](https://img.shields.io/badge/react%20zustand-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+
 
 ### ⚙️ Libraries
 
-![Custom Badge](https://img.shields.io/badge/reactReponsive-000000?style=for-the-badge&logoColor=white&labelColor=000000&color=000000)
+![Custom Badge](https://img.shields.io/badge/reactResponsive-000000?style=for-the-badge&logoColor=white&labelColor=000000&color=000000)
 ![Custom Badge](https://img.shields.io/badge/Swiper-000000?style=for-the-badge&logoColor=white&labelColor=000000&color=000000)
+![React Zustand](https://img.shields.io/badge/react%20zustand-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
 
 ### 🗄️ Database
 
 - MongoDB
+- Bruno
 
 ### 🚀 Deployment
 
