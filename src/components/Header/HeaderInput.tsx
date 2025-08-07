@@ -22,7 +22,7 @@ export default function HeaderInput() {
         setSearched(JSON.parse(stored));
       }
     }
-  }, []); 
+  }, []);
 
   const updateStorage = (newArr: string[]) => {
     setSearched(newArr);
@@ -47,9 +47,8 @@ export default function HeaderInput() {
     setIsSearchClick(true);
 
     setTimeout(() => {
-      router.push(`search?keyword=${encodeURIComponent(title.trim())}`);
+      router.push(`/search?keyword=${encodeURIComponent(title.trim())}`);
     }, 200); // 0.2초 정도 뒤에 이동
-
   };
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
@@ -82,7 +81,7 @@ export default function HeaderInput() {
       </div>
 
       {/* 모바일창 검색버튼 */}
-      <button className=" md:hidden" onClick={() => setIsSearchClick(prev => !prev)}>
+      <button className=" md:hidden" onClick={() => setIsSearchClick((prev) => !prev)}>
         {isSearchClick ? (
           <Image src={search} alt="검색" />
         ) : (
