@@ -29,7 +29,10 @@ export default function AddressList() {
       <section className="hidden xl:block bg-white rounded-lg -mt-2 mb-8 px-4">
         <AddressHeader />
         {isEmpty ? (
-          <EmptyState message="등록된 배송지가 없습니다." />
+          <>
+            <EmptyState message="등록된 배송지가 없습니다." />
+            <AddressCards addresses={[]} size="lg" /> {/* 주소 없을 때도 버튼 보이게 렌더링 */}
+          </>
         ) : (
           <AddressCards addresses={addresses} size="lg" />
         )}
@@ -39,7 +42,10 @@ export default function AddressList() {
       <section className="hidden md:block xl:hidden bg-white rounded-lg -mt-2 mb-8 px-4">
         <AddressHeader textSize="16px" barHeight="20px" />
         {isEmpty ? (
-          <EmptyState message="등록된 배송지가 없습니다." />
+          <>
+            <EmptyState message="등록된 배송지가 없습니다." />
+            <AddressCards addresses={[]} size="md" /> {/* 주소 없을 때도 버튼 보이게 렌더링 */}
+          </>
         ) : (
           <AddressCards addresses={addresses} size="md" />
         )}
@@ -49,7 +55,10 @@ export default function AddressList() {
       <section className="block md:hidden bg-white rounded-lg -mt-2 mb-8 px-4">
         <AddressHeader textSize="15px" barHeight="18px" />
         {isEmpty ? (
-          <EmptyState message="등록된 배송지가 없습니다." />
+          <>
+            <EmptyState message="등록된 배송지가 없습니다." />
+            <AddressCards addresses={[]} size="sm" /> {/* 주소 없을 때도 버튼 보이게 렌더링 */}
+          </>
         ) : (
           <AddressCards addresses={addresses} size="sm" />
         )}

@@ -1,8 +1,7 @@
 🔗 [`포텐게임 웹사이트 바로가기`](https://poten-game.vercel.app/)  
-🖌️ [`피그마 디자인 보기`](https://www.figma.com/design/8TP0tsKHT2BWPThthqh3XZ/z1%EC%A1%B4%ED%8F%AC%ED%85%901004---final-project?node-id=0-1&t=wGKzQFjFvdCcnHYr-0)
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/f3ab585c-7266-4795-83a7-86ecddbf1512" alt="포텐게임 대표 이미지" width="900"/>
-</p>
+🖌️ [`피그마 디자인 보기`](https://www.figma.com/design/8TP0tsKHT2BWPThthqh3XZ/z1%EC%A1%B4%ED%8F%AC%ED%85%901004---final-project?node-id=0-1&t=wGKzQFjFvdCcnHYr-0)<br/>
+![포텐게임 대표 이미지](https://github.com/user-attachments/assets/f3ab585c-7266-4795-83a7-86ecddbf1512)
+
 
 # 🎮 Final-14-z1zone1004 - 포텐게임 프로젝트
 
@@ -27,6 +26,15 @@
 
 ---
 
+## 🅻 로고
+
+| 로고W | 로고B |
+|:-----:|:------:|
+| ![로고W](https://github.com/user-attachments/assets/0d58290c-8655-4c5c-ab09-da9f89427fe3) | ![로고B](https://github.com/user-attachments/assets/a1385232-5607-4654-8aec-db9f7011f16f) |
+
+
+---
+
 ## 🖼️ 주요 화면 구성 및 UI 구조
 
 ### 🏠 메인 페이지
@@ -34,11 +42,10 @@
 - 배너, 추천 상품, 카테고리별 게임 리스트
 - 반응형 구조로 PC/태블릿/모바일 모두 대응
 
-<p>
-  <img src="https://github.com/user-attachments/assets/75fad99c-fc45-4604-8017-99dc3f13f24d" width="180"/>
-  <img src="https://github.com/user-attachments/assets/ee227c61-b3af-48f0-ba64-88e6fd8e678b" width="180"/>
-  <img src="https://github.com/user-attachments/assets/542a6f6a-ec2e-434c-8043-9e5f70206362" width="180"/>
-</p>
+|메인 화면1|메인 화면2|메인 화면3|
+|:----:|:----:|:----:|
+|![메인 1](https://github.com/user-attachments/assets/75fad99c-fc45-4604-8017-99dc3f13f24d)|![메인 2](https://github.com/user-attachments/assets/ee227c61-b3af-48f0-ba64-88e6fd8e678b)|![메인 3](https://github.com/user-attachments/assets/542a6f6a-ec2e-434c-8043-9e5f70206362)|
+
 
 ---
 
@@ -47,12 +54,11 @@
 
 - 필터링, 정렬 기능 포함
 - 카드형 UI로 구성된 게임 리스트
-- 카드형 UI로 구성된 게임 리스트
 
-<p>
-  <img src="https://github.com/user-attachments/assets/a1a1e164-174b-449d-8920-d887209b2b64" width="180"/>
-  <img src="https://github.com/user-attachments/assets/5b83f5cf-9759-4244-8ec3-24851575d6e5" width="180"/>
-</p>
+|상품 목록 화면|
+|:----:|
+|![상품 목록 1](https://github.com/user-attachments/assets/a1a1e164-174b-449d-8920-d887209b2b64)|
+
 
 ---
 
@@ -62,10 +68,10 @@
 - 게임 정보, 가격, 구매 버튼, 리뷰 영역
 - 구매 안내 및 제품 상세 페이지
 
-<p>
-  <img src="https://github.com/user-attachments/assets/6a6ae291-4b5d-4677-8ba9-51965d5095e0" width="180"/>
-  <img src="https://github.com/user-attachments/assets/4a7bbf8a-1b00-4118-9f02-3729fccab2a9" width="180"/>
-</p>
+|상세 1|상세 2|
+|:----:|:----:|
+|![이미지1](https://github.com/user-attachments/assets/6a6ae291-4b5d-4677-8ba9-51965d5095e0)|![이미지2](https://github.com/user-attachments/assets/4a7bbf8a-1b00-4118-9f02-3729fccab2a9)|
+
 
 ---
 
@@ -74,28 +80,23 @@
 
 - 관심 목록, 배송 주소록, 회원 정보 관리, 고객센터
 - 사이드바 및 하단 GNB로 빠른 접근 가능
-- 사이드바 및 하단 GNB로 빠른 접근 가능
 
-<p>
-  <img src="https://github.com/user-attachments/assets/a2a7c379-81f5-4ddd-b80d-0519a2e71bd7" width="180"/>
-  <img src="https://github.com/user-attachments/assets/2a6eef00-7cbf-4547-bdf5-48959c50f9b5" width="180"/>
-  <img src="https://github.com/user-attachments/assets/cfd8133a-f0ff-48bc-b751-f2d8dba39012" width="180"/>
-</p>
+|마이 페이지1|마이 페이지2|마이 페이지3|
+|:----:|:----:|:----:|
+|![이미지1](https://github.com/user-attachments/assets/a2a7c379-81f5-4ddd-b80d-0519a2e71bd7)|![이미지2](https://github.com/user-attachments/assets/2a6eef00-7cbf-4547-bdf5-48959c50f9b5)|![이미지3](https://github.com/user-attachments/assets/cfd8133a-f0ff-48bc-b751-f2d8dba39012)|
+
 
 ---
-
-### 🧑‍💼 로그인 / 회원가입 / 프로필 페이지
 
 ### 🧑‍💼 로그인 / 회원가입 / 프로필 페이지
 
 - 사용자 정보 입력 및 수정
 - 에러 메시지 및 유효성 검사 포함
 
-<p>
-  <img src="https://github.com/user-attachments/assets/aa2deb57-1661-4df3-91a8-5e8d21312b91" width="180"/>
-  <img src="https://github.com/user-attachments/assets/9a37d4f0-d99f-4149-bad1-11d32557e012" width="180"/>
-  <img src="https://github.com/user-attachments/assets/279ba8ac-259c-4188-988c-b3049dd0bfe4" width="180"/>
-</p>
+|정보 페이지1|정보 페이지2|정보 페이지3|
+|:----:|:----:|:----:|
+|![이미지1](https://github.com/user-attachments/assets/aa2deb57-1661-4df3-91a8-5e8d21312b91)|![이미지2](https://github.com/user-attachments/assets/9a37d4f0-d99f-4149-bad1-11d32557e012)|![이미지3](https://github.com/user-attachments/assets/279ba8ac-259c-4188-988c-b3049dd0bfe4)|
+
 
 ---
 
@@ -134,10 +135,10 @@
 ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
 ![React Zustand](https://img.shields.io/badge/react%20zustand-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
 
-### ⚙️ Backend
+### ⚙️ Libraries
 
-- Node.js
-- Express
+![Custom Badge](https://img.shields.io/badge/reactReponsive-000000?style=for-the-badge&logoColor=white&labelColor=000000&color=000000)
+![Custom Badge](https://img.shields.io/badge/Swiper-000000?style=for-the-badge&logoColor=white&labelColor=000000&color=000000)
 
 ### 🗄️ Database
 
@@ -195,6 +196,12 @@ npm run dev
 npm run build
 npm start
 ```
+---
 
+(주)멋쟁이 사자처럼 프론트엔드 부트캠프 파이널 프로젝트 13기 14조 저장소 입니다.  
+<br />
+참여인원 : 이도울 / 송채은 / 김태우 / 배동초  
+<br />
+_Last updated on 2025-08-06_
 
 
