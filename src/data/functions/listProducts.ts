@@ -138,8 +138,6 @@ export async function getProductList(params: ProductSearchParams = {}): Promise<
       sortObj[sort] = 1;
     }
 
-    console.log('Final customFilter:', JSON.stringify(customFilter, null, 2));
-
     // URL 구성
     const queryParams = new URLSearchParams({
       limit: limit.toString(),

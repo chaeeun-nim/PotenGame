@@ -162,7 +162,8 @@ export default function AddressCards({ addresses, size }: Props) {
   return (
     <>
       {/* 배송지 카드 리스트 */}
-      {addresses.map((addr) => (
+      {addresses.length > 0 &&
+       addresses.map((addr) => (
         <div
           key={addr.id}
           className={`border border-[var(--color-poten-gray-1)] bg-[var(--color-poten-snowgray1)] p-4 mb-4 ${radius}`}
@@ -209,20 +210,20 @@ export default function AddressCards({ addresses, size }: Props) {
           >
             {/* 삭제 버튼 */}
             <button
-  onClick={() => handleDeleteAddress(addr.id)}
-  className={`
-    text-[12px] md:text-[14px]
-    px-2 md:px-4
-    py-[2px] md:py-[6px]
-    border border-gray-300
-    text-gray-600
-    rounded-sm md:rounded
-    whitespace-nowrap
-    w-full md:w-auto
-  `}
->
-  삭제
-</button>
+              onClick={() => handleDeleteAddress(addr.id)}
+              className={`
+                text-[12px] md:text-[14px]
+                px-2 md:px-4
+                py-[2px] md:py-[6px]
+                border border-gray-300
+                text-gray-600
+                rounded-sm md:rounded
+                whitespace-nowrap
+                w-full md:w-auto
+              `}
+            >
+              삭제
+            </button>
 
 
             {/* 수정 버튼: 모달 열기 */}
