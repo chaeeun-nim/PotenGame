@@ -4,7 +4,7 @@ import { useItemCardContext } from '@/components/list-ItemCard/ItemCardContext';
 import ItemNumSpinner from '@/components/list-ItemCard/ItemNumSpinner';
 import { JSX, useMemo, useState } from 'react';
 
-interface ItemNumInputProps {
+export interface ItemNumInputProps {
   value?: number;
   onChange?: (value: number) => void;
 }

@@ -9,7 +9,6 @@ import newTag from '@/assets/icons/new-tag.svg';
 import filledHeart from '@/assets/icons/heart-filled.svg';
 import { useItemCardContext } from '@/components/list-ItemCard/ItemCardContext';
 import ItemLikeBtn from '@/components/list-ItemCard/ItemLikeBtn';
-import ItemNumInput from '@/components/list-ItemCard/ItemNumInput';
 // 추가 import
 import useCartStore from '@/zustand/cartStore';
 import useUserStore from '@/zustand/userStore';
@@ -19,6 +18,12 @@ import { getCart } from '@/data/functions/getCart';
 import { removeCart } from '@/data/functions/removeCart';
 import useLikeStore from '@/zustand/likeStore';
 import { useParams } from 'next/navigation';
+import ItemNumInput from './ItemNumInput';
+
+export interface ItemCardInfoProps {
+  quantity?: number;
+  setQuantity?: (value: number) => void;
+}
 
 // 날짜 포멧팅 함수
 function formatDate(dateString: string): string {
@@ -29,9 +34,8 @@ function formatDate(dateString: string): string {
   return `${year}.${month}.${day}`;
 }
 
-export default function ItemCardInfo() {
+export default function ItemCardInfo({ quantity = 1, setQuantity }: ItemCardInfoProps) {
   const { variant, productData } = useItemCardContext();
-  const [quantity, setQuantity] = useState(1);
 
   const params = useParams();
   const currentCategory = params.category as string;
