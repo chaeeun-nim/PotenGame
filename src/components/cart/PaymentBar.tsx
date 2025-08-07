@@ -58,17 +58,17 @@ export default function PaymentBar() {
             <div className="hidden md:block text-white shrink-0">
               <p>배송비</p>
               <p className="md:text-[20px] xl:text-[28px] font-bold">
-                {(cost.total ?? 0 > 50000) ? 0 : cost.shippingFees?.toLocaleString()}원
+                {(cost.products as number) > 50000
+                  ? 0
+                  : cost.shippingFees?.toLocaleString()}
+                원
               </p>
             </div>
             <Image src={minusIcon} alt="빼기" className="w-auto hidden md:block" />
             <div className="hidden md:block text-white shrink-0">
-              <p>할인</p>
+              <p>할인금액</p>
               <p className="md:text-[20px] xl:text-[28px] font-bold">
-                {(
-                  (cost.discount.products ?? 0) + (cost.discount.shippingFees ?? 0)
-                ).toLocaleString()}
-                원
+                {(cost.discount.products ?? 0).toLocaleString()}원
               </p>
             </div>
             <Image src={equalIcon} alt="결과" className="w-auto hidden md:block" />
