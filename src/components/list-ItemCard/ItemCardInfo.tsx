@@ -18,6 +18,7 @@ import { addCart } from '@/data/actions/addCart';
 import { getCart } from '@/data/functions/getCart';
 import { removeCart } from '@/data/functions/removeCart';
 import useLikeStore from '@/zustand/likeStore';
+import { useParams } from 'next/navigation';
 
 // 날짜 포멧팅 함수
 function formatDate(dateString: string): string {
@@ -32,6 +33,15 @@ export default function ItemCardInfo() {
   const { variant, productData } = useItemCardContext();
   const [quantity, setQuantity] = useState(1);
 
+  const params = useParams();
+  const currentCategory = params.category as string;
+
+  // 상품 ID 결정 (productData가 있을 시 사용, 없을 시 기본값)
+  const productId = productData?._id || 1;
+  const productLink = currentCategory
+    ? `/list/${currentCategory}/${productId}`
+    : `/list/${currentCategory}`;
+
   //전역 상태 관리 추가
   const { cart, setCart, setCost } = useCartStore();
   const { user } = useUserStore();
@@ -40,8 +50,6 @@ export default function ItemCardInfo() {
 
   // 좋아요 관련 상태 추가
   const { likeNum } = useLikeStore();
-  const [currentLikeCount, setCurrentLikeCount] = useState(0);
-  const [isCurrentlyLiked, setIsCurrentlyLiked] = useState(false);
 
   // 상품 기본값 설정
   const defaultData = {
@@ -64,14 +72,14 @@ export default function ItemCardInfo() {
 
   const data = productData || defaultData;
 
-  // 좋아요 상태 및 개수 추적
-  useEffect(() => {
-    const baseCount = data.bookmarks || defaultData.bookmarks;
-    const isLiked = user && likeNum?.some((item) => item === data._id);
+  // ItemCard에서 전달받은 좋아요 관련 데이터 사용
 
-    setIsCurrentlyLiked(!!isLiked);
-    setCurrentLikeCount(baseCount); // 기본값으로 설정
-  }, [likeNum, data._id, data.bookmarks, defaultData.bookmarks, user]);
+  // ItemCard에서 전달받은 좋아요 관련 데이터 사용
+  const isCurrentlyLiked =
+    productData?.isLiked || (user && likeNum?.some((item) => item === data._id));
+  const currentLikeCount =
+    productData?.optimisticLikeCount ?? data.bookmarks ?? defaultData.bookmarks ?? 0;
+  const isLikeLoading = productData?.isLikeLoading || false;
 
   // 장바구니 상태 체크 (MainCard CardBtn과 동일 로직)
   const [isInCart, setIsInCart] = useState(
@@ -194,11 +202,18 @@ export default function ItemCardInfo() {
                 <Image
                   src={filledHeart}
                   alt="좋아요 갯수"
-                  className="w-[18px] h-[18px] mr-0.5"
+                  className={`w-[18px] h-[18px] mr-0.5 transition-all duration-200 ${
+                    isCurrentlyLiked ? 'filter-none' : 'grayscale'
+                  } ${isLikeLoading ? 'animate-pulse' : ''}`}
                 />
                 <span
-                  className={`transition-colors duration-200 ${isCurrentlyLiked ? 'text-poten-red font-bold' : ''}`}>
+                  className={`transition-colors duration-200 ${
+                    isCurrentlyLiked ? 'text-poten-red font-bold' : ''
+                  } ${isLikeLoading ? 'opacity-50' : ''}`}>
                   좋아요 {currentLikeCount.toLocaleString()}개
+                  {isLikeLoading && (
+                    <span className="inline-block w-2 h-2 border border-t-transparent border-current rounded-full animate-spin ml-1"></span>
+                  )}
                 </span>
               </div>
               <div className="flex flex-row items-center">
@@ -284,7 +299,7 @@ export default function ItemCardInfo() {
           </time>
         </header>
 
-        <Link href={`/list/${data._id}`}>
+        <Link href={productLink}>
           <h3
             className={
               'font-extrabold my-[2px] md:my-[8px] text-lg md:text-xl xl:text-[22px] text-poten-black line-clamp-1'

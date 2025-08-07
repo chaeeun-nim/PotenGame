@@ -12,9 +12,7 @@ export default function HeaderInput() {
   const [title, setTitle] = useState('');
   const [searched, setSearched] = useState<string[]>([]);
   // 모바일 상태에서 검색버튼 눌렀을때 상태관리
-  const [isSearchClick, setIsSearchClick] = useState<HTMLButtonElement | false | true>(
-    true,
-  );
+  const [isSearchClick, setIsSearchClick] = useState<boolean>(true);
   const router = useRouter();
 
   useEffect(() => {
@@ -24,7 +22,7 @@ export default function HeaderInput() {
         setSearched(JSON.parse(stored));
       }
     }
-  }, []);
+  }, []); 
 
   const updateStorage = (newArr: string[]) => {
     setSearched(newArr);
@@ -47,17 +45,17 @@ export default function HeaderInput() {
     updateStorage(newSearch);
     setTitle('');
     setIsSearchClick(true);
-    router.push(`/search?keyword=${encodeURIComponent(title.trim())}`);
+
+    setTimeout(() => {
+      router.push(`search?keyword=${encodeURIComponent(title.trim())}`);
+    }, 200); // 0.2초 정도 뒤에 이동
+
   };
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === 'Enter') {
       addStorage();
     }
-  };
-
-  const handleSearchClick = () => {
-    setIsSearchClick((prev) => !prev);
   };
 
   return (
@@ -84,7 +82,7 @@ export default function HeaderInput() {
       </div>
 
       {/* 모바일창 검색버튼 */}
-      <button className=" md:hidden" onClick={handleSearchClick}>
+      <button className=" md:hidden" onClick={() => setIsSearchClick(prev => !prev)}>
         {isSearchClick ? (
           <Image src={search} alt="검색" />
         ) : (
@@ -110,7 +108,7 @@ export default function HeaderInput() {
                 onKeyDown={handleKeyDown}
               />
               <button className="absolute right-3" value={title} onClick={addStorage}>
-                <Image src={search} alt="검색"></Image>
+                <Image src={search} alt="검색" />
               </button>
             </div>
 

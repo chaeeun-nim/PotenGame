@@ -1,6 +1,6 @@
 'use client';
 
-import qrCord from '@/assets/img/qr.png';
+import qrCord from '@/assets/img/qrcode.png';
 import useLoginModal from '@/zustand/areyouLogin';
 import useListStore from '@/zustand/listStore';
 import useUserStore from '@/zustand/userStore';

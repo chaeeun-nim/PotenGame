@@ -79,7 +79,7 @@ export default function CartItem({ item }: { item: IcartItem }) {
           <div className="flex  align-middle leading-tight ">
             <div className="flex gap-[16px] md:gap-[20px] xl:gap-[24px] items-center  w-full ">
               <Link
-                href={`/list/${item.product_id}`}
+                href={`/list/${item.product.extra.category[1]}/${item.product._id}`}
                 className="w-[100px] h-[100px] md:w-[150px] md:h-[150px]  shrink-0 flex items-center justify-center  border-1 border-poten-gray-1">
                 <Image
                   className="w-[80px] md:w-[100px]"
@@ -90,7 +90,9 @@ export default function CartItem({ item }: { item: IcartItem }) {
                 />
               </Link>
 
-              <div className=" flex flex-col gap-1 min-w-0  md:gap-2 md:h-full md:py-3 xl:w-full">
+              <Link
+                href={`/list/${item.product.extra.category[1]}/${item.product._id}`}
+                className=" flex flex-col gap-1 min-w-0  md:gap-2 md:h-full md:py-3 xl:w-full">
                 <p className="font-medium text-poten-gray-2 text-[14px] md:text-[16px] md:font-bold">
                   <DeliveryDate />
                 </p>
@@ -107,7 +109,7 @@ export default function CartItem({ item }: { item: IcartItem }) {
                     {item.product.price.toLocaleString()}원
                   </span>
                 </p>
-              </div>
+              </Link>
             </div>
             <div className="flex items-start ">
               <RemoveCartBtn deleteHandle={deleteHandle} />
