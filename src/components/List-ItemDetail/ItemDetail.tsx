@@ -3,6 +3,7 @@
 import ItemDetailHeader from '@/components/List-ItemDetail/ItemDetailHeader';
 import ItemDetailImage from '@/components/List-ItemDetail/ItemDetailImage';
 import ItemDetailNotice from '@/components/List-ItemDetail/ItemDetailNotice';
+import ItemDetailReview from '@/components/List-ItemDetail/ItemDetailReview';
 import { Iproduct } from '@/types/products';
 import { useParams } from 'next/navigation';
 import { useEffect, useRef, useState } from 'react';
@@ -122,13 +123,12 @@ export default function ItemDetail({
           className="scroll-mt-20 mb-20">
           <ItemDetailNotice />
         </section>
-        {/* 개발 일정 이슈로 추후 개발 */}
-        {/* <section
+        <section
           id="detail-review"
           data-section="상품 후기"
           className="scroll-mt-20 mb-20">
           <ItemDetailReview productId={resolvedProductId} productData={productData} />
-        </section> */}
+        </section>
       </div>
     </div>
   );

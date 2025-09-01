@@ -167,13 +167,13 @@ export default function CategoryProductList({ category }: CategoryProductListPro
         search: filters.search,
       };
 
-      console.log('CategoryProductList API 호출 파라미터:', searchParams);
+      // console.log('CategoryProductList API 호출 파라미터:', searchParams);
 
       const result = await getProductList(searchParams);
 
       if (result.ok === 1) {
         const products = result.item || [];
-        console.log('받은 상품 수:', products.length);
+        // console.log('받은 상품 수:', products.length);
 
         setProducts(products);
         setAllProducts(products);

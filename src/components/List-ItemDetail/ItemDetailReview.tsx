@@ -5,6 +5,8 @@ import MainLoginModal from '@/components/MainLoginModal';
 import { Iproduct } from '@/types/products';
 import useLoginModal from '@/zustand/areyouLogin';
 import useUserStore from '@/zustand/userStore';
+import thumb from '@/assets/icons/thumb-up-svgrepo-com.svg'
+import Image from 'next/image';
 
 interface ItemDetailReviewProps {
   productId?: string;
@@ -107,7 +109,20 @@ export default function ItemDetailReview({
                     {'☆'.repeat(5 - review.rating)}
                   </div>
                 </div>
-                <span className="text-gray-500 text-sm">{review.date}</span>
+                <div className='flex flex-row gap-3 items-center'>
+                  <span className="text-gray-500 text-sm">{review.date}</span>
+
+                  {/* 아래 파트 컴포넌트로 업데이트할 예정 */}
+                  <span className="text-gray-500 text-sm flex flex-row gap-1">
+                    <Image 
+                      src={thumb}
+                      alt='리뷰 추천 수'
+                      width={15}
+                      height={15}
+                    />
+                    {review.helpful}
+                  </span>
+                </div>
               </div>
               <p className="text-gray-700 mb-3 leading-relaxed">{review.content}</p>
             </div>
