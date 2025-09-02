@@ -5,12 +5,22 @@ import MainLoginModal from '@/components/MainLoginModal';
 import { Iproduct } from '@/types/products';
 import useLoginModal from '@/zustand/areyouLogin';
 import useUserStore from '@/zustand/userStore';
-import thumb from '@/assets/icons/thumb-up-svgrepo-com.svg'
+import thumbUp from '@/assets/icons/thumb-up-svgrepo-com.svg';
+import thumbDown from '@/assets/icons/thumb-down-svgrepo-com.svg';
 import Image from 'next/image';
 
 interface ItemDetailReviewProps {
   productId?: string;
   productData?: Iproduct;
+}
+
+// 이미지 리뷰 스켈레톤 컴포넌트
+function ImageReviewSkeleton() {
+  return (
+    <div>
+      <div className="w-full aspect-square bg-poten-bluegray rounded-lg"></div>
+    </div>
+  );
 }
 
 export default function ItemDetailReview({
@@ -20,6 +30,9 @@ export default function ItemDetailReview({
   //전역 상태 관리 추가
   const { user } = useUserStore();
   const { openViewModal } = useLoginModal();
+
+  // 이미지 리뷰 로딩 상태 관리
+  // const [imageReviewsLoading, setImageReviewsLoading] = useState(true);
 
   // 상품명 가져오기 (productData 우선 사용)
   const productName = productData?.name || '상품';
@@ -77,72 +90,165 @@ export default function ItemDetailReview({
     }
   };
 
-  return (
-    <div className="flex flex-col space-y-6 py-8">
-      <h3 className="text-2xl font-bold text-center mb-6">상품 후기</h3>
+  // 이미지 로딩 시뮬레이션 (실제로는 API 호출)
+  // useEffect(() => {
+  //   const timer = setTimeout(() => {
+  //     setImageReviewsLoading(false);
+  //   }, 3000); // 3초 후 로딩 완료
 
+  //   return () => clearTimeout(timer);
+  // }, []);
+
+  return (
+    <section className="flex flex-col space-y-6 py-8">
       {/* 리뷰 통계 */}
-      <div className="bg-gray-50 p-6 rounded-lg">
-        <div className="flex items-center justify-between mb-4">
-          <h4 className="text-lg font-semibold">고객 만족도</h4>
-          <div className="flex items-center space-x-2">
-            <div className="flex text-yellow-400 text-lg">
+      <aside className="bg-gray-50 p-6 flex flex-col items-center" aria-labelledby="reviews-title">
+        <h3 id="reviews-title" className="text-lg font-semibold">
+            상품 후기
+        </h3>
+        <div className="flex flex-col items-center justify-between mb-4 rounded-lg">  
+          <div className='flex flex-row gap-2'>
+            <div
+              className="flex text-yellow-400 text-sm md:text-lg"
+              role="img"
+              aria-label={`5점 만점에 ${averageRating}점`}>
               {'★'.repeat(Math.floor(Number(averageRating)))}
               {'☆'.repeat(5 - Math.floor(Number(averageRating)))}
             </div>
-            <span className="text-lg font-bold">{averageRating}</span>
-            <span className="text-gray-500">(총 {reviews.length}개 후기)</span>
+            <span className="text-lg font-bold" aria-label="평균 평점">
+              {averageRating}
+            </span>
           </div>
+          <span className="text-gray-500 text-xs md:text-sm" aria-label="총 후기 수">
+            (총 {reviews.length}개 리뷰)
+          </span>
         </div>
-      </div>
+      </aside>
 
       {/* 리뷰 목록 */}
-      <div className="space-y-4">
-        {reviews.length > 0 ? (
-          reviews.map((review) => (
-            <div key={review.id} className="bg-white border rounded-lg p-6 shadow-sm">
-              <div className="flex items-center justify-between mb-3">
-                <div className="flex items-center space-x-3">
-                  <span className="font-semibold text-gray-800">{review.userName}</span>
-                  <div className="flex text-yellow-400 text-sm">
-                    {'★'.repeat(review.rating)}
-                    {'☆'.repeat(5 - review.rating)}
+      <section aria-labelledby="reviews-list">
+        {/* 텍스트 리뷰 */}
+        <div className="space-y-4">
+          {reviews.length > 0 ? (
+            reviews.map((review) => (
+              <article key={review.id} className="bg-white rounded-lg p-6 shadow-sm">
+                <header className="flex items-center justify-between mb-3">
+                  <div className="flex flex-col space-x-3">
+                    <h4
+                      id={`review-${review.id}`}
+                      className="font-semibold text-gray-800">
+                      {review.userName}
+                    </h4>
+                    <div
+                      className="flex text-yellow-400 text-xs md:text-sm"
+                      role="img"
+                      aria-label={`5점 만점에 ${review.rating}점`}>
+                      {'★'.repeat(review.rating)}
+                      {'☆'.repeat(5 - review.rating)}
+                    </div>
                   </div>
-                </div>
-                <div className='flex flex-row gap-3 items-center'>
-                  <span className="text-gray-500 text-sm">{review.date}</span>
+                  <div className="flex flex-col gap-3 items-center">
+                    <time dateTime={review.date} className="text-gray-500 text-xs md:text-sm">
+                      {review.date} 작성
+                    </time>
 
-                  {/* 아래 파트 컴포넌트로 업데이트할 예정 */}
-                  <span className="text-gray-500 text-sm flex flex-row gap-1">
-                    <Image 
-                      src={thumb}
-                      alt='리뷰 추천 수'
-                      width={15}
-                      height={15}
-                    />
-                    {review.helpful}
-                  </span>
+                    {/* 아래 파트 컴포넌트로 업데이트할 예정 */}
+                    <div className="text-gray-500 text-xs md:text-sm flex flex-row gap-1 items-center">
+                      <span aria-label="도움이 된 사용자 수">
+                        {review.helpful} 명에게 도움됨
+                      </span>
+                      <div className="flex flex-row" role="group" aria-label="후기 평가">
+                        <button type="button" aria-label="이 후기가 도움이 되었습니다">
+                          <Image
+                            src={thumbUp}
+                            alt="도움이 되요 버튼"
+                            width={25}
+                            height={25}
+                          />
+                        </button>
+
+                        <button type="button" aria-label="이 후기가 도움이 되었습니다">
+                          <Image
+                            src={thumbDown}
+                            alt="도움이 안되요 버튼"
+                            width={25}
+                            height={25}
+                          />
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </header>
+                <p className="text-gray-700 mb-3 leading-relaxed">{review.content}</p>
+              
+              <div className='mt-4'>
+                <div className="grid grid-cols-3 md:grid-cols-9 gap-2 justify-center">
+              {Array.from({ length: 9 }).map((_, index) => (
+                <div
+                  key={`review-${review.id}-image-skeleton-${index}`}
+                  className="w-full aspect-square">
+                  <ImageReviewSkeleton />
                 </div>
-              </div>
-              <p className="text-gray-700 mb-3 leading-relaxed">{review.content}</p>
+              ))}
             </div>
-          ))
+              </div>
+              </article>
+            ))
+          ) : (
+            <div
+              className="text-center py-12 text-gray-500"
+              role="status"
+              aria-live="polite">
+              <p className="text-lg mb-2">아직 작성된 후기가 없습니다.</p>
+              <p className="text-sm">첫 번째 후기를 작성해보세요!</p>
+            </div>
+          )}
+        </div>
+
+        {/** 렌더링 확인 코드, 추후 컴포넌트에 추가 */}
+        {/** //! 추후 사용, 스켈레톤 이미지 관련
+        {imageReviewsLoading ? (
+          // 9개 skelecton image
+          <div className="grid grid-cols-3 gap-2">
+            {Array.from({ length: 9 }).map((_, index) => (
+              <div
+                key={`image-skeleton-${index}`}
+                className="w-full max-w-[100px]"
+                style={{
+                  width: '100%',
+                  maxWidth: '100px',
+                  aspectRatio: '1/1',
+                }}>
+                <ImageReviewSkeleton />
+              </div>
+            ))}
+          </div>
         ) : (
-          <div className="text-center py-12 text-gray-500">
-            <p className="text-lg mb-2">아직 작성된 후기가 없습니다.</p>
-            <p className="text-sm">첫 번째 후기를 작성해보세요!</p>
+          // 로딩 완료 후 실제 이미지 리뷰 또는 빈 상태
+          <div
+            className="text-center py-12 text-gray-500"
+            role="status"
+            aria-live="polite">
+            <p className="text-lg mb-2">등록된 포토 후기가 없습니다.</p>
           </div>
         )}
-      </div>
+        */}
+      </section>
 
       {/* 리뷰 작성 버튼 */}
-      <div className="text-center">
+      <footer className="text-center">
         <button
           onClick={handleWriteReview}
-          className="bg-poten-red text-white px-6 py-3 rounded-lg hover:bg-red-700 transition-colors font-medium">
+          className="bg-poten-red text-white px-6 py-3 rounded-lg hover:bg-red-700 transition-colors font-medium"
+          aria-describedby="login-requirement">
           {user ? '후기 작성하기' : '로그인 후 후기 작성하기'}
         </button>
-      </div>
+        {!user && (
+          <p id="login-requirement" className="sr-only">
+            후기를 작성하려면 먼저 로그인이 필요합니다.
+          </p>
+        )}
+      </footer>
 
       {/* 디버그 정보 (개발 중에만 표시) */}
       {/* {process.env.NODE_ENV === 'development' && productId && (
@@ -150,6 +256,6 @@ export default function ItemDetailReview({
           Debug: Product ID = {productId} | User: {user ? '로그인됨' : '로그인 안됨'}
         </div>
       )} */}
-    </div>
+    </section>
   );
 }
