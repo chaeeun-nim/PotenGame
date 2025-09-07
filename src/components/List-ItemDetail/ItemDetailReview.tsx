@@ -157,11 +157,8 @@ export default function ItemDetailReview({
                     <ReviewHelpfulCounter
                       helpfulCount={review.helpful}
                       reviewId={review.id}
-                      onHelpfulClick={(reviewId, isHelpful) => {
-                        console.log(
-                          `리뷰 ${reviewId}에 ${isHelpful ? '도움됨' : '도움안됨'} 클릭`,
-                        );
-                        // 실제 API 호출 로직 추가 필요
+                      onHelpfulClick={() => {
+                        //TODO 실제 API 호출 로직 추가 필요
                       }}
                     />
                   </div>
