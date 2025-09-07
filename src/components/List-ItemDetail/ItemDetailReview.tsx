@@ -5,9 +5,7 @@ import MainLoginModal from '@/components/MainLoginModal';
 import { Iproduct } from '@/types/products';
 import useLoginModal from '@/zustand/areyouLogin';
 import useUserStore from '@/zustand/userStore';
-import thumbUp from '@/assets/icons/thumb-up-svgrepo-com.svg';
-import thumbDown from '@/assets/icons/thumb-down-svgrepo-com.svg';
-import Image from 'next/image';
+import ReviewHelpfulCounter from '@/components/List-ItemDetail/ReviewHelpfulCounter';
 
 interface ItemDetailReviewProps {
   productId?: string;
@@ -102,12 +100,14 @@ export default function ItemDetailReview({
   return (
     <section className="flex flex-col space-y-6 py-8">
       {/* 리뷰 통계 */}
-      <aside className="bg-gray-50 p-6 flex flex-col items-center" aria-labelledby="reviews-title">
+      <aside
+        className="bg-gray-50 p-6 flex flex-col items-center"
+        aria-labelledby="reviews-title">
         <h3 id="reviews-title" className="text-lg font-semibold">
-            상품 후기
+          상품 후기
         </h3>
-        <div className="flex flex-col items-center justify-between mb-4 rounded-lg">  
-          <div className='flex flex-row gap-2'>
+        <div className="flex flex-col items-center justify-between mb-4 rounded-lg">
+          <div className="flex flex-row gap-2">
             <div
               className="flex text-yellow-400 text-sm md:text-lg"
               role="img"
@@ -148,50 +148,37 @@ export default function ItemDetailReview({
                     </div>
                   </div>
                   <div className="flex flex-col gap-3 items-center">
-                    <time dateTime={review.date} className="text-gray-500 text-xs md:text-sm">
+                    <time
+                      dateTime={review.date}
+                      className="text-gray-500 text-xs md:text-sm">
                       {review.date} 작성
                     </time>
 
-                    {/* 아래 파트 컴포넌트로 업데이트할 예정 */}
-                    <div className="text-gray-500 text-xs md:text-sm flex flex-row gap-1 items-center">
-                      <span aria-label="도움이 된 사용자 수">
-                        {review.helpful} 명에게 도움됨
-                      </span>
-                      <div className="flex flex-row" role="group" aria-label="후기 평가">
-                        <button type="button" aria-label="이 후기가 도움이 되었습니다">
-                          <Image
-                            src={thumbUp}
-                            alt="도움이 되요 버튼"
-                            width={25}
-                            height={25}
-                          />
-                        </button>
-
-                        <button type="button" aria-label="이 후기가 도움이 되었습니다">
-                          <Image
-                            src={thumbDown}
-                            alt="도움이 안되요 버튼"
-                            width={25}
-                            height={25}
-                          />
-                        </button>
-                      </div>
-                    </div>
+                    <ReviewHelpfulCounter
+                      helpfulCount={review.helpful}
+                      reviewId={review.id}
+                      onHelpfulClick={(reviewId, isHelpful) => {
+                        console.log(
+                          `리뷰 ${reviewId}에 ${isHelpful ? '도움됨' : '도움안됨'} 클릭`,
+                        );
+                        // 실제 API 호출 로직 추가 필요
+                      }}
+                    />
                   </div>
                 </header>
                 <p className="text-gray-700 mb-3 leading-relaxed">{review.content}</p>
-              
-              <div className='mt-4'>
-                <div className="grid grid-cols-3 md:grid-cols-9 gap-2 justify-center">
-              {Array.from({ length: 9 }).map((_, index) => (
-                <div
-                  key={`review-${review.id}-image-skeleton-${index}`}
-                  className="w-full aspect-square">
-                  <ImageReviewSkeleton />
+
+                <div className="mt-4">
+                  <div className="grid grid-cols-3 md:grid-cols-9 gap-2 justify-center">
+                    {Array.from({ length: 9 }).map((_, index) => (
+                      <div
+                        key={`review-${review.id}-image-skeleton-${index}`}
+                        className="w-full aspect-square">
+                        <ImageReviewSkeleton />
+                      </div>
+                    ))}
+                  </div>
                 </div>
-              ))}
-            </div>
-              </div>
               </article>
             ))
           ) : (
