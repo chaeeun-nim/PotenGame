@@ -6,6 +6,7 @@ import { Iproduct } from '@/types/products';
 import useLoginModal from '@/zustand/areyouLogin';
 import useUserStore from '@/zustand/userStore';
 import ReviewHelpfulCounter from '@/components/List-ItemDetail/ReviewHelpfulCounter';
+import ReviewStarRating from '@/components/List-ItemDetail/ReviewStarRating';
 
 interface ItemDetailReviewProps {
   productId?: string;
@@ -67,10 +68,11 @@ export default function ItemDetailReview({
   // 평균 별점 계산
   const averageRating =
     reviews.length > 0
-      ? (
-          reviews.reduce((sum, review) => sum + review.rating, 0) / reviews.length
-        ).toFixed(1)
-      : '0.0';
+      ? reviews.reduce((sum, review) => sum + review.rating, 0) / reviews.length
+      : 0;
+
+  // 표시용 문자 생성
+  const averageRatingDisplay = averageRating.toFixed(1);
 
   // 리뷰 작성 핸들러 - 로그인 체크 추가
   const handleWriteReview = () => {
@@ -108,15 +110,9 @@ export default function ItemDetailReview({
         </h3>
         <div className="flex flex-col items-center justify-between mb-4 rounded-lg">
           <div className="flex flex-row gap-2">
-            <div
-              className="flex text-yellow-400 text-sm md:text-lg"
-              role="img"
-              aria-label={`5점 만점에 ${averageRating}점`}>
-              {'★'.repeat(Math.floor(Number(averageRating)))}
-              {'☆'.repeat(5 - Math.floor(Number(averageRating)))}
-            </div>
+            <ReviewStarRating rating={averageRating} size='lg'/>
             <span className="text-lg font-bold" aria-label="평균 평점">
-              {averageRating}
+              {averageRatingDisplay}
             </span>
           </div>
           <span className="text-gray-500 text-xs md:text-sm" aria-label="총 후기 수">
@@ -128,10 +124,12 @@ export default function ItemDetailReview({
       {/* 리뷰 목록 */}
       <section aria-labelledby="reviews-list">
         {/* 텍스트 리뷰 */}
-        <div className="space-y-4">
+        <div className="space-y-8">
           {reviews.length > 0 ? (
             reviews.map((review) => (
-              <article key={review.id} className="bg-white rounded-lg p-6 shadow-sm">
+              <article
+                key={review.id}
+                className="bg-white rounded-lg p-6 border-1 border-poten-gray-1">
                 <header className="flex items-center justify-between mb-3">
                   <div className="flex flex-col space-x-3">
                     <h4
@@ -139,33 +137,19 @@ export default function ItemDetailReview({
                       className="font-semibold text-gray-800">
                       {review.userName}
                     </h4>
-                    <div
-                      className="flex text-yellow-400 text-xs md:text-sm"
-                      role="img"
-                      aria-label={`5점 만점에 ${review.rating}점`}>
-                      {'★'.repeat(review.rating)}
-                      {'☆'.repeat(5 - review.rating)}
-                    </div>
+                    <ReviewStarRating rating={review.rating} size='md' />
+                    
                   </div>
-                  <div className="flex flex-col gap-3 items-center">
+                  <div className="flex flex-col gap-3 items-end">
                     <time
                       dateTime={review.date}
                       className="text-gray-500 text-xs md:text-sm">
                       {review.date} 작성
                     </time>
-
-                    <ReviewHelpfulCounter
-                      helpfulCount={review.helpful}
-                      reviewId={review.id}
-                      onHelpfulClick={() => {
-                        //TODO 실제 API 호출 로직 추가 필요
-                      }}
-                    />
                   </div>
                 </header>
-                <p className="text-gray-700 mb-3 leading-relaxed">{review.content}</p>
 
-                <div className="mt-4">
+                <div className="mt-4 mb-4">
                   <div className="grid grid-cols-3 md:grid-cols-9 gap-2 justify-center">
                     {Array.from({ length: 9 }).map((_, index) => (
                       <div
@@ -175,7 +159,15 @@ export default function ItemDetailReview({
                       </div>
                     ))}
                   </div>
+                  <p className="text-gray-700 mt-2 leading-relaxed">{review.content}</p>
                 </div>
+                <ReviewHelpfulCounter
+                  helpfulCount={review.helpful}
+                  reviewId={review.id}
+                  onHelpfulClick={() => {
+                    //TODO 실제 API 호출 로직 추가 필요
+                  }}
+                />
               </article>
             ))
           ) : (
